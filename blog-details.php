@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zxx">
+    <head>
+        <?php include('head.php');?>
+    </head>
+    <body>
+        <?php include('header.php');
+        $id=$_GET['id'];
+        $blogs = mysqli_query($conn,"SELECT c.id AS cate_id, c.category_name, b.id AS id , b.image AS image , b.created_at AS created_at,b.title,b.description,b.thumb_image FROM category c JOIN blogs b ON b.cate_id = c.id where b.id = $id ");
+        $blog = mysqli_fetch_assoc($blogs); 
+        ?>
+		<!-- Main content Start -->
+        <div class="main-content">
+            <!-- Breadcrumbs Section Start -->
+            <div class="rs-breadcrumbs bg-9">
+                <div class="container">
+                    <div class="content-part text-center">
+                        <h1 class="breadcrumbs-title white-color mb-0"><?php echo $blog['title'];?></h1>
+                    </div>
+                </div>
+            </div>
+            <!-- Breadcrumbs Section End -->
+            <!-- Blog Section Start -->
+            <div class="rs-blog inner single pt-100 pb-100 md-pt-80 md-pb-80">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="blog-part">
+                                <div class="blog-img">
+                                    <a href="blog-details.php"><img src="<?php echo "admin/uploads/" . $blog['thumb_image']; ?>" alt="<?php echo htmlspecialchars(!empty($blog['title']) ? $blog['title'] : 'Blog post image', ENT_QUOTES); ?>"></a>
+                                </div>
+                                <div class="article-content shadow mb-60">
+                                    <ul class="blog-meta mb-22">
+                                        <li><i class="fa fa-calendar-check-o"></i> <?php echo $blog['created_at'];?></li>
+                                        <li><i class="fa fa-user-o"></i> Singhania</li>
+                                        <li><i class="fa fa-book"></i> <a href="#"><?php echo $blog['category_name'];?></a></li>
+                                        <!-- <li><i class="fa fa-comments-o"></i> 10</li> -->
+                                    </ul>
+                                    <p class="desc mb-35"><?php echo $blog['description'];?></p>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 md-mb-50 pl-35 lg-pl-15 md-order-first">
+                            <div id="sticky-sidebar" class="blog-sidebar">
+                                <div class="sidebar-popular-post sidebar-grid shadow mb-50">
+                                    <div class="sidebar-title">
+                                       <h3 class="title mb-20">Recent Post</h3>
+                                    </div>
+                                    <?php $blogs = mysqli_query($conn,"SELECT c.id AS cate_id, c.category_name, b.id AS id , b.image AS image , b.created_at AS created_at,b.title,b.description,b.thumb_image FROM category c JOIN blogs b ON b.cate_id = c.id");
+                                        while($blog = mysqli_fetch_assoc($blogs)){ ?>
+                                    <div class="single-post mb-20">
+                                        <div class="post-image">
+                                            <a href="blog-details.php?id=<?php echo $blog['id']; ?>"><img src="<?php echo "admin/uploads/" . $blog['image']; ?>" alt="<?php echo htmlspecialchars(!empty($blog['title']) ? $blog['title'] : 'Recent blog post', ENT_QUOTES); ?>"></a>
+                                        </div>
+                                        <div class="post-desc">
+                                            <div class="post-title">
+                                                <h5 class="margin-0"><a href="blog-details.php?id=<?php echo $blog['id']; ?>"><?php echo $blog['title']; ?> </a></h5>
+                                            </div>
+                                            <ul>
+                                                <li><i class="fa fa-calendar"></i> <?php echo $blog['created_at']; ?></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <?php } ?>
+                                    <!-- <div class="single-post mb-20">
+                                        <div class="post-image">
+                                            <a href="blog-single.html"><img src="assets/images/blog/small/2.jpg" alt="post image"></a>
+                                        </div>
+                                        <div class="post-desc">
+                                            <div class="post-title">
+                                                <h5 class="margin-0"><a href="blog-single.html">Covid-19 threatens the next generation of smartphones </a></h5>
+                                            </div>
+                                            <ul>
+                                                <li><i class="fa fa-calendar"></i> 28 June, 2019</li>
+                                            </ul>
+                                        </div>
+                                    </div> -->
+                                    
+                                </div>
+
+                                <!--<div class="sidebar-categories sidebar-grid shadow">-->
+                                    <!--<div class="sidebar-title">-->
+                                       <!--<h3 class="title mb-20">Categories</h3>-->
+                                    <!--</div>-->
+                                    
+                                    <!--<ul>    -->
+                                        <?php 
+                                        // $record = mysqli_query($conn,"select * from category");
+                                            // while($row = mysqli_fetch_assoc($record)){ 
+                                            ?>                                
+                                        <!--<li><a href="#"><?php echo $row['category_name'];?></a></li> -->
+                                        <?php //} ?>
+                                        
+                                <!--    </ul>-->
+                                <!--</div>-->
+                            </div>
+                        </div>
+                    </div>
+                    <div id="sticky-end"></div>
+                </div>
+            </div>
+            <!-- Blog Section End -->
+        </div> 
+        <!-- Main content End -->
+
+        <!-- Footer Start -->
+        <?php include('footer.php');?>
+    </body>
+</html>
