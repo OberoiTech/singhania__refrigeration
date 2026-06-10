@@ -71,7 +71,7 @@
       .prod-media:hover img{ transform: scale(1.03); }
 
       .h2{ font-size: clamp(22px, 2.6vw, 28px); color:var(--ink); font-weight:800; margin:26px 0 10px; }
-      .lead{ color:#2c3e68; font-size: clamp(15px, 1.6vw, 17px); }
+      .lead{ color:#2c3e68; text-align: justify; font-size: clamp(15px, 1.6vw, 17px); }
 
       .card-lite{
         background:var(--card);
@@ -183,7 +183,7 @@
 
               <h2 class="h2">Key Product Features</h2>
               <p class="lead">
-                Refrigeration units for cold storage in Delhi provided by Singhania Refrigeration are designed to provide high-quality and high-performing cold storage facilities that are energy-efficient. High-quality cold chain refrigeration units provided by Singhania Refrigeration in Delhi NCR are capable of maintaining optimal temperatures in order to keep your food fresh, like fruits, vegetables, dairy products, meats, and medicines. Industrial refrigeration units provided by us in Delhi are reliable and durable, with very little maintenance. By providing optimal cooling facilities, insulation, and optimal air flow, we ensure that you get quality cold storage services in Delhi, Noida, Gurgaon, and Ghaziabad.
+                Our refrigerators for cold chain in Delhi NCR come with the sole objective of providing that optimum temperature for your products, neither too high nor too low. In this manner, perishable goods such as fruits, vegetables, milk, meat, and even pharmaceuticals.
               </p>
 
               <div class="card-lite mt-20">

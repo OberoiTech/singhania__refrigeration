@@ -34,7 +34,7 @@
       /* ====== SECTIONS ====== */
       .section-pad{ padding:64px 0 90px; }
       .h2{ font-size:clamp(22px,2.6vw,28px); color:var(--ink); font-weight:800; margin:20px 0 10px; }
-      .lead{ color:#2c3e68; font-size:clamp(15px,1.6vw,17px); }
+      .lead{ color:#2c3e68; text-align: justify; font-size:clamp(15px,1.6vw,17px); }
 
       /* ====== MEDIA ====== */
       .feature-media{

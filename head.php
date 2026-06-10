@@ -89,7 +89,7 @@ if (in_array(strtolower($file), ['about-us.php', 'about.php'], true)) {
               'telephone' => $schemaPhone,
               'address' => [
                   '@type' => 'PostalAddress',
-                  'streetAddress' => $address,
+                  'streetAddress' => '$address',
                   'addressLocality' => 'New Delhi',
                   'addressRegion' => 'Delhi',
                   'addressCountry' => 'IN',

@@ -68,6 +68,7 @@ body{ color:var(--ink); }
 .gtm-noscript-iframe{ display:none !important; visibility:hidden !important; }
 .section-title-accent{ color:#082243 !important; font-size:30px; }
 .about-copy--lead{ margin-top:15px; }
+#rs-about p{ text-align:justify; }
 .testimonial-shell{ border-radius:16px; }
 .testimonial-quote{ color:var(--brand); }
 
@@ -430,16 +431,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </div>
             <div class="col-lg-6 pl-66 pt-75 pb-75 md-pt-42 md-pb-72" data-animate>
               <div class="sec-title mb-24">
-                <h2 class="title mb-0"> <span class="section-title-accent">About Singhania Refrigeration </span></h2>
+                <h2 class="title mb-0"> <span class="section-title-accent">India's Most Trusted Refrigeration & Cold Chain Supplier </span></h2>
               </div>
               <p class="mb-20">
-                <strong>Singhania Refrigeration</strong> is the best brand in India for innovative refrigeration systems and cold chain logistics, as freshness, safety, and quality are always highly respected as the true lifeblood of all our refrigeration systems. As an outstanding legacy from 25 years of experience in Singhania Logistics, we keep providing the best innovations in our comprehensive refrigeration systems that allow industries to function without any limitations.
+                Singhania Refrigeration Company provides the most innovative refrigeration system designs and cold chain logistics services available in India. Freshness is the real lifeblood of these systems; safety and quality have always been highly respected in Singhania Refrigeration's refrigeration systems.
               </p>
-              <p>
-                Singhania Refrigeration innovates, engineering efficiently, and adhering to quality principles to establish new standards in various industries, including medicine, agriculture, logistics, warehousing, and food preservation.
+              <p class="mb-20">
+                Providing temperature control services in the largest and most important cities, such as Delhi NCR, Lucknow, Patna, Bihar, Gujarat, and Kolkata, Singhania Refrigeration continues to contribute innovations to its already advanced refrigeration systems, which enable companies to operate without having to deal with any problems.
               </p>
-              <p>
-                Our goal is to provide solutions with perfect temperature control, excellent energy efficiency, and absolute reliability at all stages, from concept creation through project implementation until the very end, from the field to your plate, and from production to pharmaceuticals.
+              <p class="mb-20">
+                Innovations in designing, efficient engineering, and adherence to high-quality principles allow the company to introduce new standards of functioning in the areas of medicine, agriculture, logistics, warehousing, and food preservation. Whether this is pharmaceutical cold storage in Patna and Bihar, handling agricultural produce in Gujarat, warehousing and food distribution in Delhi NCR, Lucknow, and Kolkata – all of our services work excellently on any scale, under any pressure.
+              </p>
+              <p class="mb-20">
+                We aim to provide services that have perfect temperature control, superb energy efficiency, and flawless operation throughout the entire process, starting from the moment of conception to the end. From fields of Gujarat to plates of families in Delhi NCR.
               </p>
               <div class="menu-cta menu-cta--flush">
                   <a class="btn-cfa" href="about-us.php">Learn more</a>
