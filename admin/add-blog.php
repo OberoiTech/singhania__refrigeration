@@ -16,6 +16,7 @@ if (isset($_POST['submit'])) {
 
     $cate_id     = isset($_POST['cate_id']) ? trim($_POST['cate_id']) : '';
     $name        = isset($_POST['title']) ? trim($_POST['title']) : '';
+    $author      = isset($_POST['author']) ? trim($_POST['author']) : '';
     $description = isset($_POST['description']) ? trim($_POST['description']) : '';
 
     if (!empty($_FILES['image']['name']) && !empty($_FILES['thumb_image']['name'])) {
@@ -26,17 +27,18 @@ if (isset($_POST['submit'])) {
         $thumb_image = $_FILES['thumb_image']['name'];
         $thumbPath   = $uploadDir . basename($thumb_image);
 
-        if ($name !== '' && $cate_id !== '' && $description !== '') {
+        if ($name !== '' && $author !== '' && $cate_id !== '' && $description !== '') {
 
             $movedMain  = move_uploaded_file($_FILES['image']['tmp_name'], $imagePath);
             $movedThumb = move_uploaded_file($_FILES['thumb_image']['tmp_name'], $thumbPath);
 
             if ($movedMain && $movedThumb) {
                 $rs = "
-                    INSERT INTO blogs (cate_id, title, description, image, thumb_image)
+                    INSERT INTO blogs (cate_id, title, author, description, image, thumb_image)
                     VALUES (
                         '" . mysqli_real_escape_string($conn, $cate_id) . "',
                         '" . mysqli_real_escape_string($conn, $name) . "',
+                        '" . mysqli_real_escape_string($conn, $author) . "',
                         '" . mysqli_real_escape_string($conn, $description) . "',
                         '" . mysqli_real_escape_string($conn, $image) . "',
                         '" . mysqli_real_escape_string($conn, $thumb_image) . "'
@@ -235,6 +237,16 @@ if (isset($_POST['submit'])) {
                                            name="title"
                                            required>
                                 </div>
+
+                                <div class="form-group col-md-6">
+                                    <label class="control-label">Author <span style="color:red;">*</span></label>
+                                    <input class="form-control"
+                                           type="text"
+                                           placeholder="Author"
+                                           name="author"
+                                           required>
+                                </div>
+
 
                                 <div class="form-group col-md-6">
                                     <label class="control-label">Post Image (1200 × 600) <span style="color:red;">*</span></label>

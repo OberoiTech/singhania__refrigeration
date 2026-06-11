@@ -891,7 +891,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </div>
             <div class="col-md-6">
               <div class="btn-part text-right sm-text-left">
-                <!--<a class="readon" href="blog-single.html">View Updates</a>-->
+                <a class="readon" href="blog.php">View All Blogs</a>
               </div>
             </div>
           </div>

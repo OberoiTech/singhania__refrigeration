@@ -8,13 +8,14 @@ $color = "";
 error_reporting(0);
 $id =$_GET['id'];
 
-$query =mysqli_query($conn,"SELECT c.id AS cate_id, c.category_name AS category, b.id AS id, b.title , b.description,b.image,b.thumb_image FROM category c JOIN blogs b ON b.cate_id = c.id where b.id='$id'");
+$query =mysqli_query($conn,"SELECT c.id AS cate_id, c.category_name AS category, b.id AS id, b.title, b.author, b.description,b.image,b.thumb_image FROM category c JOIN blogs b ON b.cate_id = c.id where b.id='$id'");
 $row=mysqli_fetch_assoc($query);
 
 if (isset($_POST['submit'])) {
     $uploadDir = "uploads/";
     $cate_id = $_POST['cate_id'];
     $name = $_POST['title'];
+    $author = $_POST['author'];
     $description = $_POST['description'];
     $old_image = $_POST['old_image'];
     $old_thumb = $_POST['old_thumb'];
@@ -36,7 +37,7 @@ if (isset($_POST['submit'])) {
 
     // Update query
     $rs = "UPDATE blogs 
-           SET title='" . $name . "', cate_id='" . $cate_id . "', description='" . $description . "', 
+           SET title='" . mysqli_real_escape_string($conn, $name) . "', cate_id='" . mysqli_real_escape_string($conn, $cate_id) . "', author='" . mysqli_real_escape_string($conn, $author) . "', description='" . mysqli_real_escape_string($conn, $description) . "', 
                image='" . $image . "', thumb_image='" . $thumb_image . "' 
            WHERE id='" . $id . "'";
            
@@ -110,8 +111,13 @@ if (isset($_POST['submit'])) {
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label class="control-label">Title</label>
-                                        <input class="form-control" type="text" value="<?php echo $row['title']; ?>"
+                                        <input class="form-control" type="text" value="<?php echo htmlspecialchars($row['title']); ?>"
                                             name="title">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label class="control-label">Author</label>
+                                        <input class="form-control" type="text" value="<?php echo htmlspecialchars($row['author']); ?>"
+                                            name="author">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label class="control-label">Post Image</label>

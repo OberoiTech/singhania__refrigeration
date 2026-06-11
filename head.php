@@ -13,6 +13,11 @@ $pageDescription = $defaultDescription;
 $siteUrl = 'https://singhaniarefrigeration.com/';
 $shareImage = $siteUrl . 'admin/uploads/image.jpg';
 $twitterHandle = '@SinghaniaR59102';
+$email = $email ?? '';
+$mobile = $mobile ?? '';
+$facebook = $facebook ?? '';
+$linkedin = $linkedin ?? '';
+$address = $address ?? '';
 $schemaPagePath = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH) ?: '/';
 $schemaPageUrl = rtrim($siteUrl, '/') . (($schemaPagePath === '/' || $schemaPagePath === '/index.php') ? '/' : $schemaPagePath);
 
@@ -189,5 +194,4 @@ if (in_array(strtolower($file), ['about-us.php', 'about.php'], true)) {
 
         <!-- Modern, readable UI font -->
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
 

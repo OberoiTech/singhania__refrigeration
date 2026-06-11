@@ -192,6 +192,7 @@ if (!isset($_SESSION['admin_id'])) {
                                         <th>#ID</th>
                                         <th>Category</th>
                                         <th>Title</th>
+                                        <th>Author</th>
                                         <th>Description</th>
                                         <th>Image</th>
                                         <th>Thumb Image</th>
@@ -207,6 +208,7 @@ if (!isset($_SESSION['admin_id'])) {
                                             c.category_name AS category,
                                             b.id            AS id,
                                             b.title,
+                                            b.author,
                                             b.description,
                                             b.image,
                                             b.thumb_image
@@ -228,6 +230,7 @@ if (!isset($_SESSION['admin_id'])) {
                                         <td><?php echo $i; ?></td>
                                         <td><?php echo htmlspecialchars($result['category']); ?></td>
                                         <td><?php echo htmlspecialchars($result['title']); ?></td>
+                                        <td><?php echo htmlspecialchars($result['author']); ?></td>
                                         <td class="sr-desc-cell"
                                             title="<?php echo htmlspecialchars($fullDesc); ?>">
                                             <?php echo htmlspecialchars($shortDesc); ?>

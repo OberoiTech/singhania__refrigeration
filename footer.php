@@ -63,9 +63,11 @@
 
         <h4 class="f-title mt-28">Quick Links</h4>
         <ul class="link-list">
+          <!-- <li><a href="blog-details.php">Latest Posts</a></li> -->
           <li><a href="consulting.php">Consulting</a></li>
           <li><a href="turnkey-solution.php">Turnkey Solutions</a></li>
           <li><a href="transport-refrigeration.php">Transport Refrigeration</a></li>
+          <li><a href="blog.php">Blogs</a></li>
           <li><a href="contact.php">Contact Us</a></li>
         </ul>
       </div>
@@ -103,7 +105,7 @@
     <div class="footer-bottom">
       <p>© <?php echo date('Y'); ?> Singhania Refrigeration. All Rights Reserved.</p>
       <ul class="bottom-links">
-        <li><a href="privacy.php">Privacy</a></li>
+        <li><a href="privacy-policy.php">Privacy</a></li>
         <li><a href="terms.php">Terms</a></li>
         <li><a href="contact.php">Support</a></li>
       </ul>

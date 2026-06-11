@@ -1,4 +1,9 @@
-<?php include 'cache_start.php'; ?>
+<?php
+$cacheStart = __DIR__ . '/cache_start.php';
+if (file_exists($cacheStart)) {
+    include $cacheStart;
+}
+?>
 <?php
 /* -------- server-side insert (unchanged) -------- */
 $color = " ";

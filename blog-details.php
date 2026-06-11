@@ -6,7 +6,7 @@
     <body>
         <?php include('header.php');
         $id=$_GET['id'];
-        $blogs = mysqli_query($conn,"SELECT c.id AS cate_id, c.category_name, b.id AS id , b.image AS image , b.created_at AS created_at,b.title,b.description,b.thumb_image FROM category c JOIN blogs b ON b.cate_id = c.id where b.id = $id ");
+        $blogs = mysqli_query($conn,"SELECT c.id AS cate_id, c.category_name, b.id AS id , b.image AS image , b.created_at AS created_at,b.title,b.author,b.description,b.thumb_image FROM category c JOIN blogs b ON b.cate_id = c.id where b.id = $id ");
         $blog = mysqli_fetch_assoc($blogs); 
         ?>
 		<!-- Main content Start -->
@@ -32,7 +32,7 @@
                                 <div class="article-content shadow mb-60">
                                     <ul class="blog-meta mb-22">
                                         <li><i class="fa fa-calendar-check-o"></i> <?php echo $blog['created_at'];?></li>
-                                        <li><i class="fa fa-user-o"></i> Singhania</li>
+                                        <li><i class="fa fa-user-o"></i> <?php echo htmlspecialchars(!empty($blog['author']) ? $blog['author'] : 'Singhania', ENT_QUOTES, 'UTF-8'); ?></li>
                                         <li><i class="fa fa-book"></i> <a href="#"><?php echo $blog['category_name'];?></a></li>
                                         <!-- <li><i class="fa fa-comments-o"></i> 10</li> -->
                                     </ul>
@@ -48,7 +48,7 @@
                                     <div class="sidebar-title">
                                        <h3 class="title mb-20">Recent Post</h3>
                                     </div>
-                                    <?php $blogs = mysqli_query($conn,"SELECT c.id AS cate_id, c.category_name, b.id AS id , b.image AS image , b.created_at AS created_at,b.title,b.description,b.thumb_image FROM category c JOIN blogs b ON b.cate_id = c.id");
+                                    <?php $blogs = mysqli_query($conn,"SELECT c.id AS cate_id, c.category_name, b.id AS id , b.image AS image , b.created_at AS created_at,b.title,b.author,b.description,b.thumb_image FROM category c JOIN blogs b ON b.cate_id = c.id");
                                         while($blog = mysqli_fetch_assoc($blogs)){ ?>
                                     <div class="single-post mb-20">
                                         <div class="post-image">
