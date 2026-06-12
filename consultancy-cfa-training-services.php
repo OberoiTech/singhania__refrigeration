@@ -484,6 +484,11 @@ $message = " ";
         });
     });
     </script>
-  <?php include 'cache_end.php'; ?>
+  <?php
+  $cacheEnd = __DIR__ . '/cache_end.php';
+  if (file_exists($cacheEnd)) {
+      include $cacheEnd;
+  }
+  ?>
 </body>
 </html>
