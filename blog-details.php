@@ -1,14 +1,44 @@
+<?php
+include('admin/config.php');
+
+$id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
+$blogs = mysqli_query($conn, "SELECT c.id AS cate_id, c.category_name, b.id AS id, b.image AS image, b.created_at AS created_at, b.title, b.author, b.description, b.meta_title, b.meta_description, b.keywords, b.thumb_image FROM category c JOIN blogs b ON b.cate_id = c.id WHERE b.id = $id");
+$blog = $blogs ? mysqli_fetch_assoc($blogs) : null;
+
+if (!$blog) {
+    http_response_code(404);
+    $blog = [
+        'id' => 0,
+        'cate_id' => 0,
+        'category_name' => '',
+        'image' => '',
+        'created_at' => '',
+        'title' => 'Blog not found',
+        'author' => 'Singhania',
+        'description' => 'The requested blog post could not be found.',
+        'meta_title' => '',
+        'meta_description' => '',
+        'keywords' => '',
+        'thumb_image' => '',
+    ];
+}
+
+$plainDescription = $blog ? trim(preg_replace('/\s+/', ' ', strip_tags($blog['description']))) : '';
+$fallbackDescription = $plainDescription !== '' ? substr($plainDescription, 0, 160) : 'Read the latest update from Singhania Refrigeration.';
+$pageTitle = !empty($blog['meta_title']) ? $blog['meta_title'] : (!empty($blog['title']) ? $blog['title'] . ' | Singhania Refrigeration' : 'Blog Details | Singhania Refrigeration');
+$pageDescription = !empty($blog['meta_description']) ? $blog['meta_description'] : $fallbackDescription;
+$pageKeywords = !empty($blog['keywords']) ? $blog['keywords'] : 'cold storage solutions, refrigeration blog, Singhania Refrigeration';
+$canonicalUrl = 'https://singhaniarefrigeration.com/blog-details.php?id=' . $id;
+$shareImage = !empty($blog['thumb_image']) ? 'https://singhaniarefrigeration.com/admin/uploads/' . $blog['thumb_image'] : 'https://singhaniarefrigeration.com/admin/uploads/image.jpg';
+$ogType = 'article';
+?>
 <!DOCTYPE html>
 <html lang="zxx">
     <head>
         <?php include('head.php');?>
     </head>
     <body>
-        <?php include('header.php');
-        $id=$_GET['id'];
-        $blogs = mysqli_query($conn,"SELECT c.id AS cate_id, c.category_name, b.id AS id , b.image AS image , b.created_at AS created_at,b.title,b.author,b.description,b.thumb_image FROM category c JOIN blogs b ON b.cate_id = c.id where b.id = $id ");
-        $blog = mysqli_fetch_assoc($blogs); 
-        ?>
+        <?php include('header.php'); ?>
 		<!-- Main content Start -->
         <div class="main-content">
             <!-- Breadcrumbs Section Start -->
@@ -27,7 +57,7 @@
                         <div class="col-lg-8">
                             <div class="blog-part">
                                 <div class="blog-img">
-                                    <a href="blog-details.php"><img src="<?php echo "admin/uploads/" . $blog['thumb_image']; ?>" alt="<?php echo htmlspecialchars(!empty($blog['title']) ? $blog['title'] : 'Blog post image', ENT_QUOTES); ?>"></a>
+                                    <img src="<?php echo "admin/uploads/" . $blog['thumb_image']; ?>" alt="<?php echo htmlspecialchars(!empty($blog['title']) ? $blog['title'] : 'Blog post image', ENT_QUOTES); ?>">
                                 </div>
                                 <div class="article-content shadow mb-60">
                                     <ul class="blog-meta mb-22">

@@ -12,6 +12,7 @@
                 display: grid;
                 grid-template-columns: repeat(3, minmax(0, 1fr));
                 gap: 30px;
+                align-items: stretch;
             }
 
             .blog-card {
@@ -21,6 +22,8 @@
                 overflow: hidden;
                 box-shadow: 0 12px 30px rgba(16, 28, 52, .08);
                 height: 100%;
+                display: flex;
+                flex-direction: column;
             }
 
             .blog-card__image {
@@ -45,6 +48,10 @@
 
             .blog-card__body {
                 padding: 20px;
+                display: flex;
+                flex: 1;
+                flex-direction: column;
+                min-height: 225px;
             }
 
             .blog-card__cat {
@@ -61,6 +68,7 @@
                 font-size: 20px;
                 line-height: 1.35;
                 margin: 0 0 12px;
+                min-height: 82px;
             }
 
             .blog-card__title a {
@@ -78,6 +86,7 @@
                 gap: 12px;
                 color: #667085;
                 font-size: 13px;
+                margin-top: auto;
             }
 
             .blog-empty {

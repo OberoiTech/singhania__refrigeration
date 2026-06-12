@@ -82,7 +82,9 @@ if (!isset($_SESSION['admin_id'])) {
 
         .table {
             margin-bottom: 0;
-            font-size: 13px;
+            font-size: 12px;
+            table-layout: fixed;
+            width: 100% !important;
         }
 
         .table thead th {
@@ -93,6 +95,7 @@ if (!isset($_SESSION['admin_id'])) {
             text-transform: uppercase;
             letter-spacing: 0.08em;
             border-top: none;
+            white-space: nowrap;
         }
 
         .table tbody tr:hover {
@@ -100,15 +103,63 @@ if (!isset($_SESSION['admin_id'])) {
         }
 
         .table tbody td {
-            vertical-align: middle;
+            vertical-align: top;
             color: #111827;
+            padding: 12px 10px;
         }
 
         .sr-desc-cell {
-            max-width: 340px;
-            white-space: nowrap;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
             overflow: hidden;
-            text-overflow: ellipsis;
+            line-height: 1.55;
+        }
+
+        .sr-blog-title {
+            color: #0f172a;
+            font-size: 13px;
+            font-weight: 700;
+            line-height: 1.45;
+            margin-bottom: 8px;
+        }
+
+        .sr-muted-line {
+            color: #64748b;
+            font-size: 11px;
+            line-height: 1.45;
+            margin-top: 4px;
+        }
+
+        .sr-meta-block + .sr-meta-block {
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px solid #edf2f7;
+        }
+
+        .sr-meta-label {
+            color: #2563eb;
+            display: block;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            margin-bottom: 2px;
+            text-transform: uppercase;
+        }
+
+        .sr-image-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            min-width: 92px;
+        }
+
+        .sr-image-label {
+            color: #64748b;
+            display: block;
+            font-size: 10px;
+            font-weight: 700;
+            margin-bottom: 3px;
         }
 
         .sr-blog-thumb-main,
@@ -120,13 +171,19 @@ if (!isset($_SESSION['admin_id'])) {
         }
 
         .sr-blog-thumb-main {
-            width: 120px;
-            height: 70px;
+            width: 92px;
+            height: 54px;
         }
 
         .sr-blog-thumb-small {
-            width: 90px;
-            height: 50px;
+            width: 92px;
+            height: 54px;
+        }
+
+        .sr-action-cell {
+            display: flex;
+            gap: 6px;
+            justify-content: center;
         }
 
         .btn-sm {
@@ -137,7 +194,39 @@ if (!isset($_SESSION['admin_id'])) {
 
         .table-responsive {
             border-radius: 12px;
-            overflow: hidden;
+            overflow-x: auto;
+            overflow-y: hidden;
+            width: 100%;
+        }
+
+        #sampleTable th:nth-child(1),
+        #sampleTable td:nth-child(1) {
+            width: 55px;
+        }
+
+        #sampleTable th:nth-child(2),
+        #sampleTable td:nth-child(2) {
+            width: 24%;
+        }
+
+        #sampleTable th:nth-child(3),
+        #sampleTable td:nth-child(3) {
+            width: 34%;
+        }
+
+        #sampleTable th:nth-child(4),
+        #sampleTable td:nth-child(4) {
+            width: 21%;
+        }
+
+        #sampleTable th:nth-child(5),
+        #sampleTable td:nth-child(5) {
+            width: 115px;
+        }
+
+        #sampleTable th:nth-child(6),
+        #sampleTable td:nth-child(6) {
+            width: 95px;
         }
 
         .dataTables_wrapper .dataTables_filter input {
@@ -156,6 +245,12 @@ if (!isset($_SESSION['admin_id'])) {
         .dataTables_wrapper .dataTables_info,
         .dataTables_wrapper .dataTables_paginate {
             font-size: 12px;
+        }
+
+        @media (max-width: 991px) {
+            .table {
+                min-width: 980px;
+            }
         }
     </style>
 </head>
@@ -190,12 +285,10 @@ if (!isset($_SESSION['admin_id'])) {
                                 <thead>
                                     <tr>
                                         <th>#ID</th>
-                                        <th>Category</th>
-                                        <th>Title</th>
-                                        <th>Author</th>
-                                        <th>Description</th>
-                                        <th>Image</th>
-                                        <th>Thumb Image</th>
+                                        <th>Blog Details</th>
+                                        <th>SEO Details</th>
+                                        <th>Content</th>
+                                        <th>Images</th>
                                         <th style="width:120px;">Action</th>
                                     </tr>
                                 </thead>
@@ -209,6 +302,9 @@ if (!isset($_SESSION['admin_id'])) {
                                             b.id            AS id,
                                             b.title,
                                             b.author,
+                                            b.meta_title,
+                                            b.meta_description,
+                                            b.keywords,
                                             b.description,
                                             b.image,
                                             b.thumb_image
@@ -225,31 +321,73 @@ if (!isset($_SESSION['admin_id'])) {
                                         if (strlen($fullDesc) > 160) {
                                             $shortDesc .= '...';
                                         }
+
+                                        $metaTitle = !empty($result['meta_title']) ? $result['meta_title'] : 'Not added';
+                                        $metaDescription = !empty($result['meta_description']) ? $result['meta_description'] : 'Not added';
+                                        $keywords = !empty($result['keywords']) ? $result['keywords'] : 'Not added';
                                     ?>
                                     <tr>
                                         <td><?php echo $i; ?></td>
-                                        <td><?php echo htmlspecialchars($result['category']); ?></td>
-                                        <td><?php echo htmlspecialchars($result['title']); ?></td>
-                                        <td><?php echo htmlspecialchars($result['author']); ?></td>
-                                        <td class="sr-desc-cell"
-                                            title="<?php echo htmlspecialchars($fullDesc); ?>">
-                                            <?php echo htmlspecialchars($shortDesc); ?>
+                                        <td>
+                                            <div class="sr-blog-title">
+                                                <?php echo htmlspecialchars($result['title'], ENT_QUOTES, 'UTF-8'); ?>
+                                            </div>
+                                            <div class="sr-muted-line">
+                                                <strong>Category:</strong>
+                                                <?php echo htmlspecialchars($result['category'], ENT_QUOTES, 'UTF-8'); ?>
+                                            </div>
+                                            <div class="sr-muted-line">
+                                                <strong>Author:</strong>
+                                                <?php echo htmlspecialchars($result['author'], ENT_QUOTES, 'UTF-8'); ?>
+                                            </div>
                                         </td>
                                         <td>
+                                            <div class="sr-meta-block">
+                                                <span class="sr-meta-label">Meta Title</span>
+                                                <div class="sr-desc-cell" title="<?php echo htmlspecialchars($metaTitle, ENT_QUOTES, 'UTF-8'); ?>">
+                                                    <?php echo htmlspecialchars($metaTitle, ENT_QUOTES, 'UTF-8'); ?>
+                                                </div>
+                                            </div>
+                                            <div class="sr-meta-block">
+                                                <span class="sr-meta-label">Meta Description</span>
+                                                <div class="sr-desc-cell" title="<?php echo htmlspecialchars($metaDescription, ENT_QUOTES, 'UTF-8'); ?>">
+                                                    <?php echo htmlspecialchars($metaDescription, ENT_QUOTES, 'UTF-8'); ?>
+                                                </div>
+                                            </div>
+                                            <div class="sr-meta-block">
+                                                <span class="sr-meta-label">Keywords</span>
+                                                <div class="sr-desc-cell" title="<?php echo htmlspecialchars($keywords, ENT_QUOTES, 'UTF-8'); ?>">
+                                                    <?php echo htmlspecialchars($keywords, ENT_QUOTES, 'UTF-8'); ?>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="sr-desc-cell" title="<?php echo htmlspecialchars($fullDesc, ENT_QUOTES, 'UTF-8'); ?>">
+                                                <?php echo htmlspecialchars($shortDesc, ENT_QUOTES, 'UTF-8'); ?>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="sr-image-stack">
                                             <?php if (!empty($result['image'])) : ?>
+                                                <div>
+                                                <span class="sr-image-label">Post</span>
                                                 <img class="sr-blog-thumb-main"
-                                                     src="<?php echo 'uploads/' . htmlspecialchars($result['image']); ?>"
-                                                     alt="<?php echo htmlspecialchars($result['title']); ?>">
+                                                     src="<?php echo 'uploads/' . htmlspecialchars($result['image'], ENT_QUOTES, 'UTF-8'); ?>"
+                                                     alt="<?php echo htmlspecialchars($result['title'], ENT_QUOTES, 'UTF-8'); ?>">
+                                                </div>
                                             <?php endif; ?>
-                                        </td>
-                                        <td>
                                             <?php if (!empty($result['thumb_image'])) : ?>
+                                                <div>
+                                                <span class="sr-image-label">Thumb</span>
                                                 <img class="sr-blog-thumb-small"
-                                                     src="<?php echo 'uploads/' . htmlspecialchars($result['thumb_image']); ?>"
-                                                     alt="<?php echo htmlspecialchars($result['title']); ?>">
+                                                     src="<?php echo 'uploads/' . htmlspecialchars($result['thumb_image'], ENT_QUOTES, 'UTF-8'); ?>"
+                                                     alt="<?php echo htmlspecialchars($result['title'], ENT_QUOTES, 'UTF-8'); ?>">
+                                                </div>
                                             <?php endif; ?>
+                                            </div>
                                         </td>
                                         <td>
+                                            <div class="sr-action-cell">
                                             <a href="edit-blog.php?id=<?php echo (int)$result['id']; ?>"
                                                class="btn btn-success btn-sm"
                                                title="Edit">
@@ -261,6 +399,7 @@ if (!isset($_SESSION['admin_id'])) {
                                                onclick="return confirm('Are you sure you want to delete this blog?');">
                                                 <i class="fa fa-trash"></i>
                                             </a>
+                                            </div>
                                         </td>
                                     </tr>
                                     <?php
@@ -287,7 +426,8 @@ if (!isset($_SESSION['admin_id'])) {
     <script type="text/javascript" src="js/plugins/dataTables.bootstrap.min.js"></script>
     <script type="text/javascript">
         $('#sampleTable').DataTable({
-            "order": [[0, "asc"]]
+            "order": [[0, "asc"]],
+            "autoWidth": false
         });
     </script>
 </body>

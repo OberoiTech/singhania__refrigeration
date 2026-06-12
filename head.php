@@ -8,10 +8,13 @@ $name = pathinfo($file, PATHINFO_FILENAME);
 $defaultTitle = 'Singhania Refrigeration – Trusted Cold Storage Solutions';
 $aboutTitle = 'About Singhania Refrigeration | Cold Chain Solutions India';
 $defaultDescription = 'Singhania Refrigeration provides advanced cold storage and refrigeration solutions including dock shelters, truck refrigeration, and cold rooms.';
-$pageTitle = $defaultTitle;
-$pageDescription = $defaultDescription;
+$defaultKeywords = 'cold storage solutions, industrial refrigeration, cold chain solutions, Singhania Refrigeration';
+$pageTitle = $pageTitle ?? $defaultTitle;
+$pageDescription = $pageDescription ?? $defaultDescription;
+$pageKeywords = $pageKeywords ?? $defaultKeywords;
 $siteUrl = 'https://singhaniarefrigeration.com/';
-$shareImage = $siteUrl . 'admin/uploads/image.jpg';
+$shareImage = $shareImage ?? $siteUrl . 'admin/uploads/image.jpg';
+$ogType = $ogType ?? 'website';
 $twitterHandle = '@SinghaniaR59102';
 $email = $email ?? '';
 $mobile = $mobile ?? '';
@@ -20,6 +23,7 @@ $linkedin = $linkedin ?? '';
 $address = $address ?? '';
 $schemaPagePath = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH) ?: '/';
 $schemaPageUrl = rtrim($siteUrl, '/') . (($schemaPagePath === '/' || $schemaPagePath === '/index.php') ? '/' : $schemaPagePath);
+$canonicalUrl = $canonicalUrl ?? $schemaPageUrl;
 
 if (!function_exists('sr_schema_filter')) {
     function sr_schema_filter(array $value): array {
@@ -52,6 +56,7 @@ if (in_array(strtolower($file), ['about-us.php', 'about.php'], true)) {
         <meta charset="utf-8">
         <title><?php echo htmlspecialchars($pageTitle, ENT_QUOTES, 'UTF-8'); ?></title>
         <meta name="description" content="<?php echo htmlspecialchars($pageDescription, ENT_QUOTES, 'UTF-8'); ?>">
+        <meta name="keywords" content="<?php echo htmlspecialchars($pageKeywords, ENT_QUOTES, 'UTF-8'); ?>">
         <!-- responsive tag -->
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -59,7 +64,7 @@ if (in_array(strtolower($file), ['about-us.php', 'about.php'], true)) {
         <meta property="og:site_name" content="Singhania Refrigeration">
         <meta property="og:url" content="<?php echo htmlspecialchars($schemaPageUrl, ENT_QUOTES, 'UTF-8'); ?>">
         <meta property="og:description" content="<?php echo htmlspecialchars($pageDescription, ENT_QUOTES, 'UTF-8'); ?>">
-        <meta property="og:type" content="website">
+        <meta property="og:type" content="<?php echo htmlspecialchars($ogType, ENT_QUOTES, 'UTF-8'); ?>">
         <meta property="og:image" content="<?php echo htmlspecialchars($shareImage, ENT_QUOTES, 'UTF-8'); ?>">
         <meta property="og:image:alt" content="Singhania Refrigeration cold storage and industrial refrigeration solutions">
         <meta name="twitter:card" content="summary_large_image">
@@ -186,7 +191,7 @@ if (in_array(strtolower($file), ['about-us.php', 'about.php'], true)) {
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
         crossorigin="anonymous">
         
-        <link rel="canonical" href="https://singhaniarefrigeration.com/" />
+        <link rel="canonical" href="<?php echo htmlspecialchars($canonicalUrl, ENT_QUOTES, 'UTF-8'); ?>" />
 
         <!-- Performance hints -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -194,4 +199,3 @@ if (in_array(strtolower($file), ['about-us.php', 'about.php'], true)) {
 
         <!-- Modern, readable UI font -->
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-

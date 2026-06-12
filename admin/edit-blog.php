@@ -1,5 +1,6 @@
 <?php
 include('config.php');
+include('blog-seo-validation.php');
 session_start();
 
 $error = "";
@@ -8,7 +9,7 @@ $color = "";
 error_reporting(0);
 $id =$_GET['id'];
 
-$query =mysqli_query($conn,"SELECT c.id AS cate_id, c.category_name AS category, b.id AS id, b.title, b.author, b.description,b.image,b.thumb_image FROM category c JOIN blogs b ON b.cate_id = c.id where b.id='$id'");
+$query =mysqli_query($conn,"SELECT c.id AS cate_id, c.category_name AS category, b.id AS id, b.title, b.author, b.description, b.meta_title, b.meta_description, b.keywords, b.image,b.thumb_image FROM category c JOIN blogs b ON b.cate_id = c.id where b.id='$id'");
 $row=mysqli_fetch_assoc($query);
 
 if (isset($_POST['submit'])) {
@@ -17,9 +18,25 @@ if (isset($_POST['submit'])) {
     $name = $_POST['title'];
     $author = $_POST['author'];
     $description = $_POST['description'];
+    $metaTitle = isset($_POST['meta_title']) ? trim($_POST['meta_title']) : '';
+    $metaDescription = isset($_POST['meta_description']) ? trim($_POST['meta_description']) : '';
+    $keywords = isset($_POST['keywords']) ? trim($_POST['keywords']) : '';
     $old_image = $_POST['old_image'];
     $old_thumb = $_POST['old_thumb'];
+    [$seoData, $seoErrors] = sr_prepare_blog_seo_fields($metaTitle, $metaDescription, $keywords);
 
+    $row['cate_id'] = $cate_id;
+    $row['title'] = $name;
+    $row['author'] = $author;
+    $row['description'] = $description;
+    $row['meta_title'] = $seoData['meta_title'];
+    $row['meta_description'] = $seoData['meta_description'];
+    $row['keywords'] = $seoData['keywords'];
+
+    if (!empty($seoErrors)) {
+        $color = "alert alert-danger";
+        $msg = implode(' ', $seoErrors);
+    } else {
     if (!empty($_FILES['image']['name'])) {
         $image = $_FILES['image']['name'];
         $imagePath = $uploadDir . basename($image);
@@ -37,8 +54,9 @@ if (isset($_POST['submit'])) {
 
     // Update query
     $rs = "UPDATE blogs 
-           SET title='" . mysqli_real_escape_string($conn, $name) . "', cate_id='" . mysqli_real_escape_string($conn, $cate_id) . "', author='" . mysqli_real_escape_string($conn, $author) . "', description='" . mysqli_real_escape_string($conn, $description) . "', 
-               image='" . $image . "', thumb_image='" . $thumb_image . "' 
+           SET title='" . mysqli_real_escape_string($conn, $name) . "', cate_id='" . mysqli_real_escape_string($conn, $cate_id) . "', author='" . mysqli_real_escape_string($conn, $author) . "', description='" . mysqli_real_escape_string($conn, $description) . "',
+               meta_title='" . mysqli_real_escape_string($conn, $seoData['meta_title']) . "', meta_description='" . mysqli_real_escape_string($conn, $seoData['meta_description']) . "', keywords='" . mysqli_real_escape_string($conn, $seoData['keywords']) . "',
+               image='" . mysqli_real_escape_string($conn, $image) . "', thumb_image='" . mysqli_real_escape_string($conn, $thumb_image) . "' 
            WHERE id='" . $id . "'";
            
     $result = mysqli_query($conn, $rs);
@@ -47,6 +65,7 @@ if (isset($_POST['submit'])) {
         echo "<script>alert('Success: Record Updated Successfully');window.location.href='blogs-details.php';</script>";
     } else {
         echo "<script>alert('Error: Something Not Updated');</script>";
+    }
     }
 }
 
@@ -103,7 +122,7 @@ if (isset($_POST['submit'])) {
                                                     $selected = ($row1->id == $selectedMenu) ? "selected" : "";
                                             ?>
                                                 <option value="<?php echo $row1->id; ?>" <?php echo $selected; ?>>
-                                                    <?php echo $row1->category_name; ?>
+                                                    <?php echo htmlspecialchars($row1->category_name, ENT_QUOTES, 'UTF-8'); ?>
                                                 </option>
                                             <?php } ?>
                                         </select>
@@ -111,33 +130,62 @@ if (isset($_POST['submit'])) {
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label class="control-label">Title</label>
-                                        <input class="form-control" type="text" value="<?php echo htmlspecialchars($row['title']); ?>"
-                                            name="title">
+                                        <input class="form-control" type="text" value="<?php echo htmlspecialchars($row['title'], ENT_QUOTES, 'UTF-8'); ?>"
+                                            name="title" required>
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label class="control-label">Author</label>
-                                        <input class="form-control" type="text" value="<?php echo htmlspecialchars($row['author']); ?>"
-                                            name="author">
+                                        <input class="form-control" type="text" value="<?php echo htmlspecialchars($row['author'], ENT_QUOTES, 'UTF-8'); ?>"
+                                            name="author" required>
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label class="control-label">Post Image</label>
-                                        <img src="uploads/<?php echo $row['image']; ?>" height="80px;" width="80px;">
+                                        <img src="uploads/<?php echo htmlspecialchars($row['image'], ENT_QUOTES, 'UTF-8'); ?>" height="80px;" width="80px;">
                                         <input class="form-control" type="file" name="image" >
-                                            <input type="hidden" name="old_image" value="<?php echo $row['image']; ?>">
+                                            <input type="hidden" name="old_image" value="<?php echo htmlspecialchars($row['image'], ENT_QUOTES, 'UTF-8'); ?>">
 
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label class="control-label">Thumb Image</label>
-                                        <img src="uploads/<?php echo $row['thumb_image']; ?>" height="80px;" width="80px;">
+                                        <img src="uploads/<?php echo htmlspecialchars($row['thumb_image'], ENT_QUOTES, 'UTF-8'); ?>" height="80px;" width="80px;">
                                         <input class="form-control" type="file" name="thumb_image" >
-                                        <input type="hidden" name="old_thumb" value="<?php echo $row['thumb_image']; ?>">
+                                        <input type="hidden" name="old_thumb" value="<?php echo htmlspecialchars($row['thumb_image'], ENT_QUOTES, 'UTF-8'); ?>">
                                     </div>
                                     <div class="form-group col-md-12">
                                         <label class="control-label">Description</label><span
                                             style="color:red;">*</span>
-                                        <textarea class="form-control" type="text" name="description">
-                                            <?php echo $row['description']; ?>"
-                                        </textarea>
+                                        <textarea class="form-control" type="text" name="description" id="description" required><?php echo htmlspecialchars($row['description'], ENT_QUOTES, 'UTF-8'); ?></textarea>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label class="control-label">Meta Title</label><span
+                                            style="color:red;">*</span>
+                                        <input class="form-control"
+                                            type="text"
+                                            name="meta_title"
+                                            minlength="30"
+                                            maxlength="60"
+                                            value="<?php echo htmlspecialchars($row['meta_title'], ENT_QUOTES, 'UTF-8'); ?>"
+                                            required>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label class="control-label">Keywords</label><span
+                                            style="color:red;">*</span>
+                                        <input class="form-control"
+                                            type="text"
+                                            name="keywords"
+                                            maxlength="255"
+                                            value="<?php echo htmlspecialchars($row['keywords'], ENT_QUOTES, 'UTF-8'); ?>"
+                                            required>
+                                    </div>
+                                    <div class="form-group col-md-12">
+                                        <label class="control-label">Meta Description</label><span
+                                            style="color:red;">*</span>
+                                        <textarea class="form-control"
+                                            name="meta_description"
+                                            minlength="50"
+                                            maxlength="160"
+                                            required
+                                            rows="4"><?php echo htmlspecialchars($row['meta_description'], ENT_QUOTES, 'UTF-8'); ?></textarea>
                                     </div>
                                     
                                 </div>
