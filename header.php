@@ -1,0 +1,729 @@
+<?php ///error_reporting(0);
+include('admin/config.php');
+
+$record = mysqli_query($conn,"select * from configuration");
+$row = mysqli_fetch_assoc($record);
+
+$email    = $row['email'];
+$mobile   = $row['mobile'];
+$time     = $row['time_value'];
+$facebook = $row['facebook'];
+$linkedin = $row['linkedin'];
+$map      = $row['map'];
+$address  = $row['address'];
+$mailSubject = rawurlencode('Website enquiry from Singhania Refrigeration');
+$mailHref = 'mailto:' . rawurlencode($email) . '?subject=' . $mailSubject;
+?>
+
+<?php
+// --- Active menu helpers (robust) ---
+$uriPath = '';
+if (!empty($_SERVER['SCRIPT_NAME'])) {
+  $uriPath = $_SERVER['SCRIPT_NAME'];              // /folder/about-us.php
+} elseif (!empty($_SERVER['REQUEST_URI'])) {
+  $uriPath = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH) ?: '';
+}
+$curBase = basename($uriPath) ?: 'index.php';      // about-us.php or index.php
+
+if (!function_exists('isActive')) {
+  function isActive(string $page, string $curBase): string {
+    return strcasecmp($page, $curBase) === 0 ? 'current-menu-item' : '';
+  }
+}
+if (!function_exists('isActiveA')) {
+  function isActiveA(string $page, string $curBase): string {
+    return strcasecmp($page, $curBase) === 0 ? 'active' : '';
+  }
+}
+if (!function_exists('anyActive')) {
+  function anyActive(array $pages, string $curBase): string {
+    $cur = strtolower($curBase);
+    foreach ($pages as $p) { if (strtolower($p) === $cur) return 'current-menu-item'; }
+    return '';
+  }
+}
+
+$productsPages = [
+  'truck-ac.php','truck-refrigerator-container.php','cold-storage-refrigeration-units.php',
+  'compressor-rack-system.php','ammonia-refrigeration-units.php','ripening-systems.php',
+  'multideck-cabinet.php','iqf.php','doors-ca-doors.php','panels.php',
+  'dock-shelter-dock-leveler.php','heavy-duty-racks.php','products.php'
+];
+$coldStoragePages = [
+  'turnkey-solution.php','segments-wise.php','cold-chain-refrigeration-ca-store-freon-ammonia.php',
+  'quality-monitoring-solution.php','ware-house-management.php','transport-management.php',
+  'transport-refrigeration.php'
+];
+?>
+
+<style>
+/* (your existing CSS unchanged) */
+.full-width-header .rs-header .menu-area .logo-area img { transition:.4s; -webkit-transition:.4s; max-height:115px; }
+.full-width-header .rs-header .menu-area.sticky .logo-area img { max-height:70px; }
+.full-width-header .rs-header .menu-area .main-menu .rs-menu ul.nav-menu li { display:inline-block; margin-right:20px !important; padding:0; }
+.full-width-header .rs-header .menu-area .main-menu .rs-menu ul.nav-menu li a { transition:all .3s ease; font-size:13px !important; }
+.readon-custom { outline:none; padding:11px 11px; border:none; border-radius:10px; display:inline-block; text-transform:uppercase; font-size:13px; font-family:'Poppins',sans-serif; font-weight:500; color:#fff; background:#082243; transition:all .3s ease; }
+.full-width-header .rs-header .menu-area.sticky .expand-btn-inner li.search-parent { display:block; }
+
+.full-width-header .rs-header .menu-area { padding:10px 0; }
+.full-width-header .rs-header .menu-area .container .row{ align-items:center; }
+.full-width-header .rs-header .menu-area .rs-menu-area{ display:flex; align-items:center; justify-content:space-between; }
+.full-width-header .rs-header .menu-area .rs-menu-area .main-menu{ flex:1; }
+
+.full-width-header .rs-header .menu-area .main-menu .rs-menu ul.nav-menu{ display:flex; align-items:center; gap:12px; margin:0; }
+.full-width-header .rs-header .menu-area .main-menu .rs-menu ul.nav-menu > li{ margin:0 !important; }
+
+:root{ --navNavy:#0e2344; }
+
+.full-width-header .rs-header .menu-area .main-menu .rs-menu ul.nav-menu > li > a{
+  display:inline-flex; align-items:center; height:50px; padding:0 14px; border-radius:10px;
+  line-height:1; font-weight:600; letter-spacing:.2px; color:#0f2442;
+  transition:background .2s ease, color .2s ease, box-shadow .2s ease, transform .08s ease;
+}
+.full-width-header .rs-header .menu-area .main-menu .rs-menu ul.nav-menu > li > a:hover,
+.full-width-header .rs-header .menu-area .main-menu .rs-menu ul.nav-menu > li > a:focus,
+.full-width-header .rs-header .menu-area .main-menu .rs-menu ul.nav-menu > li.current-menu-item > a{
+  background:var(--navNavy); color:#fff !important; box-shadow:0 6px 16px rgba(14,35,68,.22); transform:translateY(-1px);
+}
+.full-width-header .rs-header .menu-area .main-menu .rs-menu ul.nav-menu > li{ background:transparent !important; }
+
+.menu-cta{ margin-left:16px; display:inline-flex; align-items:center; }
+.menu-cta.menu-cta--flush{ margin-left:0; }
+.menu-cta .btn-cfa{
+  display:inline-flex; align-items:center; height:50px; padding:0 18px; border-radius:12px;
+  background:var(--navNavy); color:#fff !important; font-weight:700; text-decoration:none;
+  box-shadow:0 8px 22px rgba(14,35,68,.28); transition:transform .1s ease, box-shadow .2s ease, background .2s ease;
+  width: 130px !important;
+}
+.menu-cta .btn-cfa:hover{ transform:translateY(-1px); background:#132e5f; color:#fff !important; box-shadow:0 12px 28px rgba(14,35,68,.34); }
+.full-width-header .rs-header .menu-area.sticky .menu-cta .btn-cfa{ height:46px; padding:0 16px; border-radius:10px; }
+@media (max-width:991px){ .menu-cta{ display:none; } }
+
+.full-width-header .rs-header .menu-area .main-menu .rs-menu ul.nav-menu > li .sub-menu{
+  margin-top:12px; border-radius:12px; padding:10px 8px; box-shadow:0 18px 40px rgba(0,0,0,.18); border:1px solid rgba(0,0,0,.06);
+}
+.full-width-header .rs-header .menu-area .main-menu .rs-menu ul.nav-menu > li .sub-menu li a{
+  border-radius:8px; padding:10px 12px; line-height:1.2;
+}
+.full-width-header .rs-header .menu-area .main-menu .rs-menu ul.nav-menu > li .sub-menu li a:hover{
+  background:rgba(14,35,68,.08); color:#fff !important;
+}
+
+/* Mobile/off-canvas (unchanged) */
+.right_menu_togle{ position:fixed; top:0; right:-300px; width:300px; height:100%; background:#f8f8f8; box-shadow:-2px 0 5px rgba(0,0,0,.2); transition:right .3s ease-in-out; z-index:1050; overflow-y:auto; padding-top:50px; padding-bottom:20px; box-sizing:border-box; }
+.right_menu_togle.open{ right:0; }
+@media (max-width:991px){ .rs-menu{ display:none; } .mobile-menu{ display:block; } .rs-menu-area{ justify-content:flex-end; } .menu-cta{ margin-left:15px; } }
+@media (min-width:992px){ .mobile-menu{ display:none; } .right_menu_togle{ right:-300px !important; visibility:hidden; } }
+.body-overlay{ position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,.5); z-index:1040; display:none; }
+.body-overlay.active{ display:block; }
+.logo-area.logo-area--tall{ max-height:160px; }
+
+.mobile-nav-menu{ list-style:none; margin:0; padding:0 20px; }
+.mobile-nav-menu > li{ border-bottom:1px solid #eee; margin-bottom:0; }
+.mobile-nav-menu > li:last-child{ border-bottom:none; }
+.mobile-nav-menu a{ display:block; padding:12px 0; color:#333; text-decoration:none; font-size:16px; font-weight:500; }
+.mobile-nav-menu a:hover{ color:#007bff; }
+.mobile-nav-menu .sub-menu{ list-style:none; margin:0; padding:0; display:none; background:#f0f0f0; padding-left:15px; }
+.mobile-nav-menu .sub-menu li a{ padding:10px 0; font-size:15px; color:#555; }
+.mobile-nav-menu .sub-menu.open{ display:block; }
+.mobile-nav-menu .has-submenu > a{ position:relative; padding-right:30px; }
+.mobile-nav-menu .has-submenu > a::after{ content:"\f105"; font-family:'FontAwesome'; position:absolute; right:0; top:50%; transform:translateY(-50%); transition:transform .3s ease; }
+.mobile-nav-menu .has-submenu.active > a::after{ transform:translateY(-50%) rotate(90deg); }
+
+.full-width-header .rs-header .menu-area .main-menu .rs-menu ul.nav-menu > li > a.active{
+  background:var(--navNavy); color:#fff !important; box-shadow:0 6px 16px rgba(14,35,68,.22); transform:translateY(-1px);
+}
+
+/**/
+/* =========================
+   GROUP WEBSITES DROPDOWN (TOP BAR)
+========================= */
+.toolbar-sl-share{
+  display:flex;
+  align-items:center;
+  justify-content:space-around;
+  gap:14px;
+}
+.toolbar-sl-share > ul{ margin:0; }
+
+.group-sites{ position:relative; }
+
+.group-sites-btn{
+  border:none;
+  outline:none;
+  cursor:pointer;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  height:44px;
+  padding:0 14px;
+  border-radius:999px;
+  background: rgba(255,255,255,.12);
+  color:#fff;
+  font-weight:800;
+  font-size:13px;
+  box-shadow:0 10px 26px rgba(0,0,0,.18);
+  backdrop-filter: blur(8px);
+  transition: transform .12s ease, box-shadow .2s ease, background .2s ease;
+}
+.group-sites-btn:hover{
+  transform: translateY(-1px);
+  background: rgba(255,255,255,.18);
+  box-shadow:0 14px 32px rgba(0,0,0,.22);
+}
+.group-sites-btn i{ font-size:14px; opacity:.95; }
+
+.group-sites-btn .gs-text{
+  display:flex;
+  flex-direction:column;
+  line-height:1.05;
+  text-align:left;
+}
+.group-sites-btn .gs-title 
+{  
+    font-size: 12px;
+    opacity: .95;
+    font-family: sans-serif;
+    font-weight: 600;
+}
+.group-sites-btn .gs-sub{ font-size:11px; opacity:.85; font-weight:700; }
+.group-sites-btn .gs-caret{ font-size:11px; opacity:.9; }
+
+.group-sites-menu{
+    position: absolute;
+    top: 49px;
+    right: 0;
+    min-width: 250px;
+    padding: 10px;
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, .18);
+    border: 1px solid rgba(0, 0, 0, .06);
+    display: none;
+    z-index: 99999;
+    font-family: sans-serif;
+    font-weight: 600;
+}
+.group-sites-menu a{
+  display:block;
+  padding:8px 12px;
+  border-radius:10px;
+  text-decoration:none;
+  color:#0f2442;
+  font-weight:800;
+  font-size:13px;
+}
+
+.full-width-header .toolbar-area .toolbar-sl-share ul li {
+    padding: 11px 3px;
+}
+.group-sites-menu a:hover{
+  background: rgba(14,35,68,.08);
+}
+.group-sites.open .group-sites-menu{ display:block; }
+.group-sites.open .gs-caret{ transform: rotate(180deg); }
+
+/* Mobile: compact */
+@media (max-width: 767px){
+  .group-sites-btn{
+    height:40px;
+    padding:0 12px;
+    gap:8px;
+    font-size:12px;
+  }
+  .group-sites-btn .gs-title{ font-size:11px; }
+  .group-sites-btn .gs-sub{ display:none; }
+  .group-sites-menu{ top:48px; min-width:220px; }
+}
+
+</style>
+
+
+<div class="full-width-header">
+  <!-- Toolbar -->
+  <div class="toolbar-area hidden-md">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="toolbar-contact">
+            <ul>
+              <li><i class="fa fa-envelope"></i><a href="<?php echo htmlspecialchars($mailHref, ENT_QUOTES, 'UTF-8'); ?>"><?php echo htmlspecialchars($email, ENT_QUOTES, 'UTF-8'); ?></a></li>
+              <li><i class="fa fa-phone"></i><a href="tel:+91<?php echo $mobile; ?>"> +91-<?php echo $mobile; ?> / +91-7303099094 / +91-9718097170</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="toolbar-sl-share">
+            <ul>
+                <li><a href="https://www.facebook.com/profile.php?id=61579480251463"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="https://x.com/SinghaniaR59102"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="https://www.instagram.com/singhaniarefrigeration/"><i class="fa fa-instagram"></i></a></li>
+                <li><a href="https://www.linkedin.com/company/singhania-refrigeration-and-supply-chain-consultancy/"><i class="fa fa-linkedin-square"></i></a></li>
+                <li><a href="https://www.youtube.com/channel/UC-g2bewulBb2oGjPGIDAaJA"><i class="fa fa-youtube-play"></i></a></li>
+            </ul>
+            <div class="group-sites" id="groupSites">
+              <button type="button" class="group-sites-btn" id="groupSitesBtn" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-globe"></i>
+                <span class="gs-text">
+                  <span class="gs-title">Group Websites</span>
+                  <!--<span class="gs-sub">Select Website</span>-->
+                </span>
+                <i class="fa fa-chevron-down gs-caret"></i>
+              </button>
+            
+              <div class="group-sites-menu" id="groupSitesMenu" role="menu" aria-label="Group Websites">
+                <a role="menuitem" href="https://singhanialogistics.in/" target="_blank" rel="noopener">Singhania Logistics</a>
+                <a role="menuitem" href="https://singhaniaretail.com/" target="_blank" rel="noopener">Singhania Retail</a>
+                <a role="menuitem" href="https://singhaniaretail.com/" target="_blank" rel="noopener">Singhania Retail Exim</a>
+                <a role="menuitem" href="https://singhaniafoundation.com/" target="_blank" rel="noopener">Singhania Foundation</a>
+                <a role="menuitem" href="https://globalsoulhealing.com/" target="_blank" rel="noopener">Global Soul Healing</a>
+                <a role="menuitem" href="https://singhaniaroyalfurniture.com/" target="_blank" rel="noopener">Singhania Royal Furniture</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header id="rs-header" class="rs-header">
+    <div class="menu-area menu-sticky">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-2">
+            <div class="logo-area logo-area--tall">
+              <a href="index.php"><img src="assets/images/logo1.png" alt="logo"></a>
+            </div>
+          </div>
+          <div class="col-lg-10 text-right">
+            <div class="rs-menu-area d-flex align-items-center justify-content-between">
+              <div class="main-menu flex-grow-1">
+                <a class="rs-menu-toggle"><i class="fa fa-bars"></i></a>
+
+                <!-- ===== DESKTOP MENU (updated to use helpers) ===== -->
+                <nav class="rs-menu pr-50">
+                  <ul class="nav-menu">
+                    <li class="menu-item <?php echo isActive('index.php', $curBase); ?>">
+                      <a class="<?php echo isActiveA('index.php', $curBase); ?>" href="index.php">Home</a>
+                    </li>
+
+                    <li class="menu-item <?php echo isActive('about-us.php', $curBase); ?>">
+                      <a class="<?php echo isActiveA('about-us.php', $curBase); ?>" href="about-us.php">About</a>
+                    </li>
+
+                    <li class="menu-item  <?php echo anyActive($productsPages, $curBase); ?>">
+                      <a href="products.php" class="<?php echo isActiveA('products.php', $curBase); ?>">Products</a>
+                      <ul class="sub-menu">
+                        <li class="<?php echo isActive('truck-ac.php', $curBase); ?>">
+                          <a class="<?php echo isActiveA('truck-ac.php', $curBase); ?>" href="truck-ac.php">Truck’s AC</a>
+                        </li>
+                        <li class="<?php echo isActive('truck-refrigerator-container.php', $curBase); ?>">
+                          <a class="<?php echo isActiveA('truck-refrigerator-container.php', $curBase); ?>" href="truck-refrigerator-container.php">Truck’s Refrigerator Container</a>
+                        </li>
+                        <li class="<?php echo isActive('cold-storage-refrigeration-units.php', $curBase); ?>">
+                          <a class="<?php echo isActiveA('cold-storage-refrigeration-units.php', $curBase); ?>" href="cold-storage-refrigeration-units.php">Cold Storage Refrigeration Units</a>
+                        </li>
+                        <li class="<?php echo isActive('compressor-rack-system.php', $curBase); ?>">
+                          <a class="<?php echo isActiveA('compressor-rack-system.php', $curBase); ?>" href="compressor-rack-system.php">Compressor Rack System</a>
+                        </li>
+                        <li class="<?php echo isActive('ammonia-refrigeration-units.php', $curBase); ?>">
+                          <a class="<?php echo isActiveA('ammonia-refrigeration-units.php', $curBase); ?>" href="ammonia-refrigeration-units.php">Ammonia Refrigeration Units</a>
+                        </li>
+                        <li class="<?php echo isActive('ripening-systems.php', $curBase); ?>">
+                          <a class="<?php echo isActiveA('ripening-systems.php', $curBase); ?>" href="ripening-systems.php">Ripening Systems</a>
+                        </li>
+                        <li class="<?php echo isActive('multideck-cabinet.php', $curBase); ?>">
+                          <a class="<?php echo isActiveA('multideck-cabinet.php', $curBase); ?>" href="multideck-cabinet.php">Multideck Cabinet</a>
+                        </li>
+                        <li class="<?php echo isActive('iqf.php', $curBase); ?>">
+                          <a class="<?php echo isActiveA('iqf.php', $curBase); ?>" href="iqf.php">IQF (Individual Quick Freeze)</a>
+                        </li>
+                        <li class="<?php echo isActive('doors-ca-doors.php', $curBase); ?>">
+                          <a class="<?php echo isActiveA('doors-ca-doors.php', $curBase); ?>" href="doors-ca-doors.php">Doors &amp; CA Doors</a>
+                        </li>
+                        <li class="<?php echo isActive('panels.php', $curBase); ?>">
+                          <a class="<?php echo isActiveA('panels.php', $curBase); ?>" href="panels.php">Puff Panels</a>
+                        </li>
+                        <li class="<?php echo isActive('dock-shelter-dock-leveler.php', $curBase); ?>">
+                          <a class="<?php echo isActiveA('dock-shelter-dock-leveler.php', $curBase); ?>" href="dock-shelter-dock-leveler.php">Dock Shelter &amp; Dock Leveler</a>
+                        </li>
+                        <li class="<?php echo isActive('heavy-duty-racks.php', $curBase); ?>">
+                          <a class="<?php echo isActiveA('heavy-duty-racks.php', $curBase); ?>" href="heavy-duty-racks.php">Heavy Duty Racks</a>
+                        </li>
+                      </ul>
+                    </li>
+
+                    <li class="menu-item <?php echo isActive('consulting.php', $curBase); ?>">
+                      <a class="<?php echo isActiveA('consulting.php', $curBase); ?>" href="consulting.php">Consulting</a>
+                    </li>
+                    <!--  menu-item-has-children -->
+                    <li class="menu-item <?php echo anyActive($coldStoragePages, $curBase); ?>">  
+                      <a href="#">Cold Storage Solutions</a>
+                      <ul class="sub-menu">
+                        <li class="<?php echo isActive('turnkey-solution.php', $curBase); ?>">
+                          <a class="<?php echo isActiveA('turnkey-solution.php', $curBase); ?>" href="turnkey-solution.php">Turnkey Solution</a>
+                        </li>
+                        <li class="<?php echo isActive('segments-wise.php', $curBase); ?>">
+                          <a class="<?php echo isActiveA('segments-wise.php', $curBase); ?>" href="segments-wise.php">Segment Wise Solutions</a>
+                        </li>
+                        <li class="<?php echo isActive('cold-chain-refrigeration-ca-store-freon-ammonia.php', $curBase); ?>">
+                          <a class="<?php echo isActiveA('cold-chain-refrigeration-ca-store-freon-ammonia.php', $curBase); ?>" href="cold-chain-refrigeration-ca-store-freon-ammonia.php">Cold Chain Refrigeration, CA Store, Frozen/Ammonia</a>
+                        </li>
+                        <li class="<?php echo isActive('quality-monitoring-solution.php', $curBase); ?>">
+                          <a class="<?php echo isActiveA('quality-monitoring-solution.php', $curBase); ?>" href="quality-monitoring-solution.php">Quality Monitoring Solution</a>
+                        </li>
+                        <li class="<?php echo isActive('ware-house-management.php', $curBase); ?>">
+                          <a class="<?php echo isActiveA('ware-house-management.php', $curBase); ?>" href="ware-house-management.php">Ware House Management System</a>
+                        </li>
+                        <li class="<?php echo isActive('transport-management.php', $curBase); ?>">
+                          <a class="<?php echo isActiveA('transport-management.php', $curBase); ?>" href="transport-management.php">Transport Management System</a>
+                        </li>
+                        <li class="<?php echo isActive('transport-refrigeration.php', $curBase); ?>">
+                          <a class="<?php echo isActiveA('transport-refrigeration.php', $curBase); ?>" href="transport-refrigeration.php">Transport Refrigeration</a>
+                        </li>
+                      </ul>
+                    </li>
+
+                    <li class="menu-item <?php echo isActive('contact.php', $curBase); ?>">
+                      <a class="<?php echo isActiveA('contact.php', $curBase); ?>" href="contact.php">Contact</a>
+                    </li>
+                  </ul>
+                </nav>
+                <!-- ===== /DESKTOP MENU ===== -->
+              </div>
+
+              <!-- right-aligned CTA -->
+              <div class="menu-cta">
+                <a class="btn-cfa" href="consultancy-cfa-training-services.php">CFA Training</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Off-canvas menu (already using helpers) -->
+    <nav class="right_menu_togle hidden-md">
+      <div class="close-btn">
+        <span id="nav-close" class="humburger">
+          <button type="button" class="close" aria-label="Close" data-dismiss="modal">&times;</button>
+        </span>
+      </div>
+      <div class="canvas-menu-content">
+        <ul class="nav-menu">
+          <li class="menu-item <?php echo isActive('index.php', $curBase); ?>">
+            <a class="<?php echo isActiveA('index.php', $curBase); ?>" href="index.php">Home</a>
+          </li>
+          <li class="menu-item <?php echo isActive('about-us.php', $curBase); ?>">
+            <a class="<?php echo isActiveA('about-us.php', $curBase); ?>" href="about-us.php">About Us</a>
+          </li>
+          <li class="menu-item <?php echo anyActive($productsPages, $curBase); ?>">
+            <a href="products.php">Products</a>
+            <ul class="sub-menu">
+              <li class="<?php echo isActive('truck-ac.php', $curBase); ?>"><a class="<?php echo isActiveA('truck-ac.php', $curBase); ?>" href="truck-ac.php">Truck’s AC</a></li>
+              <li class="<?php echo isActive('truck-refrigerator-container.php', $curBase); ?>"><a class="<?php echo isActiveA('truck-refrigerator-container.php', $curBase); ?>" href="truck-refrigerator-container.php">Truck’s Refrigerator Container</a></li>
+              <li class="<?php echo isActive('cold-storage-refrigeration-units.php', $curBase); ?>"><a class="<?php echo isActiveA('cold-storage-refrigeration-units.php', $curBase); ?>" href="cold-storage-refrigeration-units.php">Cold Storage Refrigeration Units</a></li>
+              <li class="<?php echo isActive('compressor-rack-system.php', $curBase); ?>"><a class="<?php echo isActiveA('compressor-rack-system.php', $curBase); ?>" href="compressor-rack-system.php">Compressor Rack System</a></li>
+              <li class="<?php echo isActive('ammonia-refrigeration-units.php', $curBase); ?>"><a class="<?php echo isActiveA('ammonia-refrigeration-units.php', $curBase); ?>" href="ammonia-refrigeration-units.php">Ammonia Refrigeration Units</a></li>
+              <li class="<?php echo isActive('ripening-systems.php', $curBase); ?>"><a class="<?php echo isActiveA('ripening-systems.php', $curBase); ?>" href="ripening-systems.php">Ripening Systems</a></li>
+              <li class="<?php echo isActive('multideck-cabinet.php', $curBase); ?>"><a class="<?php echo isActiveA('multideck-cabinet.php', $curBase); ?>" href="multideck-cabinet.php">Multideck Cabinet</a></li>
+              <li class="<?php echo isActive('iqf.php', $curBase); ?>"><a class="<?php echo isActiveA('iqf.php', $curBase); ?>" href="iqf.php">IQF (Individual Quick Freeze)</a></li>
+              <li class="<?php echo isActive('doors-ca-doors.php', $curBase); ?>"><a class="<?php echo isActiveA('doors-ca-doors.php', $curBase); ?>" href="doors-ca-doors.php">Doors &amp; CA Doors</a></li>
+              <li class="<?php echo isActive('panels.php', $curBase); ?>"><a class="<?php echo isActiveA('panels.php', $curBase); ?>" href="panels.php">Puff Panels</a></li>
+              <li class="<?php echo isActive('dock-shelter-dock-leveler.php', $curBase); ?>"><a class="<?php echo isActiveA('dock-shelter-dock-leveler.php', $curBase); ?>" href="dock-shelter-dock-leveler.php">Dock Shelter &amp; Dock Leveler</a></li>
+              <li class="<?php echo isActive('heavy-duty-racks.php', $curBase); ?>"><a class="<?php echo isActiveA('heavy-duty-racks.php', $curBase); ?>" href="heavy-duty-racks.php">Heavy Duty Racks</a></li>
+            </ul>
+          </li>
+          <li class="menu-item <?php echo isActive('consulting.php', $curBase); ?>">
+            <a class="<?php echo isActiveA('consulting.php', $curBase); ?>" href="consulting.php">Consulting</a>
+          </li>
+          <li class="menu-item <?php echo anyActive($coldStoragePages, $curBase); ?>">
+            <a href="#">Cold Storage Solutions</a>
+            <ul class="sub-menu">
+              <li class="<?php echo isActive('turnkey-solution.php', $curBase); ?>"><a class="<?php echo isActiveA('turnkey-solution.php', $curBase); ?>" href="turnkey-solution.php">Turnkey Solution</a></li>
+              <li class="<?php echo isActive('segments-wise.php', $curBase); ?>"><a class="<?php echo isActiveA('segments-wise.php', $curBase); ?>" href="segments-wise.php">Segment Wise Solutions</a></li>
+              <li class="<?php echo isActive('cold-chain-refrigeration-ca-store-freon-ammonia.php', $curBase); ?>"><a class="<?php echo isActiveA('cold-chain-refrigeration-ca-store-freon-ammonia.php', $curBase); ?>" href="cold-chain-refrigeration-ca-store-freon-ammonia.php">Cold Chain Refrigeration, CA Store, Frozen/Ammonia</a></li>
+              <li class="<?php echo isActive('quality-monitoring-solution.php', $curBase); ?>"><a class="<?php echo isActiveA('quality-monitoring-solution.php', $curBase); ?>" href="quality-monitoring-solution.php">Quality Monitoring Solution</a></li>
+              <li class="<?php echo isActive('ware-house-management.php', $curBase); ?>"><a class="<?php echo isActiveA('ware-house-management.php', $curBase); ?>" href="ware-house-management.php">Ware House Management System</a></li>
+              <li class="<?php echo isActive('transport-management.php', $curBase); ?>"><a class="<?php echo isActiveA('transport-management.php', $curBase); ?>" href="transport-management.php">Transport Management System</a></li>
+              <li class="<?php echo isActive('transport-refrigeration.php', $curBase); ?>"><a class="<?php echo isActiveA('transport-refrigeration.php', $curBase); ?>" href="transport-refrigeration.php">Transport Refrigeration</a></li>
+            </ul>
+          </li>
+          <li class="menu-item <?php echo isActive('contact.php', $curBase); ?>">
+            <a class="<?php echo isActiveA('contact.php', $curBase); ?>" href="contact.php">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  
+  <style>
+      .float-logistics-btn{
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  z-index: 999999;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 44px;
+  padding: 0 14px;
+  border-radius: 999px;
+  background: #f471b5;
+  color: #082243 !important;
+  font-weight: 700;
+  font-size: 13px;
+  text-decoration: none !important;
+  box-shadow: 0 10px 26px rgba(0,0,0,.22);
+  backdrop-filter: blur(8px);
+  transition: transform .12s ease, box-shadow .2s ease, background .2s ease;
+}
+
+.float-logistics-btn:hover{
+  transform: translateY(-1px);
+  background: rgba(19,46,95,.98);
+  box-shadow: 0 14px 32px rgba(0,0,0,.26);
+  color: #fff !important;
+}
+
+.float-logistics-btn .dot{
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #2ee59d;
+  box-shadow: 0 0 0 4px rgba(46,229,157,.18);
+}
+
+/* mobile: thoda chhota */
+@media (max-width: 767px){
+  .float-logistics-btn{
+    top: 10px;
+    right: 70px;
+    height: 40px;
+    padding: 0 12px;
+    font-size: 12px;
+  }
+}
+
+/*other*/
+
+.float-sites{
+  position: fixed;
+  top: 78px;
+  right: 18px;
+  z-index: 999999;
+}
+
+.float-sites-btn{
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 44px;
+  padding: 0 14px;
+  border-radius: 999px;
+  background: rgba(14,35,68,.95);
+  color: #fff;
+  font-weight: 800;
+  font-size: 13px;
+  box-shadow: 0 10px 26px rgba(0,0,0,.22);
+  backdrop-filter: blur(8px);
+  transition: transform .12s ease, box-shadow .2s ease, background .2s ease;
+}
+
+.float-sites-btn:hover{
+  transform: translateY(-1px);
+  background: rgba(19,46,95,.98);
+  box-shadow: 0 14px 32px rgba(0,0,0,.26);
+}
+
+.float-sites-btn .dot{
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #2ee59d;
+  box-shadow: 0 0 0 4px rgba(46,229,157,.18);
+}
+
+.float-sites-btn .caret{
+  font-size: 12px;
+  opacity: .9;
+}
+
+.float-sites-menu{
+  position: absolute;
+  top: 52px;
+  right: 0;
+  min-width: 240px;
+  padding: 10px;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 18px 40px rgba(0,0,0,.18);
+  border: 1px solid rgba(0,0,0,.06);
+  display: none;
+}
+
+.float-sites-menu a{
+  display: block;
+  padding: 10px 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #0f2442;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.float-sites-menu a:hover{
+  background: rgba(14,35,68,.08);
+}
+
+/* Hover open on desktop */
+.float-sites:hover .float-sites-menu{
+  display: block;
+}
+
+/* Mobile adjustments */
+@media (max-width: 767px){
+    .float-sites {
+        top: 61px;
+        right: 70px;
+    }
+  .float-sites-btn{ height: 40px; padding: 0 12px; font-size: 12px; }
+  .float-sites-menu{ top: 48px; min-width: 220px; }
+}
+
+
+  </style>
+  
+  <!--<a href="https://singhanialogistics.in/" target="_blank" rel="noopener"-->
+  <!--     class="float-logistics-btn" aria-label="Open Singhania Logistics">-->
+  <!--    <span class="dot"></span>-->
+  <!--    Singhania Logistics-->
+  <!--  </a>-->
+    
+  <!--  <div class="float-sites">-->
+  <!--    <button type="button" class="float-sites-btn" aria-haspopup="true" aria-expanded="false">-->
+  <!--      <span class="dot"></span>-->
+  <!--      Other Websites-->
+  <!--      <i class="fa fa-chevron-down caret"></i>-->
+  <!--    </button>-->
+    
+  <!--    <div class="float-sites-menu" role="menu">-->
+  <!--      <a href="https://globalsoulhealing.com/" target="_blank" rel="noopener">Global Soul Healing</a>-->
+  <!--      <a href="https://singhaniaretail.com/" target="_blank" rel="noopener">Singhania Retails</a>-->
+  <!--      <a href="https://singhaniafoundation.com/" target="_blank" rel="noopener">Singhania Foundation</a>-->
+  <!--    </div>-->
+  <!--  </div>-->
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var btn = document.querySelector('.float-sites-btn');
+    var menu = document.querySelector('.float-sites-menu');
+    if (!btn || !menu) return;
+
+    function openMenu() {
+      menu.style.display = 'block';
+      btn.setAttribute('aria-expanded', 'true');
+    }
+
+    function closeMenu() {
+      menu.style.display = 'none';
+      btn.setAttribute('aria-expanded', 'false');
+    }
+
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      if (menu.style.display === 'block') {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+
+    document.addEventListener('click', function () {
+      closeMenu();
+    });
+
+    menu.addEventListener('click', function (e) {
+      e.stopPropagation();
+    });
+  });
+</script>
+
+
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(function() {
+  const $panel = $('.right_menu_togle');
+  function openMenu(){
+    if (!$('.body-overlay').length) $('body').append('<div class="body-overlay"></div>');
+    $('.body-overlay').addClass('active');
+    $('body').addClass('menu-open');
+    $panel.addClass('open');
+    $('.rs-menu-toggle').attr('aria-expanded','true');
+  }
+  function closeMenu(){
+    $panel.removeClass('open');
+    $('body').removeClass('menu-open');
+    $('.body-overlay').removeClass('active').one('transitionend', function(){ $(this).remove(); });
+    $('.mobile-nav-menu .sub-menu').removeClass('open').removeAttr('style');
+    $('.mobile-nav-menu .has-submenu').removeClass('active');
+    $('.rs-menu-toggle').attr('aria-expanded','false');
+  }
+  $('.rs-menu-toggle').on('click', function(e){ e.preventDefault(); openMenu(); });
+  $('#nav-close').on('click', function(e){ e.preventDefault(); closeMenu(); });
+  $(document).on('click', '.body-overlay', closeMenu);
+  $(document).on('keydown', function(e){ if (e.key === 'Escape') closeMenu(); });
+  $('.mobile-nav-menu').on('click', '.has-submenu > a', function(e){
+    e.preventDefault();
+    const $li = $(this).parent();
+    const $sub = $li.children('.sub-menu');
+    $('.mobile-nav-menu .has-submenu').not($li).removeClass('active').children('.sub-menu').slideUp(260).removeClass('open');
+    $li.toggleClass('active');
+    $sub.stop(true, true).slideToggle(260).toggleClass('open');
+  });
+  $(window).on('resize', function(){ if (window.innerWidth > 991) closeMenu(); });
+});
+</script>
+
+<script>
+(function(){
+  const wrap = document.getElementById('groupSites');
+  const btn  = document.getElementById('groupSitesBtn');
+  const menu = document.getElementById('groupSitesMenu');
+  if(!wrap || !btn || !menu) return;
+
+  function open(){
+    wrap.classList.add('open');
+    btn.setAttribute('aria-expanded','true');
+  }
+  function close(){
+    wrap.classList.remove('open');
+    btn.setAttribute('aria-expanded','false');
+  }
+  function toggle(e){
+    e.preventDefault();
+    e.stopPropagation();
+    wrap.classList.contains('open') ? close() : open();
+  }
+
+  btn.addEventListener('click', toggle);
+
+  document.addEventListener('click', function(e){
+    if(!wrap.contains(e.target)) close();
+  });
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') close();
+  });
+})();
+</script>
