@@ -16,7 +16,7 @@
   .g-40>[class*="col-"]{ margin-bottom:40px; }
 
   .h2{ font-size: clamp(26px, 3.4vw, 36px); line-height:1.5; color: var(--ink); font-weight:800; }
-  .lead{ font-size: clamp(15px, 1.7vw, 17px); color:#2c3e68; }
+  .lead{ font-size: clamp(15px, 1.7vw, 17px); color:#2c3e68; text-align: justify; }
   .eyebrow{ display:inline-block; font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:#9aa6c3; }
 
   /* Hero */
@@ -96,17 +96,16 @@
         </div>
         <div class="col-lg-7" data-aos="fade-left">
           <h2 class="h2 mb-12">Singhania Refrigeration: Empowering India’s Cold Chain</h2>
-          <p class="">
-            Singhania Refrigeration is one of India’s most trusted providers of advanced refrigeration
-            and cold chain solutions. Backed by a legacy of 25+ years from Singhania Logistics, we
-            deliver end-to-end cold storage, industrial refrigeration, and cold chain technologies for
-            diverse industries.
+          <p class="lead">
+            Singhania Refrigeration is one of India’s most trusted suppliers of 
+            advanced refrigeration and cold chain solutions. With the legacy of 
+            Singhania Logistics for over 25 years, we provide end-to-end cold storage. 
+            Singhania Refrigeration is one of the most trusted suppliers of advanced refrigeration and cold chain solutions in India. From concept to commissioning and farm to fork, factory to pharma, we offer precise temperature control, energy efficiency, and reliable performance at every stage of the supply chain. 
           </p>
-          <p>
-            From concept to commissioning and farm to fork, factory to pharma, we ensure precise
-            temperature control, energy efficiency, and reliable performance across every stage of the
-            supply chain. Our solutions include turnkey cold storage projects, blast freezers,
-            ripening chambers, and refrigerated warehouses designed to meet modern industry demands.
+          <p class="lead">Our solutions include turnkey cold storage projects, blast-freezers, ripening chambers, and refrigerated warehouses designed to meet modern industry demands. Singhania Logistics, with a legacy of 25+ years, backs us, and we provide end-to-end cold storage, industrial refrigeration,
+            and cold chain technologies for various industries.</p>
+          <p class="lead">
+            Designed for every stage of the supply chain from concept to commissioning, from farm to fork, from factory to pharma, we provide precise temperature control, energy efficiency, and reliable performance. We carry out complete cold storage projects, blast-freezers, ripening chambers, and refrigerated warehouses tailored to the needs of modern industry.
           </p>
 
           <h5 class="mt-20 mb-10">Our Legacy of Excellence</h5>

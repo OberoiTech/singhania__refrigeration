@@ -7,7 +7,7 @@
 
 $servername ="localhost";
 $username ="root";
-$password ="webkul";
+$password ="";
 $database ="refrigation";
 
 

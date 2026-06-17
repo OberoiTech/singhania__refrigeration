@@ -42,7 +42,7 @@
 /* ================= SECTION ================= */
 .section-pad{padding:70px 0 100px;}
 .h2{font-size:28px;font-weight:800;color:var(--ink);margin:28px 0 12px;}
-.lead{color:#2c3e68;font-size:16px;line-height:1.7;}
+.lead{color:#2c3e68;font-size:16px;line-height:1.7; text-align: justify;}
 
 /* ================= MAIN IMAGE ================= */
 .prod-media{
@@ -229,8 +229,8 @@
 </div>
 
 <h2 class="h2">Key Product Features</h2>
-<p class="lead">
-Singhania Refrigeration Truck's Refrigerator Containers are designed with a robust structure and high-performance PUF insulation...
+<p class="lead" >
+The refrigeration AC fitted in trucks manufactured by Singhania Refrigeration in Delhi is specifically manufactured in order to provide a highly efficient and reliable means of transport refrigeration for cold chain logistics in order to maintain the freshness of transported goods such as dairy products, fruits, vegetables, and frozen food. The refrigeration ACs fitted in trucks produced by Singhania Refrigeration in Delhi can operate under harsh climatic conditions prevailing in India because they have very efficient cooling system technology, effective ventilation, and superior insulation. Transport refrigeration in Delhi NCR is widely utilized by logistics and other companies engaged in the business of transporting goods in Delhi.
 </p>
 
 <!-- MID 2 IMAGES -->

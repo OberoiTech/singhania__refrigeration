@@ -1,0 +1,4 @@
+ALTER TABLE blogs
+ADD COLUMN IF NOT EXISTS meta_title VARCHAR(60) NULL AFTER description,
+ADD COLUMN IF NOT EXISTS meta_description VARCHAR(160) NULL AFTER meta_title,
+ADD COLUMN IF NOT EXISTS keywords VARCHAR(255) NULL AFTER meta_description;
