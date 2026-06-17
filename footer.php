@@ -26,7 +26,10 @@
             <img src="assets/images/logo1.png" alt="Singhania Refrigeration">
           </a>
           <p class="brand-copy">
-            Singhania Refrigeration is a trusted partner in cold chain and industrial refrigeration—cold rooms, CA/MA stores, ripening, compressor racks, ammonia/freon plants, PUF panels, dock shelters & warehouse infra with focus on efficiency, safety, and reliability.
+             Singhania Refrigeration is a trusted Delhi NCR-based industrial refrigeration and cold
+            storage solutions provider — cold rooms, CA/MA stores, ammonia/freon plants, ripening
+            chambers, IQF systems, compressor racks, PUF panels, dock shelters and transport
+            refrigeration — engineered for efficiency, safety and reliability across India.
           </p>
           <a class="btn-ghost" href="about-us.php">About Us</a>
           <ul class="social-pills">
@@ -282,7 +285,7 @@
   filter: drop-shadow(0 4px 14px rgba(0,0,0,.35));
   margin-bottom: 10px;
 }
-.brand-copy{ color: var(--footer-text); line-height: 1.7; margin-bottom: 14px; }
+.brand-copy{ color: var(--footer-text); line-height: 1.7; margin-bottom: 14px; text-align: justify; }
 .btn-ghost{
   display:inline-block;
   padding: 10px 14px;
