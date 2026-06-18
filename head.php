@@ -97,13 +97,24 @@ if (in_array(strtolower($file), ['about-us.php', 'about.php'], true)) {
               'description' => 'Singhania Refrigeration provides cold storage, ripening chamber installation and industrial refrigeration solutions across India for fruits and food storage.',
               'email' => !empty($email) ? $email : null,
               'telephone' => $schemaPhone,
-              'address' => [
-                  '@type' => 'PostalAddress',
-                  'streetAddress' => '$address',
-                  'addressLocality' => 'New Delhi',
-                  'addressRegion' => 'Delhi',
-                  'addressCountry' => 'IN',
-              ],
+
+               "address" => [
+                "@type"=> "PostalAddress",
+                "streetAddress"=> "C-19, Okhla Phase-I",
+                "addressLocality"=> "New Delhi",
+                "postalCode"=> "110020",
+                "addressCountry"=> "IN"
+               ],
+
+               'geo' =>[
+                 "@type"=> "GeoCoordinates",
+                 "latitude"=> "28.5355",
+                 "longitude"=> "77.2588"
+               ],
+
+                "areaServed"=> [
+                        "Delhi NCR", "Okhla", "South Delhi", "Noida", "Gurgaon", "Faridabad", "India"
+                ],
               'contactPoint' => [
                   '@type' => 'ContactPoint',
                   'contactType' => 'customer service',
@@ -140,6 +151,326 @@ if (in_array(strtolower($file), ['about-us.php', 'about.php'], true)) {
                   '@id' => $siteUrl . '#organization',
               ],
           ]);
+
+            $schemaProductList = sr_schema_filter([
+              '@context' => 'https://schema.org',
+              '@type' => 'ItemList',
+              '@id' => $siteUrl . '#product-item-list',
+              'name' => 'Singhania Refrigeration Product',
+              'description' => 'Cold storage, industrial refrigeration and cold chain services offered by Singhania Refrigeration across India.',
+              'itemListElement' => [
+                  [
+                      '@type' => 'ListItem',
+                      'position' => 1,
+                      'item' => [
+                          '@type' => 'Product',
+                          'name' => 'Truck AC',
+                          'description' => 'Reliable transport cooling with fast pull-down, energy efficiency, and nationwide AMC support.',
+                          'provider' => ['@id' => $siteUrl . '#organization'],
+                          'areaServed' => 'IN',
+                      ],
+                  ],
+                  [
+                      '@type' => 'ListItem',
+                      'position' => 2,
+                      'item' => [
+                          '@type' => 'Product',
+                          'name' => 'truck-refrigerator-container',
+                          'description' => 'Rugged insulated containers with reliable cooling to protect temperature-sensitive cargo end-to-end.',
+                          'provider' => ['@id' => $siteUrl . '#organization'],
+                          'areaServed' => 'IN',
+                      ],
+                  ],
+                  [
+                      '@type' => 'ListItem',
+                      'position' => 3,
+                      'item' => [
+                          '@type' => 'Product',
+                          'name' => 'cold-storage-refrigeration-units',
+                          'description' => 'Trusted, energy-efficient systems for warehouses and cold rooms with precise temperature control.',
+                          'provider' => ['@id' => $siteUrl . '#organization'],
+                          'areaServed' => 'IN',
+                      ],
+                  ],
+                  [
+                      '@type' => 'ListItem',
+                      'position' => 4,
+                      'item' => [
+                          '@type' => 'Product',
+                          'name' => 'compressor-rack-system',
+                          'description' => 'High-capacity, energy-efficient refrigeration for multi-room and industrial applications.',
+                          'provider' => ['@id' => $siteUrl . '#organization'],
+                          'areaServed' => 'IN',
+                      ],
+                  ],
+                  [
+                      '@type' => 'ListItem',
+                      'position' => 5,
+                      'item' => [
+                          '@type' => 'Product',
+                          'name' => 'ammonia-refrigeration-units',
+                          'description' => 'Eco-friendly, high-efficiency cooling built for heavy-duty industrial applications.',
+                          'provider' => ['@id' => $siteUrl . '#organization'],
+                          'areaServed' => 'IN',
+                      ],
+                  ],
+                  [
+                      '@type' => 'ListItem',
+                      'position' => 5,
+                      'item' => [
+                          '@type' => 'Product',
+                          'name' => 'ammonia-refrigeration-units',
+                          'description' => 'Eco-friendly, high-efficiency cooling built for heavy-duty industrial applications.',
+                          'provider' => ['@id' => $siteUrl . '#organization'],
+                          'areaServed' => 'IN',
+                      ],
+                  ],
+                  [
+                      '@type' => 'ListItem',
+                      'position' => 6,
+                      'item' => [
+                          '@type' => 'Product',
+                          'name' => 'ripening-systems',
+                          'description' => 'Controlled-atmosphere solutions for uniform, high-quality ripening.',
+                          'provider' => ['@id' => $siteUrl . '#organization'],
+                          'areaServed' => 'IN',
+                      ],
+                  ],
+                  [
+                      '@type' => 'ListItem',
+                      'position' => 7,
+                      'item' => [
+                          '@type' => 'Product',
+                          'name' => 'multideck-cabinet',
+                          'description' => 'High-visibility retail display with consistent, energy-efficient cooling.',
+                          'provider' => ['@id' => $siteUrl . '#organization'],
+                          'areaServed' => 'IN',
+                      ],
+                  ],
+                  [
+                      '@type' => 'ListItem',
+                      'position' => 8,
+                      'item' => [
+                          '@type' => 'Product',
+                          'name' => 'iqf',
+                          'description' => 'Eco-friendly, high-efficiency cooling built for heavy-duty industrial applications.',
+                          'provider' => ['@id' => $siteUrl . '#organization'],
+                          'areaServed' => 'IN',
+                      ],
+                  ],
+                  [
+                      '@type' => 'ListItem',
+                      'position' => 9,
+                      'item' => [
+                          '@type' => 'Product',
+                          'name' => 'doors-ca-doors',
+                          'description' => 'Durable, insulated doors with precision sealing for energy-efficient cold rooms.',
+                          'provider' => ['@id' => $siteUrl . '#organization'],
+                          'areaServed' => 'IN',
+                      ],
+                  ],
+                  [
+                      '@type' => 'ListItem',
+                      'position' => 10,
+                      'item' => [
+                          '@type' => 'Product',
+                          'name' => 'PUF panels',
+                          'description' => 'igh-performance insulated panels for energy-efficient cold rooms and warehouses.',
+                          'provider' => ['@id' => $siteUrl . '#organization'],
+                          'areaServed' => 'IN',
+                      ],
+                  ],
+                  [
+                      '@type' => 'ListItem',
+                      'position' => 11,
+                      'item' => [
+                          '@type' => 'Product',
+                          'name' => 'dock-shelter-dock-leveler',
+                          'description' => 'Reliable sealing & safe bridging for efficient cold chain loading operations.',
+                          'provider' => ['@id' => $siteUrl . '#organization'],
+                          'areaServed' => 'IN',
+                      ],
+                  ],
+                  [
+                      '@type' => 'ListItem',
+                      'position' => 12,
+                      'item' => [
+                          '@type' => 'Product',
+                          'name' => 'heavy-duty-racks',
+                          'description' => 'trength storage systems for optimized space, safety, and throughput.',
+                          'provider' => ['@id' => $siteUrl . '#organization'],
+                          'areaServed' => 'IN',
+                      ],
+                  ],
+                ] 
+          ]);
+
+          $schemaServiceItemList = sr_schema_filter([
+              '@context' => 'https://schema.org',
+              '@type' => 'ItemList',
+              '@id' => $siteUrl . '#service-item-list',
+              'name' => 'Singhania Refrigeration Services',
+              'description' => 'Cold storage, industrial refrigeration and cold chain services offered by Singhania Refrigeration across India.',
+              'itemListElement' => [
+                  [
+                      '@type' => 'ListItem',
+                      'position' => 1,
+                      'item' => [
+                          '@type' => 'Service',
+                          'name' => 'Turnkey Solution',
+                          'description' => 'Design and construction of turnkey cold storage facilities for food, pharma, dairy and logistics businesses.',
+                          'provider' => ['@id' => $siteUrl . '#organization'],
+                          'areaServed' => 'IN',
+                      ],
+                  ],
+                  [
+                      '@type' => 'ListItem',
+                      'position' => 2,
+                      'item' => [
+                          '@type' => 'Service',
+                          'name' => 'Segment Wise Solution',
+                          'description' => 'Tailored refrigeration & cold-chain designs for every industry we serve.',
+                          'provider' => ['@id' => $siteUrl . '#organization'],
+                          'areaServed' => 'IN',
+                      ],
+                  ],
+                  [
+                      '@type' => 'ListItem',
+                      'position' => 3,
+                      'item' => [
+                          '@type' => 'Service',
+                          'name' => 'Ammonia and Freon Refrigeration Plants',
+                          'description' => 'Industrial ammonia refrigeration and freon refrigeration plant solutions for cold storage applications.',
+                          'provider' => ['@id' => $siteUrl . '#organization'],
+                          'areaServed' => 'IN',
+                      ],
+                  ],
+                  [
+                      '@type' => 'ListItem',
+                      'position' => 4,
+                      'item' => [
+                          '@type' => 'Service',
+                          'name' => 'Quality Monitoring Solution',
+                          'description' => 'End-to-end monitoring across warehouse & transport—temperature, humidity, shelf life, spoilage detection and root-cause analysis at every stage of the cold chain.',
+                          'provider' => ['@id' => $siteUrl . '#organization'],
+                          'areaServed' => 'IN',
+                      ],
+                  ],
+                  [
+                      '@type' => 'ListItem',
+                      'position' => 5,
+                      'item' => [
+                          '@type' => 'Service',
+                          'name' => 'Ware House Management System',
+                          'description' => 'End-to-end WMS for cold chain—online bookings, inventory & pallet tracking, environment monitoring, real-time updates, and analytics.',
+                          'provider' => ['@id' => $siteUrl . '#organization'],
+                          'areaServed' => 'IN',
+                      ],
+                  ],
+                  [
+                      '@type' => 'ListItem',
+                      'position' => 6,
+                      'item' => [
+                          '@type' => 'Service',
+                          'name' => 'Transport Management System',
+                          'description' => 'Plan routes, monitor environment, alert on deviations, and measure delivery performance & productivity end-to-end.',
+                          'provider' => ['@id' => $siteUrl . '#organization'],
+                          'areaServed' => 'IN',
+                      ],
+                  ],
+                  [
+                      '@type' => 'ListItem',
+                      'position' => 7,
+                      'item' => [
+                          '@type' => 'Service',
+                          'name' => 'Transport Refrigeration',
+                          'description' => 'Refrigeration solutions for small & medium trucks and vans—fresh and frozen logistics with direct-drive, battery, split & monoblock options.',
+                          'provider' => ['@id' => $siteUrl . '#organization'],
+                          'areaServed' => 'IN',
+                      ],
+                  ],
+              ],
+          ]);
+
+          $schemaFAQPage = sr_schema_filter([
+              '@context' => 'https://schema.org',
+              '@type' => 'FAQPage',
+              '@id' => $schemaPageUrl . '#faq',
+              'mainEntity' => [
+                  [
+                      '@type' => 'Question',
+                      'name' => 'What services does Singhania Refrigeration offer?',
+                      'acceptedAnswer' => [
+                          '@type' => 'Answer',
+                          'text' => 'We offer turnkey cold storage construction, cold rooms and CA/MA stores, ammonia and freon refrigeration plants, IQF systems, ripening chambers, compressor rack systems, PUF panels, dock shelters, transport refrigeration and cold chain consulting.',
+                      ],
+                  ],
+                  [
+                      '@type' => 'Question',
+                      'name' => 'Where is Singhania Refrigeration located?',
+                      'acceptedAnswer' => [
+                          '@type' => 'Answer',
+                          'text' => 'Our office is at C-19, Okhla Phase-I, New Delhi – 110020. We serve clients across Delhi NCR — including Noida, Gurgaon and Faridabad — and execute projects pan-India.',
+                      ],
+                  ],
+                  [
+                      '@type' => 'Question',
+                      'name' => 'Which industries do you serve?',
+                      'acceptedAnswer' => [
+                          '@type' => 'Answer',
+                          'text' => 'We design cold storage and refrigeration systems for food processing, pharmaceuticals, dairy, agri-export and logistics businesses, with systems aligned to FSSAI and WHO-GMP standards.',
+                      ],
+                  ],
+                  [
+                      '@type' => 'Question',
+                      'name' => 'How experienced is the Singhania Refrigeration team?',
+                      'acceptedAnswer' => [
+                          '@type' => 'Answer',
+                          'text' => 'Our engineering team draws on 25 years of cold chain and logistics experience through the Singhania Group, delivering ammonia refrigeration, CA storage, IQF and transport refrigeration projects across India.',
+                      ],
+                  ],
+                  [
+                      '@type' => 'Question',
+                      'name' => 'How quickly will I hear back after submitting an enquiry?',
+                      'acceptedAnswer' => [
+                          '@type' => 'Answer',
+                          'text' => 'Our engineering team responds to all enquiries within 24 hours to discuss your cold storage or refrigeration requirements.',
+                      ],
+                  ],
+                  [
+                      '@type' => 'Question',
+                      'name' => 'What is controlled atmosphere storage?',
+                      'acceptedAnswer' => [
+                          '@type' => 'Answer',
+                          'text' => 'Controlled atmosphere (CA) storage is a cold storage method that regulates oxygen, carbon dioxide and humidity levels inside a sealed store, alongside temperature, to slow the ripening and respiration of fruits and vegetables. This extends shelf life far beyond standard refrigeration alone, making it the preferred storage format for agri-export businesses handling apples, pears and other long-storage produce.',
+                      ],
+                  ],
+                  [
+                      '@type' => 'Question',
+                      'name' => 'Ammonia vs freon refrigeration — which is better?',
+                      'acceptedAnswer' => [
+                          '@type' => 'Answer',
+                          'text' => 'Ammonia refrigeration plants are generally more energy-efficient and better suited to large-capacity industrial cold storage, but require stricter safety handling due to toxicity. Freon (HFC/HCFC) refrigeration systems are easier to maintain and commonly used in smaller cold rooms and retail cold storage. The right choice depends on capacity, budget and safety infrastructure.',
+                      ],
+                  ],
+                  [
+                      '@type' => 'Question',
+                      'name' => 'How does an IQF system work?',
+                      'acceptedAnswer' => [
+                          '@type' => 'Answer',
+                          'text' => 'An IQF (Individual Quick Freeze) machine rapidly freezes individual food items — such as seafood, fruit pieces or vegetables — using high-velocity cold air or cryogenic methods, so each piece freezes separately rather than clumping together. This locks in texture, nutrition and appearance, which is why IQF machine technology is the standard for export-quality frozen food production.',
+                      ],
+                  ],
+                  [
+                      '@type' => 'Question',
+                      'name' => 'How can I reduce cold storage energy consumption?',
+                      'acceptedAnswer' => [
+                          '@type' => 'Answer',
+                          'text' => 'Cold storage energy consumption can be reduced through high-efficiency compressors, properly sized PUF panel insulation, smart temperature controls, regular preventive maintenance and AMC services, and minimising door-opening losses with dock shelters and dock levelers. Singhania Refrigeration\'s energy-efficient refrigeration systems are engineered to cut running costs by up to 30% compared with conventional installations.',
+                      ],
+                  ],
+              ],
+          ]);
         ?>
         <script type="application/ld+json">
 <?php echo json_encode($schemaOrganization, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT); ?>
@@ -150,6 +481,13 @@ if (in_array(strtolower($file), ['about-us.php', 'about.php'], true)) {
         <script type="application/ld+json">
 <?php echo json_encode($schemaPage, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT); ?>
         </script>
+        <script type="application/ld+json">
+<?php echo json_encode($schemaProductList, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT); ?>
+        </script>
+        <script type="application/ld+json">
+<?php echo json_encode($schemaFAQPage, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT); ?>
+        </script>
+      
         <!-- favicon -->
         <link rel="apple-touch-icon" href="apple-touch-icon.png.html">
         <link rel="shortcut icon" type="image/x-icon" href="assets/images/logo.jpeg">

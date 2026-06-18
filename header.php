@@ -57,47 +57,88 @@ $coldStoragePages = [
 ?>
 
 <style>
-/* (your existing CSS unchanged) */
-.full-width-header .rs-header .menu-area .logo-area img { transition:.4s; -webkit-transition:.4s; max-height:115px; }
-.full-width-header .rs-header .menu-area.sticky .logo-area img { max-height:70px; }
-.full-width-header .rs-header .menu-area .main-menu .rs-menu ul.nav-menu li { display:inline-block; margin-right:20px !important; padding:0; }
+/* Header layout */
+.full-width-header .rs-header .menu-area { padding:14px 0; background:#fff; }
+.full-width-header .rs-header .menu-area .container .row{
+  align-items:center;
+  flex-wrap:nowrap;
+}
+.full-width-header .rs-header .menu-area .logo-area{
+  display:flex;
+  align-items:center;
+}
+.full-width-header .rs-header .menu-area .logo-area img {
+  display:block;
+  width:120px;
+  max-width:100%;
+  max-height:92px;
+  transition:.4s;
+  -webkit-transition:.4s;
+}
+.full-width-header .rs-header .menu-area.sticky .logo-area img {
+  width:96px;
+  max-height:70px;
+}
+.full-width-header .rs-header .menu-area .main-menu .rs-menu ul.nav-menu li { display:inline-block; margin-right:0 !important; padding:0; }
 .full-width-header .rs-header .menu-area .main-menu .rs-menu ul.nav-menu li a { transition:all .3s ease; font-size:13px !important; }
 .readon-custom { outline:none; padding:11px 11px; border:none; border-radius:10px; display:inline-block; text-transform:uppercase; font-size:13px; font-family:'Poppins',sans-serif; font-weight:500; color:#fff; background:#082243; transition:all .3s ease; }
 .full-width-header .rs-header .menu-area.sticky .expand-btn-inner li.search-parent { display:block; }
 
-.full-width-header .rs-header .menu-area { padding:10px 0; }
-.full-width-header .rs-header .menu-area .container .row{ align-items:center; }
-.full-width-header .rs-header .menu-area .rs-menu-area{ display:flex; align-items:center; justify-content:space-between; }
+.full-width-header .rs-header .menu-area .rs-menu-area{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:22px;
+  width:100%;
+}
 .full-width-header .rs-header .menu-area .rs-menu-area .main-menu{ flex:1; }
 
-.full-width-header .rs-header .menu-area .main-menu .rs-menu ul.nav-menu{ display:flex; align-items:center; gap:12px; margin:0; }
+.full-width-header .rs-header .menu-area .main-menu .rs-menu ul.nav-menu{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:16px;
+  margin:0;
+  flex-wrap:nowrap;
+}
 .full-width-header .rs-header .menu-area .main-menu .rs-menu ul.nav-menu > li{ margin:0 !important; }
 
 :root{ --navNavy:#0e2344; }
 
 .full-width-header .rs-header .menu-area .main-menu .rs-menu ul.nav-menu > li > a{
-  display:inline-flex; align-items:center; height:50px; padding:0 14px; border-radius:10px;
-  line-height:1; font-weight:600; letter-spacing:.2px; color:#0f2442;
-  transition:background .2s ease, color .2s ease, box-shadow .2s ease, transform .08s ease;
+  display:inline-flex; align-items:center; justify-content:center; height:50px; padding:0 12px; border-radius:9px;
+  line-height:1; font-weight:700; letter-spacing:0; color:#0f2442;
+  text-align:center; white-space:nowrap;
+  transition:background .2s ease, color .2s ease, box-shadow .2s ease;
 }
 .full-width-header .rs-header .menu-area .main-menu .rs-menu ul.nav-menu > li > a:hover,
 .full-width-header .rs-header .menu-area .main-menu .rs-menu ul.nav-menu > li > a:focus,
 .full-width-header .rs-header .menu-area .main-menu .rs-menu ul.nav-menu > li.current-menu-item > a{
-  background:var(--navNavy); color:#fff !important; box-shadow:0 6px 16px rgba(14,35,68,.22); transform:translateY(-1px);
+  background:var(--navNavy); color:#fff !important; box-shadow:0 6px 16px rgba(14,35,68,.22);
 }
 .full-width-header .rs-header .menu-area .main-menu .rs-menu ul.nav-menu > li{ background:transparent !important; }
 
-.menu-cta{ margin-left:16px; display:inline-flex; align-items:center; }
+.menu-cta{ display:inline-flex; align-items:center; flex:0 0 auto; }
 .menu-cta.menu-cta--flush{ margin-left:0; }
 .menu-cta .btn-cfa{
-  display:inline-flex; align-items:center; height:50px; padding:0 18px; border-radius:12px;
+  display:inline-flex; align-items:center; justify-content:center; min-height:50px; padding:0 18px; border-radius:11px;
   background:var(--navNavy); color:#fff !important; font-weight:700; text-decoration:none;
   box-shadow:0 8px 22px rgba(14,35,68,.28); transition:transform .1s ease, box-shadow .2s ease, background .2s ease;
-  width: 130px !important;
+  min-width: 130px;
+  white-space:nowrap;
 }
 .menu-cta .btn-cfa:hover{ transform:translateY(-1px); background:#132e5f; color:#fff !important; box-shadow:0 12px 28px rgba(14,35,68,.34); }
 .full-width-header .rs-header .menu-area.sticky .menu-cta .btn-cfa{ height:46px; padding:0 16px; border-radius:10px; }
-@media (max-width:991px){ .menu-cta{ display:none; } }
+@media (min-width:992px) and (max-width:1199px){
+  .full-width-header .rs-header .menu-area .main-menu .rs-menu ul.nav-menu{ gap:8px; }
+  .full-width-header .rs-header .menu-area .main-menu .rs-menu ul.nav-menu > li > a{ padding:0 9px; font-size:12px !important; }
+  .menu-cta .btn-cfa{ min-width:118px; padding:0 14px; }
+}
+@media (max-width:991px){
+  .full-width-header .rs-header .menu-area .container .row{ flex-wrap:wrap; }
+  .full-width-header .rs-header .menu-area .logo-area img{ width:96px; max-height:72px; }
+  .menu-cta{ display:none; }
+}
 
 .full-width-header .rs-header .menu-area .main-menu .rs-menu ul.nav-menu > li .sub-menu{
   margin-top:12px; border-radius:12px; padding:10px 8px; box-shadow:0 18px 40px rgba(0,0,0,.18); border:1px solid rgba(0,0,0,.06);
@@ -116,7 +157,7 @@ $coldStoragePages = [
 @media (min-width:992px){ .mobile-menu{ display:none; } .right_menu_togle{ right:-300px !important; visibility:hidden; } }
 .body-overlay{ position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,.5); z-index:1040; display:none; }
 .body-overlay.active{ display:block; }
-.logo-area.logo-area--tall{ max-height:160px; }
+.logo-area.logo-area--tall{ max-height:none; }
 
 .mobile-nav-menu{ list-style:none; margin:0; padding:0 20px; }
 .mobile-nav-menu > li{ border-bottom:1px solid #eee; margin-bottom:0; }
@@ -131,7 +172,7 @@ $coldStoragePages = [
 .mobile-nav-menu .has-submenu.active > a::after{ transform:translateY(-50%) rotate(90deg); }
 
 .full-width-header .rs-header .menu-area .main-menu .rs-menu ul.nav-menu > li > a.active{
-  background:var(--navNavy); color:#fff !important; box-shadow:0 6px 16px rgba(14,35,68,.22); transform:translateY(-1px);
+  background:var(--navNavy); color:#fff !important; box-shadow:0 6px 16px rgba(14,35,68,.22);
 }
 
 /**/
@@ -312,7 +353,9 @@ $coldStoragePages = [
                     <li class="menu-item <?php echo isActive('about-us.php', $curBase); ?>">
                       <a class="<?php echo isActiveA('about-us.php', $curBase); ?>" href="about-us.php">About</a>
                     </li>
-
+                    <li class="menu-item <?php echo isActive('blog.php', $curBase); ?>">
+                      <a class="<?php echo isActiveA('blog.php', $curBase); ?>" href="blog.php">Blog</a>
+                    </li>
                     <li class="menu-item  <?php echo anyActive($productsPages, $curBase); ?>">
                       <a href="products.php" class="<?php echo isActiveA('products.php', $curBase); ?>">Products</a>
                       <ul class="sub-menu">
@@ -344,7 +387,7 @@ $coldStoragePages = [
                           <a class="<?php echo isActiveA('doors-ca-doors.php', $curBase); ?>" href="doors-ca-doors.php">Doors &amp; CA Doors</a>
                         </li>
                         <li class="<?php echo isActive('panels.php', $curBase); ?>">
-                          <a class="<?php echo isActiveA('panels.php', $curBase); ?>" href="panels.php">Puff Panels</a>
+                          <a class="<?php echo isActiveA('panels.php', $curBase); ?>" href="panels.php">Puf Panels</a>
                         </li>
                         <li class="<?php echo isActive('dock-shelter-dock-leveler.php', $curBase); ?>">
                           <a class="<?php echo isActiveA('dock-shelter-dock-leveler.php', $curBase); ?>" href="dock-shelter-dock-leveler.php">Dock Shelter &amp; Dock Leveler</a>
@@ -385,10 +428,11 @@ $coldStoragePages = [
                         </li>
                       </ul>
                     </li>
-
                     <li class="menu-item <?php echo isActive('contact.php', $curBase); ?>">
                       <a class="<?php echo isActiveA('contact.php', $curBase); ?>" href="contact.php">Contact</a>
                     </li>
+
+                    
                   </ul>
                 </nav>
                 <!-- ===== /DESKTOP MENU ===== -->
@@ -419,6 +463,9 @@ $coldStoragePages = [
           <li class="menu-item <?php echo isActive('about-us.php', $curBase); ?>">
             <a class="<?php echo isActiveA('about-us.php', $curBase); ?>" href="about-us.php">About Us</a>
           </li>
+          <li class="menu-item <?php echo isActive('blog.php', $curBase); ?>">
+            <a class="<?php echo isActiveA('blog.php', $curBase); ?>" href="blog.php">Blog</a>
+          </li>
           <li class="menu-item <?php echo anyActive($productsPages, $curBase); ?>">
             <a href="products.php">Products</a>
             <ul class="sub-menu">
@@ -431,7 +478,7 @@ $coldStoragePages = [
               <li class="<?php echo isActive('multideck-cabinet.php', $curBase); ?>"><a class="<?php echo isActiveA('multideck-cabinet.php', $curBase); ?>" href="multideck-cabinet.php">Multideck Cabinet</a></li>
               <li class="<?php echo isActive('iqf.php', $curBase); ?>"><a class="<?php echo isActiveA('iqf.php', $curBase); ?>" href="iqf.php">IQF (Individual Quick Freeze)</a></li>
               <li class="<?php echo isActive('doors-ca-doors.php', $curBase); ?>"><a class="<?php echo isActiveA('doors-ca-doors.php', $curBase); ?>" href="doors-ca-doors.php">Doors &amp; CA Doors</a></li>
-              <li class="<?php echo isActive('panels.php', $curBase); ?>"><a class="<?php echo isActiveA('panels.php', $curBase); ?>" href="panels.php">Puff Panels</a></li>
+              <li class="<?php echo isActive('panels.php', $curBase); ?>"><a class="<?php echo isActiveA('panels.php', $curBase); ?>" href="panels.php">Puf Panels</a></li>
               <li class="<?php echo isActive('dock-shelter-dock-leveler.php', $curBase); ?>"><a class="<?php echo isActiveA('dock-shelter-dock-leveler.php', $curBase); ?>" href="dock-shelter-dock-leveler.php">Dock Shelter &amp; Dock Leveler</a></li>
               <li class="<?php echo isActive('heavy-duty-racks.php', $curBase); ?>"><a class="<?php echo isActiveA('heavy-duty-racks.php', $curBase); ?>" href="heavy-duty-racks.php">Heavy Duty Racks</a></li>
             </ul>

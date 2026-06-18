@@ -702,7 +702,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               <div class="service-wrap">
                 <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/modify/7.png" alt="Cooling System"></div>
                 <div class="content-part">
-                  <h5 class="title">PUFF Panels &amp; Insulated Doors</h5>
+                  <h5 class="title">PUF Panels &amp; Insulated Doors</h5>
                   <div class="desc">High density PUF panel insulation and cold room doors that make up the thermal envelope of your cold storage facility – designed for airtight insulation and minimal energy loss.</div>
                 </div>
               </div>
