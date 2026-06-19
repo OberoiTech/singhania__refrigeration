@@ -471,7 +471,58 @@ if (in_array(strtolower($file), ['about-us.php', 'about.php'], true)) {
                   ],
               ],
           ]);
+
+            /*FAQ FOR TRUK AC*/
+          $schemaFAQPage = sr_schema_filter([
+            '@context' => 'https://schema.org',
+            '@type'    => 'FAQPage',
+            '@id'      => $schemaPageUrl . '#faq',
+            'mainEntity' => [
+                [
+                    '@type' => 'Question',
+                    'name'  => 'What is a Truck AC?',
+                    'acceptedAnswer' => [
+                        '@type' => 'Answer',
+                        'text'  => 'A Truck AC, also known as a Transport Refrigeration Unit (TRU), is a refrigeration system installed on commercial vehicles to maintain controlled temperatures during transportation of perishable and temperature-sensitive goods.'
+                    ]
+                ],
+                [
+                    '@type' => 'Question',
+                    'name'  => 'Which industries use Truck Refrigeration Units?',
+                    'acceptedAnswer' => [
+                        '@type' => 'Answer',
+                        'text'  => 'Truck refrigeration units are widely used in dairy, pharmaceutical logistics, frozen food transportation, fruits and vegetables distribution, meat and seafood logistics, and quick commerce deliveries.'
+                    ]
+                ],
+                [
+                    '@type' => 'Question',
+                    'name'  => 'What temperature range can truck refrigeration units maintain?',
+                    'acceptedAnswer' => [
+                        '@type' => 'Answer',
+                        'text'  => 'Depending on the application and refrigeration system, truck refrigeration units can typically maintain temperatures from +20°C to -25°C for safe transportation of various products.'
+                    ]
+                ],
+                [
+                    '@type' => 'Question',
+                    'name'  => 'Do you provide maintenance services?',
+                    'acceptedAnswer' => [
+                        '@type' => 'Answer',
+                        'text'  => 'Yes. Singhania Refrigeration provides preventive maintenance, AMC support, repairs, and nationwide after-sales service for transport refrigeration systems.'
+                    ]
+                ],
+                [
+                    '@type' => 'Question',
+                    'name'  => 'How much does a Truck AC unit cost?',
+                    'acceptedAnswer' => [
+                        '@type' => 'Answer',
+                        'text'  => 'The cost depends on the vehicle type, refrigeration capacity, temperature requirements, and customization. Contact Singhania Refrigeration for a customized quotation.'
+                    ]
+                ]
+            ]
+        ]);
         ?>
+        
+         
         <script type="application/ld+json">
 <?php echo json_encode($schemaOrganization, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT); ?>
         </script>

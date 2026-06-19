@@ -1,245 +1,1724 @@
 <!DOCTYPE html>
 <html lang="zxx">
-  <head>
-    <?php include('head.php'); ?>
-    <style>
-      :root{
-        --ink:#0f2442;
-        --muted:#667085;
-        --soft:#f6f8ff;
-        --card:#ffffff;
-        --line:#e7ecf5;
-        --brand:#0e2344;     /* header/nav navy */
-        --brand2:#082243;    /* deeper accent */
+
+<head>
+  <?php
+    $pageTitle = 'Truck AC Manufacturer in India | Transport Refrigeration Units — Singhania Refrigeration';
+    $pageDescription = 'Singhania Refrigeration — trusted Truck AC Manufacturer in India. High-performance Transport Refrigeration Units for dairy, pharma, frozen food, fruits, vegetables, meat and seafood logistics. Delhi NCR based. Call +91 99710 60822.';
+
+  ?>
+  <?php include('head.php'); ?>
+  <style>
+    :root {
+      --ink: #0f2442;
+      --muted: #667085;
+      --soft: #f6f8ff;
+      --card: #ffffff;
+      --line: #e7ecf5;
+      --brand: #0e2344;
+      /* header/nav navy */
+      --brand2: #082243;
+      /* deeper accent */
+      --section-y: 72px;
+      --section-y-tablet: 60px;
+      --section-y-mobile: 48px;
+      --content-gap: 28px;
+      --card-gap: 30px;
+    }
+
+    /* ====== TRUCK AC HERO ====== */
+    .rs-breadcrumbs.bg-7 {
+      position: relative;
+      background-image: url("assets/images/products/truck-4.webp");
+      background-size: cover;
+      background-position: 62% center;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .rs-breadcrumbs.bg-7::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg,
+          rgba(5, 18, 38, .97) 0%,
+          rgba(7, 28, 57, .91) 35%,
+          rgba(7, 25, 49, .56) 61%,
+          rgba(5, 15, 30, .14) 100%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .rs-breadcrumbs.bg-7::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(3, 12, 25, .1), rgba(3, 12, 25, .38)),
+        radial-gradient(circle at 78% 46%, rgba(239, 92, 32, .16), transparent 25%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .rs-breadcrumbs .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .rs-breadcrumbs .content-part {
+      min-height: clamp(590px, 78vh, 760px);
+      padding: 92px 0 80px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .hero-card {
+      max-width: 700px;
+      margin: 0;
+      padding: 0;
+      color: #fff;
+      text-align: left;
+      transform-origin: 50% 100%;
+      animation: heroIn .8s ease both;
+    }
+
+    .hero-card h1 {
+      max-width: 660px;
+      font-size: clamp(38px, 4.6vw, 64px);
+      line-height: 1.08;
+      letter-spacing: -.035em;
+      margin: 18px 0 20px;
+      padding: 0;
+      color: #fff;
+    }
+
+    .hero-card .lead {
+      max-width: 630px;
+      margin: 0;
+      color: rgba(238, 244, 255, .86);
+      line-height: 1.75;
+      font-size: clamp(15px, 1.4vw, 17px);
+      text-align: justify;
+    }
+
+
+    .hero-title-accent {
+      color: #ff7a3d;
+    }
+
+    .hero-points {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 24px;
+      margin-top: 24px;
+      color: rgba(255, 255, 255, .92);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .hero-points span::before {
+      content: "\2713";
+      display: inline-grid;
+      place-items: center;
+      width: 20px;
+      height: 20px;
+      margin-right: 8px;
+      border-radius: 50%;
+      background: rgba(255, 122, 61, .17);
+      color: #ff8a54;
+      font-size: 12px;
+    }
+
+    @keyframes heroIn {
+      from {
+        opacity: 0;
+        transform: translateY(18px) scale(.985)
       }
 
-      /* ====== HERO / BREADCRUMB (same vibe as About) ====== */
-      .rs-breadcrumbs.bg-7{
-        position: relative;
-        background: linear-gradient(180deg, #0f1a39 0%, #0c1224 100%);
-        overflow:hidden;
+      to {
+        opacity: 1;
+        transform: none
       }
-      .rs-breadcrumbs.bg-7::before{
-        content:"";
-        position:absolute; inset:-30% -10% auto -10%; height:120%;
-        background:
-          radial-gradient(110% 120% at 8% 0%, rgba(14,35,68,.30) 0%, rgba(14,35,68,0) 60%),
-          radial-gradient(120% 130% at 92% -10%, rgba(19,46,95,.22) 0%, rgba(19,46,95,0) 60%);
-        pointer-events:none;
-      }
-      .rs-breadcrumbs .content-part{ padding: 80px 0; }
-      .hero-card{
-        max-width: 760px;
-        background: rgba(255,255,255,.10);
-        border: 1px solid rgba(255,255,255,.18);
-        border-radius: 16px;
-        padding: 28px;
-        color:#eaf0ff;
-        box-shadow: 0 24px 60px rgba(0,0,0,.25);
-        backdrop-filter: blur(4px) saturate(120%);
-        animation: heroIn .8s ease both;
-      }
-      .hero-card h1{
-        font-size: clamp(28px, 4vw, 44px);
-        line-height:1.08; margin:6px 0 10px; color:#fff; font-weight:800;
-      }
-      .hero-card p{ color:#dfe6ff; margin:0; }
-      @keyframes heroIn{
-        from{opacity:0; transform:translateY(18px) scale(.985)}
-        to{opacity:1; transform:none}
-      }
+    }
 
-      /* ====== LAYOUT ====== */
-      .section-pad{ padding: 64px 0 90px; }
-      .g-30>[class*="col-"]{ margin-bottom:30px; }
+    /* ====== LAYOUT ====== */
+    .section-pad,
+    .section-padding {
+      padding: var(--section-y) 0;
+    }
 
-      /* ====== LEFT: PRODUCT CONTENT ====== */
-      .prod-media{
-        position: relative;
-        border-radius: 16px;
-        overflow: hidden;
-        box-shadow: 0 24px 60px rgba(16,28,52,.18);
-        background:#0b1530;
-      }
-      .prod-media img{
-        width:100%; height:auto; display:block;
-        aspect-ratio: 16 / 10;
-        object-fit: cover;
-        transform: scale(1.001);
-        transition: transform .6s ease;
-      }
-      .prod-media:hover img{ transform: scale(1.03); }
+    .g-30>[class*="col-"] {
+      margin-bottom: 30px;
+    }
 
-      .h2{ font-size: clamp(22px, 2.6vw, 28px); color:var(--ink); font-weight:800; margin:26px 0 10px; }
-      .lead{ color:#2c3e68; font-size: clamp(15px, 1.6vw, 17px); }
+    /* ====== LEFT: PRODUCT CONTENT ====== */
+    .prod-media {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(16, 28, 52, .18);
+      background: #0b1530;
+    }
 
-      .card-lite{
+    .prod-media img {
+      width: 100%;
+      height: auto;
+      display: block;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      transform: scale(1.001);
+      transition: transform .6s ease;
+    }
+
+    .prod-media:hover img {
+      transform: scale(1.03);
+    }
+
+    .h2,
+    .section-h2 {
+      font-size: clamp(24px, 2.6vw, 32px);
+      color: var(--ink);
+      font-weight: 800;
+      line-height: 1.25;
+      margin: 0 0 24px;
+    }
+
+    /* /* .lead {
+      color: #2c3e68;
+      font-size: clamp(15px, 1.6vw, 17px);
+      line-height: 1.75;
+      margin: 0 0 18px;
+      text-align: left;
+    } */
+
+    .lead:last-child {
+      margin-bottom: 0;
+    } 
+
+    /* .card-lite{
         background:var(--card);
         border:1px solid var(--line);
         border-radius:16px;
         padding: clamp(18px, 3vw, 24px);
         box-shadow:0 12px 30px rgba(16,28,52,.08);
+      } */
+
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0 0;
+      display: grid;
+      gap: 10px;
+    }
+
+    .feature-list li {
+      position: relative;
+      padding-left: 28px;
+      color: #2d3c63;
+    }
+
+    .feature-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 6px;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: conic-gradient(from 180deg, #3b5bb7, #2a427f);
+      box-shadow: inset 0 0 0 3px #fff;
+    }
+
+    /* ====== RIGHT: SCROLLING (non-sticky) SIDEBAR ====== */
+    .project-sidebar .sb-project-detail {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      box-shadow: 0 12px 30px rgba(16, 28, 52, .08);
+      padding: 18px 18px 8px;
+      position: static !important;
+      /* ← not sticky */
+      top: auto !important;
+      /* ← not sticky */
+    }
+
+    .project-sidebar .title {
+      margin: 4px 4px 12px;
+      font-weight: 800;
+      color: var(--ink);
+    }
+
+    .project-sidebar ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .project-sidebar li a {
+      display: block;
+      padding: 10px 12px;
+      margin: 2px 0;
+      border-radius: 10px;
+      color: #33446f;
+      text-decoration: none;
+      transition: background .2s ease, color .2s ease, transform .08s ease;
+    }
+
+    .project-sidebar li a:hover {
+      background: #eef2ff;
+      color: #172a57;
+      transform: translateX(2px);
+    }
+
+    .project-sidebar li a.active {
+      background: linear-gradient(180deg, #2b427f, #243865);
+      color: #fff;
+      box-shadow: 0 10px 22px rgba(20, 36, 86, .25);
+    }
+
+    /* ====== CTA BAR ====== */
+    .cta-bar {
+
+      margin-top: 24px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .hero-card .cta-bar {
+      justify-content: flex-start;
+      gap: 14px;
+      margin-top: 32px;
+    }
+
+    .hero-card .btn-brand {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 13px 23px;
+      color: white;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, .28);
+      background: rgba(255, 255, 255, .08);
+      box-shadow: none;
+      backdrop-filter: blur(8px);
+      border-radius: 9px;
+    }
+    .hero-card .btn-brand:hover{
+      background: rgba(255, 255, 255, .16);
+      border-color: rgba(255, 255, 255, .5);
+    }
+
+    .hero-card .btn-brand.btn-ghost {
+      border: 1px solid rgba(255, 255, 255, .28);
+      background: rgba(255, 255, 255, .08);
+      box-shadow: none;
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-card .btn-brand.btn-ghost:hover {
+      background: rgba(255, 255, 255, .16);
+      border-color: rgba(255, 255, 255, .5);
+    }
+
+    
+
+    /* ====== MICRO-ANIMATIONS ====== */
+    [data-animate] {
+      opacity: 0;
+      transform: translateY(22px) scale(.985);
+      transition: all .7s cubic-bezier(.2, .65, .3, 1);
+    }
+
+    [data-animate].active {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* Section-2 Image */
+    .intro-section {
+      background: #f6f9fc;
+    }
+
+    .intro-section .section-h2 {
+      max-width: 700px;
+    }
+
+    .intro-copy {
+      max-width: 720px;
+    }
+
+    .TruckImg {
+      width: 100%;
+      max-width: 520px;
+      height: auto;
+      aspect-ratio: 4 / 3;
+      display: block;
+      margin: 0 0 0 auto;
+      object-fit: contain;
+      object-position: center;
+      padding: 18px;
+      background: #fff;
+      border-radius: 18px 0 34px 0;
+      box-shadow: 0 18px 44px rgba(16, 28, 52, .12);
+    }
+
+    .intro-section .row>[class*="col-"] {
+      margin-bottom: var(--content-gap);
+    }
+
+    .intro-section .row>[class*="col-"]:last-child {
+      margin-bottom: 0;
+    }
+
+    /* section-3 */
+
+    .feature-grid>[class*="col-"] {
+      margin-bottom: var(--card-gap);
+    }
+
+    .feature-grid>[class*="col-"]:nth-last-child(-n + 3) {
+      margin-bottom: 0;
+    }
+
+    .feature-card {
+      background: #ffffff;
+      border: 1px solid #e8e8e8;
+      border-radius: 10px;
+      padding: 32px 24px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.10);
+    }
+
+    .feature-icon {
+      font-size: 2.4rem;
+      color: var(--ink);
+      margin-bottom: 16px;
+    }
+
+    .feature-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      line-height: 1.35;
+      margin: 0 0 10px;
+      color: #1a1a1a;
+    }
+
+    .feature-desc {
+      font-size: 0.95rem;
+      color: #555;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    @media (max-width: 991px) {
+      .rs-breadcrumbs.bg-7 {
+        background-position: 68% center;
       }
 
-      .feature-list{ list-style:none; padding:0; margin:10px 0 0; display:grid; gap:10px; }
-      .feature-list li{ position:relative; padding-left:28px; color:#2d3c63; }
-      .feature-list li::before{
-        content:""; position:absolute; left:0; top:6px; width:18px; height:18px; border-radius:50%;
-        background: conic-gradient(from 180deg, #3b5bb7, #2a427f);
-        box-shadow: inset 0 0 0 3px #fff;
+      .rs-breadcrumbs .content-part {
+        min-height: 600px;
+        padding: 76px 0 68px;
       }
 
-      /* ====== RIGHT: SCROLLING (non-sticky) SIDEBAR ====== */
-      .project-sidebar .sb-project-detail{
-        background:#fff;
-        border:1px solid var(--line);
-        border-radius:16px;
-        box-shadow:0 12px 30px rgba(16,28,52,.08);
-        padding: 18px 18px 8px;
-        position: static !important;   /* ← not sticky */
-        top: auto !important;          /* ← not sticky */
-      }
-      .project-sidebar .title{
-        margin: 4px 4px 12px;
-        font-weight:800; color:var(--ink);
-      }
-      .project-sidebar ul{ list-style:none; margin:0; padding:0; }
-      .project-sidebar li a{
-        display:block; padding:10px 12px; margin:2px 0;
-        border-radius:10px; color:#33446f; text-decoration:none;
-        transition: background .2s ease, color .2s ease, transform .08s ease;
-      }
-      .project-sidebar li a:hover{
-        background:#eef2ff;
-        color:#172a57;
-        transform: translateX(2px);
-      }
-      .project-sidebar li a.active{
-        background: linear-gradient(180deg, #2b427f, #243865);
-        color:#fff;
-        box-shadow: 0 10px 22px rgba(20,36,86,.25);
+      .intro-copy {
+        max-width: 100%;
       }
 
-      /* ====== CTA BAR ====== */
-      .cta-bar{
-        margin-top:18px;
-        display:flex; gap:10px; flex-wrap:wrap;
+      .TruckImg {
+        margin: 8px auto 0;
+        max-width: 560px;
       }
-      .btn-brand{
-        display:inline-block; border:0; cursor:pointer;
-        padding:12px 18px; border-radius:12px;
-        background:#17203b; color:#fff; font-weight:700;
-        box-shadow:0 12px 28px rgba(14,35,68,.28);
-        transition: transform .12s ease, box-shadow .2s ease, background .2s ease;
-        text-decoration:none;
+
+      .section-pad,
+      .section-padding {
+        padding-top: var(--section-y-tablet);
+        padding-bottom: var(--section-y-tablet);
       }
-      .btn-brand:hover{ background:#0f1630; transform: translateY(-1px); box-shadow:0 16px 34px rgba(14,35,68,.34); }
 
-      /* ====== MICRO-ANIMATIONS ====== */
-      [data-animate]{ opacity:0; transform: translateY(22px) scale(.985); transition: all .7s cubic-bezier(.2,.65,.3,1); }
-      [data-animate].active{ opacity:1; transform:none; }
-
-      @media (max-width: 991px){
-        .rs-breadcrumbs .content-part{ padding: 90px 0; }
+      .feature-grid>[class*="col-"]:nth-last-child(-n + 3) {
+        margin-bottom: var(--card-gap);
       }
-    </style>
-  </head>
 
-  <body>
-    <?php include('header.php'); ?>
+      .feature-grid>[class*="col-"]:nth-last-child(-n + 2) {
+        margin-bottom: 0;
+      }
+    }
 
-    <!-- Main content Start -->
-    <div class="main-content">
+    @media (max-width: 767px) {
 
-      <!-- Hero / Breadcrumb (matches About styling) -->
-      <div class="rs-breadcrumbs bg-7">
-        <div class="container">
-          <div class="content-part">
-            <div class="hero-card">
-              <span style="display:inline-block;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#b9c5e6;">PRODUCT</span>
-              <h1 class="mb-10">Truck’s AC</h1>
-              <p>Reliable transport cooling with fast pull-down, energy efficiency, and nationwide AMC support.</p>
+      .section-pad,
+      .section-padding {
+        padding-top: var(--section-y-mobile);
+        padding-bottom: var(--section-y-mobile);
+      }
+
+      .hero-card {
+        max-width: 100%;
+        margin: 0;
+        padding: 0 4px;
+      }
+
+      .rs-breadcrumbs .content-part {
+        min-height: 640px;
+        padding: 68px 0 60px;
+      }
+
+      .hero-card h1 {
+        font-size: clamp(34px, 9vw, 48px);
+        margin: 16px 0 18px;
+      }
+
+      .hero-card .lead {
+        text-align: left;
+        line-height: 1.7;
+        font-size: 14px;
+        text-align:justify;
+      }
+
+      .hero-card .btn-brand {
+        min-width: 150px;
+        text-align: center;
+      }
+
+      .section-h2 {
+        font-size: 24px;
+        line-height: 1.28;
+        margin-bottom: 20px;
+      }
+
+      .TruckImg {
+        max-width: 100%;
+        aspect-ratio: 4 / 3;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 12px;
+        padding: 12px;
+      }
+
+      .feature-grid>[class*="col-"],
+      .feature-grid>[class*="col-"]:nth-last-child(-n + 2),
+      .feature-grid>[class*="col-"]:nth-last-child(-n + 3) {
+        margin-bottom: 20px;
+      }
+
+      .feature-grid>[class*="col-"]:last-child {
+        margin-bottom: 0;
+      }
+
+      .feature-card {
+        padding: 26px 18px;
+      }
+
+      .feature-icon {
+        font-size: 2rem;
+        margin-bottom: 12px;
+      }
+
+      .feature-title {
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .hero-card .cta-bar {
+        gap: 10px;
+      }
+
+      .hero-card .btn-brand {
+        width: 100%;
+      }
+
+      .hero-points {
+        display: grid;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <?php include('header.php'); ?>
+  <?php
+  $quoteStatus = $_GET['status'] ?? '';
+  $quoteAlerts = [
+    'success' => ['class' => 'alert-success', 'text' => 'Thank you! Your quote request has been sent.'],
+    'mail-error' => ['class' => 'alert-warning', 'text' => 'Your details were saved, but email delivery failed. Please call us for urgent requests.'],
+    'missing' => ['class' => 'alert-danger', 'text' => 'Please fill your name and phone number.'],
+    'invalid-email' => ['class' => 'alert-danger', 'text' => 'Please enter a valid email address.'],
+  ];
+  ?>
+
+  <!-- Main content Start -->
+  <div class="main-content">
+
+    <!-- Truck AC Hero -->
+    <div class="rs-breadcrumbs bg-7 heroImage">
+      <div class="container">
+        <div class="content-part">
+          <div class="hero-card">
+            <!-- <span class="hero-eyebrow">Made for Indian roads</span> -->
+            <h1>Truck AC Manufacturer in India</h1>
+            <p class="lead">
+                Singhania Refrigeration is a trusted Truck AC Manufacturer in India, offering
+                high-performance Transport Refrigeration Units for temperature-controlled transportation.
+                Our truck refrigeration systems are designed to keep dairy products, pharmaceuticals,
+                frozen foods, fruits, vegetables, seafood and other perishable products safe to eat
+                while maintaining consistent temperatures along the way.
+            </p>
+             <p class="lead">Engineered for Indian operating conditions, our refrigeration units provide dependable
+  cooling performance, energy efficiency, and long-term durability for logistics operators
+  and cold chain businesses.</p>
+            <div class="cta-bar">
+              <a href="contact.php" class="btn-brand">Get a Free Quote&nbsp; <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+              <a href="tel:+919971060822" class="btn-brand btn-ghost"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp; +91 99710 60822</a>
             </div>
           </div>
         </div>
       </div>
+    </div>
+  </div>
+  <!-- MAIN CONTENT END  -->
 
-      <!-- Product Section -->
-      <section class="section-pad">
-        <div class="container">
-          <div class="row">
-            <!-- LEFT -->
-            <div class="col-lg-8 pr-45 md-pr-15" data-animate>
-              <div class="prod-media">
-                <img src="https://singhaniarefrigeration.com/assets/images/products/truck-ac.webp" alt="Truck’s AC system">
+
+  <!-- SECTION 3 -->
+  <section class="features-section section-padding" id="key-features">
+    <div class="container">
+
+      <h2 class="section-h2 text-center mb-5">
+        Key Features of Our Truck Refrigeration Units
+      </h2>
+
+      <?php
+
+      $features = [
+        [
+          'icon'  => 'fa fa-bolt',
+          'title' => 'Fast Cooling Performance',
+          'desc'  => 'Quickly reach target temperatures and then maintain stable
+                            cooling during transport.'
+        ],
+        [
+          'icon'  => 'fa fa-leaf',
+          'title' => 'Energy-Efficient Operation',
+          'desc'  => 'Optimized refrigeration systems can reduce operating costs
+                            and ensure reliable performance.'
+        ],
+        [
+          'icon'  => 'fa fa-thermometer-half',
+          'title' => 'Digital Temperature Control',
+          'desc'  => 'Monitor and manage cargo temperatures accurately using
+                            advanced control systems.'
+        ],
+        [
+          'icon'  => 'fa fa-shield',
+          'title' => 'Reliable Cold Chain Protection',
+          'desc'  => 'Protect temperature-sensitive products from spoilage and
+                            quality degradation during transit.'
+        ],
+        [
+          'icon'  => 'fa fa-truck',
+          'title' => 'Custom Vehicle Integration',
+          'desc'  => 'Solutions available for light commercial vehicles,
+                            medium-duty trucks, and large refrigerated transport fleets.'
+        ],
+        [
+          'icon'  => 'fa fa-wrench',
+          'title' => 'Nationwide AMC Support',
+          'desc'  => 'Comprehensive maintenance and support services designed
+                            to maximize equipment uptime.'
+        ],
+      ];
+      ?>
+
+      <div class="row feature-grid">
+        <?php foreach ($features as $feature): ?>
+          <div class="col-lg-4 col-md-6">
+            <div class="feature-card h-100">
+              <div class="feature-icon">
+                <i class="<?php echo htmlspecialchars($feature['icon']); ?>"></i>
               </div>
-
-              <h2 class="h2">Key Product Features</h2>
-              <p class="lead">
-                The refrigeration AC in trucks made by Singhania Refrigeration in Delhi is created to offer an effective and reliable transport refrigeration solution for cold chain logistics to ensure the freshness of transported goods like dairy products, fruits, vegetables, and frozen food items. The refrigeration ACs in trucks made by Singhania Refrigeration in Delhi are designed to operate continuously in tough climatic conditions prevalent in India, and they feature advanced cooling system technology, efficient ventilation, and excellent insulation. The transport refrigeration in Delhi NCR is extensively used by logistics and other businesses involved in the transport of goods in Delhi. Singhania Refrigeration in Delhi makes energy-efficient, reliable, and easy-to-maintain transport refrigeration AC in trucks.
+              <h3 class="feature-title">
+                <?php echo htmlspecialchars($feature['title']); ?>
+              </h3>
+              <p class="feature-desc">
+                <?php echo htmlspecialchars($feature['desc']); ?>
               </p>
-
-              <div class="card-lite mt-20">
-                <h4 class="mb-10" style="font-weight:800;color:var(--ink);">Highlights</h4>
-                <ul class="feature-list">
-                  <li>For uninterrupted cold chain delivery, fast pull-down and consistent temperature retention are essential.</li>
-                  <li>Energy-efficient compressors and optimized ventilation that reduce operating expenses.</li>
-                  <li>Insulation that is both durable and effective in reducing thermal losses and preserving temperature integrity.</li>
-                  <li>Smart controls with fault alerts (optional) for proactive monitoring and reliability.</li>
-                  <li>Nationwide AMC support and easy service access guarantee reduced disruption and smooth operations.</li>
-                </ul>
-                <div class="cta-bar">
-                  <a href="contact.php" class="btn-brand">Request a Quote</a>
-                  <!-- <a href="assets/brochures/truck-ac.pdf" class="btn-brand" target="_blank" rel="noopener">Download Brochure</a> -->
-                </div>
-              </div>
             </div>
-
-            <!-- RIGHT: scrolling sidebar -->
-            <div class="col-lg-4 md-mb-50 md-order-first" data-animate>
-              <div class="project-sidebar">
-                <div class="sb-project-detail">
-                  <h4 class="title">Products</h4>
-                  <ul>
-                    <li><a class="active" href="truck-ac.php">Truck’s AC</a></li>
-                    <li><a href="truck-refrigerator-container.php">Truck’s Refrigerator Container</a></li>
-                    <li><a href="cold-storage-refrigeration-units.php">Cold Storage Refrigeration Units</a></li>
-                    <li><a href="compressor-rack-system.php">Compressor Rack System</a></li>
-                    <li><a href="ammonia-refrigeration-units.php">Ammonia Refrigeration Units</a></li>
-                    <li><a href="ripening-systems.php">Ripening Systems</a></li>
-                    <li><a href="multideck-cabinet.php">Multideck Cabinet</a></li>
-                    <li><a href="iqf.php">IQF (Individual Quick Freeze)</a></li>
-                    <li><a href="doors-ca-doors.php">Doors &amp; CA Doors</a></li>
-                    <li><a href="panels.php">PUF Panels</a></li>
-                    <li><a href="dock-shelter-dock-leveler.php">Dock Shelter &amp; Dock Leveler</a></li>
-                    <li><a href="heavy-duty-racks.php">Heavy Duty Racks</a></li>
-                    <!-- <li><a href="ca-solutions.php">Warehousing Equipment’s</a></li> -->
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <!-- /RIGHT -->
           </div>
-        </div>
-      </section>
+        <?php endforeach; ?>
+      </div>
 
     </div>
-    <!-- Main content End -->
+  </section>
 
-    <?php include('footer.php'); ?>
+  <!--SECTION 3 END  -->
 
-    <!-- Tiny reveal-on-scroll (no external deps) -->
-    <script>
-      (function(){
-        const els = document.querySelectorAll('[data-animate]');
-        if(!('IntersectionObserver' in window)){ els.forEach(el=>el.classList.add('active')); return; }
-        const io = new IntersectionObserver((entries)=>{
-          entries.forEach(e=>{
-            if(e.isIntersecting){ e.target.classList.add('active'); io.unobserve(e.target); }
-          });
-        }, {threshold:.18});
-        els.forEach(el=>io.observe(el));
-      })();
-    </script>
-  </body>
+  <!-- SECTION 4 START -->
+  <section class="config-section section-padding " id="configurations">
+    <div class="container">
+
+      <h2 class="section-h2 text-center mb-5">
+        Truck Refrigeration Solutions We Offer
+      </h2>
+
+      <?php
+      // ── Configuration Cards Data Array ──
+      $configurations = [
+        [
+          'number' => '01',
+          'title'  => 'Direct Drive Refrigeration Units',
+          'desc'   => 'Engine-powered refrigeration systems designed for long-distance
+                             transportation and continuous cooling requirements.'
+        ],
+        [
+          'number' => '02',
+          'title'  => 'Battery-Powered Refrigeration Units',
+          'desc'   => 'Efficient cooling solutions for urban delivery operations,
+                             electric vehicles, and last-mile logistics.'
+        ],
+        [
+          'number' => '03',
+          'title'  => 'Single Temperature Systems',
+          'desc'   => 'Ideal for transporting products that require one consistent
+                             temperature throughout the cargo compartment.'
+        ],
+        [
+          'number' => '04',
+          'title'  => 'Multi-Temperature Refrigeration Systems',
+          'desc'   => 'Designed for mixed-load transportation where different products
+                             require different temperature zones.'
+        ],
+      ];
+      ?>
+
+      <div class="row config-grid">
+        <?php foreach ($configurations as $config): ?>
+          <div class="col-lg-6">
+            <div class="config-card ">
+              <span class="config-number">
+                <?php echo htmlspecialchars($config['number']); ?>
+              </span>
+              <div class="config-content">
+                <h3 class="config-title">
+                  <?php echo htmlspecialchars($config['title']); ?>
+                </h3>
+                <p class="config-desc">
+                  <?php echo htmlspecialchars($config['desc']); ?>
+                </p>
+              </div>
+            </div>
+          </div>
+        <?php endforeach; ?>
+      </div>
+
+    </div>
+  </section>
+
+  <style>
+    .config-section {
+      background: #f6f9fc;
+    }
+
+    .config-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      background: #ffffff;
+      border-left: 5px solid #0057a8;
+      border-radius: 8px;
+      padding: 28px 24px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+      transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    }
+
+    .config-card:hover {
+      background: var(--ink);
+      border-left-color: var(--ink);
+      box-shadow: 0 14px 30px rgba(15, 36, 66, .18);
+      transform: translateY(-4px);
+    }
+
+    .config-number {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--ink);
+      min-width: 54px;
+      line-height: 1;
+      transition: color 0.3s ease;
+    }
+
+    .config-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--ink);
+      transition: color 0.3s ease;
+    }
+
+    .config-desc {
+      font-size: 0.95rem;
+      color: #555;
+      margin: 0;
+      line-height: 1.7;
+      transition: color 0.3s ease;
+    }
+
+    .config-card:hover .config-number,
+    .config-card:hover .config-title,
+    .config-card:hover .config-desc {
+      color: #ffffff;
+    }
+
+    .config-grid>[class*="col-"] {
+      margin-bottom: var(--content-gap);
+    }
+
+    .config-grid>[class*="col-"]:nth-last-child(-n + 2) {
+      margin-bottom: 0;
+    }
+
+    
+
+    @media (max-width: 991px) {
+      .config-grid>[class*="col-"]:nth-last-child(-n + 2) {
+        margin-bottom: var(--content-gap);
+      }
+
+      .config-grid>[class*="col-"]:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .config-section .section-h2 {
+        margin-bottom: 24px !important;
+      }
+
+      .config-grid>[class*="col-"] {
+        margin-bottom: 20px;
+      }
+
+      .config-card {
+        gap: 14px;
+        padding: 24px 18px;
+      }
+
+      .config-number {
+        min-width: 44px;
+        font-size: 1.55rem;
+      }
+
+      .config-title {
+        font-size: 1rem;
+        line-height: 1.35;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .config-card {
+        display: block;
+      }
+
+      .config-number {
+        display: inline-block;
+        margin-bottom: 12px;
+      }
+    }
+  </style>
+  <!-- SECTION-4 end -->
+
+  <!-- SECTION 5 START -->
+  <section class="industries-section section-padding" id="industries">
+    <div class="container">
+
+      <h2 class="section-h2 text-center  mb-5">
+        Industries Using Truck Refrigeration Units
+      </h2>
+
+      <?php
+      // ── Industries Data Array ──
+      $industries = [
+        [
+          'icon'  => 'fa fa-tint',
+          'title' => 'Dairy Transportation',
+          'desc'  => 'Maintain optimal temperatures for milk, cheese, yogurt,
+                            and other dairy products.'
+        ],
+        [
+          'icon'  => 'fa fa-medkit',
+          'title' => 'Pharmaceutical Logistics',
+          'desc'  => 'Support safe transportation of medicines, vaccines,
+                            and healthcare products.'
+        ],
+        [
+          'icon'  => 'fa fa-snowflake-o',
+          'title' => 'Frozen Food Transportation',
+          'desc'  => 'Reliable refrigeration for frozen foods, ice cream,
+                            and processed food products.'
+        ],
+        [
+          'icon'  => 'fa fa-leaf',
+          'title' => 'Fruits & Vegetables Distribution',
+          'desc'  => 'Reduce spoilage and preserve freshness throughout
+                            transportation.'
+        ],
+        [
+          'icon'  => 'fa fa-cutlery',
+          'title' => 'Meat & Seafood Logistics',
+          'desc'  => 'Maintain food safety standards through precise
+                            temperature control.'
+        ],
+        [
+          'icon'  => 'fa fa-motorcycle',
+          'title' => 'Quick Commerce Delivery',
+          'desc'  => 'Support modern grocery and temperature-controlled
+                            last-mile delivery operations.'
+        ],
+      ];
+      ?>
+
+      <div class="row industry-grid">
+        <?php foreach ($industries as $industry): ?>
+          <div class="col-lg-4 col-md-6">
+            <div class="industry-card h-100">
+              <i class="<?php echo htmlspecialchars($industry['icon']); ?>
+                               industry-icon"></i>
+              <h3 class="industry-title">
+                <?php echo htmlspecialchars($industry['title']); ?>
+              </h3>
+              <p class="industry-desc">
+                <?php echo htmlspecialchars($industry['desc']); ?>
+              </p>
+            </div>
+          </div>
+        <?php endforeach; ?>
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+  <style>
+    /* ── INDUSTRIES SECTION ── */
+    .industries-section {
+      background: white;
+    }
+
+    .industry-grid>[class*="col-"] {
+      margin-bottom: var(--card-gap);
+    }
+
+    .industry-grid>[class*="col-"]:nth-last-child(-n + 3) {
+      margin-bottom: 0;
+    }
+
+    .industry-card {
+      background: #ffffff;
+      border: 1px solid #e8e8e8;
+      border-radius: 10px;
+      padding: 32px 24px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .industry-card:hover {
+      background: rgba(255, 255, 255, 0.15);
+      transform: translateY(-4px);
+    }
+
+    .industry-icon {
+      font-size: 2.5rem;
+      color: var(--ink);
+      display: block;
+      margin-bottom: 16px;
+    }
+
+    .industry-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 10px;
+    }
+
+    .industry-desc {
+      font-size: 0.92rem;
+      color: black;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    @media (max-width: 991px) {
+      .industry-grid>[class*="col-"]:nth-last-child(-n + 3) {
+        margin-bottom: var(--card-gap);
+      }
+
+      .industry-grid>[class*="col-"]:nth-last-child(-n + 2) {
+        margin-bottom: 0;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .industries-section .section-h2 {
+        margin-bottom: 24px !important;
+      }
+
+      .industry-grid>[class*="col-"],
+      .industry-grid>[class*="col-"]:nth-last-child(-n + 2),
+      .industry-grid>[class*="col-"]:nth-last-child(-n + 3) {
+        margin-bottom: 20px;
+      }
+
+      .industry-grid>[class*="col-"]:last-child {
+        margin-bottom: 0;
+      }
+
+      .industry-card {
+        padding: 26px 18px;
+      }
+
+      .industry-icon {
+        font-size: 2rem;
+        margin-bottom: 12px;
+      }
+
+      .industry-title {
+        font-size: 1rem;
+        line-height: 1.35;
+      }
+    }
+  </style>
+  <!-- SECTION-5 end -->
+  <!-- section-6 start -->
+
+  <section class="local-seo-section section-padding " id="local-seo">
+    <div class="container">
+      <div class="row align-items-center local-seo-grid">
+
+        <div class="col-lg-7">
+          <h2 class="section-h2">
+            Truck AC Manufacturer in Delhi NCR
+          </h2>
+          <p>
+            Singhania Refrigeration is one of the best Truck AC Manufacturers
+            serving the requirements of companies in Delhi NCR and India. We offer
+            customized transport refrigeration systems for logistics companies,
+            fleet operators, food distributors, pharmaceutical suppliers and
+            cold chain service providers.
+          </p>
+          <p>
+            Our truck refrigeration solutions are widely used across:
+          </p>
+          <p>
+            With years of refrigeration engineering expertise, we help businesses
+            build reliable and efficient temperature-controlled transportation networks.
+          </p>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="city-list-wrapper">
+            <h3 class="city-list-heading">Service Areas</h3>
+            <?php
+            // ── Cities Array ── Add/remove cities here
+            $cities = [
+              'Delhi',
+              'Noida',
+              'Greater Noida',
+              'Gurgaon',
+              'Ghaziabad',
+              'Faridabad',
+            ];
+            ?>
+            <ul class="city-list">
+              <?php foreach ($cities as $city): ?>
+                <li class="city-list-item">
+                  <i class="fa fa-map-marker city-pin"></i>
+                  <?php echo htmlspecialchars($city); ?>
+                </li>
+              <?php endforeach; ?>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <style>
+    /* ── LOCAL SEO / CITY LIST ── */
+    .local-seo-section {
+      background: #f6f9fc;
+    }
+
+    .city-list-wrapper {
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .local-seo-section p {
+      color: #2c3e68;
+      font-size: clamp(15px, 1.6vw, 17px);
+      line-height: 1.75;
+      margin: 0 0 16px;
+      text-align: justify;
+    }
+
+    .city-list-heading {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .city-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .city-list-item {
+      padding: 10px 0;
+      border-bottom: 1px solid #f0f0f0;
+      font-size: 1rem;
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    .city-list-item:last-child {
+      border-bottom: none;
+    }
+
+    .city-pin {
+      color: var(--ink);
+      margin-right: 10px;
+    }
+
+    .local-seo-grid>[class*="col-"] {
+      margin-bottom: var(--content-gap);
+    }
+
+    .local-seo-grid>[class*="col-"]:last-child {
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 767px) {
+      .local-seo-section .section-h2 {
+        margin-bottom: 20px !important;
+      }
+
+      .city-list-wrapper {
+        padding: 24px 18px;
+      }
+
+      .city-list-heading {
+        font-size: 1rem;
+        margin-bottom: 14px;
+      }
+
+      .city-list-item {
+        font-size: .95rem;
+        padding: 9px 0;
+      }
+    }
+  </style>
+  <!-- section-6 end -->
+
+  <!-- Section-7 Start -->
+  <section class="why-choose-section section-padding" id="why-choose-us">
+    <div class="container">
+
+      <h2 class="section-h2 text-center mb-5">
+        Why Choose Singhania Refrigeration?
+      </h2>
+
+      <?php
+      // ── Why Choose Us Cards Data ──
+      $reasons = [
+        [
+          'icon'  => 'fa fa-trophy',
+          'title' => 'Industry Expertise',
+          'desc'  => 'Extensive experience in transport refrigeration
+                            and cold chain infrastructure.'
+        ],
+        [
+          'icon'  => 'fa fa-cogs',
+          'title' => 'Customized Solutions',
+          'desc'  => 'Refrigeration systems tailored to your vehicle,
+                            cargo, and operational requirements.'
+        ],
+        [
+          'icon'  => 'fa fa-industry',
+          'title' => 'Quality Manufacturing',
+          'desc'  => 'Built using proven refrigeration technologies
+                            for reliable performance.'
+        ],
+        [
+          'icon'  => 'fa fa-map-marker',
+          'title' => 'Pan India Service Network',
+          'desc'  => 'Technical support and maintenance assistance
+                            available across India.'
+        ],
+        [
+          'icon'  => 'fa fa-phone',
+          'title' => 'AMC & After-Sales Support',
+          'desc'  => 'Preventive maintenance programs designed to
+                            maximize equipment lifespan and uptime.'
+        ],
+      ];
+      ?>
+
+      <div class="row why-grid justify-content-center">
+        <?php foreach ($reasons as $reason): ?>
+          <div class="col-lg-4 col-md-6">
+            <div class="why-card h-100">
+              <i class="<?php echo htmlspecialchars($reason['icon']); ?>
+                               why-icon"></i>
+              <h3 class="why-title">
+                <?php echo htmlspecialchars($reason['title']); ?>
+              </h3>
+              <p class="why-desc">
+                <?php echo htmlspecialchars($reason['desc']); ?>
+              </p>
+            </div>
+          </div>
+        <?php endforeach; ?>
+      </div>
+
+    </div>
+  </section>
+
+  <style>
+    .why-choose-section {
+      background: #ffffff;
+    }
+
+    .why-grid {
+      justify-content: center;
+    }
+
+    .why-grid>[class*="col-"] {
+      margin-bottom: var(--card-gap);
+    }
+
+    .why-grid>[class*="col-"]:nth-last-child(-n + 2) {
+      margin-bottom: 0;
+    }
+
+    .why-card {
+      background: #ffffff;
+      border: 1px solid #dce8f8;
+      border-radius: 10px;
+      padding: 34px 26px;
+      text-align: center;
+      box-shadow: 0 10px 26px rgba(16, 28, 52, 0.07);
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+
+    .why-card:hover {
+      box-shadow: 0 10px 28px rgba(0, 87, 168, 0.12);
+      transform: translateY(-4px);
+    }
+
+    .why-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: #eef6ff;
+      font-size: 2rem;
+      color: var(--ink);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+    }
+
+    .why-title {
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.35;
+      margin: 0 0 10px;
+    }
+
+    .why-desc {
+      font-size: 0.93rem;
+      color: #555;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    @media (max-width: 991px) {
+      .why-grid>[class*="col-"]:nth-last-child(-n + 2) {
+        margin-bottom: var(--card-gap);
+      }
+
+      .why-grid>[class*="col-"]:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .why-choose-section .section-h2 {
+        margin-bottom: 24px !important;
+      }
+
+      .why-grid>[class*="col-"],
+      .why-grid>[class*="col-"]:nth-last-child(-n + 2) {
+        margin-bottom: 20px;
+      }
+
+      .why-grid>[class*="col-"]:last-child {
+        margin-bottom: 0;
+      }
+
+      .why-card {
+        padding: 28px 18px;
+      }
+
+      .why-icon {
+        width: 58px;
+        height: 58px;
+        font-size: 1.8rem;
+        margin-bottom: 14px;
+      }
+
+      .why-title {
+        font-size: 1rem;
+        line-height: 1.35;
+      }
+    }
+  </style>
+  <!-- Section-7 END -->
+
+  <!--Section-8  -->
+  <section class="faq-section section-padding" id="faq">
+    <div class="container">
+
+      <h2 class="section-h2 text-center mb-5">
+        Frequently Asked Questions
+      </h2>
+
+      <?php
+      
+      $faqs = [
+        [
+          'q' => 'What is a Truck AC?',
+          'a' => 'A Truck AC is a refrigeration system installed on commercial
+                        vehicles to maintain controlled temperatures for cargo during
+                        transportation.'
+        ],
+        [
+          'q' => 'Which industries use Truck Refrigeration Units?',
+          'a' => 'Dairy, pharmaceuticals, frozen food, agriculture, meat processing,
+                        seafood logistics, and cold chain transportation.'
+        ],
+        [
+          'q' => 'What temperature range can truck refrigeration units maintain?',
+          'a' => 'The exact range depends on the refrigeration system and cargo
+                        requirements. Solutions are available for chilled and frozen
+                        transportation applications.'
+        ],
+        [
+          'q' => 'Do you provide maintenance services?',
+          'a' => 'Yes. We offer AMC programs, preventive maintenance, and
+                        after-sales support.'
+        ],
+        [
+          'q' => 'How much does a Truck AC unit cost?',
+          'a' => 'Pricing varies based on vehicle size, cooling capacity, temperature
+                        requirements, and system configuration.'
+        ],
+      ];
+      ?>
+
+      <div class="accordion faq-accordion" id="faqAccordion">
+        <?php foreach ($faqs as $index => $faq):
+          $itemId    = 'faq-item-' . $index;
+          $collapseId = 'faq-collapse-' . $index;
+          $isFirst   = ($index === 0);
+        ?>
+          <div class="accordion-item faq-accordion-item" id="<?php echo $itemId; ?>">
+            <h3 class="accordion-header">
+              <button class="accordion-button <?php echo $isFirst ? '' : 'collapsed'; ?>"
+                type="button"
+                data-toggle="collapse"
+                data-target="#<?php echo $collapseId; ?>"
+                aria-expanded="<?php echo $isFirst ? 'true' : 'false'; ?>"
+                aria-controls="<?php echo $collapseId; ?>">
+                <?php echo htmlspecialchars($faq['q']); ?>
+              </button>
+            </h3>
+            <div id="<?php echo $collapseId; ?>"
+              class="accordion-collapse collapse <?php echo $isFirst ? 'show' : ''; ?>"
+              data-parent="#faqAccordion">
+              <div class="accordion-body faq-answer">
+                <?php echo htmlspecialchars($faq['a']); ?>
+              </div>
+            </div>
+          </div>
+        <?php endforeach; ?>
+      </div>
+
+    </div>
+  </section>
+  <style>
+    /* ── FAQ ACCORDION ── */
+    .faq-section {
+      background: #f6f9fc;
+    }
+
+    .faq-accordion {
+      max-width: 920px;
+      margin: 0 auto;
+    }
+
+    .faq-accordion-item {
+      border: 1px solid #dde6f0;
+      border-radius: 10px !important;
+      margin-bottom: 14px;
+      overflow: hidden;
+      background: #ffffff;
+      box-shadow: 0 10px 26px rgba(16, 28, 52, 0.06);
+    }
+
+    .faq-accordion-item .accordion-button {
+      position: relative;
+      width: 100%;
+      border: 0;
+      padding: 20px 56px 20px 22px;
+      text-align: left;
+      font-weight: 600;
+      font-size: 1rem;
+      line-height: 1.45;
+      color: var(--ink);
+      background: #ffffff;
+      cursor: pointer;
+      transition: color .2s ease, background .2s ease;
+    }
+
+    .faq-accordion-item .accordion-button:focus {
+      outline: none;
+      box-shadow: inset 0 0 0 2px rgba(0, 87, 168, .16);
+    }
+
+    .faq-accordion-item .accordion-button::after {
+      content: "+";
+      position: absolute;
+      right: 22px;
+      top: 50%;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #eef6ff;
+      color: var(--ink);
+      font-size: 20px;
+      line-height: 28px;
+      text-align: center;
+      transform: translateY(-50%);
+      transition: background .2s ease, color .2s ease;
+    }
+
+    .faq-accordion-item .accordion-button:not(.collapsed) {
+      color: var(--ink);
+      background: #eef4fb;
+      box-shadow: none;
+    }
+
+    .faq-accordion-item .accordion-button:not(.collapsed)::after {
+      content: "-";
+      background: #0057a8;
+      color: #ffffff;
+    }
+
+    .faq-answer {
+      font-size: 0.95rem;
+      color: #444;
+      line-height: 1.75;
+      background: #ffffff;
+      padding: 0 22px 22px;
+    }
+
+    @media (max-width: 767px) {
+      .faq-section .section-h2 {
+        margin-bottom: 24px !important;
+      }
+
+      .faq-accordion-item {
+        margin-bottom: 12px;
+        border-radius: 8px !important;
+      }
+
+      .faq-accordion-item .accordion-button {
+        padding: 17px 48px 17px 16px;
+        font-size: .98rem;
+      }
+
+      .faq-accordion-item .accordion-button::after {
+        right: 16px;
+        width: 26px;
+        height: 26px;
+        line-height: 26px;
+        font-size: 18px;
+      }
+
+      .faq-answer {
+        padding: 0 16px 18px;
+        font-size: .94rem;
+        line-height: 1.7;
+      }
+    }
+  </style>
+  <!-- section 8 -->
+
+  <!-- Section-9 -->
+  <!-- <section class="cta-section section-padding" id="quote-form"> -->
+    <div class="rs-cta bg21 pt-90 pb-100 md-pt-68 md-pb-80 ">
+      <div class="container">
+        <div class="sec-title text-center">
+          <div class="sub-title modify white"> Get a Customized Truck Refrigeration Solution</div>
+          <h2 class="title3 white-color">Our experts are ready to help.</h2>
+          <div class="btn-part">
+            <a class="readon banner-style" href="contact.php">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  <!-- </section> -->
+
+  <!-- Section-9 end -->
+
+  <!-- section 10 -->
+  <section class="related-section section-padding bg-light " id="related-products">
+    <div class="container">
+
+      <h3 class="section-h3 text-center mb-5">
+        Related Solutions
+      </h3>
+
+      <?php
+      // ── Related Products Data ──
+      
+      $related_products = [
+        ['title' => 'Truck AC', 'icon' => 'fa fa-truck', 'url' => 'truck-ac.php'],
+        ['title' => 'Truck Refrigerator Container', 'icon' => 'fa fa-cube', 'url' => 'truck-refrigerator-container.php'],
+        ['title' => 'Cold Storage Refrigeration Units', 'icon' => 'fa fa-snowflake-o', 'url' => 'cold-storage-refrigeration-units.php'],
+        ['title' => 'Compressor Rack System', 'icon' => 'fa fa-cogs', 'url' => 'compressor-rack-system.php'],
+        ['title' => 'Ammonia Refrigeration Units', 'icon' => 'fa fa-industry', 'url' => 'ammonia-refrigeration-units.php'],
+        ['title' => 'Ripening Systems', 'icon' => 'fa fa-leaf', 'url' => 'ripening-systems.php'],
+        ['title' => 'Multideck Cabinet', 'icon' => 'fa fa-th-large', 'url' => 'multideck-cabinet.php'],
+        ['title' => 'IQF (Individual Quick Freeze)', 'icon' => 'fa fa-asterisk', 'url' => 'iqf.php'],
+        ['title' => 'Doors & CA Doors', 'icon' => 'fa fa-sign-in', 'url' => 'doors-ca-doors.php'],
+        ['title' => 'PUF Panels', 'icon' => 'fa fa-columns', 'url' => 'panels.php'],
+        ['title' => 'Dock Shelter & Dock Leveler', 'icon' => 'fa fa-building', 'url' => 'dock-shelter-dock-leveler.php'],
+        ['title' => 'Heavy Duty Racks', 'icon' => 'fa fa-archive', 'url' => 'heavy-duty-racks.php'],
+      ];
+      ?>
+
+      <div class="row related-grid justify-content-center">
+        <?php foreach ($related_products as $index => $product):
+          $isActiveProduct = basename($product['url']) === basename($_SERVER['SCRIPT_NAME'] ?? 'truck-ac.php');
+        ?>
+          <div class="col-lg-3 col-md-4 col-sm-6" data-animate>
+            <a href="<?php echo htmlspecialchars($product['url']); ?>"
+              class="related-card text-decoration-none <?php echo $isActiveProduct ? 'active' : ''; ?>">
+              <span class="related-number"><?php echo str_pad((string)($index + 1), 2, '0', STR_PAD_LEFT); ?></span>
+              <i class="<?php echo htmlspecialchars($product['icon']); ?>
+                               related-icon"></i>
+              <span class="related-title">
+                <?php echo htmlspecialchars($product['title']); ?>
+              </span>
+              <i class="fa fa-arrow-right related-arrow"></i>
+            </a>
+          </div>
+        <?php endforeach; ?>
+      </div>
+
+    </div>
+  </section>
+
+
+  <style>
+    /* ── RELATED PRODUCTS ── */
+    .section-h3 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #1a1a1a;
+    }
+
+    .related-grid>[class*="col-"] {
+      margin-bottom: 20px;
+    }
+
+    .related-grid>[class*="col-"]:nth-last-child(-n + 4) {
+      margin-bottom: 0;
+    }
+
+    .related-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      text-align: left;
+      background: #ffffff;
+      border: 1px solid #dde6f0;
+      border-radius: 12px;
+      padding: 32px 24px;
+      transition: all 0.3s ease;
+      height: 100%;
+      min-height: 190px;
+      overflow: hidden;
+    }
+
+    .related-card:hover,
+    .related-card.active {
+      background: var(--ink);
+      border-color: var(--ink);
+      transform: translateY(-4px);
+      box-shadow: 0 14px 30px rgba(15, 36, 66, .18);
+    }
+
+    .related-number {
+      position: absolute;
+      top: 18px;
+      right: 22px;
+      color: rgba(15, 36, 66, .08);
+      font-size: 46px;
+      font-weight: 800;
+      line-height: 1;
+      transition: color .3s ease;
+    }
+
+    .related-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 12px;
+      background: #eef6ff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      color: var(--ink);
+      margin-bottom: 20px;
+      transition: color 0.3s, background 0.3s;
+    }
+
+    .related-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.35;
+      margin-bottom: 16px;
+      transition: color 0.3s;
+    }
+
+    .related-arrow {
+      font-size: 0.8rem;
+      color: var(--ink);
+      transition: color 0.3s;
+    }
+
+    .related-card:hover .related-number,
+    .related-card.active .related-number {
+      color: rgba(255, 255, 255, .16);
+    }
+
+    .related-card:hover .related-icon,
+    .related-card.active .related-icon {
+      color: #ffffff;
+      background: rgba(255, 255, 255, .16);
+    }
+
+    .related-card:hover .related-title,
+    .related-card:hover .related-arrow,
+    .related-card.active .related-title,
+    .related-card.active .related-arrow {
+      color: #ffffff;
+    }
+
+    @media (max-width: 991px) {
+      .related-grid>[class*="col-"]:nth-last-child(-n + 4) {
+        margin-bottom: 20px;
+      }
+
+      .related-grid>[class*="col-"]:nth-last-child(-n + 3) {
+        margin-bottom: 0;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .related-section .section-h3 {
+        margin-bottom: 24px !important;
+      }
+
+      .related-grid>[class*="col-"],
+      .related-grid>[class*="col-"]:nth-last-child(-n + 3) {
+        margin-bottom: 16px;
+      }
+
+      .related-grid>[class*="col-"]:last-child {
+        margin-bottom: 0;
+      }
+
+      .related-card {
+        min-height: 170px;
+        padding: 28px 20px;
+      }
+
+      .related-number {
+        font-size: 40px;
+        top: 16px;
+        right: 18px;
+      }
+
+      .related-icon {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 16px;
+      }
+
+      .related-title {
+        font-size: .96rem;
+      }
+    }
+  </style>
+  <!-- section 10 end -->
+  <?php include('footer.php'); ?>
+
+  <!-- Tiny reveal-on-scroll (no external deps) -->
+  <script>
+    (function() {
+      const els = document.querySelectorAll('[data-animate]');
+      if (!('IntersectionObserver' in window)) {
+        els.forEach(el => el.classList.add('active'));
+        return;
+      }
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('active');
+            io.unobserve(e.target);
+          }
+        });
+      }, {
+        threshold: .18
+      });
+      els.forEach(el => io.observe(el));
+    })();
+  </script>
+</body>
+
 </html>

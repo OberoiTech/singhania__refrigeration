@@ -692,7 +692,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/modify/6.png" alt="Food Cold Room"></div>
                 <div class="content-part">
                   <h5 class="title">IQF Technology</h5>
-                  <div class="desc">ndividual Quick Freeze (IQF) machine systems flash-freeze seafood, fruits, vegetables and ready-to-eat products for export-quality output and to preserve texture, nutrition and appearance.</div>
+                  <div class="desc">Individual Quick Freeze (IQF) machine systems flash-freeze seafood, fruits, vegetables and ready-to-eat products for export-quality output and to preserve texture, nutrition and appearance.</div>
                 </div>
               </div>
             </div>
