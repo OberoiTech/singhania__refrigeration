@@ -100,6 +100,11 @@
       line-height: 1.75;
       font-size: clamp(15px, 1.4vw, 17px);
       text-align: justify;
+      text-justify: inter-word;
+      text-align-last: left;
+      -webkit-hyphens: auto;
+      hyphens: auto;
+      overflow-wrap: break-word;
     }
 
 
@@ -183,26 +188,6 @@
       line-height: 1.25;
       margin: 0 0 24px;
     }
-
-    /* /* .lead {
-      color: #2c3e68;
-      font-size: clamp(15px, 1.6vw, 17px);
-      line-height: 1.75;
-      margin: 0 0 18px;
-      text-align: left;
-    } */
-
-    .lead:last-child {
-      margin-bottom: 0;
-    } 
-
-    /* .card-lite{
-        background:var(--card);
-        border:1px solid var(--line);
-        border-radius:16px;
-        padding: clamp(18px, 3vw, 24px);
-        box-shadow:0 12px 30px rgba(16,28,52,.08);
-      } */
 
     .feature-list {
       list-style: none;
@@ -477,10 +462,9 @@
       }
 
       .hero-card .lead {
-        text-align: left;
+        text-align: justify;
         line-height: 1.7;
         font-size: 14px;
-        text-align:justify;
       }
 
       .hero-card .btn-brand {
@@ -566,19 +550,19 @@
           <div class="hero-card">
             <!-- <span class="hero-eyebrow">Made for Indian roads</span> -->
             <h1>Truck AC Manufacturer in India</h1>
-            <p class="lead">
+            <p class="lead" lang="en">
                 Singhania Refrigeration is a trusted Truck AC Manufacturer in India, offering
                 high-performance Transport Refrigeration Units for temperature-controlled transportation.
                 Our truck refrigeration systems are designed to keep dairy products, pharmaceuticals,
                 frozen foods, fruits, vegetables, seafood and other perishable products safe to eat
                 while maintaining consistent temperatures along the way.
             </p>
-             <p class="lead">Engineered for Indian operating conditions, our refrigeration units provide dependable
-  cooling performance, energy efficiency, and long-term durability for logistics operators
-  and cold chain businesses.</p>
+             <p class="lead" lang="en">Engineered for Indian operating conditions, our refrigeration units provide dependable
+                cooling performance, energy efficiency, and long-term durability for logistics operators
+                and cold chain businesses.</p>
             <div class="cta-bar">
               <a href="contact.php" class="btn-brand">Get a Free Quote&nbsp; <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-              <a href="tel:+919971060822" class="btn-brand btn-ghost"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp; +91 99710 60822</a>
+              <a href="tel:+919971060822" class="btn-brand btn-ghost"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp; Call Now</a>
             </div>
           </div>
         </div>
@@ -1004,7 +988,7 @@
     <div class="container">
       <div class="row align-items-center local-seo-grid">
 
-        <div class="col-lg-7">
+        <div class="col-lg-6 local-seo-content">
           <h2 class="section-h2">
             Truck AC Manufacturer in Delhi NCR
           </h2>
@@ -1024,10 +1008,23 @@
           </p>
         </div>
 
-        <div class="col-lg-5">
+        <div class="col-lg-6">
           <div class="city-list-wrapper">
-            <h3 class="city-list-heading">Service Areas</h3>
-            <?php
+            <div class="service-map-wrap">
+  <div class="service-list">
+    <h3>SERVICE AREAS</h3>
+
+    <div class="area-item active" data-area="delhi">📍 Delhi</div>
+    <div class="area-item" data-area="noida">📍 Noida</div>
+    <div class="area-item" data-area="greater-noida">📍 Greater Noida</div>
+    <div class="area-item" data-area="gurgaon">📍 Gurgaon</div>
+    <div class="area-item" data-area="ghaziabad">📍 Ghaziabad</div>
+    <div class="area-item" data-area="faridabad">📍 Faridabad</div>
+  </div>
+
+  <div id="serviceMap"></div>
+</div>
+            <!-- <?php
             // ── Cities Array ── Add/remove cities here
             $cities = [
               'Delhi',
@@ -1045,7 +1042,7 @@
                   <?php echo htmlspecialchars($city); ?>
                 </li>
               <?php endforeach; ?>
-            </ul>
+            </ul> -->
           </div>
         </div>
 
@@ -1054,16 +1051,74 @@
   </section>
 
   <style>
+    .service-map-wrap {
+      display: grid;
+      grid-template-columns: minmax(190px, .8fr) minmax(0, 1.2fr);
+      gap: 16px;
+      padding: 16px;
+      background: #eef3f8;
+      border: 1px solid rgba(6, 38, 74, .06);
+      border-radius: 18px;
+    }
+
+    .service-list {
+      padding: 22px 18px;
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 8px 24px rgba(6, 38, 74, .08);
+    }
+
+    .service-list h3 {
+      margin: 0 0 18px;
+      color: #06264a;
+      font-size: clamp(1.25rem, 2vw, 1.65rem);
+      line-height: 1.2;
+      font-weight: 700;
+    }
+
+    .area-item {
+      padding: 13px 10px;
+      border-bottom: 1px solid #e8edf3;
+      border-radius: 8px;
+      color: #06264a;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color .2s ease, color .2s ease, transform .2s ease;
+    }
+
+    .area-item:hover {
+      background: #f1f6fc;
+      transform: translateX(2px);
+    }
+
+    .area-item.active {
+      background: #e3efff;
+      color: #1268d7;
+    }
+
+    .area-item:last-child {
+      border-bottom: 0;
+    }
+
+    #serviceMap {
+      width: 100%;
+      min-width: 0;
+      height: 440px;
+      border-radius: 14px;
+      box-shadow: 0 8px 24px rgba(6, 38, 74, .08);
+      overflow: hidden;
+    }
     /* ── LOCAL SEO / CITY LIST ── */
     .local-seo-section {
       background: #f6f9fc;
     }
 
     .city-list-wrapper {
-      background: #ffffff;
-      border-radius: 10px;
-      padding: 30px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      width: 100%;
+    }
+
+    .local-seo-content {
+      padding-right: clamp(20px, 3vw, 42px);
     }
 
     .local-seo-section p {
@@ -1115,12 +1170,25 @@
     }
 
     @media (max-width: 767px) {
+      .service-map-wrap {
+        grid-template-columns: 1fr;
+        padding: 12px;
+      }
+
+      #serviceMap {
+        height: 330px;
+      }
+
+      .local-seo-content {
+        padding-right: 15px;
+      }
+
       .local-seo-section .section-h2 {
         margin-bottom: 20px !important;
       }
 
       .city-list-wrapper {
-        padding: 24px 18px;
+        padding: 0;
       }
 
       .city-list-heading {
@@ -1719,6 +1787,99 @@
       els.forEach(el => io.observe(el));
     })();
   </script>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<script>
+const map = L.map('serviceMap').setView([28.6139, 77.2090], 10);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: ''
+}).addTo(map);
+
+const areas = {
+  delhi: {
+    name: "Delhi",
+    coords: [28.6139, 77.2090],
+    color: "#1f78ff"
+  },
+  noida: {
+    name: "Noida",
+    coords: [28.5355, 77.3910],
+    color: "#22aa55"
+  },
+  "greater-noida": {
+    name: "Greater Noida",
+    coords: [28.4744, 77.5040],
+    color: "#9b51e0"
+  },
+  gurgaon: {
+    name: "Gurgaon",
+    coords: [28.4595, 77.0266],
+    color: "#ff7a1a"
+  },
+  ghaziabad: {
+    name: "Ghaziabad",
+    coords: [28.6692, 77.4538],
+    color: "#e63946"
+  },
+  faridabad: {
+    name: "Faridabad",
+    coords: [28.4089, 77.3178],
+    color: "#27c2c7"
+  }
+};
+
+let markers = {};
+let circles = {};
+
+Object.keys(areas).forEach(key => {
+  const area = areas[key];
+
+  circles[key] = L.circle(area.coords, {
+    radius: 9000,
+    color: area.color,
+    fillColor: area.color,
+    fillOpacity: 0.15,
+    weight: 2
+  }).addTo(map);
+
+  markers[key] = L.marker(area.coords)
+    .addTo(map)
+    .bindPopup(`<b>${area.name}</b><br>Our services are available across ${area.name}.`);
+});
+
+function highlightArea(key){
+  Object.keys(circles).forEach(k => {
+    circles[k].setStyle({
+      fillOpacity: 0.08,
+      weight: 1
+    });
+  });
+
+  circles[key].setStyle({
+    fillOpacity: 0.35,
+    weight: 4
+  });
+
+  map.setView(areas[key].coords, 11);
+  markers[key].openPopup();
+
+  document.querySelectorAll('.area-item').forEach(item => {
+    item.classList.remove('active');
+  });
+
+  document.querySelector(`[data-area="${key}"]`).classList.add('active');
+}
+
+document.querySelectorAll('.area-item').forEach(item => {
+  item.addEventListener('click', function(){
+    highlightArea(this.dataset.area);
+  });
+});
+
+highlightArea('delhi');
+</script>
 </body>
 
 </html>
