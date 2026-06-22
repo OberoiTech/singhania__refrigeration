@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="en">
 
 <head>
   <?php
@@ -11,14 +11,10 @@
   <style>
     :root {
       --ink: #0f2442;
-      --muted: #667085;
-      --soft: #f6f8ff;
       --card: #ffffff;
       --line: #e7ecf5;
       --brand: #0e2344;
       /* header/nav navy */
-      --brand2: #082243;
-      /* deeper accent */
       --section-y: 72px;
       --section-y-tablet: 60px;
       --section-y-mobile: 48px;
@@ -108,33 +104,6 @@
     }
 
 
-    .hero-title-accent {
-      color: #ff7a3d;
-    }
-
-    .hero-points {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px 24px;
-      margin-top: 24px;
-      color: rgba(255, 255, 255, .92);
-      font-size: 14px;
-      font-weight: 600;
-    }
-
-    .hero-points span::before {
-      content: "\2713";
-      display: inline-grid;
-      place-items: center;
-      width: 20px;
-      height: 20px;
-      margin-right: 8px;
-      border-radius: 50%;
-      background: rgba(255, 122, 61, .17);
-      color: #ff8a54;
-      font-size: 12px;
-    }
-
     @keyframes heroIn {
       from {
         opacity: 0;
@@ -151,10 +120,6 @@
     .section-pad,
     .section-padding {
       padding: var(--section-y) 0;
-    }
-
-    .g-30>[class*="col-"] {
-      margin-bottom: 30px;
     }
 
     /* ====== LEFT: PRODUCT CONTENT ====== */
@@ -215,53 +180,6 @@
       box-shadow: inset 0 0 0 3px #fff;
     }
 
-    /* ====== RIGHT: SCROLLING (non-sticky) SIDEBAR ====== */
-    .project-sidebar .sb-project-detail {
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      box-shadow: 0 12px 30px rgba(16, 28, 52, .08);
-      padding: 18px 18px 8px;
-      position: static !important;
-      /* ← not sticky */
-      top: auto !important;
-      /* ← not sticky */
-    }
-
-    .project-sidebar .title {
-      margin: 4px 4px 12px;
-      font-weight: 800;
-      color: var(--ink);
-    }
-
-    .project-sidebar ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    .project-sidebar li a {
-      display: block;
-      padding: 10px 12px;
-      margin: 2px 0;
-      border-radius: 10px;
-      color: #33446f;
-      text-decoration: none;
-      transition: background .2s ease, color .2s ease, transform .08s ease;
-    }
-
-    .project-sidebar li a:hover {
-      background: #eef2ff;
-      color: #172a57;
-      transform: translateX(2px);
-    }
-
-    .project-sidebar li a.active {
-      background: linear-gradient(180deg, #2b427f, #243865);
-      color: #fff;
-      box-shadow: 0 10px 22px rgba(20, 36, 86, .25);
-    }
-
     /* ====== CTA BAR ====== */
     .cta-bar {
 
@@ -284,7 +202,6 @@
       min-height: 52px;
       padding: 13px 23px;
       color: white;
-      border-radius: 10px;
       border: 1px solid rgba(255, 255, 255, .28);
       background: rgba(255, 255, 255, .08);
       box-shadow: none;
@@ -292,18 +209,6 @@
       border-radius: 9px;
     }
     .hero-card .btn-brand:hover{
-      background: rgba(255, 255, 255, .16);
-      border-color: rgba(255, 255, 255, .5);
-    }
-
-    .hero-card .btn-brand.btn-ghost {
-      border: 1px solid rgba(255, 255, 255, .28);
-      background: rgba(255, 255, 255, .08);
-      box-shadow: none;
-      backdrop-filter: blur(8px);
-    }
-
-    .hero-card .btn-brand.btn-ghost:hover {
       background: rgba(255, 255, 255, .16);
       border-color: rgba(255, 255, 255, .5);
     }
@@ -520,10 +425,6 @@
         width: 100%;
       }
 
-      .hero-points {
-        display: grid;
-        gap: 10px;
-      }
     }
   </style>
 </head>
@@ -1024,25 +925,6 @@
 
   <div id="serviceMap"></div>
 </div>
-            <!-- <?php
-            // ── Cities Array ── Add/remove cities here
-            $cities = [
-              'Delhi',
-              'Noida',
-              'Greater Noida',
-              'Gurgaon',
-              'Ghaziabad',
-              'Faridabad',
-            ];
-            ?>
-            <ul class="city-list">
-              <?php foreach ($cities as $city): ?>
-                <li class="city-list-item">
-                  <i class="fa fa-map-marker city-pin"></i>
-                  <?php echo htmlspecialchars($city); ?>
-                </li>
-              <?php endforeach; ?>
-            </ul> -->
           </div>
         </div>
 
@@ -1129,44 +1011,18 @@
       text-align: justify;
     }
 
-    .city-list-heading {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--ink);
-      margin-bottom: 20px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .city-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .city-list-item {
-      padding: 10px 0;
-      border-bottom: 1px solid #f0f0f0;
-      font-size: 1rem;
-      color: var(--ink);
-      font-weight: 500;
-    }
-
-    .city-list-item:last-child {
-      border-bottom: none;
-    }
-
-    .city-pin {
-      color: var(--ink);
-      margin-right: 10px;
-    }
-
     .local-seo-grid>[class*="col-"] {
       margin-bottom: var(--content-gap);
     }
 
     .local-seo-grid>[class*="col-"]:last-child {
       margin-bottom: 0;
+    }
+
+    @media (max-width: 991px) {
+      .local-seo-content {
+        padding-right: 15px;
+      }
     }
 
     @media (max-width: 767px) {
@@ -1179,10 +1035,6 @@
         height: 330px;
       }
 
-      .local-seo-content {
-        padding-right: 15px;
-      }
-
       .local-seo-section .section-h2 {
         margin-bottom: 20px !important;
       }
@@ -1191,15 +1043,6 @@
         padding: 0;
       }
 
-      .city-list-heading {
-        font-size: 1rem;
-        margin-bottom: 14px;
-      }
-
-      .city-list-item {
-        font-size: .95rem;
-        padding: 9px 0;
-      }
     }
   </style>
   <!-- section-6 end -->

@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="en">
+<head>
 <?php include('head.php'); ?>
+</head>
 <body>
 <?php include('header.php'); ?>
 
@@ -12,6 +14,7 @@
   }
   .section-pad{ padding: 80px 0; }
   .section-soft{ background: linear-gradient(180deg, #fafbff 0%, #f3f6ff 100%); }
+  .main-content{ max-width:100%; overflow-x:clip; }
   .g-30>[class*="col-"]{ margin-bottom:30px; }
   .g-40>[class*="col-"]{ margin-bottom:40px; }
 
@@ -61,10 +64,45 @@
     background: conic-gradient(from 180deg, #3b5bb7, #2a427f); box-shadow: inset 0 0 0 3px #fff;
   }
 
+  .about-cta{
+    display:inline-block;
+    padding:12px 20px;
+    border-radius:10px;
+    background:#1c2f57;
+    color:#fff !important;
+  }
+
   @media (max-width: 991px){
     .section-pad{ padding: 64px 0; }
     .about-hero{ padding: 40px 0 18px; }
     .about-hero__bg{ height:100%; }
+    .about-img{ display:block; max-width:680px; margin:0 auto; }
+    .g-30>[class*="col-"]:last-child,
+    .g-40>[class*="col-"]:last-child{ margin-bottom:0; }
+  }
+
+  @media (max-width: 767px){
+    .section-pad{ padding:48px 0; }
+    .about-hero{ padding:32px 0 16px; }
+    .about-hero__card{ padding:22px 18px; border-radius:14px; }
+    .about-hero__card h1{ font-size:clamp(28px, 8vw, 36px); line-height:1.18; }
+    .about-hero__card p,
+    .lead{ font-size:15px; line-height:1.7; text-align:left; }
+    .h2{ font-size:24px; line-height:1.3; overflow-wrap:anywhere; }
+    .card-lite{ height:auto; padding:22px 18px; }
+    .g-30>[class*="col-"],
+    .g-40>[class*="col-"]{ margin-bottom:24px; }
+    .g-30>[class*="col-"]:last-child,
+    .g-40>[class*="col-"]:last-child{ margin-bottom:0; }
+    .checklist{ gap:12px; }
+    .checklist li{ padding-left:27px; font-size:15px; line-height:1.55; }
+    .about-img{ border-radius:12px; }
+  }
+
+  @media (max-width: 420px){
+    .about-hero__card{ padding:20px 16px; }
+    .section-pad{ padding:42px 0; }
+    .about-cta{ width:100%; text-align:center; }
   }
 </style>
 
@@ -248,7 +286,7 @@
           Whether you need a refrigerated truck, a ripening chamber, a multi-temperature warehouse,
           or a complete cold-chain infrastructure—Singhania Refrigeration is your partner in success.
         </p>
-        <a href="contact.php" class="readon banner-style" style="background:#1c2f57;color:#fff;border-radius:10px;padding:12px 20px;display:inline-block;">
+        <a href="contact.php" class="readon banner-style about-cta">
           Contact Us
         </a>
       </div>
