@@ -150,26 +150,125 @@ $coldStoragePages = [
   background:rgba(14,35,68,.08); color:#fff !important;
 }
 
-/* Mobile/off-canvas (unchanged) */
-.right_menu_togle{ position:fixed; top:0; right:-300px; width:300px; height:100%; background:#f8f8f8; box-shadow:-2px 0 5px rgba(0,0,0,.2); transition:right .3s ease-in-out; z-index:1050; overflow-y:auto; padding-top:50px; padding-bottom:20px; box-sizing:border-box; }
-.right_menu_togle.open{ right:0; }
+/* Mobile/off-canvas visibility */
 @media (max-width:991px){ .rs-menu{ display:none; } .mobile-menu{ display:block; } .rs-menu-area{ justify-content:flex-end; } .menu-cta{ margin-left:15px; } }
-@media (min-width:992px){ .mobile-menu{ display:none; } .right_menu_togle{ right:-300px !important; visibility:hidden; } }
-.body-overlay{ position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,.5); z-index:1040; display:none; }
-.body-overlay.active{ display:block; }
+@media (min-width:992px){ .mobile-menu{ display:none; } nav.right_menu_togle{ right:-340px !important; visibility:hidden; } }
 .logo-area.logo-area--tall{ max-height:none; }
 
-.mobile-nav-menu{ list-style:none; margin:0; padding:0 20px; }
-.mobile-nav-menu > li{ border-bottom:1px solid #eee; margin-bottom:0; }
-.mobile-nav-menu > li:last-child{ border-bottom:none; }
-.mobile-nav-menu a{ display:block; padding:12px 0; color:#333; text-decoration:none; font-size:16px; font-weight:500; }
-.mobile-nav-menu a:hover{ color:#007bff; }
-.mobile-nav-menu .sub-menu{ list-style:none; margin:0; padding:0; display:none; background:#f0f0f0; padding-left:15px; }
-.mobile-nav-menu .sub-menu li a{ padding:10px 0; font-size:15px; color:#555; }
-.mobile-nav-menu .sub-menu.open{ display:block; }
-.mobile-nav-menu .has-submenu > a{ position:relative; padding-right:30px; }
-.mobile-nav-menu .has-submenu > a::after{ content:"\f105"; font-family:'FontAwesome'; position:absolute; right:0; top:50%; transform:translateY(-50%); transition:transform .3s ease; }
-.mobile-nav-menu .has-submenu.active > a::after{ transform:translateY(-50%) rotate(90deg); }
+/* Mobile drawer */
+nav.right_menu_togle{
+  position:fixed;
+  top:0;
+  right:-340px;
+  width:320px;
+  max-width:calc(100vw - 48px);
+  height:100dvh;
+  padding:0 0 24px;
+  background:#fff;
+  box-shadow:-18px 0 50px rgba(6,38,74,.2);
+  overflow-x:hidden;
+  overflow-y:auto;
+  transition:right .3s ease-in-out;
+  z-index:2000;
+}
+nav.right_menu_togle.open{ right:0; }
+.body-overlay{
+  position:fixed;
+  inset:0;
+  z-index:1990;
+  display:block;
+  background:rgba(5,18,38,.58);
+  opacity:0;
+  visibility:hidden;
+  transition:opacity .25s ease, visibility .25s ease;
+}
+.body-overlay.active{ opacity:1; visibility:visible; }
+body.menu-open{ overflow:hidden; }
+.right_menu_togle .close-btn{
+  position:sticky;
+  top:0;
+  z-index:3;
+  display:flex;
+  justify-content:flex-end;
+  padding:16px 18px 12px;
+  background:rgba(255,255,255,.97);
+  border-bottom:1px solid #edf1f6;
+}
+.right_menu_togle .close-btn .close{
+  display:grid;
+  place-items:center;
+  width:38px;
+  height:38px;
+  padding:0;
+  border:0;
+  border-radius:10px;
+  background:#0e2344;
+  color:#fff;
+  font-size:25px;
+  line-height:1;
+  opacity:1;
+  cursor:pointer;
+  box-shadow:0 7px 18px rgba(14,35,68,.2);
+}
+.canvas-menu-content{ padding:10px 18px 8px; }
+.mobile-drawer-info{ margin:4px 18px 24px; padding:13px; border-radius:12px; background:#0e2344; }
+.mobile-drawer-info > a{ display:flex; gap:8px; padding:5px 0; color:#fff !important; font-size:12px; line-height:1.45; text-decoration:none; overflow-wrap:anywhere; }
+.mobile-drawer-info > a i{ width:14px; margin-top:2px; text-align:center; }
+.mobile-drawer-socials{ display:flex; gap:7px; margin-top:9px; }
+.mobile-drawer-socials a{ display:grid; place-items:center; width:30px; height:30px; border-radius:7px; background:rgba(255,255,255,.12); color:#fff !important; }
+.mobile-drawer-sites{ margin-top:11px; padding-top:10px; border-top:1px solid rgba(255,255,255,.18); }
+.mobile-drawer-sites summary{ display:flex; align-items:center; gap:7px; color:#fff; font-size:12px; font-weight:700; cursor:pointer; list-style:none; }
+.mobile-drawer-sites summary::-webkit-details-marker{ display:none; }
+.mobile-drawer-sites summary::after{ content:"\f107"; margin-left:auto; font-family:FontAwesome; transition:transform .2s ease; }
+.mobile-drawer-sites[open] summary::after{ transform:rotate(180deg); }
+.mobile-drawer-sites div{ display:grid; gap:3px; margin-top:8px; }
+.mobile-drawer-sites div a{ padding:7px 8px; border-radius:6px; background:rgba(255,255,255,.08); color:#fff !important; font-size:11px; line-height:1.35; text-decoration:none; }
+.right_menu_togle .mobile-nav-menu{ list-style:none; margin:0; padding:0; }
+.right_menu_togle .mobile-nav-menu > li{ position:relative; margin:0; border-bottom:1px solid #e7ecf3; }
+.right_menu_togle .mobile-nav-menu > li:last-child{ border-bottom:0; }
+.right_menu_togle .mobile-nav-menu a{
+  display:block;
+  padding:14px 12px;
+  border-radius:8px;
+  color:#0f2442 !important;
+  font-size:15px;
+  line-height:1.35;
+  font-weight:600;
+  text-decoration:none;
+}
+/* .right_menu_togle .mobile-nav-menu a:hover,
+.right_menu_togle .mobile-nav-menu a.active{ background:#eef4fb; color:#1268d7 !important; } */
+.right_menu_togle .mobile-nav-menu .sub-menu{
+  display:none;
+  position:static;
+  width:100%;
+  margin:0 0 10px;
+  padding:7px;
+  border:0;
+  border-radius:10px;
+  background:#0e2344;
+  box-shadow:none;
+  list-style:none;
+}
+.right_menu_togle .mobile-nav-menu .sub-menu.open{ display:block; }
+.right_menu_togle .mobile-nav-menu .sub-menu li{ margin:0; border-bottom:1px solid #e6ebf2; }
+.right_menu_togle .mobile-nav-menu .sub-menu li:last-child{ border-bottom:0; }
+.right_menu_togle .mobile-nav-menu .sub-menu li a{ width:auto; padding:10px 11px; color:white !important; font-size:13px; font-weight:500; }
+.right_menu_togle .mobile-nav-menu .has-submenu > a{ position:relative; padding-right:42px; }
+.right_menu_togle .mobile-nav-menu .has-submenu > a::after{
+  content:"\f105";
+  position:absolute;
+  top:50%;
+  right:14px;
+  font-family:FontAwesome;
+  transform:translateY(-50%);
+  transition:transform .3s ease;
+}
+.right_menu_togle .mobile-nav-menu .has-submenu.active > a::after{ transform:translateY(-50%) rotate(90deg); }
+@media (max-width:420px){
+  nav.right_menu_togle{ width:300px; max-width:calc(100vw - 36px); }
+  .canvas-menu-content{ padding-right:14px; padding-left:14px; }
+}
 
 .full-width-header .rs-header .menu-area .main-menu .rs-menu ul.nav-menu > li > a.active{
   background:var(--navNavy); color:#fff !important; box-shadow:0 6px 16px rgba(14,35,68,.22);
@@ -341,7 +440,7 @@ $coldStoragePages = [
           <div class="col-lg-10 text-right">
             <div class="rs-menu-area d-flex align-items-center justify-content-between">
               <div class="main-menu flex-grow-1">
-                <a class="rs-menu-toggle"><i class="fa fa-bars"></i></a>
+                <a class="rs-menu-toggle" role="button" aria-label="Open menu" aria-controls="mobileDrawer" aria-expanded="false"><i class="fa fa-bars"></i></a>
 
                 <!-- ===== DESKTOP MENU (updated to use helpers) ===== -->
                 <nav class="rs-menu pr-50">
@@ -449,14 +548,14 @@ $coldStoragePages = [
     </div>
 
     <!-- Off-canvas menu (already using helpers) -->
-    <nav class="right_menu_togle hidden-md">
+    <nav id="mobileDrawer" class="right_menu_togle hidden-md" aria-label="Mobile navigation" aria-hidden="true">
       <div class="close-btn">
         <span id="nav-close" class="humburger">
           <button type="button" class="close" aria-label="Close" data-dismiss="modal">&times;</button>
         </span>
       </div>
       <div class="canvas-menu-content">
-        <ul class="nav-menu">
+        <ul class="nav-menu mobile-nav-menu">
           <li class="menu-item <?php echo isActive('index.php', $curBase); ?>">
             <a class="<?php echo isActiveA('index.php', $curBase); ?>" href="index.php">Home</a>
           </li>
@@ -466,7 +565,7 @@ $coldStoragePages = [
           <li class="menu-item <?php echo isActive('blog.php', $curBase); ?>">
             <a class="<?php echo isActiveA('blog.php', $curBase); ?>" href="blog.php">Blog</a>
           </li>
-          <li class="menu-item <?php echo anyActive($productsPages, $curBase); ?>">
+          <li class="menu-item has-submenu <?php echo anyActive($productsPages, $curBase); ?>">
             <a href="products.php">Products</a>
             <ul class="sub-menu">
               <li class="<?php echo isActive('truck-ac.php', $curBase); ?>"><a class="<?php echo isActiveA('truck-ac.php', $curBase); ?>" href="truck-ac.php">Truck’s AC</a></li>
@@ -486,7 +585,7 @@ $coldStoragePages = [
           <li class="menu-item <?php echo isActive('consulting.php', $curBase); ?>">
             <a class="<?php echo isActiveA('consulting.php', $curBase); ?>" href="consulting.php">Consulting</a>
           </li>
-          <li class="menu-item <?php echo anyActive($coldStoragePages, $curBase); ?>">
+          <li class="menu-item has-submenu <?php echo anyActive($coldStoragePages, $curBase); ?>">
             <a href="#">Cold Storage Solutions</a>
             <ul class="sub-menu">
               <li class="<?php echo isActive('turnkey-solution.php', $curBase); ?>"><a class="<?php echo isActiveA('turnkey-solution.php', $curBase); ?>" href="turnkey-solution.php">Turnkey Solution</a></li>
@@ -502,6 +601,27 @@ $coldStoragePages = [
             <a class="<?php echo isActiveA('contact.php', $curBase); ?>" href="contact.php">Contact Us</a>
           </li>
         </ul>
+      </div>
+      <div class="mobile-drawer-info">
+        <a href="<?php echo htmlspecialchars($mailHref, ENT_QUOTES, 'UTF-8'); ?>"><i class="fa fa-envelope"></i><span><?php echo htmlspecialchars($email, ENT_QUOTES, 'UTF-8'); ?></span></a>
+        <a href="tel:+91<?php echo $mobile; ?>"><i class="fa fa-phone"></i><span>+91-<?php echo $mobile; ?> / +91-7303099094 / +91-9718097170</span></a>
+        <div class="mobile-drawer-socials">
+          <a href="https://www.facebook.com/profile.php?id=61579480251463" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+          <a href="https://x.com/SinghaniaR59102" target="_blank" rel="noopener" aria-label="X"><i class="fa fa-twitter"></i></a>
+          <a href="https://www.instagram.com/singhaniarefrigeration/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/company/singhania-refrigeration-and-supply-chain-consultancy/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa fa-linkedin-square"></i></a>
+          <a href="https://www.youtube.com/channel/UC-g2bewulBb2oGjPGIDAaJA" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa fa-youtube-play"></i></a>
+        </div>
+        <details class="mobile-drawer-sites">
+          <summary><i class="fa fa-globe"></i> Group Websites</summary>
+          <div>
+            <a href="https://singhanialogistics.in/" target="_blank" rel="noopener">Singhania Logistics</a>
+            <a href="https://singhaniaretail.com/" target="_blank" rel="noopener">Singhania Retail</a>
+            <a href="https://singhaniafoundation.com/" target="_blank" rel="noopener">Singhania Foundation</a>
+            <a href="https://globalsoulhealing.com/" target="_blank" rel="noopener">Global Soul Healing</a>
+            <a href="https://singhaniaroyalfurniture.com/" target="_blank" rel="noopener">Singhania Royal Furniture</a>
+          </div>
+        </details>
       </div>
     </nav>
   </header>
@@ -715,16 +835,20 @@ $(function() {
     if (!$('.body-overlay').length) $('body').append('<div class="body-overlay"></div>');
     $('.body-overlay').addClass('active');
     $('body').addClass('menu-open');
-    $panel.addClass('open');
+    $panel.addClass('open').attr('aria-hidden','false');
     $('.rs-menu-toggle').attr('aria-expanded','true');
+    $panel.find('.close').trigger('focus');
   }
   function closeMenu(){
-    $panel.removeClass('open');
+    const wasOpen = $panel.hasClass('open');
+    $panel.removeClass('open').attr('aria-hidden','true');
     $('body').removeClass('menu-open');
     $('.body-overlay').removeClass('active').one('transitionend', function(){ $(this).remove(); });
     $('.mobile-nav-menu .sub-menu').removeClass('open').removeAttr('style');
     $('.mobile-nav-menu .has-submenu').removeClass('active');
+    $('.mobile-drawer-sites').removeAttr('open');
     $('.rs-menu-toggle').attr('aria-expanded','false');
+    if (wasOpen) $('.rs-menu-toggle').trigger('focus');
   }
   $('.rs-menu-toggle').on('click', function(e){ e.preventDefault(); openMenu(); });
   $('#nav-close').on('click', function(e){ e.preventDefault(); closeMenu(); });
