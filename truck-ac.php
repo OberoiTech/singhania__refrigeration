@@ -228,9 +228,9 @@
     }
 
     /* Section-2 Image */
-    .intro-section {
+    /* .intro-section {
       background:white
-    }
+    } */
 
     /* .intro-section .section-h2 {
       max-width: 700px;
@@ -494,7 +494,7 @@
   <!-- MAIN CONTENT END  -->
 
   <!-- ===== WHAT IS A REFRIGERATED TRUCK BODY ===== -->
-  <section class="intro-section section-padding" id="what-is-refrigerated-truck-body">
+  <section class="intro-section section-padding bg-white" id="what-is-truck-ac">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-7 col-md-7">
