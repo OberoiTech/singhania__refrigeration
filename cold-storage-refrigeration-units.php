@@ -5,28 +5,12 @@
     <?php
     $pageTitle = 'Cold Storage Refrigeration Units Manufacturer in India | Singhania Refrigeration';
     $pageDescription = 'Singhania Refrigeration — Cold Storage Refrigeration Units manufacturer in India. Energy-efficient systems for warehouses and cold rooms storing dairy, produce, frozen food & pharma. Delhi NCR based. Call +91 99710 60822.';
-
-  ?>
+    ?>
     <style>
-      :root {
-        --ink: #0f2442;
-        --muted: #667085;
-        --soft: #f6f8ff;
-        --card: #ffffff;
-        --line: #e7ecf5;
-        --brand: #0e2344;
-        --brand2: #082243;
-        --section-y: 72px;
-        --section-y-tablet: 60px;
-        --section-y-mobile: 48px;
-        --content-gap: 28px;
-        --card-gap: 30px;
-      }
-
       /* ====== HERO / BREADCRUMB ====== */
     .rs-breadcrumbs.bg-7 {
       position: relative;
-      background-image: url("assets/images/products/truck-4.webp");
+      background-image: url("assets/images/products/cold-storage.png");
       background-size: cover;
       background-position: 62% center;
       overflow: hidden;
@@ -118,11 +102,6 @@
     }
 
     /* ====== LAYOUT ====== */
-    .section-pad,
-    .section-padding {
-      padding: var(--section-y) 0;
-    }
-
     /* ====== LEFT: PRODUCT CONTENT ====== */
     .prod-media {
       position: relative;
@@ -144,15 +123,6 @@
 
     .prod-media:hover img {
       transform: scale(1.03);
-    }
-
-    .h2,
-    .section-h2 {
-      font-size: clamp(24px, 2.6vw, 32px);
-      color: var(--ink);
-      font-weight: 800;
-      line-height: 1.25;
-      margin: 0 0 24px;
     }
 
     .feature-list {
@@ -190,44 +160,9 @@
       flex-wrap: wrap;
     }
 
-    .hero-card .cta-bar {
-      justify-content: flex-start;
-      gap: 14px;
-      margin-top: 32px;
-    }
-
-    .hero-card .btn-brand {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 52px;
-      padding: 13px 23px;
-      color: white;
-      border: 1px solid rgba(255, 255, 255, .28);
-      background: rgba(255, 255, 255, .08);
-      box-shadow: none;
-      backdrop-filter: blur(8px);
-      border-radius: 9px;
-    }
-    .hero-card .btn-brand:hover{
-      background: rgba(255, 255, 255, .16);
-      border-color: rgba(255, 255, 255, .5);
-    }
-
     
 
     /* ====== MICRO-ANIMATIONS ====== */
-    [data-animate] {
-      opacity: 0;
-      transform: translateY(22px) scale(.985);
-      transition: all .7s cubic-bezier(.2, .65, .3, 1);
-    }
-
-    [data-animate].active {
-      opacity: 1;
-      transform: none;
-    }
-
     /* Section-2 Image */
     /* .intro-section {
       background:white
@@ -237,44 +172,9 @@
       max-width: 700px;
     } */
 
-    .section-eyebrow {
-      display: inline-block;
-      margin-bottom: 10px;
-      color: #0057a8;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-    }
-
-    .intro-copy {
-      max-width: 720px;
-    }
-
     .intro-copy p {
-      margin-bottom: 10px;
       text-align: justify;
       font-size: clamp(15px, 1.4vw, 17px);
-      line-height: 1.5;
-    }
-
-    .intro-copy p:last-child {
-      margin-bottom: 0;
-    }
-
-    .TruckImg {
-      width: 100%;
-      max-width: 520px;
-      height: auto;
-      aspect-ratio: 4 / 3;
-      display: block;
-      margin: 0 0 0 auto;
-      object-fit: contain;
-      object-position: center;
-      padding: 18px;
-      background: #fff;
-      border-radius: 18px 0 34px 0;
-      box-shadow: 0 18px 44px rgba(16, 28, 52, .12);
     }
 
     .intro-section .row>[class*="col-"] {
@@ -340,22 +240,6 @@
         padding: 76px 0 68px;
       }
 
-      .intro-copy {
-        max-width: 100%;
-      }
-
-      .TruckImg {
-        margin: 8px auto 0;
-        max-width: 560px;
-      }
-
-      
-      .section-pad,
-      .section-padding {
-        padding-top: var(--section-y-tablet);
-        padding-bottom: var(--section-y-tablet);
-      }
-
       .feature-grid>[class*="col-"]:nth-last-child(-n + 3) {
         margin-bottom: var(--card-gap);
       }
@@ -366,13 +250,6 @@
     }
 
     @media (max-width: 767px) {
-
-      
-      .section-pad,
-      .section-padding {
-        padding-top: var(--section-y-mobile);
-        padding-bottom: var(--section-y-mobile);
-      }
 
       .hero-card {
         max-width: 100%;
@@ -401,21 +278,6 @@
         text-align: center;
       }
 
-      .section-h2 {
-        font-size: 24px;
-        line-height: 1.28;
-        margin-bottom: 20px;
-      }
-
-      .TruckImg {
-        max-width: 100%;
-        aspect-ratio: 4 / 3;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 12px;
-        padding: 12px;
-      }
-
       .feature-grid>[class*="col-"],
       .feature-grid>[class*="col-"]:nth-last-child(-n + 2),
       .feature-grid>[class*="col-"]:nth-last-child(-n + 3) {
@@ -440,17 +302,8 @@
       }
     }
 
-    @media (max-width: 420px) {
-      .hero-card .cta-bar {
-        gap: 10px;
-      }
-
-      .hero-card .btn-brand {
-        width: 100%;
-      }
-
-    }
-  </style>
+    </style>
+    <link rel="stylesheet" href="assets/css/product-pages.css">
   </head>
 
   <body>
@@ -467,8 +320,6 @@
 
   <!-- Main content Start -->
   <div class="main-content">
-
-    <!-- Cold Storage Solution Hero -->
     <div class="rs-breadcrumbs bg-7 heroImage">
       <div class="container">
         <div class="content-part">
@@ -1541,12 +1392,6 @@
 
   <style>
     /* ── RELATED PRODUCTS ── */
-    .section-h3 {
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: #1a1a1a;
-    }
-
     .related-grid>[class*="col-"] {
       margin-bottom: 20px;
     }
