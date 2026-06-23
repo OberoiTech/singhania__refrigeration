@@ -229,15 +229,36 @@
 
     /* Section-2 Image */
     .intro-section {
-      background: #f6f9fc;
+      background:white
     }
 
-    .intro-section .section-h2 {
+    /* .intro-section .section-h2 {
       max-width: 700px;
+    } */
+
+    .section-eyebrow {
+      display: inline-block;
+      margin-bottom: 10px;
+      color: #0057a8;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
     }
 
     .intro-copy {
       max-width: 720px;
+    }
+
+    .intro-copy p {
+      margin-bottom: 10px;
+      text-align: justify;
+      font-size: clamp(15px, 1.4vw, 17px);
+      line-height: 1.5;
+    }
+
+    .intro-copy p:last-child {
+      margin-bottom: 0;
     }
 
     .TruckImg {
@@ -472,9 +493,45 @@
   </div>
   <!-- MAIN CONTENT END  -->
 
+  <!-- ===== WHAT IS A REFRIGERATED TRUCK BODY ===== -->
+  <section class="intro-section section-padding" id="what-is-refrigerated-truck-body">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-7 col-md-7">
+          <div class="intro-copy">
+            <!--  <span class="section-eyebrow">Overview</span> -->
+            <h2 class="section-h2">What is a Truck AC or Transport Refrigeration Unit?</h2>
+
+            <p class="lead">
+               A Truck AC, also named a Transport Refrigeration Unit (TRU), is an industrial
+                cooling system fitted on commercial vehicles for maintaining controlled cargo
+                temperatures during transit.
+            </p>
+            <p class="lead">
+             Refrigerated truck units are designed for temperature sensitive cargo, unlike
+             standard vehicle air conditioning. They are vital to cold chain logistics,
+             helping companies maintain product quality, reduce spoilage and meet
+             transportation standards.
+            </p>
+           
+          </div>
+        </div>
+
+        <div class="col-lg-5 col-md-5">
+          <img
+            class="TruckImg"
+            src="assets/images/products/truck-ac.webp"
+            alt="Truck's ac boddy"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ===== END DEFINITION SECTION ===== -->
 
   <!-- SECTION 3 -->
-  <section class="features-section section-padding" id="key-features">
+  <section class="features-section section-padding" id="key-features" style="background: #f6f9fc;">
     <div class="container">
 
       <h2 class="section-h2 text-center mb-5">
@@ -547,7 +604,7 @@
   <!--SECTION 3 END  -->
 
   <!-- SECTION 4 START -->
-  <section class="config-section section-padding " id="configurations">
+  <section class="config-section section-padding bg-white " id="configurations">
     <div class="container">
 
       <h2 class="section-h2 text-center mb-5">
@@ -608,9 +665,9 @@
   </section>
 
   <style>
-    .config-section {
+    /* .config-section {
       background: #f6f9fc;
-    }
+    } */
 
     .config-card {
       display: flex;
@@ -796,7 +853,7 @@
   <style>
     /* ── INDUSTRIES SECTION ── */
     .industries-section {
-      background: white;
+      background: #f6f9fc;
     }
 
     .industry-grid>[class*="col-"] {
@@ -885,7 +942,7 @@
   <!-- SECTION-5 end -->
   <!-- section-6 start -->
 
-  <section class="local-seo-section section-padding " id="local-seo">
+  <section class="local-seo-section section-padding bg-white " id="local-seo">
     <div class="container">
       <div class="row align-items-center local-seo-grid">
 
@@ -1113,7 +1170,7 @@
 
   <style>
     .why-choose-section {
-      background: #ffffff;
+       background: #f6f9fc;
     }
 
     .why-grid {
@@ -1215,7 +1272,7 @@
   <!-- Section-7 END -->
 
   <!--Section-8  -->
-  <section class="faq-section section-padding" id="faq">
+  <section class="faq-section section-padding bg-white" id="faq">
     <div class="container">
 
       <h2 class="section-h2 text-center mb-5">
@@ -1287,9 +1344,9 @@
   </section>
   <style>
     /* ── FAQ ACCORDION ── */
-    .faq-section {
+    /* .faq-section {
       background: #f6f9fc;
-    }
+    } */
 
     .faq-accordion {
       max-width: 920px;
@@ -1395,24 +1452,62 @@
   <!-- section 8 -->
 
   <!-- Section-9 -->
-  <!-- <section class="cta-section section-padding" id="quote-form"> -->
-    <div class="rs-cta bg21 pt-90 pb-100 md-pt-68 md-pb-80 ">
-      <div class="container">
-        <div class="sec-title text-center">
-          <div class="sub-title modify white"> Get a Customized Truck Refrigeration Solution</div>
-          <h2 class="title3 white-color">Our experts are ready to help.</h2>
-          <div class="btn-part">
-            <a class="readon banner-style" href="contact.php">Contact Us</a>
-          </div>
+  <!-- Section-9 -->
+
+  <div class="rs-cta bg21 pt-90 pb-100 md-pt-68 md-pb-80">
+    <div class="container">
+      <div class="sec-title text-center truck-body-cta">
+        <span class="sub-title modify white">Get Started</span>
+        <h2 class="title3 white-color">Talk to Us About Your Fleet&rsquo;s Refrigeration Needs</h2>
+
+        <p class="cta-description">
+           Whether you&rsquo;re fitting out one vehicle or a multi-truck fleet, our team can
+          recommend a transport refrigeration configuration suited to your cargo, your
+          routes, and your budget.
+        </p>
+
+        <div class="btn-part">
+          <a class="readon banner-style" href="contact.php">Request a Quote &rarr;</a>
         </div>
+
+        <p class="cta-phone-numbers">
+          Call: <a href="tel:+919971060822"><strong>+91 99710 60822</strong></a>
+          <span aria-hidden="true">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+          Call: <a href="tel:+919718097170"><strong>+91 97180 97170</strong></a>
+        </p>
       </div>
     </div>
-  <!-- </section> -->
+  </div>
+
+  <style>
+    .truck-body-cta .cta-description {
+      max-width: 760px;
+      margin: 16px auto 24px;
+      color: #fff;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .truck-body-cta .cta-phone-numbers {
+      margin: 20px 0 0;
+      color: #fff;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .truck-body-cta .cta-phone-numbers a {
+      color: #fff;
+    }
+
+    .truck-body-cta .cta-phone-numbers a:hover {
+      text-decoration: underline;
+    }
+  </style>
 
   <!-- Section-9 end -->
 
   <!-- section 10 -->
-  <section class="related-section section-padding bg-light " id="related-products">
+  <section class="related-section section-padding"id="related-products" style=" background: #f6f9fc;">
     <div class="container">
 
       <h3 class="section-h3 text-center mb-5">
