@@ -9,10 +9,10 @@
   ?>
   <?php include('head.php'); ?>
   <style>
-    /* ====== TRUCK AC HERO ====== */
+    /*Main content */
     .rs-breadcrumbs.bg-7 {
       position: relative;
-      background-image: url("assets/images/products/truck-4.webp");
+      background-image: url("assets/images/products/truck_refrigeration_singhania.webp");
       background-size: cover;
       background-position: 62% center;
       overflow: hidden;
@@ -405,8 +405,6 @@
 
   <!-- Main content Start -->
   <div class="main-content">
-
-    <!-- Truck AC Hero -->
     <div class="rs-breadcrumbs bg-7 heroImage">
       <div class="container">
         <div class="content-part">
@@ -435,7 +433,7 @@
   <!-- MAIN CONTENT END  -->
 
   <!-- ===== WHAT IS A REFRIGERATED TRUCK BODY ===== -->
-  <section class="intro-section section-padding" id="what-is-refrigerated-truck-body">
+  <section class="intro-section section-padding">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-7 col-md-7">
@@ -475,7 +473,7 @@
   <!-- ===== END DEFINITION SECTION ===== -->
 
 
-  <!-- SECTION 2 -->
+  <!-- SECTION 3 -->
   <section class="features-section section-padding" id="key-features">
     <div class="container">
       <h2 class="section-h2 text-center mb-5">
