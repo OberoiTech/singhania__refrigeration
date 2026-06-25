@@ -1375,41 +1375,7 @@
   </style>
   <!-- section 8 -->
 
-  <!-- Section-9 -->
-
-  <section class="related-section section-padding" id="related-solutions" style="background: #f6f9fc;">
-    <div class="container">
-      <h3 class="section-h3 text-center mb-5">Products</h3>
-      <?php
-      $focused_related_products = [
-        ['title' => 'Truck AC', 'icon' => 'fa fa-truck', 'url' => 'truck-ac.php'],
-        ['title' => 'Truck Refrigerator Container', 'icon' => 'fa fa-cube', 'url' => 'truck-refrigerator-container.php'],
-        ['title' => 'Cold Storage Refrigeration Units', 'icon' => 'fa fa-snowflake-o', 'url' => 'cold-storage-refrigeration-units.php'],
-        ['title' => 'Compressor Rack System', 'icon' => 'fa fa-cogs', 'url' => 'compressor-rack-system.php'],
-        ['title' => 'Ammonia Refrigeration Units', 'icon' => 'fa fa-industry', 'url' => 'ammonia-refrigeration-units.php'],
-        ['title' => 'Ripening Systems', 'icon' => 'fa fa-leaf', 'url' => 'ripening-systems.php'],
-        ['title' => 'Multideck Cabinet', 'icon' => 'fa fa-th-large', 'url' => 'multideck-cabinet.php'],
-        ['title' => 'IQF (Individual Quick Freeze)', 'icon' => 'fa fa-asterisk', 'url' => 'iqf.php'],
-        ['title' => 'PUF Insulated Panels', 'icon' => 'fa fa-columns', 'url' => 'panels.php'],
-        ['title' => 'Doors & CA Doors', 'icon' => 'fa fa-sign-in', 'url' => 'doors-ca-doors.php'],
-        ['title' => 'Dock Shelter & Dock Leveler', 'icon' => 'fa fa-building', 'url' => 'dock-shelter-dock-leveler.php'],
-        ['title' => 'Heavy Duty Racks', 'icon' => 'fa fa-archive', 'url' => 'heavy-duty-racks.php'],
-      ];
-      ?>
-      <div class="row related-grid justify-content-center">
-        <?php foreach ($focused_related_products as $index => $product): ?>
-          <div class="col-lg-3 col-md-4 col-sm-6" data-animate>
-            <a href="<?php echo htmlspecialchars($product['url']); ?>" class="related-card text-decoration-none">
-              <span class="related-number"><?php echo str_pad((string)($index + 1), 2, '0', STR_PAD_LEFT); ?></span>
-              <i class="<?php echo htmlspecialchars($product['icon']); ?> related-icon"></i>
-              <span class="related-title"><?php echo htmlspecialchars($product['title']); ?></span>
-              <i class="fa fa-arrow-right related-arrow"></i>
-            </a>
-          </div>
-        <?php endforeach; ?>
-      </div>
-    </div>
-  </section>
+  
 
   <div class="rs-cta bg21 pt-90 pb-100 md-pt-68 md-pb-80">
     <div class="container">
@@ -1464,7 +1430,7 @@
   <!-- Section-9 end -->
 
   <!-- section 10 -->
-  <section class="related-section section-padding" id="related-products" style="background: #f6f9fc; display: none;">
+  <section class="related-section section-padding" id="related-products" style="background: #f6f9fc;">
     <div class="container">
 
       <h3 class="section-h3 text-center mb-5">
@@ -1492,7 +1458,8 @@
 
       <div class="row related-grid justify-content-center">
         <?php foreach ($related_products as $index => $product):
-          $isActiveProduct = basename($product['url']) === basename($_SERVER['SCRIPT_NAME'] ?? 'truck-ac.php');
+          $currentProductPage = basename(parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH) ?: ($_SERVER['SCRIPT_NAME'] ?? 'iqf.php'));
+          $isActiveProduct = basename($product['url']) === $currentProductPage;
         ?>
           <div class="col-lg-3 col-md-4 col-sm-6" data-animate>
             <a href="<?php echo htmlspecialchars($product['url']); ?>"
