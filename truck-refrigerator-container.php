@@ -222,7 +222,7 @@
       font-weight: 700;
       line-height: 1.35;
       margin: 0 0 10px;
-      color: #1a1a1a;
+      color:#0f2442
     }
 
     .feature-desc {
@@ -711,9 +711,6 @@
             serves companies in Delhi NCR and beyond India. For logistics firms, fleet managers,
             food distributors, pharmaceutical suppliers, and cold chain service providers, we
             construct PUF insulated truck bodies and reefer containers.
-          </p>
-          <p class="lead">
-           <strong>The following cities make extensive use of our refrigerated truck bodies:</strong>
           </p>
         </div>
 

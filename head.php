@@ -11,6 +11,7 @@ $defaultDescription = 'Singhania Refrigeration provides advanced cold storage an
 $defaultKeywords = 'cold storage solutions, industrial refrigeration, cold chain solutions, Singhania Refrigeration';
 $pageTitle = $pageTitle ?? $defaultTitle;
 $pageDescription = $pageDescription ?? $defaultDescription;
+$ogDescription = $ogDescription ?? $pageDescription;
 $pageKeywords = $pageKeywords ?? $defaultKeywords;
 $siteUrl = 'https://singhaniarefrigeration.com/';
 $shareImage = $shareImage ?? $siteUrl . 'admin/uploads/image.jpg';
@@ -63,7 +64,7 @@ if (in_array(strtolower($file), ['about-us.php', 'about.php'], true)) {
         <meta property="og:title" content="<?php echo htmlspecialchars($pageTitle, ENT_QUOTES, 'UTF-8'); ?>">
         <meta property="og:site_name" content="Singhania Refrigeration">
         <meta property="og:url" content="<?php echo htmlspecialchars($schemaPageUrl, ENT_QUOTES, 'UTF-8'); ?>">
-        <meta property="og:description" content="<?php echo htmlspecialchars($pageDescription, ENT_QUOTES, 'UTF-8'); ?>">
+        <meta property="og:description" content="<?php echo htmlspecialchars($ogDescription, ENT_QUOTES, 'UTF-8'); ?>">
         <meta property="og:type" content="<?php echo htmlspecialchars($ogType, ENT_QUOTES, 'UTF-8'); ?>">
         <meta property="og:image" content="<?php echo htmlspecialchars($shareImage, ENT_QUOTES, 'UTF-8'); ?>">
         <meta property="og:image:alt" content="Singhania Refrigeration cold storage and industrial refrigeration solutions">
@@ -590,3 +591,33 @@ if (in_array(strtolower($file), ['about-us.php', 'about.php'], true)) {
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
         <!-- FOR MAPS TRUCK-AC -->
         <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+
+        <!-- Shared inner-page hero entrance animation (matches the home hero) -->
+        <style>
+          .rs-breadcrumbs .content-part {
+            transform-origin: 50% 100%;
+            animation: srHeroFloatIn .8s ease .15s both;
+          }
+
+          /* The parent now owns the entrance animation, preventing a double jump. */
+          .rs-breadcrumbs .content-part .hero-card {
+            animation: none !important;
+          }
+
+          @keyframes srHeroFloatIn {
+            from {
+              opacity: 0;
+              transform: translateY(22px) scale(.985);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0) scale(1);
+            }
+          }
+
+          @media (prefers-reduced-motion: reduce) {
+            .rs-breadcrumbs .content-part {
+              animation: none;
+            }
+          }
+        </style>

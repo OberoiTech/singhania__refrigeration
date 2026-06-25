@@ -225,7 +225,7 @@
       font-weight: 700;
       line-height: 1.35;
       margin: 0 0 10px;
-      color: #1a1a1a;
+      color:#0f2442
     }
 
     .feature-desc {
@@ -407,7 +407,7 @@
           'desc'  => 'Rather than running at full load when only a small portion of capacity is needed, compressors automatically turn on and off to meet real-time cooling needs.'
         ],
         [
-          'image' => 'assets/images/products/compressor.png',
+          'image' => 'assets/images/products/high_cop.png',
           'title' => 'High-COP Compressors with Heat Recovery',
           'desc'  => 'Efficient compressors paired with optional heat recovery let rejected heat be reused for water or space heating elsewhere on site.'
         ],
@@ -422,12 +422,12 @@
           'desc'  => 'A centralized control panel provides real-time visibility of pressures, temperatures, alarms, and compressor run-hours, with full data logging.'
         ],
         [
-          'image' => 'assets/images/products/modular.png',
+          'image' => 'assets/images/products/frozen-food.png',
           'title' => 'Modular, Scalable Design',
           'desc'  => 'Racks are sized to current demand but can be added to as the facility cooling load grows, without re-engineering the plant room.'
         ],
         [
-          'image' => 'assets/images/products/service-AMC.png',
+          'image' => 'assets/images/products/3lp.png',
           'title' => 'Service-Friendly Layout & AMC Support',
           'desc'  => 'Piping and component layout allow easy access for quick servicing, backed by nationwide AMC support.'
         ],
@@ -723,32 +723,32 @@
       // ── Industries Data Array ──
       $industries = [
         [
-          'image' => 'assets/images/products/diary.png',
+          'image' => 'assets/images/products/Supermarkets & Retail Cold Chambers.png',
           'title' => 'Supermarkets & Retail Cold Chambers',
           'desc'  => 'Serve multiple chiller and freezer cabinets from a single central plant room.'
         ],
         [
-          'image' => 'assets/images/products/Pharma.png',
+          'image' => 'assets/images/products/food_plant.png',
           'title' => 'Food Processing Plants',
           'desc'  => 'Supply consistent refrigeration across multiple processing and packing zones.'
         ],
         [
-          'image' => 'assets/images/products/frozen-food.png',
+          'image' => 'assets/images/products/cold-storage.png',
           'title' => 'Cold Storage & Distribution Warehouses',
           'desc'  => 'Serve multiple cold rooms and chambers from one rack and simplify plant room design.'
         ],
         [
-          'image' => 'assets/images/products/veg.png',
+          'image' => 'assets/images/products/diary.png',
           'title' => 'Dairy & Beverage Plants',
           'desc'  => 'Maintain process and storage temperatures across production lines.'
         ],
         [
-          'image' => 'assets/images/products/meat.png',
+          'image' => 'assets/images/products/cold-room-for-pharma.png',
           'title' => 'Pharmaceutical Facilities',
           'desc'  => 'Enable multi-zone temperature monitoring and control that meets compliance requirements.'
         ],
         [
-          'image' => 'assets/images/products/3lp.png',
+          'image' => 'assets/images/products/industrial_manu.png',
           'title' => 'Industrial & Manufacturing Units',
           'desc'  => 'Provide process cooling for plants that need several simultaneous temperature zones.'
         ],
@@ -883,9 +883,7 @@
             as a custom-built solution for warehouses, cold rooms and distribution centres
             operated by food processors, pharmaceutical manufacturers, and logistics companies.
           </p>
-          <p class="lead">
-           <strong>Our Cold Storage Refrigeration Units are used throughout any of the following cities:</strong>
-          </p>
+          
         </div>
 
         <div class="col-lg-6">

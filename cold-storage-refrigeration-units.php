@@ -220,7 +220,7 @@
       font-weight: 700;
       line-height: 1.35;
       margin: 0 0 10px;
-      color: #1a1a1a;
+      color:#0f2442
     }
 
     .feature-desc {
@@ -791,9 +791,6 @@
             as a custom-built solution for warehouses, cold rooms and distribution centres
             operated by food processors, pharmaceutical manufacturers, and logistics companies.
           </p>
-          <p class="lead">
-           <strong>Our Cold Storage Refrigeration Units are used throughout any of the following cities:</strong>
-          </p>
         </div>
 
         <div class="col-lg-6">
@@ -962,7 +959,7 @@
         [
           'icon'  => 'fa fa-calculator',
           'title' => 'Load Calculation Before Quoting',
-          'desc'  => 'Every project starts with a heat-load study based on room size, product type, door traffic, and ambient conditions &mdash; so the system isn&rsquo;t oversized (wasted cost) or undersized (unreliable cooling).'
+          'desc'  => "Every project starts with a heat-load study based on room size, product type, door traffic, and ambient conditions - so the system isn't oversized (wasted cost) or undersized (unreliable cooling)."
         ],
         [
           'icon'  => 'fa fa-headphones',
@@ -1118,10 +1115,7 @@
       $faqs = [
         [
           'q' => 'What temperature should a cold storage room be set to?',
-          'a' => 'It depends on what&rsquo;s being stored. Fresh fruits and vegetables are
-                  typically held between 2 & deg;C and 8&deg;C, dairy products around 2&deg;C to
-                  4&deg;C, and frozen items such as meat, seafood, and ice cream need -18&deg;C
-                  to -25&deg;C. We set the exact range based on your product.'
+          'a' => "It depends on what's being stored. Fresh fruits and vegetables are typically held between 2°C and 8°C, dairy products around 2°C to 4°C, and frozen items such as meat, seafood, and ice cream need -18°C to -25°C. We set the exact range based on your product."
         ],
         [
           'q' => 'How is the cost of a cold storage unit calculated?',
@@ -1139,12 +1133,11 @@
         ],
         [
           'q' => 'What is the difference between a chiller room and a deep-freeze room?',
-          'a' => 'A chiller room holds products above freezing, commonly 2&deg;C to 8&deg;C, for fresh produce and dairy. A deep-freeze room runs below 0&deg;C, often -18&deg;C or lower, for long-term storage of frozen meat, seafood, and
-                  ready-to-eat food.'
+          'a' => 'A chiller room holds products above freezing, commonly 2°C to 8°C, for fresh produce and dairy. A deep-freeze room runs below 0°C, often -18°C or lower, for long-term storage of frozen meat, seafood, and ready-to-eat food.'
         ],
         [
           'q' => 'Do you provide installation and after-sales service outside Delhi NCR?',
-          'a' => 'Yes. While we&rsquo;re based in Delhi NCR, our technical team and AMC support extend across India for both new installations and ongoing servicing.'
+          'a' => "Yes. While we're based in Delhi NCR, our technical team and AMC support extend across India for both new installations and ongoing servicing."
         ],
       ];
       ?>

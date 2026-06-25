@@ -77,7 +77,7 @@ body{ color:var(--ink); }
 .testimonial-shell{ border-radius:16px; }
 .testimonial-quote{ color:var(--brand); }
 .rs-testimonial.style1 .bg-part{
-  background:#f5f7ff !important;
+ 
   min-height:420px;
   display:flex;
   align-items:center;
@@ -94,18 +94,6 @@ body{ color:var(--ink); }
   color:var(--brand);
   font-size:34px;
   box-shadow:0 12px 28px rgba(0,0,0,.10);
-}
-.testimonial-left-icon{
-  width:170px;
-  height:170px;
-  border-radius:50%;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  background:#eef2ff;
-  color:var(--brand);
-  font-size:78px;
-  box-shadow:0 18px 44px rgba(0,0,0,.12);
 }
 
 .img-float-onload{ animation:floatY 7s ease-in-out infinite .6s; }
@@ -304,7 +292,7 @@ body{ color:var(--ink); }
 #rs-slider #nivoSlider,
 #rs-slider #nivoSlider img{
   width:100%;
-  height:var(--hero-h);
+  height:clamp(560px, 78svh, var(--hero-max));
   object-fit:cover;
   object-position:center;
   display:block;
@@ -314,22 +302,31 @@ body{ color:var(--ink); }
 /* Hide original overlay container to avoid double overlays */
 #rs-slider .slider-direction{ display:none !important; }
 
-/* Nivo places caption HTML here */
-/* Nivo-injected caption: force flex + visible */
+/* Nivo-injected caption */
 #rs-slider .nivo-caption{
-  display:none !important;
+  display:flex !important;
   align-items:center;
   justify-content:flex-start;
-  opacity:0 !important;
+  opacity:1 !important;
   padding:0 12px;
   pointer-events:none; /* allow arrows to be clickable */
-  transition:opacity .25s ease;
-}
-#rs-slider .nivo-caption.is-visible{
-  display:flex !important;
-  opacity:1 !important;
 }
 #rs-slider .nivo-caption .hero-card{ pointer-events:auto; } /* card stays clickable */
+
+/* Reset the theme's absolute positioning and extra wrapper padding. */
+#rs-slider .nivo-caption .container{
+  display:flex;
+  align-items:center;
+  height:100%;
+}
+#rs-slider .nivo-caption .content-part{
+  position:static;
+  width:100%;
+  max-width:none;
+  padding:24px 0;
+  overflow:visible;
+  transform:none;
+}
 
 #rs-slider .nivo-caption .hero-card,
 #rs-slider .nivo-caption a,
@@ -341,7 +338,7 @@ body{ color:var(--ink); }
 #rs-slider .hero-card{
   background:rgba(13,31,61,.86); color:#fff;
   border-radius:16px; padding:24px 22px; max-width:720px;
-  margin-left:clamp(8px,4vw,32px);
+  margin-left:0;
   box-shadow:0 20px 60px rgba(0,0,0,.35), 0 8px 18px rgba(0,0,0,.22);
   backdrop-filter:saturate(120%) blur(2px);
   transform-origin:50% 100%;
@@ -349,11 +346,12 @@ body{ color:var(--ink); }
 }
 #rs-slider .hero-card .sl-title{ 
     font-size: clamp(24px, 4vw, 35px);
-    line-height: 1.25;
-    margin-bottom: 10px;
-    padding: 17px 1px;
+    line-height: 1.2;
+    margin:0 0 14px;
+    padding:0;
  }
 #rs-slider .hero-card .sl-desc{ font-size:clamp(14px,1.8vw,16px); line-height:1.7; color:#dfe7ff; }
+#rs-slider .hero-card .slider-bottom{ margin:20px 0 0; }
 #rs-slider .hero-card .slider-bottom ul{ margin:18px 0 0; padding:0; list-style:none; }
 #rs-slider .hero-card .readon.banner-style{
   display:inline-block; background:#1c2f57; color:#fff; border:0; border-radius:10px; padding:12px 20px; font-weight:600;
@@ -375,7 +373,11 @@ body{ color:var(--ink); }
 
 /* Mobile tweaks */
 @media (max-width: 767px){
-  #rs-slider .hero-card{ max-width:92vw; padding:22px 18px; }
+  #rs-slider #nivoSlider,
+  #rs-slider #nivoSlider img{ height:clamp(620px, 88svh, 760px); }
+  #rs-slider .nivo-caption{ padding:0 15px; }
+  #rs-slider .nivo-caption .content-part{ padding:20px 0; }
+  #rs-slider .hero-card{ width:100%; max-width:100%; padding:22px 18px; }
   #rs-slider .hero-card .sl-title{ font-size:clamp(22px,7vw,34px); }
   #rs-slider .hero-card .sl-desc{ font-size:14px; }
 }
@@ -438,42 +440,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <!-- ===== Main ===== -->
     <div class="main-content">
       
-    <style>
-/* === Nivo Hero — height & image fit === */
-#nivoSlider,
-#nivoSlider img{ width:100%; height: clamp(520px, 78vh, 820px); object-fit: cover; object-position: center; }
-
-/* Mobile */
-@media (max-width: 575.98px){ #nivoSlider, #nivoSlider img{ height: 70vh; } }
-
-/* === IMPORTANT: avoid double overlay (hide original caption blocks) === */
-.rs-slider .slider-direction{ display: none !important; }
-
-/* Nivo injects the caption HTML here */
-/* Put this after your hero CSS */
-#rs-slider .nivo-caption{
-  display:flex !important;   /* Nivo sets display:block; we want flex */
-  align-items:center;
-  justify-content:flex-start;
-  opacity:1!important;       /* Prevent fade-to-0 glitches */
-}
-
-#rs-slider .nivo-caption .hero-card,
-#rs-slider .nivo-caption a,
-#rs-slider .nivo-caption button,
-#rs-slider .nivo-caption input,
-#rs-slider .nivo-caption textarea{ pointer-events:auto; }
-
-/* Arrows on top */
-.nivo-directionNav a{ z-index: 9 !important; }
-
-/* Optional gradient */
-.rs-slider.slider1::after{
-  content:""; position:absolute; inset:0; pointer-events:none; z-index:2;
-  background: linear-gradient(90deg, rgba(6,14,30,0.28) 0%, rgba(6,14,30,0.18) 28%, rgba(6,14,30,0.06) 55%, rgba(6,14,30,0) 80%);
-}
-    </style>
-
       <!-- ===== Slider ===== -->
         <div id="rs-slider" class="rs-slider slider1">
           <div class="bend niceties">
@@ -762,7 +728,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           </div>
           <div class="white-bg testimonial-shell">
             <div class="row">
-              <div class="col-lg-6 pr-0 md-pl-pr-15"><div class="bg-part md-pt-200 md-pb-200"><span class="testimonial-left-icon" aria-label="Customer feedback"><i class="fa fa-users" aria-hidden="true"></i></span></div></div>
+              <div class="col-lg-6 pr-0 md-pl-pr-15"><div class="bg-part md-pt-200 md-pb-200"><span class="testimonial-left-icon" aria-label="Customer feedback"><i class="" aria-hidden="true"></i></span></div></div>
               <div class="col-lg-6 slider-part">
                 <div class="rs-carousel owl-carousel dot-style1" data-loop="true" data-items="1" data-margin="30" data-autoplay="true" data-hoverpause="true" data-autoplay-timeout="5000" data-smart-speed="800" data-dots="true" data-nav="false" data-center-mode="false">
                   <div class="testi-item">

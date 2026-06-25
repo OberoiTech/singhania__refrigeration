@@ -222,7 +222,7 @@
       font-weight: 700;
       line-height: 1.35;
       margin: 0 0 10px;
-      color: #1a1a1a;
+      color:#0f2442
     }
 
     .feature-desc {
@@ -700,9 +700,6 @@
     </div>
   </section>
 
-
-
-
   <style>
     /* ── INDUSTRIES SECTION ── */
     .industries-section {
@@ -724,13 +721,10 @@
       padding: 32px 24px;
       text-align: center;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
+    }    
     .industry-card:hover {
-      background: rgba(255, 255, 255, 0.15);
       transform: translateY(-4px);
     }
-
     .industry-icon {
       font-size: 2.5rem;
       color: var(--ink);
@@ -801,22 +795,15 @@
 
         <div class="col-lg-6 local-seo-content">
           <h2 class="section-h2">
-            Truck AC Manufacturer in Delhi NCR
+            Multideck Cabinet Manufacturer in Delhi NCR
           </h2>
           <p>
-            Singhania Refrigeration is one of the best Truck AC Manufacturers
-            serving the requirements of companies in Delhi NCR and India. We offer
-            customized transport refrigeration systems for logistics companies,
-            fleet operators, food distributors, pharmaceutical suppliers and
-            cold chain service providers.
+              Singhania Refrigeration is one of the leading Multideck Cabinet
+      manufacturers serving supermarket chains, retail shops, and food
+      outlets in Delhi NCR and across India. We develop display cabinets
+      that combine product visibility and energy-efficient cooling.
           </p>
-          <p>
-            Our truck refrigeration solutions are widely used across:
-          </p>
-          <p>
-            With years of refrigeration engineering expertise, we help businesses
-            build reliable and efficient temperature-controlled transportation networks.
-          </p>
+          
         </div>
 
         <div class="col-lg-6">

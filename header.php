@@ -216,6 +216,19 @@ body.menu-open{ overflow:hidden; }
 .mobile-drawer-info > a i{ width:14px; margin-top:2px; text-align:center; }
 .mobile-drawer-socials{ display:flex; gap:7px; margin-top:9px; }
 .mobile-drawer-socials a{ display:grid; place-items:center; width:30px; height:30px; border-radius:7px; background:rgba(255,255,255,.12); color:#fff !important; }
+.x-social-icon{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:1em;
+  height:1em;
+  color:inherit;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size:13px;
+  font-weight:800;
+  line-height:1;
+}
+.mobile-drawer-socials .x-social-icon{ font-size:12px; }
 .mobile-drawer-sites{ margin-top:11px; padding-top:10px; border-top:1px solid rgba(255,255,255,.18); }
 .mobile-drawer-sites summary{ display:flex; align-items:center; gap:7px; color:#fff; font-size:12px; font-weight:700; cursor:pointer; list-style:none; }
 .mobile-drawer-sites summary::-webkit-details-marker{ display:none; }
@@ -275,18 +288,90 @@ body.menu-open{ overflow:hidden; }
 }
 
 /**/
+/* Toolbar alignment */
+.full-width-header .toolbar-area{
+  display:flex;
+  align-items:center;
+  min-height:56px;
+  padding:0;
+}
+.full-width-header .toolbar-area .row{
+  display:flex;
+  align-items:center;
+  flex-wrap:nowrap;
+}
+.full-width-header .toolbar-area .col-md-8,
+.full-width-header .toolbar-area .col-md-4{
+  float:none;
+  width:auto;
+  max-width:none;
+}
+.full-width-header .toolbar-area .col-md-8{
+  flex:1 1 auto;
+  min-width:0;
+}
+.full-width-header .toolbar-area .col-md-4{
+  flex:0 0 auto;
+  margin-left:auto;
+}
+.toolbar-contact{
+  min-width:0;
+}
+.toolbar-contact ul,
+.toolbar-sl-share > ul{
+  display:flex;
+  align-items:center;
+  flex-wrap:nowrap;
+  gap:26px;
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+.toolbar-contact ul li,
+.toolbar-sl-share > ul li{
+  display:inline-flex;
+  align-items:center;
+  margin:0;
+  white-space:nowrap;
+  line-height:1;
+}
+.toolbar-contact ul li:last-child{
+  min-width:0;
+}
+.toolbar-contact ul li:last-child a{
+  min-width:0;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.toolbar-contact ul li{
+  gap:6px;
+}
+.toolbar-contact ul li a,
+.toolbar-sl-share > ul li a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  line-height:1;
+}
+.toolbar-contact ul li i,
+.toolbar-sl-share > ul li i{
+  line-height:1;
+}
 /* =========================
    GROUP WEBSITES DROPDOWN (TOP BAR)
 ========================= */
 .toolbar-sl-share{
   display:flex;
   align-items:center;
-  justify-content:space-around;
-  gap:14px;
+  justify-content:flex-end;
+  gap:18px;
+  width:100%;
+  min-width:0;
+  flex-wrap:nowrap;
 }
-.toolbar-sl-share > ul{ margin:0; }
+.toolbar-sl-share > ul{ gap:18px; }
 
-.group-sites{ position:relative; }
+.group-sites{ position:relative; flex:0 0 auto; }
 
 .group-sites-btn{
   border:none;
@@ -355,7 +440,7 @@ body.menu-open{ overflow:hidden; }
 }
 
 .full-width-header .toolbar-area .toolbar-sl-share ul li {
-    padding: 11px 3px;
+    padding: 0;
 }
 .group-sites-menu a:hover{
   background: rgba(14,35,68,.08);
@@ -374,6 +459,34 @@ body.menu-open{ overflow:hidden; }
   .group-sites-btn .gs-title{ font-size:11px; }
   .group-sites-btn .gs-sub{ display:none; }
   .group-sites-menu{ top:48px; min-width:220px; }
+}
+
+@media (min-width: 992px) and (max-width: 1199px){
+  .full-width-header .toolbar-area{ min-height:52px; }
+  .toolbar-contact ul{ gap:14px; }
+  .toolbar-contact ul li,
+  .toolbar-contact ul li a{ font-size:12px; }
+  .toolbar-sl-share{ gap:12px; }
+  .toolbar-sl-share > ul{ gap:13px; }
+  .group-sites-btn{ height:38px; padding:0 12px; gap:8px; }
+  .group-sites-btn .gs-title{ font-size:11px; }
+}
+
+@media (min-width: 1200px){
+  .toolbar-contact ul li:last-child a{
+    overflow:visible;
+    text-overflow:clip;
+  }
+}
+
+@media (max-width: 991px){
+  .full-width-header .toolbar-area{ display:none; }
+  .mobile-drawer-info{ margin-bottom:20px; }
+  .mobile-drawer-info > a{ align-items:flex-start; }
+  .mobile-drawer-socials{
+    flex-wrap:wrap;
+    align-items:center;
+  }
 }
 
 </style>
@@ -396,9 +509,10 @@ body.menu-open{ overflow:hidden; }
           <div class="toolbar-sl-share">
             <ul>
                 <li><a href="https://www.facebook.com/profile.php?id=61579480251463"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="https://x.com/SinghaniaR59102"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="https://x.com/SinghaniaR59102" aria-label="X"><span class="x-social-icon" aria-hidden="true">X</span></a></li>
                 <li><a href="https://www.instagram.com/singhaniarefrigeration/"><i class="fa fa-instagram"></i></a></li>
                 <li><a href="https://www.linkedin.com/company/singhania-refrigeration-and-supply-chain-consultancy/"><i class="fa fa-linkedin-square"></i></a></li>
+                <li><a href="https://in.pinterest.com/singhaniarefrigeration24/"><i class="fa fa-pinterest-p"></i></a></li>
                 <li><a href="https://www.youtube.com/channel/UC-g2bewulBb2oGjPGIDAaJA"><i class="fa fa-youtube-play"></i></a></li>
             </ul>
             <div class="group-sites" id="groupSites">
@@ -451,9 +565,6 @@ body.menu-open{ overflow:hidden; }
 
                     <li class="menu-item <?php echo isActive('about-us.php', $curBase); ?>">
                       <a class="<?php echo isActiveA('about-us.php', $curBase); ?>" href="about-us.php">About</a>
-                    </li>
-                    <li class="menu-item <?php echo isActive('blog.php', $curBase); ?>">
-                      <a class="<?php echo isActiveA('blog.php', $curBase); ?>" href="blog.php">Blog</a>
                     </li>
                     <li class="menu-item  <?php echo anyActive($productsPages, $curBase); ?>">
                       <a href="products.php" class="<?php echo isActiveA('products.php', $curBase); ?>">Products</a>
@@ -527,6 +638,9 @@ body.menu-open{ overflow:hidden; }
                         </li>
                       </ul>
                     </li>
+                    <li class="menu-item <?php echo isActive('blog.php', $curBase); ?>">
+                      <a class="<?php echo isActiveA('blog.php', $curBase); ?>" href="blog.php">Blog</a>
+                    </li>
                     <li class="menu-item <?php echo isActive('contact.php', $curBase); ?>">
                       <a class="<?php echo isActiveA('contact.php', $curBase); ?>" href="contact.php">Contact</a>
                     </li>
@@ -562,9 +676,6 @@ body.menu-open{ overflow:hidden; }
           <li class="menu-item <?php echo isActive('about-us.php', $curBase); ?>">
             <a class="<?php echo isActiveA('about-us.php', $curBase); ?>" href="about-us.php">About Us</a>
           </li>
-          <li class="menu-item <?php echo isActive('blog.php', $curBase); ?>">
-            <a class="<?php echo isActiveA('blog.php', $curBase); ?>" href="blog.php">Blog</a>
-          </li>
           <li class="menu-item has-submenu <?php echo anyActive($productsPages, $curBase); ?>">
             <a href="products.php">Products</a>
             <ul class="sub-menu">
@@ -597,6 +708,9 @@ body.menu-open{ overflow:hidden; }
               <li class="<?php echo isActive('transport-refrigeration.php', $curBase); ?>"><a class="<?php echo isActiveA('transport-refrigeration.php', $curBase); ?>" href="transport-refrigeration.php">Transport Refrigeration</a></li>
             </ul>
           </li>
+          <li class="menu-item <?php echo isActive('blog.php', $curBase); ?>">
+            <a class="<?php echo isActiveA('blog.php', $curBase); ?>" href="blog.php">Blog</a>
+          </li>
           <li class="menu-item <?php echo isActive('contact.php', $curBase); ?>">
             <a class="<?php echo isActiveA('contact.php', $curBase); ?>" href="contact.php">Contact Us</a>
           </li>
@@ -607,7 +721,7 @@ body.menu-open{ overflow:hidden; }
         <a href="tel:+91<?php echo $mobile; ?>"><i class="fa fa-phone"></i><span>+91-<?php echo $mobile; ?> / +91-7303099094 / +91-9718097170</span></a>
         <div class="mobile-drawer-socials">
           <a href="https://www.facebook.com/profile.php?id=61579480251463" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
-          <a href="https://x.com/SinghaniaR59102" target="_blank" rel="noopener" aria-label="X"><i class="fa fa-twitter"></i></a>
+          <a href="https://x.com/SinghaniaR59102" target="_blank" rel="noopener" aria-label="X"><span class="x-social-icon" aria-hidden="true">X</span></a>
           <a href="https://www.instagram.com/singhaniarefrigeration/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
           <a href="https://www.linkedin.com/company/singhania-refrigeration-and-supply-chain-consultancy/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa fa-linkedin-square"></i></a>
           <a href="https://www.youtube.com/channel/UC-g2bewulBb2oGjPGIDAaJA" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa fa-youtube-play"></i></a>

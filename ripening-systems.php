@@ -257,7 +257,7 @@
       font-weight: 700;
       line-height: 1.35;
       margin: 0 0 10px;
-      color: #1a1a1a;
+      color:#0f2442
     }
 
     .feature-desc {
@@ -534,13 +534,13 @@
         </div>
 
         <div class="features-card">
-          <img src="assets/images/products/truck-5.jpeg" alt="Energy-Efficient Ventilation" />
+          <img src="assets/images/products/energy_efficient.png" alt="Energy-Efficient Ventilation" />
           <h5>Energy-Efficient Ventilation</h5>
           <p>Good heat exchange and air circulation keep running costs down without compromising on ripening quality..</p>
         </div>
 
         <div class="features-card">
-          <img src="assets/images/products/truck-ac-re.jpeg" alt="IoT-Enabled Monitoring & Alerts" />
+          <img src="assets/images/products/IoT-Enabled Monitoring.png" alt="IoT-Enabled Monitoring & Alerts" />
           <h5>IoT-Enabled Monitoring & Alerts</h5>
           <p>Remote monitoring of temperature, humidity and ethylene levels, with alerts if any reading deviates.</p>
         </div>
@@ -893,9 +893,7 @@
             as a custom-built solution for warehouses, cold rooms and distribution centres
             operated by food processors, pharmaceutical manufacturers, and logistics companies.
           </p>
-          <p class="lead">
-           <strong>Our Cold Storage Refrigeration Units are used throughout any of the following cities:</strong>
-          </p>
+          
         </div>
 
         <div class="col-lg-6">

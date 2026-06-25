@@ -222,7 +222,7 @@
       font-weight: 700;
       line-height: 1.35;
       margin: 0 0 10px;
-      color: #1a1a1a;
+      color:#0f2442
     }
 
     .feature-desc {
@@ -792,9 +792,8 @@
       text-align: center;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-
+    
     .industry-card:hover {
-      background: rgba(255, 255, 255, 0.15);
       transform: translateY(-4px);
     }
 
@@ -877,9 +876,6 @@
             We build large-tonnage ammonia plants for cold storage operators, food
             processors, and industrial facilities requiring heavy-duty,
             energy-efficient cooling.
-          </p>
-          <p>
-            Our ammonia refrigeration units are widely used across:
           </p>
         </div>
 
