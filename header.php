@@ -508,12 +508,12 @@ body.menu-open{ overflow:hidden; }
         <div class="col-md-4">
           <div class="toolbar-sl-share">
             <ul>
-                <li><a href="https://www.facebook.com/profile.php?id=61579480251463"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="https://x.com/SinghaniaR59102" aria-label="X"><span class="x-social-icon" aria-hidden="true">X</span></a></li>
-                <li><a href="https://www.instagram.com/singhaniarefrigeration/"><i class="fa fa-instagram"></i></a></li>
-                <li><a href="https://www.linkedin.com/company/singhania-refrigeration-and-supply-chain-consultancy/"><i class="fa fa-linkedin-square"></i></a></li>
-                <li><a href="https://in.pinterest.com/singhaniarefrigeration24/"><i class="fa fa-pinterest-p"></i></a></li>
-                <li><a href="https://www.youtube.com/channel/UC-g2bewulBb2oGjPGIDAaJA"><i class="fa fa-youtube-play"></i></a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=61579480251463" aria-label="Visit Singhania Refrigeration on Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                <li><a href="https://x.com/SinghaniaR59102" aria-label="Visit Singhania Refrigeration on X"><span class="x-social-icon" aria-hidden="true">X</span></a></li>
+                <li><a href="https://www.instagram.com/singhaniarefrigeration/" aria-label="Visit Singhania Refrigeration on Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                <li><a href="https://www.linkedin.com/company/singhania-refrigeration-and-supply-chain-consultancy/" aria-label="Visit Singhania Refrigeration on LinkedIn"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+                <li><a href="https://in.pinterest.com/singhaniarefrigeration24/" aria-label="Visit Singhania Refrigeration on Pinterest"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
+                <li><a href="https://www.youtube.com/channel/UC-g2bewulBb2oGjPGIDAaJA" aria-label="Visit Singhania Refrigeration on YouTube"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
             </ul>
             <div class="group-sites" id="groupSites">
               <button type="button" class="group-sites-btn" id="groupSitesBtn" aria-haspopup="true" aria-expanded="false">
@@ -548,7 +548,7 @@ body.menu-open{ overflow:hidden; }
         <div class="row">
           <div class="col-lg-2">
             <div class="logo-area logo-area--tall">
-              <a href="index.php"><img src="assets/images/logo1.png" alt="logo"></a>
+              <a href="index.php"><picture><source srcset="assets/images/logo1.webp" type="image/webp"><img src="assets/images/logo1.png" width="248" height="172" alt="Singhania Refrigeration"></picture></a>
             </div>
           </div>
           <div class="col-lg-10 text-right">
@@ -941,43 +941,111 @@ body.menu-open{ overflow:hidden; }
 
 
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-$(function() {
-  const $panel = $('.right_menu_togle');
-  function openMenu(){
-    if (!$('.body-overlay').length) $('body').append('<div class="body-overlay"></div>');
-    $('.body-overlay').addClass('active');
-    $('body').addClass('menu-open');
-    $panel.addClass('open').attr('aria-hidden','false');
-    $('.rs-menu-toggle').attr('aria-expanded','true');
-    $panel.find('.close').trigger('focus');
+(function() {
+  function ready(fn) {
+    if (document.readyState !== 'loading') fn();
+    else document.addEventListener('DOMContentLoaded', fn);
   }
-  function closeMenu(){
-    const wasOpen = $panel.hasClass('open');
-    $panel.removeClass('open').attr('aria-hidden','true');
-    $('body').removeClass('menu-open');
-    $('.body-overlay').removeClass('active').one('transitionend', function(){ $(this).remove(); });
-    $('.mobile-nav-menu .sub-menu').removeClass('open').removeAttr('style');
-    $('.mobile-nav-menu .has-submenu').removeClass('active');
-    $('.mobile-drawer-sites').removeAttr('open');
-    $('.rs-menu-toggle').attr('aria-expanded','false');
-    if (wasOpen) $('.rs-menu-toggle').trigger('focus');
-  }
-  $('.rs-menu-toggle').on('click', function(e){ e.preventDefault(); openMenu(); });
-  $('#nav-close').on('click', function(e){ e.preventDefault(); closeMenu(); });
-  $(document).on('click', '.body-overlay', closeMenu);
-  $(document).on('keydown', function(e){ if (e.key === 'Escape') closeMenu(); });
-  $('.mobile-nav-menu').on('click', '.has-submenu > a', function(e){
-    e.preventDefault();
-    const $li = $(this).parent();
-    const $sub = $li.children('.sub-menu');
-    $('.mobile-nav-menu .has-submenu').not($li).removeClass('active').children('.sub-menu').slideUp(260).removeClass('open');
-    $li.toggleClass('active');
-    $sub.stop(true, true).slideToggle(260).toggleClass('open');
+
+  ready(function() {
+    const panel = document.querySelector('.right_menu_togle');
+    const toggles = document.querySelectorAll('.rs-menu-toggle');
+    const closeBtn = document.getElementById('nav-close');
+    const mobileNav = document.querySelector('.mobile-nav-menu');
+    if (!panel || !toggles.length) return;
+
+    function ensureOverlay() {
+      let overlay = document.querySelector('.body-overlay');
+      if (!overlay) {
+        overlay = document.createElement('div');
+        overlay.className = 'body-overlay';
+        document.body.appendChild(overlay);
+        overlay.addEventListener('click', closeMenu);
+      }
+      return overlay;
+    }
+
+    function openMenu() {
+      ensureOverlay().classList.add('active');
+      document.body.classList.add('menu-open');
+      panel.classList.add('open');
+      panel.setAttribute('aria-hidden', 'false');
+      toggles.forEach(function(toggle) {
+        toggle.setAttribute('aria-expanded', 'true');
+      });
+      const closeControl = panel.querySelector('.close');
+      if (closeControl) closeControl.focus();
+    }
+
+    function closeMenu() {
+      const wasOpen = panel.classList.contains('open');
+      panel.classList.remove('open');
+      panel.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('menu-open');
+
+      const overlay = document.querySelector('.body-overlay');
+      if (overlay) {
+        overlay.classList.remove('active');
+        window.setTimeout(function() {
+          if (overlay.parentNode) overlay.parentNode.removeChild(overlay);
+        }, 260);
+      }
+
+      document.querySelectorAll('.mobile-nav-menu .sub-menu').forEach(function(subMenu) {
+        subMenu.classList.remove('open');
+        subMenu.removeAttribute('style');
+      });
+      document.querySelectorAll('.mobile-nav-menu .has-submenu').forEach(function(item) {
+        item.classList.remove('active');
+      });
+      document.querySelectorAll('.mobile-drawer-sites').forEach(function(details) {
+        details.removeAttribute('open');
+      });
+      toggles.forEach(function(toggle) {
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+      if (wasOpen) toggles[0].focus();
+    }
+
+    toggles.forEach(function(toggle) {
+      toggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        openMenu();
+      });
+    });
+    if (closeBtn) {
+      closeBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        closeMenu();
+      });
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeMenu();
+    });
+    if (mobileNav) {
+      mobileNav.addEventListener('click', function(e) {
+        const link = e.target.closest('.has-submenu > a');
+        if (!link || !mobileNav.contains(link)) return;
+        e.preventDefault();
+        const item = link.parentElement;
+        const subMenu = item.querySelector(':scope > .sub-menu');
+        document.querySelectorAll('.mobile-nav-menu .has-submenu').forEach(function(otherItem) {
+          if (otherItem === item) return;
+          otherItem.classList.remove('active');
+          const otherSub = otherItem.querySelector(':scope > .sub-menu');
+          if (otherSub) otherSub.classList.remove('open');
+        });
+        item.classList.toggle('active');
+        if (subMenu) subMenu.classList.toggle('open');
+      });
+    }
+    window.addEventListener('resize', function() {
+      if (window.innerWidth > 991) closeMenu();
+    });
   });
-  $(window).on('resize', function(){ if (window.innerWidth > 991) closeMenu(); });
-});
+})();
 </script>
 
 <script>

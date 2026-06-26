@@ -5,6 +5,40 @@ include("admin/config.php");
 $color = "";
 $messageBanner = "";
 
+function sr_image_size_attrs($relativePath) {
+    static $cache = [];
+    $relativePath = ltrim((string)$relativePath, '/\\');
+    if ($relativePath === '') {
+        return '';
+    }
+    if (!array_key_exists($relativePath, $cache)) {
+        $absolutePath = __DIR__ . DIRECTORY_SEPARATOR . str_replace(['/', '\\'], DIRECTORY_SEPARATOR, $relativePath);
+        $cache[$relativePath] = '';
+        if (is_file($absolutePath)) {
+            $size = @getimagesize($absolutePath);
+            if (!empty($size[0]) && !empty($size[1])) {
+                $cache[$relativePath] = ' width="' . (int)$size[0] . '" height="' . (int)$size[1] . '"';
+            }
+        }
+    }
+    return $cache[$relativePath];
+}
+
+function sr_webp_path($relativePath) {
+    $relativePath = ltrim((string)$relativePath, '/\\');
+    $info = pathinfo($relativePath);
+    if (empty($info['dirname']) || empty($info['filename'])) {
+        return '';
+    }
+    $webpPath = ($info['dirname'] === '.' ? '' : $info['dirname'] . '/') . $info['filename'] . '.webp';
+    return is_file(__DIR__ . '/' . $webpPath) ? $webpPath : '';
+}
+
+function sr_preferred_image_path($relativePath) {
+    $webpPath = sr_webp_path($relativePath);
+    return $webpPath !== '' ? $webpPath : $relativePath;
+}
+
 if (isset($_POST['submit'])) {
     $name     = $_POST['name'];
     $email    = $_POST['email'];
@@ -39,6 +73,26 @@ if (isset($_POST['submit'])) {
   ?>
   <head> 
     <?php include('head.php'); ?>
+    <?php
+      $heroPreload = '';
+      $heroBannerResult = mysqli_query($conn, "
+        SELECT b.image
+        FROM menus m
+        JOIN banners b ON b.menu_name = m.id
+        WHERE m.title = 'Home'
+        ORDER BY b.created_at DESC
+        LIMIT 1
+      ");
+      if ($heroBannerResult && ($heroBanner = mysqli_fetch_assoc($heroBannerResult)) && !empty($heroBanner['image'])) {
+          $heroPreloadPath = sr_preferred_image_path('admin/uploads/' . $heroBanner['image']);
+          if (is_file(__DIR__ . '/' . $heroPreloadPath)) {
+              $heroPreload = $heroPreloadPath;
+          }
+      }
+      if ($heroPreload !== ''):
+    ?>
+    <link rel="preload" as="image" href="<?php echo htmlspecialchars($heroPreload, ENT_QUOTES); ?>"<?php echo strtolower(pathinfo($heroPreload, PATHINFO_EXTENSION)) === 'webp' ? ' type="image/webp"' : ''; ?> fetchpriority="high">
+    <?php endif; ?>
 
     <!-- ===== Light design polish & animations (framework-agnostic) ===== -->
    <style>
@@ -405,16 +459,6 @@ body{ color:var(--ink); }
 #hero-caption{ display:none !important; }
 </style>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FPFMN90M5H"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-FPFMN90M5H');
-</script>
-
 <meta name="google-site-verification" content="t5Xgoar9zL7jV84rmq3iDZQ7vTKJadd2l0ZU3kfFICs" />
 
 <!-- Google Tag Manager -->
@@ -425,7 +469,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-5XNG3TQC');</script>
 <!-- End Google Tag Manager -->
 
-<!-- Facebook Pixel Code --><script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js'); fbq('init', '4268533853363514'); fbq('track', 'PageView');</script><noscript> <img loading="lazy" decoding="async" height="1" width="1" alt="" src="https://www.facebook.com/tr?id=4268533853363514&ev=PageView&noscript=1"/></noscript><!-- End Facebook Pixel Code -->
+<!-- Facebook Pixel Code -->
+<script>
+  window.addEventListener('load', function () {
+    var loadPixel = function () {
+      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '4268533853363514');
+      fbq('track', 'PageView');
+    };
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(loadPixel, { timeout: 3000 });
+    } else {
+      setTimeout(loadPixel, 1500);
+    }
+  });
+</script>
+<noscript> <img loading="lazy" decoding="async" height="1" width="1" alt="" src="https://www.facebook.com/tr?id=4268533853363514&ev=PageView&noscript=1"/></noscript>
+<!-- End Facebook Pixel Code -->
 
   </head>
 
@@ -438,9 +498,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <?php include('header.php'); ?>
 
     <!-- ===== Main ===== -->
-    <div class="main-content">
+    <main class="main-content">
       
       <!-- ===== Slider ===== -->
+        <h2 class="sr-only">Cold Chain Highlights</h2>
         <div id="rs-slider" class="rs-slider slider1">
           <div class="bend niceties">
             <div id="nivoSlider" class="slides">
@@ -460,7 +521,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                   $bannerAttrs = ($i === 1)
                     ? 'fetchpriority="high" loading="eager" decoding="async"'
                     : 'loading="lazy" decoding="async"';
-                  echo '<img ' . $bannerAttrs . ' class="img-float-onload" src="admin/uploads/' . htmlspecialchars($banner['image'], ENT_QUOTES) . '" alt="Cold Storage" title="#hero-caption" />' . "\n";
+                  $bannerPath = sr_preferred_image_path('admin/uploads/' . $banner['image']);
+                  echo '<img ' . $bannerAttrs . ' class="img-float-onload" src="' . htmlspecialchars($bannerPath, ENT_QUOTES) . '"' . sr_image_size_attrs($bannerPath) . ' alt="Cold Storage" title="#hero-caption" />' . "\n";
                   $i++;
                 }
               ?>
@@ -508,36 +570,36 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <div class="row gutter-16">
             <div class="col-lg-3 col-sm-6 mb-16">
               <div class="service-wrap">
-                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/1.png" alt="Industrial Refrigeration"></div>
+                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/1.webp" width="140" height="140" alt="Industrial Refrigeration"></div>
                 <div class="content-part">
-                  <h5 class="title"><a href="services-single.html">Turnkey Execution</a></h5>
+                  <h3 class="title"><a href="services-single.html">Turnkey Execution</a></h3>
                   <p>Full turnkey cold storage and industrial refrigeration solutions – design, equipment supply, installation and commissioning, all in-house by our own engineering team for smooth accountable delivery from start to finish.</p>
                 </div>
               </div>
             </div>
             <div class="col-lg-3 col-sm-6 mb-16">
               <div class="service-wrap">
-                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/2.png" alt="Cooling System"></div>
+                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/2.webp" width="140" height="140" alt="Cooling System"></div>
                 <div class="content-part">
-                  <h5 class="title"><a href="services-single.html">Energy Efficiency</a></h5>
+                  <h3 class="title"><a href="services-single.html">Energy Efficiency</a></h3>
                   <p>High efficiency compressors, advanced PUF insulation and smart controls help reduce running costs by up to 30% compared with conventional cold storage systems, while maintaining precise temperature control.</p>
                 </div>
               </div>
             </div>
             <div class="col-lg-3 col-sm-6 mb-16">
               <div class="service-wrap">
-                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/3.png" alt="Cold Storage Plant"></div>
+                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/3.webp" width="140" height="140" alt="Cold Storage Plant"></div>
                 <div class="content-part">
-                  <h5 class="title"><a href="services-single.html">99.9% Uptime</a></h5>
+                  <h3 class="title"><a href="services-single.html">99.9% Uptime</a></h3>
                   <p>Preventive maintenance and rapid-response AMC support 24 hours a day, 365 days a year keep your cold room, CA store or refrigeration plant running reliably.</p>
                 </div>
               </div>
             </div>
             <div class="col-lg-3 col-sm-6 mb-16">
               <div class="service-wrap">
-                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/4.png" alt="Cold Storage Warehouse"></div>
+                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/4.webp" width="140" height="140" alt="Cold Storage Warehouse"></div>
                 <div class="content-part">
-                  <h5 class="title"><a href="services-single.html">Pan-India Service</a></h5>
+                  <h3 class="title"><a href="services-single.html">Pan-India Service</a></h3>
                   <p>Okhla, New Delhi certified refrigeration engineers offer installation and after sales support to clients across Delhi NCR – Noida, Gurgaon and Faridabad and pan India.</p>
                 </div>
               </div>
@@ -551,7 +613,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <div class="container">
           <div class="row y-bottom align-items-center">
             <div class="col-lg-6 padding-0" data-animate>
-              <img loading="lazy" decoding="async" class="img-soft" src="assets/images/4.jpg" alt="Cold Storage Plant">
+              <picture>
+                <source srcset="assets/images/4.webp" type="image/webp">
+                <img loading="lazy" decoding="async" class="img-soft" src="assets/images/4.jpg" width="585" height="583" alt="Cold Storage Plant">
+              </picture>
             </div>
             <div class="col-lg-6 pl-66 pt-75 pb-75 md-pt-42 md-pb-72" data-animate>
               <div class="sec-title mb-24">
@@ -600,9 +665,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <!-- Service 1 -->
             <div class="col-lg-3 col-sm-6 mb-16">
               <div class="service-wrap">
-                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/modify/1.png" alt="Refrigerated Cold Storage"></div>
+                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/modify/1.webp" width="140" height="140" alt="Refrigerated Cold Storage"></div>
                 <div class="content-part">
-                  <h5 class="title">Refrigerated Truck ACs &amp; Containers</h5>
+                  <h3 class="title">Refrigerated Truck ACs &amp; Containers</h3>
                   <div class="desc">Transport Refrigeration Units for trucks and reefer containers, keeping Perishables – Food, Dairy and Pharma Products, temperature controlled on routes across Delhi NCR and Pan India.</div>
                 </div>
               </div>
@@ -611,9 +676,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <!-- Service 2 -->
             <div class="col-lg-3 col-sm-6 mb-16">
               <div class="service-wrap">
-                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/modify/2.png" alt="Cold Storage Warehouse"></div>
+                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/modify/2.webp" width="128" height="128" alt="Cold Storage Warehouse"></div>
                 <div class="content-part">
-                  <h5 class="title">Cold Rooms &amp; Storage Solutions</h5>
+                  <h3 class="title">Cold Rooms &amp; Storage Solutions</h3>
                   <div class="desc">Cold rooms based on ammonia and freon, Controlled Atmosphere (CA) stores, Ripening Chambers &amp; Blast Freezer Systems, designed to meet the shelf-life and temperature requirements of your product.</div>
                 </div>
               </div>
@@ -622,9 +687,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <!-- Service 3 -->
             <div class="col-lg-3 col-sm-6 mb-16">
               <div class="service-wrap">
-                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/modify/3.png" alt="Industrial Refrigeration"></div>
+                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/modify/3.webp" width="128" height="128" alt="Industrial Refrigeration"></div>
                 <div class="content-part">
-                  <h5 class="title">Compressor Rack Systems</h5>
+                  <h3 class="title">Compressor Rack Systems</h3>
                   <div class="desc">Centralised, energy efficient compressor rack systems for supermarkets, food retail chains and large cold storage warehouses, reducing refrigerant charge and maintenance.</div>
                 </div>
               </div>
@@ -633,9 +698,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <!-- Service 4 -->
             <div class="col-lg-3 col-sm-6 mb-16">
               <div class="service-wrap">
-                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/modify/4.png" alt="Ammonia Refrigeration"></div>
+                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/modify/4.webp" width="128" height="128" alt="Ammonia Refrigeration"></div>
                 <div class="content-part">
-                  <h5 class="title">Ammonia Refrigeration Units</h5>
+                  <h3 class="title">Ammonia Refrigeration Units</h3>
                   <div class="desc">Industrial grade ammonia (NH3) and Freon refrigeration plants are for food processing units, large cold storage warehouses, fisheries and dairy operations requiring high capacity and energy efficient cooling</div>
                 </div>
               </div>
@@ -644,9 +709,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <!-- Service 5 -->
             <div class="col-lg-3 col-sm-6 mb-16">
               <div class="service-wrap">
-                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/modify/5.png" alt="Ripening Chamber"></div>
+                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/modify/5.webp" width="128" height="128" alt="Ripening Chamber"></div>
                 <div class="content-part">
-                  <h5 class="title">Ripening Chambers</h5>
+                  <h3 class="title">Ripening Chambers</h3>
                   <div class="desc">Ethylene-controlled ripening chambers for bananas, mangoes, papayas and other climacteric fruits, delivering consistent, ready-to-sell ripening for every pallet.</div>
                 </div>
               </div>
@@ -655,9 +720,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <!-- Service 6 -->
             <div class="col-lg-3 col-sm-6 mb-16">
               <div class="service-wrap">
-                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/modify/6.png" alt="Food Cold Room"></div>
+                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/modify/6.webp" width="128" height="128" alt="Food Cold Room"></div>
                 <div class="content-part">
-                  <h5 class="title">IQF Technology</h5>
+                  <h3 class="title">IQF Technology</h3>
                   <div class="desc">Individual Quick Freeze (IQF) machine systems flash-freeze seafood, fruits, vegetables and ready-to-eat products for export-quality output and to preserve texture, nutrition and appearance.</div>
                 </div>
               </div>
@@ -666,9 +731,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <!-- Service 7 -->
             <div class="col-lg-3 col-sm-6 mb-16">
               <div class="service-wrap">
-                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/modify/7.png" alt="Cooling System"></div>
+                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/modify/7.webp" width="128" height="128" alt="Cooling System"></div>
                 <div class="content-part">
-                  <h5 class="title">PUF Panels &amp; Insulated Doors</h5>
+                  <h3 class="title">PUF Panels &amp; Insulated Doors</h3>
                   <div class="desc">High density PUF panel insulation and cold room doors that make up the thermal envelope of your cold storage facility – designed for airtight insulation and minimal energy loss.</div>
                 </div>
               </div>
@@ -677,9 +742,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <!-- Service 8 -->
             <div class="col-lg-3 col-sm-6 mb-16">
               <div class="service-wrap">
-                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/modify/8.png" alt="Cold Storage Solutions"></div>
+                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/modify/8.webp" width="120" height="144" alt="Cold Storage Solutions"></div>
                 <div class="content-part">
-                  <h5 class="title">Dock Shelters &amp; Dock Levelers</h5>
+                  <h3 class="title">Dock Shelters &amp; Dock Levelers</h3>
                   <div class="desc">Dock Shelter and Leveler Systems seal the gap between your cold facility and delivery vehicles. Protect product temperature while loading and unloading.</div>
                 </div>
               </div>
@@ -709,10 +774,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           ?>
           <div class="portfolio-item">
             <div class="img-part">
-              <img loading="lazy" decoding="async" class="img-soft" src="<?php echo "admin/uploads/" . $product['image']; ?>" alt="Cold Storage Equipment">
+              <?php $productImage = "admin/uploads/" . $product['image']; ?>
+              <?php $productWebp = sr_webp_path($productImage); ?>
+              <?php if ($productWebp !== ''): ?><picture><source srcset="<?php echo htmlspecialchars($productWebp, ENT_QUOTES); ?>" type="image/webp"><?php endif; ?>
+              <img loading="lazy" decoding="async" class="img-soft" src="<?php echo htmlspecialchars($productImage, ENT_QUOTES); ?>"<?php echo sr_image_size_attrs(sr_preferred_image_path($productImage)); ?> alt="Cold Storage Equipment">
+              <?php if ($productWebp !== ''): ?></picture><?php endif; ?>
             </div>
             <div class="content-part">
-              <h5 class="title"><a href="#"><?php echo $product['title'];?></a></h5>
+              <h3 class="title"><a href="products.php"><?php echo $product['title'];?></a></h3>
             </div>
           </div>
           <?php } ?>
@@ -728,7 +797,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           </div>
           <div class="white-bg testimonial-shell">
             <div class="row">
-              <div class="col-lg-6 pr-0 md-pl-pr-15"><div class="bg-part md-pt-200 md-pb-200"><span class="testimonial-left-icon" aria-label="Customer feedback"><i class="" aria-hidden="true"></i></span></div></div>
+              <div class="col-lg-6 pr-0 md-pl-pr-15"><div class="bg-part md-pt-200 md-pb-200"><span class="testimonial-left-icon" role="img" aria-label="Customer feedback"><i class="" aria-hidden="true"></i></span></div></div>
               <div class="col-lg-6 slider-part">
                 <div class="rs-carousel owl-carousel dot-style1" data-loop="true" data-items="1" data-margin="30" data-autoplay="true" data-hoverpause="true" data-autoplay-timeout="5000" data-smart-speed="800" data-dots="true" data-nav="false" data-center-mode="false">
                   <div class="testi-item">
@@ -737,8 +806,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                       <div class="desc">Singhania Refrigeration delivered our entire CA store on time, within budget and to   exact specification. We have not had a single unplanned downtime in over a year.</div>
                     </div>
                     <div class="posted-by text-center">
-                      <div class="avatar"><span class="testimonial-avatar-icon" aria-label="Customer avatar"><i class="fa fa-user" aria-hidden="true"></i></span></div>
-                      <h5 class="name">Operations Director</h5><span class="designation">Agri-Export Company, Delhi NCR</span>
+                      <div class="avatar"><span class="testimonial-avatar-icon" role="img" aria-label="Customer avatar"><i class="fa fa-user" aria-hidden="true"></i></span></div>
+                      <h3 class="name">Operations Director</h3><span class="designation">Agri-Export Company, Delhi NCR</span>
                     </div>
                   </div>
                   <div class="testi-item">
@@ -749,8 +818,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                       — without a single coordination issue.</div>
                     </div>
                     <div class="posted-by text-center">
-                      <div class="avatar"><span class="testimonial-avatar-icon" aria-label="Customer avatar"><i class="fa fa-user" aria-hidden="true"></i></span></div>
-                      <h5 class="name">Operations Head</h5><span class="designation">Pharmaceutical Distributor, New Delhi</span>
+                      <div class="avatar"><span class="testimonial-avatar-icon" role="img" aria-label="Customer avatar"><i class="fa fa-user" aria-hidden="true"></i></span></div>
+                      <h3 class="name">Operations Head</h3><span class="designation">Pharmaceutical Distributor, New Delhi</span>
                     </div>
                   </div>
                   <div class="testi-item">
@@ -759,8 +828,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                       <div class="desc">Their AMC support has been dependable for our cold storage plant. Whenever there is a service requirement, the response is practical and fast, which helps us avoid unnecessary downtime.</div>
                     </div>
                     <div class="posted-by text-center">
-                      <div class="avatar"><span class="testimonial-avatar-icon" aria-label="Customer avatar"><i class="fa fa-user" aria-hidden="true"></i></span></div>
-                      <h5 class="name">Manoj Aggarwal</h5><span class="designation">Cold Storage Owner, Kundli</span>
+                      <div class="avatar"><span class="testimonial-avatar-icon" role="img" aria-label="Customer avatar"><i class="fa fa-user" aria-hidden="true"></i></span></div>
+                      <h3 class="name">Manoj Aggarwal</h3><span class="designation">Cold Storage Owner, Kundli</span>
                     </div>
                   </div>
                   <div class="testi-item">
@@ -769,8 +838,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                       <div class="desc">We got a controlled temperature room installed for our pharma inventory in Noida. The finishing, insulation work, and after-installation checks were handled properly by their team.</div>
                     </div>
                     <div class="posted-by text-center">
-                      <div class="avatar"><span class="testimonial-avatar-icon" aria-label="Customer avatar"><i class="fa fa-user" aria-hidden="true"></i></span></div>
-                      <h5 class="name">Neeraj Malhotra</h5><span class="designation">Pharma Warehouse Manager, Noida</span>
+                      <div class="avatar"><span class="testimonial-avatar-icon" role="img" aria-label="Customer avatar"><i class="fa fa-user" aria-hidden="true"></i></span></div>
+                      <h3 class="name">Neeraj Malhotra</h3><span class="designation">Pharma Warehouse Manager, Noida</span>
                     </div>
                   </div>
                   <div class="testi-item">
@@ -779,8 +848,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                       <div class="desc">For our fruit and vegetable storage, they suggested a practical cold room setup instead of overselling. The cooling is uniform and the maintenance team is easy to reach.</div>
                     </div>
                     <div class="posted-by text-center">
-                      <div class="avatar"><span class="testimonial-avatar-icon" aria-label="Customer avatar"><i class="fa fa-user" aria-hidden="true"></i></span></div>
-                      <h5 class="name">Sandeep Yadav</h5><span class="designation">Vegetable Supplier, Gurugram</span>
+                      <div class="avatar"><span class="testimonial-avatar-icon" role="img" aria-label="Customer avatar"><i class="fa fa-user" aria-hidden="true"></i></span></div>
+                      <h3 class="name">Sandeep Yadav</h3><span class="designation">Vegetable Supplier, Gurugram</span>
                     </div>
                   </div>
                 </div>
@@ -827,7 +896,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           background:linear-gradient(180deg,#6c63ff,#3b5bb7); color:#fff; font-size:22px; box-shadow:0 8px 20px rgba(108,99,255,.28);
           margin-bottom:12px;
         }
-        .innov-card h5{ margin:0 0 6px; color:#0f2442; font-weight:800; }
+        .innov-card h3{ margin:0 0 6px; color:#0f2442; font-size:20px; font-weight:800; }
         .innov-card p{ margin:0; color:#42507a; }
         
         @media (max-width: 991.98px){
@@ -853,7 +922,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               <div class="col-md-6 col-lg-6 mb-3" data-animate>
                 <div class="innov-card">
                   <div class="innov-icon"><i class="fa fa-recycle" aria-hidden="true"></i></div>
-                  <h5>Reduced Wastage &amp; Losses</h5>
+                  <h3>Reduced Wastage &amp; Losses</h3>
                   <p style="text-align: justify;">Precision temperature control and CA/MA technology keep products fresh from storage to transit, reducing cold chain losses in food and agri businesses.</p>
                 </div>
               </div>
@@ -861,7 +930,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               <div class="col-md-6 col-lg-6 mb-3" data-animate>
                 <div class="innov-card">
                   <div class="innov-icon"><i class="fa fa-bolt" aria-hidden="true"></i></div>
-                  <h5>Lower Energy Consumption</h5>
+                  <h3>Lower Energy Consumption</h3>
                   <p style="text-align: justify;">Energy-efficient refrigeration with high-efficiency compressors, PUF insulation and smart controls that minimize operating costs without compromising temperature stability.</p>
                 </div>
               </div>
@@ -869,7 +938,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               <div class="col-md-6 col-lg-6 mb-3" data-animate>
                 <div class="innov-card">
                   <div class="innov-icon"><i class="fa fa-line-chart" aria-hidden="true"></i></div>
-                  <h5>Improved Uptime</h5>
+                  <h3>Improved Uptime</h3>
                   <p style="text-align: justify;">We do preventive maintenance and AMC services. We also give equipment redundancy to ensure 99.9% system availability across our installed base.</p>
                 </div>
               </div>
@@ -877,7 +946,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               <div class="col-md-6 col-lg-6 mb-3" data-animate>
                 <div class="innov-card">
                   <div class="innov-icon"><i class="fa fa-shield" aria-hidden="true"></i></div>
-                  <h5>Safety &amp; Compliance</h5>
+                  <h3>Safety &amp; Compliance</h3>
                   <p style="text-align: justify;">Systems for FSSAI compliant cold storage and WHO-GMP pharma cold room applications with auditable temperature logs and alarms for food and pharmaceutical cold storage.</p>
                 </div>
               </div>
@@ -981,7 +1050,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               <div class="col-lg-5 tt-col-visual md-mt-40" data-animate>
                 <div class="tt-visual">
                   <!-- Replace src with your image -->
-                  <img loading="lazy" decoding="async" class="tt-img" src="admin/uploads/Blog-Image-Cold-Chain-Logistics.jpg" alt="Industrial Refrigeration and Cold Storage">
+                  <img loading="lazy" decoding="async" class="tt-img" src="admin/uploads/Blog-Image-Cold-Chain-Logistics.jpg" width="1110" height="791" alt="Industrial Refrigeration and Cold Storage">
                   <div class="tt-stats">
                     <div class="tt-chip"><span class="tt-dot"></span> 10+ Years</div>
                     <div class="tt-chip"><span class="tt-dot"></span> 99.9% Uptime</div>
@@ -1182,7 +1251,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                       </span>
                     </p>
                   </div>
-                  <img loading="lazy" decoding="async" src="assets/images/contact/contact-us.png" alt="Cold Storage Support" class="contact-img">
+                  <img loading="lazy" decoding="async" src="assets/images/contact/contact-us.png" width="740" height="740" alt="Cold Storage Support" class="contact-img">
                 </div>
               </div>
             </div>
@@ -1224,14 +1293,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               while($row = mysqli_fetch_assoc($record)){ ?>
               <div class="blog-wrap">
                 <div class="img-part">
-                  <img loading="lazy" decoding="async" class="img-soft blog-cover-img" src="<?php echo "admin/uploads/" . $row['image']; ?>" alt="Cold Storage Blog">
+                  <?php $blogImage = "admin/uploads/" . $row['image']; ?>
+                  <?php $blogWebp = sr_webp_path($blogImage); ?>
+                  <?php if ($blogWebp !== ''): ?><picture><source srcset="<?php echo htmlspecialchars($blogWebp, ENT_QUOTES); ?>" type="image/webp"><?php endif; ?>
+                  <img loading="lazy" decoding="async" class="img-soft blog-cover-img" src="<?php echo htmlspecialchars($blogImage, ENT_QUOTES); ?>"<?php echo sr_image_size_attrs(sr_preferred_image_path($blogImage)); ?> alt="Cold Storage Blog">
+                  <?php if ($blogWebp !== ''): ?></picture><?php endif; ?>
                   <div class="fly-btn"><a href="blog-details.php?id=<?php echo $row['id'];?>"><i class="flaticon-right-arrow"></i></a></div>
                 </div>
                 <div class="content-part">
                   <a class="categories" href="blog-details.php?id=<?php echo $row['id'];?>"><?php echo $row['category_name'];?></a>
                   <h3 class="title"><a href="blog-details.php?id=<?php echo $row['id'];?>"><?php echo $row['title'];?></a></h3>
                   <div class="blog-meta">
-                    <div class="user-data"><img loading="lazy" decoding="async" src="assets/images/blog/avatar/1.png" alt="Customer Review"><span>Singhania</span></div>
+                    <div class="user-data"><img loading="lazy" decoding="async" src="assets/images/blog/avatar/1.png" width="40" height="40" alt="Customer Review"><span>Singhania</span></div>
                     <div class="date"><i class="fa fa-clock-o"></i> <?php echo $row['created_at'];?></div>
                   </div>
                 </div>
@@ -1241,7 +1314,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </div>
       </div>
 
-    </div>
+    </main>
     <!-- /Main -->
     
          <?php 
@@ -1255,7 +1328,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">Quick Connect</h5>
+          <h2 class="modal-title">Quick Connect</h2>
           <button type="button" class="close" aria-label="Close" data-dismiss="modal">&times;</button>
         </div>
 
@@ -1305,7 +1378,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 }
 .rs-services .service-wrap:hover, .rs-services.modify .service-wrap:hover{ transform: translateY(-2px); box-shadow:0 10px 24px rgba(0,0,0,0.08); }
 .rs-services .service-wrap .icon-part{ margin-bottom:14px; }
-.rs-services .service-wrap .title{ margin:8px 0 6px; }
+.rs-services .service-wrap .title,
+.portfolio-item .content-part .title{ margin:8px 0 6px; font-size:18px; line-height:28px; }
 .rs-services .service-wrap .desc{ margin:0; }
 @media (max-width: 767.98px){
   .rs-services .row.gutter-16, .rs-services.modify .row.gutter-16 { display:block; }

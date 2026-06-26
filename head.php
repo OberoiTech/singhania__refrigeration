@@ -93,7 +93,7 @@ if (in_array(strtolower($file), ['about-us.php', 'about.php'], true)) {
               'url' => $siteUrl,
               'logo' => [
                   '@type' => 'ImageObject',
-                  'url' => $siteUrl . 'assets/images/logo1.png',
+                  'url' => $siteUrl . 'assets/images/logo1.webp',
               ],
               'description' => 'Singhania Refrigeration provides cold storage, ripening chamber installation and industrial refrigeration solutions across India for fruits and food storage.',
               'email' => !empty($email) ? $email : null,
@@ -548,26 +548,26 @@ if (in_array(strtolower($file), ['about-us.php', 'about.php'], true)) {
         <!-- font-awesome css -->
         <!-- <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css"> -->
         <!-- animate css -->
-        <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/animate.css" media="print" onload="this.media='all'">
         <!-- aos css -->
-        <link rel="stylesheet" type="text/css" href="assets/css/aos.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/aos.css" media="print" onload="this.media='all'">
         <!-- owl.carousel css -->
-        <link rel="stylesheet" type="text/css" href="assets/css/owl.carousel.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/owl.carousel.css" media="print" onload="this.media='all'">
         <!-- slick css -->
-        <link rel="stylesheet" type="text/css" href="assets/css/slick.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/slick.css" media="print" onload="this.media='all'">
         <!-- off canvas css -->
-        <link rel="stylesheet" type="text/css" href="assets/css/off-canvas.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/off-canvas.css" media="print" onload="this.media='all'">
         <!-- linea-font css -->
         <link rel="stylesheet" type="text/css" href="assets/fonts/linea-fonts.css">
         <!-- flaticon css  -->
         <link rel="stylesheet" type="text/css" href="assets/fonts/flaticon.css">
         <!-- magnific popup css -->
-        <link rel="stylesheet" type="text/css" href="assets/css/magnific-popup.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/magnific-popup.css" media="print" onload="this.media='all'">
         <!-- Main Menu css -->
         <link rel="stylesheet" href="assets/css/rsmenu-main.css">
         <!-- nivo slider CSS -->
-        <link rel="stylesheet" type="text/css" href="assets/inc/custom-slider/css/nivo-slider.css">
-        <link rel="stylesheet" type="text/css" href="assets/inc/custom-slider/css/preview.css">
+        <link rel="stylesheet" type="text/css" href="assets/inc/custom-slider/css/nivo-slider.css" media="print" onload="this.media='all'">
+        <link rel="stylesheet" type="text/css" href="assets/inc/custom-slider/css/preview.css" media="print" onload="this.media='all'">
         <!-- rsmenu transitions css -->
         <link rel="stylesheet" href="assets/css/rsmenu-transitions.css">
         <!-- spacing css -->
