@@ -224,7 +224,7 @@ body{ color:var(--ink); }
   outline:0;
 }
 .rs-contact.style1 .submit-btn .readon{
-  background:#0b6fc6;
+  background:#082243;
   color:#fff;
   border:none;
   border-radius:6px;
@@ -234,7 +234,7 @@ body{ color:var(--ink); }
   transition:background .2s ease, transform .12s ease, box-shadow .2s ease;
 }
 .rs-contact.style1 .submit-btn .readon:hover{
-  background:#082243;
+  /* background:#082243; */
   transform:translateY(-1px);
   box-shadow:0 14px 28px rgba(8,34,67,.22);
 }
@@ -416,7 +416,8 @@ body{ color:var(--ink); }
 @keyframes heroFloatIn{ from{opacity:0; transform:translateY(22px) scale(.985);} to{opacity:1; transform:translateY(0) scale(1);} }
 
 /* Arrows/dots stacking */
-#rs-slider .nivo-directionNav a{ z-index:9 !important; }
+#rs-slider .nivo-directionNav,
+#rs-slider .nivo-directionNav a{ display:none !important; }
 #rs-slider .nivo-controlNav{ z-index:6; }
 
 /* Readability gradient across photos */
@@ -437,23 +438,101 @@ body{ color:var(--ink); }
 }
 
 /* ========= Services color theme overrides ========= */
-.rs-services.style1:not(.modify) .service-wrap{
-  background:#082243 !important; color:#fff !important; box-shadow:0 10px 24px rgba(0,0,0,.28);
+.rs-services.style1:not(.modify) .service-wrap,
+.rs-services.modify .service-wrap{
+  background:#082243 !important;
+  color:#ffffff !important;
+  border-top-left-radius:20px !important;
+  border-top-right-radius:20px !important;
+  box-shadow:0 10px 24px rgba(0,0,0,.28) !important;
+  position:relative;
+  overflow:hidden;
+  transition:transform .35s ease, box-shadow .35s ease;
+}
+.rs-services.style1:not(.modify) .service-wrap:before,
+.rs-services.modify .service-wrap:before{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  height:100%;
+  background:#ffffff;
+  border-radius:20px 20px 0 0;
+  transform:translateY(100%);
+  transition:transform .65s ease;
+  z-index:0;
+}
+.rs-services.style1:not(.modify) .service-wrap:hover,
+.rs-services.modify .service-wrap:hover{
+  transform:translateY(-6px) !important;
+  box-shadow:0 18px 40px rgba(0,0,0,.35) !important;
+}
+.rs-services.style1:not(.modify) .service-wrap:hover:before,
+.rs-services.modify .service-wrap:hover:before{
+  transform:translateY(0);
+}
+.rs-services.style1:not(.modify) .service-wrap .icon-part,
+.rs-services.style1:not(.modify) .service-wrap .content-part,
+.rs-services.modify .service-wrap .icon-part,
+.rs-services.modify .service-wrap .content-part{
+  position:relative;
+  z-index:1;
+}
+.rs-services.style1:not(.modify) .service-wrap .icon-part,
+.rs-services.modify .service-wrap .icon-part{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width:140px;
+  max-width:100%;
+  margin:0 auto 14px;
+}
+.rs-services.style1:not(.modify) .service-wrap .icon-part .icon-hover,
+.rs-services.modify .service-wrap .icon-part .icon-hover{
+  display:none !important;
+}
+.rs-services.style1:not(.modify) .service-wrap .icon-part img:not(.icon-hover),
+.rs-services.modify .service-wrap .icon-part img:not(.icon-hover){
+  display:block;
+  margin:0 auto;
+  filter:brightness(0) invert(1) drop-shadow(0 6px 10px rgba(0,0,0,.35));
+  transition:transform .45s ease, filter .18s ease .46s;
 }
 .rs-services.style1:not(.modify) .service-wrap .title,
-.rs-services.style1:not(.modify) .service-wrap .title a{ color:#ffffff !important; }
-.rs-services.style1:not(.modify) .service-wrap .desc{ color:#e7eef9 !important; text-align:center !important; }
-.rs-services.style1:not(.modify) .service-wrap:hover{ transform:translateY(-3px); box-shadow:0 16px 36px rgba(0,0,0,.35); }
-.rs-services.style1:not(.modify) .service-wrap .icon-part img{ filter:drop-shadow(0 6px 10px rgba(0,0,0,.35)) saturate(110%); }
-
-.rs-services.modify .service-wrap{
-  background:#082243 !important; color:#fff !important; box-shadow:0 10px 24px rgba(0,0,0,.28);
-}
+.rs-services.style1:not(.modify) .service-wrap .title a,
 .rs-services.modify .service-wrap .title,
-.rs-services.modify .service-wrap .title a{ color:#ffffff !important; }
-.rs-services.modify .service-wrap .desc{ color:#e7eef9 !important; }
-.rs-services.modify .service-wrap:hover{ transform:translateY(-3px); box-shadow:0 16px 36px rgba(0,0,0,.35); }
-.rs-services.modify .service-wrap .icon-part img{ filter:drop-shadow(0 6px 10px rgba(0,0,0,.35)) saturate(110%); }
+.rs-services.modify .service-wrap .title a{
+  color:#ffffff !important;
+  transition:color .35s ease .34s;
+}
+.rs-services.style1:not(.modify) .service-wrap .desc,
+.rs-services.style1:not(.modify) .service-wrap p,
+.rs-services.modify .service-wrap .desc{
+  color:#e7eef9 !important;
+  text-align:center !important;
+  transition:color .35s ease .12s;
+}
+.rs-services.style1:not(.modify) .service-wrap:hover .title,
+.rs-services.style1:not(.modify) .service-wrap:hover .title a,
+.rs-services.style1:not(.modify) .service-wrap:hover .desc,
+.rs-services.style1:not(.modify) .service-wrap:hover p,
+.rs-services.modify .service-wrap:hover .title,
+.rs-services.modify .service-wrap:hover .title a,
+.rs-services.modify .service-wrap:hover .desc{
+  color:#082243 !important;
+  font-weight:700 !important;
+}
+.rs-services.style1:not(.modify) .service-wrap:hover .icon-part img:not(.icon-hover),
+.rs-services.modify .service-wrap:hover .icon-part img:not(.icon-hover){
+  transform:scale(1.08);
+  filter:brightness(0) drop-shadow(0 10px 16px rgba(0,0,0,.35));
+}
+.rs-services.modify .services-products-cta{
+  display:flex;
+  justify-content:flex-end;
+  margin-top:18px;
+}
 
 /* Put this in your CSS after other hero rules */
 #hero-caption{ display:none !important; }
@@ -570,7 +649,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <div class="row gutter-16">
             <div class="col-lg-3 col-sm-6 mb-16">
               <div class="service-wrap">
-                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/1.webp" width="140" height="140" alt="Industrial Refrigeration"></div>
+                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/1.webp" width="140" height="140" alt="Industrial Refrigeration"><img loading="lazy" decoding="async" class="icon-hover" src="assets/images/services/icons/1.webp" width="140" height="140" alt=""></div>
                 <div class="content-part">
                   <h3 class="title"><a href="services-single.html">Turnkey Execution</a></h3>
                   <p>Full turnkey cold storage and industrial refrigeration solutions – design, equipment supply, installation and commissioning, all in-house by our own engineering team for smooth accountable delivery from start to finish.</p>
@@ -579,7 +658,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </div>
             <div class="col-lg-3 col-sm-6 mb-16">
               <div class="service-wrap">
-                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/2.webp" width="140" height="140" alt="Cooling System"></div>
+                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/2.webp" width="140" height="140" alt="Cooling System"><img loading="lazy" decoding="async" class="icon-hover" src="assets/images/services/icons/2.webp" width="140" height="140" alt=""></div>
                 <div class="content-part">
                   <h3 class="title"><a href="services-single.html">Energy Efficiency</a></h3>
                   <p>High efficiency compressors, advanced PUF insulation and smart controls help reduce running costs by up to 30% compared with conventional cold storage systems, while maintaining precise temperature control.</p>
@@ -588,7 +667,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </div>
             <div class="col-lg-3 col-sm-6 mb-16">
               <div class="service-wrap">
-                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/3.webp" width="140" height="140" alt="Cold Storage Plant"></div>
+                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/3.webp" width="140" height="140" alt="Cold Storage Plant"><img loading="lazy" decoding="async" class="icon-hover" src="assets/images/services/icons/3.webp" width="140" height="140" alt=""></div>
                 <div class="content-part">
                   <h3 class="title"><a href="services-single.html">99.9% Uptime</a></h3>
                   <p>Preventive maintenance and rapid-response AMC support 24 hours a day, 365 days a year keep your cold room, CA store or refrigeration plant running reliably.</p>
@@ -597,7 +676,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </div>
             <div class="col-lg-3 col-sm-6 mb-16">
               <div class="service-wrap">
-                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/4.webp" width="140" height="140" alt="Cold Storage Warehouse"></div>
+                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/4.webp" width="140" height="140" alt="Cold Storage Warehouse"><img loading="lazy" decoding="async" class="icon-hover" src="assets/images/services/icons/4.webp" width="140" height="140" alt=""></div>
                 <div class="content-part">
                   <h3 class="title"><a href="services-single.html">Pan-India Service</a></h3>
                   <p>Okhla, New Delhi certified refrigeration engineers offer installation and after sales support to clients across Delhi NCR – Noida, Gurgaon and Faridabad and pan India.</p>
@@ -665,7 +744,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <!-- Service 1 -->
             <div class="col-lg-3 col-sm-6 mb-16">
               <div class="service-wrap">
-                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/modify/1.webp" width="140" height="140" alt="Refrigerated Cold Storage"></div>
+                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/modify/1.webp" width="140" height="140" alt="Refrigerated Cold Storage"><img loading="lazy" decoding="async" class="icon-hover" src="assets/images/services/icons/modify/1.webp" width="140" height="140" alt=""></div>
                 <div class="content-part">
                   <h3 class="title">Refrigerated Truck ACs &amp; Containers</h3>
                   <div class="desc">Transport Refrigeration Units for trucks and reefer containers, keeping Perishables – Food, Dairy and Pharma Products, temperature controlled on routes across Delhi NCR and Pan India.</div>
@@ -676,7 +755,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <!-- Service 2 -->
             <div class="col-lg-3 col-sm-6 mb-16">
               <div class="service-wrap">
-                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/modify/2.webp" width="128" height="128" alt="Cold Storage Warehouse"></div>
+                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/modify/2.webp" width="128" height="128" alt="Cold Storage Warehouse"><img loading="lazy" decoding="async" class="icon-hover" src="assets/images/services/icons/modify/2.webp" width="128" height="128" alt=""></div>
                 <div class="content-part">
                   <h3 class="title">Cold Rooms &amp; Storage Solutions</h3>
                   <div class="desc">Cold rooms based on ammonia and freon, Controlled Atmosphere (CA) stores, Ripening Chambers &amp; Blast Freezer Systems, designed to meet the shelf-life and temperature requirements of your product.</div>
@@ -687,7 +766,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <!-- Service 3 -->
             <div class="col-lg-3 col-sm-6 mb-16">
               <div class="service-wrap">
-                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/modify/3.webp" width="128" height="128" alt="Industrial Refrigeration"></div>
+                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/modify/3.webp" width="128" height="128" alt="Industrial Refrigeration"><img loading="lazy" decoding="async" class="icon-hover" src="assets/images/services/icons/modify/3.webp" width="128" height="128" alt=""></div>
                 <div class="content-part">
                   <h3 class="title">Compressor Rack Systems</h3>
                   <div class="desc">Centralised, energy efficient compressor rack systems for supermarkets, food retail chains and large cold storage warehouses, reducing refrigerant charge and maintenance.</div>
@@ -698,7 +777,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <!-- Service 4 -->
             <div class="col-lg-3 col-sm-6 mb-16">
               <div class="service-wrap">
-                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/modify/4.webp" width="128" height="128" alt="Ammonia Refrigeration"></div>
+                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/modify/4.webp" width="128" height="128" alt="Ammonia Refrigeration"><img loading="lazy" decoding="async" class="icon-hover" src="assets/images/services/icons/modify/4.webp" width="128" height="128" alt=""></div>
                 <div class="content-part">
                   <h3 class="title">Ammonia Refrigeration Units</h3>
                   <div class="desc">Industrial grade ammonia (NH3) and Freon refrigeration plants are for food processing units, large cold storage warehouses, fisheries and dairy operations requiring high capacity and energy efficient cooling</div>
@@ -709,7 +788,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <!-- Service 5 -->
             <div class="col-lg-3 col-sm-6 mb-16">
               <div class="service-wrap">
-                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/modify/5.webp" width="128" height="128" alt="Ripening Chamber"></div>
+                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/modify/5.webp" width="128" height="128" alt="Ripening Chamber"><img loading="lazy" decoding="async" class="icon-hover" src="assets/images/services/icons/modify/5.webp" width="128" height="128" alt=""></div>
                 <div class="content-part">
                   <h3 class="title">Ripening Chambers</h3>
                   <div class="desc">Ethylene-controlled ripening chambers for bananas, mangoes, papayas and other climacteric fruits, delivering consistent, ready-to-sell ripening for every pallet.</div>
@@ -720,7 +799,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <!-- Service 6 -->
             <div class="col-lg-3 col-sm-6 mb-16">
               <div class="service-wrap">
-                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/modify/6.webp" width="128" height="128" alt="Food Cold Room"></div>
+                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/modify/6.webp" width="128" height="128" alt="Food Cold Room"><img loading="lazy" decoding="async" class="icon-hover" src="assets/images/services/icons/modify/6.webp" width="128" height="128" alt=""></div>
                 <div class="content-part">
                   <h3 class="title">IQF Technology</h3>
                   <div class="desc">Individual Quick Freeze (IQF) machine systems flash-freeze seafood, fruits, vegetables and ready-to-eat products for export-quality output and to preserve texture, nutrition and appearance.</div>
@@ -731,7 +810,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <!-- Service 7 -->
             <div class="col-lg-3 col-sm-6 mb-16">
               <div class="service-wrap">
-                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/modify/7.webp" width="128" height="128" alt="Cooling System"></div>
+                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/modify/7.webp" width="128" height="128" alt="Cooling System"><img loading="lazy" decoding="async" class="icon-hover" src="assets/images/services/icons/modify/7.webp" width="128" height="128" alt=""></div>
                 <div class="content-part">
                   <h3 class="title">PUF Panels &amp; Insulated Doors</h3>
                   <div class="desc">High density PUF panel insulation and cold room doors that make up the thermal envelope of your cold storage facility – designed for airtight insulation and minimal energy loss.</div>
@@ -742,15 +821,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <!-- Service 8 -->
             <div class="col-lg-3 col-sm-6 mb-16">
               <div class="service-wrap">
-                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/modify/8.webp" width="120" height="144" alt="Cold Storage Solutions"></div>
+                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/modify/8.webp" width="120" height="144" alt="Cold Storage Solutions"><img loading="lazy" decoding="async" class="icon-hover" src="assets/images/services/icons/modify/8.webp" width="120" height="144" alt=""></div>
                 <div class="content-part">
                   <h3 class="title">Dock Shelters &amp; Dock Levelers</h3>
                   <div class="desc">Dock Shelter and Leveler Systems seal the gap between your cold facility and delivery vehicles. Protect product temperature while loading and unloading.</div>
                 </div>
               </div>
             </div>
-            <div class="tt-cta">
-                   <a href="products.php" class="btn btn-primary">Explore Our Products</a>
+            <div class="col-12 tt-cta services-products-cta">
+              <a href="products.php" class="btn btn-primary">Explore Our Products</a>
             </div>
           </div>
         </div>
@@ -888,16 +967,35 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .innov-card{
           height:100%; background:#ffffff; border:1px solid rgba(15,36,66,.06); border-radius:16px;
           padding:20px 18px; box-shadow:0 10px 26px rgba(15,36,66,.08);
-          transition:transform .16s ease, box-shadow .2s ease, border-color .2s ease;
+          position:relative; overflow:hidden;
+          transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
         }
-        .innov-card:hover{ transform:translateY(-2px); box-shadow:0 16px 36px rgba(15,36,66,.12); border-color:rgba(15,36,66,.12); }
+        .innov-card:before{
+          content:""; position:absolute; left:0; right:0; bottom:0; height:100%;
+          background:#082243; border-radius:16px 16px 0 0;
+          transform:translateY(100%); transition:transform .65s ease; z-index:0;
+        }
+        .innov-card:hover:before{ transform:translateY(0); }
+        .innov-card > *{ position:relative; z-index:1; }
+        .innov-card:hover{
+          transform:translateY(-6px);
+          box-shadow:0 18px 40px rgba(15,36,66,.18);
+          border-color:rgba(8,34,67,.18);
+        }
         .innov-icon{
           width:48px; height:48px; border-radius:12px; display:inline-flex; align-items:center; justify-content:center;
           background:linear-gradient(180deg,#6c63ff,#3b5bb7); color:#fff; font-size:22px; box-shadow:0 8px 20px rgba(108,99,255,.28);
-          margin-bottom:12px;
+          margin-bottom:12px; transition:background .3s ease .42s, color .3s ease .42s, transform .35s ease;
         }
-        .innov-card h3{ margin:0 0 6px; color:#0f2442; font-size:20px; font-weight:800; }
-        .innov-card p{ margin:0; color:#42507a; }
+        .innov-card h3{ margin:0 0 6px; color:#0f2442; font-size:20px; font-weight:800; transition:color .35s ease .24s; }
+        .innov-card p{ margin:0; color:#42507a; transition:color .35s ease .08s; }
+        .innov-card:hover .innov-icon{
+          background:#ffffff;
+          color:#082243;
+          transform:scale(1.08);
+        }
+        .innov-card:hover h3,
+        .innov-card:hover p{ color:#ffffff !important; }
         
         @media (max-width: 991.98px){
           .innov-section{ padding:64px 0; }
@@ -976,6 +1074,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
         
         .tt-cta{ display:flex; gap:12px; flex-wrap:wrap; margin-top:6px; }
+        .tt-cta-center{
+          justify-content:center;
+          align-items:center;
+          margin-top:34px;
+        }
         .tt-cta .btn-primary{
           background:#17203b; border:none; border-radius:10px; padding:12px 18px; font-weight:700; color:#fff;
           box-shadow:0 10px 22px rgba(23,32,59,.22); transition:transform .12s ease, box-shadow .2s ease, background .2s ease;
@@ -1007,6 +1110,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         @media (max-width: 991.98px){
           .tt-section{ padding:64px 0; }
           .tt-stats{ position:static; margin-top:12px; }
+          .tt-cta-center{ margin-top:24px; }
         }
         </style>
 
@@ -1040,10 +1144,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                   <li>End-to-end cold chain infrastructure for logistics and warehousing</li>
                 </ul> -->
                 <br>
-                <div class="tt-cta">
+                <!-- <div class="tt-cta">
                   <a href="contact.php" class="btn btn-primary">Talk to an Expert</a>
                   <a href="products.php" class="btn-link">Explore Our Products →</a>
-                </div>
+                </div> -->
               </div>
         
               <!-- VISUAL -->
@@ -1057,6 +1161,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     <div class="tt-chip"><span class="tt-dot"></span> Pan-India</div>
                     <div class="tt-chip"><span class="tt-dot"></span> Energy-Smart</div>
                   </div>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="tt-cta tt-cta-center">
+                  <a href="contact.php" class="btn btn-primary">Talk to an Expert</a>
+                  <a href="products.php" class="btn-link">Explore Our Products →</a>
                 </div>
               </div>
             </div>
@@ -1225,9 +1336,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     <div class="col-md-12 mb-20">
                       <div class="common-control"><textarea name="message" placeholder="Your Message Here" required=""></textarea></div>
                     </div>
-                    <div class="col-md-12">
-                      <div class="submit-btn"><button type="submit" class="readon" name="submit">Submit Now</button></div>
-                    </div>
+                    <!-- <div class="col-md-12"> -->
+                      <div class="submit-btn"><button type="submit" class="readon" name="submit" style="align-items: center;" >Submit Now</button></div>
+                    <!-- </div> -->
                   </div>
                 </form>
               </div>
