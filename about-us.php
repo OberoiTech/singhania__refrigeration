@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="en">
+<head>
 <?php include('head.php'); ?>
+</head>
 <body>
 <?php include('header.php'); ?>
 
@@ -12,11 +14,12 @@
   }
   .section-pad{ padding: 80px 0; }
   .section-soft{ background: linear-gradient(180deg, #fafbff 0%, #f3f6ff 100%); }
+  .main-content{ max-width:100%; overflow-x:clip; }
   .g-30>[class*="col-"]{ margin-bottom:30px; }
   .g-40>[class*="col-"]{ margin-bottom:40px; }
 
   .h2{ font-size: clamp(26px, 3.4vw, 36px); line-height:1.5; color: var(--ink); font-weight:800; }
-  .lead{ font-size: clamp(15px, 1.7vw, 17px); color:#2c3e68; }
+  .lead{ font-size: clamp(15px, 1.7vw, 17px); color:#2c3e68; text-align: justify; }
   .eyebrow{ display:inline-block; font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:#9aa6c3; }
 
   /* Hero */
@@ -61,10 +64,45 @@
     background: conic-gradient(from 180deg, #3b5bb7, #2a427f); box-shadow: inset 0 0 0 3px #fff;
   }
 
+  .about-cta{
+    display:inline-block;
+    padding:12px 20px;
+    border-radius:10px;
+    background:#1c2f57;
+    color:#fff !important;
+  }
+
   @media (max-width: 991px){
     .section-pad{ padding: 64px 0; }
     .about-hero{ padding: 40px 0 18px; }
     .about-hero__bg{ height:100%; }
+    .about-img{ display:block; max-width:680px; margin:0 auto; }
+    .g-30>[class*="col-"]:last-child,
+    .g-40>[class*="col-"]:last-child{ margin-bottom:0; }
+  }
+
+  @media (max-width: 767px){
+    .section-pad{ padding:48px 0; }
+    .about-hero{ padding:32px 0 16px; }
+    .about-hero__card{ padding:22px 18px; border-radius:14px; }
+    .about-hero__card h1{ font-size:clamp(28px, 8vw, 36px); line-height:1.18; }
+    .about-hero__card p,
+    .lead{ font-size:15px; line-height:1.7; text-align:left; }
+    .h2{ font-size:24px; line-height:1.3; overflow-wrap:anywhere; }
+    .card-lite{ height:auto; padding:22px 18px; }
+    .g-30>[class*="col-"],
+    .g-40>[class*="col-"]{ margin-bottom:24px; }
+    .g-30>[class*="col-"]:last-child,
+    .g-40>[class*="col-"]:last-child{ margin-bottom:0; }
+    .checklist{ gap:12px; }
+    .checklist li{ padding-left:27px; font-size:15px; line-height:1.55; }
+    .about-img{ border-radius:12px; }
+  }
+
+  @media (max-width: 420px){
+    .about-hero__card{ padding:20px 16px; }
+    .section-pad{ padding:42px 0; }
+    .about-cta{ width:100%; text-align:center; }
   }
 </style>
 
@@ -96,17 +134,16 @@
         </div>
         <div class="col-lg-7" data-aos="fade-left">
           <h2 class="h2 mb-12">Singhania Refrigeration: Empowering India’s Cold Chain</h2>
-          <p class="">
-            Singhania Refrigeration is one of India’s most trusted providers of advanced refrigeration
-            and cold chain solutions. Backed by a legacy of 25+ years from Singhania Logistics, we
-            deliver end-to-end cold storage, industrial refrigeration, and cold chain technologies for
-            diverse industries.
+          <p class="lead">
+            Singhania Refrigeration is one of India’s most trusted suppliers of 
+            advanced refrigeration and cold chain solutions. With the legacy of 
+            Singhania Logistics for over 25 years, we provide end-to-end cold storage. 
+            Singhania Refrigeration is one of the most trusted suppliers of advanced refrigeration and cold chain solutions in India. From concept to commissioning and farm to fork, factory to pharma, we offer precise temperature control, energy efficiency, and reliable performance at every stage of the supply chain. 
           </p>
-          <p>
-            From concept to commissioning and farm to fork, factory to pharma, we ensure precise
-            temperature control, energy efficiency, and reliable performance across every stage of the
-            supply chain. Our solutions include turnkey cold storage projects, blast freezers,
-            ripening chambers, and refrigerated warehouses designed to meet modern industry demands.
+          <p class="lead">Our solutions include turnkey cold storage projects, blast-freezers, ripening chambers, and refrigerated warehouses designed to meet modern industry demands. Singhania Logistics, with a legacy of 25+ years, backs us, and we provide end-to-end cold storage, industrial refrigeration,
+            and cold chain technologies for various industries.</p>
+          <p class="lead">
+            Designed for every stage of the supply chain from concept to commissioning, from farm to fork, from factory to pharma, we provide precise temperature control, energy efficiency, and reliable performance. We carry out complete cold storage projects, blast-freezers, ripening chambers, and refrigerated warehouses tailored to the needs of modern industry.
           </p>
 
           <h5 class="mt-20 mb-10">Our Legacy of Excellence</h5>
@@ -249,7 +286,7 @@
           Whether you need a refrigerated truck, a ripening chamber, a multi-temperature warehouse,
           or a complete cold-chain infrastructure—Singhania Refrigeration is your partner in success.
         </p>
-        <a href="contact.php" class="readon banner-style" style="background:#1c2f57;color:#fff;border-radius:10px;padding:12px 20px;display:inline-block;">
+        <a href="contact.php" class="readon banner-style about-cta">
           Contact Us
         </a>
       </div>

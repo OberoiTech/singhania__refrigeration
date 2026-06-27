@@ -10574,7 +10574,7 @@ body .modal-backdrop {
     21. Testimonial Section CSS
 ---------------------------------------*/
 .rs-testimonial.style1 .bg-part {
-  background: url(assets/images/testimonial/left-img.jpg);
+  background: url(assets/images/testimonial/left-img.webp);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

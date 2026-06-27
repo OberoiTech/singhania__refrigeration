@@ -23,18 +23,21 @@
       <div class="f-col" data-aos="fade-up" data-aos-delay="50">
         <div class="brand">
           <a href="index.php" class="brand-logo">
-            <img src="assets/images/logo1.png" alt="Singhania Refrigeration">
+            <picture><source srcset="assets/images/logo1.webp" type="image/webp"><img src="assets/images/logo1.png" width="248" height="172" alt="Singhania Refrigeration"></picture>
           </a>
           <p class="brand-copy">
-            Singhania Refrigeration is a trusted partner in cold chain and industrial refrigeration—cold rooms, CA/MA stores, ripening, compressor racks, ammonia/freon plants, PUF panels, dock shelters & warehouse infra with focus on efficiency, safety, and reliability.
+             Singhania Refrigeration is a trusted Delhi NCR-based industrial refrigeration and cold
+            storage solutions provider — cold rooms, CA/MA stores, ammonia/freon plants, ripening
+            chambers, IQF systems, compressor racks, PUF panels, dock shelters and transport
+            refrigeration — engineered for efficiency, safety and reliability across India.
           </p>
           <a class="btn-ghost" href="about-us.php">About Us</a>
           <ul class="social-pills">
-                <li><a href="https://www.facebook.com/profile.php?id=61579480251463"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="https://x.com/SinghaniaR59102"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="https://www.instagram.com/singhaniarefrigeration/"><i class="fa fa-instagram"></i></a></li>
-                <li><a href="https://www.linkedin.com/company/singhania-refrigeration-and-supply-chain-consultancy/"><i class="fa fa-linkedin-square"></i></a></li>
-                <li><a href="https://www.youtube.com/channel/UC-g2bewulBb2oGjPGIDAaJA"><i class="fa fa-youtube-play"></i></a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=61579480251463" aria-label="Visit Singhania Refrigeration on Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                <li><a href="https://x.com/SinghaniaR59102" aria-label="Visit Singhania Refrigeration on X"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                <li><a href="https://www.instagram.com/singhaniarefrigeration/" aria-label="Visit Singhania Refrigeration on Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                <li><a href="https://www.linkedin.com/company/singhania-refrigeration-and-supply-chain-consultancy/" aria-label="Visit Singhania Refrigeration on LinkedIn"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+                <li><a href="https://www.youtube.com/channel/UC-g2bewulBb2oGjPGIDAaJA" aria-label="Visit Singhania Refrigeration on YouTube"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
           </ul>
         </div>
       </div>
@@ -63,9 +66,11 @@
 
         <h4 class="f-title mt-28">Quick Links</h4>
         <ul class="link-list">
+          <!-- <li><a href="blog-details.php">Latest Posts</a></li> -->
           <li><a href="consulting.php">Consulting</a></li>
           <li><a href="turnkey-solution.php">Turnkey Solutions</a></li>
           <li><a href="transport-refrigeration.php">Transport Refrigeration</a></li>
+          <li><a href="blog.php">Blogs</a></li>
           <li><a href="contact.php">Contact Us</a></li>
         </ul>
       </div>
@@ -83,7 +88,10 @@
           ?>
           <article class="post-mini">
             <a class="thumb" href="blog-details.php?id=<?php echo (int)$fb['id']; ?>">
-              <img src="<?php echo $fbImg; ?>" alt="<?php echo htmlspecialchars($fb['title']); ?>">
+              <?php $fbWebp = function_exists('sr_webp_path') ? sr_webp_path($fbImg) : ''; ?>
+              <?php if ($fbWebp !== ''): ?><picture><source srcset="<?php echo htmlspecialchars($fbWebp, ENT_QUOTES); ?>" type="image/webp"><?php endif; ?>
+              <img src="<?php echo htmlspecialchars($fbImg, ENT_QUOTES); ?>"<?php echo function_exists('sr_image_size_attrs') ? sr_image_size_attrs(function_exists('sr_preferred_image_path') ? sr_preferred_image_path($fbImg) : $fbImg) : ''; ?> alt="<?php echo htmlspecialchars($fb['title']); ?>">
+              <?php if ($fbWebp !== ''): ?></picture><?php endif; ?>
             </a>
             <div class="meta">
               <a class="title" href="blog-details.php?id=<?php echo (int)$fb['id']; ?>">
@@ -103,7 +111,7 @@
     <div class="footer-bottom">
       <p>© <?php echo date('Y'); ?> Singhania Refrigeration. All Rights Reserved.</p>
       <ul class="bottom-links">
-        <li><a href="privacy.php">Privacy</a></li>
+        <li><a href="privacy-policy.php">Privacy</a></li>
         <li><a href="terms.php">Terms</a></li>
         <li><a href="contact.php">Support</a></li>
       </ul>
@@ -154,24 +162,24 @@
         <!-- owl.carousel js -->
         <script src="assets/js/owl.carousel.min.js"></script>
         <!-- Slick js -->
-        <script src="assets/js/slick.min.js"></script>
+        <!-- Homepage unused: <script src="assets/js/slick.min.js"></script> -->
         <!-- isotope.pkgd.min js -->
-        <script src="assets/js/isotope.pkgd.min.js"></script>
+        <!-- Homepage unused: <script src="assets/js/isotope.pkgd.min.js"></script> -->
         <!-- imagesloaded.pkgd.min js -->
-        <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+        <!-- Homepage unused: <script src="assets/js/imagesloaded.pkgd.min.js"></script> -->
         <!-- wow js -->
-        <script src="assets/js/wow.min.js"></script>
+        <!-- Homepage unused: <script src="assets/js/wow.min.js"></script> -->
         <!-- aos js -->
         <script src="assets/js/aos.js"></script>
         <!-- Skill bar js -->
-        <script src="assets/js/skill.bars.jquery.js"></script>
-        <script src="assets/js/jquery.counterup.min.js"></script>        
+        <!-- Homepage unused: <script src="assets/js/skill.bars.jquery.js"></script> -->
+        <!-- Homepage unused: <script src="assets/js/jquery.counterup.min.js"></script> -->
          <!-- counter top js -->
-        <script src="assets/js/waypoints.min.js"></script>
+        <!-- Homepage unused: <script src="assets/js/waypoints.min.js"></script> -->
         <!-- video js -->
-        <script src="assets/js/jquery.mb.YTPlayer.min.js"></script>
+        <!-- Homepage unused: <script src="assets/js/jquery.mb.YTPlayer.min.js"></script> -->
         <!-- magnific popup js -->
-        <script src="assets/js/jquery.magnific-popup.min.js"></script>
+        <!-- Homepage unused: <script src="assets/js/jquery.magnific-popup.min.js"></script> -->
         <!-- Nivo slider js -->
         <script src="assets/inc/custom-slider/js/jquery.nivo.slider.js"></script>
         <!-- plugins js -->
@@ -280,7 +288,7 @@
   filter: drop-shadow(0 4px 14px rgba(0,0,0,.35));
   margin-bottom: 10px;
 }
-.brand-copy{ color: var(--footer-text); line-height: 1.7; margin-bottom: 14px; }
+.brand-copy{ color: var(--footer-text); line-height: 1.7; margin-bottom: 14px; text-align: justify; }
 .btn-ghost{
   display:inline-block;
   padding: 10px 14px;

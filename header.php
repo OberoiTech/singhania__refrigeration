@@ -57,47 +57,88 @@ $coldStoragePages = [
 ?>
 
 <style>
-/* (your existing CSS unchanged) */
-.full-width-header .rs-header .menu-area .logo-area img { transition:.4s; -webkit-transition:.4s; max-height:115px; }
-.full-width-header .rs-header .menu-area.sticky .logo-area img { max-height:70px; }
-.full-width-header .rs-header .menu-area .main-menu .rs-menu ul.nav-menu li { display:inline-block; margin-right:20px !important; padding:0; }
+/* Header layout */
+.full-width-header .rs-header .menu-area { padding:14px 0; background:#fff; }
+.full-width-header .rs-header .menu-area .container .row{
+  align-items:center;
+  flex-wrap:nowrap;
+}
+.full-width-header .rs-header .menu-area .logo-area{
+  display:flex;
+  align-items:center;
+}
+.full-width-header .rs-header .menu-area .logo-area img {
+  display:block;
+  width:120px;
+  max-width:100%;
+  max-height:92px;
+  transition:.4s;
+  -webkit-transition:.4s;
+}
+.full-width-header .rs-header .menu-area.sticky .logo-area img {
+  width:96px;
+  max-height:70px;
+}
+.full-width-header .rs-header .menu-area .main-menu .rs-menu ul.nav-menu li { display:inline-block; margin-right:0 !important; padding:0; }
 .full-width-header .rs-header .menu-area .main-menu .rs-menu ul.nav-menu li a { transition:all .3s ease; font-size:13px !important; }
 .readon-custom { outline:none; padding:11px 11px; border:none; border-radius:10px; display:inline-block; text-transform:uppercase; font-size:13px; font-family:'Poppins',sans-serif; font-weight:500; color:#fff; background:#082243; transition:all .3s ease; }
 .full-width-header .rs-header .menu-area.sticky .expand-btn-inner li.search-parent { display:block; }
 
-.full-width-header .rs-header .menu-area { padding:10px 0; }
-.full-width-header .rs-header .menu-area .container .row{ align-items:center; }
-.full-width-header .rs-header .menu-area .rs-menu-area{ display:flex; align-items:center; justify-content:space-between; }
+.full-width-header .rs-header .menu-area .rs-menu-area{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:22px;
+  width:100%;
+}
 .full-width-header .rs-header .menu-area .rs-menu-area .main-menu{ flex:1; }
 
-.full-width-header .rs-header .menu-area .main-menu .rs-menu ul.nav-menu{ display:flex; align-items:center; gap:12px; margin:0; }
+.full-width-header .rs-header .menu-area .main-menu .rs-menu ul.nav-menu{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:16px;
+  margin:0;
+  flex-wrap:nowrap;
+}
 .full-width-header .rs-header .menu-area .main-menu .rs-menu ul.nav-menu > li{ margin:0 !important; }
 
 :root{ --navNavy:#0e2344; }
 
 .full-width-header .rs-header .menu-area .main-menu .rs-menu ul.nav-menu > li > a{
-  display:inline-flex; align-items:center; height:50px; padding:0 14px; border-radius:10px;
-  line-height:1; font-weight:600; letter-spacing:.2px; color:#0f2442;
-  transition:background .2s ease, color .2s ease, box-shadow .2s ease, transform .08s ease;
+  display:inline-flex; align-items:center; justify-content:center; height:50px; padding:0 12px; border-radius:9px;
+  line-height:1; font-weight:700; letter-spacing:0; color:#0f2442;
+  text-align:center; white-space:nowrap;
+  transition:background .2s ease, color .2s ease, box-shadow .2s ease;
 }
 .full-width-header .rs-header .menu-area .main-menu .rs-menu ul.nav-menu > li > a:hover,
 .full-width-header .rs-header .menu-area .main-menu .rs-menu ul.nav-menu > li > a:focus,
 .full-width-header .rs-header .menu-area .main-menu .rs-menu ul.nav-menu > li.current-menu-item > a{
-  background:var(--navNavy); color:#fff !important; box-shadow:0 6px 16px rgba(14,35,68,.22); transform:translateY(-1px);
+  background:var(--navNavy); color:#fff !important; box-shadow:0 6px 16px rgba(14,35,68,.22);
 }
 .full-width-header .rs-header .menu-area .main-menu .rs-menu ul.nav-menu > li{ background:transparent !important; }
 
-.menu-cta{ margin-left:16px; display:inline-flex; align-items:center; }
+.menu-cta{ display:inline-flex; align-items:center; flex:0 0 auto; }
 .menu-cta.menu-cta--flush{ margin-left:0; }
 .menu-cta .btn-cfa{
-  display:inline-flex; align-items:center; height:50px; padding:0 18px; border-radius:12px;
+  display:inline-flex; align-items:center; justify-content:center; min-height:50px; padding:0 18px; border-radius:11px;
   background:var(--navNavy); color:#fff !important; font-weight:700; text-decoration:none;
   box-shadow:0 8px 22px rgba(14,35,68,.28); transition:transform .1s ease, box-shadow .2s ease, background .2s ease;
-  width: 130px !important;
+  min-width: 130px;
+  white-space:nowrap;
 }
 .menu-cta .btn-cfa:hover{ transform:translateY(-1px); background:#132e5f; color:#fff !important; box-shadow:0 12px 28px rgba(14,35,68,.34); }
 .full-width-header .rs-header .menu-area.sticky .menu-cta .btn-cfa{ height:46px; padding:0 16px; border-radius:10px; }
-@media (max-width:991px){ .menu-cta{ display:none; } }
+@media (min-width:992px) and (max-width:1199px){
+  .full-width-header .rs-header .menu-area .main-menu .rs-menu ul.nav-menu{ gap:8px; }
+  .full-width-header .rs-header .menu-area .main-menu .rs-menu ul.nav-menu > li > a{ padding:0 9px; font-size:12px !important; }
+  .menu-cta .btn-cfa{ min-width:118px; padding:0 14px; }
+}
+@media (max-width:991px){
+  .full-width-header .rs-header .menu-area .container .row{ flex-wrap:wrap; }
+  .full-width-header .rs-header .menu-area .logo-area img{ width:96px; max-height:72px; }
+  .menu-cta{ display:none; }
+}
 
 .full-width-header .rs-header .menu-area .main-menu .rs-menu ul.nav-menu > li .sub-menu{
   margin-top:12px; border-radius:12px; padding:10px 8px; box-shadow:0 18px 40px rgba(0,0,0,.18); border:1px solid rgba(0,0,0,.06);
@@ -109,44 +150,228 @@ $coldStoragePages = [
   background:rgba(14,35,68,.08); color:#fff !important;
 }
 
-/* Mobile/off-canvas (unchanged) */
-.right_menu_togle{ position:fixed; top:0; right:-300px; width:300px; height:100%; background:#f8f8f8; box-shadow:-2px 0 5px rgba(0,0,0,.2); transition:right .3s ease-in-out; z-index:1050; overflow-y:auto; padding-top:50px; padding-bottom:20px; box-sizing:border-box; }
-.right_menu_togle.open{ right:0; }
+/* Mobile/off-canvas visibility */
 @media (max-width:991px){ .rs-menu{ display:none; } .mobile-menu{ display:block; } .rs-menu-area{ justify-content:flex-end; } .menu-cta{ margin-left:15px; } }
-@media (min-width:992px){ .mobile-menu{ display:none; } .right_menu_togle{ right:-300px !important; visibility:hidden; } }
-.body-overlay{ position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,.5); z-index:1040; display:none; }
-.body-overlay.active{ display:block; }
-.logo-area.logo-area--tall{ max-height:160px; }
+@media (min-width:992px){ .mobile-menu{ display:none; } nav.right_menu_togle{ right:-340px !important; visibility:hidden; } }
+.logo-area.logo-area--tall{ max-height:none; }
 
-.mobile-nav-menu{ list-style:none; margin:0; padding:0 20px; }
-.mobile-nav-menu > li{ border-bottom:1px solid #eee; margin-bottom:0; }
-.mobile-nav-menu > li:last-child{ border-bottom:none; }
-.mobile-nav-menu a{ display:block; padding:12px 0; color:#333; text-decoration:none; font-size:16px; font-weight:500; }
-.mobile-nav-menu a:hover{ color:#007bff; }
-.mobile-nav-menu .sub-menu{ list-style:none; margin:0; padding:0; display:none; background:#f0f0f0; padding-left:15px; }
-.mobile-nav-menu .sub-menu li a{ padding:10px 0; font-size:15px; color:#555; }
-.mobile-nav-menu .sub-menu.open{ display:block; }
-.mobile-nav-menu .has-submenu > a{ position:relative; padding-right:30px; }
-.mobile-nav-menu .has-submenu > a::after{ content:"\f105"; font-family:'FontAwesome'; position:absolute; right:0; top:50%; transform:translateY(-50%); transition:transform .3s ease; }
-.mobile-nav-menu .has-submenu.active > a::after{ transform:translateY(-50%) rotate(90deg); }
+/* Mobile drawer */
+nav.right_menu_togle{
+  position:fixed;
+  top:0;
+  right:-340px;
+  width:320px;
+  max-width:calc(100vw - 48px);
+  height:100dvh;
+  padding:0 0 24px;
+  background:#fff;
+  box-shadow:-18px 0 50px rgba(6,38,74,.2);
+  overflow-x:hidden;
+  overflow-y:auto;
+  transition:right .3s ease-in-out;
+  z-index:2000;
+}
+nav.right_menu_togle.open{ right:0; }
+.body-overlay{
+  position:fixed;
+  inset:0;
+  z-index:1990;
+  display:block;
+  background:rgba(5,18,38,.58);
+  opacity:0;
+  visibility:hidden;
+  transition:opacity .25s ease, visibility .25s ease;
+}
+.body-overlay.active{ opacity:1; visibility:visible; }
+body.menu-open{ overflow:hidden; }
+.right_menu_togle .close-btn{
+  position:sticky;
+  top:0;
+  z-index:3;
+  display:flex;
+  justify-content:flex-end;
+  padding:16px 18px 12px;
+  background:rgba(255,255,255,.97);
+  border-bottom:1px solid #edf1f6;
+}
+.right_menu_togle .close-btn .close{
+  display:grid;
+  place-items:center;
+  width:38px;
+  height:38px;
+  padding:0;
+  border:0;
+  border-radius:10px;
+  background:#0e2344;
+  color:#fff;
+  font-size:25px;
+  line-height:1;
+  opacity:1;
+  cursor:pointer;
+  box-shadow:0 7px 18px rgba(14,35,68,.2);
+}
+.canvas-menu-content{ padding:10px 18px 8px; }
+.mobile-drawer-info{ margin:4px 18px 24px; padding:13px; border-radius:12px; background:#0e2344; }
+.mobile-drawer-info > a{ display:flex; gap:8px; padding:5px 0; color:#fff !important; font-size:12px; line-height:1.45; text-decoration:none; overflow-wrap:anywhere; }
+.mobile-drawer-info > a i{ width:14px; margin-top:2px; text-align:center; }
+.mobile-drawer-socials{ display:flex; gap:7px; margin-top:9px; }
+.mobile-drawer-socials a{ display:grid; place-items:center; width:30px; height:30px; border-radius:7px; background:rgba(255,255,255,.12); color:#fff !important; }
+.x-social-icon{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:1em;
+  height:1em;
+  color:inherit;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size:13px;
+  font-weight:800;
+  line-height:1;
+}
+.mobile-drawer-socials .x-social-icon{ font-size:12px; }
+.mobile-drawer-sites{ margin-top:11px; padding-top:10px; border-top:1px solid rgba(255,255,255,.18); }
+.mobile-drawer-sites summary{ display:flex; align-items:center; gap:7px; color:#fff; font-size:12px; font-weight:700; cursor:pointer; list-style:none; }
+.mobile-drawer-sites summary::-webkit-details-marker{ display:none; }
+.mobile-drawer-sites summary::after{ content:"\f107"; margin-left:auto; font-family:FontAwesome; transition:transform .2s ease; }
+.mobile-drawer-sites[open] summary::after{ transform:rotate(180deg); }
+.mobile-drawer-sites div{ display:grid; gap:3px; margin-top:8px; }
+.mobile-drawer-sites div a{ padding:7px 8px; border-radius:6px; background:rgba(255,255,255,.08); color:#fff !important; font-size:11px; line-height:1.35; text-decoration:none; }
+.right_menu_togle .mobile-nav-menu{ list-style:none; margin:0; padding:0; }
+.right_menu_togle .mobile-nav-menu > li{ position:relative; margin:0; border-bottom:1px solid #e7ecf3; }
+.right_menu_togle .mobile-nav-menu > li:last-child{ border-bottom:0; }
+.right_menu_togle .mobile-nav-menu a{
+  display:block;
+  padding:14px 12px;
+  border-radius:8px;
+  color:#0f2442 !important;
+  font-size:15px;
+  line-height:1.35;
+  font-weight:600;
+  text-decoration:none;
+}
+/* .right_menu_togle .mobile-nav-menu a:hover,
+.right_menu_togle .mobile-nav-menu a.active{ background:#eef4fb; color:#1268d7 !important; } */
+.right_menu_togle .mobile-nav-menu .sub-menu{
+  display:none;
+  position:static;
+  width:100%;
+  margin:0 0 10px;
+  padding:7px;
+  border:0;
+  border-radius:10px;
+  background:#0e2344;
+  box-shadow:none;
+  list-style:none;
+}
+.right_menu_togle .mobile-nav-menu .sub-menu.open{ display:block; }
+.right_menu_togle .mobile-nav-menu .sub-menu li{ margin:0; border-bottom:1px solid #e6ebf2; }
+.right_menu_togle .mobile-nav-menu .sub-menu li:last-child{ border-bottom:0; }
+.right_menu_togle .mobile-nav-menu .sub-menu li a{ width:auto; padding:10px 11px; color:white !important; font-size:13px; font-weight:500; }
+.right_menu_togle .mobile-nav-menu .has-submenu > a{ position:relative; padding-right:42px; }
+.right_menu_togle .mobile-nav-menu .has-submenu > a::after{
+  content:"\f105";
+  position:absolute;
+  top:50%;
+  right:14px;
+  font-family:FontAwesome;
+  transform:translateY(-50%);
+  transition:transform .3s ease;
+}
+.right_menu_togle .mobile-nav-menu .has-submenu.active > a::after{ transform:translateY(-50%) rotate(90deg); }
+@media (max-width:420px){
+  nav.right_menu_togle{ width:300px; max-width:calc(100vw - 36px); }
+  .canvas-menu-content{ padding-right:14px; padding-left:14px; }
+}
 
 .full-width-header .rs-header .menu-area .main-menu .rs-menu ul.nav-menu > li > a.active{
-  background:var(--navNavy); color:#fff !important; box-shadow:0 6px 16px rgba(14,35,68,.22); transform:translateY(-1px);
+  background:var(--navNavy); color:#fff !important; box-shadow:0 6px 16px rgba(14,35,68,.22);
 }
 
 /**/
+/* Toolbar alignment */
+.full-width-header .toolbar-area{
+  display:flex;
+  align-items:center;
+  min-height:56px;
+  padding:0;
+}
+.full-width-header .toolbar-area .row{
+  display:flex;
+  align-items:center;
+  flex-wrap:nowrap;
+}
+.full-width-header .toolbar-area .col-md-8,
+.full-width-header .toolbar-area .col-md-4{
+  float:none;
+  width:auto;
+  max-width:none;
+}
+.full-width-header .toolbar-area .col-md-8{
+  flex:1 1 auto;
+  min-width:0;
+}
+.full-width-header .toolbar-area .col-md-4{
+  flex:0 0 auto;
+  margin-left:auto;
+}
+.toolbar-contact{
+  min-width:0;
+}
+.toolbar-contact ul,
+.toolbar-sl-share > ul{
+  display:flex;
+  align-items:center;
+  flex-wrap:nowrap;
+  gap:26px;
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+.toolbar-contact ul li,
+.toolbar-sl-share > ul li{
+  display:inline-flex;
+  align-items:center;
+  margin:0;
+  white-space:nowrap;
+  line-height:1;
+}
+.toolbar-contact ul li:last-child{
+  min-width:0;
+}
+.toolbar-contact ul li:last-child a{
+  min-width:0;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.toolbar-contact ul li{
+  gap:6px;
+}
+.toolbar-contact ul li a,
+.toolbar-sl-share > ul li a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  line-height:1;
+}
+.toolbar-contact ul li i,
+.toolbar-sl-share > ul li i{
+  line-height:1;
+}
 /* =========================
    GROUP WEBSITES DROPDOWN (TOP BAR)
 ========================= */
 .toolbar-sl-share{
   display:flex;
   align-items:center;
-  justify-content:space-around;
-  gap:14px;
+  justify-content:flex-end;
+  gap:18px;
+  width:100%;
+  min-width:0;
+  flex-wrap:nowrap;
 }
-.toolbar-sl-share > ul{ margin:0; }
+.toolbar-sl-share > ul{ gap:18px; }
 
-.group-sites{ position:relative; }
+.group-sites{ position:relative; flex:0 0 auto; }
 
 .group-sites-btn{
   border:none;
@@ -215,7 +440,7 @@ $coldStoragePages = [
 }
 
 .full-width-header .toolbar-area .toolbar-sl-share ul li {
-    padding: 11px 3px;
+    padding: 0;
 }
 .group-sites-menu a:hover{
   background: rgba(14,35,68,.08);
@@ -234,6 +459,34 @@ $coldStoragePages = [
   .group-sites-btn .gs-title{ font-size:11px; }
   .group-sites-btn .gs-sub{ display:none; }
   .group-sites-menu{ top:48px; min-width:220px; }
+}
+
+@media (min-width: 992px) and (max-width: 1199px){
+  .full-width-header .toolbar-area{ min-height:52px; }
+  .toolbar-contact ul{ gap:14px; }
+  .toolbar-contact ul li,
+  .toolbar-contact ul li a{ font-size:12px; }
+  .toolbar-sl-share{ gap:12px; }
+  .toolbar-sl-share > ul{ gap:13px; }
+  .group-sites-btn{ height:38px; padding:0 12px; gap:8px; }
+  .group-sites-btn .gs-title{ font-size:11px; }
+}
+
+@media (min-width: 1200px){
+  .toolbar-contact ul li:last-child a{
+    overflow:visible;
+    text-overflow:clip;
+  }
+}
+
+@media (max-width: 991px){
+  .full-width-header .toolbar-area{ display:none; }
+  .mobile-drawer-info{ margin-bottom:20px; }
+  .mobile-drawer-info > a{ align-items:flex-start; }
+  .mobile-drawer-socials{
+    flex-wrap:wrap;
+    align-items:center;
+  }
 }
 
 </style>
@@ -255,11 +508,12 @@ $coldStoragePages = [
         <div class="col-md-4">
           <div class="toolbar-sl-share">
             <ul>
-                <li><a href="https://www.facebook.com/profile.php?id=61579480251463"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="https://x.com/SinghaniaR59102"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="https://www.instagram.com/singhaniarefrigeration/"><i class="fa fa-instagram"></i></a></li>
-                <li><a href="https://www.linkedin.com/company/singhania-refrigeration-and-supply-chain-consultancy/"><i class="fa fa-linkedin-square"></i></a></li>
-                <li><a href="https://www.youtube.com/channel/UC-g2bewulBb2oGjPGIDAaJA"><i class="fa fa-youtube-play"></i></a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=61579480251463" aria-label="Visit Singhania Refrigeration on Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                <li><a href="https://x.com/SinghaniaR59102" aria-label="Visit Singhania Refrigeration on X"><span class="x-social-icon" aria-hidden="true">X</span></a></li>
+                <li><a href="https://www.instagram.com/singhaniarefrigeration/" aria-label="Visit Singhania Refrigeration on Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                <li><a href="https://www.linkedin.com/company/singhania-refrigeration-and-supply-chain-consultancy/" aria-label="Visit Singhania Refrigeration on LinkedIn"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+                <li><a href="https://in.pinterest.com/singhaniarefrigeration24/" aria-label="Visit Singhania Refrigeration on Pinterest"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
+                <li><a href="https://www.youtube.com/channel/UC-g2bewulBb2oGjPGIDAaJA" aria-label="Visit Singhania Refrigeration on YouTube"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
             </ul>
             <div class="group-sites" id="groupSites">
               <button type="button" class="group-sites-btn" id="groupSitesBtn" aria-haspopup="true" aria-expanded="false">
@@ -294,13 +548,13 @@ $coldStoragePages = [
         <div class="row">
           <div class="col-lg-2">
             <div class="logo-area logo-area--tall">
-              <a href="index.php"><img src="assets/images/logo1.png" alt="logo"></a>
+              <a href="index.php"><picture><source srcset="assets/images/logo1.webp" type="image/webp"><img src="assets/images/logo1.png" width="248" height="172" alt="Singhania Refrigeration"></picture></a>
             </div>
           </div>
           <div class="col-lg-10 text-right">
             <div class="rs-menu-area d-flex align-items-center justify-content-between">
               <div class="main-menu flex-grow-1">
-                <a class="rs-menu-toggle"><i class="fa fa-bars"></i></a>
+                <a class="rs-menu-toggle" role="button" aria-label="Open menu" aria-controls="mobileDrawer" aria-expanded="false"><i class="fa fa-bars"></i></a>
 
                 <!-- ===== DESKTOP MENU (updated to use helpers) ===== -->
                 <nav class="rs-menu pr-50">
@@ -312,7 +566,6 @@ $coldStoragePages = [
                     <li class="menu-item <?php echo isActive('about-us.php', $curBase); ?>">
                       <a class="<?php echo isActiveA('about-us.php', $curBase); ?>" href="about-us.php">About</a>
                     </li>
-
                     <li class="menu-item  <?php echo anyActive($productsPages, $curBase); ?>">
                       <a href="products.php" class="<?php echo isActiveA('products.php', $curBase); ?>">Products</a>
                       <ul class="sub-menu">
@@ -344,7 +597,7 @@ $coldStoragePages = [
                           <a class="<?php echo isActiveA('doors-ca-doors.php', $curBase); ?>" href="doors-ca-doors.php">Doors &amp; CA Doors</a>
                         </li>
                         <li class="<?php echo isActive('panels.php', $curBase); ?>">
-                          <a class="<?php echo isActiveA('panels.php', $curBase); ?>" href="panels.php">Puff Panels</a>
+                          <a class="<?php echo isActiveA('panels.php', $curBase); ?>" href="panels.php">Puf Panels</a>
                         </li>
                         <li class="<?php echo isActive('dock-shelter-dock-leveler.php', $curBase); ?>">
                           <a class="<?php echo isActiveA('dock-shelter-dock-leveler.php', $curBase); ?>" href="dock-shelter-dock-leveler.php">Dock Shelter &amp; Dock Leveler</a>
@@ -385,10 +638,14 @@ $coldStoragePages = [
                         </li>
                       </ul>
                     </li>
-
+                    <li class="menu-item <?php echo isActive('blog.php', $curBase); ?>">
+                      <a class="<?php echo isActiveA('blog.php', $curBase); ?>" href="blog.php">Blog</a>
+                    </li>
                     <li class="menu-item <?php echo isActive('contact.php', $curBase); ?>">
                       <a class="<?php echo isActiveA('contact.php', $curBase); ?>" href="contact.php">Contact</a>
                     </li>
+
+                    
                   </ul>
                 </nav>
                 <!-- ===== /DESKTOP MENU ===== -->
@@ -405,21 +662,21 @@ $coldStoragePages = [
     </div>
 
     <!-- Off-canvas menu (already using helpers) -->
-    <nav class="right_menu_togle hidden-md">
+    <nav id="mobileDrawer" class="right_menu_togle hidden-md" aria-label="Mobile navigation" aria-hidden="true">
       <div class="close-btn">
         <span id="nav-close" class="humburger">
           <button type="button" class="close" aria-label="Close" data-dismiss="modal">&times;</button>
         </span>
       </div>
       <div class="canvas-menu-content">
-        <ul class="nav-menu">
+        <ul class="nav-menu mobile-nav-menu">
           <li class="menu-item <?php echo isActive('index.php', $curBase); ?>">
             <a class="<?php echo isActiveA('index.php', $curBase); ?>" href="index.php">Home</a>
           </li>
           <li class="menu-item <?php echo isActive('about-us.php', $curBase); ?>">
             <a class="<?php echo isActiveA('about-us.php', $curBase); ?>" href="about-us.php">About Us</a>
           </li>
-          <li class="menu-item <?php echo anyActive($productsPages, $curBase); ?>">
+          <li class="menu-item has-submenu <?php echo anyActive($productsPages, $curBase); ?>">
             <a href="products.php">Products</a>
             <ul class="sub-menu">
               <li class="<?php echo isActive('truck-ac.php', $curBase); ?>"><a class="<?php echo isActiveA('truck-ac.php', $curBase); ?>" href="truck-ac.php">Truck’s AC</a></li>
@@ -431,7 +688,7 @@ $coldStoragePages = [
               <li class="<?php echo isActive('multideck-cabinet.php', $curBase); ?>"><a class="<?php echo isActiveA('multideck-cabinet.php', $curBase); ?>" href="multideck-cabinet.php">Multideck Cabinet</a></li>
               <li class="<?php echo isActive('iqf.php', $curBase); ?>"><a class="<?php echo isActiveA('iqf.php', $curBase); ?>" href="iqf.php">IQF (Individual Quick Freeze)</a></li>
               <li class="<?php echo isActive('doors-ca-doors.php', $curBase); ?>"><a class="<?php echo isActiveA('doors-ca-doors.php', $curBase); ?>" href="doors-ca-doors.php">Doors &amp; CA Doors</a></li>
-              <li class="<?php echo isActive('panels.php', $curBase); ?>"><a class="<?php echo isActiveA('panels.php', $curBase); ?>" href="panels.php">Puff Panels</a></li>
+              <li class="<?php echo isActive('panels.php', $curBase); ?>"><a class="<?php echo isActiveA('panels.php', $curBase); ?>" href="panels.php">Puf Panels</a></li>
               <li class="<?php echo isActive('dock-shelter-dock-leveler.php', $curBase); ?>"><a class="<?php echo isActiveA('dock-shelter-dock-leveler.php', $curBase); ?>" href="dock-shelter-dock-leveler.php">Dock Shelter &amp; Dock Leveler</a></li>
               <li class="<?php echo isActive('heavy-duty-racks.php', $curBase); ?>"><a class="<?php echo isActiveA('heavy-duty-racks.php', $curBase); ?>" href="heavy-duty-racks.php">Heavy Duty Racks</a></li>
             </ul>
@@ -439,7 +696,7 @@ $coldStoragePages = [
           <li class="menu-item <?php echo isActive('consulting.php', $curBase); ?>">
             <a class="<?php echo isActiveA('consulting.php', $curBase); ?>" href="consulting.php">Consulting</a>
           </li>
-          <li class="menu-item <?php echo anyActive($coldStoragePages, $curBase); ?>">
+          <li class="menu-item has-submenu <?php echo anyActive($coldStoragePages, $curBase); ?>">
             <a href="#">Cold Storage Solutions</a>
             <ul class="sub-menu">
               <li class="<?php echo isActive('turnkey-solution.php', $curBase); ?>"><a class="<?php echo isActiveA('turnkey-solution.php', $curBase); ?>" href="turnkey-solution.php">Turnkey Solution</a></li>
@@ -451,10 +708,34 @@ $coldStoragePages = [
               <li class="<?php echo isActive('transport-refrigeration.php', $curBase); ?>"><a class="<?php echo isActiveA('transport-refrigeration.php', $curBase); ?>" href="transport-refrigeration.php">Transport Refrigeration</a></li>
             </ul>
           </li>
+          <li class="menu-item <?php echo isActive('blog.php', $curBase); ?>">
+            <a class="<?php echo isActiveA('blog.php', $curBase); ?>" href="blog.php">Blog</a>
+          </li>
           <li class="menu-item <?php echo isActive('contact.php', $curBase); ?>">
             <a class="<?php echo isActiveA('contact.php', $curBase); ?>" href="contact.php">Contact Us</a>
           </li>
         </ul>
+      </div>
+      <div class="mobile-drawer-info">
+        <a href="<?php echo htmlspecialchars($mailHref, ENT_QUOTES, 'UTF-8'); ?>"><i class="fa fa-envelope"></i><span><?php echo htmlspecialchars($email, ENT_QUOTES, 'UTF-8'); ?></span></a>
+        <a href="tel:+91<?php echo $mobile; ?>"><i class="fa fa-phone"></i><span>+91-<?php echo $mobile; ?> / +91-7303099094 / +91-9718097170</span></a>
+        <div class="mobile-drawer-socials">
+          <a href="https://www.facebook.com/profile.php?id=61579480251463" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+          <a href="https://x.com/SinghaniaR59102" target="_blank" rel="noopener" aria-label="X"><span class="x-social-icon" aria-hidden="true">X</span></a>
+          <a href="https://www.instagram.com/singhaniarefrigeration/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/company/singhania-refrigeration-and-supply-chain-consultancy/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa fa-linkedin-square"></i></a>
+          <a href="https://www.youtube.com/channel/UC-g2bewulBb2oGjPGIDAaJA" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa fa-youtube-play"></i></a>
+        </div>
+        <details class="mobile-drawer-sites">
+          <summary><i class="fa fa-globe"></i> Group Websites</summary>
+          <div>
+            <a href="https://singhanialogistics.in/" target="_blank" rel="noopener">Singhania Logistics</a>
+            <a href="https://singhaniaretail.com/" target="_blank" rel="noopener">Singhania Retail</a>
+            <a href="https://singhaniafoundation.com/" target="_blank" rel="noopener">Singhania Foundation</a>
+            <a href="https://globalsoulhealing.com/" target="_blank" rel="noopener">Global Soul Healing</a>
+            <a href="https://singhaniaroyalfurniture.com/" target="_blank" rel="noopener">Singhania Royal Furniture</a>
+          </div>
+        </details>
       </div>
     </nav>
   </header>
@@ -660,39 +941,111 @@ $coldStoragePages = [
 
 
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-$(function() {
-  const $panel = $('.right_menu_togle');
-  function openMenu(){
-    if (!$('.body-overlay').length) $('body').append('<div class="body-overlay"></div>');
-    $('.body-overlay').addClass('active');
-    $('body').addClass('menu-open');
-    $panel.addClass('open');
-    $('.rs-menu-toggle').attr('aria-expanded','true');
+(function() {
+  function ready(fn) {
+    if (document.readyState !== 'loading') fn();
+    else document.addEventListener('DOMContentLoaded', fn);
   }
-  function closeMenu(){
-    $panel.removeClass('open');
-    $('body').removeClass('menu-open');
-    $('.body-overlay').removeClass('active').one('transitionend', function(){ $(this).remove(); });
-    $('.mobile-nav-menu .sub-menu').removeClass('open').removeAttr('style');
-    $('.mobile-nav-menu .has-submenu').removeClass('active');
-    $('.rs-menu-toggle').attr('aria-expanded','false');
-  }
-  $('.rs-menu-toggle').on('click', function(e){ e.preventDefault(); openMenu(); });
-  $('#nav-close').on('click', function(e){ e.preventDefault(); closeMenu(); });
-  $(document).on('click', '.body-overlay', closeMenu);
-  $(document).on('keydown', function(e){ if (e.key === 'Escape') closeMenu(); });
-  $('.mobile-nav-menu').on('click', '.has-submenu > a', function(e){
-    e.preventDefault();
-    const $li = $(this).parent();
-    const $sub = $li.children('.sub-menu');
-    $('.mobile-nav-menu .has-submenu').not($li).removeClass('active').children('.sub-menu').slideUp(260).removeClass('open');
-    $li.toggleClass('active');
-    $sub.stop(true, true).slideToggle(260).toggleClass('open');
+
+  ready(function() {
+    const panel = document.querySelector('.right_menu_togle');
+    const toggles = document.querySelectorAll('.rs-menu-toggle');
+    const closeBtn = document.getElementById('nav-close');
+    const mobileNav = document.querySelector('.mobile-nav-menu');
+    if (!panel || !toggles.length) return;
+
+    function ensureOverlay() {
+      let overlay = document.querySelector('.body-overlay');
+      if (!overlay) {
+        overlay = document.createElement('div');
+        overlay.className = 'body-overlay';
+        document.body.appendChild(overlay);
+        overlay.addEventListener('click', closeMenu);
+      }
+      return overlay;
+    }
+
+    function openMenu() {
+      ensureOverlay().classList.add('active');
+      document.body.classList.add('menu-open');
+      panel.classList.add('open');
+      panel.setAttribute('aria-hidden', 'false');
+      toggles.forEach(function(toggle) {
+        toggle.setAttribute('aria-expanded', 'true');
+      });
+      const closeControl = panel.querySelector('.close');
+      if (closeControl) closeControl.focus();
+    }
+
+    function closeMenu() {
+      const wasOpen = panel.classList.contains('open');
+      panel.classList.remove('open');
+      panel.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('menu-open');
+
+      const overlay = document.querySelector('.body-overlay');
+      if (overlay) {
+        overlay.classList.remove('active');
+        window.setTimeout(function() {
+          if (overlay.parentNode) overlay.parentNode.removeChild(overlay);
+        }, 260);
+      }
+
+      document.querySelectorAll('.mobile-nav-menu .sub-menu').forEach(function(subMenu) {
+        subMenu.classList.remove('open');
+        subMenu.removeAttribute('style');
+      });
+      document.querySelectorAll('.mobile-nav-menu .has-submenu').forEach(function(item) {
+        item.classList.remove('active');
+      });
+      document.querySelectorAll('.mobile-drawer-sites').forEach(function(details) {
+        details.removeAttribute('open');
+      });
+      toggles.forEach(function(toggle) {
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+      if (wasOpen) toggles[0].focus();
+    }
+
+    toggles.forEach(function(toggle) {
+      toggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        openMenu();
+      });
+    });
+    if (closeBtn) {
+      closeBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        closeMenu();
+      });
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeMenu();
+    });
+    if (mobileNav) {
+      mobileNav.addEventListener('click', function(e) {
+        const link = e.target.closest('.has-submenu > a');
+        if (!link || !mobileNav.contains(link)) return;
+        e.preventDefault();
+        const item = link.parentElement;
+        const subMenu = item.querySelector(':scope > .sub-menu');
+        document.querySelectorAll('.mobile-nav-menu .has-submenu').forEach(function(otherItem) {
+          if (otherItem === item) return;
+          otherItem.classList.remove('active');
+          const otherSub = otherItem.querySelector(':scope > .sub-menu');
+          if (otherSub) otherSub.classList.remove('open');
+        });
+        item.classList.toggle('active');
+        if (subMenu) subMenu.classList.toggle('open');
+      });
+    }
+    window.addEventListener('resize', function() {
+      if (window.innerWidth > 991) closeMenu();
+    });
   });
-  $(window).on('resize', function(){ if (window.innerWidth > 991) closeMenu(); });
-});
+})();
 </script>
 
 <script>

@@ -112,11 +112,9 @@
 
             <!-- RIGHT: Copy + feature card -->
             <div class="col-lg-7 md-mb-50 md-order-first" data-animate>
-              <h2 class="h2">End-to-End Integrated Cold Chain</h2>
+              <h2 class="h2">Industrial Electrical Control Panels for Cold Storage Systems</h2>
               <p class="lead">
-                We deliver complete facilities as a single partner—covering consulting, design, budgeting,
-                supply, installation, commissioning, and lifecycle support. Our teams align civil, PEB,
-                electrical and refrigeration scopes to hand over a safe, efficient, and audit-ready site.
+                <b>Industrial Refrigeration Electrical Control Panels for Real-World Demands</b> running a cold storage facility without a reliable electrical control panel is simply not possible today. At Singhania Refrigeration, our Industrial Refrigeration Electrical Control Panels are designed to take full command of your refrigeration system — managing everything from compressors and evaporators to coolers, all under one intelligent setup. We built these panels keeping the ground realities of Indian industries in mind, whether you are operating a cold storage unit in Delhi NCR, a food processing plant in Gujarat, or a pharmaceutical warehouse in Lucknow.
               </p>
 
               <div class="card-lite mt-16">

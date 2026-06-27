@@ -129,14 +129,18 @@
      });  
 
     // video 
-    if ($('.player').length) {
+    if ($('.player').length && $.fn.YTPlayer) {
         $(".player").YTPlayer();
     }
 
     // wow init
-    new WOW().init();
+    if (typeof WOW !== 'undefined') {
+        new WOW().init();
+    }
     // AOS init
-    AOS.init();
+    if (typeof AOS !== 'undefined') {
+        AOS.init();
+    }
 
     // Slider Custom jQuery
     var nivo_slider = $('#nivoSlider');
@@ -158,7 +162,7 @@
     
     // image loaded portfolio init
     var gridfilter = $('.grid');
-        if(gridfilter.length){
+        if(gridfilter.length && $.fn.imagesLoaded && $.fn.isotope){
         $('.grid').imagesLoaded(function() {
             $('.gridFilter').on('click', 'button', function() {
                 var filterValue = $(this).attr('data-filter');
@@ -190,7 +194,7 @@
  
     //Testimonials Slider
      var sliderfor = $('.slider-for');
-     if(sliderfor.length){
+     if(sliderfor.length && $.fn.slick){
         $('.slider-for').slick({
             slidesToShow: 1,
             slidesToScroll: 1,
@@ -201,7 +205,7 @@
         });
      }
      var slidernav = $('.slider-nav');
-     if(slidernav.length){
+     if(slidernav.length && $.fn.slick){
         $('.slider-nav').slick({
             slidesToShow: 3,
             slidesToScroll: 1,
@@ -232,7 +236,7 @@
 
     //Testimonials Slider2
      var sliderfor2 = $('.slider-for2');
-     if(sliderfor2.length){
+     if(sliderfor2.length && $.fn.slick){
         $('.slider-for2').slick({
             slidesToShow: 3,
             slidesToScroll: 1,
@@ -257,7 +261,7 @@
         });
     }
      var slidernav2 = $('.slider-nav2');
-     if(slidernav2.length){
+     if(slidernav2.length && $.fn.slick){
         $('.slider-nav2').slick({
             slidesToShow: 3,
             slidesToScroll: 1,
@@ -282,7 +286,7 @@
 
     //Testimonials Slider2
      var sliderimg = $('.single-product-image');
-     if(sliderimg.length){
+     if(sliderimg.length && $.fn.slick){
         $('.single-product-image').slick({
             slidesToShow: 1,
             slidesToScroll: 1,
@@ -294,7 +298,7 @@
         });
     }
      var sliderimgnav = $('.single-product-nav');
-     if(sliderimgnav.length){
+     if(sliderimgnav.length && $.fn.slick){
         $('.single-product-nav').slick({
             slidesToShow: 2,
             slidesToScroll: 1,
@@ -307,7 +311,7 @@
     
     // magnificPopup init
     var imagepopup = $('.image-popup');
-    if(imagepopup.length){
+    if(imagepopup.length && $.fn.magnificPopup){
         $('.image-popup').magnificPopup({
             type: 'image',
             callbacks: {
@@ -432,7 +436,7 @@
 
     // Get a quote popup
     var popupquote = $('.popup-quote');
-    if(popupquote.length){
+    if(popupquote.length && $.fn.magnificPopup){
         $('.popup-quote').magnificPopup({
             type: 'inline',
             preloader: false,
@@ -453,7 +457,7 @@
 
     //Videos popup jQuery 
     var popupvideos = $('.popup-videos');
-    if(popupvideos.length){
+    if(popupvideos.length && $.fn.magnificPopup){
         $('.popup-videos').magnificPopup({
             disableOn: 10,
             type: 'iframe',
@@ -557,7 +561,7 @@
 
     // Skill bar 
     var skillbar = $('.skillbar');
-    if(skillbar.length) {
+    if(skillbar.length && $.fn.skillBars) {
         $('.skillbar').skillBars({  
             from: 0,    
             speed: 4000,    
@@ -578,7 +582,7 @@
 
     // Counter Up
     var counter = $('.rs-count');
-    if(counter.length) {  
+    if(counter.length && $.fn.counterUp) {  
         $('.rs-count').counterUp({
             delay: 20,
             time: 1500

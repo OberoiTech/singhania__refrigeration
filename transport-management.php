@@ -34,7 +34,7 @@
       /* ====== SECTIONS ====== */
       .section-pad{ padding:64px 0 90px; }
       .h2{ font-size:clamp(22px,2.6vw,28px); color:var(--ink); font-weight:800; margin:20px 0 10px; }
-      .lead{ color:#2c3e68; font-size:clamp(15px,1.6vw,17px); }
+      .lead{ color:#2c3e68; text-align: justify; font-size:clamp(15px,1.6vw,17px); }
 
       /* ====== MEDIA ====== */
       .feature-media{
@@ -114,9 +114,9 @@
 
             <!-- RIGHT: Copy + feature card -->
             <div class="col-lg-7 md-mb-50 md-order-first" data-animate>
-              <h2 class="h2">Plan, Monitor &amp; Improve</h2>
+              <h2 class="h2">Plan, Monitor &amp; Improve: Intelligent Terrestrial Transport Optimization by Singhania Refrigeration</h2>
               <p class="lead">
-                Planning and optimizing terrestrial transport rounds with real-time condition tracking and actionable reporting.
+                Singhania Refrigeration optimizes terrestrial transport rounds with AI route planning, real-time condition tracking, and actionable reporting. Reduce empty kilometers, lower fuel costs, enhance fleet utilization, and protect refrigerated cargo. Plan, monitor, improve—seamlessly.
               </p>
 
               <div class="card-lite mt-16">
