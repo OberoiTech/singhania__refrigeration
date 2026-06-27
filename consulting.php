@@ -123,14 +123,10 @@
         <!-- Intro (JUSTIFIED) -->
         <div class="lead-wrap">
           <p class="lead">
-            At Singhania Refrigeration, we do not construct cold storage rooms but create cold chains with cutting-edge technology that are ready for tomorrow.
-            With decades of experience, we offer a full spectrum of services ranging from construction to consulting, transport refrigeration, packaging and grading lines,
-            refrigeration systems, and quality management solutions. No matter the industry or application, we strive to ensure that all parts of your cold chain are compatible with each other.
+            At Singhania Refrigeration, we do not just build storage rooms. We create complete cold chain solutions with the latest technology that are ready for the future. We have years of experience in the field. We offer a range of services, including construction, consulting, refrigeration for transport, packaging and grading lines, refrigeration systems, and solutions to manage quality. No matter what industry or use you have in mind, we make sure all parts of your chain work well together, can grow with your needs, and are ready for what's next.
           </p>
           <p class="lead">
-            We offer tailor-made, data-driven solutions that consider the cost of investment, energy savings, availability, and security needs in food and dairy products,
-            pharmaceuticals, seafood, agriculture, and fast food restaurants. The team at Singhania Refrigeration ensures seamless operation and seamless implementation
-            after the initial idea has been successfully commissioned.
+            We provide solutions based on data that consider how much you invest, energy efficiency, how often you can use it, and security needs. We work in areas such as food and dairy, medicine, seafood, farming, and restaurants that serve food quickly. From the start of an idea to when it's up and running our team at Singhania Refrigeration makes sure everything goes smoothly and works reliably at every step of the chain.
           </p>
         </div>
 

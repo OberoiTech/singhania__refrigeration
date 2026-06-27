@@ -1,6 +1,7 @@
 <?php
 error_reporting(0);
 include('config.php');
+include('blog-seo-validation.php');
 session_start();
 
 if (!isset($_SESSION['admin_id'])) {
@@ -11,12 +12,36 @@ if (!isset($_SESSION['admin_id'])) {
 $error = "";
 $msg   = "";
 $color = "";
+$formData = [
+    'cate_id' => '',
+    'title' => '',
+    'author' => '',
+    'description' => '',
+    'meta_title' => '',
+    'meta_description' => '',
+    'keywords' => '',
+];
 
 if (isset($_POST['submit'])) {
 
     $cate_id     = isset($_POST['cate_id']) ? trim($_POST['cate_id']) : '';
     $name        = isset($_POST['title']) ? trim($_POST['title']) : '';
+    $author      = isset($_POST['author']) ? trim($_POST['author']) : '';
     $description = isset($_POST['description']) ? trim($_POST['description']) : '';
+    $metaTitle = isset($_POST['meta_title']) ? trim($_POST['meta_title']) : '';
+    $metaDescription = isset($_POST['meta_description']) ? trim($_POST['meta_description']) : '';
+    $keywords = isset($_POST['keywords']) ? trim($_POST['keywords']) : '';
+    [$seoData, $seoErrors] = sr_prepare_blog_seo_fields($metaTitle, $metaDescription, $keywords);
+
+    $formData = [
+        'cate_id' => $cate_id,
+        'title' => $name,
+        'author' => $author,
+        'description' => $description,
+        'meta_title' => $seoData['meta_title'],
+        'meta_description' => $seoData['meta_description'],
+        'keywords' => $seoData['keywords'],
+    ];
 
     if (!empty($_FILES['image']['name']) && !empty($_FILES['thumb_image']['name'])) {
 
@@ -26,18 +51,22 @@ if (isset($_POST['submit'])) {
         $thumb_image = $_FILES['thumb_image']['name'];
         $thumbPath   = $uploadDir . basename($thumb_image);
 
-        if ($name !== '' && $cate_id !== '' && $description !== '') {
+        if ($name !== '' && $author !== '' && $cate_id !== '' && $description !== '' && empty($seoErrors)) {
 
             $movedMain  = move_uploaded_file($_FILES['image']['tmp_name'], $imagePath);
             $movedThumb = move_uploaded_file($_FILES['thumb_image']['tmp_name'], $thumbPath);
 
             if ($movedMain && $movedThumb) {
                 $rs = "
-                    INSERT INTO blogs (cate_id, title, description, image, thumb_image)
+                    INSERT INTO blogs (cate_id, title, author, description, meta_title, meta_description, keywords, image, thumb_image)
                     VALUES (
                         '" . mysqli_real_escape_string($conn, $cate_id) . "',
                         '" . mysqli_real_escape_string($conn, $name) . "',
+                        '" . mysqli_real_escape_string($conn, $author) . "',
                         '" . mysqli_real_escape_string($conn, $description) . "',
+                        '" . mysqli_real_escape_string($conn, $seoData['meta_title']) . "',
+                        '" . mysqli_real_escape_string($conn, $seoData['meta_description']) . "',
+                        '" . mysqli_real_escape_string($conn, $seoData['keywords']) . "',
                         '" . mysqli_real_escape_string($conn, $image) . "',
                         '" . mysqli_real_escape_string($conn, $thumb_image) . "'
                     )
@@ -59,7 +88,7 @@ if (isset($_POST['submit'])) {
 
         } else {
             $color = "alert alert-danger";
-            $msg   = "Please fill all required fields.";
+            $msg   = !empty($seoErrors) ? implode(' ', $seoErrors) : "Please fill all required fields.";
         }
     } else {
         $color = "alert alert-danger";
@@ -220,7 +249,7 @@ if (isset($_POST['submit'])) {
                                         $rsCat   = "SELECT * FROM category ORDER BY category_name ASC";
                                         $resultC = mysqli_query($conn, $rsCat);
                                         while ($row = mysqli_fetch_object($resultC)) { ?>
-                                            <option value="<?php echo $row->id; ?>">
+                                            <option value="<?php echo $row->id; ?>" <?php echo ((string)$formData['cate_id'] === (string)$row->id) ? 'selected' : ''; ?>>
                                                 <?php echo htmlspecialchars($row->category_name); ?>
                                             </option>
                                         <?php } ?>
@@ -233,8 +262,54 @@ if (isset($_POST['submit'])) {
                                            type="text"
                                            placeholder="Enter blog title"
                                            name="title"
+                                           value="<?php echo htmlspecialchars($formData['title'], ENT_QUOTES, 'UTF-8'); ?>"
                                            required>
                                 </div>
+
+                                <div class="form-group col-md-6">
+                                    <label class="control-label">Meta Title <span style="color:red;">*</span></label>
+                                    <input class="form-control"
+                                           type="text"
+                                           name="meta_title"
+                                           placeholder="Enter Meta Title"
+                                           minlength="30"
+                                           maxlength="60"
+                                           value="<?php echo htmlspecialchars($formData['meta_title'], ENT_QUOTES, 'UTF-8'); ?>"
+                                           required>
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <label class="control-label">Keywords <span style="color:red;">*</span></label>
+                                    <input class="form-control"
+                                           type="text"
+                                           name="keywords"
+                                           placeholder="Enter Special Keyword"
+                                           maxlength="255"
+                                           value="<?php echo htmlspecialchars($formData['keywords'], ENT_QUOTES, 'UTF-8'); ?>"
+                                           required>
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <label class="control-label">Meta Description <span style="color:red;">*</span></label>
+                                    <textarea class="form-control"
+                                              name="meta_description"
+                                              placeholder="Enter description"
+                                              minlength="50"
+                                              maxlength="160"
+                                              required
+                                              rows="4"><?php echo htmlspecialchars($formData['meta_description'], ENT_QUOTES, 'UTF-8'); ?></textarea>
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <label class="control-label">Author <span style="color:red;">*</span></label>
+                                    <input class="form-control"
+                                           type="text"
+                                           placeholder="Author"
+                                           name="author"
+                                           value="<?php echo htmlspecialchars($formData['author'], ENT_QUOTES, 'UTF-8'); ?>"
+                                           required>
+                                </div>
+
 
                                 <div class="form-group col-md-6">
                                     <label class="control-label">Post Image (1200 × 600) <span style="color:red;">*</span></label>
@@ -260,7 +335,7 @@ if (isset($_POST['submit'])) {
                                               id="description"
                                               required
                                               cols="20"
-                                              rows="10"></textarea>
+                                              rows="10"><?php echo htmlspecialchars($formData['description'], ENT_QUOTES, 'UTF-8'); ?></textarea>
                                 </div>
                             </div>
 

@@ -1,4 +1,9 @@
-<?php include 'cache_start.php'; ?>
+<?php
+$cacheStart = __DIR__ . '/cache_start.php';
+if (file_exists($cacheStart)) {
+    include $cacheStart;
+}
+?>
 <?php
 /* -------- server-side insert (unchanged) -------- */
 $color = " ";
@@ -479,6 +484,11 @@ $message = " ";
         });
     });
     </script>
-  <?php include 'cache_end.php'; ?>
+  <?php
+  $cacheEnd = __DIR__ . '/cache_end.php';
+  if (file_exists($cacheEnd)) {
+      include $cacheEnd;
+  }
+  ?>
 </body>
 </html>
