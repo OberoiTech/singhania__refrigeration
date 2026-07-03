@@ -1,29 +1,12 @@
 <footer id="rs-footer" class="rs-footer footer-modern">
   <div class="container">
-    <!-- Newsletter -->
-    <section class="nl-card" data-aos="fade-up">
-      <div class="nl-left">
-        <h3 class="nl-title">Subscribe to our Newsletter</h3>
-        <p class="nl-sub">Insights on cold chain, energy savings, and new projects—1–2 emails/month.</p>
-      </div>
-      <form class="nl-form" method="post" action="newsletter-subscribe.php">
-        <div class="nl-input-wrap">
-          <input type="email" name="email" placeholder="Your email address" required>
-          <button type="submit" class="nl-btn" aria-label="Subscribe">
-            <i class="fa fa-paper-plane"></i>
-          </button>
-        </div>
-        <small class="nl-note">No spam. Unsubscribe anytime.</small>
-      </form>
-    </section>
-
     <!-- Widgets -->
     <section class="footer-grid">
       <!-- About -->
       <div class="f-col" data-aos="fade-up" data-aos-delay="50">
         <div class="brand">
           <a href="index.php" class="brand-logo">
-            <img src="assets/images/logoF.png" width="1536" height="864" alt="Singhania Refrigeration">
+            <img src="assets/images/products/logoF.png" width="1536" height="864" alt="Singhania Refrigeration">
           </a>
           <p class="brand-copy">
              Singhania Refrigeration is a trusted Delhi NCR-based industrial refrigeration and cold
@@ -31,7 +14,7 @@
             chambers, IQF systems, compressor racks, PUF panels, dock shelters and transport
             refrigeration — engineered for efficiency, safety and reliability across India.
           </p>
-          <a class="btn-ghost" href="about-us.php">About Us</a>
+          <h5 class="follow-title">Follow Us</h5>
           <ul class="social-pills">
                 <li><a href="https://www.facebook.com/profile.php?id=61579480251463" aria-label="Visit Singhania Refrigeration on Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                 <li><a href="https://x.com/SinghaniaR59102" aria-label="Visit Singhania Refrigeration on X"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a></li>
@@ -64,12 +47,17 @@
           </li>
         </ul>
 
+      </div>
+
+      <!-- Quick Links -->
+      <div class="f-col" data-aos="fade-up" data-aos-delay="125">
         <h4 class="f-title mt-28">Quick Links</h4>
         <ul class="link-list">
           <!-- <li><a href="blog-details.php">Latest Posts</a></li> -->
+          <li><a href="about-us.php">About Us</a></li>
+          <li><a href="panels.php">PUF Panels</a></li>
           <li><a href="consulting.php">Consulting</a></li>
-          <li><a href="turnkey-solution.php">Turnkey Solutions</a></li>
-          <li><a href="transport-refrigeration.php">Transport Refrigeration</a></li>
+          <li><a href="cold-chain-refrigeration-ca-store-freon-ammonia.php">Cold Storage Solutions</a></li>
           <li><a href="blog.php">Blogs</a></li>
           <li><a href="contact.php">Contact Us</a></li>
         </ul>
@@ -109,7 +97,7 @@
 
     <!-- Bottom -->
     <div class="footer-bottom">
-      <p>© <?php echo date('Y'); ?> Singhania Refrigeration. All Rights Reserved.</p>
+      <p><span class="footer-secure-icon"><i class="fa fa-shield"></i></span><span>© <?php echo date('Y'); ?> Singhania Refrigeration.<br>All Rights Reserved.</span></p>
       <ul class="bottom-links">
         <li><a href="privacy-policy.php">Privacy</a></li>
         <li><a href="terms.php">Terms</a></li>
@@ -363,6 +351,289 @@
 @media (max-width: 575px){
   .footer-grid{ grid-template-columns: 1fr; }
   .footer-modern{ padding-top: 40px; }
+}
+
+/* ===== Screenshot-style footer override ===== */
+.footer-modern{
+  padding:0;
+  background:
+    radial-gradient(80% 95% at 50% 0%, rgba(12,54,103,.38), transparent 54%),
+    linear-gradient(180deg,#020b16 0%,#031021 100%);
+}
+.footer-modern .container{
+  max-width:100%;
+  width:100%;
+  padding:0;
+  border:0;
+  border-radius:0;
+  overflow:hidden;
+  background:
+    radial-gradient(90% 120% at 50% 0%, rgba(12,63,121,.25), transparent 58%),
+    linear-gradient(180deg,rgba(5,23,49,.96) 0%,rgba(3,15,33,.98) 100%);
+  box-shadow:inset 0 1px 0 rgba(190,210,238,.18), inset 0 -1px 0 rgba(190,210,238,.12);
+}
+.footer-grid{
+  grid-template-columns:minmax(260px,1.08fr) minmax(250px,1fr) minmax(220px,.86fr) minmax(300px,1.2fr);
+  gap:0;
+  max-width:1540px;
+  margin:0 auto;
+  padding:42px clamp(20px,3vw,42px) 38px;
+  border:0;
+  border-bottom:1px solid rgba(190,210,238,.22);
+}
+.footer-grid .f-col{
+  padding:0 clamp(18px,2.1vw,30px);
+  border-left:1px solid rgba(190,210,238,.18);
+}
+.footer-grid .f-col:first-child{
+  border-left:0;
+  padding-left:18px;
+}
+.footer-grid .f-col:last-child{
+  padding-right:18px;
+}
+.brand-logo{
+  display:block;
+  width:max-content;
+  margin:0 auto 18px;
+}
+.brand-logo img{
+  width:220px;
+  height:auto;
+  max-height:150px;
+  object-fit:contain;
+  margin:0;
+  filter:drop-shadow(0 10px 24px rgba(26,116,219,.24));
+}
+.brand-copy{
+  color:#d7e2f4;
+  font-size:15px;
+  line-height:1.65;
+  margin:0 0 18px;
+}
+.btn-ghost{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:10px 18px;
+  border-radius:999px;
+  border:1px solid #1e90ff;
+  color:#fff;
+  font-size:15px;
+  font-weight:800;
+}
+.btn-ghost::after{
+  content:"\f105";
+  font-family:FontAwesome;
+  color:#1e90ff;
+}
+.follow-title{
+  margin:22px 0 10px;
+  color:#fff;
+  font-size:16px;
+  font-weight:700;
+}
+.social-pills{
+  gap:14px;
+  margin-top:0;
+}
+.social-pills a{
+  width:38px;
+  height:38px;
+  border-color:rgba(190,210,238,.34);
+  background:rgba(255,255,255,.035);
+  font-size:15px;
+}
+.social-pills a:hover{
+  background:#0b4d8f;
+  border-color:#3ca0ff;
+}
+.f-title{
+  position:relative;
+  margin:0 0 32px;
+  color:#fff;
+  font-size:19px;
+  line-height:1;
+  font-weight:900;
+  letter-spacing:0;
+}
+.f-title::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-16px;
+  width:40px;
+  height:3px;
+  border-radius:999px;
+  background:#1598ff;
+}
+.mt-28{
+  margin-top:0;
+}
+.contact-list{
+  gap:0;
+}
+.contact-list li{
+  display:grid;
+  grid-template-columns:44px minmax(0,1fr);
+  gap:16px;
+  align-items:center;
+  padding:0 0 20px;
+  margin-bottom:20px;
+  border-bottom:1px solid rgba(190,210,238,.18);
+}
+.contact-list li:last-child{
+  margin-bottom:0;
+  border-bottom:0;
+}
+.contact-list .ico{
+  width:44px;
+  height:44px;
+  margin:0;
+  border:0;
+  border-radius:12px;
+  background:linear-gradient(145deg,rgba(28,117,212,.48),rgba(15,50,101,.7));
+  color:#7fc1ff;
+  font-size:18px;
+}
+.contact-list .text,
+.contact-list .text a{
+  color:#dbe6f8;
+  font-size:15px;
+  line-height:1.5;
+}
+.link-list{
+  gap:0;
+}
+.link-list li{
+  border-bottom:1px dashed rgba(190,210,238,.17);
+}
+.link-list li:last-child{
+  border-bottom:0;
+}
+.link-list a{
+  display:flex;
+  align-items:center;
+  min-height:42px;
+  padding:9px 0 9px 28px;
+  margin:0;
+  color:#dbe6f8;
+  font-size:15px;
+  line-height:1.35;
+  transition:color .18s ease, transform .18s ease;
+}
+.link-list a::before{
+  content:"\f105";
+  top:50%;
+  transform:translateY(-50%);
+  font-family:FontAwesome;
+  color:#1e9bff;
+  font-size:18px;
+  line-height:1;
+}
+.link-list a:hover{transform:translateX(4px);}
+.post-stack{
+  gap:0;
+}
+.post-mini{
+  grid-template-columns:82px minmax(0,1fr);
+  gap:16px;
+  align-items:start;
+  padding-bottom:20px;
+  margin-bottom:20px;
+  border-bottom:1px solid rgba(190,210,238,.18);
+}
+.post-mini:last-child{
+  margin-bottom:0;
+  border-bottom:0;
+}
+.post-mini .thumb{
+  border:0;
+  border-radius:12px;
+}
+.post-mini .thumb img{
+  width:82px;
+  height:68px;
+  object-fit:cover;
+}
+.post-mini .title{
+  color:#fff;
+  font-size:16px;
+  line-height:1.4;
+  font-weight:800;
+}
+.post-mini .date{
+  margin-top:9px;
+  color:#aebbd1;
+  font-size:13px;
+}
+.post-mini .date i{
+  color:#168ff0;
+  margin-right:7px;
+}
+.footer-modern .footer-bottom{
+  max-width:1540px;
+  margin:0 auto;
+  padding:20px clamp(20px,3vw,42px);
+}
+.footer-modern .footer-bottom p{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  color:#dbe6f8;
+  font-size:15px;
+  line-height:1.4;
+}
+.footer-secure-icon{
+  display:grid;
+  place-items:center;
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  background:linear-gradient(145deg,rgba(28,117,212,.55),rgba(15,50,101,.72));
+  color:#5fb6ff;
+}
+.bottom-links{
+  gap:0;
+}
+.bottom-links li{
+  padding:0 22px;
+  border-left:1px solid rgba(190,210,238,.22);
+}
+.bottom-links li:first-child{
+  border-left:0;
+}
+.bottom-links a{
+  color:#fff;
+  font-size:15px;
+}
+.footer-modern a:focus-visible{
+  outline:2px solid #3ca0ff;
+  outline-offset:4px;
+  border-radius:8px;
+}
+@media (max-width:1199px){
+  .footer-modern .container{max-width:100%;}
+  .footer-grid{grid-template-columns:1fr 1fr; row-gap:30px; max-width:100%;}
+  .footer-grid .f-col:nth-child(odd){border-left:0;}
+  .footer-grid .f-col:nth-child(n+3){padding-top:28px; border-top:1px solid rgba(190,210,238,.18);}
+}
+@media (max-width:767px){
+  .footer-modern{padding:0;}
+  .footer-modern .container{max-width:100%; border-radius:0;}
+  .footer-grid{grid-template-columns:1fr; padding:28px 18px;}
+  .footer-grid .f-col{border-left:0; padding:0;}
+  .footer-grid .f-col + .f-col{padding-top:26px; border-top:1px solid rgba(190,210,238,.18);}
+  .footer-modern .footer-bottom{flex-direction:column; align-items:flex-start; padding:20px 18px;}
+  .bottom-links{flex-wrap:wrap;}
+  .bottom-links li{padding:0 18px 0 0; border-left:0;}
+  .brand-logo{margin-left:0;}
+  .brand-logo img{width:185px;}
+  .contact-list li{grid-template-columns:46px minmax(0,1fr); gap:15px;}
+  .contact-list .ico{width:46px; height:46px;}
+  .post-mini{grid-template-columns:88px minmax(0,1fr); gap:16px;}
+  .post-mini .thumb img{width:88px; height:76px;}
+  .post-mini .title{font-size:16px;}
 }
 
         </style>

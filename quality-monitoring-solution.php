@@ -22,7 +22,7 @@
         min-height: 560px;
         display: flex;
         align-items: center;
-        background-image: url("assets/images/products/cold-chain-logistics-iot-monitoring-workflow.webp");
+        background-image: url("assets/images/products/cold-chain-monitoring.png");
         background-size: cover;
         background-position: center;
         overflow: hidden;
@@ -115,36 +115,24 @@
       }
 
       .btn-brand {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        min-height: 48px;
-        padding: 13px 20px;
-        border-radius: 6px;
-        border: 1px solid transparent;
-        background: var(--qm-accent);
-        color: #fff;
-        font-weight: 800;
-        text-decoration: none;
-        box-shadow: 0 14px 30px rgba(0, 27, 104, .28);
-        transition: transform .16s ease, box-shadow .2s ease, background .2s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 13px 20px;
+      border-radius: 8px;
+      font-weight: 800;
+      border: 1px solid rgba(255, 255, 255, .34);
+      color: #fff;
+      background: rgba(255, 255, 255, .10);
       }
 
       .btn-brand:hover {
         transform: translateY(-1px);
-        background: #001452;
+        background: rgba(255, 255, 255, .2);
         color: #fff;
         box-shadow: 0 18px 36px rgba(0, 27, 104, .34);
       }
-
-      .btn-ghost {
-        background: rgba(255, 255, 255, .12);
-        border-color: rgba(255, 255, 255, .32);
-        box-shadow: none;
-      }
-
-      .btn-ghost:hover { background: rgba(255, 255, 255, .2); }
 
       .section-padding { padding: 78px 0; }
       .bg-soft { background: var(--qm-soft); }
@@ -561,8 +549,8 @@
                 A cold room or reefer truck that is holding the wrong temperature, even for a few hours, can ruin a shipment before anyone realises it. Singhania Refrigeration's quality monitoring solution continuously monitors temperature, humidity, shelf life and spoilage risk throughout your warehouse and transport network, raises excursions in real time and traces every issue to its root cause.
               </p>
               <div class="hero-actions">
-                <a href="contact.php" class="btn-brand"><i class="fa fa-play" aria-hidden="true"></i> Request a Demo</a>
-                <a href="tel:+919971060822" class="btn-brand btn-ghost"><i class="fa fa-phone" aria-hidden="true"></i> Call Now</a>
+                <a href="contact.php" class="btn-brand">Request a Demo</a>
+                <a href="tel:+919971060822" class="btn-brand "> Call Now</a>
               </div>
             </div>
           </div>
@@ -574,7 +562,7 @@
           <div class="row align-items-center">
             <div class="col-lg-5 md-mb-40" data-animate>
               <div class="feature-media">
-                <img src="assets/images/products/cold-chain-logistics-iot-monitoring-workflow.webp" alt="Cold chain quality monitoring dashboard workflow" width="1200" height="800" loading="lazy" decoding="async">
+                <img src="assets/images/products/cold-chain-monitoring.png" alt="Cold chain quality monitoring dashboard workflow" width="1200" height="800" loading="lazy" decoding="async">
               </div>
             </div>
             <div class="col-lg-7 pl-45 md-pl-15" data-animate>
@@ -586,9 +574,6 @@
               <p class="lead-text">
                 In Singhania Refrigeration projects, quality monitoring connects with cold rooms, refrigeration systems, transport refrigeration, warehouse processes and packing or grading lines, so monitoring data becomes part of the operating workflow.
               </p>
-              <!-- <div class="callout-box">
-                Cold chain quality monitoring tracks the actual condition of your product, not only the condition of the equipment around it.
-              </div> -->
             </div>
           </div>
         </div>

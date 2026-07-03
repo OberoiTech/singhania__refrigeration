@@ -75,16 +75,16 @@ $coldStoragePages = [
 }
 .full-width-header .rs-header .menu-area .logo-area img {
   display:block;
-  width:198px;
+  width:240px;
   max-width:100%;
-  max-height:112px;
+  max-height:132px;
   object-fit:contain;
   transition:.4s;
   -webkit-transition:.4s;
 }
 .full-width-header .rs-header .menu-area.sticky .logo-area img {
-  width:168px;
-  max-height:78px;
+  width:195px;
+  max-height:92px;
 }
 .full-width-header .rs-header .menu-area .main-menu .rs-menu ul.nav-menu li { display:inline-block; margin-right:0 !important; padding:0; }
 .full-width-header .rs-header .menu-area .main-menu .rs-menu ul.nav-menu li a { transition:all .3s ease; font-size:13px !important; }
@@ -143,7 +143,7 @@ $coldStoragePages = [
 }
 @media (max-width:991px){
   .full-width-header .rs-header .menu-area .container .row{ flex-wrap:wrap; }
-  .full-width-header .rs-header .menu-area .logo-area img{ width:168px; max-height:82px; }
+  .full-width-header .rs-header .menu-area .logo-area img{ width:195px; max-height:96px; }
   .menu-cta{ display:none; }
 }
 

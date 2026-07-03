@@ -39,7 +39,7 @@
       .cold-btn{
         display:inline-flex; align-items:center; justify-content:center; min-height:48px;
         padding:13px 20px; border-radius:8px; font-weight:800; border:1px solid rgba(255,255,255,.34);
-        color:#fff; background:#0057a8;
+        color:#fff;background: rgba(255, 255, 255, .10);
       }
       .cold-btn:hover{color:#fff; background:#074a86;}
       .cold-btn.secondary{background:rgba(255,255,255,.10);}
@@ -95,6 +95,13 @@
       .visual-caption span{display:block; color:#dbe6ff; font-size:13px; line-height:1.45;}
       .copy{max-width:1040px; margin:0 auto;}
       .copy p,.copy li,.faq-answer{color:#3f3f46; font-size:16px; line-height:1.76;}
+      .main-content p,
+      .main-content li,
+      .faq-answer{
+        text-align:justify;
+        text-justify:inter-word;
+        text-align-last:left;
+      }
       .copy h3{color:var(--ink); font-size:24px; line-height:1.25; font-weight:900; margin:32px 0 12px;}
       .split-feature{
         display:grid; grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr); gap:28px; align-items:center;
@@ -199,7 +206,7 @@
         </div>
       </div>
 
-      <div class="solution-nav-wrap">
+      <!-- <div class="solution-nav-wrap">
         <div class="container">
           <nav class="solution-nav" aria-label="Cold chain page sections">
             <a href="#cold-chain-refrigeration">Cold Chain</a>
@@ -208,7 +215,7 @@
             <a href="#freon-refrigeration">Freon Systems</a>
           </nav>
         </div>
-      </div>
+      </div> -->
 
       <section id="cold-chain-refrigeration" class="section-pad">
         <div class="container" data-animate>
@@ -224,11 +231,7 @@
               <!-- <blockquote class="callout">A fully integrated cold chain refrigeration system protects product quality, reduces wastage and ensures regulatory compliance from farm gate to end consumer.</blockquote> -->
             </div>
             <figure class="visual-card">
-              <img src="assets/images/products/cold-chain-logistics-iot-monitoring-workflow.webp" alt="Cold chain monitoring workflow">
-              <figcaption class="visual-caption">
-                <strong>Designed as one connected system</strong>
-                <span>Storage, handling, transport, monitoring and service support planned together.</span>
-              </figcaption>
+              <img src="assets/images/products/cold-storage.jpg" alt="Cold chain monitoring workflow">
             </figure>
           </div>
           <div class="copy">
@@ -277,10 +280,7 @@
           <div class="split-feature reverse">
             <figure class="visual-card">
               <img src="assets/images/products/apple-cold-room.webp" alt="Apple cold room controlled atmosphere storage">
-              <figcaption class="visual-caption">
-                <strong>Controlled atmosphere rooms</strong>
-                <span>Hermetic sealing, gas control and humidity management for long-life produce.</span>
-              </figcaption>
+              
             </figure>
             <div class="copy intro-copy-box">
             <p>Singhania Refrigeration is a CA Store manufacturer in India and offers complete design, supply and CA Store installation. Our projects include apple CA stores in Himachal Pradesh and export-oriented horticultural CA stores for FPOs.</p>
@@ -289,7 +289,7 @@
             </div>
           </div>
           <div class="copy">
-            <blockquote class="callout">A CA store can hold apples fresh for 9-12 months. The same apples in a standard cold room last only 3-4 months.</blockquote>
+            
             <h3>CA Store vs Standard Cold Storage - Which Is Better?</h3>
             <div class="table-wrap">
               <table class="compare-table">
@@ -328,10 +328,6 @@
           <div class="split-feature">
             <figure class="visual-card">
               <img src="assets/images/products/ammonia-refrigeration-plant.webp" alt="Industrial ammonia refrigeration plant">
-              <figcaption class="visual-caption">
-                <strong>Industrial NH3 plants</strong>
-                <span>Built for high-capacity cold stores, food processing and low lifecycle cost.</span>
-              </figcaption>
             </figure>
             <div class="copy intro-copy-box">
             <p>NH<sub>3</sub> has zero global warming potential, zero ozone depletion potential and can deliver 20-30% better energy efficiency than Freon/HFC systems at large capacities.</p>
@@ -371,10 +367,7 @@
           <div class="split-feature reverse">
             <figure class="visual-card">
               <img src="assets/images/products/pharma_storage.png" alt="Pharmaceutical cold storage room">
-              <figcaption class="visual-caption">
-                <strong>Commercial and pharma cold rooms</strong>
-                <span>Freon systems for smaller capacities, clean handling and quick deployment.</span>
-              </figcaption>
+              
             </figure>
             <div class="copy intro-copy-box">
             <h3>Where Freon Refrigeration Works Best</h3>
@@ -389,7 +382,6 @@
           <div class="copy">
             <h3>R22 Replacement and Retrofit</h3>
             <p>R22 replacement involves refrigerant recovery, oil compatibility checks, filter drier changes, expansion valve assessment and recommissioning with a compatible replacement such as R404A, R448A or R449A.</p>
-            <blockquote class="callout warn">Do not wait until your R22 system breaks down. Proactive R22 replacement saves on refrigerant cost now and prevents unplanned downtime later.</blockquote>
             <h3>Freon vs Ammonia - Which Refrigeration System Is Right for You?</h3>
             <ul class="checklist">
               <li>Choose <strong>Freon</strong> if your facility is below 500 MT, requires quick deployment, stores pharmaceuticals or has multiple temperature zones in a commercial setting.</li>
@@ -460,23 +452,6 @@
         </div>
       </section>
 
-      <section id="related-solutions" class="section-pad section-soft">
-        <div class="container" data-animate>
-          <div class="section-head">
-            <span class="eyebrow">Related Solutions</span>
-            <h2 class="section-title">Explore More Cold Storage Solutions</h2>
-          </div>
-          <ul class="related-links">
-            <li><a href="turnkey-solution.php">Turnkey Cold Storage Solution</a></li>
-            <li><a href="segments-wise.php">Segment-Wise Cold Storage Solutions</a></li>
-            <li><a href="panels.php">PUF Insulated Panels</a></li>
-            <li><a href="doors-ca-doors.php">Doors &amp; CA Doors</a></li>
-            <li><a href="compressor-rack-system.php">Compressor Rack System</a></li>
-            <li><a href="contact.php">Discuss a Custom Project</a></li>
-          </ul>
-        </div>
-      </section>
-
       <section id="cold-chain-faqs" class="section-pad">
         <div class="container" data-animate>
           <div class="section-head">
@@ -512,16 +487,62 @@
         </div>
       </section>
 
-      <section class="section-pad final-cta">
-        <div class="container" data-animate>
-          <h2 class="section-title">Plan Your Cold Chain Project with One Accountable Partner</h2>
-          <p class="section-lead">Share your product, capacity, temperature range and location. Our team will help you define the right cold chain, CA store, ammonia or freon refrigeration system.</p>
-          <div class="cta-bar" style="justify-content:center;">
-            <a href="contact.php" class="cold-btn">Request a Free Site Visit</a>
-            <a href="tel:+919971060822" class="cold-btn secondary">Call Now</a>
-          </div>
+        <!-- Section-9 -->
+
+  <div class="rs-cta bg21 pt-90 pb-100 md-pt-68 md-pb-80">
+    <div class="container">
+      <div class="sec-title text-center truck-body-cta">
+        <span class="sub-title modify white">Get Started</span>
+        <h2 class="title3 white-color">Ready to Add Quality Monitoring to Your Cold Chain?</h2>
+
+        <p class="cta-description">
+           Share with us your current facility, transport network and product type
+            &mdash; we will evaluate where monitoring delivers the most value and
+            guide you through a live demo.
+        </p>
+
+        <div class="btn-part">
+          <a class="readon banner-style" href="contact.php">Request a Quote &rarr;</a>
         </div>
-      </section>
+
+        <p class="cta-phone-numbers">
+          Call: <a href="tel:+919971060822"><strong>+91 99710 60822</strong></a>
+          <span aria-hidden="true">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+          Call: <a href="tel:+919718097170"><strong>+91 97180 97170</strong></a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .truck-body-cta .cta-description {
+      max-width: 760px;
+      margin: 16px auto 24px;
+      color: #fff;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .truck-body-cta .cta-phone-numbers {
+      margin: 20px 0 0;
+      color: #fff;
+      font-size: 15px;
+      line-height: 1.6;
+      text-align: center !important;
+      text-align-last: center !important;
+      width: 100%;
+    }
+
+    .truck-body-cta .cta-phone-numbers a {
+      color: #fff;
+    }
+
+    .truck-body-cta .cta-phone-numbers a:hover {
+      text-decoration: underline;
+    }
+  </style>
+
+  <!-- Section-9 end -->
     </div>
 
     <?php include('footer.php'); ?>

@@ -721,7 +721,7 @@
           'desc'  => 'Peas, corn, diced mixed vegetables, and similar bulk produce.'
         ],
         [
-          'icon'  => 'fa fa-apple',
+          'icon'  => 'fa fa-cutlery',
           'title' => 'Frozen Fruit Processing',
           'desc'  => 'Berries, mango chunks, and other fruit for retail and food service.'
         ],
