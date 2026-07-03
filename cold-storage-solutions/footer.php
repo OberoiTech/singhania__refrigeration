@@ -18,7 +18,7 @@
                         <div class="col-lg-4 col-md-12 col-sm-12 footer-widget md-mb-39">
                             <div class="about-widget pr-15">
                                 <div class="logo-part">
-                                    <a href="index.html"><img src="assets/images/logo.jpeg" alt="Footer Logo" style="height: 110px;"></a>
+                                    <a href="index.html"><img src="../assets/images/logoF.png" alt="Singhania Refrigeration" style="height: 130px; width: auto; object-fit: contain;"></a>
                                 </div>
                                 <p class="desc">We denounce with righteous indignation in and dislike men who are so beguiled and to demo realized by the charms of pleasure moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound.</p>
                                 <div class="btn-part">

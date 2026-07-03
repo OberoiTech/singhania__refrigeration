@@ -23,7 +23,7 @@
       <div class="f-col" data-aos="fade-up" data-aos-delay="50">
         <div class="brand">
           <a href="index.php" class="brand-logo">
-            <picture><source srcset="assets/images/logo1.webp" type="image/webp"><img src="assets/images/logo1.png" width="248" height="172" alt="Singhania Refrigeration"></picture>
+            <img src="assets/images/logoF.png" width="1536" height="864" alt="Singhania Refrigeration">
           </a>
           <p class="brand-copy">
              Singhania Refrigeration is a trusted Delhi NCR-based industrial refrigeration and cold
@@ -34,7 +34,7 @@
           <a class="btn-ghost" href="about-us.php">About Us</a>
           <ul class="social-pills">
                 <li><a href="https://www.facebook.com/profile.php?id=61579480251463" aria-label="Visit Singhania Refrigeration on Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                <li><a href="https://x.com/SinghaniaR59102" aria-label="Visit Singhania Refrigeration on X"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                <li><a href="https://x.com/SinghaniaR59102" aria-label="Visit Singhania Refrigeration on X"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a></li>
                 <li><a href="https://www.instagram.com/singhaniarefrigeration/" aria-label="Visit Singhania Refrigeration on Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
                 <li><a href="https://www.linkedin.com/company/singhania-refrigeration-and-supply-chain-consultancy/" aria-label="Visit Singhania Refrigeration on LinkedIn"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
                 <li><a href="https://www.youtube.com/channel/UC-g2bewulBb2oGjPGIDAaJA" aria-label="Visit Singhania Refrigeration on YouTube"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
@@ -284,7 +284,7 @@
 
 /* Brand column */
 .brand-logo img{
-  height: 86px; width: auto; display: block;
+  height: 112px; width: auto; display: block;
   filter: drop-shadow(0 4px 14px rgba(0,0,0,.35));
   margin-bottom: 10px;
 }

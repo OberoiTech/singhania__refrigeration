@@ -13,6 +13,12 @@ $map      = $row['map'];
 $address  = $row['address'];
 $mailSubject = rawurlencode('Website enquiry from Singhania Refrigeration');
 $mailHref = 'mailto:' . rawurlencode($email) . '?subject=' . $mailSubject;
+$mobileDigits = preg_replace('/\D+/', '', (string)$mobile);
+$contactPhones = array_values(array_filter([
+  $mobileDigits ? ['label' => '+91-' . $mobileDigits, 'href' => 'tel:+91' . $mobileDigits] : null,
+  ['label' => '+91-7303099094', 'href' => 'tel:+917303099094'],
+  ['label' => '+91-9718097170', 'href' => 'tel:+919718097170'],
+]));
 ?>
 
 <?php
@@ -69,15 +75,16 @@ $coldStoragePages = [
 }
 .full-width-header .rs-header .menu-area .logo-area img {
   display:block;
-  width:120px;
+  width:198px;
   max-width:100%;
-  max-height:92px;
+  max-height:112px;
+  object-fit:contain;
   transition:.4s;
   -webkit-transition:.4s;
 }
 .full-width-header .rs-header .menu-area.sticky .logo-area img {
-  width:96px;
-  max-height:70px;
+  width:168px;
+  max-height:78px;
 }
 .full-width-header .rs-header .menu-area .main-menu .rs-menu ul.nav-menu li { display:inline-block; margin-right:0 !important; padding:0; }
 .full-width-header .rs-header .menu-area .main-menu .rs-menu ul.nav-menu li a { transition:all .3s ease; font-size:13px !important; }
@@ -136,7 +143,7 @@ $coldStoragePages = [
 }
 @media (max-width:991px){
   .full-width-header .rs-header .menu-area .container .row{ flex-wrap:wrap; }
-  .full-width-header .rs-header .menu-area .logo-area img{ width:96px; max-height:72px; }
+  .full-width-header .rs-header .menu-area .logo-area img{ width:168px; max-height:82px; }
   .menu-cta{ display:none; }
 }
 
@@ -214,21 +221,11 @@ body.menu-open{ overflow:hidden; }
 .mobile-drawer-info{ margin:4px 18px 24px; padding:13px; border-radius:12px; background:#0e2344; }
 .mobile-drawer-info > a{ display:flex; gap:8px; padding:5px 0; color:#fff !important; font-size:12px; line-height:1.45; text-decoration:none; overflow-wrap:anywhere; }
 .mobile-drawer-info > a i{ width:14px; margin-top:2px; text-align:center; }
+.mobile-drawer-phone-list{ display:grid; gap:4px; padding:5px 0; }
+.mobile-drawer-phone-list a{ display:flex; gap:8px; color:#fff !important; font-size:12px; line-height:1.45; text-decoration:none; }
+.mobile-drawer-phone-list i{ width:14px; margin-top:2px; text-align:center; }
 .mobile-drawer-socials{ display:flex; gap:7px; margin-top:9px; }
 .mobile-drawer-socials a{ display:grid; place-items:center; width:30px; height:30px; border-radius:7px; background:rgba(255,255,255,.12); color:#fff !important; }
-.x-social-icon{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  width:1em;
-  height:1em;
-  color:inherit;
-  font-family:Arial, Helvetica, sans-serif;
-  font-size:13px;
-  font-weight:800;
-  line-height:1;
-}
-.mobile-drawer-socials .x-social-icon{ font-size:12px; }
 .mobile-drawer-sites{ margin-top:11px; padding-top:10px; border-top:1px solid rgba(255,255,255,.18); }
 .mobile-drawer-sites summary{ display:flex; align-items:center; gap:7px; color:#fff; font-size:12px; font-weight:700; cursor:pointer; list-style:none; }
 .mobile-drawer-sites summary::-webkit-details-marker{ display:none; }
@@ -356,6 +353,19 @@ body.menu-open{ overflow:hidden; }
 .toolbar-contact ul li i,
 .toolbar-sl-share > ul li i{
   line-height:1;
+}
+.toolbar-phone-links{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  min-width:0;
+}
+.toolbar-phone-links a{
+  color:inherit;
+  text-decoration:none;
+}
+.toolbar-phone-links .phone-sep{
+  opacity:.72;
 }
 /* =========================
    GROUP WEBSITES DROPDOWN (TOP BAR)
@@ -501,7 +511,15 @@ body.menu-open{ overflow:hidden; }
           <div class="toolbar-contact">
             <ul>
               <li><i class="fa fa-envelope"></i><a href="<?php echo htmlspecialchars($mailHref, ENT_QUOTES, 'UTF-8'); ?>"><?php echo htmlspecialchars($email, ENT_QUOTES, 'UTF-8'); ?></a></li>
-              <li><i class="fa fa-phone"></i><a href="tel:+91<?php echo $mobile; ?>"> +91-<?php echo $mobile; ?> / +91-7303099094 / +91-9718097170</a></li>
+              <li>
+                <i class="fa fa-phone"></i>
+                <span class="toolbar-phone-links">
+                  <?php foreach ($contactPhones as $index => $phone): ?>
+                    <?php if ($index > 0): ?><span class="phone-sep">/</span><?php endif; ?>
+                    <a href="<?php echo htmlspecialchars($phone['href'], ENT_QUOTES, 'UTF-8'); ?>"><?php echo htmlspecialchars($phone['label'], ENT_QUOTES, 'UTF-8'); ?></a>
+                  <?php endforeach; ?>
+                </span>
+              </li>
             </ul>
           </div>
         </div>
@@ -509,7 +527,7 @@ body.menu-open{ overflow:hidden; }
           <div class="toolbar-sl-share">
             <ul>
                 <li><a href="https://www.facebook.com/profile.php?id=61579480251463" aria-label="Visit Singhania Refrigeration on Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                <li><a href="https://x.com/SinghaniaR59102" aria-label="Visit Singhania Refrigeration on X"><span class="x-social-icon" aria-hidden="true">X</span></a></li>
+                <li><a href="https://x.com/SinghaniaR59102" aria-label="Visit Singhania Refrigeration on X"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a></li>
                 <li><a href="https://www.instagram.com/singhaniarefrigeration/" aria-label="Visit Singhania Refrigeration on Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
                 <li><a href="https://www.linkedin.com/company/singhania-refrigeration-and-supply-chain-consultancy/" aria-label="Visit Singhania Refrigeration on LinkedIn"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
                 <li><a href="https://in.pinterest.com/singhaniarefrigeration24/" aria-label="Visit Singhania Refrigeration on Pinterest"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
@@ -548,7 +566,7 @@ body.menu-open{ overflow:hidden; }
         <div class="row">
           <div class="col-lg-2">
             <div class="logo-area logo-area--tall">
-              <a href="index.php"><picture><source srcset="assets/images/logo1.webp" type="image/webp"><img src="assets/images/logo1.png" width="248" height="172" alt="Singhania Refrigeration"></picture></a>
+              <a href="index.php"><img src="assets/images/logoS.png" width="1536" height="864" alt="Singhania Refrigeration"></a>
             </div>
           </div>
           <div class="col-lg-10 text-right">
@@ -718,10 +736,14 @@ body.menu-open{ overflow:hidden; }
       </div>
       <div class="mobile-drawer-info">
         <a href="<?php echo htmlspecialchars($mailHref, ENT_QUOTES, 'UTF-8'); ?>"><i class="fa fa-envelope"></i><span><?php echo htmlspecialchars($email, ENT_QUOTES, 'UTF-8'); ?></span></a>
-        <a href="tel:+91<?php echo $mobile; ?>"><i class="fa fa-phone"></i><span>+91-<?php echo $mobile; ?> / +91-7303099094 / +91-9718097170</span></a>
+        <div class="mobile-drawer-phone-list">
+          <?php foreach ($contactPhones as $phone): ?>
+            <a href="<?php echo htmlspecialchars($phone['href'], ENT_QUOTES, 'UTF-8'); ?>"><i class="fa fa-phone"></i><span><?php echo htmlspecialchars($phone['label'], ENT_QUOTES, 'UTF-8'); ?></span></a>
+          <?php endforeach; ?>
+        </div>
         <div class="mobile-drawer-socials">
           <a href="https://www.facebook.com/profile.php?id=61579480251463" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
-          <a href="https://x.com/SinghaniaR59102" target="_blank" rel="noopener" aria-label="X"><span class="x-social-icon" aria-hidden="true">X</span></a>
+          <a href="https://x.com/SinghaniaR59102" target="_blank" rel="noopener" aria-label="X"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
           <a href="https://www.instagram.com/singhaniarefrigeration/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
           <a href="https://www.linkedin.com/company/singhania-refrigeration-and-supply-chain-consultancy/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa fa-linkedin-square"></i></a>
           <a href="https://www.youtube.com/channel/UC-g2bewulBb2oGjPGIDAaJA" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa fa-youtube-play"></i></a>

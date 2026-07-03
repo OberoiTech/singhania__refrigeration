@@ -93,7 +93,7 @@ if (in_array(strtolower($file), ['about-us.php', 'about.php'], true)) {
               'url' => $siteUrl,
               'logo' => [
                   '@type' => 'ImageObject',
-                  'url' => $siteUrl . 'assets/images/logo1.webp',
+                  'url' => $siteUrl . 'assets/images/logoS.png',
               ],
               'description' => 'Singhania Refrigeration provides cold storage, ripening chamber installation and industrial refrigeration solutions across India for fruits and food storage.',
               'email' => !empty($email) ? $email : null,
@@ -541,8 +541,9 @@ if (in_array(strtolower($file), ['about-us.php', 'about.php'], true)) {
         </script>
       
         <!-- favicon -->
-        <link rel="apple-touch-icon" href="apple-touch-icon.png.html">
-        <link rel="shortcut icon" type="image/x-icon" href="assets/images/logo.jpeg">
+        <link rel="apple-touch-icon" href="assets/images/logoS.png">
+        <link rel="icon" type="image/png" href="assets/images/logoS.png">
+        <link rel="shortcut icon" type="image/png" href="assets/images/logoS.png">
         <!-- Bootstrap v4.4.1 css -->
         <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
         <!-- font-awesome css -->
@@ -580,6 +581,16 @@ if (in_array(strtolower($file), ['about-us.php', 'about.php'], true)) {
         <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
         crossorigin="anonymous">
+        <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/brands.min.css"
+        crossorigin="anonymous">
+        <style>
+          .fa-brands.fa-x-twitter::before {
+            content: "\1D54F";
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 800;
+          }
+        </style>
         
         <link rel="canonical" href="<?php echo htmlspecialchars($canonicalUrl, ENT_QUOTES, 'UTF-8'); ?>" />
 
