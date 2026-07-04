@@ -3,8 +3,13 @@
 
 <head>
   <?php
-    $pageTitle = 'Truck AC Manufacturer in India | Transport Refrigeration Units — Singhania Refrigeration';
-    $pageDescription = 'Singhania Refrigeration — trusted Truck AC Manufacturer in India. High-performance Transport Refrigeration Units for dairy, pharma, frozen food, fruits, vegetables, meat and seafood logistics. Delhi NCR based. Call +91 99710 60822.';
+    $pageTitle = 'Truck AC Manufacturer in India | Singhania Refrigeration';
+    $pageDescription = 'Manufacturer of truck AC & transport refrigeration units for dairy, pharma, frozen food, meat & seafood transport. Delhi NCR. Call +91 99710 60822.';
+    $pageKeywords = 'truck ac manufacturer, transport refrigeration unit, reefer truck unit, refrigerated truck ac india, insulated truck body manufacturer, cold chain transport solutions';
+    $canonicalUrl = 'https://singhaniarefrigeration.com/truck-ac.php';
+    $ogDescription = $pageDescription;
+    $twitterDescription = 'Manufacturer of truck AC & transport refrigeration units for dairy, pharma, frozen food, meat & seafood transport. Delhi NCR.';
+    $shareImageAlt = 'Truck AC and transport refrigeration units by Singhania Refrigeration';
 
   ?>
   <?php include('head.php'); ?>

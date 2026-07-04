@@ -15,6 +15,7 @@ $ogDescription = $ogDescription ?? $pageDescription;
 $pageKeywords = $pageKeywords ?? $defaultKeywords;
 $siteUrl = 'https://singhaniarefrigeration.com/';
 $shareImage = $shareImage ?? $siteUrl . 'admin/uploads/image.jpg';
+$shareImageAlt = $shareImageAlt ?? 'Singhania Refrigeration cold storage and industrial refrigeration solutions';
 $ogType = $ogType ?? 'website';
 $twitterHandle = '@SinghaniaR59102';
 $email = $email ?? '';
@@ -51,6 +52,7 @@ if (in_array(strtolower($file), ['about-us.php', 'about.php'], true)) {
     $pageTitle = $aboutTitle;
     $pageDescription = 'About Singhania Refrigeration and our cold storage, industrial refrigeration and cold chain solutions across India.';
 }
+$twitterDescription = $twitterDescription ?? $pageDescription;
 ?>
 
 <!-- meta tag -->
@@ -67,14 +69,14 @@ if (in_array(strtolower($file), ['about-us.php', 'about.php'], true)) {
         <meta property="og:description" content="<?php echo htmlspecialchars($ogDescription, ENT_QUOTES, 'UTF-8'); ?>">
         <meta property="og:type" content="<?php echo htmlspecialchars($ogType, ENT_QUOTES, 'UTF-8'); ?>">
         <meta property="og:image" content="<?php echo htmlspecialchars($shareImage, ENT_QUOTES, 'UTF-8'); ?>">
-        <meta property="og:image:alt" content="Singhania Refrigeration cold storage and industrial refrigeration solutions">
+        <meta property="og:image:alt" content="<?php echo htmlspecialchars($shareImageAlt, ENT_QUOTES, 'UTF-8'); ?>">
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:site" content="<?php echo htmlspecialchars($twitterHandle, ENT_QUOTES, 'UTF-8'); ?>">
         <meta name="twitter:creator" content="<?php echo htmlspecialchars($twitterHandle, ENT_QUOTES, 'UTF-8'); ?>">
         <meta name="twitter:title" content="<?php echo htmlspecialchars($pageTitle, ENT_QUOTES, 'UTF-8'); ?>">
-        <meta name="twitter:description" content="<?php echo htmlspecialchars($pageDescription, ENT_QUOTES, 'UTF-8'); ?>">
+        <meta name="twitter:description" content="<?php echo htmlspecialchars($twitterDescription, ENT_QUOTES, 'UTF-8'); ?>">
         <meta name="twitter:image" content="<?php echo htmlspecialchars($shareImage, ENT_QUOTES, 'UTF-8'); ?>">
-        <meta name="twitter:image:alt" content="Singhania Refrigeration cold storage and industrial refrigeration solutions">
+        <meta name="twitter:image:alt" content="<?php echo htmlspecialchars($shareImageAlt, ENT_QUOTES, 'UTF-8'); ?>">
         <?php
           $schemaPhone = !empty($mobile) ? '+91' . preg_replace('/\D+/', '', $mobile) : null;
           $schemaSameAs = array_values(array_filter([
