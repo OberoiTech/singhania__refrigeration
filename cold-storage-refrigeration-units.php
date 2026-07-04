@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="en">
   <head>
     <?php include('head.php'); ?>
     <?php
@@ -357,7 +357,7 @@
             <h2 class="section-h2">What is a Cold Storage Refrigeration Unit?</h2>
 
             <p class="lead">
-               Cold storage systems are located inside a warehouse (or coldroom). They keep
+               Cold storage systems are part of <a href="index.php">industrial refrigeration and cold chain solutions</a> located inside a warehouse (or coldroom). They keep
                 perishable (temperature-sensitive) products cold, at a constant, controlled
                 temperature, for long periods of time.
             </p>

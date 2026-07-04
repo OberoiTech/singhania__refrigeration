@@ -362,7 +362,7 @@
             </p>
             <p class="lead">
              Refrigerated truck units are designed for temperature sensitive cargo, unlike
-             standard vehicle air conditioning. They are vital to cold chain logistics,
+             standard vehicle air conditioning. They are vital to <a href="index.php">cold chain solutions in India</a>,
              helping companies maintain product quality, reduce spoilage and meet
              transportation standards.
             </p>

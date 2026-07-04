@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="en">
   <head>
     <?php
     $pageTitle = 'Heavy Duty Racks Manufacturer in India | Singhania Refrigeration';
@@ -360,7 +360,7 @@
             <h2 class="section-h2">What is a Heavy Duty Rack?</h2>
 
             <p class="lead">
-               Heavy duty racks, or pallet racking systems, are bolted steel
+               Heavy duty racks, or pallet racking systems, support <a href="index.php">cold storage and warehousing solutions</a> as bolted steel
                 structures that connect upright frames together via horizontal beams
                 in order to store products vertically in a warehouse instead of on
                 the floor, making overhead space available for storage.

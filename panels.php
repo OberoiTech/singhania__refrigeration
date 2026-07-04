@@ -436,7 +436,7 @@
             <h2 class="section-h2">What is a PUF Panel?</h2>
 
             <p class="lead">
-              A PUF panel, or polyurethane foam panel, is a sandwich panel composed of
+              A PUF panel, or polyurethane foam panel, is used in <a href="index.php">industrial cold storage solutions</a> as a sandwich panel composed of
               two outer metal skins with a core of rigid polyurethane foam injected and
               bonded between them. The foam core is what gives the panel its insulating
               value, while the metal skins give it structural strength, a cleanable

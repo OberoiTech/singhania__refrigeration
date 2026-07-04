@@ -468,7 +468,7 @@
             <h2 class="section-h2">What is a Ripening System?</h2>
 
             <p class="lead">
-              A ripening system (also called a ripening chamber or ripening room) is a
+              A ripening system from a <a href="index.php">cold chain solutions provider in Delhi NCR</a> (also called a ripening chamber or ripening room) is a
               controlled-atmosphere room used to trigger and control the ripening of
               climacteric fruits &mdash; fruits that continue to ripen after harvest,
               such as bananas, mangoes, papayas and tomatoes &mdash; by precisely

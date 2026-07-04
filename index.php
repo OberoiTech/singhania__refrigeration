@@ -65,7 +65,7 @@ if (isset($_POST['submit'])) {
 ?>
 
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="en">
   <?php
     $pageTitle = 'Industrial Refrigeration & Cold Storage Solutions in Delhi NCR | Singhania Refrigeration';
     $pageDescription = 'Singhania Refrigeration — turnkey cold storage solutions, cold rooms, CA stores, ammonia & freon refrigeration plants, IQF systems, PUF panels and transport refrigeration. Based in Okhla, New Delhi. Serving Delhi NCR & pan-India. Call 99710-60822.';
@@ -746,7 +746,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               <div class="service-wrap">
                 <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/modify/1.webp" width="140" height="140" alt="Refrigerated Cold Storage"><img loading="lazy" decoding="async" class="icon-hover" src="assets/images/services/icons/modify/1.webp" width="140" height="140" alt=""></div>
                 <div class="content-part">
-                  <h3 class="title">Refrigerated Truck ACs &amp; Containers</h3>
+                  <h3 class="title"><a href="truck-ac.php">Refrigerated Truck ACs</a> &amp; <a href="truck-refrigerator-container.php">Containers</a></h3>
                   <div class="desc">Transport Refrigeration Units for trucks and reefer containers, keeping Perishables – Food, Dairy and Pharma Products, temperature controlled on routes across Delhi NCR and Pan India.</div>
                 </div>
               </div>
@@ -757,7 +757,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               <div class="service-wrap">
                 <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/modify/2.webp" width="128" height="128" alt="Cold Storage Warehouse"><img loading="lazy" decoding="async" class="icon-hover" src="assets/images/services/icons/modify/2.webp" width="128" height="128" alt=""></div>
                 <div class="content-part">
-                  <h3 class="title">Cold Rooms &amp; Storage Solutions</h3>
+                  <h3 class="title"><a href="cold-storage-refrigeration-units.php">Cold Rooms &amp; Storage Solutions</a></h3>
                   <div class="desc">Cold rooms based on ammonia and freon, Controlled Atmosphere (CA) stores, Ripening Chambers &amp; Blast Freezer Systems, designed to meet the shelf-life and temperature requirements of your product.</div>
                 </div>
               </div>
@@ -768,7 +768,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               <div class="service-wrap">
                 <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/modify/3.webp" width="128" height="128" alt="Industrial Refrigeration"><img loading="lazy" decoding="async" class="icon-hover" src="assets/images/services/icons/modify/3.webp" width="128" height="128" alt=""></div>
                 <div class="content-part">
-                  <h3 class="title">Compressor Rack Systems</h3>
+                  <h3 class="title"><a href="compressor-rack-system.php">Compressor Rack Systems</a></h3>
                   <div class="desc">Centralised, energy efficient compressor rack systems for supermarkets, food retail chains and large cold storage warehouses, reducing refrigerant charge and maintenance.</div>
                 </div>
               </div>
@@ -779,7 +779,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               <div class="service-wrap">
                 <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/modify/4.webp" width="128" height="128" alt="Ammonia Refrigeration"><img loading="lazy" decoding="async" class="icon-hover" src="assets/images/services/icons/modify/4.webp" width="128" height="128" alt=""></div>
                 <div class="content-part">
-                  <h3 class="title">Ammonia Refrigeration Units</h3>
+                  <h3 class="title"><a href="ammonia-refrigeration-units.php">Ammonia Refrigeration Units</a></h3>
                   <div class="desc">Industrial grade ammonia (NH3) and Freon refrigeration plants are for food processing units, large cold storage warehouses, fisheries and dairy operations requiring high capacity and energy efficient cooling</div>
                 </div>
               </div>
@@ -790,7 +790,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               <div class="service-wrap">
                 <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/modify/5.webp" width="128" height="128" alt="Ripening Chamber"><img loading="lazy" decoding="async" class="icon-hover" src="assets/images/services/icons/modify/5.webp" width="128" height="128" alt=""></div>
                 <div class="content-part">
-                  <h3 class="title">Ripening Chambers</h3>
+                  <h3 class="title"><a href="ripening-systems.php">Ripening Chambers</a></h3>
                   <div class="desc">Ethylene-controlled ripening chambers for bananas, mangoes, papayas and other climacteric fruits, delivering consistent, ready-to-sell ripening for every pallet.</div>
                 </div>
               </div>
@@ -801,7 +801,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               <div class="service-wrap">
                 <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/modify/6.webp" width="128" height="128" alt="Food Cold Room"><img loading="lazy" decoding="async" class="icon-hover" src="assets/images/services/icons/modify/6.webp" width="128" height="128" alt=""></div>
                 <div class="content-part">
-                  <h3 class="title">IQF Technology</h3>
+                  <h3 class="title"><a href="iqf.php">IQF Technology</a></h3>
                   <div class="desc">Individual Quick Freeze (IQF) machine systems flash-freeze seafood, fruits, vegetables and ready-to-eat products for export-quality output and to preserve texture, nutrition and appearance.</div>
                 </div>
               </div>
@@ -812,7 +812,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               <div class="service-wrap">
                 <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/modify/7.webp" width="128" height="128" alt="Cooling System"><img loading="lazy" decoding="async" class="icon-hover" src="assets/images/services/icons/modify/7.webp" width="128" height="128" alt=""></div>
                 <div class="content-part">
-                  <h3 class="title">PUF Panels &amp; Insulated Doors</h3>
+                  <h3 class="title"><a href="panels.php">PUF Panels</a> &amp; <a href="doors-ca-doors.php">Insulated Doors</a></h3>
                   <div class="desc">High density PUF panel insulation and cold room doors that make up the thermal envelope of your cold storage facility – designed for airtight insulation and minimal energy loss.</div>
                 </div>
               </div>
@@ -823,7 +823,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               <div class="service-wrap">
                 <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/modify/8.webp" width="120" height="144" alt="Cold Storage Solutions"><img loading="lazy" decoding="async" class="icon-hover" src="assets/images/services/icons/modify/8.webp" width="120" height="144" alt=""></div>
                 <div class="content-part">
-                  <h3 class="title">Dock Shelters &amp; Dock Levelers</h3>
+                  <h3 class="title"><a href="dock-shelter-dock-leveler.php">Dock Shelters &amp; Dock Levelers</a></h3>
                   <div class="desc">Dock Shelter and Leveler Systems seal the gap between your cold facility and delivery vehicles. Protect product temperature while loading and unloading.</div>
                 </div>
               </div>

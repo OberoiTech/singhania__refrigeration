@@ -446,7 +446,7 @@
               the truck bed, so forklifts can drive directly across with no step or gap.
             </p>
             <p class="lead">
-              Together, they turn a loading dock from an open space in the building
+              Together, they support <a href="index.php">cold chain logistics solutions</a> by turning a loading dock from an open space in the building
               into a sealed, safe transfer point. This is especially important for cold
               storage and cold chain warehouses, where every dock door opened is an
               open invitation for outside heat, dust, pests and weather to enter a

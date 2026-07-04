@@ -33,7 +33,7 @@ $shareImage = !empty($blog['thumb_image']) ? 'https://singhaniarefrigeration.com
 $ogType = 'article';
 ?>
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="en">
     <head>
         <?php include('head.php');?>
     </head>

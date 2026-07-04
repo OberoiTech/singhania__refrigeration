@@ -435,7 +435,7 @@
             <h2 class="section-h2">What is IQF (Individual Quick Freezing)?</h2>
 
             <p class="lead">
-              IQF, or Individual Quick Freezing, is a freezing method where each piece of food
+              IQF, or Individual Quick Freezing, is used within <a href="index.php">cold storage solutions in Delhi</a> as a freezing method where each piece of food
               is frozen separately and rapidly — using fast-moving cold air or direct contact —
               instead of being frozen together as one solid block.
             </p>

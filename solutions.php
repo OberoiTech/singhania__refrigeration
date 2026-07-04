@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="en">
 <?php
   $pageTitle = 'Cold Storage Solutions in Delhi NCR | Singhania Refrigeration';
   $pageDescription = 'Explore Singhania Refrigeration\'s cold storage solutions - turnkey construction, segment-wise cold rooms, CA/ammonia/freon systems, quality monitoring, warehouse and transport management for Delhi NCR and pan-India.';

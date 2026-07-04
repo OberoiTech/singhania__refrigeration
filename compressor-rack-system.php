@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="en">
 
 <head>
   <?php include('head.php'); ?>
@@ -354,7 +354,7 @@
             <h2 class="section-h2">What is a Compressor Rack System?</h2>
 
             <p class="lead">
-              Compressor rack systems install multiple compressors on a single frame,
+              Compressor rack systems are <a href="index.php">industrial refrigeration systems</a> that install multiple compressors on a single frame,
               connected to common suction and discharge headers to provide refrigerant
               to multiple cooling loads &mdash; rooms, cabinets or cold chambers &mdash;
               from a single centralized plant room.

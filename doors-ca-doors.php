@@ -436,7 +436,7 @@
             <h2 class="section-h2">What is a Cold Room Door or CA Door?</h2>
 
             <p class="lead">
-              A cold room door is a specially insulated door that seals a chiller,
+              A cold room door is part of <a href="index.php">cold storage infrastructure solutions</a>, built as a specially insulated door that seals a chiller,
               freezer, or cold storage room from outside air. Unlike a standard door,
               it needs to maintain its seal in the face of a constant temperature
               differential, and repeated opening and closing.

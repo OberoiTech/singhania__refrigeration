@@ -29,7 +29,7 @@ $message = " ";
 // }
 ?>
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="en">
 <head>
   <?php include('head.php'); ?>
 

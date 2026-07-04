@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="en">
   <head>
     <?php
     $pageTitle = 'Turnkey Cold Storage Solutions India | Singhania Refrigeration';

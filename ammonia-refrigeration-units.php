@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="en">
 
 <head>
   <?php
@@ -434,7 +434,7 @@
             <h2 class="section-h2">What is an Ammonia Refrigeration Unit?</h2>
 
             <p class="lead">
-              Ammonia refrigeration units use ammonia (NH3) as a refrigerant instead of
+              Ammonia refrigeration units are <a href="index.php">industrial refrigeration solutions</a> that use ammonia (NH3) as a refrigerant instead of
               synthetic refrigerants like HFCs or HCFCs. Ammonia is a natural refrigerant
               that has a high latent heat of vaporization, which allows it to efficiently
               transfer large amounts of heat, making it well suited to large-capacity,

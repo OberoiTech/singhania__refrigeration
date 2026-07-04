@@ -433,7 +433,7 @@
             <h2 class="section-h2">What is a Multideck Cabinet?</h2>
 
             <p class="lead">
-              A multideck cabinet is an open-front or glass-door retail refrigeration
+              A multideck cabinet is part of <a href="index.php">refrigeration solutions for retail</a>, built as an open-front or glass-door retail refrigeration
               display unit with multiple shelves, or &ldquo;decks,&rdquo; used to
               display chilled or frozen products &mdash; dairy, beverages, deli
               items, fresh produce, and frozen food &mdash; at the point of sale

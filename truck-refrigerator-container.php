@@ -455,6 +455,7 @@
               Refrigerated truck bodies and reefer containers are widely used in dairy
               distribution, pharmaceutical logistics, frozen food transportation, fruit and
               vegetable distribution, and meat and seafood delivery.
+              They support <a href="index.php">end-to-end cold chain solutions</a> from loading to delivery.
             </p>
           </div>
         </div>
