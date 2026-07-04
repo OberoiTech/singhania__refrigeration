@@ -226,7 +226,7 @@
           </div>
           <div class="intro-panel">
             <div class="intro-copy-box copy">
-              <p>Any break in this chain results in spoilage, non-compliance and revenue loss. Singhania Refrigeration engineers the complete chain, not just one cold room or compressor, as a fully integrated, performance-tested system.</p>
+              <p>Any break in this chain results in spoilage, non-compliance and revenue loss. Singhania Refrigeration engineers the complete chain, not just one cold room or compressor, as a fully integrated, performance-tested system within our <a href="index.php">industrial refrigeration solutions</a>.</p>
               <p>We take care of end-to-end design, construction and commissioning from vegetables and fruits cold chain, dairy cold chain to GDP compliant pharmaceutical cold chain.</p>
               <!-- <blockquote class="callout">A fully integrated cold chain refrigeration system protects product quality, reduces wastage and ensures regulatory compliance from farm gate to end consumer.</blockquote> -->
             </div>

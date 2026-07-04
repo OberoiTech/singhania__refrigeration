@@ -596,7 +596,7 @@
               <span class="section-kicker">Definition</span>
               <h2 class="section-h2">What Is a Transport Refrigeration Solution?</h2>
               <p class="lead-text">
-                Transport refrigeration is the engineering and fabrication work that converts a standard vehicle chassis into a temperature-controlled vehicle that can hold perishable or temperature-sensitive product for the duration of a delivery route. This covers the insulated body itself &mdash; PUF panel construction, flooring, doors and partitions &mdash; along with the refrigeration unit, controls and monitoring fitted to it.
+                Transport refrigeration is the engineering and fabrication work that converts a standard vehicle chassis into a temperature-controlled vehicle that can hold perishable or temperature-sensitive product for the duration of a delivery route as part of broader <a href="index.php">industrial refrigeration and cold chain solutions</a>. This covers the insulated body itself &mdash; PUF panel construction, flooring, doors and partitions &mdash; along with the refrigeration unit, controls and monitoring fitted to it.
               </p>
               <p>
                 Sizing matters more here than in almost any other part of the cold chain: a unit that's undersized for the route length or product load will lose pull-down capacity exactly when it's needed most, while an oversized one wastes fuel and payload space. We size the insulation and refrigeration unit together, against your actual route, product and load profile, rather than fitting a standard reefer kit regardless of what it's carrying.

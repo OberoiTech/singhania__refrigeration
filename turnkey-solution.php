@@ -771,7 +771,7 @@
 
         <p>
           A turnkey cold storage solution is a comprehensive, single-contract method
-          for building cold chain infrastructure. One company &mdash; Singhania
+          for building <a href="index.php">industrial refrigeration and cold storage solutions</a>. One company &mdash; Singhania
           Refrigeration &mdash; handles every aspect of the project, from site assessment
           and heat load calculation to civil and PEB construction, refrigeration
           engineering, insulated panel installation, electrical and automation works,

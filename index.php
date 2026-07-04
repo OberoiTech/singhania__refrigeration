@@ -1131,12 +1131,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                   Our core solutions include:
                 </p>
                 <ul class="tt-list">
-                  <li>Turnkey cold storage construction — design, civil work, supply, installation and commissioning under one roof.</li>
-                  <li>Energy-efficient ammonia and freon-based refrigeration plants for industrial and food cold storage.</li>
-                  <li>CA/MA stores and ripening chambers for fruit and vegetable exporters.</li>
-                  <li>IQF systems, blast freezer units and compressor rack systems for food processors and retailers.</li>
-                  <li>Transport refrigeration and cold chain infrastructure for logistics and 3PL operators.</li>
-                  <li>Cold chain consulting, energy audits and warehouse management system integration.</li>
+                  <li><a href="turnkey-solution.php">Turnkey cold storage and refrigeration project execution</a> &mdash; from design to commissioning and AMC.</li>
+                  <li><a href="segments-wise.php">Segment-specific cold chain solutions</a> for dairy, pharma, seafood and agriculture.</li>
+                  <li><a href="cold-chain-refrigeration-ca-store-freon-ammonia.php">Cold chain refrigeration, CA store and ammonia/freon systems</a>.</li>
+                  <li><a href="quality-monitoring-solution.php">Real-time quality monitoring for cold storage</a> with IoT sensors and audit trails.</li>
+                  <li><a href="ware-house-management.php">End-to-end warehouse management system</a> for cold chain operations.</li>
+                  <li><a href="transport-management.php">Cold chain transport management</a> for reliable in-transit visibility.</li>
+                  <li><a href="transport-refrigeration.php">Transport refrigeration solutions</a> for reefer trucks and insulated vehicles.</li>
                 </ul>
                 <!-- <ul class="tt-list">
                   <li>Advanced cold storage and refrigeration systems for industrial applications</li>

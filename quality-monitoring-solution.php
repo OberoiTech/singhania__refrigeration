@@ -569,7 +569,7 @@
               <span class="section-kicker">Definition</span>
               <h2 class="section-h2">What Is a Cold Chain Quality Monitoring Solution?</h2>
               <p class="lead-text">
-                A cold chain quality monitoring solution is a system of sensors, software and reporting that tracks the actual condition of products across storage, handling and distribution. By monitoring continuously, any deviation is detected early instead of being discovered after stock has already been damaged.
+                A cold chain quality monitoring solution is a system of sensors, software and reporting that tracks the actual condition of products across storage, handling and distribution inside <a href="index.php">reliable cold storage systems</a>. By monitoring continuously, any deviation is detected early instead of being discovered after stock has already been damaged.
               </p>
               <p class="lead-text">
                 In Singhania Refrigeration projects, quality monitoring connects with cold rooms, refrigeration systems, transport refrigeration, warehouse processes and packing or grading lines, so monitoring data becomes part of the operating workflow.

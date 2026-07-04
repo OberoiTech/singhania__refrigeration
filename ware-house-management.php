@@ -973,7 +973,8 @@
             <h2 class="section-h2">What Is a Cold Storage Wharehouse management Solution?</h2>
             <p class="lead-text">
               A cold storage warehouse management solution is a comprehensive,
-              system-driven approach to managing cold chain inventory operations.
+              system-driven approach to managing inventory operations inside
+              <a href="index.php">end-to-end cold chain solutions</a>.
               Singhania Refrigeration manages all facets of warehouse operations
               including receiving, put-away, batch and location tracking, stock
               rotation (FIFO/FEFO), space and slot allocation, dispatch sequencing,

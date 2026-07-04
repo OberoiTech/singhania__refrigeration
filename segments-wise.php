@@ -229,7 +229,7 @@
                 <span class="section-eyebrow">Overview</span>
                 <h2 class="section-title">What Is a Segment-Wise Cold Storage Solution?</h2>
               </div>
-              <p>A segment-wise cold storage solution is a cold room, blast freezer, ripening chamber or controlled-atmosphere (CA) store designed around the product it will contain, rather than a standard refrigeration shell. Depending on what you are storing - dairy, pharmaceuticals, fresh produce or frozen seafood - the temperature range, humidity control, airflow, racking, door type and even panel grade will vary.</p>
+              <p>A segment-wise cold storage solution is a cold room, blast freezer, ripening chamber or controlled-atmosphere (CA) store designed around the product it will contain as part of our <a href="index.php">cold chain solutions across India</a>, rather than a standard refrigeration shell. Depending on what you are storing - dairy, pharmaceuticals, fresh produce or frozen seafood - the temperature range, humidity control, airflow, racking, door type and even panel grade will vary.</p>
               <p>Singhania Refrigeration designs each facility around your product profile and process flow first, then selects the refrigeration system, panels, doors and controls that match it. You end up with a cool room that works the way your product actually needs it to, not a one-size-fits-all build that overcools some zones and undercools others.</p>
               <!-- <blockquote class="definition-callout">A segment-wise cold storage solution is engineered around the specific temperature, humidity, airflow and handling needs of your product category - rather than built as a generic cold room and adapted afterward.</blockquote> -->
             </div>
