@@ -56,7 +56,7 @@ $productsPages = [
   'dock-shelter-dock-leveler.php','heavy-duty-racks.php','products.php'
 ];
 $coldStoragePages = [
-  'turnkey-solution.php','segments-wise.php','cold-chain-refrigeration-ca-store-freon-ammonia.php',
+  'solutions.php','turnkey-solution.php','segments-wise.php','cold-chain-refrigeration-ca-store-freon-ammonia.php',
   'quality-monitoring-solution.php','ware-house-management.php','transport-management.php',
   'transport-refrigeration.php'
 ];
@@ -631,7 +631,7 @@ body.menu-open{ overflow:hidden; }
                     </li>
                     <!--  menu-item-has-children -->
                     <li class="menu-item <?php echo anyActive($coldStoragePages, $curBase); ?>">  
-                      <a href="#">Cold Storage Solutions</a>
+                      <a href="solutions.php">Cold Storage Solutions</a>
                       <ul class="sub-menu">
                         <li class="<?php echo isActive('turnkey-solution.php', $curBase); ?>">
                           <a class="<?php echo isActiveA('turnkey-solution.php', $curBase); ?>" href="turnkey-solution.php">Turnkey Solution</a>
@@ -715,7 +715,7 @@ body.menu-open{ overflow:hidden; }
             <a class="<?php echo isActiveA('consulting.php', $curBase); ?>" href="consulting.php">Consulting</a>
           </li>
           <li class="menu-item has-submenu <?php echo anyActive($coldStoragePages, $curBase); ?>">
-            <a href="#">Cold Storage Solutions</a>
+            <a href="solutions.php">Cold Storage Solutions</a>
             <ul class="sub-menu">
               <li class="<?php echo isActive('turnkey-solution.php', $curBase); ?>"><a class="<?php echo isActiveA('turnkey-solution.php', $curBase); ?>" href="turnkey-solution.php">Turnkey Solution</a></li>
               <li class="<?php echo isActive('segments-wise.php', $curBase); ?>"><a class="<?php echo isActiveA('segments-wise.php', $curBase); ?>" href="segments-wise.php">Segment Wise Solutions</a></li>
