@@ -87,10 +87,12 @@ if (in_array(strtolower($file), ['about-us.php', 'about.php'], true)) {
 
           $schemaOrganization = sr_schema_filter([
               '@context' => 'https://schema.org',
-              '@type' => 'Organization',
+              '@type' => 'LocalBusiness',
               '@id' => $siteUrl . '#organization',
               'name' => 'Singhania Refrigeration',
               'url' => $siteUrl,
+              'image' => $siteUrl . 'assets/images/logoS.png',
+              'priceRange' => '$$',
               'logo' => [
                   '@type' => 'ImageObject',
                   'url' => $siteUrl . 'assets/images/logoS.png',
@@ -103,6 +105,7 @@ if (in_array(strtolower($file), ['about-us.php', 'about.php'], true)) {
                 "@type"=> "PostalAddress",
                 "streetAddress"=> "C-19, Okhla Phase-I",
                 "addressLocality"=> "New Delhi",
+                "addressRegion"=> "DL",
                 "postalCode"=> "110020",
                 "addressCountry"=> "IN"
                ],
@@ -116,6 +119,12 @@ if (in_array(strtolower($file), ['about-us.php', 'about.php'], true)) {
                 "areaServed"=> [
                         "Delhi NCR", "Okhla", "South Delhi", "Noida", "Gurgaon", "Faridabad", "India"
                 ],
+              'openingHoursSpecification' => [
+                  '@type' => 'OpeningHoursSpecification',
+                  'dayOfWeek' => ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+                  'opens' => '09:30',
+                  'closes' => '18:30',
+              ],
               'contactPoint' => [
                   '@type' => 'ContactPoint',
                   'contactType' => 'customer service',

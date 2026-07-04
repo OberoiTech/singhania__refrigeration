@@ -39,7 +39,7 @@
           </li>
           <li>
             <span class="ico"><i class="fa fa-envelope"></i></span>
-            <span class="text"><a href="<?php echo htmlspecialchars($mailHref, ENT_QUOTES, 'UTF-8'); ?>"><?php echo htmlspecialchars($email, ENT_QUOTES, 'UTF-8'); ?></a></span>
+            <span class="text"><a href="<?php echo htmlspecialchars($mailHref, ENT_QUOTES, 'UTF-8'); ?>" aria-label="Email Singhania Refrigeration">Email Us</a></span>
           </li>
           <li>
             <span class="ico"><i class="fa fa-clock-o"></i></span>
@@ -57,7 +57,7 @@
           <li><a href="about-us.php">About Us</a></li>
           <li><a href="panels.php">PUF Panels</a></li>
           <li><a href="consulting.php">Consulting</a></li>
-          <li><a href="cold-chain-refrigeration-ca-store-freon-ammonia.php">Cold Storage Solutions</a></li>
+          <li><a href="cold-chain-refrigeration-ca-store-freon-ammonia.php" aria-label="Cold Storage Solutions: refrigeration, CA store, Freon and ammonia systems">Cold Storage Solutions</a></li>
           <li><a href="blog.php">Blogs</a></li>
           <li><a href="contact.php">Contact Us</a></li>
         </ul>

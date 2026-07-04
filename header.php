@@ -131,7 +131,7 @@ $coldStoragePages = [
   display:inline-flex; align-items:center; justify-content:center; min-height:50px; padding:0 18px; border-radius:11px;
   background:var(--navNavy); color:#fff !important; font-weight:700; text-decoration:none;
   box-shadow:0 8px 22px rgba(14,35,68,.28); transition:transform .1s ease, box-shadow .2s ease, background .2s ease;
-  min-width: 130px;
+  min-width: 140px;
   white-space:nowrap;
 }
 .menu-cta .btn-cfa:hover{ transform:translateY(-1px); background:#132e5f; color:#fff !important; box-shadow:0 12px 28px rgba(14,35,68,.34); }
@@ -225,7 +225,8 @@ body.menu-open{ overflow:hidden; }
 .mobile-drawer-phone-list a{ display:flex; gap:8px; color:#fff !important; font-size:12px; line-height:1.45; text-decoration:none; }
 .mobile-drawer-phone-list i{ width:14px; margin-top:2px; text-align:center; }
 .mobile-drawer-socials{ display:flex; gap:7px; margin-top:9px; }
-.mobile-drawer-socials a{ display:grid; place-items:center; width:30px; height:30px; border-radius:7px; background:rgba(255,255,255,.12); color:#fff !important; }
+.mobile-drawer-socials a{ display:grid; place-items:center; width:30px; height:30px; border-radius:7px; background:rgba(255,255,255,.12); color:#fff !important; transition:transform .18s ease, background .2s ease; }
+.mobile-drawer-socials a:hover{ transform:scale(1.08); background:rgba(255,255,255,.18); }
 .mobile-drawer-sites{ margin-top:11px; padding-top:10px; border-top:1px solid rgba(255,255,255,.18); }
 .mobile-drawer-sites summary{ display:flex; align-items:center; gap:7px; color:#fff; font-size:12px; font-weight:700; cursor:pointer; list-style:none; }
 .mobile-drawer-sites summary::-webkit-details-marker{ display:none; }
@@ -510,7 +511,7 @@ body.menu-open{ overflow:hidden; }
         <div class="col-md-8">
           <div class="toolbar-contact">
             <ul>
-              <li><i class="fa fa-envelope"></i><a href="<?php echo htmlspecialchars($mailHref, ENT_QUOTES, 'UTF-8'); ?>"><?php echo htmlspecialchars($email, ENT_QUOTES, 'UTF-8'); ?></a></li>
+              <li><i class="fa fa-envelope"></i><a href="<?php echo htmlspecialchars($mailHref, ENT_QUOTES, 'UTF-8'); ?>" aria-label="Email Singhania Refrigeration">Email Us</a></li>
               <li>
                 <i class="fa fa-phone"></i>
                 <span class="toolbar-phone-links">
@@ -735,7 +736,7 @@ body.menu-open{ overflow:hidden; }
         </ul>
       </div>
       <div class="mobile-drawer-info">
-        <a href="<?php echo htmlspecialchars($mailHref, ENT_QUOTES, 'UTF-8'); ?>"><i class="fa fa-envelope"></i><span><?php echo htmlspecialchars($email, ENT_QUOTES, 'UTF-8'); ?></span></a>
+        <a href="<?php echo htmlspecialchars($mailHref, ENT_QUOTES, 'UTF-8'); ?>" aria-label="Email Singhania Refrigeration"><i class="fa fa-envelope"></i><span>Email Us</span></a>
         <div class="mobile-drawer-phone-list">
           <?php foreach ($contactPhones as $phone): ?>
             <a href="<?php echo htmlspecialchars($phone['href'], ENT_QUOTES, 'UTF-8'); ?>"><i class="fa fa-phone"></i><span><?php echo htmlspecialchars($phone['label'], ENT_QUOTES, 'UTF-8'); ?></span></a>

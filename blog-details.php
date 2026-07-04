@@ -63,7 +63,7 @@ $ogType = 'article';
                                     <ul class="blog-meta mb-22">
                                         <li><i class="fa fa-calendar-check-o"></i> <?php echo $blog['created_at'];?></li>
                                         <li><i class="fa fa-user-o"></i> <?php echo htmlspecialchars(!empty($blog['author']) ? $blog['author'] : 'Singhania', ENT_QUOTES, 'UTF-8'); ?></li>
-                                        <li><i class="fa fa-book"></i> <a href="#"><?php echo $blog['category_name'];?></a></li>
+                                        <li><i class="fa fa-book"></i> <a href="blog.php" aria-label="Browse <?php echo htmlspecialchars($blog['category_name'], ENT_QUOTES, 'UTF-8'); ?> articles"><?php echo htmlspecialchars($blog['category_name'], ENT_QUOTES, 'UTF-8'); ?></a></li>
                                         <!-- <li><i class="fa fa-comments-o"></i> 10</li> -->
                                     </ul>
                                     <p class="desc mb-35"><?php echo $blog['description'];?></p>
