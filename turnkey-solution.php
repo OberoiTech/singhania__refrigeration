@@ -27,11 +27,6 @@
         background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,0) 42%);
         pointer-events:none;
       }
-      .rs-breadcrumbs.bg-7::after{
-        content:""; position:absolute; left:0; right:0; bottom:0; height:90px;
-        background:linear-gradient(180deg, rgba(246,248,255,0), #ffffff);
-        pointer-events:none;
-      }
       .rs-breadcrumbs .content-part{ padding:110px 0 130px; position:relative; z-index:1; }
       .hero-card{
         max-width:900px;
@@ -295,9 +290,10 @@
         transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
       }
       .industry-card:hover{
-        transform:translateY(-6px);
-        border-color:rgba(8,34,67,.16);
-        box-shadow:0 18px 40px rgba(16,28,52,.11);
+        transform: translateY(-7px);
+        border-color: rgba(0, 27, 104, .42);
+        background: linear-gradient(180deg, #ffffff 0%, #f7f9ff 100%);
+        box-shadow: 0 22px 48px rgba(0, 27, 104, .16);
       }
       .industry-card-head{
         display:flex;
@@ -420,9 +416,10 @@
         transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
       }
       .why-card:hover{
-        transform:translateY(-5px);
-        border-color:rgba(8,34,67,.18);
-        box-shadow:0 18px 38px rgba(16,28,52,.12);
+        transform: translateY(-7px);
+        border-color: rgba(0, 27, 104, .42);
+        background: linear-gradient(180deg, #ffffff 0%, #f7f9ff 100%);
+        box-shadow: 0 22px 48px rgba(0, 27, 104, .16);
       }
       .why-icon{
         width:42px;
@@ -596,9 +593,10 @@
         transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
       }
       .singhania-card:hover{
-        transform:translateY(-5px);
-        border-color:rgba(8,34,67,.18);
-        box-shadow:0 18px 38px rgba(16,28,52,.12);
+        transform: translateY(-7px);
+        border-color: rgba(0, 27, 104, .42);
+        background: linear-gradient(180deg, #ffffff 0%, #f7f9ff 100%);
+        box-shadow: 0 22px 48px rgba(0, 27, 104, .16);
       }
       .singhania-icon{
         width:56px;
@@ -650,22 +648,32 @@
 
       /* ====== CTA ====== */
       .cta-bar{ margin-top:24px; display:flex; gap:12px; flex-wrap:wrap; }
-      .btn-brand{
-        display:inline-flex; align-items:center; justify-content:center; gap:6px;
-        padding:13px 20px; border-radius:12px; border:1px solid transparent; cursor:pointer;
-         background:transparent;
-        color:#ffffff;
-        border-color:rgba(255,255,255,.32);
-        box-shadow:none;
+          .btn-brand {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 13px 20px;
+      border-radius: 8px;
+      font-weight: 800;
+      border: 1px solid rgba(255, 255, 255, .34);
+      color: #fff;
+      background: rgba(255, 255, 255, .10);
       }
-      .btn-brand:hover{ background:rgba(255,255,255,.10); color:#ffffff;}
-      .btn-brand.btn-ghost{
+
+      .btn-brand:hover {
+        transform: translateY(-1px);
+        background: rgba(255, 255, 255, .2);
+        color: #fff;
+        box-shadow: 0 18px 36px rgba(0, 27, 104, .34);
+      }
+      /* .btn-brand.btn-ghost{
         background:transparent;
         color:#ffffff;
         border-color:rgba(255,255,255,.32);
         box-shadow:none;
       }
-      .btn-brand.btn-ghost:hover{ background:rgba(255,255,255,.10); color:#ffffff; }
+      .btn-brand.btn-ghost:hover{ background:rgba(255,255,255,.10); color:#ffffff; } */
 
       /* ====== Reveal-on-scroll ====== */
       [data-animate]{ opacity:0; transform:translateY(22px) scale(.985); transition:all .7s cubic-bezier(.2,.65,.3,1); }
@@ -750,8 +758,8 @@
               </div>
               <!-- CTA buttons -->
               <div class="cta-bar">
-                <a href="contact.php" class="btn-brand">Get a Free Quote <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-                <a href="tel:+919971060822" class="btn-brand btn-ghost"><i class="fa fa-phone" aria-hidden="true"></i> Call Now</a>
+                <a href="contact.php" class="btn-brand">Get a Free Quote </a>
+                <a href="tel:+919971060822" class="btn-brand"> Call Now</a>
               </div>
             </div>
           </div>

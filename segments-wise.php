@@ -18,10 +18,7 @@
         position:relative; overflow:hidden; min-height:560px; display:flex; align-items:center;
         background:linear-gradient(90deg, rgba(6,18,38,.92) 0%, rgba(8,34,67,.78) 50%, rgba(8,34,67,.28) 100%), url('assets/images/products/cold-storage.jpg') center/cover no-repeat;
       }
-      .rs-breadcrumbs.bg-segment:after{
-        content:""; position:absolute; left:0; right:0; bottom:0; height:90px;
-        background:linear-gradient(180deg, rgba(255,255,255,0), #fff);
-      }
+      
       .rs-breadcrumbs .content-part{padding:110px 0 130px; position:relative; z-index:1;}
       .segment-hero{max-width:900px;}
       .segment-eyebrow,.section-eyebrow{
@@ -37,9 +34,9 @@
         padding:13px 20px; border-radius:8px; font-weight:800; border:1px solid rgba(255,255,255,.34);
         color:#fff; background:#0057a8;
       }
-      /* .segment-btn:hover{color:#fff; background:#074a86;} */
+      .segment-btn:hover{color:#fff; background:#074a86;}
       .segment-btn.secondary{background:rgba(255,255,255,.10);}
-      /* .segment-btn.secondary:hover{background:rgba(255,255,255,.18);} */
+      .segment-btn.secondary:hover{background:rgba(255,255,255,.18);}
       .section-pad{padding:76px 0 88px;}
       .section-soft{background:var(--soft);}
       .section-head{max-width:900px; margin:0 auto 38px; text-align:center;}
