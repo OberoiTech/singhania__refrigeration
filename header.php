@@ -702,7 +702,7 @@ body.menu-open{ overflow:hidden; }
     </div>
 
     <!-- Off-canvas menu (already using helpers) -->
-    <nav id="mobileDrawer" class="right_menu_togle hidden-md" aria-label="Mobile navigation" aria-hidden="true">
+    <nav id="mobileDrawer" class="right_menu_togle hidden-md" aria-label="Mobile navigation" aria-hidden="true" inert>
       <div class="close-btn">
         <span id="nav-close" class="humburger">
           <button type="button" class="close" aria-label="Close" data-dismiss="modal">&times;</button>
@@ -1014,6 +1014,7 @@ body.menu-open{ overflow:hidden; }
       ensureOverlay().classList.add('active');
       document.body.classList.add('menu-open');
       panel.classList.add('open');
+      panel.removeAttribute('inert');
       panel.setAttribute('aria-hidden', 'false');
       toggles.forEach(function(toggle) {
         toggle.setAttribute('aria-expanded', 'true');
@@ -1025,6 +1026,7 @@ body.menu-open{ overflow:hidden; }
     function closeMenu() {
       const wasOpen = panel.classList.contains('open');
       panel.classList.remove('open');
+      panel.setAttribute('inert', '');
       panel.setAttribute('aria-hidden', 'true');
       document.body.classList.remove('menu-open');
 

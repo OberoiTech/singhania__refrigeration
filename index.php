@@ -161,9 +161,6 @@ body{ color:var(--ink); }
   box-shadow:0 12px 28px rgba(0,0,0,.10);
 }
 
-.img-float-onload{ animation:floatY 7s ease-in-out infinite .6s; }
-@keyframes floatY{ 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
-
 /* ========= Cards & common blocks ========= */
 .service-wrap{
   border-radius:16px; background:var(--card);
@@ -510,6 +507,10 @@ body{ color:var(--ink); }
   filter:brightness(0) invert(1) drop-shadow(0 6px 10px rgba(0,0,0,.35));
   transition:transform .45s ease, filter .18s ease .46s;
 }
+.rs-services.modify .service-wrap .truck-service-icon{
+  width:118px;
+  height:auto;
+}
 .rs-services.style1:not(.modify) .service-wrap .title,
 .rs-services.style1:not(.modify) .service-wrap .title a,
 .rs-services.modify .service-wrap .title,
@@ -552,11 +553,20 @@ body{ color:var(--ink); }
 <meta name="google-site-verification" content="t5Xgoar9zL7jV84rmq3iDZQ7vTKJadd2l0ZU3kfFICs" />
 
 <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-5XNG3TQC');</script>
+<script>
+function loadGTM() {
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-5XNG3TQC');
+}
+if ('requestIdleCallback' in window) {
+  requestIdleCallback(loadGTM, { timeout: 4000 });
+} else {
+  window.addEventListener('load', loadGTM);
+}
+</script>
 <!-- End Google Tag Manager -->
 
 <!-- Facebook Pixel Code -->
@@ -612,7 +622,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     ? 'fetchpriority="high" loading="eager" decoding="async"'
                     : 'loading="lazy" decoding="async"';
                   $bannerPath = sr_preferred_image_path('admin/uploads/' . $banner['image']);
-                  echo '<img ' . $bannerAttrs . ' class="img-float-onload" src="' . htmlspecialchars($bannerPath, ENT_QUOTES) . '"' . sr_image_size_attrs($bannerPath) . ' alt="Cold Storage" title="#hero-caption" />' . "\n";
+                  echo '<img ' . $bannerAttrs . ' src="' . htmlspecialchars($bannerPath, ENT_QUOTES) . '"' . sr_image_size_attrs($bannerPath) . ' alt="Cold Storage" title="#hero-caption" />' . "\n";
                   $i++;
                 }
               ?>
@@ -657,6 +667,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <!-- ===== Mini Services ===== -->
       <div class="rs-services style1 pt-100 pb-84 md-pt-80 md-pb-64">
         <div class="container" data-animate>
+          <h2 class="sr-only">Cold Chain Service Highlights</h2>
           <div class="row gutter-16">
             <div class="col-lg-3 col-sm-6 mb-16">
               <div class="service-wrap">
@@ -669,7 +680,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </div>
             <div class="col-lg-3 col-sm-6 mb-16">
               <div class="service-wrap">
-                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/2.webp" width="140" height="140" alt="Energy efficient refrigeration system icon"><img loading="lazy" decoding="async" class="icon-hover" src="assets/images/services/icons/2.webp" width="140" height="140" alt=""></div>
+                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/2.webp" width="70" height="70" alt="Energy efficient refrigeration system icon"><img loading="lazy" decoding="async" class="icon-hover" src="assets/images/services/icons/2.webp" width="70" height="70" alt=""></div>
                 <div class="content-part">
                   <h3 class="title"><a href="services-single.html">Energy Efficiency</a></h3>
                   <p>High efficiency compressors, advanced PUF insulation and smart controls help reduce running costs by up to 30% compared with conventional cold storage systems, while maintaining precise temperature control.</p>
@@ -687,7 +698,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </div>
             <div class="col-lg-3 col-sm-6 mb-16">
               <div class="service-wrap">
-                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/4.webp" width="140" height="140" alt="Pan-India refrigeration service icon"><img loading="lazy" decoding="async" class="icon-hover" src="assets/images/services/icons/4.webp" width="140" height="140" alt=""></div>
+                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/4.webp" width="70" height="70" alt="Pan-India refrigeration service icon"><img loading="lazy" decoding="async" class="icon-hover" src="assets/images/services/icons/4.webp" width="70" height="70" alt=""></div>
                 <div class="content-part">
                   <h3 class="title"><a href="services-single.html">Pan-India Service</a></h3>
                   <p>Okhla, New Delhi certified refrigeration engineers offer installation and after sales support to clients across Delhi NCR – Noida, Gurgaon and Faridabad and pan India.</p>
@@ -734,7 +745,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 We aim to provide services that have perfect temperature control, superb energy efficiency, and flawless operation throughout the entire process, starting from the moment of conception to the end. From fields of Gujarat to plates of families in Delhi NCR.
               </p> -->
               <div class="menu-cta menu-cta--flush">
-                  <a class="btn-cfa" href="about-us.php">Learn more</a>
+                  <!-- <a class="btn-cfa" href="about-us.php">Learn more</a> -->
+                  <a class="btn-cfa" href="about-us.php" aria-label="Learn more about Singhania Refrigeration">Learn more</a>
               </div>
             </div>
           </div>
@@ -755,7 +767,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <!-- Service 1 -->
             <div class="col-lg-3 col-sm-6 mb-16">
               <div class="service-wrap">
-                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/modify/1.webp" width="140" height="140" alt="Refrigerated truck AC and container unit"><img loading="lazy" decoding="async" class="icon-hover" src="assets/images/services/icons/modify/1.webp" width="140" height="140" alt=""></div>
+                <div class="icon-part"><img loading="lazy" decoding="async" class="truck-service-icon" src="assets/images/services/icons/modify/1.webp" width="118" height="118" alt="Refrigerated truck AC and container unit"></div>
                 <div class="content-part">
                   <h3 class="title"><a href="truck-ac.php">Refrigerated Truck ACs</a> &amp; <a href="truck-refrigerator-container.php">Containers</a></h3>
                   <div class="desc">Transport Refrigeration Units for trucks and reefer containers, keeping Perishables – Food, Dairy and Pharma Products, temperature controlled on routes across Delhi NCR and Pan India.</div>
@@ -832,7 +844,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <!-- Service 8 -->
             <div class="col-lg-3 col-sm-6 mb-16">
               <div class="service-wrap">
-                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/modify/8.webp" width="120" height="144" alt="Dock shelter and dock leveler equipment"><img loading="lazy" decoding="async" class="icon-hover" src="assets/images/services/icons/modify/8.webp" width="120" height="144" alt=""></div>
+                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/modify/8.webp" width="70" height="84" alt="Dock shelter and dock leveler equipment"><img loading="lazy" decoding="async" class="icon-hover" src="assets/images/services/icons/modify/8.webp" width="70" height="84" alt=""></div>
                 <div class="content-part">
                   <h3 class="title"><a href="dock-shelter-dock-leveler.php">Dock Shelters &amp; Dock Levelers</a></h3>
                   <div class="desc">Dock Shelter and Leveler Systems seal the gap between your cold facility and delivery vehicles. Protect product temperature while loading and unloading.</div>
@@ -1416,7 +1428,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               while($row = mysqli_fetch_assoc($record)){ ?>
               <div class="blog-wrap">
                 <div class="img-part">
-                  <?php $blogImage = "admin/uploads/" . $row['image']; ?>
+                  <?php $blogImage = (!empty($row['image']) && is_file(__DIR__ . "/admin/uploads/" . $row['image'])) ? "admin/uploads/" . $row['image'] : "admin/uploads/docking-facility.webp"; ?>
                   <?php $blogWebp = sr_webp_path($blogImage); ?>
                   <?php if ($blogWebp !== ''): ?><picture><source srcset="<?php echo htmlspecialchars($blogWebp, ENT_QUOTES); ?>" type="image/webp"><?php endif; ?>
                   <img loading="lazy" decoding="async" class="img-soft blog-cover-img" src="<?php echo htmlspecialchars($blogImage, ENT_QUOTES); ?>"<?php echo sr_image_size_attrs(sr_preferred_image_path($blogImage)); ?> alt="Cold Storage Blog">
@@ -1424,7 +1436,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                   <div class="fly-btn"><a href="blog-details.php?id=<?php echo $row['id'];?>"><i class="flaticon-right-arrow"></i></a></div>
                 </div>
                 <div class="content-part">
-                  <a class="categories" href="blog-details.php?id=<?php echo $row['id'];?>"><?php echo $row['category_name'];?></a>
+                  <span class="categories"><?php echo $row['category_name'];?></span>
                   <h3 class="title"><a href="blog-details.php?id=<?php echo $row['id'];?>"><?php echo $row['title'];?></a></h3>
                   <div class="blog-meta">
                     <div class="user-data"><img loading="lazy" decoding="async" src="assets/images/blog/avatar/1.png" width="40" height="40" alt="Customer Review"><span>Singhania</span></div>

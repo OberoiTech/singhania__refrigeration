@@ -305,7 +305,7 @@
     /* ====== INDUSTRIES ====== */
     .industries-section {
       padding: 76px 0 88px;
-      background: #ffffff;
+      background: #f6f9fc;
     }
 
     .industries-head {
@@ -349,9 +349,10 @@
     }
 
     .industry-card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(8, 34, 67, .16);
-      box-shadow: 0 18px 40px rgba(16, 28, 52, .11);
+      transform: translateY(-7px);
+    border-color: rgba(0, 27, 104, .42);
+    background: linear-gradient(180deg, #ffffff 0%, #f7f9ff 100%);
+    box-shadow: 0 22px 48px rgba(0, 27, 104, .16);
     }
 
     .industry-card:hover::before {
@@ -442,61 +443,82 @@
 
     /* Table */
 
-    #rollout-process table {
-      width: 100%;
-      border-collapse: collapse;
+    #rollout-process .table-wrap {
+      overflow-x: auto;
+      margin: 24px 0 10px;
+      border: 1px solid #e3e9f2;
+      border-radius: 8px;
       background: #fff;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, .08);
+      box-shadow: 0 16px 36px rgba(16, 28, 52, .08);
     }
 
-    #rollout-process thead {
-      background: #1d3557;
+    #rollout-process .compare-table {
+      width: 100%;
+      min-width: 760px;
+      border-collapse: separate;
+      border-spacing: 0;
     }
 
-    #rollout-process thead th {
-      color: #fff;
-      font-size: 17px;
-      font-weight: 600;
-      padding: 18px;
+    #rollout-process .compare-table th,
+    #rollout-process .compare-table td {
+      padding: 16px 18px;
+      border-bottom: 1px solid #e3e9f2;
       text-align: left;
-    }
-
-    #rollout-process tbody td {
-      padding: 20px;
-      border-bottom: 1px solid #ececec;
-      color: #555;
-      font-size: 15px;
-      line-height: 1.7;
       vertical-align: top;
+      line-height: 1.55;
+      transition: background .22s ease, color .22s ease, box-shadow .22s ease;
     }
 
-    #rollout-process tbody tr:last-child td {
-      border-bottom: none;
+    #rollout-process .compare-table th {
+      background: #001b68;
+      color: #fff;
+      font-weight: 900;
+      border-bottom-color: #001b68;
     }
 
-    #rollout-process tbody tr:hover {
-      background: #f7fbff;
-      transition: .3s;
+    #rollout-process .compare-table th:first-child {
+      border-top-left-radius: 8px;
+    }
+
+    #rollout-process .compare-table th:last-child {
+      border-top-right-radius: 8px;
+    }
+
+    #rollout-process .compare-table td {
+      color: #405070;
+      background: #fff;
+    }
+
+    #rollout-process .compare-table tr:last-child td {
+      border-bottom: 0;
+    }
+
+    #rollout-process .compare-table tbody tr:hover td {
+      background: #f8fbff;
     }
 
     /* Stage Number */
 
-    #rollout-process tbody td:first-child {
+    #rollout-process .compare-table td:first-child {
       width: 70px;
       text-align: center;
+      color: #001b68;
       font-size: 20px;
-      font-weight: 700;
-      color: #1d3557;
+      font-weight: 900;
+      background: #f7f9ff;
     }
 
     /* Phase */
 
-    #rollout-process tbody td:nth-child(2) {
+    #rollout-process .compare-table td:nth-child(2) {
       width: 280px;
-      font-weight: 600;
-      color: #1d3557;
+      color: #0f2442;
+      font-weight: 800;
+    }
+
+    #rollout-process .compare-table td + td,
+    #rollout-process .compare-table th + th {
+      border-left: 1px solid #e3e9f2;
     }
 
     /* ====== WHY SINGHANIA ====== */
@@ -570,9 +592,10 @@
     }
 
     .singhania-card:hover {
-      transform: translateY(-5px);
-      border-color: rgba(8, 34, 67, .18);
-      box-shadow: 0 18px 38px rgba(16, 28, 52, .12);
+      transform: translateY(-7px);
+    border-color: rgba(0, 27, 104, .42);
+    background: linear-gradient(180deg, #ffffff 0%, #f7f9ff 100%);
+    box-shadow: 0 22px 48px rgba(0, 27, 104, .16);
     }
 
     .singhania-card:hover::before {
@@ -618,10 +641,8 @@
         font-size: 16px;
       }
 
-      #rollout-process table {
-        display: block;
-        overflow-x: auto;
-        white-space: nowrap;
+      #rollout-process .compare-table {
+        min-width: 760px;
       }
     }
 
@@ -640,13 +661,13 @@
         font-size: 15px;
       }
 
-      #rollout-process thead th,
-      #rollout-process tbody td {
+      #rollout-process .compare-table th,
+      #rollout-process .compare-table td {
         padding: 15px;
         font-size: 14px;
       }
 
-      #rollout-process tbody td:first-child {
+      #rollout-process .compare-table td:first-child {
         font-size: 18px;
       }
     }
@@ -1248,42 +1269,44 @@
           is happening and when.
         </p>
 
-        <table>
-          <thead>
-            <tr>
-              <th>Stage</th>
-              <th>Phase</th>
-              <th>What Happens</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Discovery &amp; Assessment</td>
-              <td>Site visit, current process review, SKU and stock-volume profiling, gap analysis against existing registers or spreadsheets</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>System Design &amp; Configuration</td>
-              <td>Slotting logic, rotation rules (FIFO/FEFO), user roles, and reporting formats configured to your product mix and facility layout</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Data Migration &amp; Integration</td>
-              <td>Existing stock records migrated into the system; warehouse management linked to TMS touchpoints and any existing refrigeration monitoring</td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td>Go-Live, Training &amp; Validation</td>
-              <td>Led system training for receiving, floor and dispatch teams; run in parallel with the existing process to validate system accuracy before full cutover</td>
-            </tr>
-            <tr>
-              <td>5</td>
-              <td>Ongoing Support &amp; Optimization</td>
-              <td>System maintenance planning, configuration changes based on your stock profile evolution, reporting support after go-live</td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="table-wrap">
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>Stage</th>
+                <th>Phase</th>
+                <th>What Happens</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Discovery &amp; Assessment</td>
+                <td>Site visit, current process review, SKU and stock-volume profiling, gap analysis against existing registers or spreadsheets</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>System Design &amp; Configuration</td>
+                <td>Slotting logic, rotation rules (FIFO/FEFO), user roles, and reporting formats configured to your product mix and facility layout</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Data Migration &amp; Integration</td>
+                <td>Existing stock records migrated into the system; warehouse management linked to TMS touchpoints and any existing refrigeration monitoring</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Go-Live, Training &amp; Validation</td>
+                <td>Led system training for receiving, floor and dispatch teams; run in parallel with the existing process to validate system accuracy before full cutover</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>Ongoing Support &amp; Optimization</td>
+                <td>System maintenance planning, configuration changes based on your stock profile evolution, reporting support after go-live</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
       </div>
     </section>
@@ -1393,7 +1416,7 @@
     </section>
     <!-- ===== END WHY SINGHANIA ===== -->
     <!--Section-8  -->
-    <section class="faq-section section-padding bg-white" id="faq">
+    <section class="faq-section section-padding " id="faq" style="background: #f8fafc;">
       <div class="container">
 
         <h2 class="section-h2 text-center mb-5">

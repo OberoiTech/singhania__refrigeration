@@ -6,7 +6,7 @@
       <div class="f-col" data-aos="fade-up" data-aos-delay="50">
         <div class="brand">
           <a href="index.php" class="brand-logo">
-            <img src="assets/images/products/logoF.png" width="1536" height="864" alt="Singhania Refrigeration">
+             <img src="assets/images/products/logoF.png" width="340" height="227" alt="Singhania Refrigeration">
           </a>
           <p class="brand-copy">
              Singhania Refrigeration is a trusted Delhi NCR-based industrial refrigeration and cold
@@ -14,7 +14,7 @@
             chambers, IQF systems, compressor racks, PUF panels, dock shelters and transport
             refrigeration — engineered for efficiency, safety and reliability across India.
           </p>
-          <h5 class="follow-title">Follow Us</h5>
+          <h4 class="follow-title">Follow Us</h4>
           <ul class="social-pills">
                 <li><a href="https://www.facebook.com/profile.php?id=61579480251463" aria-label="Visit Singhania Refrigeration on Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                 <li><a href="https://x.com/SinghaniaR59102" aria-label="Visit Singhania Refrigeration on X"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a></li>
@@ -137,18 +137,30 @@
       <!-- Search Modal End -->
          
 
+        <?php
+          if (!function_exists('sr_asset_url')) {
+            function sr_asset_url($path) {
+              $path = ltrim((string)$path, '/');
+              $basePath = str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'] ?? ''));
+              $basePath = ($basePath === '/' || $basePath === '.') ? '' : rtrim($basePath, '/');
+              $absolutePath = __DIR__ . DIRECTORY_SEPARATOR . str_replace('/', DIRECTORY_SEPARATOR, $path);
+              $version = is_file($absolutePath) ? '?v=' . filemtime($absolutePath) : '';
+              return $basePath . '/' . $path . $version;
+            }
+          }
+        ?>
         <!-- modernizr js -->
-        <script src="assets/js/modernizr-2.8.3.min.js"></script>
+        <script src="<?php echo sr_asset_url('assets/js/modernizr-2.8.3.min.js'); ?>"></script>
         <!-- jquery latest version -->
-        <script src="assets/js/jquery.min.js"></script>
+        <script src="<?php echo sr_asset_url('assets/js/jquery.min.js'); ?>"></script>
         <!-- Bootstrap v4.4.1 js -->
-        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="<?php echo sr_asset_url('assets/js/bootstrap.min.js'); ?>"></script>
         <!-- Menu js -->
-        <script src="assets/js/rsmenu-main.js"></script> 
+        <script src="<?php echo sr_asset_url('assets/js/rsmenu-main.js'); ?>"></script> 
         <!-- op nav js -->
-        <script src="assets/js/jquery.nav.js"></script>
+        <script src="<?php echo sr_asset_url('assets/js/jquery.nav.js'); ?>"></script>
         <!-- owl.carousel js -->
-        <script src="assets/js/owl.carousel.min.js"></script>
+        <script src="<?php echo sr_asset_url('assets/js/owl.carousel.min.js'); ?>"></script>
         <!-- Slick js -->
         <!-- Homepage unused: <script src="assets/js/slick.min.js"></script> -->
         <!-- isotope.pkgd.min js -->
@@ -158,7 +170,7 @@
         <!-- wow js -->
         <!-- Homepage unused: <script src="assets/js/wow.min.js"></script> -->
         <!-- aos js -->
-        <script src="assets/js/aos.js"></script>
+        <script src="<?php echo sr_asset_url('assets/js/aos.js'); ?>"></script>
         <!-- Skill bar js -->
         <!-- Homepage unused: <script src="assets/js/skill.bars.jquery.js"></script> -->
         <!-- Homepage unused: <script src="assets/js/jquery.counterup.min.js"></script> -->
@@ -169,13 +181,13 @@
         <!-- magnific popup js -->
         <!-- Homepage unused: <script src="assets/js/jquery.magnific-popup.min.js"></script> -->
         <!-- Nivo slider js -->
-        <script src="assets/inc/custom-slider/js/jquery.nivo.slider.js"></script>
+        <script src="<?php echo sr_asset_url('assets/inc/custom-slider/js/jquery.nivo.slider.js'); ?>"></script>
         <!-- plugins js -->
-        <script src="assets/js/plugins.js"></script>
+        <script src="<?php echo sr_asset_url('assets/js/plugins.js'); ?>"></script>
         <!-- contact form js -->
-        <script src="assets/js/contact.form.js"></script>
+        <script src="<?php echo sr_asset_url('assets/js/contact.form.js'); ?>"></script>
         <!-- main js -->
-        <script src="assets/js/main.js"></script>
+        <script src="<?php echo sr_asset_url('assets/js/main.js'); ?>"></script>
 
         <style>
           /* ===== Modern Footer ===== */

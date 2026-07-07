@@ -6636,6 +6636,11 @@ body .modal-backdrop {
   width: 26px;
   height: 7px;
   border: 1px solid #fff;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
   font-size: 0px;
   display: inline-block;
   margin-right: 7px;
@@ -14559,7 +14564,7 @@ body .modal-backdrop {
   box-shadow: 0 5px 20px rgba(34, 34, 34, 0.1);
   background: #ffffff;
 }
-.rs-blog.style1 .blog-wrap .content-part a.categories {
+.rs-blog.style1 .blog-wrap .content-part .categories {
   text-transform: uppercase;
   color: #363636;
   display: inline-block;

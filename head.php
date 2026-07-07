@@ -570,9 +570,11 @@ $twitterDescription = $twitterDescription ?? $pageDescription;
         <!-- off canvas css -->
         <link rel="stylesheet" type="text/css" href="assets/css/off-canvas.css" media="print" onload="this.media='all'">
         <!-- linea-font css -->
-        <link rel="stylesheet" type="text/css" href="assets/fonts/linea-fonts.css">
+        <link rel="preload" href="assets/fonts/linea-fonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" type="text/css" href="assets/fonts/linea-fonts.css"></noscript>
         <!-- flaticon css  -->
-        <link rel="stylesheet" type="text/css" href="assets/fonts/flaticon.css">
+        <link rel="preload" href="assets/fonts/flaticon.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" type="text/css" href="assets/fonts/flaticon.css"></noscript>
         <!-- magnific popup css -->
         <link rel="stylesheet" type="text/css" href="assets/css/magnific-popup.css" media="print" onload="this.media='all'">
         <!-- Main Menu css -->
@@ -581,20 +583,28 @@ $twitterDescription = $twitterDescription ?? $pageDescription;
         <link rel="stylesheet" type="text/css" href="assets/inc/custom-slider/css/nivo-slider.css" media="print" onload="this.media='all'">
         <link rel="stylesheet" type="text/css" href="assets/inc/custom-slider/css/preview.css" media="print" onload="this.media='all'">
         <!-- rsmenu transitions css -->
-        <link rel="stylesheet" href="assets/css/rsmenu-transitions.css">
+        <link rel="preload" href="assets/css/rsmenu-transitions.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="assets/css/rsmenu-transitions.css"></noscript>
         <!-- spacing css -->
-        <link rel="stylesheet" type="text/css" href="assets/css/rs-spacing.css">
+        <link rel="preload" href="assets/css/rs-spacing.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" type="text/css" href="assets/css/rs-spacing.css"></noscript>
         <!-- style css -->
         <link rel="stylesheet" type="text/css" href="style.css"> 
         <!-- responsive css -->
         <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
 
-        <link rel="stylesheet"
+        <link rel="preload"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-        crossorigin="anonymous">
-        <link rel="stylesheet"
+        as="style" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        crossorigin="anonymous"></noscript>
+        <link rel="preload"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/brands.min.css"
-        crossorigin="anonymous">
+        as="style" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/brands.min.css"
+        crossorigin="anonymous"></noscript>
         <style>
           .fa-brands.fa-x-twitter::before {
             content: "\1D54F";
@@ -612,7 +622,8 @@ $twitterDescription = $twitterDescription ?? $pageDescription;
         <!-- Modern, readable UI font -->
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
         <!-- FOR MAPS TRUCK-AC -->
-        <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+        <link rel="preload" href="https://unpkg.com/leaflet/dist/leaflet.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"></noscript>
 
         <!-- Shared inner-page hero entrance animation (matches the home hero) -->
         <style>

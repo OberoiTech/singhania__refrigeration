@@ -390,37 +390,47 @@
       }
 
       .process-table-wrap {
-        margin-top: 30px;
+        margin: 30px 0 10px;
         overflow-x: auto;
         border: 1px solid var(--tr-line);
         border-radius: 8px;
         background: #fff;
-        box-shadow: 0 14px 34px rgba(16, 28, 52, .07);
+        box-shadow: 0 16px 36px rgba(16, 28, 52, .08);
       }
 
       .process-table {
         width: 100%;
         min-width: 760px;
-        border-collapse: collapse;
+        border-collapse: separate;
+        border-spacing: 0;
       }
 
       .process-table th,
       .process-table td {
-        padding: 18px 20px;
+        padding: 16px 18px;
         border-bottom: 1px solid var(--tr-line);
         vertical-align: top;
         text-align: left;
+        line-height: 1.55;
+        transition: background .22s ease, color .22s ease, box-shadow .22s ease;
       }
 
       .process-table th {
-        background: var(--tr-accent);
+        background: #001b68;
         color: #fff;
         font-weight: 900;
+        border-bottom-color: #001b68;
       }
 
+      .process-table th:first-child { border-top-left-radius: 8px; }
+      .process-table th:last-child { border-top-right-radius: 8px; }
+      .process-table td { color: #405070; background: #fff; }
       .process-table tr:last-child td { border-bottom: 0; }
-      .process-table td:first-child { width: 90px; color: var(--tr-accent); font-weight: 900; }
+      .process-table tbody tr:hover td { background: #f8fbff; }
+      .process-table td:first-child { width: 90px; color: #001b68; font-weight: 900; background: #f7f9ff; text-align: center; }
       .process-table td:nth-child(2) { width: 270px; color: var(--tr-ink); font-weight: 800; }
+      .process-table td + td,
+      .process-table th + th { border-left: 1px solid var(--tr-line); }
 
       .faq-accordion {
         max-width: 920px;
