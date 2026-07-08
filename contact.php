@@ -89,7 +89,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     /* ===== Full-width hero (matches About) ===== */
     .contact-hero{
       position:relative; width:100%;
-      padding:48px 0 56px;
+      padding:82px 0;
       background:
         radial-gradient(120% 160% at 8% -10%, #1a2b55 0%, rgba(26,43,85,0) 55%),
         radial-gradient(110% 140% at 95% -20%, #0f1a39 0%, rgba(15,26,57,0) 55%),
@@ -101,7 +101,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       max-width: 860px;
       background: rgba(255,255,255,.06);
       border: 1px solid rgba(255,255,255,.22);
-      border-radius: 16px;
+      border-radius: 8px;
       padding: 22px 22px 24px;
       color:#e8eeff; box-shadow:0 22px 60px rgba(0,0,0,.28);
       animation: fadeUp .6s ease-out both;
@@ -111,7 +111,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     .contact-hero p{ margin:0; color:#cbd6ff; }
 
     /* ===== Body (white) with subtle texture ===== */
-    .contact-section{ position:relative; background:#fff; padding:40px 0 80px; }
+    .contact-section{ position:relative; background:#fff; padding:92px 0; }
     .contact-section::before{
       content:""; position:absolute; inset:0; pointer-events:none;
       background-image:
@@ -125,7 +125,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     /* Info cards row */
     .info-item{
       display:flex; gap:14px; align-items:flex-start;
-      padding:16px; border:1px solid var(--line); border-radius:14px; background:#fff;
+      padding:18px; border:1px solid var(--line); border-radius:8px; background:#fff;
       box-shadow:0 8px 24px rgba(15,25,44,.06), 0 1px 0 rgba(16,24,40,.04) inset;
       height:100%;
       transition: transform .15s ease, box-shadow .2s ease;
@@ -149,7 +149,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     /* Right form card (brand navy) + animation + layered shadow */
     .form-wrap{ position:sticky; top:92px; }
     .form-card{
-      border-radius:18px;
+      border-radius:8px;
       background: linear-gradient(180deg,#142b5a,#0f1d43);
       color:#eaf1ff; border:1px solid rgba(255,255,255,.14);
       box-shadow:
@@ -172,7 +172,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     .form-card input,.form-card textarea{
       width:100%; border:1px solid rgba(255,255,255,.28);
-      background:rgba(255,255,255,.08); color:#fff; border-radius:12px;
+      background:rgba(255,255,255,.08); color:#fff; border-radius:6px;
       padding:12px 13px; outline:0;
       transition:border-color .2s, box-shadow .2s, background .2s, transform .06s;
     }
@@ -185,7 +185,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     .btn-brand{
       display:inline-flex; align-items:center; justify-content:center;
-      height:46px; padding:0 18px; border-radius:12px; border:0;
+      height:46px; padding:0 18px; border-radius:6px; border:0;
       background:#1a3a7a; color:#fff; font-weight:700;
       box-shadow:0 12px 28px rgba(22,46,99,.36), inset 0 -1px 0 rgba(255,255,255,.12);
       transition:transform .1s, box-shadow .2s, background .2s;
@@ -197,6 +197,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     @media (max-width:991px){
       .form-wrap{ position:static; top:auto; }
+      .contact-hero{ padding:64px 0; }
+      .contact-section{ padding:72px 0; }
+    }
+
+    @media (max-width:575.98px){
+      .contact-hero{ padding:48px 0; }
+      .contact-section{ padding:56px 0; }
+      .titlecard{ padding:22px 18px; border-radius:8px; }
     }
 
     /* Animations */

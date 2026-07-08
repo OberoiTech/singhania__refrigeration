@@ -12,7 +12,7 @@
     --ink:#0f2442; --muted:#667085; --soft:#f6f8ff; --card:#ffffff;
     --line:#e7ecf5; --brand:#0e2344;
   }
-  .section-pad{ padding: 80px 0; }
+  .section-pad{ padding: 92px 0; }
   .section-soft{ background: linear-gradient(180deg, #fafbff 0%, #f3f6ff 100%); }
   .main-content{ max-width:100%; overflow-x:clip; }
   .g-30>[class*="col-"]{ margin-bottom:30px; }
@@ -23,7 +23,7 @@
   .eyebrow{ display:inline-block; font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:#9aa6c3; }
 
   /* Hero */
-  .about-hero{ position: relative; padding: 56px 0 24px; overflow: hidden; }
+  .about-hero{ position: relative; padding: 82px 0; overflow: hidden; }
   .about-hero__bg{
     position:absolute; inset:0 0 auto 0; height:100%;
     background:
@@ -36,7 +36,7 @@
     max-width: 900px;
     background: rgba(255,255,255,.10);
     border: 1px solid rgba(255,255,255,.18);
-    border-radius: 16px;
+    border-radius: 8px;
     padding: clamp(18px, 4vw, 28px);
     color:#eaf0ff;
     box-shadow: 0 24px 60px rgba(0,0,0,.25);
@@ -47,12 +47,12 @@
   .about-hero__card p{ color:#dfe6ff; margin:0; }
 
   /* Images & cards */
-  .about-img{ width:100%; height:auto; border-radius:16px; box-shadow:0 20px 48px rgba(0,0,0,.12); }
+  .about-img{ width:100%; height:auto; border-radius:8px; box-shadow:0 20px 48px rgba(0,0,0,.12); }
   .img-soft{ transition: transform .4s ease, box-shadow .4s ease; }
   .img-soft:hover{ transform: translateY(-3px); box-shadow:0 28px 60px rgba(0,0,0,.18); }
 
   .card-lite{
-    height:100%; border-radius:16px; background: var(--card); border:1px solid var(--line);
+    height:100%; border-radius:8px; background: var(--card); border:1px solid var(--line);
     padding: clamp(18px, 3.2vw, 26px); box-shadow: 0 12px 30px rgba(16, 28, 52, .06);
   }
 
@@ -67,14 +67,14 @@
   .about-cta{
     display:inline-block;
     padding:12px 20px;
-    border-radius:10px;
+    border-radius:6px;
     background:#1c2f57;
     color:#fff !important;
   }
 
   @media (max-width: 991px){
     .section-pad{ padding: 64px 0; }
-    .about-hero{ padding: 40px 0 18px; }
+    .about-hero{ padding: 64px 0; }
     .about-hero__bg{ height:100%; }
     .about-img{ display:block; max-width:680px; margin:0 auto; }
     .g-30>[class*="col-"]:last-child,
@@ -83,20 +83,20 @@
 
   @media (max-width: 767px){
     .section-pad{ padding:48px 0; }
-    .about-hero{ padding:32px 0 16px; }
-    .about-hero__card{ padding:22px 18px; border-radius:14px; }
+    .about-hero{ padding:48px 0; }
+    .about-hero__card{ padding:22px 18px; border-radius:8px; }
     .about-hero__card h1{ font-size:clamp(28px, 8vw, 36px); line-height:1.18; }
     .about-hero__card p,
     .lead{ font-size:15px; line-height:1.7; text-align:left; }
     .h2{ font-size:24px; line-height:1.3; overflow-wrap:anywhere; }
-    .card-lite{ height:auto; padding:22px 18px; }
+    .card-lite{ height:auto; padding:22px 18px; border-radius:8px; }
     .g-30>[class*="col-"],
     .g-40>[class*="col-"]{ margin-bottom:24px; }
     .g-30>[class*="col-"]:last-child,
     .g-40>[class*="col-"]:last-child{ margin-bottom:0; }
     .checklist{ gap:12px; }
     .checklist li{ padding-left:27px; font-size:15px; line-height:1.55; }
-    .about-img{ border-radius:12px; }
+    .about-img{ border-radius:8px; }
   }
 
   @media (max-width: 420px){

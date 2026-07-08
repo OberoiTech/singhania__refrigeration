@@ -12,7 +12,7 @@
       /* ========= HERO ========= */
       .consult-hero{
         position:relative; width:100%;
-        padding:60px 0 68px;
+        padding:82px 0;
         background:
           radial-gradient(120% 160% at 8% -10%, #1a2b55 0%, rgba(26,43,85,0) 55%),
           radial-gradient(110% 140% at 95% -20%, #0f1a39 0%, rgba(15,26,57,0) 55%),
@@ -25,7 +25,7 @@
         margin: 0 auto;
         background: rgba(255,255,255,.06);
         border: 1px solid rgba(255,255,255,.20);
-        border-radius: 16px;
+        border-radius: 8px;
         padding: 26px 26px 28px;
         box-shadow:0 22px 60px rgba(0,0,0,.28);
         color:#e8eeff;
@@ -35,7 +35,7 @@
       .consult-hero p{ margin:0; color:#cbd6ff;}
 
       /* ========= BODY ========= */
-      .consult-body{ background:#fff; position:relative; padding:48px 0 88px; }
+      .consult-body{ background:#fff; position:relative; padding:92px 0; }
       .consult-body::before{
         content:""; position:absolute; inset:0; pointer-events:none;
         background-image:
@@ -56,7 +56,7 @@
       /* Blocks */
       .block{
         max-width:980px; margin: 22px auto 0;
-        background:#fff; border:1px solid var(--line); border-radius:16px;
+        background:#fff; border:1px solid var(--line); border-radius:8px;
         box-shadow:0 10px 26px rgba(16,28,52,.06);
         padding:18px 18px 16px;
       }
@@ -86,7 +86,7 @@
       .feat{
         height:100%;
         display:flex; gap:12px; align-items:flex-start;
-        padding:14px; border:1px solid var(--line); border-radius:14px; background:#fff;
+        padding:18px; border:1px solid var(--line); border-radius:8px; background:#fff;
         box-shadow:0 8px 24px rgba(15,25,44,.06), 0 1px 0 rgba(16,24,40,.04) inset;
         transition: transform .15s ease, box-shadow .2s ease;
       }
@@ -100,6 +100,16 @@
 
       /* Utility */
       .mt-32{ margin-top:32px; }
+      @media (max-width: 991px){
+        .consult-hero{ padding:64px 0; }
+        .consult-body{ padding:72px 0; }
+      }
+      @media (max-width: 575.98px){
+        .consult-hero{ padding:48px 0; }
+        .consult-body{ padding:56px 0; }
+        .titlecard{ padding:22px 18px; border-radius:8px; }
+        .block{ padding:20px 18px; }
+      }
     </style>
   </head>
   <body>

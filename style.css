@@ -17080,3 +17080,210 @@ a.active {
     padding-block: 12px;
   }
 }
+
+/* =========================================================
+   Site-wide mobile CSS guardrails
+   Keeps all pages stable across iPhone/Android viewport sizes.
+   ========================================================= */
+@media (max-width: 767.98px){
+  html,
+  body{
+    width:100%;
+    max-width:100%;
+    overflow-x:hidden;
+  }
+
+  *,
+  *::before,
+  *::after{
+    box-sizing:border-box;
+  }
+
+  body{
+    font-size:15px;
+    line-height:1.65;
+    -webkit-text-size-adjust:100%;
+  }
+
+  .main-content,
+  section,
+  footer,
+  header{
+    max-width:100%;
+    overflow-x:clip;
+  }
+
+  .container,
+  .container-fluid,
+  .container-fluid2{
+    width:100% !important;
+    max-width:100% !important;
+    padding-left:16px !important;
+    padding-right:16px !important;
+  }
+
+  .row{
+    margin-left:-8px;
+    margin-right:-8px;
+  }
+
+  .row > [class*="col-"]{
+    padding-left:8px;
+    padding-right:8px;
+  }
+
+  img,
+  picture,
+  video,
+  canvas,
+  svg,
+  iframe{
+    max-width:100%;
+  }
+
+  img{
+    height:auto;
+  }
+
+  iframe{
+    display:block;
+    width:100% !important;
+  }
+
+  table{
+    display:block;
+    width:100%;
+    overflow-x:auto;
+  }
+
+  input,
+  textarea,
+  select,
+  button{
+    max-width:100%;
+    font-size:16px;
+  }
+
+  .rs-breadcrumbs .content-part,
+  .about-hero,
+  .consult-hero,
+  .contact-hero,
+  .blog-hero .content-part{
+    min-height:auto !important;
+    padding-top:48px !important;
+    padding-bottom:48px !important;
+  }
+
+  .breadcrumbs-title,
+  .hero-card h1,
+  .about-hero__card h1,
+  .consult-hero h1,
+  .contact-hero h1,
+  .blog-hero-card h1,
+  .sec-title .title,
+  .h2{
+    font-size:clamp(26px, 8vw, 36px) !important;
+    line-height:1.18 !important;
+    letter-spacing:0 !important;
+    overflow-wrap:anywhere;
+  }
+
+  p,
+  .lead,
+  .desc,
+  .blog-card__title,
+  .card-prod__title,
+  .post-mini .title{
+    overflow-wrap:anywhere;
+  }
+
+  .section-pad,
+  .consult-body,
+  .contact-section,
+  .blog-page-wrap,
+  .pt-100,
+  .pb-100,
+  .pt-92,
+  .pb-92,
+  .pt-91,
+  .pb-84,
+  .pb-70{
+    padding-top:48px !important;
+    padding-bottom:48px !important;
+  }
+
+  .card-lite,
+  .block,
+  .feat,
+  .info-item,
+  .blog-card,
+  .card-prod,
+  .form-card,
+  .service-wrap,
+  .rs-services .service-wrap,
+  .rs-services.modify .service-wrap{
+    border-radius:8px !important;
+    max-width:100%;
+  }
+
+  .blog-grid,
+  .footer-grid{
+    grid-template-columns:1fr !important;
+  }
+
+  .products-grid .card-prod__img img,
+  .card-prod__img img{
+    height:auto !important;
+    aspect-ratio:16 / 10;
+  }
+
+  .contact-grid .content-info-part .row,
+  .rs-services .row.gutter-16,
+  .rs-services.modify .row.gutter-16{
+    row-gap:16px;
+  }
+
+  .form-wrap{
+    position:static !important;
+    top:auto !important;
+  }
+
+  .g-map iframe{
+    min-height:300px !important;
+  }
+
+  .menu-cta,
+  .btn-part,
+  .cta-bar,
+  .services-products-cta,
+  .footer-modern .footer-bottom,
+  .bottom-links{
+    justify-content:center !important;
+    text-align:center !important;
+  }
+}
+
+@media (max-width: 420px){
+  .container,
+  .container-fluid,
+  .container-fluid2{
+    padding-left:14px !important;
+    padding-right:14px !important;
+  }
+
+  .readon,
+  .btn,
+  .btn-brand,
+  .btn-cfa,
+  .about-cta{
+    width:100%;
+    justify-content:center;
+    text-align:center;
+  }
+
+  .toolbar-sl-share,
+  .group-sites-menu,
+  .float-sites-menu{
+    max-width:calc(100vw - 28px) !important;
+  }
+}

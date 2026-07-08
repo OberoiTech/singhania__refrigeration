@@ -494,6 +494,7 @@ body{ color:var(--ink); }
   align-items:center;
   width:140px;
   max-width:100%;
+  min-height:112px;
   margin:0 auto 14px;
 }
 .rs-services.style1:not(.modify) .service-wrap .icon-part .icon-hover,
@@ -503,13 +504,28 @@ body{ color:var(--ink); }
 .rs-services.style1:not(.modify) .service-wrap .icon-part img:not(.icon-hover),
 .rs-services.modify .service-wrap .icon-part img:not(.icon-hover){
   display:block;
+  /* width:140px !important;
+  max-width:none !important;
+  height:auto !important;
+  max-height:112px;
+  object-fit:contain; */
   margin:0 auto;
   filter:brightness(0) invert(1) drop-shadow(0 6px 10px rgba(0,0,0,.35));
   transition:transform .45s ease, filter .18s ease .46s;
 }
 .rs-services.modify .service-wrap .truck-service-icon{
-  width:118px;
-  height:auto;
+  width:140px !important;
+  max-width:none !important;
+  height:140px !important;
+  max-height:none !important;
+  object-fit:contain;
+}
+.rs-services.modify .service-wrap .service-card-icon{
+  width:140px !important;
+  max-width:none !important;
+  height:140 !important;
+  max-height:none !important;
+  object-fit:contain;
 }
 .rs-services.style1:not(.modify) .service-wrap .title,
 .rs-services.style1:not(.modify) .service-wrap .title a,
@@ -671,7 +687,7 @@ if ('requestIdleCallback' in window) {
           <div class="row gutter-16">
             <div class="col-lg-3 col-sm-6 mb-16">
               <div class="service-wrap">
-                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/1.webp" width="140" height="140" alt="Turnkey cold chain project execution icon"><img loading="lazy" decoding="async" class="icon-hover" src="assets/images/services/icons/1.webp" width="140" height="140" alt=""></div>
+                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/1.webp" width="140" height="140" alt="Turnkey cold chain project execution icon"></div>
                 <div class="content-part">
                   <h3 class="title"><a href="services-single.html">Turnkey Execution</a></h3>
                   <p>Full turnkey cold storage and industrial refrigeration solutions – design, equipment supply, installation and commissioning, all in-house by our own engineering team for smooth accountable delivery from start to finish.</p>
@@ -680,7 +696,7 @@ if ('requestIdleCallback' in window) {
             </div>
             <div class="col-lg-3 col-sm-6 mb-16">
               <div class="service-wrap">
-                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/2.webp" width="70" height="70" alt="Energy efficient refrigeration system icon"><img loading="lazy" decoding="async" class="icon-hover" src="assets/images/services/icons/2.webp" width="70" height="70" alt=""></div>
+                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/2.webp" width="70" height="70" alt="Energy efficient refrigeration system icon"></div>
                 <div class="content-part">
                   <h3 class="title"><a href="services-single.html">Energy Efficiency</a></h3>
                   <p>High efficiency compressors, advanced PUF insulation and smart controls help reduce running costs by up to 30% compared with conventional cold storage systems, while maintaining precise temperature control.</p>
@@ -689,7 +705,7 @@ if ('requestIdleCallback' in window) {
             </div>
             <div class="col-lg-3 col-sm-6 mb-16">
               <div class="service-wrap">
-                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/3.webp" width="140" height="140" alt="99.9% uptime cold storage reliability icon"><img loading="lazy" decoding="async" class="icon-hover" src="assets/images/services/icons/3.webp" width="140" height="140" alt=""></div>
+                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/3.webp" width="140" height="140" alt="99.9% uptime cold storage reliability icon"></div>
                 <div class="content-part">
                   <h3 class="title"><a href="services-single.html">99.9% Uptime</a></h3>
                   <p>Preventive maintenance and rapid-response AMC support 24 hours a day, 365 days a year keep your cold room, CA store or refrigeration plant running reliably.</p>
@@ -698,7 +714,7 @@ if ('requestIdleCallback' in window) {
             </div>
             <div class="col-lg-3 col-sm-6 mb-16">
               <div class="service-wrap">
-                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/4.webp" width="70" height="70" alt="Pan-India refrigeration service icon"><img loading="lazy" decoding="async" class="icon-hover" src="assets/images/services/icons/4.webp" width="70" height="70" alt=""></div>
+                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/4.webp" width="70" height="70" alt="Pan-India refrigeration service icon"></div>
                 <div class="content-part">
                   <h3 class="title"><a href="services-single.html">Pan-India Service</a></h3>
                   <p>Okhla, New Delhi certified refrigeration engineers offer installation and after sales support to clients across Delhi NCR – Noida, Gurgaon and Faridabad and pan India.</p>
@@ -767,7 +783,7 @@ if ('requestIdleCallback' in window) {
             <!-- Service 1 -->
             <div class="col-lg-3 col-sm-6 mb-16">
               <div class="service-wrap">
-                <div class="icon-part"><img loading="lazy" decoding="async" class="truck-service-icon" src="assets/images/services/icons/modify/1.webp" width="118" height="118" alt="Refrigerated truck AC and container unit"></div>
+                <div class="icon-part"><img loading="lazy" decoding="async" class="truck-service-icon" src="assets/images/services/icons/modify/refrigerated-truck-acs-containers.webp" width="200" height="200" alt="Refrigerated truck AC and container unit"></div>
                 <div class="content-part">
                   <h3 class="title"><a href="truck-ac.php">Refrigerated Truck ACs</a> &amp; <a href="truck-refrigerator-container.php">Containers</a></h3>
                   <div class="desc">Transport Refrigeration Units for trucks and reefer containers, keeping Perishables – Food, Dairy and Pharma Products, temperature controlled on routes across Delhi NCR and Pan India.</div>
@@ -778,7 +794,7 @@ if ('requestIdleCallback' in window) {
             <!-- Service 2 -->
             <div class="col-lg-3 col-sm-6 mb-16">
               <div class="service-wrap">
-                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/modify/2.webp" width="128" height="128" alt="Cold room and cold storage solution"><img loading="lazy" decoding="async" class="icon-hover" src="assets/images/services/icons/modify/2.webp" width="128" height="128" alt=""></div>
+                <div class="icon-part"><img loading="lazy" decoding="async" class="service-card-icon" src="assets/images/services/icons/modify/cold-storage-warehouse.webp" width="200" height="200" alt="Cold room and cold storage solution"></div>
                 <div class="content-part">
                   <h3 class="title"><a href="cold-storage-refrigeration-units.php">Cold Rooms &amp; Storage Solutions</a></h3>
                   <div class="desc">Cold rooms based on ammonia and freon, Controlled Atmosphere (CA) stores, Ripening Chambers &amp; Blast Freezer Systems, designed to meet the shelf-life and temperature requirements of your product.</div>
@@ -789,7 +805,7 @@ if ('requestIdleCallback' in window) {
             <!-- Service 3 -->
             <div class="col-lg-3 col-sm-6 mb-16">
               <div class="service-wrap">
-                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/modify/3.webp" width="128" height="128" alt="Industrial compressor rack system"><img loading="lazy" decoding="async" class="icon-hover" src="assets/images/services/icons/modify/3.webp" width="128" height="128" alt=""></div>
+                <div class="icon-part"><img loading="lazy" decoding="async" class="service-card-icon" src="assets/images/services/icons/modify/compressor-rack-systems.webp" width="200" height="200" alt="Industrial compressor rack system"></div>
                 <div class="content-part">
                   <h3 class="title"><a href="compressor-rack-system.php">Compressor Rack Systems</a></h3>
                   <div class="desc">Centralised, energy efficient compressor rack systems for supermarkets, food retail chains and large cold storage warehouses, reducing refrigerant charge and maintenance.</div>
@@ -800,7 +816,7 @@ if ('requestIdleCallback' in window) {
             <!-- Service 4 -->
             <div class="col-lg-3 col-sm-6 mb-16">
               <div class="service-wrap">
-                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/modify/4.webp" width="128" height="128" alt="Ammonia refrigeration unit"><img loading="lazy" decoding="async" class="icon-hover" src="assets/images/services/icons/modify/4.webp" width="128" height="128" alt=""></div>
+                <div class="icon-part"><img loading="lazy" decoding="async" class="service-card-icon" src="assets/images/services/icons/modify/ammonia-refrigeration-units.webp" width="200" height="200" alt="Ammonia refrigeration unit"></div>
                 <div class="content-part">
                   <h3 class="title"><a href="ammonia-refrigeration-units.php">Ammonia Refrigeration Units</a></h3>
                   <div class="desc">Industrial grade ammonia (NH3) and Freon refrigeration plants are for food processing units, large cold storage warehouses, fisheries and dairy operations requiring high capacity and energy efficient cooling</div>
@@ -811,7 +827,7 @@ if ('requestIdleCallback' in window) {
             <!-- Service 5 -->
             <div class="col-lg-3 col-sm-6 mb-16">
               <div class="service-wrap">
-                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/modify/5.webp" width="128" height="128" alt="Ripening chamber for fruits and produce"><img loading="lazy" decoding="async" class="icon-hover" src="assets/images/services/icons/modify/5.webp" width="128" height="128" alt=""></div>
+                <div class="icon-part"><img loading="lazy" decoding="async" class="service-card-icon" src="assets/images/services/icons/modify/ripening-chambers.webp" width="200" height="200" alt="Ripening chamber for fruits and produce"></div>
                 <div class="content-part">
                   <h3 class="title"><a href="ripening-systems.php">Ripening Chambers</a></h3>
                   <div class="desc">Ethylene-controlled ripening chambers for bananas, mangoes, papayas and other climacteric fruits, delivering consistent, ready-to-sell ripening for every pallet.</div>
@@ -822,7 +838,7 @@ if ('requestIdleCallback' in window) {
             <!-- Service 6 -->
             <div class="col-lg-3 col-sm-6 mb-16">
               <div class="service-wrap">
-                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/modify/6.webp" width="128" height="128" alt="IQF individual quick freezing technology"><img loading="lazy" decoding="async" class="icon-hover" src="assets/images/services/icons/modify/6.webp" width="128" height="128" alt=""></div>
+                <div class="icon-part"><img loading="lazy" decoding="async" class="service-card-icon" src="assets/images/services/icons/modify/iqf-technology.webp" width="200" height="200" alt="IQF individual quick freezing technology"></div>
                 <div class="content-part">
                   <h3 class="title"><a href="iqf.php">IQF Technology</a></h3>
                   <div class="desc">Individual Quick Freeze (IQF) machine systems flash-freeze seafood, fruits, vegetables and ready-to-eat products for export-quality output and to preserve texture, nutrition and appearance.</div>
@@ -833,7 +849,7 @@ if ('requestIdleCallback' in window) {
             <!-- Service 7 -->
             <div class="col-lg-3 col-sm-6 mb-16">
               <div class="service-wrap">
-                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/modify/7.webp" width="128" height="128" alt="PUF panel and insulated cold storage door"><img loading="lazy" decoding="async" class="icon-hover" src="assets/images/services/icons/modify/7.webp" width="128" height="128" alt=""></div>
+                <div class="icon-part"><img loading="lazy" decoding="async" class="service-card-icon" src="assets/images/services/icons/modify/puf-panels-insulated-doors.webp" width="200" height="200" alt="PUF panel and insulated cold storage door"></div>
                 <div class="content-part">
                   <h3 class="title"><a href="panels.php">PUF Panels</a> &amp; <a href="doors-ca-doors.php">Insulated Doors</a></h3>
                   <div class="desc">High density PUF panel insulation and cold room doors that make up the thermal envelope of your cold storage facility – designed for airtight insulation and minimal energy loss.</div>
@@ -844,7 +860,7 @@ if ('requestIdleCallback' in window) {
             <!-- Service 8 -->
             <div class="col-lg-3 col-sm-6 mb-16">
               <div class="service-wrap">
-                <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/modify/8.webp" width="70" height="84" alt="Dock shelter and dock leveler equipment"><img loading="lazy" decoding="async" class="icon-hover" src="assets/images/services/icons/modify/8.webp" width="70" height="84" alt=""></div>
+                <div class="icon-part"><img loading="lazy" decoding="async" class="service-card-icon" src="assets/images/services/icons/modify/dock-shelters-dock-levelers.webp" width="200" height="200" alt="Dock shelter and dock leveler equipment"></div>
                 <div class="content-part">
                   <h3 class="title"><a href="dock-shelter-dock-leveler.php">Dock Shelters &amp; Dock Levelers</a></h3>
                   <div class="desc">Dock Shelter and Leveler Systems seal the gap between your cold facility and delivery vehicles. Protect product temperature while loading and unloading.</div>

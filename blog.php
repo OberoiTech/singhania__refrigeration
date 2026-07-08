@@ -5,7 +5,54 @@
         <style>
             .blog-page-wrap {
                 background: #f6f8ff;
-                padding: 90px 0;
+                padding: 92px 0;
+            }
+
+            .blog-hero.rs-breadcrumbs {
+                position: relative;
+                background-image: url("assets/images/breadcrumbs/9.jpg");
+                background-size: cover;
+                background-position: center;
+                isolation: isolate;
+                overflow: hidden;
+            }
+
+            .blog-hero.rs-breadcrumbs::before {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(90deg, rgba(5,18,38,.95) 0%, rgba(7,28,57,.84) 48%, rgba(5,15,30,.48) 100%);
+                z-index: -1;
+            }
+
+            .blog-hero .content-part {
+                min-height: 360px;
+                padding: 82px 0;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                text-align: left;
+            }
+
+            .blog-hero-card {
+                max-width: 720px;
+                color: #fff;
+            }
+
+            .blog-hero-card .eyebrow {
+                display: inline-block;
+                color: #b7c4ea;
+                font-size: 12px;
+                letter-spacing: .18em;
+                text-transform: uppercase;
+                margin-bottom: 10px;
+            }
+
+            .blog-hero-card p {
+                color: rgba(238,244,255,.86);
+                max-width: 650px;
+                margin: 12px 0 0;
+                line-height: 1.7;
             }
 
             .blog-grid {
@@ -18,7 +65,7 @@
             .blog-card {
                 background: #fff;
                 border: 1px solid #e7ecf5;
-                border-radius: 12px;
+                border-radius: 8px;
                 overflow: hidden;
                 box-shadow: 0 12px 30px rgba(16, 28, 52, .08);
                 height: 100%;
@@ -92,7 +139,7 @@
             .blog-empty {
                 background: #fff;
                 border: 1px solid #e7ecf5;
-                border-radius: 12px;
+                border-radius: 8px;
                 padding: 28px;
                 color: #667085;
                 box-shadow: 0 12px 30px rgba(16, 28, 52, .08);
@@ -106,7 +153,12 @@
 
             @media (max-width: 575px) {
                 .blog-page-wrap {
-                    padding: 64px 0;
+                    padding: 56px 0;
+                }
+
+                .blog-hero .content-part {
+                    min-height: 280px;
+                    padding: 56px 0;
                 }
 
                 .blog-grid {
@@ -119,10 +171,14 @@
         <?php include('header.php'); ?>
 
         <div class="main-content">
-            <div class="rs-breadcrumbs bg-9">
+            <div class="rs-breadcrumbs bg-9 blog-hero">
                 <div class="container">
-                    <div class="content-part text-center">
-                        <h1 class="breadcrumbs-title white-color mb-0">Blogs</h1>
+                    <div class="content-part">
+                        <div class="blog-hero-card">
+                            <span class="eyebrow">Latest News</span>
+                            <h1 class="breadcrumbs-title white-color mb-0">Blogs</h1>
+                            <p>Cold storage, industrial refrigeration, energy efficiency and cold chain updates from the Singhania Refrigeration team.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -134,6 +190,7 @@
                             <div class="sec-title">
                                 <span class="sub-title primary right-line">LATEST NEWS</span>
                                 <h2 class="title mb-0">Read Latest Updates</h2>
+                                <p class="mb-0 mt-12">Practical guidance, project insights, and technology updates for reliable cold chain operations.</p>
                             </div>
                         </div>
                     </div>
