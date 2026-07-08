@@ -689,7 +689,7 @@ if ('requestIdleCallback' in window) {
               <div class="service-wrap">
                 <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/1.webp" width="140" height="140" alt="Turnkey cold chain project execution icon"></div>
                 <div class="content-part">
-                  <h3 class="title"><a href="services-single.html">Turnkey Execution</a></h3>
+                  <h3 class="title"><a href="turnkey-solution.php">Turnkey Execution</a></h3>
                   <p>Full turnkey cold storage and industrial refrigeration solutions – design, equipment supply, installation and commissioning, all in-house by our own engineering team for smooth accountable delivery from start to finish.</p>
                 </div>
               </div>
@@ -698,7 +698,7 @@ if ('requestIdleCallback' in window) {
               <div class="service-wrap">
                 <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/2.webp" width="70" height="70" alt="Energy efficient refrigeration system icon"></div>
                 <div class="content-part">
-                  <h3 class="title"><a href="services-single.html">Energy Efficiency</a></h3>
+                  <h3 class="title"><a href="panels.php">Energy Efficiency</a></h3>
                   <p>High efficiency compressors, advanced PUF insulation and smart controls help reduce running costs by up to 30% compared with conventional cold storage systems, while maintaining precise temperature control.</p>
                 </div>
               </div>
@@ -707,7 +707,7 @@ if ('requestIdleCallback' in window) {
               <div class="service-wrap">
                 <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/3.webp" width="140" height="140" alt="99.9% uptime cold storage reliability icon"></div>
                 <div class="content-part">
-                  <h3 class="title"><a href="services-single.html">99.9% Uptime</a></h3>
+                  <h3 class="title"><a href="consulting.php">99.9% Uptime</a></h3>
                   <p>Preventive maintenance and rapid-response AMC support 24 hours a day, 365 days a year keep your cold room, CA store or refrigeration plant running reliably.</p>
                 </div>
               </div>
@@ -716,7 +716,7 @@ if ('requestIdleCallback' in window) {
               <div class="service-wrap">
                 <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/4.webp" width="70" height="70" alt="Pan-India refrigeration service icon"></div>
                 <div class="content-part">
-                  <h3 class="title"><a href="services-single.html">Pan-India Service</a></h3>
+                  <h3 class="title"><a href="contact.php">Pan-India Service</a></h3>
                   <p>Okhla, New Delhi certified refrigeration engineers offer installation and after sales support to clients across Delhi NCR – Noida, Gurgaon and Faridabad and pan India.</p>
                 </div>
               </div>
@@ -867,9 +867,49 @@ if ('requestIdleCallback' in window) {
                 </div>
               </div>
             </div>
-            <div class="col-12 tt-cta services-products-cta">
-              <a href="products.php" class="btn btn-primary">Explore Our Products</a>
+            <!-- services 9 -->
+            <div class="col-lg-3 col-sm-6 mb-16">
+              <div class="service-wrap">
+                <div class="icon-part"><img loading="lazy" decoding="async" class="service-card-icon" src="assets/images/services/icons/modify/dock-shelters-dock-levelers.webp" width="200" height="200" alt="Heavy Duty Rack"></div>
+                <div class="content-part">
+                  <h3 class="title"><a href="heavy-duty-racks.php">Heavy Duty Racks</a></h3>
+                  <div class="desc">Singhania Refrigeration makes Heavy Duty Racks based on your actual pallet loads, aisle lengths and forklift types, instead of making catalog racks that fit your warehouse. Ideal for cold storage facilities, distribution centres and general warehousing in India.</div>
+                </div>
+              </div>
             </div>
+            <!-- Services 10 -->
+            <div class="col-lg-3 col-sm-6 mb-16">
+              <div class="service-wrap">
+                <div class="icon-part"><img loading="lazy" decoding="async" class="service-card-icon" src="assets/images/services/icons/modify/dock-shelters-dock-levelers.webp" width="200" height="200" alt="Multideck Cabinet"></div>
+                <div class="content-part">
+                  <h3 class="title"><a href="multideck-cabinet.php">Multideck Cabinet</a></h3>
+                  <div class="desc">Singhania Refrigeration manufactures Multideck Cabinets that offer the right balance of product visibility and uniform, energy-efficient cooling for supermarket chains, convenience stores and food retail outlets that need their dairy, beverage, deli and frozen displays to look good and stay cold all day long.</div>
+                </div>
+              </div>
+            </div>
+            <!-- services 11 -->
+             <div class="col-lg-3 col-sm-6 mb-16">
+              <div class="service-wrap">
+                <div class="icon-part"><img loading="lazy" decoding="async" class="service-card-icon" src="assets/images/services/icons/modify/dock-shelters-dock-levelers.webp" width="200" height="200" alt="PUF Panels"></div>
+                <div class="content-part">
+                  <h3 class="title"><a href="panels.php">PUF Panels</a></h3>
+                  <div class="desc">PUF panels made by Singhania Refrigeration are designed and manufactured using high-performance polyurethane foam insulation. PUF panels can be used in cold storage rooms, warehouses, food processing plants, pharmaceutical companies, and clean rooms throughout India.</div>
+                </div>
+              </div>
+            </div>
+            <!-- services 12 -->
+             <div class="col-lg-3 col-sm-6 mb-16">
+              <div class="service-wrap">
+                <div class="icon-part"><img loading="lazy" decoding="async" class="service-card-icon" src="assets/images/services/icons/modify/refrigerated-truck-acs-containers.webp" width="200" height="200" alt="Truck Refregerated Container"></div>
+                <div class="content-part">
+                  <h3 class="title"><a href="truck-refrigerator-container.php">Truck Refregerated Container</a></h3>
+                  <div class="desc">Singhania Refrigeration is one of the reputed Refrigerated Truck Body Manufacturer in India manufacturing insulated cargo bodies and reefer containers for companies that ship temperature sensitive products.</div>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="col-12 tt-cta services-products-cta">
+              <a href="products.php" class="btn btn-primary">Explore Our Products</a>
+            </div> -->
           </div>
         </div>
       </div>
