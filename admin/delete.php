@@ -61,6 +61,21 @@
 		}
 	}
 
+	elseif($type=='popup_enquiry')
+	{
+		$id = (int)$id;
+		$rs="delete  from popup_enquiry where id=$id";
+		$result=mysqli_query($conn,$rs);
+		if($result)
+		{
+			header("Location:popup-enquiry-details.php");
+		}
+		else
+		{
+			header("Location:popup-enquiry-details.php");
+		}
+	}
+
 
 	elseif($type=='menu')
 	{

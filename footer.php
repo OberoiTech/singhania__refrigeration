@@ -6,7 +6,17 @@
       <div class="f-col" data-aos="fade-up" data-aos-delay="50">
         <div class="brand">
           <a href="index.php" class="brand-logo">
-             <img src="assets/images/products/logoF.png" width="340" height="227" alt="Singhania Refrigeration">
+             <!-- <img src="assets/images/products/logoF.png" width="340" height="227" alt="Singhania Refrigeration"> -->
+              <picture>
+                <source srcset="assets/images/logoF.avif" type="image/avif">
+                <img src="assets/images/logoF.png"
+                      alt="Singhania Refrigeration and Supply Chain Consultancy"
+                      class="site-logo-img"
+                      width="220"
+                      height="85"
+                      decoding="async"
+                      fetchpriority="high">
+              </picture>
           </a>
           <p class="brand-copy">
              Singhania Refrigeration is a trusted Delhi NCR-based industrial refrigeration and cold
@@ -16,11 +26,11 @@
           </p>
           <h4 class="follow-title">Follow Us</h4>
           <ul class="social-pills">
-                <li><a href="https://www.facebook.com/profile.php?id=61579480251463" aria-label="Visit Singhania Refrigeration on Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                <li><a href="https://x.com/SinghaniaR59102" aria-label="Visit Singhania Refrigeration on X"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a></li>
-                <li><a href="https://www.instagram.com/singhaniarefrigeration/" aria-label="Visit Singhania Refrigeration on Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                <li><a href="https://www.linkedin.com/company/singhania-refrigeration-and-supply-chain-consultancy/" aria-label="Visit Singhania Refrigeration on LinkedIn"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
-                <li><a href="https://www.youtube.com/channel/UC-g2bewulBb2oGjPGIDAaJA" aria-label="Visit Singhania Refrigeration on YouTube"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+                <li><a class="social-facebook" href="https://www.facebook.com/profile.php?id=61579480251463" aria-label="Visit Singhania Refrigeration on Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                <li><a class="social-x" href="https://x.com/SinghaniaR59102" aria-label="Visit Singhania Refrigeration on X"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a></li>
+                <li><a class="social-instagram" href="https://www.instagram.com/singhaniarefrigeration/" aria-label="Visit Singhania Refrigeration on Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                <li><a class="social-linkedin" href="https://www.linkedin.com/company/singhania-refrigeration-and-supply-chain-consultancy/" aria-label="Visit Singhania Refrigeration on LinkedIn"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+                <li><a class="social-youtube" href="https://www.youtube.com/channel/UC-g2bewulBb2oGjPGIDAaJA" aria-label="Visit Singhania Refrigeration on YouTube"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
           </ul>
         </div>
       </div>
@@ -43,7 +53,7 @@
           </li>
           <li>
             <span class="ico"><i class="fa fa-clock-o"></i></span>
-            <span class="text">Mon–Fri: <?php echo $time; ?></span>
+            <span class="text">Mon–Fri: 9AM TO 6PM <?php echo $time; ?></span>
           </li>
         </ul>
 
@@ -459,6 +469,26 @@
 .social-pills a:hover{
   background:#0b4d8f;
   border-color:#3ca0ff;
+}
+.social-pills a.social-facebook:hover{
+  background:#1877f2;
+  border-color:#1877f2;
+}
+.social-pills a.social-x:hover{
+  background:#000;
+  border-color:#fff;
+}
+.social-pills a.social-instagram:hover{
+  background:#e4405f;
+  border-color:#e4405f;
+}
+.social-pills a.social-linkedin:hover{
+  background:#0a66c2;
+  border-color:#0a66c2;
+}
+.social-pills a.social-youtube:hover{
+  background:#ff0000;
+  border-color:#ff0000;
 }
 .f-title{
   position:relative;

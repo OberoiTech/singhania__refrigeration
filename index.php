@@ -135,7 +135,33 @@ body{ color:var(--ink); }
 .gtm-noscript-iframe{ display:none !important; visibility:hidden !important; }
 .section-title-accent{ color:#082243 !important; font-size:30px; }
 .about-copy--lead{ margin-top:15px; }
-.notice-banner{ display:block; background:#0a1f3c; color:#fff; padding:10px 16px; font-size:13.5px; font-weight:500; letter-spacing:.3px; }
+.notice-banner{
+  display:block;
+  overflow:hidden;
+  background:#0a1f3c;
+  color:#fff;
+  font-size:13.5px;
+  font-weight:500;
+  letter-spacing:.3px;
+  white-space:nowrap;
+}
+.notice-banner__track{
+  display:flex;
+  width:max-content;
+  animation:noticeTicker 14s linear infinite;
+  will-change:transform;
+}
+.notice-banner__group{
+  display:flex;
+  align-items:center;
+  gap:18px;
+  padding:10px 18px;
+  flex:0 0 auto;
+}
+@keyframes noticeTicker{
+  from{ transform:translateX(0); }
+  to{ transform:translateX(-50%); }
+}
 .text-justify{ text-align:justify; }
 .flex-center{ align-items:center; }
 #rs-about p{ text-align:justify; }
@@ -303,48 +329,246 @@ body{ color:var(--ink); }
 }
 
 /* ========= Modal (Quick Connect) ========= */
-#myModal .modal-dialog{ max-width:450px; width:92%; margin:1.75rem auto; }
+#myModal .modal-dialog{ max-width:900px; width:94%; margin:1.75rem auto; }
 #myModal.modal.in .modal-dialog, #myModal.modal.show .modal-dialog{ display:flex; align-items:center; min-height:calc(100% - 2rem); }
 #myModal .modal-content{
-  border:1px solid rgba(0,0,0,.06); border-radius:16px; background:#fff;
-  box-shadow:0 30px 80px rgba(0, 0, 0, 0.3), 0 12px 24px rgba(0,0,0,.18);
-  transform:translateY(6px); transition:transform .25s ease, box-shadow .25s ease;
+  overflow:hidden;
+  border:0;
+  border-radius:22px;
+  background:#fff;
+  box-shadow:0 30px 90px rgba(4,16,35,.38), 0 12px 34px rgba(0,0,0,.18);
+  transform:translateY(6px);
+  transition:transform .25s ease, box-shadow .25s ease;
 }
 #myModal.modal.in .modal-content, #myModal.modal.show .modal-content{ transform:translateY(0); }
-.modal-backdrop.in, .modal-backdrop.show{ opacity:1!important; background:rgba(17,17,17,.12)!important; backdrop-filter:blur(3px); -webkit-backdrop-filter:blur(3px); }
+.modal-backdrop.in, .modal-backdrop.show{ opacity:1!important; background:rgba(1,12,27,.64)!important; backdrop-filter:blur(4px); -webkit-backdrop-filter:blur(4px); }
 
-#myModal .modal-header{ border:0; padding:14px 18px 0 18px; display:flex; align-items:center; }
-#myModal .modal-title{ margin:0; font-weight:800; font-size:20px; color:#0f2442; }
-#myModal .modal-header .close{
-  margin-left:auto; padding:0; line-height:1; opacity:.75;
-  transition:opacity .12s ease, transform .08s ease;
+#myModal .modal-header{ display:none; }
+#myModal .modal-body{ padding:0; }
+#myModal .quote-modal{
+  display:grid;
+  grid-template-columns: 42% 58%;
+  min-height:540px;
 }
-.modal-header .close { margin: 0px ; }
-#myModal .modal-header .close:hover{ opacity:1; transform:scale(1.06); }
+#myModal .quote-panel{
+  position:relative;
+  overflow:hidden;
+  padding:34px 36px 28px;
+  color:#fff;
+  background:linear-gradient(160deg,#102a5b 0%,#123c73 58%,#0d6295 100%);
+}
+#myModal .quote-panel::before,
+#myModal .quote-panel::after{
+  content:"";
+  position:absolute;
+  width:170px;
+  height:170px;
+  border-radius:32px;
+  background:repeating-linear-gradient(60deg, rgba(255,255,255,.08) 0 8px, transparent 8px 18px);
+  opacity:.6;
+  transform:rotate(45deg);
+}
+#myModal .quote-panel::before{ right:-56px; top:-56px; }
+#myModal .quote-panel::after{ left:-72px; bottom:46px; }
+#myModal .quote-panel > *{ position:relative; z-index:1; }
+#myModal .response-pill{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  padding:8px 15px;
+  border:1px solid rgba(54,213,255,.48);
+  border-radius:999px;
+  background:rgba(7,98,151,.45);
+  color:#56e1ff;
+  font-size:12px;
+  line-height:1;
+  font-weight:800;
+  text-transform:uppercase;
+}
+#myModal .response-pill::before{
+  content:"";
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:#56e1ff;
+  box-shadow:0 0 0 4px rgba(86,225,255,.13);
+}
+#myModal .quote-title{
+  margin:30px 0 14px;
+  color:#fff;
+  font-size:31px;
+  line-height:1.18;
+  font-weight:900;
+}
+#myModal .quote-title span{ color:#43d7ff; }
+#myModal .quote-copy{
+  margin:0 0 28px;
+  color:#c7d8ee;
+  font-size:15px;
+  line-height:1.58;
+}
+#myModal .quote-benefits{
+  display:grid;
+  gap:17px;
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+#myModal .quote-benefits li{
+  display:grid;
+  grid-template-columns:36px 1fr;
+  gap:12px;
+  align-items:center;
+  color:#edf6ff;
+  font-size:14px;
+  line-height:1.35;
+  font-weight:700;
+}
+#myModal .quote-benefits i,
+#myModal .quote-call i,
+#myModal .quote-whatsapp i{
+  display:grid;
+  place-items:center;
+  width:34px;
+  height:34px;
+  border-radius:9px;
+  background:rgba(255,255,255,.12);
+  color:#49dbff;
+  border:1px solid rgba(255,255,255,.1);
+}
+#myModal .quote-actions{
+  display:grid;
+  grid-template-columns:1fr 56px;
+  gap:10px;
+  margin-top:46px;
+}
+#myModal .quote-call,
+#myModal .quote-whatsapp{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  min-height:56px;
+  padding:10px 14px;
+  border-radius:13px;
+  background:rgba(255,255,255,.12);
+  color:#fff;
+  text-decoration:none;
+  border:1px solid rgba(255,255,255,.08);
+}
+#myModal .quote-call small{
+  display:block;
+  color:#bcd2ea;
+  font-size:10px;
+  line-height:1;
+  text-transform:uppercase;
+  font-weight:800;
+}
+#myModal .quote-call strong{ display:block; margin-top:3px; font-size:14px; line-height:1; }
+#myModal .quote-whatsapp{
+  justify-content:center;
+  padding:0;
+  background:rgba(0,161,137,.22);
+}
+#myModal .quote-whatsapp i{ background:transparent; border:0; color:#21e6a8; font-size:20px; }
 
-#myModal .modal-body{ padding:14px 18px 20px 18px; }
-#myModal .modal-body .modal-sub{ color:#55607a; margin:0 0 12px; }
-
-#myModal .form-group{ margin-bottom:12px; }
+#myModal .quote-form{
+  position:relative;
+  padding:38px 36px;
+  background:#fff;
+}
+#myModal .quote-close{
+  position:absolute;
+  top:16px;
+  right:16px;
+  float:none;
+  display:grid;
+  place-items:center;
+  width:38px;
+  height:38px;
+  padding:0;
+  border:0;
+  border-radius:50%;
+  background:#eef3f9;
+  color:#687992;
+  font-size:28px;
+  line-height:1;
+  opacity:1;
+  cursor:pointer;
+  transition:background .18s ease, color .18s ease, transform .12s ease;
+}
+#myModal .quote-close:hover{ background:#dfe8f3; color:#0f2442; transform:scale(1.04); }
+#myModal .modal-title{ margin:0; font-weight:900; font-size:28px; color:#101a2d; }
+#myModal .modal-sub{ color:#6c7f9f; margin:7px 0 22px; font-size:15px; }
+#myModal #response{ margin-bottom:12px; }
+#myModal .form-row-split{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+}
+#myModal .form-group{ position:relative; margin-bottom:16px; }
+#myModal .form-group i{
+  position:absolute;
+  left:16px;
+  top:50%;
+  transform:translateY(-50%);
+  color:#8ca2bd;
+  font-size:16px;
+  pointer-events:none;
+}
 #myModal .form-control{
-  height:46px;
+  height:49px;
   width:100%;
-  border-radius:12px;
-  border:1px solid rgba(14,35,68,.16);
+  padding:0 16px 0 44px;
+  border-radius:13px;
+  border:1px solid #dbe4f0;
+  color:#10203a;
+  font-size:15px;
   box-shadow:none;
+  background:#fff;
 }
-#myModal .form-control:focus{ border-color:#6c8dff; box-shadow:0 0 0 3px rgba(108,141,255,.18); }
-
+#myModal .form-control::placeholder{ color:#8aa0bc; }
+#myModal .form-control:focus{
+  border-color:#2676ff;
+  box-shadow:0 0 0 4px rgba(38,118,255,.16);
+  outline:0;
+}
 #myModal .btn-primary{
-  border-radius:10px; padding:10px 18px; font-weight:700; background:#17203b; border:none; color:#fff;
-  box-shadow:0 12px 28px rgba(14,35,68,.28);
-  transition:transform .1s ease, box-shadow .2s ease, background .2s ease;
+  width:100%;
+  min-height:51px;
+  border:0;
+  border-radius:12px;
+  padding:12px 18px;
+  color:#fff;
+  font-weight:900;
+  background:linear-gradient(90deg,#153366 0%,#2865c8 100%);
+  box-shadow:0 15px 30px rgba(35,93,186,.32);
+  transition:transform .1s ease, box-shadow .2s ease, filter .2s ease;
 }
-#myModal .btn-primary:hover{ background:#132e5f; transform:translateY(-1px); box-shadow:0 16px 34px rgba(14,35,68,.34); }
-
+#myModal .btn-primary:hover{ transform:translateY(-1px); filter:brightness(1.04); box-shadow:0 18px 36px rgba(35,93,186,.38); }
+#myModal .btn-primary .fa{ margin-left:10px; }
+#myModal .privacy-note{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:8px;
+  margin:18px 0 0;
+  color:#7b8fa9;
+  font-size:12px;
+}
+#myModal .privacy-note i{ color:#07b987; }
 #myModal .error{ display:block; color:#d93025; font-size:12px; margin-top:6px; }
 #myModal .submit-spinner{ display:none; margin-left:8px; }
 #myModal .submit-spinner.is-visible{ display:inline-block; }
+@media (max-width: 767px){
+  #myModal .modal-dialog{ width:94%; margin:1rem auto; }
+  #myModal .quote-modal{ grid-template-columns:1fr; min-height:auto; }
+  #myModal .quote-panel{ padding:26px 24px; }
+  #myModal .quote-title{ margin-top:22px; font-size:26px; }
+  #myModal .quote-copy{ margin-bottom:20px; }
+  #myModal .quote-actions{ margin-top:24px; }
+  #myModal .quote-form{ padding:30px 24px 28px; }
+  #myModal .form-row-split{ grid-template-columns:1fr; gap:0; }
+}
 
 @media (max-width: 991px){ .md-mt-40{ margin-top:40px!important; } }
 
@@ -470,6 +694,7 @@ body{ color:var(--ink); }
   transform:translateY(100%);
   transition:transform .65s ease;
   z-index:0;
+  pointer-events:none;
 }
 .rs-services.style1:not(.modify) .service-wrap:hover,
 .rs-services.modify .service-wrap:hover{
@@ -486,6 +711,15 @@ body{ color:var(--ink); }
 .rs-services.modify .service-wrap .content-part{
   position:relative;
   z-index:1;
+}
+.rs-services.style1:not(.modify) .service-wrap,
+.rs-services.modify .service-wrap{
+  cursor:pointer;
+}
+.rs-services.style1:not(.modify) .service-wrap a,
+.rs-services.modify .service-wrap a{
+  position:relative;
+  z-index:2;
 }
 .rs-services.style1:not(.modify) .service-wrap .icon-part,
 .rs-services.modify .service-wrap .icon-part{
@@ -668,17 +902,32 @@ if ('requestIdleCallback' in window) {
         <!-- /Slider -->
 
         <!-- ===== TRUST BAR ===== -->
-        <marquee class="notice-banner" behavior="scroll" direction="left" scrollamount="9">
-          ✅&nbsp; 25 Years Cold Chain Expertise (Singhania Group)
-          &nbsp;&nbsp;|&nbsp;&nbsp;
-          🏭&nbsp; 10+ Years as Singhania Refrigeration
-          &nbsp;&nbsp;|&nbsp;&nbsp;
-          ⚙️&nbsp; 99.9% System Uptime
-          &nbsp;&nbsp;|&nbsp;&nbsp;
-          🌍&nbsp; Pan-India Project Delivery
-          &nbsp;&nbsp;|&nbsp;&nbsp;
-          📋&nbsp; FSSAI &amp; WHO-GMP Aligned Systems
-        </marquee>
+        <div class="notice-banner" aria-label="Singhania Refrigeration trust highlights">
+          <div class="notice-banner__track">
+            <div class="notice-banner__group">
+              <span>&#9989;&nbsp; 25 Years Cold Chain Expertise (Singhania Group)</span>
+              <span>|</span>
+              <span>&#127981;&nbsp; 10+ Years as Singhania Refrigeration</span>
+              <span>|</span>
+              <span>&#9881;&nbsp; 99.9% System Uptime</span>
+              <span>|</span>
+              <span>&#127757;&nbsp; Pan-India Project Delivery</span>
+              <span>|</span>
+              <span>&#128203;&nbsp; FSSAI &amp; WHO-GMP Aligned Systems</span>
+            </div>
+            <div class="notice-banner__group" aria-hidden="true">
+              <span>&#9989;&nbsp; 25 Years Cold Chain Expertise (Singhania Group)</span>
+              <span>|</span>
+              <span>&#127981;&nbsp; 10+ Years as Singhania Refrigeration</span>
+              <span>|</span>
+              <span>&#9881;&nbsp; 99.9% System Uptime</span>
+              <span>|</span>
+              <span>&#127757;&nbsp; Pan-India Project Delivery</span>
+              <span>|</span>
+              <span>&#128203;&nbsp; FSSAI &amp; WHO-GMP Aligned Systems</span>
+            </div>
+          </div>
+        </div>
         <!-- ===== TRUST BAR END ===== -->
       <!-- ===== Mini Services ===== -->
       <div class="rs-services style1 pt-100 pb-84 md-pt-80 md-pb-64">
@@ -762,7 +1011,9 @@ if ('requestIdleCallback' in window) {
               </p> -->
               <div class="menu-cta menu-cta--flush">
                   <!-- <a class="btn-cfa" href="about-us.php">Learn more</a> -->
-                  <a class="btn-cfa" href="about-us.php" aria-label="Learn more about Singhania Refrigeration">Learn more</a>
+                <a class="btn-cfa" href="about-us.php">
+    About Singhania Refrigeration
+</a>
               </div>
             </div>
           </div>
@@ -783,7 +1034,7 @@ if ('requestIdleCallback' in window) {
             <!-- Service 1 -->
             <div class="col-lg-3 col-sm-6 mb-16">
               <div class="service-wrap">
-                <div class="icon-part"><img loading="lazy" decoding="async" class="truck-service-icon" src="assets/images/services/icons/modify/refrigerated-truck-acs-containers.webp" width="200" height="200" alt="Refrigerated truck AC and container unit"></div>
+                <div class="icon-part"><img loading="lazy" decoding="async" class="truck-service-icon" src="assets/images/IMAGES HOMEPAGE/refrigerated-truck-acs-containers.avif" width="200" height="200" alt="Refrigerated truck AC and container unit"></div>
                 <div class="content-part">
                   <h3 class="title"><a href="truck-ac.php">Refrigerated Truck ACs</a> &amp; <a href="truck-refrigerator-container.php">Containers</a></h3>
                   <div class="desc">Transport Refrigeration Units for trucks and reefer containers, keeping Perishables – Food, Dairy and Pharma Products, temperature controlled on routes across Delhi NCR and Pan India.</div>
@@ -794,7 +1045,7 @@ if ('requestIdleCallback' in window) {
             <!-- Service 2 -->
             <div class="col-lg-3 col-sm-6 mb-16">
               <div class="service-wrap">
-                <div class="icon-part"><img loading="lazy" decoding="async" class="service-card-icon" src="assets/images/services/icons/modify/cold-storage-warehouse.webp" width="200" height="200" alt="Cold room and cold storage solution"></div>
+                <div class="icon-part"><img loading="lazy" decoding="async" class="service-card-icon" src="assets/images/IMAGES HOMEPAGE/refrigerated-truck-acs-containers.avif" width="200" height="200" alt="Cold room and cold storage solution"></div>
                 <div class="content-part">
                   <h3 class="title"><a href="cold-storage-refrigeration-units.php">Cold Rooms &amp; Storage Solutions</a></h3>
                   <div class="desc">Cold rooms based on ammonia and freon, Controlled Atmosphere (CA) stores, Ripening Chambers &amp; Blast Freezer Systems, designed to meet the shelf-life and temperature requirements of your product.</div>
@@ -805,7 +1056,7 @@ if ('requestIdleCallback' in window) {
             <!-- Service 3 -->
             <div class="col-lg-3 col-sm-6 mb-16">
               <div class="service-wrap">
-                <div class="icon-part"><img loading="lazy" decoding="async" class="service-card-icon" src="assets/images/services/icons/modify/compressor-rack-systems.webp" width="200" height="200" alt="Industrial compressor rack system"></div>
+                <div class="icon-part"><img loading="lazy" decoding="async" class="service-card-icon" src="assets/images/IMAGES HOMEPAGE/compressor-rack-systems.avif" width="200" height="200" alt="Industrial compressor rack system"></div>
                 <div class="content-part">
                   <h3 class="title"><a href="compressor-rack-system.php">Compressor Rack Systems</a></h3>
                   <div class="desc">Centralised, energy efficient compressor rack systems for supermarkets, food retail chains and large cold storage warehouses, reducing refrigerant charge and maintenance.</div>
@@ -816,7 +1067,7 @@ if ('requestIdleCallback' in window) {
             <!-- Service 4 -->
             <div class="col-lg-3 col-sm-6 mb-16">
               <div class="service-wrap">
-                <div class="icon-part"><img loading="lazy" decoding="async" class="service-card-icon" src="assets/images/services/icons/modify/ammonia-refrigeration-units.webp" width="200" height="200" alt="Ammonia refrigeration unit"></div>
+                <div class="icon-part"><img loading="lazy" decoding="async" class="service-card-icon" src="assets/images/IMAGES HOMEPAGE/ammonia-refrigeration-units.avif" width="200" height="200" alt="Ammonia refrigeration unit"></div>
                 <div class="content-part">
                   <h3 class="title"><a href="ammonia-refrigeration-units.php">Ammonia Refrigeration Units</a></h3>
                   <div class="desc">Industrial grade ammonia (NH3) and Freon refrigeration plants are for food processing units, large cold storage warehouses, fisheries and dairy operations requiring high capacity and energy efficient cooling</div>
@@ -827,7 +1078,7 @@ if ('requestIdleCallback' in window) {
             <!-- Service 5 -->
             <div class="col-lg-3 col-sm-6 mb-16">
               <div class="service-wrap">
-                <div class="icon-part"><img loading="lazy" decoding="async" class="service-card-icon" src="assets/images/services/icons/modify/ripening-chambers.webp" width="200" height="200" alt="Ripening chamber for fruits and produce"></div>
+                <div class="icon-part"><img loading="lazy" decoding="async" class="service-card-icon" src="assets/images/IMAGES HOMEPAGE/ripening-chambers.avif" width="200" height="200" alt="Ripening chamber for fruits and produce"></div>
                 <div class="content-part">
                   <h3 class="title"><a href="ripening-systems.php">Ripening Chambers</a></h3>
                   <div class="desc">Ethylene-controlled ripening chambers for bananas, mangoes, papayas and other climacteric fruits, delivering consistent, ready-to-sell ripening for every pallet.</div>
@@ -838,7 +1089,7 @@ if ('requestIdleCallback' in window) {
             <!-- Service 6 -->
             <div class="col-lg-3 col-sm-6 mb-16">
               <div class="service-wrap">
-                <div class="icon-part"><img loading="lazy" decoding="async" class="service-card-icon" src="assets/images/services/icons/modify/iqf-technology.webp" width="200" height="200" alt="IQF individual quick freezing technology"></div>
+                <div class="icon-part"><img loading="lazy" decoding="async" class="service-card-icon" src="assets/images/IMAGES HOMEPAGE/iqf-technology.avif" width="200" height="200" alt="IQF individual quick freezing technology"></div>
                 <div class="content-part">
                   <h3 class="title"><a href="iqf.php">IQF Technology</a></h3>
                   <div class="desc">Individual Quick Freeze (IQF) machine systems flash-freeze seafood, fruits, vegetables and ready-to-eat products for export-quality output and to preserve texture, nutrition and appearance.</div>
@@ -849,7 +1100,7 @@ if ('requestIdleCallback' in window) {
             <!-- Service 7 -->
             <div class="col-lg-3 col-sm-6 mb-16">
               <div class="service-wrap">
-                <div class="icon-part"><img loading="lazy" decoding="async" class="service-card-icon" src="assets/images/services/icons/modify/puf-panels-insulated-doors.webp" width="200" height="200" alt="PUF panel and insulated cold storage door"></div>
+                <div class="icon-part"><img loading="lazy" decoding="async" class="service-card-icon" src="assets/images/IMAGES HOMEPAGE/puf-panels-insulated-doors.avif" width="200" height="200" alt="PUF panel and insulated cold storage door"></div>
                 <div class="content-part">
                   <h3 class="title"><a href="panels.php">PUF Panels</a> &amp; <a href="doors-ca-doors.php">Insulated Doors</a></h3>
                   <div class="desc">High density PUF panel insulation and cold room doors that make up the thermal envelope of your cold storage facility – designed for airtight insulation and minimal energy loss.</div>
@@ -860,7 +1111,7 @@ if ('requestIdleCallback' in window) {
             <!-- Service 8 -->
             <div class="col-lg-3 col-sm-6 mb-16">
               <div class="service-wrap">
-                <div class="icon-part"><img loading="lazy" decoding="async" class="service-card-icon" src="assets/images/services/icons/modify/dock-shelters-dock-levelers.webp" width="200" height="200" alt="Dock shelter and dock leveler equipment"></div>
+                <div class="icon-part"><img loading="lazy" decoding="async" class="service-card-icon" src="assets/images/IMAGES HOMEPAGE/dock-shelters-dock-levelers.avif" width="200" height="200" alt="Dock shelter and dock leveler equipment"></div>
                 <div class="content-part">
                   <h3 class="title"><a href="dock-shelter-dock-leveler.php">Dock Shelters &amp; Dock Levelers</a></h3>
                   <div class="desc">Dock Shelter and Leveler Systems seal the gap between your cold facility and delivery vehicles. Protect product temperature while loading and unloading.</div>
@@ -888,7 +1139,7 @@ if ('requestIdleCallback' in window) {
               </div>
             </div>
             <!-- services 11 -->
-             <div class="col-lg-3 col-sm-6 mb-16">
+             <!-- <div class="col-lg-3 col-sm-6 mb-16">
               <div class="service-wrap">
                 <div class="icon-part"><img loading="lazy" decoding="async" class="service-card-icon" src="assets/images/services/icons/modify/dock-shelters-dock-levelers.webp" width="200" height="200" alt="PUF Panels"></div>
                 <div class="content-part">
@@ -896,7 +1147,7 @@ if ('requestIdleCallback' in window) {
                   <div class="desc">PUF panels made by Singhania Refrigeration are designed and manufactured using high-performance polyurethane foam insulation. PUF panels can be used in cold storage rooms, warehouses, food processing plants, pharmaceutical companies, and clean rooms throughout India.</div>
                 </div>
               </div>
-            </div>
+            </div> -->
             <!-- services 12 -->
              <div class="col-lg-3 col-sm-6 mb-16">
               <div class="service-wrap">
@@ -1518,43 +1769,74 @@ if ('requestIdleCallback' in window) {
   <div class="modal fade" id="myModal" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
-        <div class="modal-header">
-          <h2 class="modal-title">Quick Connect</h2>
-          <button type="button" class="close" aria-label="Close" data-dismiss="modal">&times;</button>
-        </div>
-
         <div class="modal-body">
-          <div id="response" class="mb-3"></div>
+          <div class="quote-modal">
+            <aside class="quote-panel">
+             
+              <h2 class="quote-title">Get a free quote for your <span>cold storage project</span></h2>
+              <p class="quote-copy">Design, installation &amp; maintenance of cold rooms, CA/MA plants, ripening chambers,PUF Panels and IQF systems in Delhi NCR.</p>
 
-          <form action="#" method="post" id="enquiryForm" novalidate>
-            <div class="form-group">
-              <label for="name" class="sr-only">Name</label>
-              <input type="text" class="form-control" id="name" name="name"
-                    placeholder="Name" required>
-            </div>
+              <ul class="quote-benefits">
+                <li><i class="fa fa-shield"></i><span>Customized solution for your storage capacity</span></li>
+                <li><i class="fa fa-clock-o"></i><span>Quick consultation from our refrigeration team</span></li>
+                <li><i class="fa fa-wrench"></i><span>Expert guidance on plant design &amp; equipment selection</span></li>
+              </ul>
 
-            <div class="form-group">
-              <label for="email" class="sr-only">Email</label>
-              <input type="email" class="form-control" id="email" name="email"
-                    placeholder="Email" required>
-            </div>
+              <div class="quote-actions">
+                <a class="quote-call" href="tel:+91<?php echo preg_replace('/\D+/', '', $mobile ?? ''); ?>">
+                  <i class="fa fa-phone"></i>
+                  <span><small>Call us</small><strong>+91 <?php echo htmlspecialchars($mobile ?? '', ENT_QUOTES); ?></strong></span>
+                </a>
+                <a class="quote-whatsapp" href="https://wa.me/91<?php echo preg_replace('/\D+/', '', $mobile ?? ''); ?>" aria-label="Chat on WhatsApp">
+                  <i class="fa fa-whatsapp"></i>
+                </a>
+              </div>
+            </aside>
 
-            <div class="form-group">
-              <label for="mobile" class="sr-only">Mobile Number</label>
-              <input type="tel" class="form-control" id="mobile" name="mobile"
-                    placeholder="Mobile Number" inputmode="tel" pattern="[0-9+\-\s()]{6,}" required>
-            </div>
+            <section class="quote-form">
+              <button type="button" class="quote-close close" aria-label="Close" data-dismiss="modal">&times;</button>
+              <h2 class="modal-title">Quick Connect</h2>
+              <p class="modal-sub">Fill in your details &mdash; we'll do the rest.</p>
+              <div id="response" class="mb-3"></div>
 
-            <button type="submit" class="btn btn-primary submit_data">
-              <span class="btn-text">Submit</span>
-              <span class="submit-spinner" aria-hidden="true">⏳</span>
-            </button>
-          </form>
+              <form action="#" method="post" id="enquiryForm" novalidate>
+                <div class="form-group">
+                  <label for="name" class="sr-only">Name</label>
+                  <i class="fa fa-user-o" aria-hidden="true"></i>
+                  <input type="text" class="form-control" id="name" name="name"
+                        placeholder="Full name" required>
+                </div>
+
+                <div class="form-row-split">
+                  <div class="form-group">
+                    <label for="email" class="sr-only">Email</label>
+                    <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                    <input type="email" class="form-control" id="email" name="email"
+                          placeholder="Email address" required>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="mobile" class="sr-only">Mobile Number</label>
+                    <i class="fa fa-phone" aria-hidden="true"></i>
+                    <input type="tel" class="form-control" id="mobile" name="mobile"
+                          placeholder="Mobile number" inputmode="tel" pattern="[0-9+\-\s()]{6,}" required>
+                  </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary submit_data">
+                  <span class="btn-text">Get My Free Quote</span>
+                  <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                  <span class="submit-spinner" aria-hidden="true">...</span>
+                </button>
+
+                <p class="privacy-note"><i class="fa fa-shield"></i><span>Your details are safe with us. No spam, ever.</span></p>
+              </form>
+            </section>
+          </div>
         </div>
       </div>
     </div>
   </div>
-
     <style>
 /* Testimonials single-slide behavior */
 .rs-testimonial .testi-item{ float:none !important; width:auto !important; display:block !important; }
@@ -1586,7 +1868,7 @@ $(window).on('load', function () {
     setTimeout(function () {
       $('#myModal').modal('show');
       // sessionStorage.setItem('sr_popup_shown', '1');
-    }, 10000 + Math.floor(Math.random() * 2001));
+    }, 2500);
   }
 });
 
@@ -1601,6 +1883,16 @@ document.addEventListener("DOMContentLoaded", function(){
     });
   }, {threshold: 0.2});
   elems.forEach(el=>io.observe(el));
+
+  document.querySelectorAll('.rs-services .service-wrap').forEach(function(card){
+    card.addEventListener('click', function(e){
+      if (e.target.closest('a')) return;
+      var firstLink = card.querySelector('a[href]');
+      if (firstLink) {
+        window.location.href = firstLink.href;
+      }
+    });
+  });
 });
 
 $(function(){

@@ -60,6 +60,11 @@ function isExpanded($files)
             transition: background 0.14s ease, color 0.14s ease, border-color 0.14s ease, padding-left 0.14s ease;
         }
 
+        .app-menu__item[data-sr-treeview] {
+            cursor: pointer;
+            user-select: none;
+        }
+
         .app-menu__item .app-menu__icon {
             color: #fff;
             margin-right: 10px;
@@ -168,8 +173,8 @@ function isExpanded($files)
         </li>
 
         <!-- Enquiry Master -->
-        <li class="treeview<?php echo isExpanded(['enquiry-details.php']); ?>">
-            <a class="app-menu__item<?php echo isActive('enquiry-details.php'); ?>" href="#" data-toggle="treeview">
+        <li class="treeview<?php echo isExpanded(['enquiry-details.php','popup-enquiry-details.php']); ?>">
+            <a class="app-menu__item<?php echo isActive(['enquiry-details.php','popup-enquiry-details.php']); ?>" data-sr-treeview>
                 <i class="app-menu__icon fa fa-phone"></i>
                 <span class="app-menu__label">Enquiry Master</span>
                 <i class="treeview-indicator fa fa-angle-right"></i>
@@ -180,12 +185,17 @@ function isExpanded($files)
                         <i class="icon fa fa-circle-o"></i> Enquiry Details
                     </a>
                 </li>
+                <li>
+                    <a class="treeview-item" href="popup-enquiry-details.php">
+                        <i class="icon fa fa-circle-o"></i> Popup Enquiry Details
+                    </a>
+                </li>
             </ul>
         </li>
 
         <!-- Services Master -->
         <li class="treeview<?php echo isExpanded(['add-services.php','services-details.php']); ?>">
-            <a class="app-menu__item<?php echo isActive(['add-services.php','services-details.php']); ?>" href="#" data-toggle="treeview">
+            <a class="app-menu__item<?php echo isActive(['add-services.php','services-details.php']); ?>" data-sr-treeview>
                 <i class="app-menu__icon fa fa-users"></i>
                 <span class="app-menu__label">Services Master</span>
                 <i class="treeview-indicator fa fa-angle-right"></i>
@@ -198,7 +208,7 @@ function isExpanded($files)
 
         <!-- Teams Master -->
         <li class="treeview<?php echo isExpanded(['add-teams.php','teams-details.php']); ?>">
-            <a class="app-menu__item<?php echo isActive(['add-teams.php','teams-details.php']); ?>" href="#" data-toggle="treeview">
+            <a class="app-menu__item<?php echo isActive(['add-teams.php','teams-details.php']); ?>" data-sr-treeview>
                 <i class="app-menu__icon fa fa-users"></i>
                 <span class="app-menu__label">Teams Master</span>
                 <i class="treeview-indicator fa fa-angle-right"></i>
@@ -211,7 +221,7 @@ function isExpanded($files)
 
         <!-- Configuration Master -->
         <li class="treeview<?php echo isExpanded(['configuration-details.php']); ?>">
-            <a class="app-menu__item<?php echo isActive(['configuration-details.php']); ?>" href="#" data-toggle="treeview">
+            <a class="app-menu__item<?php echo isActive(['configuration-details.php']); ?>" data-sr-treeview>
                 <i class="app-menu__icon fa fa-user"></i>
                 <span class="app-menu__label">Configuration Master</span>
                 <i class="treeview-indicator fa fa-angle-right"></i>
@@ -223,7 +233,7 @@ function isExpanded($files)
 
         <!-- Pages Master -->
         <li class="treeview<?php echo isExpanded(['menu-details.php','submenu-details.php','banners-details.php']); ?>">
-            <a class="app-menu__item<?php echo isActive(['menu-details.php','submenu-details.php','banners-details.php']); ?>" href="#" data-toggle="treeview">
+            <a class="app-menu__item<?php echo isActive(['menu-details.php','submenu-details.php','banners-details.php']); ?>" data-sr-treeview>
                 <i class="app-menu__icon fa fa-files-o"></i>
                 <span class="app-menu__label">Pages Master</span>
                 <i class="treeview-indicator fa fa-angle-right"></i>
@@ -237,7 +247,7 @@ function isExpanded($files)
 
         <!-- Products Master -->
         <li class="treeview<?php echo isExpanded(['add-products.php','products-details.php']); ?>">
-            <a class="app-menu__item<?php echo isActive(['add-products.php','products-details.php']); ?>" href="#" data-toggle="treeview">
+            <a class="app-menu__item<?php echo isActive(['add-products.php','products-details.php']); ?>" data-sr-treeview>
                 <i class="app-menu__icon fa fa-cube"></i>
                 <span class="app-menu__label">Products Master</span>
                 <i class="treeview-indicator fa fa-angle-right"></i>
@@ -250,7 +260,7 @@ function isExpanded($files)
 
         <!-- Blogs Master -->
         <li class="treeview<?php echo isExpanded(['category-details.php','add-blog.php','blogs-details.php']); ?>">
-            <a class="app-menu__item<?php echo isActive(['category-details.php','add-blog.php','blogs-details.php']); ?>" href="#" data-toggle="treeview">
+            <a class="app-menu__item<?php echo isActive(['category-details.php','add-blog.php','blogs-details.php']); ?>" data-sr-treeview>
                 <i class="app-menu__icon fa fa-pencil-square-o"></i>
                 <span class="app-menu__label">Blogs Master</span>
                 <i class="treeview-indicator fa fa-angle-right"></i>
@@ -264,7 +274,7 @@ function isExpanded($files)
 
         <!-- Training Master -->
         <li class="treeview<?php echo isExpanded(['training-details.php']); ?>">
-            <a class="app-menu__item<?php echo isActive(['training-details.php']); ?>" href="#" data-toggle="treeview">
+            <a class="app-menu__item<?php echo isActive(['training-details.php']); ?>" data-sr-treeview>
                 <i class="app-menu__icon fa fa-graduation-cap"></i>
                 <span class="app-menu__label">Training Master</span>
                 <i class="treeview-indicator fa fa-angle-right"></i>
@@ -275,3 +285,28 @@ function isExpanded($files)
         </li>
     </ul>
 </aside>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var menu = document.querySelector('.app-menu');
+    if (!menu) return;
+
+    menu.querySelectorAll('[data-sr-treeview]').forEach(function (toggle) {
+        toggle.addEventListener('click', function (event) {
+            event.preventDefault();
+
+            var item = toggle.closest('.treeview');
+            if (!item) return;
+
+            var isOpen = item.classList.contains('is-expanded');
+            menu.querySelectorAll('.treeview.is-expanded').forEach(function (openItem) {
+                if (openItem !== item) {
+                    openItem.classList.remove('is-expanded');
+                }
+            });
+
+            item.classList.toggle('is-expanded', !isOpen);
+        });
+    });
+});
+</script>

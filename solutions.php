@@ -27,7 +27,7 @@
       linear-gradient(90deg, rgba(6,18,38,.95) 0%, rgba(8,34,67,.78) 52%, rgba(8,34,67,.28) 100%),
       url('assets/images/products/cold-storage.jpg') center/cover no-repeat;
   }
-  .solutions-hero:after{
+  /* .solutions-hero:after{
     content:"";
     position:absolute;
     left:0;
@@ -36,7 +36,7 @@
     height:90px;
     background:linear-gradient(180deg, rgba(255,255,255,0), #fff);
     pointer-events:none;
-  }
+  } */
   .solutions-hero__content{
     position:relative;
     z-index:1;

@@ -247,7 +247,7 @@ if (isset($_POST['submit'])) {
     <script src="js/main.js"></script>
     <!-- The javascript plugin to display page loading on top-->
     <script src="js/plugins/pace.min.js"></script>
-    <script src="https://cdn.ckeditor.com/4.20.0/standard/ckeditor.js"></script>
+    <script src="ckeditor/ckeditor.js"></script>
 
     <script>
         CKEDITOR.replace('description');

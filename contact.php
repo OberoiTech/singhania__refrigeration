@@ -88,27 +88,42 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     /* ===== Full-width hero (matches About) ===== */
     .contact-hero{
-      position:relative; width:100%;
-      padding:82px 0;
+      position:relative;
+      width:100%;
+      min-height:560px;
+      display:flex;
+      align-items:center;
       background:
-        radial-gradient(120% 160% at 8% -10%, #1a2b55 0%, rgba(26,43,85,0) 55%),
-        radial-gradient(110% 140% at 95% -20%, #0f1a39 0%, rgba(15,26,57,0) 55%),
-        linear-gradient(180deg, #0e1a37 0%, #0c1224 100%);
+        linear-gradient(90deg, rgba(6,18,38,.92) 0%, rgba(8,34,67,.78) 48%, rgba(8,34,67,.34) 100%),
+        url('assets/images/contact/left-img.jpg') center/cover no-repeat;
       overflow:hidden;
+    }
+    .contact-hero::before{
+      content:""; position:absolute; inset:0;
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,0) 42%);
+      pointer-events:none;
+    }
+    .contact-hero::after{
+      content:""; position:absolute; left:0; right:0; bottom:0; height:90px;
+      /* background:linear-gradient(180deg, rgba(255,255,255,0), #ffffff); */
+      pointer-events:none;
     }
     .contact-hero .container{ position:relative; z-index:1; }
     .titlecard{
-      max-width: 860px;
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.22);
-      border-radius: 8px;
-      padding: 22px 22px 24px;
-      color:#e8eeff; box-shadow:0 22px 60px rgba(0,0,0,.28);
+      max-width: 900px;
+      padding:110px 0 130px;
+      color:#e8eeff;
       animation: fadeUp .6s ease-out both;
     }
-    .eyebrow{ display:inline-block; font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:#a9b7df; margin-bottom:4px; }
-    .contact-hero h1{ margin:0 0 10px; font-weight:800; color:#fff; font-size:clamp(28px,4.2vw,40px); }
-    .contact-hero p{ margin:0; color:#cbd6ff; }
+    .eyebrow{
+      display:inline-flex; align-items:center; gap:8px;
+      font-size:12px; letter-spacing:.18em; text-transform:uppercase;
+      color:#dbe6ff; background:rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.16); border-radius:999px;
+      padding:7px 11px; margin-bottom:12px;
+    }
+    .contact-hero h1{ margin:0 0 16px; font-weight:900; color:#fff; font-size:clamp(32px,4.8vw,56px); line-height:1.05; max-width:820px; }
+    .contact-hero p{ margin:0; color:#e6ecff; font-size:17px; line-height:1.78; max-width:820px; }
 
     /* ===== Body (white) with subtle texture ===== */
     .contact-section{ position:relative; background:#fff; padding:92px 0; }
@@ -197,14 +212,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     @media (max-width:991px){
       .form-wrap{ position:static; top:auto; }
-      .contact-hero{ padding:64px 0; }
+      .contact-hero{ min-height:auto; }
+      .titlecard{ padding:92px 0 110px; }
       .contact-section{ padding:72px 0; }
     }
 
     @media (max-width:575.98px){
-      .contact-hero{ padding:48px 0; }
+      .titlecard{ padding:76px 0 92px; }
+      .contact-hero h1{ font-size:clamp(28px, 8vw, 36px); line-height:1.18; }
+      .contact-hero p{ font-size:15px; line-height:1.7; }
       .contact-section{ padding:56px 0; }
-      .titlecard{ padding:22px 18px; border-radius:8px; }
     }
 
     /* Animations */

@@ -588,7 +588,7 @@ body.menu-open{ overflow:hidden; }
         <div class="row">
           <div class="col-lg-2">
             <div class="logo-area logo-area--tall">
-              <a href="index.php"><img src="assets/images/logoS.png" width="1536" height="864" alt="Singhania Refrigeration"></a>
+              <a href="index.php"><img src="assets/images/logoS.avif" width="1536" height="864" alt="Singhania Refrigeration"></a>
             </div>
           </div>
           <div class="col-lg-10 text-right">

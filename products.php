@@ -10,28 +10,66 @@
     --card:#ffffff; --soft:#f6f8ff;
   }
 
-  /* ===== Hero (same structure, slightly richer look) ===== */
-  .about-hero{ position:relative; padding:64px 0 28px; overflow:hidden; }
-  .about-hero__bg{
-    position:absolute; inset:0;
+  /* ===== Hero ===== */
+  .about-hero{
+    position:relative;
+    min-height:560px;
+    display:flex;
+    align-items:center;
+    overflow:hidden;
     background:
-      radial-gradient(80% 100% at 12% -10%, rgba(74,98,184,.30) 0%, rgba(74,98,184,0) 60%),
-      radial-gradient(70% 90% at 88% -20%, rgba(19,43,99,.22) 0%, rgba(19,43,99,0) 55%),
-      linear-gradient(180deg,#101a3a 0%, #0b1227 100%);
-    opacity:.96; z-index:-1;
+      linear-gradient(90deg, rgba(6,18,38,.92) 0%, rgba(8,34,67,.78) 48%, rgba(8,34,67,.34) 100%),
+      url('assets/images/products/cold-storage.jpg') center/cover no-repeat;
+  }
+  .about-hero::before{
+    content:""; position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,0) 42%);
+    pointer-events:none;
+  }
+  /* .about-hero::after{
+    content:""; position:absolute; left:0; right:0; bottom:0; height:90px;
+    background:linear-gradient(180deg, rgba(255,255,255,0), #ffffff);
+    pointer-events:none;
+  } */
+  .about-hero__bg{
+    display:none;
   }
   .about-hero__card{
-    max-width: 980px;
-    background: rgba(255,255,255,.08);
-    border: 1px solid rgba(255,255,255,.16);
-    border-radius: 16px;
-    padding: clamp(18px, 4vw, 30px);
+    position:relative;
+    z-index:1;
+    max-width:900px;
+    padding:110px 0 130px;
     color:#eaf0ff;
-    box-shadow: 0 24px 60px rgba(0,0,0,.28);
-    backdrop-filter: blur(6px) saturate(125%);
   }
-  .about-hero__card h1{ font-size: clamp(28px, 4vw, 46px); margin:6px 0 8px; color:#fff; }
-  .eyebrow{ display:inline-block; font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:#b7c4ea; }
+  .about-hero__card h1{
+    font-size:clamp(32px,4.8vw,56px);
+    line-height:1.05;
+    margin:0 0 16px;
+    color:#fff;
+    font-weight:900;
+    max-width:820px;
+  }
+  .about-hero__card p{
+    color:#e6ecff;
+    margin:0;
+    font-size:17px;
+    line-height:1.78;
+    max-width:820px;
+  }
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-size:12px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:#dbe6ff;
+    background:rgba(255,255,255,.10);
+    border:1px solid rgba(255,255,255,.16);
+    border-radius:999px;
+    padding:7px 11px;
+    margin-bottom:12px;
+  }
 
   /* ===== Section header ===== */
   .section-head{ display:grid; gap:10px; margin-bottom:36px; }
@@ -90,8 +128,17 @@
   /* spacing helpers */
   .pt-100{ padding-top:100px; } .pb-70{ padding-bottom:70px; }
   @media (max-width: 991px){
-    .about-hero{ padding:48px 0 20px; }
+    .about-hero{ min-height:auto; }
+    .about-hero__card{ padding:92px 0 110px; }
     .card-prod__img img{ height:200px; }
+  }
+  @media (max-width: 767px){
+    .about-hero__card{ padding:76px 0 92px; }
+    .about-hero__card h1{ font-size:clamp(28px, 8vw, 36px); line-height:1.18; }
+    .about-hero__card p{ font-size:15px; line-height:1.7; }
+  }
+  @media (max-width: 420px){
+    .about-hero__card{ padding:64px 0 78px; }
   }
 </style>
 
