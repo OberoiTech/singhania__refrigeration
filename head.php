@@ -11,7 +11,6 @@ $defaultDescription = 'Singhania Refrigeration provides advanced cold storage an
 $defaultKeywords = 'cold storage solutions, industrial refrigeration, cold chain solutions, Singhania Refrigeration';
 $pageTitle = $pageTitle ?? $defaultTitle;
 $pageDescription = $pageDescription ?? $defaultDescription;
-$ogDescription = $ogDescription ?? $pageDescription;
 $pageKeywords = $pageKeywords ?? $defaultKeywords;
 $siteUrl = 'https://singhaniarefrigeration.com/';
 $shareImage = $shareImage ?? $siteUrl . 'admin/uploads/image.jpg';
@@ -52,6 +51,9 @@ if (in_array(strtolower($file), ['about-us.php', 'about.php'], true)) {
     $pageTitle = $aboutTitle;
     $pageDescription = 'About Singhania Refrigeration and our cold storage, industrial refrigeration and cold chain solutions across India.';
 }
+$ogTitle = $ogTitle ?? $pageTitle;
+$ogDescription = $ogDescription ?? $pageDescription;
+$twitterTitle = $twitterTitle ?? $pageTitle;
 $twitterDescription = $twitterDescription ?? $pageDescription;
 ?>
 
@@ -59,11 +61,11 @@ $twitterDescription = $twitterDescription ?? $pageDescription;
         <meta charset="utf-8">
         <title><?php echo htmlspecialchars($pageTitle, ENT_QUOTES, 'UTF-8'); ?></title>
         <meta name="description" content="<?php echo htmlspecialchars($pageDescription, ENT_QUOTES, 'UTF-8'); ?>">
-        <meta name="keywords" content="<?php echo htmlspecialchars($pageKeywords, ENT_QUOTES, 'UTF-8'); ?>">
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
         <!-- responsive tag -->
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta property="og:title" content="<?php echo htmlspecialchars($pageTitle, ENT_QUOTES, 'UTF-8'); ?>">
+        <meta property="og:title" content="<?php echo htmlspecialchars($ogTitle, ENT_QUOTES, 'UTF-8'); ?>">
         <meta property="og:site_name" content="Singhania Refrigeration">
         <meta property="og:url" content="<?php echo htmlspecialchars($schemaPageUrl, ENT_QUOTES, 'UTF-8'); ?>">
         <meta property="og:description" content="<?php echo htmlspecialchars($ogDescription, ENT_QUOTES, 'UTF-8'); ?>">
@@ -73,7 +75,7 @@ $twitterDescription = $twitterDescription ?? $pageDescription;
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:site" content="<?php echo htmlspecialchars($twitterHandle, ENT_QUOTES, 'UTF-8'); ?>">
         <meta name="twitter:creator" content="<?php echo htmlspecialchars($twitterHandle, ENT_QUOTES, 'UTF-8'); ?>">
-        <meta name="twitter:title" content="<?php echo htmlspecialchars($pageTitle, ENT_QUOTES, 'UTF-8'); ?>">
+        <meta name="twitter:title" content="<?php echo htmlspecialchars($twitterTitle, ENT_QUOTES, 'UTF-8'); ?>">
         <meta name="twitter:description" content="<?php echo htmlspecialchars($twitterDescription, ENT_QUOTES, 'UTF-8'); ?>">
         <meta name="twitter:image" content="<?php echo htmlspecialchars($shareImage, ENT_QUOTES, 'UTF-8'); ?>">
         <meta name="twitter:image:alt" content="<?php echo htmlspecialchars($shareImageAlt, ENT_QUOTES, 'UTF-8'); ?>">
@@ -484,8 +486,9 @@ $twitterDescription = $twitterDescription ?? $pageDescription;
               ],
           ]);
 
-            /*FAQ FOR TRUK AC*/
-          $schemaFAQPage = sr_schema_filter([
+          /* Truck AC has its own visible FAQ; keep the homepage FAQ elsewhere. */
+          if (strtolower($file) === 'truck-ac.php') {
+            $schemaFAQPage = sr_schema_filter([
             '@context' => 'https://schema.org',
             '@type'    => 'FAQPage',
             '@id'      => $schemaPageUrl . '#faq',
@@ -531,24 +534,30 @@ $twitterDescription = $twitterDescription ?? $pageDescription;
                     ]
                 ]
             ]
-        ]);
+            ]);
+          }
         ?>
         
          
+        <?php
+          $schemaGraphItems = [
+              $schemaOrganization,
+              $schemaWebsite,
+              $schemaPage,
+              $schemaProductList,
+              $schemaFAQPage,
+          ];
+          foreach ($schemaGraphItems as &$schemaGraphItem) {
+              unset($schemaGraphItem['@context']);
+          }
+          unset($schemaGraphItem);
+          $schemaGraph = [
+              '@context' => 'https://schema.org',
+              '@graph' => $schemaGraphItems,
+          ];
+        ?>
         <script type="application/ld+json">
-<?php echo json_encode($schemaOrganization, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT); ?>
-        </script>
-        <script type="application/ld+json">
-<?php echo json_encode($schemaWebsite, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT); ?>
-        </script>
-        <script type="application/ld+json">
-<?php echo json_encode($schemaPage, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT); ?>
-        </script>
-        <script type="application/ld+json">
-<?php echo json_encode($schemaProductList, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT); ?>
-        </script>
-        <script type="application/ld+json">
-<?php echo json_encode($schemaFAQPage, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT); ?>
+<?php echo json_encode($schemaGraph, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT); ?>
         </script>
       
         <!-- favicon -->
@@ -606,10 +615,22 @@ $twitterDescription = $twitterDescription ?? $pageDescription;
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/brands.min.css"
         crossorigin="anonymous"></noscript>
         <style>
+          .fa-brands.fa-x-twitter {
+            display: inline-block;
+            width: 1em;
+            height: 1em;
+            line-height: 1;
+            vertical-align: -.08em;
+          }
+
           .fa-brands.fa-x-twitter::before {
-            content: "\1D54F";
-            font-family: Arial, Helvetica, sans-serif;
-            font-weight: 800;
+            content: "";
+            display: block;
+            width: 1em;
+            height: 1em;
+            background: currentColor;
+            -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8l164.9-188.5L26.8 48h145.6l100.5 132.9L389.2 48zm-24.8 373.8h39.1L151.1 88h-42l255.3 333.8z'/%3E%3C/svg%3E") center / contain no-repeat;
+                    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8l164.9-188.5L26.8 48h145.6l100.5 132.9L389.2 48zm-24.8 373.8h39.1L151.1 88h-42l255.3 333.8z'/%3E%3C/svg%3E") center / contain no-repeat;
           }
         </style>
         

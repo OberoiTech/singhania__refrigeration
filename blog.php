@@ -86,6 +86,10 @@
                 line-height: 1.78;
             }
 
+            .hero-cta-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:28px; }
+            .hero-cta-btn { display:inline-flex; align-items:center; justify-content:center; min-height:56px; padding:0 20px; border:1px solid rgba(255,255,255,.48); border-radius:8px; background:rgba(255,255,255,.08); color:#fff !important; font-size:15px; font-weight:800; text-decoration:none; transition:background .2s ease,color .2s ease,transform .2s ease; }
+            .hero-cta-btn:hover { background:#fff; color:#0e2344 !important; transform:translateY(-2px); }
+
             .blog-grid {
                 display: grid;
                 grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -219,6 +223,10 @@
                             <span class="eyebrow">Latest News</span>
                             <h1 class="breadcrumbs-title white-color mb-0">Blogs</h1>
                             <p>Cold storage, industrial refrigeration, energy efficiency and cold chain updates from the Singhania Refrigeration team.</p>
+                            <div class="hero-cta-actions">
+                                <a href="contact" class="hero-cta-btn">Get a Free Quote</a>
+                                <a href="tel:+919971060822" class="hero-cta-btn">Call Now</a>
+                            </div>
                         </div>
                     </div>
                 </div>

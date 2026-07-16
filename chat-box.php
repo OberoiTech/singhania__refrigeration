@@ -11,7 +11,7 @@
 .chat-float-btn {
     width: 68px;
     height: 68px;
-    background: linear-gradient(135deg,#0066ff,#0036d9);
+    background:linear-gradient(135deg,#0066ff,#0036d9);
     color: #fff;
     border-radius: 50%;
     display:flex;
@@ -20,11 +20,17 @@
     font-size:28px;
     cursor:pointer;
     position:fixed;
-    bottom:25px;
+    bottom:60px;
     right:25px;
     z-index:99999;
     box-shadow:0 10px 25px rgba(0,0,0,0.28);
     transition:0.25s ease;
+}
+
+.chat-float-btn svg {
+    width:42px;
+    height:42px;
+    display:block;
 }
 
 .chat-float-btn:hover {
@@ -65,7 +71,7 @@
 
     .chat-float-btn {
         right: 20px !important;
-        bottom: 20px !important;
+        bottom: 12px !important;
         z-index: 99999999 !important
     }
 }
@@ -293,7 +299,14 @@
 <body>
 
 <!-- FLOAT BUTTON -->
-<div class="chat-float-btn"><i class="fa fa-comments"></i></div>
+<div class="chat-float-btn" role="button" tabindex="0" aria-label="Open customer support chat">
+    <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+        <path fill="#fff" d="M32 10c-10.5 0-19 8.5-19 19v5.5a5.5 5.5 0 0 0 5.5 5.5H22V27h-4.8C18.2 19.7 24.4 14 32 14s13.8 5.7 14.8 13H42v13h4.8v2c0 4.4-3.6 8-8 8H35a4 4 0 1 0 0 4h3.8C45.5 54 51 48.5 51 41.8V29c0-10.5-8.5-19-19-19Z"/>
+        <path fill="#fff" d="M32 17c-6.1 0-11 4.9-11 11v6c0 6.1 4.9 11 11 11s11-4.9 11-11v-6c0-6.1-4.9-11-11-11Zm-5.5 14.5a2 2 0 1 1 0-4 2 2 0 0 1 0 4Zm11 0a2 2 0 1 1 0-4 2 2 0 0 1 0 4ZM27 37h10a6 6 0 0 1-10 0Z"/>
+        <rect width="7" height="15" x="12" y="27" fill="#fff" rx="3.5"/>
+        <rect width="7" height="15" x="45" y="27" fill="#fff" rx="3.5"/>
+    </svg>
+</div>
 
 <!-- CHAT BOX -->
 <div id="chat-box">

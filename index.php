@@ -75,8 +75,12 @@ if (isset($_POST['submit'])) {
       $linkedin = $siteConfig['linkedin'] ?? '';
       $address = $siteConfig['address'] ?? '';
     }
-    $pageTitle = 'Cold Chain & Industrial Refrigeration Solutions | Delhi';
-    $pageDescription = 'Singhania Refrigeration: turnkey cold storage, cold rooms, CA stores, ammonia/freon plants & PUF panels in Delhi NCR. Pan-India service. Call 99710-60822.';
+    $pageTitle = 'Cold Storage Company in Delhi NCR | Singhania Refrigeration';
+    $pageDescription = 'Turnkey cold storage construction, cold rooms, CA stores and ammonia refrigeration plants in Delhi NCR. 25 years of expertise. Request a free site survey.';
+    $ogTitle = 'Singhania Refrigeration | Turnkey Cold Storage & Refrigeration Plants in India';
+    $ogDescription = 'Turnkey cold storage, cold rooms, CA stores and industrial refrigeration plants designed, installed and maintained across India.';
+    $twitterTitle = 'Cold Storage & Refrigeration Plants in Delhi NCR | Singhania';
+    $twitterDescription = $ogDescription;
 
   ?>
   <head> 
@@ -217,6 +221,10 @@ body{ color:var(--ink); }
   text-transform:uppercase;
   letter-spacing:.06em;
 }
+ .sub-title{
+          display:inline-block; font-size:22px; letter-spacing:.12em;
+          padding:8px 17px; border-radius:999px; background:#e9eeff; 
+        }
 .rs-contact.style1 .sec-title .title{
   color:#082243;
   font-size:32px;
@@ -355,7 +363,7 @@ body{ color:var(--ink); }
   overflow:hidden;
   padding:34px 36px 28px;
   color:#fff;
-  background:linear-gradient(160deg,#102a5b 0%,#123c73 58%,#0d6295 100%);
+  background:#0e2344;
 }
 #myModal .quote-panel::before,
 #myModal .quote-panel::after{
@@ -400,7 +408,7 @@ body{ color:var(--ink); }
   line-height:1.18;
   font-weight:900;
 }
-#myModal .quote-title span{ color:#43d7ff; }
+#myModal .quote-title span{ color:#fff; }
 #myModal .quote-copy{
   margin:0 0 28px;
   color:#c7d8ee;
@@ -496,9 +504,9 @@ body{ color:var(--ink); }
   cursor:pointer;
   transition:background .18s ease, color .18s ease, transform .12s ease;
 }
-#myModal .quote-close:hover{ background:#dfe8f3; color:#0f2442; transform:scale(1.04); }
-#myModal .modal-title{ margin:0; font-weight:900; font-size:28px; color:#101a2d; }
-#myModal .modal-sub{ color:#6c7f9f; margin:7px 0 22px; font-size:15px; }
+#myModal .quote-close:hover{ background:#fee2e2; color:#ef4444; transform:scale(1.04); }
+#myModal .modal-title{ margin:0; font-weight:700; font-size:28px; color:#0e2344; }
+#myModal .modal-sub{ color:#0e2344; margin:7px 0 22px; font-size:15px; }
 #myModal #response{ margin-bottom:12px; }
 #myModal .form-row-split{
   display:grid;
@@ -519,7 +527,7 @@ body{ color:var(--ink); }
   height:49px;
   width:100%;
   padding:0 16px 0 44px;
-  border-radius:13px;
+  border-radius:5px;
   border:1px solid #dbe4f0;
   color:#10203a;
   font-size:15px;
@@ -536,26 +544,26 @@ body{ color:var(--ink); }
   width:100%;
   min-height:51px;
   border:0;
-  border-radius:12px;
+  border-radius:5px;
   padding:12px 18px;
   color:#fff;
-  font-weight:900;
-  background:linear-gradient(90deg,#153366 0%,#2865c8 100%);
+  font-weight:700;
+  background:#0e2344;
   box-shadow:0 15px 30px rgba(35,93,186,.32);
   transition:transform .1s ease, box-shadow .2s ease, filter .2s ease;
 }
 #myModal .btn-primary:hover{ transform:translateY(-1px); filter:brightness(1.04); box-shadow:0 18px 36px rgba(35,93,186,.38); }
-#myModal .btn-primary .fa{ margin-left:10px; }
+/* #myModal .btn-primary .fa{ margin-left:10px; } */
 #myModal .privacy-note{
   display:flex;
   justify-content:center;
   align-items:center;
   gap:8px;
   margin:18px 0 0;
-  color:#7b8fa9;
+  color:#526783;
   font-size:12px;
 }
-#myModal .privacy-note i{ color:#07b987; }
+#myModal .privacy-note i{ color:#0e2344; }
 #myModal .error{ display:block; color:#d93025; font-size:12px; margin-top:6px; }
 #myModal .submit-spinner{ display:none; margin-left:8px; }
 #myModal .submit-spinner.is-visible{ display:inline-block; }
@@ -851,7 +859,7 @@ if ('requestIdleCallback' in window) {
     <main class="main-content">
       
       <!-- ===== Slider ===== -->
-        <h2 class="sr-only">Cold Chain Highlights</h2>
+        <p class="sr-only">Cold Chain Highlights</p>
         <div id="rs-slider" class="rs-slider slider1">
           <div class="bend niceties">
             <div id="nivoSlider" class="slides">
@@ -884,7 +892,7 @@ if ('requestIdleCallback' in window) {
                 <div class="content-part">
                   <div class="hero-card">
                     <div class="slider-des">
-                      <div class="sl-title white-color">Industrial Refrigeration & Cold Storage Solutions in Delhi</div>
+                      <h1 class="sl-title white-color">Cold Storage &amp; Industrial Refrigeration Company in Delhi NCR</h1>
                       <div class="sl-desc">
                         Singhania Refrigeration offers design, installation and maintenance of cold rooms, CA/MA stores, ammonia and freon refrigeration plants, ripening chambers, IQF systems and transport refrigeration to businesses in Delhi NCR. With 25 years of cold chain expertise through the Singhania Group, we offer safe, energy efficient and reliable cold storage solutions from Okhla, New Delhi to clients across India.
                       </div>
@@ -986,7 +994,7 @@ if ('requestIdleCallback' in window) {
             </div>
             <div class="col-lg-6 pl-66 pt-75 pb-75 md-pt-42 md-pb-72" data-animate>
               <div class="sec-title mb-24">
-                <h2 class="title mb-0"> <span class="section-title-accent">India's Most Trusted Refrigeration & Cold Chain Supplier </span></h2>
+                <h2 class="title mb-0 "><span class="section-title-accent">Trusted Cold Storage &amp; Refrigeration Company in Delhi NCR</span></h2>
               </div>
               <p class="mb-20">
                 Singhania Refrigeration is an industrial refrigeration and cold storage solution company based in Okhla, New Delhi. We design, manufacture, install and maintain cold rooms, CA/MA stores, ammonia and freon refrigeration plants, ripening chambers, IQF systems, compressor racks, PUF panels, dock shelters and transport refrigeration for clients across Delhi NCR and India, backed by 25 years of cold chain and logistics experience through the Singhania Group.
@@ -1021,11 +1029,11 @@ if ('requestIdleCallback' in window) {
       </div>
 
       <!-- ===== Services Grid ===== -->
-      <div id="rs-services" class="rs-services style1 modify pt-92 pb-84 md-pt-72 md-pb-64">
+      <div id="rs-services" class="rs-services style1 modify pt-64 pb-84 md-pt-72 md-pb-64">
         <div class="container" data-animate>
           <div class="sec-title text-center mb-47 md-mb-42">
             <div class="sub-title primary">Services</div>
-            <h2 class="title mb-0">Cold Chain &amp; Refrigeration Services in Delhi NCR &amp; India</h2>
+            <h2 class="title mb-0 pt-20">Cold Chain &amp; Refrigeration Services in Delhi NCR &amp; India</h2>
             <p class="about-copy--lead">Singhania Refrigeration, located in Okhla, New Delhi, offers  the entire spectrum of cold chain and industrial refrigeration solutions for your  product, industry and regulatory requirements, whether you are operating a food  processing plant, pharmacy, dairy or 3PL warehouse.
             </p>
           </div>
@@ -1045,7 +1053,7 @@ if ('requestIdleCallback' in window) {
             <!-- Service 2 -->
             <div class="col-lg-3 col-sm-6 mb-16">
               <div class="service-wrap">
-                <div class="icon-part"><img loading="lazy" decoding="async" class="service-card-icon" src="assets/images/IMAGES HOMEPAGE/refrigerated-truck-acs-containers.avif" width="200" height="200" alt="Cold room and cold storage solution"></div>
+                <div class="icon-part"><img loading="lazy" decoding="async" class="service-card-icon" src="assets/images/IMAGES HOMEPAGE/cold-storage-warehouse.avif" width="200" height="200" alt="Cold room and cold storage solution"></div>
                 <div class="content-part">
                   <h3 class="title"><a href="cold-storage-refrigeration-units.php">Cold Rooms &amp; Storage Solutions</a></h3>
                   <div class="desc">Cold rooms based on ammonia and freon, Controlled Atmosphere (CA) stores, Ripening Chambers &amp; Blast Freezer Systems, designed to meet the shelf-life and temperature requirements of your product.</div>
@@ -1121,7 +1129,7 @@ if ('requestIdleCallback' in window) {
             <!-- services 9 -->
             <div class="col-lg-3 col-sm-6 mb-16">
               <div class="service-wrap">
-                <div class="icon-part"><img loading="lazy" decoding="async" class="service-card-icon" src="assets/images/services/icons/modify/dock-shelters-dock-levelers.webp" width="200" height="200" alt="Heavy Duty Rack"></div>
+                <div class="icon-part"><img loading="lazy" decoding="async" class="service-card-icon" src="assets/images/IMAGES HOMEPAGE/HEAVY DUTY RACKS.avif" width="200" height="200" alt="Heavy Duty Rack"></div>
                 <div class="content-part">
                   <h3 class="title"><a href="heavy-duty-racks.php">Heavy Duty Racks</a></h3>
                   <div class="desc">Singhania Refrigeration makes Heavy Duty Racks based on your actual pallet loads, aisle lengths and forklift types, instead of making catalog racks that fit your warehouse. Ideal for cold storage facilities, distribution centres and general warehousing in India.</div>
@@ -1131,7 +1139,7 @@ if ('requestIdleCallback' in window) {
             <!-- Services 10 -->
             <div class="col-lg-3 col-sm-6 mb-16">
               <div class="service-wrap">
-                <div class="icon-part"><img loading="lazy" decoding="async" class="service-card-icon" src="assets/images/services/icons/modify/dock-shelters-dock-levelers.webp" width="200" height="200" alt="Multideck Cabinet"></div>
+                <div class="icon-part"><img loading="lazy" decoding="async" class="service-card-icon" src="assets/images/IMAGES HOMEPAGE/MULTIDECK CABINET.avif" width="200" height="200" alt="Multideck Cabinet"></div>
                 <div class="content-part">
                   <h3 class="title"><a href="multideck-cabinet.php">Multideck Cabinet</a></h3>
                   <div class="desc">Singhania Refrigeration manufactures Multideck Cabinets that offer the right balance of product visibility and uniform, energy-efficient cooling for supermarket chains, convenience stores and food retail outlets that need their dairy, beverage, deli and frozen displays to look good and stay cold all day long.</div>
@@ -1139,15 +1147,15 @@ if ('requestIdleCallback' in window) {
               </div>
             </div>
             <!-- services 11 -->
-             <!-- <div class="col-lg-3 col-sm-6 mb-16">
+             <div class="col-lg-3 col-sm-6 mb-16">
               <div class="service-wrap">
-                <div class="icon-part"><img loading="lazy" decoding="async" class="service-card-icon" src="assets/images/services/icons/modify/dock-shelters-dock-levelers.webp" width="200" height="200" alt="PUF Panels"></div>
+                <div class="icon-part"><img loading="lazy" decoding="async" class="service-card-icon" src="assets/images/IMAGES HOMEPAGE/DOORS AND CA DOORS.avif" width="200" height="200" alt="Doors and CA Doors"></div>
                 <div class="content-part">
-                  <h3 class="title"><a href="panels.php">PUF Panels</a></h3>
-                  <div class="desc">PUF panels made by Singhania Refrigeration are designed and manufactured using high-performance polyurethane foam insulation. PUF panels can be used in cold storage rooms, warehouses, food processing plants, pharmaceutical companies, and clean rooms throughout India.</div>
+                  <h3 class="title"><a href="doors-ca-doors.php">Doors & CA Doors</a></h3>
+                  <div class="desc">At Singhania Refrigeration, we design and build insulated Doors & CA Doors for chiller rooms, freezers, and controlled-atmosphere (CA) stores — access points that must keep their seal through hundreds of openings a day, not just look insulated on a spec sheet.</div>
                 </div>
               </div>
-            </div> -->
+            </div>
             <!-- services 12 -->
              <div class="col-lg-3 col-sm-6 mb-16">
               <div class="service-wrap">
@@ -1286,10 +1294,10 @@ if ('requestIdleCallback' in window) {
         /* === Innovation That Drives Trust (scoped) === */
         .innov-section{ padding:88px 0; }
         .innov-eyebrow{
-          display:inline-block; font-weight:700; font-size:12px; letter-spacing:.12em; text-transform:uppercase;
-          padding:6px 10px; border-radius:999px; background:#e9eeff; color:#1a2b6b; margin-bottom:12px;
+          display:inline-block; font-weight:700; font-size:22px; letter-spacing:.12em; text-transform:uppercase;
+          padding:8px 17px; border-radius:999px; background:#e9eeff; color:#0e2344; margin-bottom:12px;
         }
-        .innov-title{ font-size:clamp(26px,3.4vw,36px); line-height:1.15; font-weight:800; color:#0f2442; margin:0 0 10px; }
+        .innov-title{ font-size:clamp(26px,3.4vw,36px); line-height:1.15; font-weight:800; color:#0e2344; margin:0 0 10px; }
         .innov-lead{ font-size:clamp(15px,1.7vw,17px); color:#2c3e68; max-width:900px; margin:0 auto 24px; }
         
         /* cards */
@@ -1314,7 +1322,7 @@ if ('requestIdleCallback' in window) {
         }
         .innov-icon{
           width:48px; height:48px; border-radius:12px; display:inline-flex; align-items:center; justify-content:center;
-          background:linear-gradient(180deg,#6c63ff,#3b5bb7); color:#fff; font-size:22px; box-shadow:0 8px 20px rgba(108,99,255,.28);
+          background:#0e2344; color:#fff; font-size:22px; box-shadow:0 8px 20px rgba(108,99,255,.28);
           margin-bottom:12px; transition:background .3s ease .42s, color .3s ease .42s, transform .35s ease;
         }
         .innov-card h3{ margin:0 0 6px; color:#0f2442; font-size:20px; font-weight:800; transition:color .35s ease .24s; }
@@ -1338,7 +1346,7 @@ if ('requestIdleCallback' in window) {
             <div class="row justify-content-center text-center">
               <div class="col-lg-10">
                 <span class="innov-eyebrow">WHY CHOOSE US</span>
-                <h2 class="innov-title">Engineered for Reliability, Built for Tomorrow</h2>
+                <h2 class="innov-title pt-20">Engineered for Reliability, Built for Tomorrow</h2>
                 <p class="innov-lead">
                  Singhania Refrigeration builds reliability into every cold room, CA store and refrigeration plant that we build. Reliability is not an afterthought.
                 </p>
@@ -1389,8 +1397,8 @@ if ('requestIdleCallback' in window) {
         .tt-section.reverse .tt-col-visual{ order:1; }
         
         .tt-eyebrow{
-          display:inline-block; font-weight:700; font-size:12px; letter-spacing:.12em; text-transform:uppercase;
-          padding:6px 10px; border-radius:999px; background:#e9eeff; color:#1a2b6b; margin-bottom:12px;
+          display:inline-block; font-weight:600; font-size:22px; letter-spacing:.12em; text-transform:uppercase;
+          padding:9px 12px; border-radius:999px; background:#e9eeff; color:#1a2b6b; margin-bottom:12px;
         }
         .tt-title{ font-size:clamp(26px,3.4vw,36px); line-height:1.15; font-weight:800; color:#0f2442; margin:0 0 10px; }
         .tt-lead{ font-size:clamp(15px,1.7vw,17px); color:#2c3e68; margin-bottom:16px; text-align: justify; }
@@ -1410,7 +1418,7 @@ if ('requestIdleCallback' in window) {
           margin-top:34px;
         }
         .tt-cta .btn-primary{
-          background:#17203b; border:none; border-radius:10px; padding:12px 18px; font-weight:700; color:#fff;
+          background:#17203b; border:none; border-radius:5px; padding:12px 18px; font-weight:700; color:#fff;
           box-shadow:0 10px 22px rgba(23,32,59,.22); transition:transform .12s ease, box-shadow .2s ease, background .2s ease;
         }
         .tt-cta .btn-primary:hover{ background:#0f1630; transform:translateY(-1px); box-shadow:0 14px 28px rgba(23,32,59,.28); }
@@ -1509,8 +1517,8 @@ if ('requestIdleCallback' in window) {
         /* === FAQ Section (scoped) === */
         .faq-section{ padding:88px 0; background:#ffffff; }
         .faq-eyebrow{
-          display:inline-block; font-weight:700; font-size:12px; letter-spacing:.12em; text-transform:uppercase;
-          padding:6px 10px; border-radius:999px; background:#e9eeff; color:#1a2b6b; margin-bottom:12px;
+          display:inline-block; font-weight:600; font-size:22px; letter-spacing:.12em; text-transform:uppercase;
+          padding:9px 12px; border-radius:999px; background:#e9eeff; color:#0e2344; margin-bottom:12px;
         }
         .faq-title{ font-size:clamp(26px,3.4vw,36px); line-height:1.15; font-weight:800; color:#0f2442; margin:0; }
         .faq-lead{ color:#44527a; max-width:760px; margin:12px auto 0; }
@@ -1766,15 +1774,18 @@ if ('requestIdleCallback' in window) {
     <?php include('footer.php'); ?>
 
     <!-- ===== Quick Connect Popup ===== -->
-  <div class="modal fade" id="myModal" role="dialog" aria-hidden="true">
+  <div class="modal fade" id="myModal" role="dialog"
+       aria-labelledby="quoteDialogTitle"
+       aria-describedby="quoteDialogDescription"
+       aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-body">
           <div class="quote-modal">
             <aside class="quote-panel">
              
-              <h2 class="quote-title">Get a free quote for your <span>cold storage project</span></h2>
-              <p class="quote-copy">Design, installation &amp; maintenance of cold rooms, CA/MA plants, ripening chambers,PUF Panels and IQF systems in Delhi NCR.</p>
+              <h2 class="quote-title" id="quoteDialogTitle">Get a free quote for your <span>cold storage project</span></h2>
+              <p class="quote-copy" id="quoteDialogDescription">Design, installation &amp; maintenance of cold rooms, CA/MA plants, ripening chambers,PUF Panels and IQF systems in Delhi NCR.</p>
 
               <ul class="quote-benefits">
                 <li><i class="fa fa-shield"></i><span>Customized solution for your storage capacity</span></li>
@@ -1825,7 +1836,7 @@ if ('requestIdleCallback' in window) {
 
                 <button type="submit" class="btn btn-primary submit_data">
                   <span class="btn-text">Get My Free Quote</span>
-                  <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                 
                   <span class="submit-spinner" aria-hidden="true">...</span>
                 </button>
 
@@ -2022,6 +2033,13 @@ jQuery(function ($) {
       $title.replaceWith($('<h1>', {
         class: $title.attr('class'),
         text: $title.text()
+      }));
+    }
+    var $sourceTitle = $('#hero-caption .slider-des .sl-title').first();
+    if ($sourceTitle.is('h1')) {
+      $sourceTitle.replaceWith($('<div>', {
+        class: $sourceTitle.attr('class'),
+        html: $sourceTitle.html()
       }));
     }
     $cap.addClass('is-visible');

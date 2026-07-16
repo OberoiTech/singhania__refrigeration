@@ -1458,7 +1458,7 @@
           $isActiveProduct = basename($product['url']) === basename($_SERVER['SCRIPT_NAME'] ?? 'truck-ac.php');
         ?>
           <div class="col-lg-3 col-md-4 col-sm-6" data-animate>
-            <a href="<?php echo htmlspecialchars($product['url']); ?>"
+            <a href="<?php echo htmlspecialchars(publicPageUrl($product['url'])); ?>"
               class="related-card text-decoration-none <?php echo $isActiveProduct ? 'active' : ''; ?>">
               <span class="related-number"><?php echo str_pad((string)($index + 1), 2, '0', STR_PAD_LEFT); ?></span>
               <i class="<?php echo htmlspecialchars($product['icon']); ?>

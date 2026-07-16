@@ -1,11 +1,56 @@
 <IfModule mod_rewrite.c>
 RewriteEngine On
 
+# SEO aliases for product pages. Original URLs remain valid.
+RewriteRule ^product&services/?$ products.php [L,NC]
+RewriteRule ^truck-ac-manufacturer-in-india/?$ truck-ac.php [L,NC]
+RewriteRule ^truck-refrigerator-container-manufacturer-in-india/?$ truck-refrigerator-container.php [L,NC]
+RewriteRule ^cold-storage-refrigeration-units-manufacturer-in-india/?$ cold-storage-refrigeration-units.php [L,NC]
+RewriteRule ^compressor-rack-system-manufacturer-in-india/?$ compressor-rack-system.php [L,NC]
+RewriteRule ^ammonia-refrigeration-units-manufacturer-in-india/?$ ammonia-refrigeration-units.php [L,NC]
+RewriteRule ^freon-refrigeration-in-india/?$ freon-refrigeration-units.php [L,NC]
+RewriteRule ^ripening-systems-manufacturer-in-india/?$ ripening-systems.php [L,NC]
+RewriteRule ^multideck-cabinet-manufacturer-in-india/?$ multideck-cabinet.php [L,NC]
+RewriteRule ^iqf-system-manufacturer-in-india/?$ iqf.php [L,NC]
+RewriteRule ^cold-storage-doors-manufacturer-in-india/?$ doors-ca-doors.php [L,NC]
+RewriteRule ^puf-panels-manufacturer-in-india/?$ panels.php [L,NC]
+RewriteRule ^dock-shelter-dock-leveler-manufacturer-in-india/?$ dock-shelter-dock-leveler.php [L,NC]
+RewriteRule ^heavy-duty-racks-manufacturer-in-india/?$ heavy-duty-racks.php [L,NC]
+
+RewriteRule ^turnkey-cold-storage-solutions-in-india/?$ turnkey-solution.php [L,NC]
+RewriteRule ^segment-wise-cold-storage-solutions-in-india/?$ segments-wise.php [L,NC]
+RewriteRule ^cold-chain-refrigeration-ca-store-freon-ammonia-in-india/?$ cold-chain-refrigeration-ca-store-freon-ammonia.php [L,NC]
+RewriteRule ^cold-chain-quality-monitoring-solution-in-india/?$ quality-monitoring-solution.php [L,NC]
+RewriteRule ^warehouse-management-solutions-in-india/?$ ware-house-management.php [L,NC]
+RewriteRule ^transport-management-solutions-in-india/?$ transport-management.php [L,NC]
+RewriteRule ^transport-refrigeration-solutions-in-india/?$ transport-refrigeration.php [L,NC]
+
+
+
+
+
+# Consolidate the homepage at the canonical root URL.
+RewriteCond %{REQUEST_METHOD} ^(?:GET|HEAD)$
+RewriteCond %{THE_REQUEST} \s/+index\.php(?:[?\s]) [NC]
+RewriteRule ^index\.php$ / [R=301,L]
+
+# Redirect direct requests for public PHP pages to extensionless URLs.
+# Shared includes, form handlers and the admin area intentionally keep .php.
+RewriteCond %{REQUEST_METHOD} ^(?:GET|HEAD)$
+RewriteCond %{THE_REQUEST} \s/+[^\s?]*\.php(?:[?\s]) [NC]
+RewriteRule ^(?!(?:admin/|head\.php$|header\.php$|footer\.php$|whatsapp-float\.php$|chat-box\.php$|enquirypopup\.php$|form-handler\.php$))(.+)\.php$ /$1 [R=301,L,NE]
+
 # Serve WebP automatically when the browser supports it and a matching file exists.
 RewriteCond %{HTTP_ACCEPT} image/webp
 RewriteCond %{REQUEST_URI} ^(.+)\.(jpe?g|png)$
 RewriteCond %{DOCUMENT_ROOT}%1.webp -f
 RewriteRule ^(.+)\.(jpe?g|png)$ $1.webp [T=image/webp,E=serve_webp:1,L]
+
+# Internally serve /about-us from /about-us.php (and the same for public pages).
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(?!(?:admin/|head$|header$|footer$|whatsapp-float$|chat-box$|enquirypopup$|form-handler$))(.+)$ $1.php [L]
 </IfModule>
 
 <IfModule mod_mime.c>

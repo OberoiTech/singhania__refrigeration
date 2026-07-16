@@ -49,9 +49,44 @@ if (!function_exists('anyActive')) {
   }
 }
 
+// Convert internal PHP filenames to their public, extension-free URLs.
+if (!function_exists('publicPageUrl')) {
+  function publicPageUrl(string $path): string {
+    $parts = parse_url($path);
+    $file = basename($parts['path'] ?? $path);
+    $routes = [
+      'index.php' => './',
+      'truck-ac.php' => 'truck-ac-manufacturer-in-india',
+      'truck-refrigerator-container.php' => 'truck-refrigerator-container-manufacturer-in-india',
+      'cold-storage-refrigeration-units.php' => 'cold-storage-refrigeration-units-manufacturer-in-india',
+      'compressor-rack-system.php' => 'compressor-rack-system-manufacturer-in-india',
+      'ammonia-refrigeration-units.php' => 'ammonia-refrigeration-units-manufacturer-in-india',
+      'freon-refrigeration-units.php' => 'freon-refrigeration-in-india',
+      'ripening-systems.php' => 'ripening-systems-manufacturer-in-india',
+      'multideck-cabinet.php' => 'multideck-cabinet-manufacturer-in-india',
+      'iqf.php' => 'iqf-system-manufacturer-in-india',
+      'doors-ca-doors.php' => 'cold-storage-doors-manufacturer-in-india',
+      'panels.php' => 'puf-panels-manufacturer-in-india',
+      'dock-shelter-dock-leveler.php' => 'dock-shelter-dock-leveler-manufacturer-in-india',
+      'heavy-duty-racks.php' => 'heavy-duty-racks-manufacturer-in-india',
+      'turnkey-solution.php' => 'turnkey-cold-storage-solutions-in-india',
+      'segments-wise.php' => 'segment-wise-cold-storage-solutions-in-india',
+      'cold-chain-refrigeration-ca-store-freon-ammonia.php' => 'cold-chain-refrigeration-ca-store-freon-ammonia-in-india',
+      'quality-monitoring-solution.php' => 'cold-chain-quality-monitoring-solution-in-india',
+      'ware-house-management.php' => 'warehouse-management-solutions-in-india',
+      'transport-management.php' => 'transport-management-solutions-in-india',
+      'transport-refrigeration.php' => 'transport-refrigeration-solutions-in-india',
+    ];
+    $url = $routes[$file] ?? preg_replace('/\.php$/i', '', $file);
+    if (!empty($parts['query'])) $url .= '?' . $parts['query'];
+    if (!empty($parts['fragment'])) $url .= '#' . $parts['fragment'];
+    return $url;
+  }
+}
+
 $productsPages = [
   'truck-ac.php','truck-refrigerator-container.php','cold-storage-refrigeration-units.php',
-  'compressor-rack-system.php','ammonia-refrigeration-units.php','ripening-systems.php',
+  'compressor-rack-system.php','ammonia-refrigeration-units.php','freon-refrigeration-units.php','ripening-systems.php',
   'multideck-cabinet.php','iqf.php','doors-ca-doors.php','panels.php',
   'dock-shelter-dock-leveler.php','heavy-duty-racks.php','products.php'
 ];
@@ -113,7 +148,7 @@ $coldStoragePages = [
 :root{ --navNavy:#0e2344; }
 
 .full-width-header .rs-header .menu-area .main-menu .rs-menu ul.nav-menu > li > a{
-  display:inline-flex; align-items:center; justify-content:center; height:50px; padding:0 12px; border-radius:9px;
+  display:inline-flex; align-items:center; justify-content:center; height:50px; padding:0 12px; border-radius:5px;
   line-height:1; font-weight:700; letter-spacing:0; color:#0f2442;
   text-align:center; white-space:nowrap;
   transition:background .2s ease, color .2s ease, box-shadow .2s ease;
@@ -128,7 +163,7 @@ $coldStoragePages = [
 .menu-cta{ display:inline-flex; align-items:center; flex:0 0 auto; }
 .menu-cta.menu-cta--flush{ margin-left:0; }
 .menu-cta .btn-cfa{
-  display:inline-flex; align-items:center; justify-content:center; min-height:50px; padding:0 18px; border-radius:11px;
+  display:inline-flex; align-items:center; justify-content:center; min-height:50px; padding:0 18px; border-radius:5px;
   background:var(--navNavy); color:#fff !important; font-weight:700; text-decoration:none;
   box-shadow:0 8px 22px rgba(14,35,68,.28); transition:transform .1s ease, box-shadow .2s ease, background .2s ease;
   min-width: 140px;
@@ -151,10 +186,31 @@ $coldStoragePages = [
   margin-top:12px; border-radius:12px; padding:10px 8px; box-shadow:0 18px 40px rgba(0,0,0,.18); border:1px solid rgba(0,0,0,.06);
 }
 .full-width-header .rs-header .menu-area .main-menu .rs-menu ul.nav-menu > li .sub-menu li a{
-  border-radius:8px; padding:10px 12px; line-height:1.2;
+  border-radius:5px; padding:10px 12px; line-height:1.2;
 }
 .full-width-header .rs-header .menu-area .main-menu .rs-menu ul.nav-menu > li .sub-menu li a:hover{
   background:rgba(14,35,68,.08); color:#fff !important;
+}
+
+/* Keep the long Products menu compact and fully visible on desktop. */
+@media (min-width:992px){
+  .full-width-header .rs-header .menu-area .main-menu .rs-menu ul.nav-menu > li .products-sub-menu{
+    width:520px;
+    display:grid;
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+    gap:2px 8px;
+    padding:10px;
+  }
+  .full-width-header .rs-header .menu-area .main-menu .rs-menu ul.nav-menu > li .products-sub-menu li{
+    display:block;
+    width:100%;
+    min-width:0;
+  }
+  .full-width-header .rs-header .menu-area .main-menu .rs-menu ul.nav-menu > li .products-sub-menu li a{
+    display:block;
+    padding:8px 10px !important;
+    line-height:1.35;
+  }
 }
 
 /* Mobile/off-canvas visibility */
@@ -532,7 +588,7 @@ body.menu-open{ overflow:hidden; }
         <div class="col-md-8">
           <div class="toolbar-contact">
             <ul>
-              <li><i class="fa fa-envelope"></i><a href="<?php echo htmlspecialchars($mailHref, ENT_QUOTES, 'UTF-8'); ?>" aria-label="Email Singhania Refrigeration">Email Us</a></li>
+              <li><i class="fa fa-envelope"></i><a href="<?php echo htmlspecialchars($mailHref, ENT_QUOTES, 'UTF-8'); ?>" aria-label="Email Singhania Refrigeration"><?php echo htmlspecialchars($email, ENT_QUOTES, 'UTF-8'); ?></a></li>
               <li>
                 <i class="fa fa-phone"></i>
                 <span class="toolbar-phone-links">
@@ -588,7 +644,7 @@ body.menu-open{ overflow:hidden; }
         <div class="row">
           <div class="col-lg-2">
             <div class="logo-area logo-area--tall">
-              <a href="index.php"><img src="assets/images/logoS.avif" width="1536" height="864" alt="Singhania Refrigeration"></a>
+              <a href="https://singhaniarefrigeration.com/"><img src="assets/images/logoS.avif" width="1536" height="864" alt="Singhania Refrigeration"></a>
             </div>
           </div>
           <div class="col-lg-10 text-right">
@@ -600,89 +656,92 @@ body.menu-open{ overflow:hidden; }
                 <nav class="rs-menu pr-50">
                   <ul class="nav-menu">
                     <li class="menu-item <?php echo isActive('index.php', $curBase); ?>">
-                      <a class="<?php echo isActiveA('index.php', $curBase); ?>" href="index.php">Home</a>
+                      <a class="<?php echo isActiveA('index.php', $curBase); ?>" href="https://singhaniarefrigeration.com/">Home</a>
                     </li>
 
                     <li class="menu-item <?php echo isActive('about-us.php', $curBase); ?>">
-                      <a class="<?php echo isActiveA('about-us.php', $curBase); ?>" href="about-us.php">About</a>
+                      <a class="<?php echo isActiveA('about-us.php', $curBase); ?>" href="about-us">About</a>
                     </li>
                     <li class="menu-item  <?php echo anyActive($productsPages, $curBase); ?>">
-                      <a href="products.php" class="<?php echo isActiveA('products.php', $curBase); ?>">Products</a>
-                      <ul class="sub-menu">
+                      <a href="product&services" class="<?php echo isActiveA('products.php', $curBase); ?>">Products &amp; Services</a>
+                      <ul class="sub-menu products-sub-menu">
                         <li class="<?php echo isActive('truck-ac.php', $curBase); ?>">
-                          <a class="<?php echo isActiveA('truck-ac.php', $curBase); ?>" href="truck-ac.php">Truck’s AC</a>
+                          <a class="<?php echo isActiveA('truck-ac.php', $curBase); ?>" href="truck-ac-manufacturer-in-india">Truck AC Manufacture</a>
                         </li>
                         <li class="<?php echo isActive('truck-refrigerator-container.php', $curBase); ?>">
-                          <a class="<?php echo isActiveA('truck-refrigerator-container.php', $curBase); ?>" href="truck-refrigerator-container.php">Truck’s Refrigerator Container</a>
+                          <a class="<?php echo isActiveA('truck-refrigerator-container.php', $curBase); ?>" href="truck-refrigerator-container-manufacturer-in-india">Refrigerated Truck Body Manufacturer</a>
                         </li>
                         <li class="<?php echo isActive('cold-storage-refrigeration-units.php', $curBase); ?>">
-                          <a class="<?php echo isActiveA('cold-storage-refrigeration-units.php', $curBase); ?>" href="cold-storage-refrigeration-units.php">Cold Storage Refrigeration Units</a>
+                          <a class="<?php echo isActiveA('cold-storage-refrigeration-units.php', $curBase); ?>" href="cold-storage-refrigeration-units-manufacturer-in-india">Cold Storage Refrigeration Units Manufacturer </a>
                         </li>
                         <li class="<?php echo isActive('compressor-rack-system.php', $curBase); ?>">
-                          <a class="<?php echo isActiveA('compressor-rack-system.php', $curBase); ?>" href="compressor-rack-system.php">Compressor Rack System</a>
+                          <a class="<?php echo isActiveA('compressor-rack-system.php', $curBase); ?>" href="compressor-rack-system-manufacturer-in-india">Compressor Rack System Manufacturer</a>
                         </li>
                         <li class="<?php echo isActive('ammonia-refrigeration-units.php', $curBase); ?>">
-                          <a class="<?php echo isActiveA('ammonia-refrigeration-units.php', $curBase); ?>" href="ammonia-refrigeration-units.php">Ammonia Refrigeration Units</a>
+                          <a class="<?php echo isActiveA('ammonia-refrigeration-units.php', $curBase); ?>" href="ammonia-refrigeration-units-manufacturer-in-india">Ammonia Refrigeration Units Manufacturer</a>
+                        </li>
+                        <li class="<?php echo isActive('freon-refrigeration-units.php', $curBase); ?>">
+                          <a class="<?php echo isActiveA('freon-refrigeration-units.php', $curBase); ?>" href="freon-refrigeration-in-india">Freon Refrigeration Units Manufacturer</a>
                         </li>
                         <li class="<?php echo isActive('ripening-systems.php', $curBase); ?>">
-                          <a class="<?php echo isActiveA('ripening-systems.php', $curBase); ?>" href="ripening-systems.php">Ripening Systems</a>
+                          <a class="<?php echo isActiveA('ripening-systems.php', $curBase); ?>" href="ripening-systems-manufacturer-in-india">Ripening Systems Manufacturer</a>
                         </li>
                         <li class="<?php echo isActive('multideck-cabinet.php', $curBase); ?>">
-                          <a class="<?php echo isActiveA('multideck-cabinet.php', $curBase); ?>" href="multideck-cabinet.php">Multideck Cabinet</a>
+                          <a class="<?php echo isActiveA('multideck-cabinet.php', $curBase); ?>" href="multideck-cabinet-manufacturer-in-india">Multideck Cabinet Manufacturer</a>
                         </li>
                         <li class="<?php echo isActive('iqf.php', $curBase); ?>">
-                          <a class="<?php echo isActiveA('iqf.php', $curBase); ?>" href="iqf.php">IQF (Individual Quick Freeze)</a>
+                          <a class="<?php echo isActiveA('iqf.php', $curBase); ?>" href="iqf-system-manufacturer-in-india">IQF (Individual Quick Freeze) Systems Manufacturer</a>
                         </li>
                         <li class="<?php echo isActive('doors-ca-doors.php', $curBase); ?>">
-                          <a class="<?php echo isActiveA('doors-ca-doors.php', $curBase); ?>" href="doors-ca-doors.php">Doors &amp; CA Doors</a>
+                          <a class="<?php echo isActiveA('doors-ca-doors.php', $curBase); ?>" href="cold-storage-doors-manufacturer-in-india">Doors &amp; CA Doors Manufacturer</a>
                         </li>
                         <li class="<?php echo isActive('panels.php', $curBase); ?>">
-                          <a class="<?php echo isActiveA('panels.php', $curBase); ?>" href="panels.php">Puf Panels</a>
+                          <a class="<?php echo isActiveA('panels.php', $curBase); ?>" href="puf-panels-manufacturer-in-india">Puf Panels Manufacturer</a>
                         </li>
                         <li class="<?php echo isActive('dock-shelter-dock-leveler.php', $curBase); ?>">
-                          <a class="<?php echo isActiveA('dock-shelter-dock-leveler.php', $curBase); ?>" href="dock-shelter-dock-leveler.php">Dock Shelter &amp; Dock Leveler</a>
+                          <a class="<?php echo isActiveA('dock-shelter-dock-leveler.php', $curBase); ?>" href="dock-shelter-dock-leveler-manufacturer-in-india">Dock Shelter &amp; Dock Leveler Manufacturer</a>
                         </li>
                         <li class="<?php echo isActive('heavy-duty-racks.php', $curBase); ?>">
-                          <a class="<?php echo isActiveA('heavy-duty-racks.php', $curBase); ?>" href="heavy-duty-racks.php">Heavy Duty Racks</a>
+                          <a class="<?php echo isActiveA('heavy-duty-racks.php', $curBase); ?>" href="heavy-duty-racks-manufacturer-in-india">Heavy Duty Racks Manufacturer</a>
                         </li>
                       </ul>
                     </li>
 
                     <li class="menu-item <?php echo isActive('consulting.php', $curBase); ?>">
-                      <a class="<?php echo isActiveA('consulting.php', $curBase); ?>" href="consulting.php">Consulting</a>
+                      <a class="<?php echo isActiveA('consulting.php', $curBase); ?>" href="consulting">Consulting</a>
                     </li>
                     <!--  menu-item-has-children -->
                     <li class="menu-item <?php echo anyActive($coldStoragePages, $curBase); ?>">  
-                      <a href="solutions.php">Cold Storage Solutions</a>
+                      <a href="solutions">Cold Storage Solutions</a>
                       <ul class="sub-menu">
                         <li class="<?php echo isActive('turnkey-solution.php', $curBase); ?>">
-                          <a class="<?php echo isActiveA('turnkey-solution.php', $curBase); ?>" href="turnkey-solution.php">Turnkey Solution</a>
+                          <a class="<?php echo isActiveA('turnkey-solution.php', $curBase); ?>" href="turnkey-cold-storage-solutions-in-india">Turnkey Solution</a>
                         </li>
                         <li class="<?php echo isActive('segments-wise.php', $curBase); ?>">
-                          <a class="<?php echo isActiveA('segments-wise.php', $curBase); ?>" href="segments-wise.php">Segment Wise Solutions</a>
+                          <a class="<?php echo isActiveA('segments-wise.php', $curBase); ?>" href="segment-wise-cold-storage-solutions-in-india">Segment Wise Solutions</a>
                         </li>
                         <li class="<?php echo isActive('cold-chain-refrigeration-ca-store-freon-ammonia.php', $curBase); ?>">
-                          <a class="<?php echo isActiveA('cold-chain-refrigeration-ca-store-freon-ammonia.php', $curBase); ?>" href="cold-chain-refrigeration-ca-store-freon-ammonia.php">Cold Chain Refrigeration, CA Store, Frozen/Ammonia</a>
+                          <a class="<?php echo isActiveA('cold-chain-refrigeration-ca-store-freon-ammonia.php', $curBase); ?>" href="cold-chain-refrigeration-ca-store-freon-ammonia-in-india">Cold Chain Refrigeration, CA Store, Frozen/Ammonia</a>
                         </li>
                         <li class="<?php echo isActive('quality-monitoring-solution.php', $curBase); ?>">
-                          <a class="<?php echo isActiveA('quality-monitoring-solution.php', $curBase); ?>" href="quality-monitoring-solution.php">Quality Monitoring Solution</a>
+                          <a class="<?php echo isActiveA('quality-monitoring-solution.php', $curBase); ?>" href="cold-chain-quality-monitoring-solution-in-india">Quality Monitoring Solution</a>
                         </li>
                         <li class="<?php echo isActive('ware-house-management.php', $curBase); ?>">
-                          <a class="<?php echo isActiveA('ware-house-management.php', $curBase); ?>" href="ware-house-management.php">Ware House Management System</a>
+                          <a class="<?php echo isActiveA('ware-house-management.php', $curBase); ?>" href="warehouse-management-solutions-in-india">Ware House Management System</a>
                         </li>
                         <li class="<?php echo isActive('transport-management.php', $curBase); ?>">
-                          <a class="<?php echo isActiveA('transport-management.php', $curBase); ?>" href="transport-management.php">Transport Management System</a>
+                          <a class="<?php echo isActiveA('transport-management.php', $curBase); ?>" href="transport-management-solutions-in-india">Transport Management System</a>
                         </li>
                         <li class="<?php echo isActive('transport-refrigeration.php', $curBase); ?>">
-                          <a class="<?php echo isActiveA('transport-refrigeration.php', $curBase); ?>" href="transport-refrigeration.php">Transport Refrigeration</a>
+                          <a class="<?php echo isActiveA('transport-refrigeration.php', $curBase); ?>" href="transport-refrigeration-solutions-in-india">Transport Refrigeration</a>
                         </li>
                       </ul>
                     </li>
                     <li class="menu-item <?php echo isActive('blog.php', $curBase); ?>">
-                      <a class="<?php echo isActiveA('blog.php', $curBase); ?>" href="blog.php">Blog</a>
+                      <a class="<?php echo isActiveA('blog.php', $curBase); ?>" href="blog">Blog</a>
                     </li>
                     <li class="menu-item <?php echo isActive('contact.php', $curBase); ?>">
-                      <a class="<?php echo isActiveA('contact.php', $curBase); ?>" href="contact.php">Contact</a>
+                      <a class="<?php echo isActiveA('contact.php', $curBase); ?>" href="contact">Contact</a>
                     </li>
 
                     
@@ -693,7 +752,7 @@ body.menu-open{ overflow:hidden; }
 
               <!-- right-aligned CTA -->
               <div class="menu-cta">
-                <a class="btn-cfa" href="consultancy-cfa-training-services.php">CFA Training</a>
+                <a class="btn-cfa" href="https://www.singhanialogistics.in/consultancy-cfa-training-services">CFA Training</a>
               </div>
             </div>
           </div>
@@ -711,53 +770,54 @@ body.menu-open{ overflow:hidden; }
       <div class="canvas-menu-content">
         <ul class="nav-menu mobile-nav-menu">
           <li class="menu-item <?php echo isActive('index.php', $curBase); ?>">
-            <a class="<?php echo isActiveA('index.php', $curBase); ?>" href="index.php">Home</a>
+            <a class="<?php echo isActiveA('index.php', $curBase); ?>" href="https://singhaniarefrigeration.com/">Home</a>
           </li>
           <li class="menu-item <?php echo isActive('about-us.php', $curBase); ?>">
-            <a class="<?php echo isActiveA('about-us.php', $curBase); ?>" href="about-us.php">About Us</a>
+            <a class="<?php echo isActiveA('about-us.php', $curBase); ?>" href="about-us">About Us</a>
           </li>
           <li class="menu-item has-submenu <?php echo anyActive($productsPages, $curBase); ?>">
-            <a href="products.php">Products</a>
+            <a href="products">Products</a>
             <ul class="sub-menu">
-              <li class="<?php echo isActive('truck-ac.php', $curBase); ?>"><a class="<?php echo isActiveA('truck-ac.php', $curBase); ?>" href="truck-ac.php">Truck’s AC</a></li>
-              <li class="<?php echo isActive('truck-refrigerator-container.php', $curBase); ?>"><a class="<?php echo isActiveA('truck-refrigerator-container.php', $curBase); ?>" href="truck-refrigerator-container.php">Truck’s Refrigerator Container</a></li>
-              <li class="<?php echo isActive('cold-storage-refrigeration-units.php', $curBase); ?>"><a class="<?php echo isActiveA('cold-storage-refrigeration-units.php', $curBase); ?>" href="cold-storage-refrigeration-units.php">Cold Storage Refrigeration Units</a></li>
-              <li class="<?php echo isActive('compressor-rack-system.php', $curBase); ?>"><a class="<?php echo isActiveA('compressor-rack-system.php', $curBase); ?>" href="compressor-rack-system.php">Compressor Rack System</a></li>
-              <li class="<?php echo isActive('ammonia-refrigeration-units.php', $curBase); ?>"><a class="<?php echo isActiveA('ammonia-refrigeration-units.php', $curBase); ?>" href="ammonia-refrigeration-units.php">Ammonia Refrigeration Units</a></li>
-              <li class="<?php echo isActive('ripening-systems.php', $curBase); ?>"><a class="<?php echo isActiveA('ripening-systems.php', $curBase); ?>" href="ripening-systems.php">Ripening Systems</a></li>
-              <li class="<?php echo isActive('multideck-cabinet.php', $curBase); ?>"><a class="<?php echo isActiveA('multideck-cabinet.php', $curBase); ?>" href="multideck-cabinet.php">Multideck Cabinet</a></li>
-              <li class="<?php echo isActive('iqf.php', $curBase); ?>"><a class="<?php echo isActiveA('iqf.php', $curBase); ?>" href="iqf.php">IQF (Individual Quick Freeze)</a></li>
-              <li class="<?php echo isActive('doors-ca-doors.php', $curBase); ?>"><a class="<?php echo isActiveA('doors-ca-doors.php', $curBase); ?>" href="doors-ca-doors.php">Doors &amp; CA Doors</a></li>
-              <li class="<?php echo isActive('panels.php', $curBase); ?>"><a class="<?php echo isActiveA('panels.php', $curBase); ?>" href="panels.php">Puf Panels</a></li>
-              <li class="<?php echo isActive('dock-shelter-dock-leveler.php', $curBase); ?>"><a class="<?php echo isActiveA('dock-shelter-dock-leveler.php', $curBase); ?>" href="dock-shelter-dock-leveler.php">Dock Shelter &amp; Dock Leveler</a></li>
-              <li class="<?php echo isActive('heavy-duty-racks.php', $curBase); ?>"><a class="<?php echo isActiveA('heavy-duty-racks.php', $curBase); ?>" href="heavy-duty-racks.php">Heavy Duty Racks</a></li>
+              <li class="<?php echo isActive('truck-ac.php', $curBase); ?>"><a class="<?php echo isActiveA('truck-ac.php', $curBase); ?>" href="truck-ac-manufacturer-in-india">Truck’s AC</a></li>
+              <li class="<?php echo isActive('truck-refrigerator-container.php', $curBase); ?>"><a class="<?php echo isActiveA('truck-refrigerator-container.php', $curBase); ?>" href="truck-refrigerator-container-manufacturer-in-india">Truck’s Refrigerator Container</a></li>
+              <li class="<?php echo isActive('cold-storage-refrigeration-units.php', $curBase); ?>"><a class="<?php echo isActiveA('cold-storage-refrigeration-units.php', $curBase); ?>" href="cold-storage-refrigeration-units-manufacturer-in-india">Cold Storage Refrigeration Units</a></li>
+              <li class="<?php echo isActive('compressor-rack-system.php', $curBase); ?>"><a class="<?php echo isActiveA('compressor-rack-system.php', $curBase); ?>" href="compressor-rack-system-manufacturer-in-india">Compressor Rack System</a></li>
+              <li class="<?php echo isActive('ammonia-refrigeration-units.php', $curBase); ?>"><a class="<?php echo isActiveA('ammonia-refrigeration-units.php', $curBase); ?>" href="ammonia-refrigeration-units-manufacturer-in-india">Ammonia Refrigeration Units</a></li>
+              <li class="<?php echo isActive('freon-refrigeration-units.php', $curBase); ?>"><a class="<?php echo isActiveA('freon-refrigeration-units.php', $curBase); ?>" href="freon-refrigeration-in-india">Freon Refrigeration Units</a></li>
+              <li class="<?php echo isActive('ripening-systems.php', $curBase); ?>"><a class="<?php echo isActiveA('ripening-systems.php', $curBase); ?>" href="ripening-systems-manufacturer-in-india">Ripening Systems</a></li>
+              <li class="<?php echo isActive('multideck-cabinet.php', $curBase); ?>"><a class="<?php echo isActiveA('multideck-cabinet.php', $curBase); ?>" href="multideck-cabinet-manufacturer-in-india">Multideck Cabinet</a></li>
+              <li class="<?php echo isActive('iqf.php', $curBase); ?>"><a class="<?php echo isActiveA('iqf.php', $curBase); ?>" href="iqf-system-manufacturer-in-india">IQF (Individual Quick Freeze)</a></li>
+              <li class="<?php echo isActive('doors-ca-doors.php', $curBase); ?>"><a class="<?php echo isActiveA('doors-ca-doors.php', $curBase); ?>" href="cold-storage-doors-manufacturer-in-india">Doors &amp; CA Doors</a></li>
+              <li class="<?php echo isActive('panels.php', $curBase); ?>"><a class="<?php echo isActiveA('panels.php', $curBase); ?>" href="puf-panels-manufacturer-in-india">Puf Panels</a></li>
+              <li class="<?php echo isActive('dock-shelter-dock-leveler.php', $curBase); ?>"><a class="<?php echo isActiveA('dock-shelter-dock-leveler.php', $curBase); ?>" href="dock-shelter-dock-leveler-manufacturer-in-india">Dock Shelter &amp; Dock Leveler</a></li>
+              <li class="<?php echo isActive('heavy-duty-racks.php', $curBase); ?>"><a class="<?php echo isActiveA('heavy-duty-racks.php', $curBase); ?>" href="heavy-duty-racks-manufacturer-in-india">Heavy Duty Racks</a></li>
             </ul>
           </li>
           <li class="menu-item <?php echo isActive('consulting.php', $curBase); ?>">
-            <a class="<?php echo isActiveA('consulting.php', $curBase); ?>" href="consulting.php">Consulting</a>
+            <a class="<?php echo isActiveA('consulting.php', $curBase); ?>" href="consulting">Consulting</a>
           </li>
           <li class="menu-item has-submenu <?php echo anyActive($coldStoragePages, $curBase); ?>">
-            <a href="solutions.php">Cold Storage Solutions</a>
+            <a href="solutions">Cold Storage Solutions</a>
             <ul class="sub-menu">
-              <li class="<?php echo isActive('turnkey-solution.php', $curBase); ?>"><a class="<?php echo isActiveA('turnkey-solution.php', $curBase); ?>" href="turnkey-solution.php">Turnkey Solution</a></li>
-              <li class="<?php echo isActive('segments-wise.php', $curBase); ?>"><a class="<?php echo isActiveA('segments-wise.php', $curBase); ?>" href="segments-wise.php">Segment Wise Solutions</a></li>
-              <li class="<?php echo isActive('cold-chain-refrigeration-ca-store-freon-ammonia.php', $curBase); ?>"><a class="<?php echo isActiveA('cold-chain-refrigeration-ca-store-freon-ammonia.php', $curBase); ?>" href="cold-chain-refrigeration-ca-store-freon-ammonia.php">Cold Chain Refrigeration, CA Store, Frozen/Ammonia</a></li>
-              <li class="<?php echo isActive('quality-monitoring-solution.php', $curBase); ?>"><a class="<?php echo isActiveA('quality-monitoring-solution.php', $curBase); ?>" href="quality-monitoring-solution.php">Quality Monitoring Solution</a></li>
-              <li class="<?php echo isActive('ware-house-management.php', $curBase); ?>"><a class="<?php echo isActiveA('ware-house-management.php', $curBase); ?>" href="ware-house-management.php">Ware House Management System</a></li>
-              <li class="<?php echo isActive('transport-management.php', $curBase); ?>"><a class="<?php echo isActiveA('transport-management.php', $curBase); ?>" href="transport-management.php">Transport Management System</a></li>
-              <li class="<?php echo isActive('transport-refrigeration.php', $curBase); ?>"><a class="<?php echo isActiveA('transport-refrigeration.php', $curBase); ?>" href="transport-refrigeration.php">Transport Refrigeration</a></li>
+              <li class="<?php echo isActive('turnkey-solution.php', $curBase); ?>"><a class="<?php echo isActiveA('turnkey-solution.php', $curBase); ?>" href="cold-storage-solutions-in-india">Turnkey Solution</a></li>
+              <li class="<?php echo isActive('segments-wise.php', $curBase); ?>"><a class="<?php echo isActiveA('segments-wise.php', $curBase); ?>" href="segment-wise-cold-storage-solutions-in-india">Segment Wise Solutions</a></li>
+              <li class="<?php echo isActive('cold-chain-refrigeration-ca-store-freon-ammonia.php', $curBase); ?>"><a class="<?php echo isActiveA('cold-chain-refrigeration-ca-store-freon-ammonia.php', $curBase); ?>" href="cold-chain-refrigeration-ca-store-freon-ammonia-in-india">Cold Chain Refrigeration, CA Store, Frozen/Ammonia</a></li>
+              <li class="<?php echo isActive('quality-monitoring-solution.php', $curBase); ?>"><a class="<?php echo isActiveA('quality-monitoring-solution.php', $curBase); ?>" href="cold-chain-quality-monitoring-solution-in-india">Quality Monitoring Solution</a></li>
+              <li class="<?php echo isActive('ware-house-management.php', $curBase); ?>"><a class="<?php echo isActiveA('ware-house-management.php', $curBase); ?>" href="warehouse-management-solutions-in-india">Ware House Management System</a></li>
+              <li class="<?php echo isActive('transport-management.php', $curBase); ?>"><a class="<?php echo isActiveA('transport-management.php', $curBase); ?>" href="transport-management-solutions-in-india">Transport Management System</a></li>
+              <li class="<?php echo isActive('transport-refrigeration.php', $curBase); ?>"><a class="<?php echo isActiveA('transport-refrigeration.php', $curBase); ?>" href="transport-refrigeration-solutions-in-india">Transport Refrigeration</a></li>
             </ul>
           </li>
           <li class="menu-item <?php echo isActive('blog.php', $curBase); ?>">
-            <a class="<?php echo isActiveA('blog.php', $curBase); ?>" href="blog.php">Blog</a>
+            <a class="<?php echo isActiveA('blog.php', $curBase); ?>" href="blog">Blog</a>
           </li>
           <li class="menu-item <?php echo isActive('contact.php', $curBase); ?>">
-            <a class="<?php echo isActiveA('contact.php', $curBase); ?>" href="contact.php">Contact Us</a>
+            <a class="<?php echo isActiveA('contact.php', $curBase); ?>" href="contact">Contact Us</a>
           </li>
         </ul>
       </div>
       <div class="mobile-drawer-info">
-        <a href="<?php echo htmlspecialchars($mailHref, ENT_QUOTES, 'UTF-8'); ?>" aria-label="Email Singhania Refrigeration"><i class="fa fa-envelope"></i><span>Email Us</span></a>
+        <a href="<?php echo htmlspecialchars($mailHref, ENT_QUOTES, 'UTF-8'); ?>" aria-label="Email Singhania Refrigeration"><i class="fa fa-envelope"></i><span><?php echo htmlspecialchars($email, ENT_QUOTES, 'UTF-8'); ?></span></a>
         <div class="mobile-drawer-phone-list">
           <?php foreach ($contactPhones as $phone): ?>
             <a href="<?php echo htmlspecialchars($phone['href'], ENT_QUOTES, 'UTF-8'); ?>"><i class="fa fa-phone"></i><span><?php echo htmlspecialchars($phone['label'], ENT_QUOTES, 'UTF-8'); ?></span></a>
@@ -1092,6 +1152,46 @@ body.menu-open{ overflow:hidden; }
     });
   });
 })();
+</script>
+
+<script>
+/* Ensure every public internal link displays an extension-free URL on hover. */
+document.addEventListener('DOMContentLoaded', function () {
+  const routes = {
+    'index.php': './',
+    'truck-ac.php': 'truck-ac-manufacturer-in-india',
+    'truck-refrigerator-container.php': 'truck-refrigerator-container-manufacturer-in-india',
+    'cold-storage-refrigeration-units.php': 'cold-storage-refrigeration-units-manufacturer-in-india',
+    'compressor-rack-system.php': 'compressor-rack-system-manufacturer-in-india',
+    'ammonia-refrigeration-units.php': 'ammonia-refrigeration-units-manufacturer-in-india',
+    'freon-refrigeration-units.php': 'freon-refrigeration-in-india',
+    'ripening-systems.php': 'ripening-systems-manufacturer-in-india',
+    'multideck-cabinet.php': 'multideck-cabinet-manufacturer-in-india',
+    'iqf.php': 'iqf-system-manufacturer-in-india',
+    'doors-ca-doors.php': 'cold-storage-doors-manufacturer-in-india',
+    'panels.php': 'puf-panels-manufacturer-in-india',
+    'dock-shelter-dock-leveler.php': 'dock-shelter-dock-leveler-manufacturer-in-india',
+    'heavy-duty-racks.php': 'heavy-duty-racks-manufacturer-in-india',
+    'turnkey-solution.php': 'turnkey-cold-storage-solutions-in-india',
+    'segments-wise.php': 'segment-wise-cold-storage-solutions-in-india',
+    'cold-chain-refrigeration-ca-store-freon-ammonia.php': 'cold-chain-refrigeration-ca-store-freon-ammonia-in-india',
+    'quality-monitoring-solution.php': 'cold-chain-quality-monitoring-solution-in-india',
+    'ware-house-management.php': 'warehouse-management-solutions-in-india',
+    'transport-management.php': 'transport-management-solutions-in-india',
+    'transport-refrigeration.php': 'transport-refrigeration-solutions-in-india'
+  };
+
+  document.querySelectorAll('a[href]').forEach(function (link) {
+    const raw = link.getAttribute('href');
+    if (!raw || /^(?:https?:|mailto:|tel:|javascript:|#)/i.test(raw)) return;
+
+    const match = raw.match(/^(.*\/)?([^/?#]+\.php)(\?[^#]*)?(#.*)?$/i);
+    if (!match) return;
+
+    const clean = routes[match[2].toLowerCase()] || match[2].replace(/\.php$/i, '');
+    link.setAttribute('href', (match[1] || '') + clean + (match[3] || '') + (match[4] || ''));
+  });
+});
 </script>
 
 <script>

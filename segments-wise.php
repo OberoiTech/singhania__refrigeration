@@ -205,7 +205,7 @@
           <div class="content-part">
             <div class="segment-hero">
               <span class="segment-eyebrow">Solutions</span>
-              <h1>Segment-Wise Cold Storage Solutions for Every Industry We Serve</h1>
+              <h1>Segment-Wise Cold Storage Solutions </h1>
               <p>
                 Each product is different in cold storage. Milk needs a fast pull-down, bananas need a controlled ripening environment, pharma needs GDP-aligned compliance and seafood needs freezing fast enough to preserve texture. Singhania Refrigeration designs and manufactures cold rooms, blast freezers, ripening chambers and CA stores to suit the specific product, temperature, humidity and handling requirements of your industry - not a generic cold room bent to fit.
               </p>

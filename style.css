@@ -87,9 +87,9 @@ h4,
 h5,
 h6 {
   font-family: 'Poppins', sans-serif;
-  color: #1c1b1b;
+  color: #0e2344;
   margin: 0 0 26px;
-  font-weight: 700;
+  font-weight:600;
 }
 h1 {
   color: #0a0a0a;
@@ -709,8 +709,8 @@ button:focus {
   background: #082243;
 }
 .readon:hover {
-  background: #228bfd;
-  color: #ffffff;
+  background: #fff;
+  color: #0e2344;
 }
 .readon2 {
   outline: none;
@@ -3154,7 +3154,7 @@ body.marketing #scrollUp i {
 }
 .sec-title .sub-title {
   font-family: 'Poppins', sans-serif;
-  font-weight: 500;
+  font-weight: 600;
   text-transform: uppercase;
   margin-bottom: 8px;
 }
@@ -3201,7 +3201,7 @@ body.marketing #scrollUp i {
   display: inline-block;
 }
 .sec-title .sub-title.right-line:after {
-  content: "";
+  /* content: ""; */
   position: absolute;
   border: 0;
   width: 50px;

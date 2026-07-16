@@ -91,6 +91,23 @@
     box-shadow: 0 10px 28px rgba(16,28,52,.06);
     transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
   }
+  .card-prod-link{
+    display:block;
+    height:100%;
+    color:inherit;
+    text-decoration:none;
+    border-radius:18px;
+  }
+  .card-prod-link:hover,
+  .card-prod-link:focus{
+    color:inherit;
+    text-decoration:none;
+    outline:none;
+  }
+  .card-prod-link:focus-visible .card-prod{
+    outline:3px solid #6a8df4;
+    outline-offset:3px;
+  }
   .card-prod:focus-within,
   .card-prod:hover{ transform: translateY(-4px); box-shadow:0 18px 42px rgba(16,28,52,.12); border-color:#dfe6f4; }
 
@@ -149,7 +166,7 @@
     <div class="container">
       <div class="about-hero__card" data-aos="fade-up">
         <span class="eyebrow">Our Catalog</span>
-        <h1><span class="brand" style="color:#fff">Products</span></h1>
+        <h1><span class="brand" style="color:#fff">Products and Services</span></h1>
         <p>Explore Singhania Refrigeration’s product range—engineered for performance, efficiency, and reliability across India’s cold chain.</p>
       </div>
     </div>
@@ -192,6 +209,13 @@
       'slug'  => 'ammonia-refrigeration-units.php',
       'img'   => 'assets/images/products/ammonia-refrigeration.webp',
       'desc'  => "Industrial NH₃ systems delivering superior efficiency for large facilities.\nEngineered with safety interlocks, redundancy, and robust metallurgy."
+    ],
+    [
+      'title' => 'Freon Refrigeration Units',
+      'slug'  => 'freon-refrigeration-in-india',
+      'img'   => 'assets/images/products/compressor-rack-system-e1600420693281.webp',
+      'desc'  => "Compact HFC/HFO systems for cold rooms, retail, pharma and food businesses.\nModular configurations with precise controls and Pan-India support.",
+      'badge' => 'New'
     ],
     [
       'title' => 'Ripening Systems',
@@ -255,7 +279,8 @@
       <div class="row products-grid">
         <?php foreach ($products as $p): ?>
           <div class="col-lg-4 col-md-6 col-sm-12 col mb-4" data-aos="fade-up">
-            <article class="card-prod" tabindex="0">
+            <a class="card-prod-link" href="<?php echo htmlspecialchars(publicPageUrl($p['slug'])); ?>" aria-label="View <?php echo htmlspecialchars($p['title'], ENT_QUOTES); ?>">
+            <article class="card-prod">
               <div class="card-prod__img shine">
                 <?php if (!empty($p['badge'])): ?>
                   <span class="badge-float"><?php echo htmlspecialchars($p['badge']); ?></span>
@@ -267,16 +292,15 @@
               </div>
               <div class="card-prod__body">
                 <h3 class="card-prod__title">
-                  <a href="<?php echo htmlspecialchars($p['slug']); ?>">
-                    <?php echo htmlspecialchars($p['title']); ?>
-                  </a>
+                  <?php echo htmlspecialchars($p['title']); ?>
                 </h3>
                 <p class="card-prod__desc"><?php echo nl2br(htmlspecialchars($p['desc'])); ?></p>
               </div>
               <!-- <div class="">
-                <a class="btn-ghost" href="<?php echo htmlspecialchars($p['slug']); ?>">View details</a>
+                <a class="btn-ghost" href="<?php echo htmlspecialchars(publicPageUrl($p['slug'])); ?>">View details</a>
               </div> -->
             </article>
+            </a>
           </div>
         <?php endforeach; ?>
       </div>

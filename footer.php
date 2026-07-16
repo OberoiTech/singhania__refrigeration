@@ -5,7 +5,7 @@
       <!-- About -->
       <div class="f-col" data-aos="fade-up" data-aos-delay="50">
         <div class="brand">
-          <a href="index.php" class="brand-logo">
+          <a href="https://singhaniarefrigeration.com/" class="brand-logo">
              <!-- <img src="assets/images/products/logoF.png" width="340" height="227" alt="Singhania Refrigeration"> -->
               <picture>
                 <source srcset="assets/images/logoF.avif" type="image/avif">
@@ -45,15 +45,19 @@
           </li>
           <li>
             <span class="ico"><i class="fa fa-phone"></i></span>
-            <span class="text"><a href="tel:+91<?php echo $mobile; ?>">+91&nbsp;<?php echo $mobile; ?></a> / <a href="tel:+919718097170">+91-9718097170</a></span>
+            <?php $footerMobileDigits = preg_replace('/\D+/', '', (string) $mobile); ?>
+            <span class="text footer-phone-links">
+              <a href="tel:+91<?php echo htmlspecialchars($footerMobileDigits, ENT_QUOTES, 'UTF-8'); ?>">+91-<?php echo htmlspecialchars($footerMobileDigits, ENT_QUOTES, 'UTF-8'); ?></a>
+              <a href="tel:+919718097170">+91-9718097170</a>
+            </span>
           </li>
           <li>
             <span class="ico"><i class="fa fa-envelope"></i></span>
-            <span class="text"><a href="<?php echo htmlspecialchars($mailHref, ENT_QUOTES, 'UTF-8'); ?>" aria-label="Email Singhania Refrigeration">Email Us</a></span>
+            <span class="text footer-email"><a href="<?php echo htmlspecialchars($mailHref, ENT_QUOTES, 'UTF-8'); ?>" aria-label="Email Singhania Refrigeration"><?php echo htmlspecialchars($email, ENT_QUOTES, 'UTF-8'); ?></a></span>
           </li>
           <li>
             <span class="ico"><i class="fa fa-clock-o"></i></span>
-            <span class="text">Mon–Fri: 9AM TO 6PM <?php echo $time; ?></span>
+            <span class="text">Mon–Sat: 9:30 AM–6:30 PM</span>
           </li>
         </ul>
 
@@ -63,13 +67,13 @@
       <div class="f-col" data-aos="fade-up" data-aos-delay="125">
         <h4 class="f-title mt-28">Quick Links</h4>
         <ul class="link-list">
-          <!-- <li><a href="blog-details.php">Latest Posts</a></li> -->
-          <li><a href="about-us.php">About Us</a></li>
-          <li><a href="panels.php">PUF Panels</a></li>
-          <li><a href="consulting.php">Consulting</a></li>
-          <li><a href="cold-chain-refrigeration-ca-store-freon-ammonia.php" aria-label="Cold Storage Solutions: refrigeration, CA store, Freon and ammonia systems">Cold Storage Solutions</a></li>
-          <li><a href="blog.php">Blogs</a></li>
-          <li><a href="contact.php">Contact Us</a></li>
+          <!-- <li><a href="blog-details">Latest Posts</a></li> -->
+          <li><a href="about-us">About Us</a></li>
+          <li><a href="panels">PUF Panels</a></li>
+          <li><a href="consulting">Consulting</a></li>
+          <li><a href="cold-chain-refrigeration-ca-store-freon-ammonia" aria-label="Cold Storage Solutions: refrigeration, CA store, Freon and ammonia systems">Cold Storage Solutions</a></li>
+          <li><a href="blog">Blogs</a></li>
+          <li><a href="contact">Contact Us</a></li>
         </ul>
       </div>
 
@@ -85,21 +89,21 @@
                 $fbDate = !empty($fb['created_at']) ? date('M d, Y', strtotime($fb['created_at'])) : '';
           ?>
           <article class="post-mini">
-            <a class="thumb" href="blog-details.php?id=<?php echo (int)$fb['id']; ?>">
+            <a class="thumb" href="blog-details?id=<?php echo (int)$fb['id']; ?>">
               <?php $fbWebp = function_exists('sr_webp_path') ? sr_webp_path($fbImg) : ''; ?>
               <?php if ($fbWebp !== ''): ?><picture><source srcset="<?php echo htmlspecialchars($fbWebp, ENT_QUOTES); ?>" type="image/webp"><?php endif; ?>
               <img src="<?php echo htmlspecialchars($fbImg, ENT_QUOTES); ?>"<?php echo function_exists('sr_image_size_attrs') ? sr_image_size_attrs(function_exists('sr_preferred_image_path') ? sr_preferred_image_path($fbImg) : $fbImg) : ''; ?> alt="<?php echo htmlspecialchars($fb['title']); ?>">
               <?php if ($fbWebp !== ''): ?></picture><?php endif; ?>
             </a>
             <div class="meta">
-              <a class="title" href="blog-details.php?id=<?php echo (int)$fb['id']; ?>">
+              <a class="title" href="blog-details?id=<?php echo (int)$fb['id']; ?>">
                 <?php echo htmlspecialchars($fb['title']); ?>
               </a>
               <div class="date"><i class="fa fa-calendar"></i> <?php echo $fbDate; ?></div>
             </div>
           </article>
           <?php endwhile; else: ?>
-          <p class="muted">No posts yet — <a href="blog.php">visit our blog</a>.</p>
+          <p class="muted">No posts yet — <a href="blog">visit our blog</a>.</p>
           <?php endif; ?>
         </div>
       </div>
@@ -109,9 +113,9 @@
     <div class="footer-bottom">
       <p><span class="footer-secure-icon"><i class="fa fa-shield"></i></span><span>© <?php echo date('Y'); ?> Singhania Refrigeration.<br>All Rights Reserved.</span></p>
       <ul class="bottom-links">
-        <li><a href="privacy-policy.php">Privacy</a></li>
-        <li><a href="terms.php">Terms</a></li>
-        <li><a href="contact.php">Support</a></li>
+        <li><a href="privacy-policy">Privacy</a></li>
+        <li><a href="terms">Terms</a></li>
+        <li><a href="contact">Support</a></li>
       </ul>
     </div>
   </div>
@@ -298,7 +302,7 @@
   filter: drop-shadow(0 4px 14px rgba(0,0,0,.35));
   margin-bottom: 10px;
 }
-.brand-copy{ color: var(--footer-text); line-height: 1.7; margin-bottom: 14px; text-align: justify; }
+.brand-copy{ color: #fff; line-height: 1.7; margin-bottom: 14px; text-align: justify; }
 .btn-ghost{
   display:inline-block;
   padding: 10px 14px;
@@ -389,9 +393,7 @@
   border:0;
   border-radius:0;
   overflow:hidden;
-  background:
-    radial-gradient(90% 120% at 50% 0%, rgba(12,63,121,.25), transparent 58%),
-    linear-gradient(180deg,rgba(5,23,49,.96) 0%,rgba(3,15,33,.98) 100%);
+  background:#0e2344;
   box-shadow:inset 0 1px 0 rgba(190,210,238,.18), inset 0 -1px 0 rgba(190,210,238,.12);
 }
 .footer-grid{
@@ -428,7 +430,7 @@
   filter:drop-shadow(0 10px 24px rgba(26,116,219,.24));
 }
 .brand-copy{
-  color:#d7e2f4;
+  color:#fff;
   font-size:15px;
   line-height:1.65;
   margin:0 0 18px;
@@ -540,9 +542,28 @@
 }
 .contact-list .text,
 .contact-list .text a{
-  color:#dbe6f8;
+  color:#fff;
   font-size:15px;
   line-height:1.5;
+}
+.contact-list .text{
+  min-width:0;
+}
+.contact-list .footer-email,
+.contact-list .footer-email a{
+  display:block;
+  max-width:100%;
+  overflow-wrap:anywhere;
+  word-break:break-word;
+}
+.contact-list .footer-phone-links{
+  display:grid;
+  gap:2px;
+  justify-items:start;
+}
+.contact-list .footer-phone-links a{
+  display:block;
+  white-space:nowrap;
 }
 .link-list{
   gap:0;
@@ -559,7 +580,7 @@
   min-height:42px;
   padding:9px 0 9px 28px;
   margin:0;
-  color:#dbe6f8;
+  color:#fff;
   font-size:15px;
   line-height:1.35;
   transition:color .18s ease, transform .18s ease;
@@ -622,7 +643,7 @@
   display:flex;
   align-items:center;
   gap:14px;
-  color:#dbe6f8;
+  color:#fff;
   font-size:15px;
   line-height:1.4;
 }
