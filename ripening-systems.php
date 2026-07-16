@@ -448,7 +448,7 @@
               way, time after time.
             </p>
             <div class="cta-bar">
-              <a href="contact.php" class="btn-brand">Get a Free Quote&nbsp; <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+              <a href="contact" class="btn-brand">Get a Free Quote&nbsp; <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
               <a href="tel:+919971060822" class="btn-brand btn-ghost"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp; Call Now</a>
             </div>
           </div>
@@ -468,7 +468,7 @@
             <h2 class="section-h2">What is a Ripening System?</h2>
 
             <p class="lead">
-              A ripening system from a <a href="index.php">cold chain solutions provider in Delhi NCR</a> (also called a ripening chamber or ripening room) is a
+              A ripening system from a <a href="/">cold chain solutions provider in Delhi NCR</a> (also called a ripening chamber or ripening room) is a
               controlled-atmosphere room used to trigger and control the ripening of
               climacteric fruits &mdash; fruits that continue to ripen after harvest,
               such as bananas, mangoes, papayas and tomatoes &mdash; by precisely
@@ -1404,7 +1404,7 @@
         </p>
 
         <div class="btn-part">
-          <a class="readon banner-style" href="contact.php">Request a Quote &rarr;</a>
+          <a class="readon banner-style" href="contact">Request a Quote &rarr;</a>
         </div>
 
         <p class="cta-phone-numbers">

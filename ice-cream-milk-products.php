@@ -36,17 +36,17 @@
                                 <div class="sb-project-detail mt-50 md-mt-0">
                                     <h4 class="title">Products Details</h4>
                                     <ul>
-                                        <li><a href="freon-refrigeration-units.php">Freon Refrigeration Units</a></li>
-                                        <li><a href="compressor-rack-system.php">Compressor Rack System</a></li>
-                                        <li><a href="ammonia-refrigeration-units.php">Ammonia Refrigeration Units</a></li>
-                                        <li><a href="ripening-systems.php">Ripening Systems</a></li>
-                                        <li><a href="multideck-cabinet.php">Multideck Cabinet</a></li>
-                                        <li><a href="iqf.php">IQF</a></li>
-                                        <li><a href="doors-ca-doors.php">Doors &amp; CA Doors</a></li>
-                                        <li><a href="panels.php">Arctic panels</a></li>
-                                        <li><a href="docking-systems.php">Docking Systems</a></li>
-                                        <li><a href="packing-grading-line.php">Packing and  Grading</a></li>
-                                        <li><a href="ca-solutions.php">CA Solutions</a></li>
+                                        <li><a href="freon-refrigeration-in-india">Freon Refrigeration Units</a></li>
+                                        <li><a href="compressor-rack-system-manufacturer-in-india">Compressor Rack System</a></li>
+                                        <li><a href="ammonia-refrigeration-units-manufacturer-in-india">Ammonia Refrigeration Units</a></li>
+                                        <li><a href="ripening-systems-manufacturer-in-india">Ripening Systems</a></li>
+                                        <li><a href="multideck-cabinet-manufacturer-in-india">Multideck Cabinet</a></li>
+                                        <li><a href="iqf-system-manufacturer-in-india">IQF</a></li>
+                                        <li><a href="cold-storage-doors-manufacturer-in-india">Doors &amp; CA Doors</a></li>
+                                        <li><a href="puf-panels-manufacturer-in-india">Arctic panels</a></li>
+                                        <li><a href="dock-shelter-dock-leveler-manufacturer-in-india">Docking Systems</a></li>
+                                        <li><a href="solutions">Packing and  Grading</a></li>
+                                        <li><a href="cold-chain-refrigeration-ca-store-freon-ammonia-in-india">CA Solutions</a></li>
                                     </ul>
                                 </div>
                             </div>

@@ -337,7 +337,7 @@
               energy-efficient compressors, optimised airflow, and durable materials to provide
               many years of reliable performance.</p>
             <div class="cta-bar">
-              <a href="contact.php" class="btn-brand">Get a Free Quote&nbsp; <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+              <a href="contact" class="btn-brand">Get a Free Quote&nbsp; <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
               <a href="tel:+919971060822" class="btn-brand btn-ghost"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp; Call Now</a>
             </div>
           </div>
@@ -357,7 +357,7 @@
             <h2 class="section-h2">What is a Cold Storage Refrigeration Unit?</h2>
 
             <p class="lead">
-               Cold storage systems are part of <a href="index.php">industrial refrigeration and cold chain solutions</a> located inside a warehouse (or coldroom). They keep
+               Cold storage systems are part of <a href="/">industrial refrigeration and cold chain solutions</a> located inside a warehouse (or coldroom). They keep
                 perishable (temperature-sensitive) products cold, at a constant, controlled
                 temperature, for long periods of time.
             </p>
@@ -1294,7 +1294,7 @@
         </p>
 
         <div class="btn-part">
-          <a class="readon banner-style" href="contact.php">Request a Quote &rarr;</a>
+          <a class="readon banner-style" href="contact">Request a Quote &rarr;</a>
         </div>
 
         <p class="cta-phone-numbers">

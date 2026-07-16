@@ -28,7 +28,7 @@ $fallbackDescription = $plainDescription !== '' ? substr($plainDescription, 0, 1
 $pageTitle = !empty($blog['meta_title']) ? $blog['meta_title'] : (!empty($blog['title']) ? $blog['title'] . ' | Singhania Refrigeration' : 'Blog Details | Singhania Refrigeration');
 $pageDescription = !empty($blog['meta_description']) ? $blog['meta_description'] : $fallbackDescription;
 $pageKeywords = !empty($blog['keywords']) ? $blog['keywords'] : 'cold storage solutions, refrigeration blog, Singhania Refrigeration';
-$canonicalUrl = 'https://singhaniarefrigeration.com/blog-details.php?id=' . $id;
+ $canonicalUrl = 'https://singhaniarefrigeration.com/blog-details?id=' . $id;
 $shareImage = !empty($blog['thumb_image']) ? 'https://singhaniarefrigeration.com/admin/uploads/' . $blog['thumb_image'] : 'https://singhaniarefrigeration.com/admin/uploads/image.jpg';
 $ogType = 'article';
 ?>
@@ -63,7 +63,7 @@ $ogType = 'article';
                                     <ul class="blog-meta mb-22">
                                         <li><i class="fa fa-calendar-check-o"></i> <?php echo $blog['created_at'];?></li>
                                         <li><i class="fa fa-user-o"></i> <?php echo htmlspecialchars(!empty($blog['author']) ? $blog['author'] : 'Singhania', ENT_QUOTES, 'UTF-8'); ?></li>
-                                        <li><i class="fa fa-book"></i> <a href="blog.php" aria-label="Browse <?php echo htmlspecialchars($blog['category_name'], ENT_QUOTES, 'UTF-8'); ?> articles"><?php echo htmlspecialchars($blog['category_name'], ENT_QUOTES, 'UTF-8'); ?></a></li>
+                                        <li><i class="fa fa-book"></i> <a href="blog" aria-label="Browse <?php echo htmlspecialchars($blog['category_name'], ENT_QUOTES, 'UTF-8'); ?> articles"><?php echo htmlspecialchars($blog['category_name'], ENT_QUOTES, 'UTF-8'); ?></a></li>
                                         <!-- <li><i class="fa fa-comments-o"></i> 10</li> -->
                                     </ul>
                                     <p class="desc mb-35"><?php echo $blog['description'];?></p>
@@ -82,11 +82,11 @@ $ogType = 'article';
                                         while($blog = mysqli_fetch_assoc($blogs)){ ?>
                                     <div class="single-post mb-20">
                                         <div class="post-image">
-                                            <a href="blog-details.php?id=<?php echo $blog['id']; ?>"><img src="<?php echo "admin/uploads/" . $blog['image']; ?>" alt="<?php echo htmlspecialchars(!empty($blog['title']) ? $blog['title'] : 'Recent blog post', ENT_QUOTES); ?>"></a>
+                                            <a href="blog-details?id=<?php echo $blog['id']; ?>"><img src="<?php echo "admin/uploads/" . $blog['image']; ?>" alt="<?php echo htmlspecialchars(!empty($blog['title']) ? $blog['title'] : 'Recent blog post', ENT_QUOTES); ?>"></a>
                                         </div>
                                         <div class="post-desc">
                                             <div class="post-title">
-                                                <h5 class="margin-0"><a href="blog-details.php?id=<?php echo $blog['id']; ?>"><?php echo $blog['title']; ?> </a></h5>
+                                                <h5 class="margin-0"><a href="blog-details?id=<?php echo $blog['id']; ?>"><?php echo $blog['title']; ?> </a></h5>
                                             </div>
                                             <ul>
                                                 <li><i class="fa fa-calendar"></i> <?php echo $blog['created_at']; ?></li>

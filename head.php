@@ -22,9 +22,36 @@ $mobile = $mobile ?? '';
 $facebook = $facebook ?? '';
 $linkedin = $linkedin ?? '';
 $address = $address ?? '';
-$schemaPagePath = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH) ?: '/';
-$schemaPageUrl = rtrim($siteUrl, '/') . (($schemaPagePath === '/' || $schemaPagePath === '/index.php') ? '/' : $schemaPagePath);
-$canonicalUrl = $canonicalUrl ?? $schemaPageUrl;
+$canonicalRoutes = [
+    'index.php' => '',
+    'truck-ac.php' => 'truck-ac-manufacturer-in-india',
+    'truck-refrigerator-container.php' => 'truck-refrigerator-container-manufacturer-in-india',
+    'cold-storage-refrigeration-units.php' => 'cold-storage-refrigeration-units-manufacturer-in-india',
+    'compressor-rack-system.php' => 'compressor-rack-system-manufacturer-in-india',
+    'ammonia-refrigeration-units.php' => 'ammonia-refrigeration-units-manufacturer-in-india',
+    'freon-refrigeration-units.php' => 'freon-refrigeration-in-india',
+    'ripening-systems.php' => 'ripening-systems-manufacturer-in-india',
+    'multideck-cabinet.php' => 'multideck-cabinet-manufacturer-in-india',
+    'iqf.php' => 'iqf-system-manufacturer-in-india',
+    'doors-ca-doors.php' => 'cold-storage-doors-manufacturer-in-india',
+    'panels.php' => 'puf-panels-manufacturer-in-india',
+    'dock-shelter-dock-leveler.php' => 'dock-shelter-dock-leveler-manufacturer-in-india',
+    'heavy-duty-racks.php' => 'heavy-duty-racks-manufacturer-in-india',
+    'turnkey-solution.php' => 'turnkey-cold-storage-solutions-in-india',
+    'segments-wise.php' => 'segment-wise-cold-storage-solutions-in-india',
+    'cold-chain-refrigeration-ca-store-freon-ammonia.php' => 'cold-chain-refrigeration-ca-store-freon-ammonia-in-india',
+    'quality-monitoring-solution.php' => 'cold-chain-quality-monitoring-solution-in-india',
+    'ware-house-management.php' => 'warehouse-management-solutions-in-india',
+    'transport-management.php' => 'transport-management-solutions-in-india',
+    'transport-refrigeration.php' => 'transport-refrigeration-solutions-in-india',
+];
+$scriptFile = basename($_SERVER['SCRIPT_NAME'] ?? $file);
+$canonicalPath = array_key_exists($scriptFile, $canonicalRoutes)
+    ? $canonicalRoutes[$scriptFile]
+    : preg_replace('/\.php$/i', '', $scriptFile);
+$generatedCanonicalUrl = $siteUrl . ltrim((string)$canonicalPath, '/');
+$canonicalUrl = $canonicalUrl ?? $generatedCanonicalUrl;
+$schemaPageUrl = $canonicalUrl;
 
 if (!function_exists('sr_schema_filter')) {
     function sr_schema_filter(array $value): array {

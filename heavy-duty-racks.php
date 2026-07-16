@@ -5,7 +5,7 @@
     $pageTitle = 'Heavy Duty Racks Manufacturer in India | Singhania Refrigeration';
     $pageDescription = 'Singhania Refrigeration designs & manufactures Heavy Duty Racks / pallet racking systems for warehouses & cold storage - engineered load ratings, galvanized cold-rated steel, modular construction. Pan-India AMC. Call +91 99710 60822.';
     $ogDescription = 'Engineered pallet racking systems for high-density warehouse and cold storage - selective, drive-in, pallet shuttle, push-back, and cold-rated freezer racking, sized to your actual pallet loads.';
-    $canonicalUrl = 'https://singhaniarefrigeration.com/heavy-duty-racks.php';
+  $canonicalUrl = 'https://singhaniarefrigeration.com/heavy-duty-racks-manufacturer-in-india';
     $shareImage = 'https://singhaniarefrigeration.com/assets/images/products/palletized-cold-storage.webp';
     ?>
     <?php include('head.php'); ?>
@@ -340,7 +340,7 @@
               and is specified to certified steel grades, from galvanized racking for
               sub-zero cool rooms to dry warehouse storage.</p>
             <div class="cta-bar">
-              <a href="contact.php" class="btn-brand">Get a Free Quote&nbsp; <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+              <a href="contact" class="btn-brand">Get a Free Quote&nbsp; <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
               <a href="tel:+919971060822" class="btn-brand btn-ghost"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp; Call Now</a>
             </div>
           </div>
@@ -360,7 +360,7 @@
             <h2 class="section-h2">What is a Heavy Duty Rack?</h2>
 
             <p class="lead">
-               Heavy duty racks, or pallet racking systems, support <a href="index.php">cold storage and warehousing solutions</a> as bolted steel
+               Heavy duty racks, or pallet racking systems, support <a href="/">cold storage and warehousing solutions</a> as bolted steel
                 structures that connect upright frames together via horizontal beams
                 in order to store products vertically in a warehouse instead of on
                 the floor, making overhead space available for storage.
@@ -1308,7 +1308,7 @@
         </p>
 
         <div class="btn-part">
-          <a class="readon banner-style" href="contact.php">Request a Quote &rarr;</a>
+          <a class="readon banner-style" href="contact">Request a Quote &rarr;</a>
         </div>
 
         <p class="cta-phone-numbers">

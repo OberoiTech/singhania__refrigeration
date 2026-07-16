@@ -1,7 +1,55 @@
 <IfModule mod_rewrite.c>
 RewriteEngine On
 
-# SEO aliases for product pages. Original URLs remain valid.
+# Use one canonical host and protocol for every public URL.
+RewriteCond %{HTTPS} !=on [OR]
+RewriteCond %{HTTP_HOST} ^www\.singhaniarefrigeration\.com$ [NC]
+RewriteRule ^ https://singhaniarefrigeration.com%{REQUEST_URI} [R=301,L,NE]
+
+# Redirect legacy filenames/short slugs directly to their preferred SEO URLs.
+# THE_REQUEST prevents these redirects from firing after an internal rewrite.
+RewriteCond %{THE_REQUEST} \s/+truck-ac(?:\.php)?(?:[?\s]) [NC]
+RewriteRule ^truck-ac(?:\.php)?$ /truck-ac-manufacturer-in-india [R=301,L,NE]
+RewriteCond %{THE_REQUEST} \s/+truck-refrigerator-container(?:\.php)?(?:[?\s]) [NC]
+RewriteRule ^truck-refrigerator-container(?:\.php)?$ /truck-refrigerator-container-manufacturer-in-india [R=301,L,NE]
+RewriteCond %{THE_REQUEST} \s/+cold-storage-refrigeration-units(?:\.php)?(?:[?\s]) [NC]
+RewriteRule ^cold-storage-refrigeration-units(?:\.php)?$ /cold-storage-refrigeration-units-manufacturer-in-india [R=301,L,NE]
+RewriteCond %{THE_REQUEST} \s/+compressor-rack-system(?:\.php)?(?:[?\s]) [NC]
+RewriteRule ^compressor-rack-system(?:\.php)?$ /compressor-rack-system-manufacturer-in-india [R=301,L,NE]
+RewriteCond %{THE_REQUEST} \s/+ammonia-refrigeration-units(?:\.php)?(?:[?\s]) [NC]
+RewriteRule ^ammonia-refrigeration-units(?:\.php)?$ /ammonia-refrigeration-units-manufacturer-in-india [R=301,L,NE]
+RewriteCond %{THE_REQUEST} \s/+freon-refrigeration-units(?:\.php)?(?:[?\s]) [NC]
+RewriteRule ^freon-refrigeration-units(?:\.php)?$ /freon-refrigeration-in-india [R=301,L,NE]
+RewriteCond %{THE_REQUEST} \s/+ripening-systems(?:\.php)?(?:[?\s]) [NC]
+RewriteRule ^ripening-systems(?:\.php)?$ /ripening-systems-manufacturer-in-india [R=301,L,NE]
+RewriteCond %{THE_REQUEST} \s/+multideck-cabinet(?:\.php)?(?:[?\s]) [NC]
+RewriteRule ^multideck-cabinet(?:\.php)?$ /multideck-cabinet-manufacturer-in-india [R=301,L,NE]
+RewriteCond %{THE_REQUEST} \s/+iqf(?:\.php)?(?:[?\s]) [NC]
+RewriteRule ^iqf(?:\.php)?$ /iqf-system-manufacturer-in-india [R=301,L,NE]
+RewriteCond %{THE_REQUEST} \s/+doors-ca-doors(?:\.php)?(?:[?\s]) [NC]
+RewriteRule ^doors-ca-doors(?:\.php)?$ /cold-storage-doors-manufacturer-in-india [R=301,L,NE]
+RewriteCond %{THE_REQUEST} \s/+panels(?:\.php)?(?:[?\s]) [NC]
+RewriteRule ^panels(?:\.php)?$ /puf-panels-manufacturer-in-india [R=301,L,NE]
+RewriteCond %{THE_REQUEST} \s/+dock-shelter-dock-leveler(?:\.php)?(?:[?\s]) [NC]
+RewriteRule ^dock-shelter-dock-leveler(?:\.php)?$ /dock-shelter-dock-leveler-manufacturer-in-india [R=301,L,NE]
+RewriteCond %{THE_REQUEST} \s/+heavy-duty-racks(?:\.php)?(?:[?\s]) [NC]
+RewriteRule ^heavy-duty-racks(?:\.php)?$ /heavy-duty-racks-manufacturer-in-india [R=301,L,NE]
+RewriteCond %{THE_REQUEST} \s/+turnkey-solution(?:\.php)?(?:[?\s]) [NC]
+RewriteRule ^turnkey-solution(?:\.php)?$ /turnkey-cold-storage-solutions-in-india [R=301,L,NE]
+RewriteCond %{THE_REQUEST} \s/+segments-wise(?:\.php)?(?:[?\s]) [NC]
+RewriteRule ^segments-wise(?:\.php)?$ /segment-wise-cold-storage-solutions-in-india [R=301,L,NE]
+RewriteCond %{THE_REQUEST} \s/+cold-chain-refrigeration-ca-store-freon-ammonia(?:\.php)?(?:[?\s]) [NC]
+RewriteRule ^cold-chain-refrigeration-ca-store-freon-ammonia(?:\.php)?$ /cold-chain-refrigeration-ca-store-freon-ammonia-in-india [R=301,L,NE]
+RewriteCond %{THE_REQUEST} \s/+quality-monitoring-solution(?:\.php)?(?:[?\s]) [NC]
+RewriteRule ^quality-monitoring-solution(?:\.php)?$ /cold-chain-quality-monitoring-solution-in-india [R=301,L,NE]
+RewriteCond %{THE_REQUEST} \s/+ware-house-management(?:\.php)?(?:[?\s]) [NC]
+RewriteRule ^ware-house-management(?:\.php)?$ /warehouse-management-solutions-in-india [R=301,L,NE]
+RewriteCond %{THE_REQUEST} \s/+transport-management(?:\.php)?(?:[?\s]) [NC]
+RewriteRule ^transport-management(?:\.php)?$ /transport-management-solutions-in-india [R=301,L,NE]
+RewriteCond %{THE_REQUEST} \s/+transport-refrigeration(?:\.php)?(?:[?\s]) [NC]
+RewriteRule ^transport-refrigeration(?:\.php)?$ /transport-refrigeration-solutions-in-india [R=301,L,NE]
+
+# SEO aliases internally serve the existing PHP files.
 RewriteRule ^product&services/?$ products.php [L,NC]
 RewriteRule ^truck-ac-manufacturer-in-india/?$ truck-ac.php [L,NC]
 RewriteRule ^truck-refrigerator-container-manufacturer-in-india/?$ truck-refrigerator-container.php [L,NC]
@@ -24,10 +72,6 @@ RewriteRule ^cold-chain-quality-monitoring-solution-in-india/?$ quality-monitori
 RewriteRule ^warehouse-management-solutions-in-india/?$ ware-house-management.php [L,NC]
 RewriteRule ^transport-management-solutions-in-india/?$ transport-management.php [L,NC]
 RewriteRule ^transport-refrigeration-solutions-in-india/?$ transport-refrigeration.php [L,NC]
-
-
-
-
 
 # Consolidate the homepage at the canonical root URL.
 RewriteCond %{REQUEST_METHOD} ^(?:GET|HEAD)$

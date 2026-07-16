@@ -269,7 +269,7 @@
           We’re here to help. Write to <a href="mailto:enquiry@singhanialogistics.in">enquiry@singhanialogistics.in</a> with your request
           (access, correction, deletion, or consent withdrawal).
         </p>
-        <a href="contact.php" class="readon banner-style" style="background:#1c2f57;color:#fff;border-radius:10px;padding:12px 20px;display:inline-block;">
+        <a href="contact" class="readon banner-style" style="background:#1c2f57;color:#fff;border-radius:10px;padding:12px 20px;display:inline-block;">
           Contact Us
         </a>
       </div>

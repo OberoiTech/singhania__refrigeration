@@ -5,7 +5,7 @@
   $pageTitle = 'Dock Shelter & Dock Leveler Manufacturer in India | Singhania Refrigeration';
   $pageDescription = 'Singhania Refrigeration designs & supplies Dock Shelters & Dock Levelers for cold chain warehouses - inflatable, rigid-frame & curtain-type shelters, hydraulic & mechanical levelers. Pan-India AMC. Call +91 99710 60822.';
   $ogDescription = 'Sealed, safe loading bay systems for cold chain warehouses and distribution centres - inflatable, rigid-frame and curtain-type dock shelters with hydraulic and mechanical levelers.';
-  $canonicalUrl = 'https://singhaniarefrigeration.com/dock-shelter-dock-leveler.php';
+  $canonicalUrl = 'https://singhaniarefrigeration.com/dock-shelter-dock-leveler-manufacturer-in-india';
   $shareImage = 'https://singhaniarefrigeration.com/assets/images/products/docking-system-facility.webp';
 
   ?>
@@ -418,7 +418,7 @@
               facility.
             </p>
             <div class="cta-bar">
-              <a href="contact.php" class="btn-brand">Request a Quote&nbsp; <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+              <a href="contact" class="btn-brand">Request a Quote&nbsp; <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
               <a href="tel:+919971060822" class="btn-brand btn-ghost"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp; Call Now</a>
             </div>
           </div>
@@ -446,7 +446,7 @@
               the truck bed, so forklifts can drive directly across with no step or gap.
             </p>
             <p class="lead">
-              Together, they support <a href="index.php">cold chain logistics solutions</a> by turning a loading dock from an open space in the building
+              Together, they support <a href="/">cold chain logistics solutions</a> by turning a loading dock from an open space in the building
               into a sealed, safe transfer point. This is especially important for cold
               storage and cold chain warehouses, where every dock door opened is an
               open invitation for outside heat, dust, pests and weather to enter a
@@ -1369,7 +1369,7 @@
         </p>
 
         <div class="btn-part">
-          <a class="readon banner-style" href="contact.php">Request a Quote &rarr;</a>
+          <a class="readon banner-style" href="contact">Request a Quote &rarr;</a>
         </div>
 
         <p class="cta-phone-numbers">

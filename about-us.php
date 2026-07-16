@@ -636,7 +636,7 @@
         </p>
 
         <div class="btn-part">
-          <a class="readon banner-style" href="contact.php">Request a Quote &rarr;</a>
+          <a class="readon banner-style" href="contact">Request a Quote &rarr;</a>
         </div>
 
         <p class="cta-phone-numbers">

@@ -758,7 +758,7 @@
               </div>
               <!-- CTA buttons -->
               <div class="cta-bar">
-                <a href="contact.php" class="btn-brand">Get a Free Quote </a>
+                <a href="contact" class="btn-brand">Get a Free Quote </a>
                 <a href="tel:+919971060822" class="btn-brand"> Call Now</a>
               </div>
             </div>
@@ -779,7 +779,7 @@
 
         <p>
           A turnkey cold storage solution is a comprehensive, single-contract method
-          for building <a href="index.php">industrial refrigeration and cold storage solutions</a>. One company &mdash; Singhania
+          for building <a href="/">industrial refrigeration and cold storage solutions</a>. One company &mdash; Singhania
           Refrigeration &mdash; handles every aspect of the project, from site assessment
           and heat load calculation to civil and PEB construction, refrigeration
           engineering, insulated panel installation, electrical and automation works,
@@ -1395,7 +1395,7 @@
         </p>
 
         <div class="btn-part">
-          <a class="readon banner-style" href="contact.php">Request a Quote &rarr;</a>
+          <a class="readon banner-style" href="contact">Request a Quote &rarr;</a>
         </div>
 
         <p class="cta-phone-numbers">

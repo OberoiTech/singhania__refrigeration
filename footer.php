@@ -69,9 +69,9 @@
         <ul class="link-list">
           <!-- <li><a href="blog-details">Latest Posts</a></li> -->
           <li><a href="about-us">About Us</a></li>
-          <li><a href="panels">PUF Panels</a></li>
+          <li><a href="puf-panels-manufacturer-in-india">PUF Panels</a></li>
           <li><a href="consulting">Consulting</a></li>
-          <li><a href="cold-chain-refrigeration-ca-store-freon-ammonia" aria-label="Cold Storage Solutions: refrigeration, CA store, Freon and ammonia systems">Cold Storage Solutions</a></li>
+          <li><a href="cold-chain-refrigeration-ca-store-freon-ammonia-in-india" aria-label="Cold Storage Solutions: refrigeration, CA store, Freon and ammonia systems">Cold Storage Solutions</a></li>
           <li><a href="blog">Blogs</a></li>
           <li><a href="contact">Contact Us</a></li>
         </ul>

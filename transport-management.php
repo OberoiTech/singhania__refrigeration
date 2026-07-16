@@ -676,7 +676,7 @@
                 Singhania Refrigeration controls your transport operations from the moment a reefer truck leaves the dock to the moment the final drop is verified, all in one integrated system. As your cold chain transport management partner, we manage reefer fleet tracking, in-transit temperature monitoring, route and dispatch sequencing and end-to-end delivery documentation. You get a fully visible, audit-ready distribution network instead of a fleet of vehicles that can only be tracked by phone call.
               </p>
               <div class="hero-actions">
-                <a href="contact.php" class="btn-brand">Request a Demo</a>
+                <a href="contact" class="btn-brand">Request a Demo</a>
                 <a href="tel:+919971060822" class="btn-brand"> Call Now</a>
               </div>
             </div>
@@ -693,7 +693,7 @@
               <span class="section-kicker">Definition</span>
               <h2 class="section-h2">What Is a Cold Chain Transport Management Solution?</h2>
               <p class="lead-text">
-                A cold chain transport management solution is a complete, system-based method of operating refrigerated transport operations from a <a href="index.php">cold chain solutions provider in Delhi NCR</a>. Singhania Refrigeration owns every step of the transport leg: vehicle and route assignment, loading order as per dispatch priority, in-transit temperature and location monitoring, multi-drop delivery sequencing, proof-of-delivery capture and reporting back into your Warehouse Management System (WMS).
+                A cold chain transport management solution is a complete, system-based method of operating refrigerated transport operations from a <a href="/">cold chain solutions provider in Delhi NCR</a>. Singhania Refrigeration owns every step of the transport leg: vehicle and route assignment, loading order as per dispatch priority, in-transit temperature and location monitoring, multi-drop delivery sequencing, proof-of-delivery capture and reporting back into your Warehouse Management System (WMS).
               </p>
               <p>
                 You don't coordinate dispatch through phone calls, track reefer units through driver check-ins, and find out about a temperature excursion only when a customer complains; you run on one system, one transport record and one point of accountability for everything between the dock and the delivery point.
@@ -923,7 +923,7 @@
             </p>
 
             <div class="btn-part">
-              <a class="readon banner-style" href="contact.php">Request a Quote &rarr;</a>
+              <a class="readon banner-style" href="contact">Request a Quote &rarr;</a>
             </div>
 
             <p class="cta-phone-numbers">

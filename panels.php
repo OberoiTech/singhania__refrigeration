@@ -5,7 +5,7 @@
   $pageTitle = 'PUF Panels Manufacturer in India | Singhania Refrigeration';
   $pageDescription = 'Singhania Refrigeration manufactures PUF insulated sandwich panels for cold rooms, warehouses & industrial cold storage — high R-value foam core, food-grade skins, custom thickness. Pan-India supply. Call +91 99710 60822.';
   $ogDescription = 'PUF insulated sandwich panels engineered for Indian cold chain conditions — high R-value foam core, precision tongue-and-groove joints, and custom thicknesses for cold rooms and industrial cold storage.';
-  $canonicalUrl = 'https://singhaniarefrigeration.com/panels.php';
+  $canonicalUrl = 'https://singhaniarefrigeration.com/puf-panels-manufacturer-in-india';
   $shareImage = 'https://singhaniarefrigeration.com/assets/images/products/panel.webp';
 
   ?>
@@ -416,7 +416,7 @@
               ensure that the performance of an installed panel matches its R-value.
             </p>
             <div class="cta-bar">
-              <a href="contact.php" class="btn-brand">Request a Quote&nbsp; <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+              <a href="contact" class="btn-brand">Request a Quote&nbsp; <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
               <a href="tel:+919971060822" class="btn-brand btn-ghost"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp; Call Now</a>
             </div>
           </div>
@@ -436,7 +436,7 @@
             <h2 class="section-h2">What is a PUF Panel?</h2>
 
             <p class="lead">
-              A PUF panel, or polyurethane foam panel, is used in <a href="index.php">industrial cold storage solutions</a> as a sandwich panel composed of
+              A PUF panel, or polyurethane foam panel, is used in <a href="/">industrial cold storage solutions</a> as a sandwich panel composed of
               two outer metal skins with a core of rigid polyurethane foam injected and
               bonded between them. The foam core is what gives the panel its insulating
               value, while the metal skins give it structural strength, a cleanable
@@ -1387,7 +1387,7 @@
         </p>
 
         <div class="btn-part">
-          <a class="readon banner-style" href="contact.php">Request a Quote &rarr;</a>
+          <a class="readon banner-style" href="contact">Request a Quote &rarr;</a>
         </div>
 
         <p class="cta-phone-numbers">

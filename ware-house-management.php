@@ -973,7 +973,7 @@
             </p>
 
             <div class="hero-actions">
-              <a href="contact.php" class="btn-brand">Request a Demo</a>
+              <a href="contact" class="btn-brand">Request a Demo</a>
               <a href="tel:+919971060822" class="btn-brand"> Call Now</a>
             </div>
           </div>
@@ -995,7 +995,7 @@
             <p class="lead-text">
               A cold storage warehouse management solution is a comprehensive,
               system-driven approach to managing inventory operations inside
-              <a href="index.php">end-to-end cold chain solutions</a>.
+              <a href="/">end-to-end cold chain solutions</a>.
               Singhania Refrigeration manages all facets of warehouse operations
               including receiving, put-away, batch and location tracking, stock
               rotation (FIFO/FEFO), space and slot allocation, dispatch sequencing,
@@ -1630,7 +1630,7 @@
           </p>
 
           <div class="btn-part">
-            <a class="readon banner-style" href="contact.php">Request a Quote &rarr;</a>
+            <a class="readon banner-style" href="contact">Request a Quote &rarr;</a>
           </div>
 
           <p class="cta-phone-numbers">

@@ -222,7 +222,7 @@
             <h2 id="conf" class="h2 mt-30 mb-12">12) Confidentiality & Data Protection</h2>
             <ul class="policy-list">
               <li>Both parties shall keep confidential information shared during engagement secure and use it solely for the intended purpose.</li>
-              <li>Personal data is handled as per our <a href="privacy-policy.php">Privacy Policy</a> and applicable laws.</li>
+              <li>Personal data is handled as per our <a href="privacy-policy">Privacy Policy</a> and applicable laws.</li>
             </ul>
 
             <h2 id="compliance" class="h2 mt-30 mb-12">13) Compliance & Permits</h2>
@@ -298,7 +298,7 @@
           We’re happy to clarify scope, warranty, AMC, or delivery terms. Write to
           <a href="mailto:enquiry@singhanialogistics.in">enquiry@singhanialogistics.in</a>.
         </p>
-        <a href="contact.php" class="readon banner-style" style="background:#1c2f57;color:#fff;border-radius:10px;padding:12px 20px;display:inline-block;">
+        <a href="contact" class="readon banner-style" style="background:#1c2f57;color:#fff;border-radius:10px;padding:12px 20px;display:inline-block;">
           Contact Us
         </a>
       </div>

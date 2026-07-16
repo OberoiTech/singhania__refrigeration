@@ -414,7 +414,7 @@
               sacrificing protection or compliance.
             </p>
             <div class="cta-bar">
-              <a href="contact.php" class="btn-brand">Get a Free Quote&nbsp; <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+              <a href="contact" class="btn-brand">Get a Free Quote&nbsp; <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
               <a href="tel:+919971060822" class="btn-brand btn-ghost"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp; Call Now</a>
             </div>
           </div>
@@ -434,7 +434,7 @@
             <h2 class="section-h2">What is an Ammonia Refrigeration Unit?</h2>
 
             <p class="lead">
-              Ammonia refrigeration units are <a href="index.php">industrial refrigeration solutions</a> that use ammonia (NH3) as a refrigerant instead of
+              Ammonia refrigeration units are <a href="/">industrial refrigeration solutions</a> that use ammonia (NH3) as a refrigerant instead of
               synthetic refrigerants like HFCs or HCFCs. Ammonia is a natural refrigerant
               that has a high latent heat of vaporization, which allows it to efficiently
               transfer large amounts of heat, making it well suited to large-capacity,
@@ -1396,7 +1396,7 @@
         </p>
 
         <div class="btn-part">
-          <a class="readon banner-style" href="contact.php">Request a Quote &rarr;</a>
+          <a class="readon banner-style" href="contact">Request a Quote &rarr;</a>
         </div>
 
         <p class="cta-phone-numbers">

@@ -5,7 +5,7 @@
   $pageDescription = 'Explore Singhania Refrigeration\'s cold storage solutions - turnkey construction, segment-wise cold rooms, CA/ammonia/freon systems, quality monitoring, warehouse and transport management for Delhi NCR and pan-India.';
   $pageKeywords = 'cold storage solutions Delhi NCR, turnkey cold storage, cold chain solutions India, warehouse management cold chain, transport management system, transport refrigeration';
   $ogDescription = 'Explore turnkey construction, segment-wise cold rooms, refrigeration systems, monitoring, warehouse management and transport solutions from Singhania Refrigeration.';
-  $canonicalUrl = 'https://singhaniarefrigeration.com/solutions.php';
+$canonicalUrl = 'https://singhaniarefrigeration.com/solutions';
 ?>
 <?php include('head.php'); ?>
 <body>
@@ -190,7 +190,7 @@
           Singhania Refrigeration&rsquo;s complete range of cold chain solutions for
           Delhi NCR and pan-India operations.</p>
         <div class="solutions-hero__actions">
-          <a href="contact.php" class="solutions-hero__btn">Get a Free Quote</a>
+          <a href="contact" class="solutions-hero__btn">Get a Free Quote</a>
           <a href="tel:+919971060822" class="solutions-hero__btn">Call Now</a>
         </div>
       </div>
@@ -298,7 +298,7 @@
         <div class="sub-title modify white">Plan a project?</div>
         <h2 class="title3 white-color">Our experts are ready to help.</h2>
         <div class="btn-part">
-          <a class="readon banner-style" href="contact.php">Contact Us</a>
+          <a class="readon banner-style" href="contact">Contact Us</a>
         </div>
         <p class="cta-phone-numbers" style="margin-top: 10px; color:var(--card)">
           Call: <a style="color: white;" href="tel:+919971060822"><strong>+91 99710 60822</strong></a>

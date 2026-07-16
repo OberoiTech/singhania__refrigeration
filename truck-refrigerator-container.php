@@ -422,7 +422,7 @@
                 built to last, with leak-proof insulation and a long service life during normal fleet
                 usage.</p>
             <div class="cta-bar">
-              <a href="contact.php" class="btn-brand">Get a Free Quote&nbsp; <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+              <a href="contact" class="btn-brand">Get a Free Quote&nbsp; <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
               <a href="tel:+919971060822" class="btn-brand btn-ghost"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp; Call Now</a>
             </div>
           </div>
@@ -455,7 +455,7 @@
               Refrigerated truck bodies and reefer containers are widely used in dairy
               distribution, pharmaceutical logistics, frozen food transportation, fruit and
               vegetable distribution, and meat and seafood delivery.
-              They support <a href="index.php">end-to-end cold chain solutions</a> from loading to delivery.
+              They support <a href="/">end-to-end cold chain solutions</a> from loading to delivery.
             </p>
           </div>
         </div>
@@ -1223,7 +1223,7 @@
         </p>
 
         <div class="btn-part">
-          <a class="readon banner-style" href="contact.php">Request a Quote &rarr;</a>
+          <a class="readon banner-style" href="contact">Request a Quote &rarr;</a>
         </div>
 
         <p class="cta-phone-numbers">

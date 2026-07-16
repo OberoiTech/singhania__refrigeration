@@ -549,7 +549,7 @@
                 A cold room or reefer truck that is holding the wrong temperature, even for a few hours, can ruin a shipment before anyone realises it. Singhania Refrigeration's quality monitoring solution continuously monitors temperature, humidity, shelf life and spoilage risk throughout your warehouse and transport network, raises excursions in real time and traces every issue to its root cause.
               </p>
               <div class="hero-actions">
-                <a href="contact.php" class="btn-brand">Request a Demo</a>
+                <a href="contact" class="btn-brand">Request a Demo</a>
                 <a href="tel:+919971060822" class="btn-brand "> Call Now</a>
               </div>
             </div>
@@ -569,7 +569,7 @@
               <span class="section-kicker">Definition</span>
               <h2 class="section-h2">What Is a Cold Chain Quality Monitoring Solution?</h2>
               <p class="lead-text">
-                A cold chain quality monitoring solution is a system of sensors, software and reporting that tracks the actual condition of products across storage, handling and distribution inside <a href="index.php">reliable cold storage systems</a>. By monitoring continuously, any deviation is detected early instead of being discovered after stock has already been damaged.
+                A cold chain quality monitoring solution is a system of sensors, software and reporting that tracks the actual condition of products across storage, handling and distribution inside <a href="/">reliable cold storage systems</a>. By monitoring continuously, any deviation is detected early instead of being discovered after stock has already been damaged.
               </p>
               <p class="lead-text">
                 In Singhania Refrigeration projects, quality monitoring connects with cold rooms, refrigeration systems, transport refrigeration, warehouse processes and packing or grading lines, so monitoring data becomes part of the operating workflow.
@@ -885,7 +885,7 @@
         </p>
 
         <div class="btn-part">
-          <a class="readon banner-style" href="contact.php">Request a Quote &rarr;</a>
+          <a class="readon banner-style" href="contact">Request a Quote &rarr;</a>
         </div>
 
         <p class="cta-phone-numbers">

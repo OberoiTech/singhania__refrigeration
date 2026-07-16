@@ -591,7 +591,7 @@
                 A reefer vehicle is only as good as the insulation and refrigeration unit built into it. Singhania Refrigeration designs, fabricates and installs insulated vehicle bodies and refrigeration units for trucks, vans, trailers and containers &mdash; sized correctly for your product, route length and temperature range, instead of a generic reefer box bolted onto whatever chassis is available.
               </p>
               <div class="hero-actions">
-                <a href="contact.php" class="btn-brand"> Request a Demo</a>
+                <a href="contact" class="btn-brand"> Request a Demo</a>
                 <a href="tel:+919971060822" class="btn-brand "> Call Now</a>
               </div>
             </div>
@@ -606,7 +606,7 @@
               <span class="section-kicker">Definition</span>
               <h2 class="section-h2">What Is a Transport Refrigeration Solution?</h2>
               <p class="lead-text">
-                Transport refrigeration is the engineering and fabrication work that converts a standard vehicle chassis into a temperature-controlled vehicle that can hold perishable or temperature-sensitive product for the duration of a delivery route as part of broader <a href="index.php">industrial refrigeration and cold chain solutions</a>. This covers the insulated body itself &mdash; PUF panel construction, flooring, doors and partitions &mdash; along with the refrigeration unit, controls and monitoring fitted to it.
+                Transport refrigeration is the engineering and fabrication work that converts a standard vehicle chassis into a temperature-controlled vehicle that can hold perishable or temperature-sensitive product for the duration of a delivery route as part of broader <a href="/">industrial refrigeration and cold chain solutions</a>. This covers the insulated body itself &mdash; PUF panel construction, flooring, doors and partitions &mdash; along with the refrigeration unit, controls and monitoring fitted to it.
               </p>
               <p>
                 Sizing matters more here than in almost any other part of the cold chain: a unit that's undersized for the route length or product load will lose pull-down capacity exactly when it's needed most, while an oversized one wastes fuel and payload space. We size the insulation and refrigeration unit together, against your actual route, product and load profile, rather than fitting a standard reefer kit regardless of what it's carrying.
@@ -772,7 +772,7 @@
               Tell us your vehicle type, route length and product range &mdash; and we'll assess your need and propose a defined build scope and timeline. No obligation. No pressure.
             </p>
             <div class="btn-part">
-              <a class="readon banner-style" href="contact.php">Request a Quote &rarr;</a>
+              <a class="readon banner-style" href="contact">Request a Quote &rarr;</a>
             </div>
             <p class="cta-phone-numbers">
               Call: <a href="tel:+919971060822"><strong>+91 99710 60822</strong></a>

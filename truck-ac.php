@@ -6,7 +6,7 @@
     $pageTitle = 'Truck AC Manufacturer in India | Singhania Refrigeration';
     $pageDescription = 'Manufacturer of truck AC & transport refrigeration units for dairy, pharma, frozen food, meat & seafood transport. Delhi NCR. Call +91 99710 60822.';
     $pageKeywords = 'truck ac manufacturer, transport refrigeration unit, reefer truck unit, refrigerated truck ac india, insulated truck body manufacturer, cold chain transport solutions';
-    $canonicalUrl = 'https://singhaniarefrigeration.com/truck-ac.php';
+  $canonicalUrl = 'https://singhaniarefrigeration.com/truck-ac-manufacturer-in-india';
     $ogDescription = $pageDescription;
     $twitterDescription = 'Manufacturer of truck AC & transport refrigeration units for dairy, pharma, frozen food, meat & seafood transport. Delhi NCR.';
     $shareImageAlt = 'Truck AC and transport refrigeration units by Singhania Refrigeration';
@@ -341,7 +341,7 @@
                 cooling performance, energy efficiency, and long-term durability for logistics operators
                 and cold chain businesses.</p>
             <div class="cta-bar">
-              <a href="contact.php" class="btn-brand">Get a Free Quote&nbsp; <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+              <a href="contact" class="btn-brand">Get a Free Quote&nbsp; <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
               <a href="tel:+919971060822" class="btn-brand btn-ghost"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp; Call Now</a>
             </div>
           </div>
@@ -367,7 +367,7 @@
             </p>
             <p class="lead">
              Refrigerated truck units are designed for temperature sensitive cargo, unlike
-             standard vehicle air conditioning. They are vital to <a href="index.php">cold chain solutions in India</a>,
+             standard vehicle air conditioning. They are vital to <a href="/">cold chain solutions in India</a>,
              helping companies maintain product quality, reduce spoilage and meet
              transportation standards.
             </p>
@@ -1312,7 +1312,7 @@
         </p>
 
         <div class="btn-part">
-          <a class="readon banner-style" href="contact.php">Request a Quote &rarr;</a>
+          <a class="readon banner-style" href="contact">Request a Quote &rarr;</a>
         </div>
 
         <p class="cta-phone-numbers">

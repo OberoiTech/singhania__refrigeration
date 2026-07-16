@@ -315,7 +315,7 @@
         <div class="sub-title modify white">Plan a project?</div>
         <h2 class="title3 white-color">Our experts are ready to help.</h2>
         <div class="btn-part">
-          <a class="readon banner-style" href="contact.php">Contact Us</a>
+          <a class="readon banner-style" href="contact">Contact Us</a>
         </div>
       </div>
     </div>

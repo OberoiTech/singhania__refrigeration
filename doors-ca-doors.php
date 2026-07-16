@@ -5,7 +5,7 @@
   $pageTitle = 'Doors & CA Doors Manufacturer in India | Singhania Refrigeration';
   $pageDescription = 'Singhania Refrigeration designs & manufactures insulated cold room & CA doors — precision sealing, heated frames, custom sizing for chillers, freezers & controlled-atmosphere stores. Pan-India AMC. Call +91 99710 60822.';
   $ogDescription = 'Insulated cold room and controlled atmosphere doors built for an airtight seal — precision sealing systems, heated frames for sub-zero applications, and near-hermetic CA-grade sealing.';
-  $canonicalUrl = 'https://singhaniarefrigeration.com/doors-ca-doors.php';
+  $canonicalUrl = 'https://singhaniarefrigeration.com/cold-storage-doors-manufacturer-in-india';
   $shareImage = 'https://singhaniarefrigeration.com/assets/images/products/cold-room-doors.webp';
 
   ?>
@@ -416,7 +416,7 @@
               as it's supposed to be.
             </p>
             <div class="cta-bar">
-              <a href="contact.php" class="btn-brand">Request a Quote&nbsp; <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+              <a href="contact" class="btn-brand">Request a Quote&nbsp; <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
               <a href="tel:+919971060822" class="btn-brand btn-ghost"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp; Call Now</a>
             </div>
           </div>
@@ -436,7 +436,7 @@
             <h2 class="section-h2">What is a Cold Room Door or CA Door?</h2>
 
             <p class="lead">
-              A cold room door is part of <a href="index.php">cold storage infrastructure solutions</a>, built as a specially insulated door that seals a chiller,
+              A cold room door is part of <a href="/">cold storage infrastructure solutions</a>, built as a specially insulated door that seals a chiller,
               freezer, or cold storage room from outside air. Unlike a standard door,
               it needs to maintain its seal in the face of a constant temperature
               differential, and repeated opening and closing.
@@ -1363,7 +1363,7 @@
         </p>
 
         <div class="btn-part">
-          <a class="readon banner-style" href="contact.php">Request a Quote &rarr;</a>
+          <a class="readon banner-style" href="contact">Request a Quote &rarr;</a>
         </div>
 
         <p class="cta-phone-numbers">

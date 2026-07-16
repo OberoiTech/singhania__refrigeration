@@ -5,7 +5,7 @@
     $pageTitle = 'Cold Chain Solutions India | CA Store | Ammonia & Freon Refrigeration - Singhania Refrigeration';
     $pageDescription = 'Singhania Refrigeration delivers cold chain refrigeration systems, CA stores, ammonia refrigeration plants and freon refrigeration systems across India. One partner for design, supply, installation and AMC.';
     $ogDescription = $pageDescription;
-    $canonicalUrl = 'https://singhaniarefrigeration.com/cold-chain-refrigeration-ca-store-freon-ammonia.php';
+$canonicalUrl = 'https://singhaniarefrigeration.com/cold-chain-refrigeration-ca-store-freon-ammonia-in-india';
     $shareImage = 'https://singhaniarefrigeration.com/assets/images/products/cold-storage.jpg';
     ?>
     <?php include('head.php'); ?>
@@ -221,7 +221,7 @@
                 From farm to fork and factory to pharmacy, Singhania Refrigeration designs, supplies, installs and maintains complete cold chain refrigeration systems, controlled atmosphere stores and industrial refrigeration plants across India. All under one contract, with a single point of accountability throughout.
               </p>
               <div class="cta-bar">
-                <a href="contact.php" class="cold-btn">Request a Free Site Visit</a>
+                <a href="contact" class="cold-btn">Request a Free Site Visit</a>
                 <a href="tel:+919971060822" class="cold-btn secondary">Call Now</a>
               </div>
               <div class="hero-metrics" aria-label="Cold chain solution highlights">
@@ -255,7 +255,7 @@
           </div>
           <div class="intro-panel">
             <div class="intro-copy-box copy">
-              <p>Any break in this chain results in spoilage, non-compliance and revenue loss. Singhania Refrigeration engineers the complete chain, not just one cold room or compressor, as a fully integrated, performance-tested system within our <a href="index.php">industrial refrigeration solutions</a>.</p>
+              <p>Any break in this chain results in spoilage, non-compliance and revenue loss. Singhania Refrigeration engineers the complete chain, not just one cold room or compressor, as a fully integrated, performance-tested system within our <a href="/">industrial refrigeration solutions</a>.</p>
               <p>We take care of end-to-end design, construction and commissioning from vegetables and fruits cold chain, dairy cold chain to GDP compliant pharmaceutical cold chain.</p>
               <!-- <blockquote class="callout">A fully integrated cold chain refrigeration system protects product quality, reduces wastage and ensures regulatory compliance from farm gate to end consumer.</blockquote> -->
             </div>
@@ -531,7 +531,7 @@
         </p>
 
         <div class="btn-part">
-          <a class="readon banner-style" href="contact.php">Request a Quote &rarr;</a>
+          <a class="readon banner-style" href="contact">Request a Quote &rarr;</a>
         </div>
 
         <p class="cta-phone-numbers">

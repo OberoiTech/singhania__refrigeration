@@ -439,8 +439,8 @@ body{ color:var(--ink); }
   place-items:center;
   width:34px;
   height:34px;
-  border-radius:9px;
-  background:rgba(255,255,255,.12);
+  border-radius:5px;
+  background:#0e2344;
   color:#49dbff;
   border:1px solid rgba(255,255,255,.1);
 }
@@ -457,7 +457,7 @@ body{ color:var(--ink); }
   gap:12px;
   min-height:56px;
   padding:10px 14px;
-  border-radius:13px;
+  border-radius:5px;
   background:rgba(255,255,255,.12);
   color:#fff;
   text-decoration:none;
@@ -898,7 +898,7 @@ if ('requestIdleCallback' in window) {
                       </div>
                     </div>
                     <div class="slider-bottom">
-                      <ul><li><a href="contact.php" class="readon banner-style">Contact Us</a></li></ul>
+                      <ul><li><a href="contact" class="readon banner-style">Contact Us</a></li></ul>
                     </div>
                   </div>
                 </div>
@@ -946,7 +946,7 @@ if ('requestIdleCallback' in window) {
               <div class="service-wrap">
                 <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/1.webp" width="140" height="140" alt="Turnkey cold chain project execution icon"></div>
                 <div class="content-part">
-                  <h3 class="title"><a href="turnkey-solution.php">Turnkey Execution</a></h3>
+                  <h3 class="title"><a href="turnkey-cold-storage-solutions-in-india">Turnkey Execution</a></h3>
                   <p>Full turnkey cold storage and industrial refrigeration solutions – design, equipment supply, installation and commissioning, all in-house by our own engineering team for smooth accountable delivery from start to finish.</p>
                 </div>
               </div>
@@ -955,7 +955,7 @@ if ('requestIdleCallback' in window) {
               <div class="service-wrap">
                 <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/2.webp" width="70" height="70" alt="Energy efficient refrigeration system icon"></div>
                 <div class="content-part">
-                  <h3 class="title"><a href="panels.php">Energy Efficiency</a></h3>
+                  <h3 class="title"><a href="puf-panels-manufacturer-in-india">Energy Efficiency</a></h3>
                   <p>High efficiency compressors, advanced PUF insulation and smart controls help reduce running costs by up to 30% compared with conventional cold storage systems, while maintaining precise temperature control.</p>
                 </div>
               </div>
@@ -964,7 +964,7 @@ if ('requestIdleCallback' in window) {
               <div class="service-wrap">
                 <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/3.webp" width="140" height="140" alt="99.9% uptime cold storage reliability icon"></div>
                 <div class="content-part">
-                  <h3 class="title"><a href="consulting.php">99.9% Uptime</a></h3>
+                  <h3 class="title"><a href="consulting">99.9% Uptime</a></h3>
                   <p>Preventive maintenance and rapid-response AMC support 24 hours a day, 365 days a year keep your cold room, CA store or refrigeration plant running reliably.</p>
                 </div>
               </div>
@@ -973,7 +973,7 @@ if ('requestIdleCallback' in window) {
               <div class="service-wrap">
                 <div class="icon-part"><img loading="lazy" decoding="async" src="assets/images/services/icons/4.webp" width="70" height="70" alt="Pan-India refrigeration service icon"></div>
                 <div class="content-part">
-                  <h3 class="title"><a href="contact.php">Pan-India Service</a></h3>
+                  <h3 class="title"><a href="contact">Pan-India Service</a></h3>
                   <p>Okhla, New Delhi certified refrigeration engineers offer installation and after sales support to clients across Delhi NCR – Noida, Gurgaon and Faridabad and pan India.</p>
                 </div>
               </div>
@@ -1018,8 +1018,8 @@ if ('requestIdleCallback' in window) {
                 We aim to provide services that have perfect temperature control, superb energy efficiency, and flawless operation throughout the entire process, starting from the moment of conception to the end. From fields of Gujarat to plates of families in Delhi NCR.
               </p> -->
               <div class="menu-cta menu-cta--flush">
-                  <!-- <a class="btn-cfa" href="about-us.php">Learn more</a> -->
-                <a class="btn-cfa" href="about-us.php">
+                  <!-- <a class="btn-cfa" href="about-us">Learn more</a> -->
+                <a class="btn-cfa" href="about-us">
     About Singhania Refrigeration
 </a>
               </div>
@@ -1044,7 +1044,7 @@ if ('requestIdleCallback' in window) {
               <div class="service-wrap">
                 <div class="icon-part"><img loading="lazy" decoding="async" class="truck-service-icon" src="assets/images/IMAGES HOMEPAGE/refrigerated-truck-acs-containers.avif" width="200" height="200" alt="Refrigerated truck AC and container unit"></div>
                 <div class="content-part">
-                  <h3 class="title"><a href="truck-ac.php">Refrigerated Truck ACs</a> &amp; <a href="truck-refrigerator-container.php">Containers</a></h3>
+                  <h3 class="title"><a href="truck-ac-manufacturer-in-india">Refrigerated Truck ACs</a> &amp; <a href="truck-refrigerator-container-manufacturer-in-india">Containers</a></h3>
                   <div class="desc">Transport Refrigeration Units for trucks and reefer containers, keeping Perishables – Food, Dairy and Pharma Products, temperature controlled on routes across Delhi NCR and Pan India.</div>
                 </div>
               </div>
@@ -1055,7 +1055,7 @@ if ('requestIdleCallback' in window) {
               <div class="service-wrap">
                 <div class="icon-part"><img loading="lazy" decoding="async" class="service-card-icon" src="assets/images/IMAGES HOMEPAGE/cold-storage-warehouse.avif" width="200" height="200" alt="Cold room and cold storage solution"></div>
                 <div class="content-part">
-                  <h3 class="title"><a href="cold-storage-refrigeration-units.php">Cold Rooms &amp; Storage Solutions</a></h3>
+                  <h3 class="title"><a href="cold-storage-refrigeration-units-manufacturer-in-india">Cold Rooms &amp; Storage Solutions</a></h3>
                   <div class="desc">Cold rooms based on ammonia and freon, Controlled Atmosphere (CA) stores, Ripening Chambers &amp; Blast Freezer Systems, designed to meet the shelf-life and temperature requirements of your product.</div>
                 </div>
               </div>
@@ -1066,7 +1066,7 @@ if ('requestIdleCallback' in window) {
               <div class="service-wrap">
                 <div class="icon-part"><img loading="lazy" decoding="async" class="service-card-icon" src="assets/images/IMAGES HOMEPAGE/compressor-rack-systems.avif" width="200" height="200" alt="Industrial compressor rack system"></div>
                 <div class="content-part">
-                  <h3 class="title"><a href="compressor-rack-system.php">Compressor Rack Systems</a></h3>
+                  <h3 class="title"><a href="compressor-rack-system-manufacturer-in-india">Compressor Rack Systems</a></h3>
                   <div class="desc">Centralised, energy efficient compressor rack systems for supermarkets, food retail chains and large cold storage warehouses, reducing refrigerant charge and maintenance.</div>
                 </div>
               </div>
@@ -1077,7 +1077,7 @@ if ('requestIdleCallback' in window) {
               <div class="service-wrap">
                 <div class="icon-part"><img loading="lazy" decoding="async" class="service-card-icon" src="assets/images/IMAGES HOMEPAGE/ammonia-refrigeration-units.avif" width="200" height="200" alt="Ammonia refrigeration unit"></div>
                 <div class="content-part">
-                  <h3 class="title"><a href="ammonia-refrigeration-units.php">Ammonia Refrigeration Units</a></h3>
+                  <h3 class="title"><a href="ammonia-refrigeration-units-manufacturer-in-india">Ammonia Refrigeration Units</a></h3>
                   <div class="desc">Industrial grade ammonia (NH3) and Freon refrigeration plants are for food processing units, large cold storage warehouses, fisheries and dairy operations requiring high capacity and energy efficient cooling</div>
                 </div>
               </div>
@@ -1088,7 +1088,7 @@ if ('requestIdleCallback' in window) {
               <div class="service-wrap">
                 <div class="icon-part"><img loading="lazy" decoding="async" class="service-card-icon" src="assets/images/IMAGES HOMEPAGE/ripening-chambers.avif" width="200" height="200" alt="Ripening chamber for fruits and produce"></div>
                 <div class="content-part">
-                  <h3 class="title"><a href="ripening-systems.php">Ripening Chambers</a></h3>
+                  <h3 class="title"><a href="ripening-systems-manufacturer-in-india">Ripening Chambers</a></h3>
                   <div class="desc">Ethylene-controlled ripening chambers for bananas, mangoes, papayas and other climacteric fruits, delivering consistent, ready-to-sell ripening for every pallet.</div>
                 </div>
               </div>
@@ -1099,7 +1099,7 @@ if ('requestIdleCallback' in window) {
               <div class="service-wrap">
                 <div class="icon-part"><img loading="lazy" decoding="async" class="service-card-icon" src="assets/images/IMAGES HOMEPAGE/iqf-technology.avif" width="200" height="200" alt="IQF individual quick freezing technology"></div>
                 <div class="content-part">
-                  <h3 class="title"><a href="iqf.php">IQF Technology</a></h3>
+                  <h3 class="title"><a href="iqf-system-manufacturer-in-india">IQF Technology</a></h3>
                   <div class="desc">Individual Quick Freeze (IQF) machine systems flash-freeze seafood, fruits, vegetables and ready-to-eat products for export-quality output and to preserve texture, nutrition and appearance.</div>
                 </div>
               </div>
@@ -1110,7 +1110,7 @@ if ('requestIdleCallback' in window) {
               <div class="service-wrap">
                 <div class="icon-part"><img loading="lazy" decoding="async" class="service-card-icon" src="assets/images/IMAGES HOMEPAGE/puf-panels-insulated-doors.avif" width="200" height="200" alt="PUF panel and insulated cold storage door"></div>
                 <div class="content-part">
-                  <h3 class="title"><a href="panels.php">PUF Panels</a> &amp; <a href="doors-ca-doors.php">Insulated Doors</a></h3>
+                  <h3 class="title"><a href="puf-panels-manufacturer-in-india">PUF Panels</a> &amp; <a href="cold-storage-doors-manufacturer-in-india">Insulated Doors</a></h3>
                   <div class="desc">High density PUF panel insulation and cold room doors that make up the thermal envelope of your cold storage facility – designed for airtight insulation and minimal energy loss.</div>
                 </div>
               </div>
@@ -1121,7 +1121,7 @@ if ('requestIdleCallback' in window) {
               <div class="service-wrap">
                 <div class="icon-part"><img loading="lazy" decoding="async" class="service-card-icon" src="assets/images/IMAGES HOMEPAGE/dock-shelters-dock-levelers.avif" width="200" height="200" alt="Dock shelter and dock leveler equipment"></div>
                 <div class="content-part">
-                  <h3 class="title"><a href="dock-shelter-dock-leveler.php">Dock Shelters &amp; Dock Levelers</a></h3>
+                  <h3 class="title"><a href="dock-shelter-dock-leveler-manufacturer-in-india">Dock Shelters &amp; Dock Levelers</a></h3>
                   <div class="desc">Dock Shelter and Leveler Systems seal the gap between your cold facility and delivery vehicles. Protect product temperature while loading and unloading.</div>
                 </div>
               </div>
@@ -1131,7 +1131,7 @@ if ('requestIdleCallback' in window) {
               <div class="service-wrap">
                 <div class="icon-part"><img loading="lazy" decoding="async" class="service-card-icon" src="assets/images/IMAGES HOMEPAGE/HEAVY DUTY RACKS.avif" width="200" height="200" alt="Heavy Duty Rack"></div>
                 <div class="content-part">
-                  <h3 class="title"><a href="heavy-duty-racks.php">Heavy Duty Racks</a></h3>
+                  <h3 class="title"><a href="heavy-duty-racks-manufacturer-in-india">Heavy Duty Racks</a></h3>
                   <div class="desc">Singhania Refrigeration makes Heavy Duty Racks based on your actual pallet loads, aisle lengths and forklift types, instead of making catalog racks that fit your warehouse. Ideal for cold storage facilities, distribution centres and general warehousing in India.</div>
                 </div>
               </div>
@@ -1141,7 +1141,7 @@ if ('requestIdleCallback' in window) {
               <div class="service-wrap">
                 <div class="icon-part"><img loading="lazy" decoding="async" class="service-card-icon" src="assets/images/IMAGES HOMEPAGE/MULTIDECK CABINET.avif" width="200" height="200" alt="Multideck Cabinet"></div>
                 <div class="content-part">
-                  <h3 class="title"><a href="multideck-cabinet.php">Multideck Cabinet</a></h3>
+                  <h3 class="title"><a href="multideck-cabinet-manufacturer-in-india">Multideck Cabinet</a></h3>
                   <div class="desc">Singhania Refrigeration manufactures Multideck Cabinets that offer the right balance of product visibility and uniform, energy-efficient cooling for supermarket chains, convenience stores and food retail outlets that need their dairy, beverage, deli and frozen displays to look good and stay cold all day long.</div>
                 </div>
               </div>
@@ -1151,7 +1151,7 @@ if ('requestIdleCallback' in window) {
               <div class="service-wrap">
                 <div class="icon-part"><img loading="lazy" decoding="async" class="service-card-icon" src="assets/images/IMAGES HOMEPAGE/DOORS AND CA DOORS.avif" width="200" height="200" alt="Doors and CA Doors"></div>
                 <div class="content-part">
-                  <h3 class="title"><a href="doors-ca-doors.php">Doors & CA Doors</a></h3>
+                  <h3 class="title"><a href="cold-storage-doors-manufacturer-in-india">Doors & CA Doors</a></h3>
                   <div class="desc">At Singhania Refrigeration, we design and build insulated Doors & CA Doors for chiller rooms, freezers, and controlled-atmosphere (CA) stores — access points that must keep their seal through hundreds of openings a day, not just look insulated on a spec sheet.</div>
                 </div>
               </div>
@@ -1161,13 +1161,13 @@ if ('requestIdleCallback' in window) {
               <div class="service-wrap">
                 <div class="icon-part"><img loading="lazy" decoding="async" class="service-card-icon" src="assets/images/services/icons/modify/refrigerated-truck-acs-containers.webp" width="200" height="200" alt="Truck Refregerated Container"></div>
                 <div class="content-part">
-                  <h3 class="title"><a href="truck-refrigerator-container.php">Truck Refregerated Container</a></h3>
+                  <h3 class="title"><a href="truck-refrigerator-container-manufacturer-in-india">Truck Refregerated Container</a></h3>
                   <div class="desc">Singhania Refrigeration is one of the reputed Refrigerated Truck Body Manufacturer in India manufacturing insulated cargo bodies and reefer containers for companies that ship temperature sensitive products.</div>
                 </div>
               </div>
             </div>
             <!-- <div class="col-12 tt-cta services-products-cta">
-              <a href="products.php" class="btn btn-primary">Explore Our Products</a>
+              <a href="products" class="btn btn-primary">Explore Our Products</a>
             </div> -->
           </div>
         </div>
@@ -1198,7 +1198,7 @@ if ('requestIdleCallback' in window) {
               <?php if ($productWebp !== ''): ?></picture><?php endif; ?>
             </div>
             <div class="content-part">
-              <h3 class="title"><a href="products.php"><?php echo $product['title'];?></a></h3>
+              <h3 class="title"><a href="products"><?php echo $product['title'];?></a></h3>
             </div>
           </div>
           <?php } ?>
@@ -1469,13 +1469,13 @@ if ('requestIdleCallback' in window) {
                   Our core solutions include:
                 </p>
                 <ul class="tt-list">
-                  <li><a href="turnkey-solution.php">Turnkey cold storage and refrigeration project execution</a> &mdash; from design to commissioning and AMC.</li>
-                  <li><a href="segments-wise.php">Segment-specific cold chain solutions</a> for dairy, pharma, seafood and agriculture.</li>
-                  <li><a href="cold-chain-refrigeration-ca-store-freon-ammonia.php">Cold chain refrigeration, CA store and ammonia/freon systems</a>.</li>
-                  <li><a href="quality-monitoring-solution.php">Real-time quality monitoring for cold storage</a> with IoT sensors and audit trails.</li>
-                  <li><a href="ware-house-management.php">End-to-end warehouse management system</a> for cold chain operations.</li>
-                  <li><a href="transport-management.php">Cold chain transport management</a> for reliable in-transit visibility.</li>
-                  <li><a href="transport-refrigeration.php">Transport refrigeration solutions</a> for reefer trucks and insulated vehicles.</li>
+                  <li><a href="turnkey-cold-storage-solutions-in-india">Turnkey cold storage and refrigeration project execution</a> &mdash; from design to commissioning and AMC.</li>
+                  <li><a href="segment-wise-cold-storage-solutions-in-india">Segment-specific cold chain solutions</a> for dairy, pharma, seafood and agriculture.</li>
+                  <li><a href="cold-chain-refrigeration-ca-store-freon-ammonia-in-india">Cold chain refrigeration, CA store and ammonia/freon systems</a>.</li>
+                  <li><a href="cold-chain-quality-monitoring-solution-in-india">Real-time quality monitoring for cold storage</a> with IoT sensors and audit trails.</li>
+                  <li><a href="warehouse-management-solutions-in-india">End-to-end warehouse management system</a> for cold chain operations.</li>
+                  <li><a href="transport-management-solutions-in-india">Cold chain transport management</a> for reliable in-transit visibility.</li>
+                  <li><a href="transport-refrigeration-solutions-in-india">Transport refrigeration solutions</a> for reefer trucks and insulated vehicles.</li>
                 </ul>
                 <!-- <ul class="tt-list">
                   <li>Advanced cold storage and refrigeration systems for industrial applications</li>
@@ -1484,8 +1484,8 @@ if ('requestIdleCallback' in window) {
                 </ul> -->
                 <br>
                 <!-- <div class="tt-cta">
-                  <a href="contact.php" class="btn btn-primary">Talk to an Expert</a>
-                  <a href="products.php" class="btn-link">Explore Our Products →</a>
+                  <a href="contact" class="btn btn-primary">Talk to an Expert</a>
+                  <a href="products" class="btn-link">Explore Our Products →</a>
                 </div> -->
               </div>
         
@@ -1505,8 +1505,8 @@ if ('requestIdleCallback' in window) {
 
               <div class="col-12">
                 <div class="tt-cta tt-cta-center">
-                  <a href="contact.php" class="btn btn-primary">Talk to an Expert</a>
-                  <a href="products.php" class="btn-link">Explore Our Products →</a>
+                  <a href="contact" class="btn btn-primary">Talk to an Expert</a>
+                  <a href="products" class="btn-link">Explore Our Products →</a>
                 </div>
               </div>
             </div>
@@ -1727,7 +1727,7 @@ if ('requestIdleCallback' in window) {
             </div>
             <div class="col-md-6">
               <div class="btn-part text-right sm-text-left">
-                <a class="readon" href="blog.php">View All Blogs</a>
+                <a class="readon" href="blog">View All Blogs</a>
               </div>
             </div>
           </div>
@@ -1748,11 +1748,11 @@ if ('requestIdleCallback' in window) {
                   <?php if ($blogWebp !== ''): ?><picture><source srcset="<?php echo htmlspecialchars($blogWebp, ENT_QUOTES); ?>" type="image/webp"><?php endif; ?>
                   <img loading="lazy" decoding="async" class="img-soft blog-cover-img" src="<?php echo htmlspecialchars($blogImage, ENT_QUOTES); ?>"<?php echo sr_image_size_attrs(sr_preferred_image_path($blogImage)); ?> alt="Cold Storage Blog">
                   <?php if ($blogWebp !== ''): ?></picture><?php endif; ?>
-                  <div class="fly-btn"><a href="blog-details.php?id=<?php echo $row['id'];?>"><i class="flaticon-right-arrow"></i></a></div>
+                  <div class="fly-btn"><a href="blog-details?id=<?php echo $row['id'];?>"><i class="flaticon-right-arrow"></i></a></div>
                 </div>
                 <div class="content-part">
                   <span class="categories"><?php echo $row['category_name'];?></span>
-                  <h3 class="title"><a href="blog-details.php?id=<?php echo $row['id'];?>"><?php echo $row['title'];?></a></h3>
+                  <h3 class="title"><a href="blog-details?id=<?php echo $row['id'];?>"><?php echo $row['title'];?></a></h3>
                   <div class="blog-meta">
                     <div class="user-data"><img loading="lazy" decoding="async" src="assets/images/blog/avatar/1.png" width="40" height="40" alt="Customer Review"><span>Singhania</span></div>
                     <div class="date"><i class="fa fa-clock-o"></i> <?php echo $row['created_at'];?></div>

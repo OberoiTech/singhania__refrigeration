@@ -335,7 +335,7 @@
                                       monitoring to provide reliable, energy-efficient cooling that scales with
                                       your facility for Indian operating conditions.</p>
             <div class="cta-bar">
-              <a href="contact.php" class="btn-brand">Get a Free Quote&nbsp; <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+              <a href="contact" class="btn-brand">Get a Free Quote&nbsp; <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
               <a href="tel:+919971060822" class="btn-brand btn-ghost"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp; Call Now</a>
             </div>
           </div>
@@ -354,7 +354,7 @@
             <h2 class="section-h2">What is a Compressor Rack System?</h2>
 
             <p class="lead">
-              Compressor rack systems are <a href="index.php">industrial refrigeration systems</a> that install multiple compressors on a single frame,
+              Compressor rack systems are <a href="/">industrial refrigeration systems</a> that install multiple compressors on a single frame,
               connected to common suction and discharge headers to provide refrigerant
               to multiple cooling loads &mdash; rooms, cabinets or cold chambers &mdash;
               from a single centralized plant room.
@@ -1404,7 +1404,7 @@
         </p>
 
         <div class="btn-part">
-          <a class="readon banner-style" href="contact.php">Request a Quote &rarr;</a>
+          <a class="readon banner-style" href="contact">Request a Quote &rarr;</a>
         </div>
 
         <p class="cta-phone-numbers">

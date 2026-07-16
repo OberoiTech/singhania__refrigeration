@@ -31,19 +31,19 @@
                                 <div class="sb-project-detail mt-50 md-mt-0">
                                     <h4 class="title">Products Details</h4>
                                     <ul>
-                                        <li><a href="truck-ac.php">Truck’s AC</a></li>
-                                        <li><a href="truck-refrigerator-container.php">Truck’s Refrigerator Container</a></li>
-                                        <li><a href="cold-storage-refrigeration-units.php">Cold Storage Refrigeration Units</a></li>
-                                        <li><a href="compressor-rack-system.php">Compressor Rack System</a></li>
-                                        <li><a href="ammonia-refrigeration-units.php">Ammonia Refrigeration Units</a></li>
-                                        <li><a href="ripening-systems.php">Ripening Systems</a></li>
-                                        <li><a href="multideck-cabinet.php">Multideck Cabinet</a></li>
-                                        <li><a href="iqf.php">IQF(Individual Quick Freeze)</a></li>
-                                        <li><a href="doors-ca-doors.php">Doors &amp; CA Doors</a></li>
-                                        <li><a href="panels.php">Puff panels</a></li>
-                                        <li><a href="dock-shelter-dock-leveler.php">Dock Shelter & Dock Leveler</a></li>
-                                        <li><a href="heavy-duty-racks.php">Heavy Duty Racks</a></li>
-                                        <li><a href="ca-solutions.php">Warehousing Equipment's</a></li>
+                                        <li><a href="truck-ac-manufacturer-in-india">Truck’s AC</a></li>
+                                        <li><a href="truck-refrigerator-container-manufacturer-in-india">Truck’s Refrigerator Container</a></li>
+                                        <li><a href="cold-storage-refrigeration-units-manufacturer-in-india">Cold Storage Refrigeration Units</a></li>
+                                        <li><a href="compressor-rack-system-manufacturer-in-india">Compressor Rack System</a></li>
+                                        <li><a href="ammonia-refrigeration-units-manufacturer-in-india">Ammonia Refrigeration Units</a></li>
+                                        <li><a href="ripening-systems-manufacturer-in-india">Ripening Systems</a></li>
+                                        <li><a href="multideck-cabinet-manufacturer-in-india">Multideck Cabinet</a></li>
+                                        <li><a href="iqf-system-manufacturer-in-india">IQF(Individual Quick Freeze)</a></li>
+                                        <li><a href="cold-storage-doors-manufacturer-in-india">Doors &amp; CA Doors</a></li>
+                                        <li><a href="puf-panels-manufacturer-in-india">Puff panels</a></li>
+                                        <li><a href="dock-shelter-dock-leveler-manufacturer-in-india">Dock Shelter & Dock Leveler</a></li>
+                                        <li><a href="heavy-duty-racks-manufacturer-in-india">Heavy Duty Racks</a></li>
+                                        <li><a href="cold-chain-refrigeration-ca-store-freon-ammonia-in-india">Warehousing Equipment's</a></li>
                                     </ul>
                                 </div>
                             </div>

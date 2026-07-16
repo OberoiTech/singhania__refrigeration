@@ -663,7 +663,7 @@ body.menu-open{ overflow:hidden; }
                       <a class="<?php echo isActiveA('about-us.php', $curBase); ?>" href="about-us">About</a>
                     </li>
                     <li class="menu-item  <?php echo anyActive($productsPages, $curBase); ?>">
-                      <a href="product&services" class="<?php echo isActiveA('products.php', $curBase); ?>">Products &amp; Services</a>
+                      <a href="products" class="<?php echo isActiveA('products.php', $curBase); ?>">Products &amp; Services</a>
                       <ul class="sub-menu products-sub-menu">
                         <li class="<?php echo isActive('truck-ac.php', $curBase); ?>">
                           <a class="<?php echo isActiveA('truck-ac.php', $curBase); ?>" href="truck-ac-manufacturer-in-india">Truck AC Manufacture</a>
@@ -799,7 +799,7 @@ body.menu-open{ overflow:hidden; }
           <li class="menu-item has-submenu <?php echo anyActive($coldStoragePages, $curBase); ?>">
             <a href="solutions">Cold Storage Solutions</a>
             <ul class="sub-menu">
-              <li class="<?php echo isActive('turnkey-solution.php', $curBase); ?>"><a class="<?php echo isActiveA('turnkey-solution.php', $curBase); ?>" href="cold-storage-solutions-in-india">Turnkey Solution</a></li>
+              <li class="<?php echo isActive('turnkey-solution.php', $curBase); ?>"><a class="<?php echo isActiveA('turnkey-solution.php', $curBase); ?>" href="turnkey-cold-storage-solutions-in-india">Turnkey Solution</a></li>
               <li class="<?php echo isActive('segments-wise.php', $curBase); ?>"><a class="<?php echo isActiveA('segments-wise.php', $curBase); ?>" href="segment-wise-cold-storage-solutions-in-india">Segment Wise Solutions</a></li>
               <li class="<?php echo isActive('cold-chain-refrigeration-ca-store-freon-ammonia.php', $curBase); ?>"><a class="<?php echo isActiveA('cold-chain-refrigeration-ca-store-freon-ammonia.php', $curBase); ?>" href="cold-chain-refrigeration-ca-store-freon-ammonia-in-india">Cold Chain Refrigeration, CA Store, Frozen/Ammonia</a></li>
               <li class="<?php echo isActive('quality-monitoring-solution.php', $curBase); ?>"><a class="<?php echo isActiveA('quality-monitoring-solution.php', $curBase); ?>" href="cold-chain-quality-monitoring-solution-in-india">Quality Monitoring Solution</a></li>

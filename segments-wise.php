@@ -5,7 +5,7 @@
     $pageTitle = 'Segment-Wise Cold Storage Solutions for Every Industry | Singhania Refrigeration';
     $pageDescription = 'Singhania Refrigeration designs cold storage, ripening, blast-freezing and CA store solutions matched to your industry - dairy, pharma, seafood, horticulture, 3PL and more. Request a free site visit.';
     $ogDescription = 'Cold rooms, blast freezers, ripening chambers and CA stores designed around your product - dairy, pharma, seafood, horticulture, 3PL and more. One partner across every segment you operate in.';
-    $canonicalUrl = 'https://singhaniarefrigeration.com/segments-wise.php';
+$canonicalUrl = 'https://singhaniarefrigeration.com/segment-wise-cold-storage-solutions-in-india';
     $shareImage = 'https://singhaniarefrigeration.com/assets/images/products/cold-storage.jpg';
     ?>
     <?php include('head.php'); ?>
@@ -210,7 +210,7 @@
                 Each product is different in cold storage. Milk needs a fast pull-down, bananas need a controlled ripening environment, pharma needs GDP-aligned compliance and seafood needs freezing fast enough to preserve texture. Singhania Refrigeration designs and manufactures cold rooms, blast freezers, ripening chambers and CA stores to suit the specific product, temperature, humidity and handling requirements of your industry - not a generic cold room bent to fit.
               </p>
               <div class="cta-bar">
-                <a href="contact.php" class="segment-btn secondary">Get a Free Quote</a>
+                <a href="contact" class="segment-btn secondary">Get a Free Quote</a>
                 <a href="tel:+919971060822" class="segment-btn secondary">Call Now</a>
               </div>
             </div>
@@ -226,7 +226,7 @@
                 <span class="section-eyebrow">Overview</span>
                 <h2 class="section-title">What Is a Segment-Wise Cold Storage Solution?</h2>
               </div>
-              <p>A segment-wise cold storage solution is a cold room, blast freezer, ripening chamber or controlled-atmosphere (CA) store designed around the product it will contain as part of our <a href="index.php">cold chain solutions across India</a>, rather than a standard refrigeration shell. Depending on what you are storing - dairy, pharmaceuticals, fresh produce or frozen seafood - the temperature range, humidity control, airflow, racking, door type and even panel grade will vary.</p>
+              <p>A segment-wise cold storage solution is a cold room, blast freezer, ripening chamber or controlled-atmosphere (CA) store designed around the product it will contain as part of our <a href="/">cold chain solutions across India</a>, rather than a standard refrigeration shell. Depending on what you are storing - dairy, pharmaceuticals, fresh produce or frozen seafood - the temperature range, humidity control, airflow, racking, door type and even panel grade will vary.</p>
               <p>Singhania Refrigeration designs each facility around your product profile and process flow first, then selects the refrigeration system, panels, doors and controls that match it. You end up with a cool room that works the way your product actually needs it to, not a one-size-fits-all build that overcools some zones and undercools others.</p>
               <!-- <blockquote class="definition-callout">A segment-wise cold storage solution is engineered around the specific temperature, humidity, airflow and handling needs of your product category - rather than built as a generic cold room and adapted afterward.</blockquote> -->
             </div>
@@ -433,7 +433,7 @@
             <span class="sub-title modify white">Get Started</span>
             <h2 class="title3 white-color">Ready to Build Cold Storage Around Your Product?</h2>
             <p class="cta-description">Tell us your product category, volume, temperature range and location - we will visit the site, assess requirements and recommend the right segment-specific cold storage design.</p>
-            <div class="btn-part"><a class="readon banner-style" href="contact.php">Request a Quote &rarr;</a></div>
+            <div class="btn-part"><a class="readon banner-style" href="contact">Request a Quote &rarr;</a></div>
             <p class="cta-phone-numbers">Call: <a href="tel:+919971060822"><strong>+91 99710 60822</strong></a><span aria-hidden="true">&nbsp;&nbsp;|&nbsp;&nbsp;</span>Call: <a href="tel:+919718097170"><strong>+91 97180 97170</strong></a></p>
           </div>
         </div>
