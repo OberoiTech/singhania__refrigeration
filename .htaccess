@@ -1,6 +1,9 @@
 <IfModule mod_rewrite.c>
 RewriteEngine On
 
+# Generate the public sitemap from sitemap.php while keeping /sitemap.xml stable.
+RewriteRule ^sitemap\.xml$ sitemap.php [L,NC]
+
 # Use one canonical host and protocol for every public URL.
 RewriteCond %{HTTPS} !=on [OR]
 RewriteCond %{HTTP_HOST} ^www\.singhaniarefrigeration\.com$ [NC]

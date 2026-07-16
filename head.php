@@ -193,157 +193,39 @@ $twitterDescription = $twitterDescription ?? $pageDescription;
               ],
           ]);
 
-            $schemaProductList = sr_schema_filter([
+          $schemaProductItems = [
+              ['name' => 'Truck AC', 'path' => 'truck-ac-manufacturer-in-india'],
+              ['name' => 'Truck Refrigerator Container', 'path' => 'truck-refrigerator-container-manufacturer-in-india'],
+              ['name' => 'Cold Storage Refrigeration Units', 'path' => 'cold-storage-refrigeration-units-manufacturer-in-india'],
+              ['name' => 'Compressor Rack System', 'path' => 'compressor-rack-system-manufacturer-in-india'],
+              ['name' => 'Ammonia Refrigeration Units', 'path' => 'ammonia-refrigeration-units-manufacturer-in-india'],
+              ['name' => 'Ripening Systems', 'path' => 'ripening-systems-manufacturer-in-india'],
+              ['name' => 'Multideck Cabinet', 'path' => 'multideck-cabinet-manufacturer-in-india'],
+              ['name' => 'IQF System', 'path' => 'iqf-system-manufacturer-in-india'],
+              ['name' => 'Cold Storage Doors', 'path' => 'cold-storage-doors-manufacturer-in-india'],
+              ['name' => 'PUF Panels', 'path' => 'puf-panels-manufacturer-in-india'],
+              ['name' => 'Dock Shelter & Dock Leveler', 'path' => 'dock-shelter-dock-leveler-manufacturer-in-india'],
+              ['name' => 'Heavy Duty Racks', 'path' => 'heavy-duty-racks-manufacturer-in-india'],
+          ];
+          $schemaProductList = sr_schema_filter([
               '@context' => 'https://schema.org',
               '@type' => 'ItemList',
               '@id' => $siteUrl . '#product-item-list',
-              'name' => 'Singhania Refrigeration Product',
+              'name' => 'Singhania Refrigeration Products',
               'description' => 'Cold storage, industrial refrigeration and cold chain services offered by Singhania Refrigeration across India.',
-              'itemListElement' => [
-                  [
-                      '@type' => 'ListItem',
-                      'position' => 1,
-                      'item' => [
-                          '@type' => 'Product',
-                          'name' => 'Truck AC',
-                          'description' => 'Reliable transport cooling with fast pull-down, energy efficiency, and nationwide AMC support.',
-                          'provider' => ['@id' => $siteUrl . '#organization'],
-                          'areaServed' => 'IN',
-                      ],
-                  ],
-                  [
-                      '@type' => 'ListItem',
-                      'position' => 2,
-                      'item' => [
-                          '@type' => 'Product',
-                          'name' => 'truck-refrigerator-container',
-                          'description' => 'Rugged insulated containers with reliable cooling to protect temperature-sensitive cargo end-to-end.',
-                          'provider' => ['@id' => $siteUrl . '#organization'],
-                          'areaServed' => 'IN',
-                      ],
-                  ],
-                  [
-                      '@type' => 'ListItem',
-                      'position' => 3,
-                      'item' => [
-                          '@type' => 'Product',
-                          'name' => 'cold-storage-refrigeration-units',
-                          'description' => 'Trusted, energy-efficient systems for warehouses and cold rooms with precise temperature control.',
-                          'provider' => ['@id' => $siteUrl . '#organization'],
-                          'areaServed' => 'IN',
-                      ],
-                  ],
-                  [
-                      '@type' => 'ListItem',
-                      'position' => 4,
-                      'item' => [
-                          '@type' => 'Product',
-                          'name' => 'compressor-rack-system',
-                          'description' => 'High-capacity, energy-efficient refrigeration for multi-room and industrial applications.',
-                          'provider' => ['@id' => $siteUrl . '#organization'],
-                          'areaServed' => 'IN',
-                      ],
-                  ],
-                  [
-                      '@type' => 'ListItem',
-                      'position' => 5,
-                      'item' => [
-                          '@type' => 'Product',
-                          'name' => 'ammonia-refrigeration-units',
-                          'description' => 'Eco-friendly, high-efficiency cooling built for heavy-duty industrial applications.',
-                          'provider' => ['@id' => $siteUrl . '#organization'],
-                          'areaServed' => 'IN',
-                      ],
-                  ],
-                  [
-                      '@type' => 'ListItem',
-                      'position' => 5,
-                      'item' => [
-                          '@type' => 'Product',
-                          'name' => 'ammonia-refrigeration-units',
-                          'description' => 'Eco-friendly, high-efficiency cooling built for heavy-duty industrial applications.',
-                          'provider' => ['@id' => $siteUrl . '#organization'],
-                          'areaServed' => 'IN',
-                      ],
-                  ],
-                  [
-                      '@type' => 'ListItem',
-                      'position' => 6,
-                      'item' => [
-                          '@type' => 'Product',
-                          'name' => 'ripening-systems',
-                          'description' => 'Controlled-atmosphere solutions for uniform, high-quality ripening.',
-                          'provider' => ['@id' => $siteUrl . '#organization'],
-                          'areaServed' => 'IN',
-                      ],
-                  ],
-                  [
-                      '@type' => 'ListItem',
-                      'position' => 7,
-                      'item' => [
-                          '@type' => 'Product',
-                          'name' => 'multideck-cabinet',
-                          'description' => 'High-visibility retail display with consistent, energy-efficient cooling.',
-                          'provider' => ['@id' => $siteUrl . '#organization'],
-                          'areaServed' => 'IN',
-                      ],
-                  ],
-                  [
-                      '@type' => 'ListItem',
-                      'position' => 8,
-                      'item' => [
-                          '@type' => 'Product',
-                          'name' => 'iqf',
-                          'description' => 'Eco-friendly, high-efficiency cooling built for heavy-duty industrial applications.',
-                          'provider' => ['@id' => $siteUrl . '#organization'],
-                          'areaServed' => 'IN',
-                      ],
-                  ],
-                  [
-                      '@type' => 'ListItem',
-                      'position' => 9,
-                      'item' => [
-                          '@type' => 'Product',
-                          'name' => 'doors-ca-doors',
-                          'description' => 'Durable, insulated doors with precision sealing for energy-efficient cold rooms.',
-                          'provider' => ['@id' => $siteUrl . '#organization'],
-                          'areaServed' => 'IN',
-                      ],
-                  ],
-                  [
-                      '@type' => 'ListItem',
-                      'position' => 10,
-                      'item' => [
-                          '@type' => 'Product',
-                          'name' => 'PUF panels',
-                          'description' => 'igh-performance insulated panels for energy-efficient cold rooms and warehouses.',
-                          'provider' => ['@id' => $siteUrl . '#organization'],
-                          'areaServed' => 'IN',
-                      ],
-                  ],
-                  [
-                      '@type' => 'ListItem',
-                      'position' => 11,
-                      'item' => [
-                          '@type' => 'Product',
-                          'name' => 'dock-shelter-dock-leveler',
-                          'description' => 'Reliable sealing & safe bridging for efficient cold chain loading operations.',
-                          'provider' => ['@id' => $siteUrl . '#organization'],
-                          'areaServed' => 'IN',
-                      ],
-                  ],
-                  [
-                      '@type' => 'ListItem',
-                      'position' => 12,
-                      'item' => [
-                          '@type' => 'Product',
-                          'name' => 'heavy-duty-racks',
-                          'description' => 'trength storage systems for optimized space, safety, and throughput.',
-                          'provider' => ['@id' => $siteUrl . '#organization'],
-                          'areaServed' => 'IN',
-                      ],
-                  ],
-                ] 
+              'numberOfItems' => count($schemaProductItems),
+              'itemListElement' => array_map(
+                  static function (array $product, int $index) use ($siteUrl): array {
+                      return [
+                          '@type' => 'ListItem',
+                          'position' => $index + 1,
+                          'name' => $product['name'],
+                          'url' => $siteUrl . $product['path'],
+                      ];
+                  },
+                  $schemaProductItems,
+                  array_keys($schemaProductItems)
+              ),
           ]);
 
           $schemaServiceItemList = sr_schema_filter([
