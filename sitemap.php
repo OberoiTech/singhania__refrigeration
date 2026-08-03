@@ -7,7 +7,7 @@ $baseUrl = 'https://singhaniarefrigeration.com';
 $staticLastmod = '2026-07-15';
 $staticUrls = [
     '/', '/about-us', '/products',
-    '/truck-ac-manufacturer-in-india',
+    '/truck-ac-installation-india',
     '/truck-refrigerator-container-manufacturer-in-india',
     '/cold-storage-refrigeration-units-manufacturer-in-india',
     '/compressor-rack-system-manufacturer-in-india',

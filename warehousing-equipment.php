@@ -31,7 +31,7 @@
                                 <div class="sb-project-detail mt-50 md-mt-0">
                                     <h4 class="title">Products Details</h4>
                                     <ul>
-                                        <li><a href="truck-ac-manufacturer-in-india">Truck’s AC</a></li>
+                                        <li><a href="truck-ac-installation-india">Truck AC</a></li>
                                         <li><a href="truck-refrigerator-container-manufacturer-in-india">Truck’s Refrigerator Container</a></li>
                                         <li><a href="cold-storage-refrigeration-units-manufacturer-in-india">Cold Storage Refrigeration Units</a></li>
                                         <li><a href="compressor-rack-system-manufacturer-in-india">Compressor Rack System</a></li>

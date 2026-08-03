@@ -135,12 +135,12 @@
   .card-prod__title{ font-size:18px; line-height:1.22; margin:0 0 6px; color:#0f2442; font-weight:700; }
   .card-prod__desc{ color:var(--muted); font-size:16px; min-height:44px; margin-top: 15px;text-align: justify; }
   .card-prod__cta{ padding:14px 16px 18px; text-align:center; }
-  .btn-ghost{
+  . {
     display:inline-block; padding:10px 14px; border-radius:10px;
     border:1px solid #cfd8ee; color:#22345f; font-weight:600; font-size:14px;
     transition: background .2s ease, border-color .2s ease, color .2s ease;
   }
-  .btn-ghost:hover{ background:#1c2f57; color:#fff; border-color:#1c2f57; text-decoration:none; }
+  . :hover{ background:#1c2f57; color:#fff; border-color:#1c2f57; text-decoration:none; }
 
   /* spacing helpers */
   .pt-100{ padding-top:100px; } .pb-70{ padding-bottom:70px; }
@@ -297,7 +297,7 @@
                 <p class="card-prod__desc"><?php echo nl2br(htmlspecialchars($p['desc'])); ?></p>
               </div>
               <!-- <div class="">
-                <a class="btn-ghost" href="<?php echo htmlspecialchars(publicPageUrl($p['slug'])); ?>">View details</a>
+                <a class=" " href="<?php echo htmlspecialchars(publicPageUrl($p['slug'])); ?>">View details</a>
               </div> -->
             </article>
             </a>

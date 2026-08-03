@@ -24,7 +24,7 @@ $linkedin = $linkedin ?? '';
 $address = $address ?? '';
 $canonicalRoutes = [
     'index.php' => '',
-    'truck-ac.php' => 'truck-ac-manufacturer-in-india',
+    'truck-ac.php' => 'truck-ac-installation-india',
     'truck-refrigerator-container.php' => 'truck-refrigerator-container-manufacturer-in-india',
     'cold-storage-refrigeration-units.php' => 'cold-storage-refrigeration-units-manufacturer-in-india',
     'compressor-rack-system.php' => 'compressor-rack-system-manufacturer-in-india',
@@ -112,7 +112,7 @@ $twitterDescription = $twitterDescription ?? $pageDescription;
               !empty($facebook) ? $facebook : null,
               !empty($linkedin) ? $linkedin : null,
               'https://x.com/SinghaniaR59102',
-              'https://www.instagram.com/singhaniarefrigeration/',
+              'https://www.instagram.com/singhaniarefrigeration1/',
               'https://www.youtube.com/channel/UC-g2bewulBb2oGjPGIDAaJA',
           ]));
 
@@ -194,7 +194,7 @@ $twitterDescription = $twitterDescription ?? $pageDescription;
           ]);
 
           $schemaProductItems = [
-              ['name' => 'Truck AC', 'path' => 'truck-ac-manufacturer-in-india'],
+              ['name' => 'Truck AC', 'path' => 'truck-ac-installation-india'],
               ['name' => 'Truck Refrigerator Container', 'path' => 'truck-refrigerator-container-manufacturer-in-india'],
               ['name' => 'Cold Storage Refrigeration Units', 'path' => 'cold-storage-refrigeration-units-manufacturer-in-india'],
               ['name' => 'Compressor Rack System', 'path' => 'compressor-rack-system-manufacturer-in-india'],

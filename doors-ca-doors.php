@@ -416,8 +416,8 @@
               as it's supposed to be.
             </p>
             <div class="cta-bar">
-              <a href="contact" class="btn-brand">Request a Quote&nbsp; <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-              <a href="tel:+919971060822" class="btn-brand btn-ghost"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp; Call Now</a>
+              <a href="contact" class="btn-brand">Request a Quote&nbsp; </a>
+              <a href="tel:+919971060822" class="btn-brand  "><i class="fa fa-phone" aria-hidden="true"></i>&nbsp; Call Now</a>
             </div>
           </div>
         </div>

@@ -667,13 +667,13 @@
         color: #fff;
         box-shadow: 0 18px 36px rgba(0, 27, 104, .34);
       }
-      /* .btn-brand.btn-ghost{
+      /* .btn-brand. {
         background:transparent;
         color:#ffffff;
         border-color:rgba(255,255,255,.32);
         box-shadow:none;
       }
-      .btn-brand.btn-ghost:hover{ background:rgba(255,255,255,.10); color:#ffffff; } */
+      .btn-brand. :hover{ background:rgba(255,255,255,.10); color:#ffffff; } */
 
       /* ====== Reveal-on-scroll ====== */
       [data-animate]{ opacity:0; transform:translateY(22px) scale(.985); transition:all .7s cubic-bezier(.2,.65,.3,1); }

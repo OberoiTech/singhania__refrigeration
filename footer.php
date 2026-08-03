@@ -28,7 +28,7 @@
           <ul class="social-pills">
                 <li><a class="social-facebook" href="https://www.facebook.com/profile.php?id=61579480251463" aria-label="Visit Singhania Refrigeration on Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                 <li><a class="social-x" href="https://x.com/SinghaniaR59102" aria-label="Visit Singhania Refrigeration on X"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a></li>
-                <li><a class="social-instagram" href="https://www.instagram.com/singhaniarefrigeration/" aria-label="Visit Singhania Refrigeration on Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                <li><a class="social-instagram" href="https://www.instagram.com/singhaniarefrigeration1/" aria-label="Visit Singhania Refrigeration on Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
                 <li><a class="social-linkedin" href="https://www.linkedin.com/company/singhania-refrigeration-and-supply-chain-consultancy/" aria-label="Visit Singhania Refrigeration on LinkedIn"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
                 <li><a class="social-youtube" href="https://www.youtube.com/channel/UC-g2bewulBb2oGjPGIDAaJA" aria-label="Visit Singhania Refrigeration on YouTube"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
           </ul>

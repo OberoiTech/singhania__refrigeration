@@ -76,9 +76,9 @@ if (isset($_POST['submit'])) {
       $address = $siteConfig['address'] ?? '';
     }
     $pageTitle = 'Cold Storage Company in Delhi NCR | Singhania Refrigeration';
-    $pageDescription = 'Turnkey cold storage construction, cold rooms, CA stores and ammonia refrigeration plants in Delhi NCR. 25 years of expertise. Request a free site survey.';
+    $pageDescription = 'Cold storage company & industrial refrigeration experts in Delhi NCR. Turnkey cold rooms, CA stores, ammonia plants & cold chain infrastructure. Free survey.';
     $ogTitle = 'Singhania Refrigeration | Turnkey Cold Storage & Refrigeration Plants in India';
-    $ogDescription = 'Turnkey cold storage, cold rooms, CA stores and industrial refrigeration plants designed, installed and maintained across India.';
+    $ogDescription = 'Cold storage company & industrial refrigeration experts in Delhi NCR. Turnkey cold rooms, CA stores, ammonia plants & cold chain infrastructure. Free survey.';
     $twitterTitle = 'Cold Storage & Refrigeration Plants in Delhi NCR | Singhania';
     $twitterDescription = $ogDescription;
 
@@ -806,6 +806,60 @@ body{ color:var(--ink); }
 
 /* Put this in your CSS after other hero rules */
 #hero-caption{ display:none !important; }
+
+/* About section: keep the detailed copy collapsed until requested. */
+.about-more-content[hidden]{ display:none; }
+.about-read-more{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  margin-top:4px;
+  padding:0;
+  border:0;
+  background:transparent;
+  color:#000b4f;
+  font:inherit;
+  font-weight:600;
+  cursor:pointer;
+}
+.about-read-more::after{
+  content:"+";
+  font-size:20px;
+  line-height:1;
+}
+.about-read-more[aria-expanded="true"]::after{ content:"\2212"; }
+.about-read-more:hover,
+.about-read-more:focus-visible{ color:#000b4f; }
+.about-read-more:focus-visible{
+  outline:2px solid currentColor;
+  outline-offset:4px;
+}
+#rs-about .about-section-image{
+  width:100%;
+  height:540px;
+  object-fit:cover;
+}
+#rs-about .tt-list{
+  display:grid;
+  gap:10px;
+  margin:0 0 20px;
+}
+#rs-about .tt-list li{
+  min-height:54px;
+  padding:13px 16px 13px 46px;
+  border:1px solid rgba(0,11,79,.1);
+  border-radius:10px;
+  background:#fff;
+  box-shadow:0 5px 16px rgba(0,11,79,.07);
+  text-align:left;
+}
+#rs-about .tt-list li::before{
+  left:16px;
+  top:17px;
+}
+@media (max-width:991.98px){
+  #rs-about .about-section-image{ height:auto; }
+}
 </style>
 
 <meta name="google-site-verification" content="t5Xgoar9zL7jV84rmq3iDZQ7vTKJadd2l0ZU3kfFICs" />
@@ -894,7 +948,7 @@ if ('requestIdleCallback' in window) {
                     <div class="slider-des">
                       <h1 class="sl-title white-color">Cold Storage &amp; Industrial Refrigeration Company in Delhi NCR</h1>
                       <div class="sl-desc">
-                        Singhania Refrigeration offers design, installation and maintenance of cold rooms, CA/MA stores, ammonia and freon refrigeration plants, ripening chambers, IQF systems and transport refrigeration to businesses in Delhi NCR. With 25 years of cold chain expertise through the Singhania Group, we offer safe, energy efficient and reliable cold storage solutions from Okhla, New Delhi to clients across India.
+                        Singhania Refrigeration offers design, installation and maintenance of cold rooms, CA/MA stores, ammonia and freon refrigeration plant, IQF systems, compressor racks complete cold chain infrastructure for various industries from Okhla, New Delhi to
                       </div>
                     </div>
                     <div class="slider-bottom">
@@ -989,21 +1043,29 @@ if ('requestIdleCallback' in window) {
             <div class="col-lg-6 padding-0" data-animate>
               <picture>
                 <source srcset="assets/images/4.webp" type="image/webp">
-                <img loading="lazy" decoding="async" class="img-soft" src="assets/images/4.jpg" width="585" height="583" alt="Cold Storage Plant">
+                <img loading="lazy" decoding="async" class="img-soft about-section-image" src="assets/images/4.jpg" width="585" height="583" alt="Cold Storage Plant">
               </picture>
             </div>
             <div class="col-lg-6 pl-66 pt-75 pb-75 md-pt-42 md-pb-72" data-animate>
               <div class="sec-title mb-24">
                 <h2 class="title mb-0 "><span class="section-title-accent">Trusted Cold Storage &amp; Refrigeration Company in Delhi NCR</span></h2>
               </div>
-              <p class="mb-20">
-                Singhania Refrigeration is an industrial refrigeration and cold storage solution company based in Okhla, New Delhi. We design, manufacture, install and maintain cold rooms, CA/MA stores, ammonia and freon refrigeration plants, ripening chambers, IQF systems, compressor racks, PUF panels, dock shelters and transport refrigeration for clients across Delhi NCR and India, backed by 25 years of cold chain and logistics experience through the Singhania Group.
-              </p>
+            <p class="mb-20" >
+              Singhania Refrigeration is an industrial refrigeration and cold storage solution company based in Okhla, New Delhi. We design, manufacture, install and maintain cold rooms, <a href="cold-chain-refrigeration-ca-store-freon-ammonia-in-india">CA/MA Stores</a>,
+              <a href="ammonia-refrigeration-units-manufacturer-in-india">ammonia and freon refrigeration plants</a>,
+              <a href="iqf-system-manufacturer-in-india">IQF systems</a>,
+              <a href="compressor-rack-system-manufacturer-in-india">compressor racks</a>,
+              <a href="solutions">complete cold chain infrastructure</a>,
+              <a href="puf-panels-manufacturer-in-india">PUF panels</a>, and
+              <a href="dock-shelter-dock-leveler-manufacturer-in-india">dock shelters and transport refrigeration solutions</a>
+              for clients across Delhi NCR and India, backed by 25 years of cold chain and logistics experience through the Singhania Group.
+          </p>
+              <div id="about-more-content" class="about-more-content" hidden>
               <p class="mb-20">
                 <strong>What does Singhania Refrigeration do?</strong> We offer the complete cold chain infrastructure - from site assessment and engineering design to equipment supply, civil work, installation, commissioning and continued maintenance - for food processing, pharmaceutical, dairy, agri-export and logistics enterprises, with systems in keeping with FSSAI and WHO-GMP standards.
               </p>
               <p class="mb-20">
-                We have a team of certified refrigeration engineers in-house who take care of every project, meaning there are no third-party coordination gaps, and no accountability gaps, from the first site visit to final handover and beyond.
+                Our in-house team of certified refrigeration engineers handles every project end to end, so there are no third-party coordination or accountability gaps from the first site visit to final handover and beyond.
               </p>
               <!-- Bullet list — Why choose us -->
               <p><strong>Why Delhi NCR businesses choose us:</strong></p>
@@ -1023,6 +1085,10 @@ if ('requestIdleCallback' in window) {
     About Singhania Refrigeration
 </a>
               </div>
+              </div>
+              <button class="about-read-more" type="button" aria-expanded="false" aria-controls="about-more-content">
+                <span>Read More</span>
+              </button>
             </div>
           </div>
         </div>
@@ -1044,7 +1110,7 @@ if ('requestIdleCallback' in window) {
               <div class="service-wrap">
                 <div class="icon-part"><img loading="lazy" decoding="async" class="truck-service-icon" src="assets/images/IMAGES HOMEPAGE/refrigerated-truck-acs-containers.avif" width="200" height="200" alt="Refrigerated truck AC and container unit"></div>
                 <div class="content-part">
-                  <h3 class="title"><a href="truck-ac-manufacturer-in-india">Refrigerated Truck ACs</a> &amp; <a href="truck-refrigerator-container-manufacturer-in-india">Containers</a></h3>
+                  <h3 class="title"><a href="truck-ac-installation-india">Refrigerated Truck ACs</a> &amp; <a href="truck-refrigerator-container-manufacturer-in-india">Containers</a></h3>
                   <div class="desc">Transport Refrigeration Units for trucks and reefer containers, keeping Perishables – Food, Dairy and Pharma Products, temperature controlled on routes across Delhi NCR and Pan India.</div>
                 </div>
               </div>
@@ -1056,7 +1122,7 @@ if ('requestIdleCallback' in window) {
                 <div class="icon-part"><img loading="lazy" decoding="async" class="service-card-icon" src="assets/images/IMAGES HOMEPAGE/cold-storage-warehouse.avif" width="200" height="200" alt="Cold room and cold storage solution"></div>
                 <div class="content-part">
                   <h3 class="title"><a href="cold-storage-refrigeration-units-manufacturer-in-india">Cold Rooms &amp; Storage Solutions</a></h3>
-                  <div class="desc">Cold rooms based on ammonia and freon, Controlled Atmosphere (CA) stores, Ripening Chambers &amp; Blast Freezer Systems, designed to meet the shelf-life and temperature requirements of your product.</div>
+                  <div class="desc">Ammonia and freon cold rooms, Controlled Atmosphere (CA) stores, ripening chambers and blast freezer systems, designed to meet the shelf-life and temperature controlled storage requirements of your product.</div>
                 </div>
               </div>
             </div>
@@ -1067,7 +1133,7 @@ if ('requestIdleCallback' in window) {
                 <div class="icon-part"><img loading="lazy" decoding="async" class="service-card-icon" src="assets/images/IMAGES HOMEPAGE/compressor-rack-systems.avif" width="200" height="200" alt="Industrial compressor rack system"></div>
                 <div class="content-part">
                   <h3 class="title"><a href="compressor-rack-system-manufacturer-in-india">Compressor Rack Systems</a></h3>
-                  <div class="desc">Centralised, energy efficient compressor rack systems for supermarkets, food retail chains and large cold storage warehouses, reducing refrigerant charge and maintenance.</div>
+                  <div class="desc">Centralised, energy efficient compressor rack systems for supermarkets, food retail chains and large refrigerated warehouses, reducing refrigerant charge and maintenance.</div>
                 </div>
               </div>
             </div>
@@ -1078,7 +1144,7 @@ if ('requestIdleCallback' in window) {
                 <div class="icon-part"><img loading="lazy" decoding="async" class="service-card-icon" src="assets/images/IMAGES HOMEPAGE/ammonia-refrigeration-units.avif" width="200" height="200" alt="Ammonia refrigeration unit"></div>
                 <div class="content-part">
                   <h3 class="title"><a href="ammonia-refrigeration-units-manufacturer-in-india">Ammonia Refrigeration Units</a></h3>
-                  <div class="desc">Industrial grade ammonia (NH3) and Freon refrigeration plants are for food processing units, large cold storage warehouses, fisheries and dairy operations requiring high capacity and energy efficient cooling</div>
+                  <div class="desc">Industrial grade ammonia (NH3) and Freon refrigeration plants for food processing units, temperature controlled warehouses, fisheries and dairy operations requiring high capacity, energy efficient industrial cooling.</div>
                 </div>
               </div>
             </div>
@@ -1132,7 +1198,7 @@ if ('requestIdleCallback' in window) {
                 <div class="icon-part"><img loading="lazy" decoding="async" class="service-card-icon" src="assets/images/IMAGES HOMEPAGE/HEAVY DUTY RACKS.avif" width="200" height="200" alt="Heavy Duty Rack"></div>
                 <div class="content-part">
                   <h3 class="title"><a href="heavy-duty-racks-manufacturer-in-india">Heavy Duty Racks</a></h3>
-                  <div class="desc">Singhania Refrigeration makes Heavy Duty Racks based on your actual pallet loads, aisle lengths and forklift types, instead of making catalog racks that fit your warehouse. Ideal for cold storage facilities, distribution centres and general warehousing in India.</div>
+                  <div class="desc">Singhania Refrigeration makes Heavy Duty Racks based on your actual pallet loads, aisle lengths and forklift types, instead of making catalog racks that fit your warehouse. Ideal for temperature controlled warehouses, distribution centres and general warehousing in India.</div>
                 </div>
               </div>
             </div>
@@ -1159,9 +1225,9 @@ if ('requestIdleCallback' in window) {
             <!-- services 12 -->
              <div class="col-lg-3 col-sm-6 mb-16">
               <div class="service-wrap">
-                <div class="icon-part"><img loading="lazy" decoding="async" class="service-card-icon" src="assets/images/services/icons/modify/refrigerated-truck-acs-containers.webp" width="200" height="200" alt="Truck Refregerated Container"></div>
+                <div class="icon-part"><img loading="lazy" decoding="async" class="service-card-icon" src="assets/images/services/icons/modify/refrigerated-truck-acs-containers.webp" width="200" height="200" alt="Refrigerated Truck Bodies & Reefer Containers"></div>
                 <div class="content-part">
-                  <h3 class="title"><a href="truck-refrigerator-container-manufacturer-in-india">Truck Refregerated Container</a></h3>
+                  <h3 class="title"><a href="truck-refrigerator-container-manufacturer-in-india">Refrigerated Truck Bodies & Reefer Containers</a></h3>
                   <div class="desc">Singhania Refrigeration is one of the reputed Refrigerated Truck Body Manufacturer in India manufacturing insulated cargo bodies and reefer containers for companies that ship temperature sensitive products.</div>
                 </div>
               </div>
@@ -1346,9 +1412,9 @@ if ('requestIdleCallback' in window) {
             <div class="row justify-content-center text-center">
               <div class="col-lg-10">
                 <span class="innov-eyebrow">WHY CHOOSE US</span>
-                <h2 class="innov-title pt-20">Engineered for Reliability, Built for Tomorrow</h2>
+                <h2 class="innov-title pt-20">Engineered for Reliability: Industrial Refrigeration Built for Tomorrow</h2>
                 <p class="innov-lead">
-                 Singhania Refrigeration builds reliability into every cold room, CA store and refrigeration plant that we build. Reliability is not an afterthought.
+                 Singhania Refrigeration engineers reliability into every cold room, CA store and industrial refrigeration plant we deliver. Reliability is not an afterthought.
                 </p>
               </div>
             </div>
@@ -1626,6 +1692,16 @@ if ('requestIdleCallback' in window) {
               <summary><strong>How can I reduce cold storage energy consumption?</strong></summary>
               <p>Cold storage energy consumption can be reduced through high-efficiency compressors, properly sized PUF panel insulation, smart temperature controls, regular preventive maintenance and AMC services, and minimising door-opening losses with dock shelters and dock levelers. Singhania Refrigeration's energy-efficient refrigeration systems are engineered to cut running costs by up to 30% compared with conventional installations.</p>
             </details>
+
+            <details>
+              <summary><strong>What does it cost to build a cold storage in Delhi NCR?</strong></summary>
+              <p>Cold storage construction cost depends on storage capacity, temperature band, insulation thickness and refrigerant choice. A chiller room at 2–8°C costs considerably less per square foot than a −25°C frozen store or a controlled atmosphere facility, because of compressor sizing and PUF panel thickness. Our engineering team provides a costed layout after a free site survey.</p>
+            </details>
+
+            <details>
+              <summary><strong>How long does a turnkey cold storage project take?</strong></summary>
+              <p>A standard cold room can be commissioned in a few weeks. Larger turnkey cold storage projects involving civil work, ammonia refrigeration plant rooms and CA store commissioning run longer, with the schedule driven by civil readiness and power sanction rather than by refrigeration equipment lead time.</p>
+            </details>
           </div>
         </div>
       </section>
@@ -1884,6 +1960,17 @@ $(window).on('load', function () {
 });
 
 document.addEventListener("DOMContentLoaded", function(){
+  const aboutToggle = document.querySelector(".about-read-more");
+  const aboutMore = document.getElementById("about-more-content");
+  if (aboutToggle && aboutMore) {
+    aboutToggle.addEventListener("click", function(){
+      const isExpanded = this.getAttribute("aria-expanded") === "true";
+      this.setAttribute("aria-expanded", String(!isExpanded));
+      aboutMore.hidden = isExpanded;
+      this.querySelector("span").textContent = isExpanded ? "Read More" : "Read Less";
+    });
+  }
+
   const elems = document.querySelectorAll("[data-animate]");
   const io = new IntersectionObserver((entries)=>{
     entries.forEach(e=>{

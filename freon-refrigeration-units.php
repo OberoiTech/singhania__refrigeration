@@ -30,6 +30,13 @@ include('head.php');
   .fr-heading{max-width:820px;margin:0 auto 38px;text-align:center}.fr-heading h2{font-size:clamp(29px,3.5vw,43px);line-height:1.2;color:var(--fr-navy);margin:0 0 14px}.fr-heading p{line-height:1.8}
   .fr-section--navy .fr-heading h2,.fr-section--navy .fr-heading p{color:#fff}
   .fr-copy{max-width:980px;margin:auto;font-size:16px;line-height:1.9}.fr-copy p{margin-bottom:16px}
+  .fr-overview{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(360px,.9fr);align-items:center;gap:58px}
+  .fr-overview__content .fr-heading{max-width:640px;margin:0 0 24px;text-align:left}
+  .fr-overview__content .fr-heading h2{font-size:clamp(30px,3vw,42px);line-height:1.15;margin:0}
+  .fr-overview__content .fr-copy{max-width:none;font-size:16px;line-height:1.62}
+  .fr-overview__content .fr-copy p{margin:0 0 12px;text-align:justify}
+  .fr-overview__media{background:#fff;padding:23px 19px 23px;border-radius:0 0 34px 0;box-shadow:0 18px 42px rgba(9,35,68,.08)}
+  .fr-overview__media img{display:block;width:100%;height:305px;object-fit:cover}
   .fr-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
   .fr-grid--four{grid-template-columns:repeat(4,minmax(0,1fr))}
   .fr-card{height:100%;background:#fff;border:1px solid #e8e8e8;border-radius:10px;padding:32px 24px;text-align:center;box-shadow:none;transition:transform .3s ease,box-shadow .3s ease}
@@ -40,8 +47,8 @@ include('head.php');
   .fr-faq{max-width:900px;margin:auto}.fr-faq details{background:#fff;border:1px solid #dce8f1;border-radius:10px;margin-bottom:12px;padding:0 20px}.fr-faq summary{cursor:pointer;padding:18px 0;font-weight:700;color:var(--fr-navy)}.fr-faq details p{padding:0 0 18px;line-height:1.75;margin:0}
   .fr-related{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}.fr-related a{background:#fff;color:var(--fr-navy);border-radius:8px;padding:10px 15px;font-weight:600;text-decoration:none}
   .fr-cta{text-align:center}.fr-cta h2{color:#fff;font-size:clamp(30px,4vw,46px);max-width:850px;margin:0 auto 18px}.fr-cta p{color:#dce9f5;max-width:800px;margin:0 auto 24px;line-height:1.8}
-  @media(max-width:991px){.fr-grid,.fr-grid--four{grid-template-columns:repeat(2,minmax(0,1fr))}.fr-hero{min-height:600px;background-position:68% center}.fr-hero__content{padding:76px 0 68px}}
-  @media(max-width:600px){.fr-section{padding:58px 0}.fr-grid,.fr-grid--four{grid-template-columns:1fr}.fr-wrap{width:min(100% - 28px,1180px)}.fr-hero{min-height:640px}.fr-hero__content{padding:68px 4px 60px}.fr-hero h1{font-size:clamp(34px,9vw,48px)}.fr-card{padding:26px 18px}}
+  @media(max-width:991px){.fr-grid,.fr-grid--four{grid-template-columns:repeat(2,minmax(0,1fr))}.fr-hero{min-height:600px;background-position:68% center}.fr-hero__content{padding:76px 0 68px}.fr-overview{grid-template-columns:1fr;gap:30px}.fr-overview__media{width:min(100%,620px);margin:auto}.fr-overview__media img{height:auto}}
+  @media(max-width:600px){.fr-section{padding:58px 0}.fr-grid,.fr-grid--four{grid-template-columns:1fr}.fr-wrap{width:min(100% - 28px,1180px)}.fr-hero{min-height:640px}.fr-hero__content{padding:68px 4px 60px}.fr-hero h1{font-size:clamp(34px,9vw,48px)}.fr-card{padding:26px 18px}.fr-overview{gap:20px}.fr-overview__content .fr-heading{margin-bottom:18px}.fr-overview__content .fr-copy p{text-align:left}.fr-overview__media{padding:12px;border-radius:0 0 24px 0}}
 </style>
 </head>
 <body>
@@ -53,13 +60,16 @@ include('head.php');
       <h1>Freon Refrigeration Units Manufacturer in India</h1>
       <h2>Reliable, versatile cooling for commercial and mid-scale industrial applications</h2>
       <p>Singhania Refrigeration develops Freon (HFC/HFO) refrigeration units for cold rooms, fruit ripening chambers, warehouses, processing businesses and logistics points where flexibility, ease of use and low initial cost matter.</p>
-      <div class="fr-actions"><a class="btn-brand" href="contact">Get a Free Quote&nbsp; <i class="fa fa-arrow-right" aria-hidden="true"></i></a><a class="btn-brand btn-ghost" href="tel:+919971060822"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp; Call Now</a></div>
+      <div class="fr-actions"><a class="btn-brand" href="contact">Get a Free Quote&nbsp; </a><a class="btn-brand  " href="tel:+919971060822"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp; Call Now</a></div>
     </div></div>
   </section>
 
-  <section class="fr-section" id="what-is-freon-refrigeration"><div class="fr-wrap">
-    <div class="fr-heading"><span class="fr-kicker">Overview</span><h2>What is a Freon Refrigeration Unit?</h2></div>
-    <div class="fr-copy"><p>Freon refrigeration systems use synthetic refrigerants such as HFCs and newer HFO alternatives. Their compact equipment can be installed close to working spaces without the dedicated machine room and operating arrangements commonly associated with large ammonia plants.</p><p>Condensing units, monoblocks and compressor racks make these systems practical for cold rooms, walk-in freezers, ripening chambers, supermarkets, HoReCa, pharmaceutical storage and small processing or packing lines.</p></div>
+  <section class="fr-section" id="what-is-freon-refrigeration"><div class="fr-wrap fr-overview">
+    <div class="fr-overview__content">
+      <div class="fr-heading"><h2>What is a Freon Refrigeration Unit?</h2></div>
+      <div class="fr-copy"><p>Freon refrigeration systems use synthetic refrigerants such as HFCs and newer HFO alternatives. Their compact equipment can be installed close to working spaces without the dedicated machine room and operating arrangements commonly associated with large ammonia plants.</p><p>Condensing units, monoblocks and compressor racks make these systems practical for cold rooms, walk-in freezers, ripening chambers, supermarkets, HoReCa, pharmaceutical storage and small processing or packing lines.</p></div>
+    </div>
+    <div class="fr-overview__media"><img src="assets/images/products/cold-storage.webp" alt="Freon refrigeration unit inside a cold storage room" loading="lazy" width="1200" height="844"></div>
   </div></section>
 
   <?php
@@ -116,9 +126,9 @@ include('head.php');
   ]; ?>
   <section class="fr-section fr-section--pale" id="freon-refrigeration-faqs"><div class="fr-wrap"><div class="fr-heading"><span class="fr-kicker">FAQs</span><h2>Frequently Asked Questions</h2></div><div class="fr-faq"><?php foreach($faqs as $faq): ?><details><summary><?php echo $faq[0]; ?></summary><p><?php echo $faq[1]; ?></p></details><?php endforeach; ?></div></div></section>
 
-  <section class="fr-section"><div class="fr-wrap"><div class="fr-heading"><span class="fr-kicker">Explore More</span><h2>Related Refrigeration Solutions</h2></div><div class="fr-related"><a href="ammonia-refrigeration-units-manufacturer-in-india">Ammonia Units</a><a href="compressor-rack-system-manufacturer-in-india">Compressor Racks</a><a href="cold-storage-refrigeration-units-manufacturer-in-india">Cold Storage Units</a><a href="puf-panels-manufacturer-in-india">PUF Panels</a><a href="truck-ac-manufacturer-in-india">Truck AC</a></div></div></section>
+  <section class="fr-section"><div class="fr-wrap"><div class="fr-heading"><span class="fr-kicker">Explore More</span><h2>Related Refrigeration Solutions</h2></div><div class="fr-related"><a href="ammonia-refrigeration-units-manufacturer-in-india">Ammonia Units</a><a href="compressor-rack-system-manufacturer-in-india">Compressor Racks</a><a href="cold-storage-refrigeration-units-manufacturer-in-india">Cold Storage Units</a><a href="puf-panels-manufacturer-in-india">PUF Panels</a><a href="truck-ac-installation-india">Truck AC</a></div></div></section>
 
-  <section class="fr-section fr-section--navy"><div class="fr-wrap fr-cta"><span class="fr-kicker">Get Started</span><h2>Plan a Freon Refrigeration System With Us</h2><p>For a new cold room, retail refrigeration upgrade or replacement system, our experts will size a solution around your temperature, performance and budget.</p><div class="fr-actions" style="justify-content:center"><a class="btn-brand" href="contact">Get a Free Quote&nbsp; <i class="fa fa-arrow-right" aria-hidden="true"></i></a><a class="btn-brand btn-ghost" href="tel:+919718097170"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp; Call Now</a></div></div></section>
+  <section class="fr-section fr-section--navy"><div class="fr-wrap fr-cta"><span class="fr-kicker">Get Started</span><h2>Plan a Freon Refrigeration System With Us</h2><p>For a new cold room, retail refrigeration upgrade or replacement system, our experts will size a solution around your temperature, performance and budget.</p><div class="fr-actions" style="justify-content:center"><a class="btn-brand" href="contact">Get a Free Quote&nbsp; </a><a class="btn-brand  " href="tel:+919718097170"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp; Call Now</a></div></div></section>
 </main>
 <?php include('footer.php'); ?>
 </body>

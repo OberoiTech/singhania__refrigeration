@@ -56,7 +56,7 @@ if (!function_exists('publicPageUrl')) {
     $file = basename($parts['path'] ?? $path);
     $routes = [
       'index.php' => './',
-      'truck-ac.php' => 'truck-ac-manufacturer-in-india',
+      'truck-ac.php' => 'truck-ac-installation-india',
       'truck-refrigerator-container.php' => 'truck-refrigerator-container-manufacturer-in-india',
       'cold-storage-refrigeration-units.php' => 'cold-storage-refrigeration-units-manufacturer-in-india',
       'compressor-rack-system.php' => 'compressor-rack-system-manufacturer-in-india',
@@ -666,7 +666,7 @@ body.menu-open{ overflow:hidden; }
                       <a href="products" class="<?php echo isActiveA('products.php', $curBase); ?>">Products &amp; Services</a>
                       <ul class="sub-menu products-sub-menu">
                         <li class="<?php echo isActive('truck-ac.php', $curBase); ?>">
-                          <a class="<?php echo isActiveA('truck-ac.php', $curBase); ?>" href="truck-ac-manufacturer-in-india">Truck AC Manufacture</a>
+                          <a class="<?php echo isActiveA('truck-ac.php', $curBase); ?>" href="truck-ac-installation-india">Truck AC</a>
                         </li>
                         <li class="<?php echo isActive('truck-refrigerator-container.php', $curBase); ?>">
                           <a class="<?php echo isActiveA('truck-refrigerator-container.php', $curBase); ?>" href="truck-refrigerator-container-manufacturer-in-india">Refrigerated Truck Body Manufacturer</a>
@@ -778,7 +778,7 @@ body.menu-open{ overflow:hidden; }
           <li class="menu-item has-submenu <?php echo anyActive($productsPages, $curBase); ?>">
             <a href="products">Products</a>
             <ul class="sub-menu">
-              <li class="<?php echo isActive('truck-ac.php', $curBase); ?>"><a class="<?php echo isActiveA('truck-ac.php', $curBase); ?>" href="truck-ac-manufacturer-in-india">Truck’s AC</a></li>
+              <li class="<?php echo isActive('truck-ac.php', $curBase); ?>"><a class="<?php echo isActiveA('truck-ac.php', $curBase); ?>" href="truck-ac-installation-india">Truck AC</a></li>
               <li class="<?php echo isActive('truck-refrigerator-container.php', $curBase); ?>"><a class="<?php echo isActiveA('truck-refrigerator-container.php', $curBase); ?>" href="truck-refrigerator-container-manufacturer-in-india">Truck’s Refrigerator Container</a></li>
               <li class="<?php echo isActive('cold-storage-refrigeration-units.php', $curBase); ?>"><a class="<?php echo isActiveA('cold-storage-refrigeration-units.php', $curBase); ?>" href="cold-storage-refrigeration-units-manufacturer-in-india">Cold Storage Refrigeration Units</a></li>
               <li class="<?php echo isActive('compressor-rack-system.php', $curBase); ?>"><a class="<?php echo isActiveA('compressor-rack-system.php', $curBase); ?>" href="compressor-rack-system-manufacturer-in-india">Compressor Rack System</a></li>
@@ -826,7 +826,7 @@ body.menu-open{ overflow:hidden; }
         <div class="mobile-drawer-socials">
           <a href="https://www.facebook.com/profile.php?id=61579480251463" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
           <a href="https://x.com/SinghaniaR59102" target="_blank" rel="noopener" aria-label="X"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
-          <a href="https://www.instagram.com/singhaniarefrigeration/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
+          <a href="https://www.instagram.com/singhaniarefrigeration1/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
           <a href="https://www.linkedin.com/company/singhania-refrigeration-and-supply-chain-consultancy/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa fa-linkedin-square"></i></a>
           <a href="https://www.youtube.com/channel/UC-g2bewulBb2oGjPGIDAaJA" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa fa-youtube-play"></i></a>
         </div>
@@ -1159,7 +1159,7 @@ body.menu-open{ overflow:hidden; }
 document.addEventListener('DOMContentLoaded', function () {
   const routes = {
     'index.php': './',
-    'truck-ac.php': 'truck-ac-manufacturer-in-india',
+    'truck-ac.php': 'truck-ac-installation-india',
     'truck-refrigerator-container.php': 'truck-refrigerator-container-manufacturer-in-india',
     'cold-storage-refrigeration-units.php': 'cold-storage-refrigeration-units-manufacturer-in-india',
     'compressor-rack-system.php': 'compressor-rack-system-manufacturer-in-india',

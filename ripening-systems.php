@@ -19,7 +19,7 @@
 
   // Sidebar list (keep once here and reuse for all pages)
   $products = [
-    'truck-ac.php'                         => "Truck’s AC",
+    'truck-ac.php'                         => "Truck AC",
     'truck-refrigerator-container.php'     => "Truck’s Refrigerator Container",
     'cold-storage-refrigeration-units.php' => "Cold Storage Refrigeration Units",
     'compressor-rack-system.php'           => "Compressor Rack System",
@@ -448,8 +448,8 @@
               way, time after time.
             </p>
             <div class="cta-bar">
-              <a href="contact" class="btn-brand">Get a Free Quote&nbsp; <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-              <a href="tel:+919971060822" class="btn-brand btn-ghost"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp; Call Now</a>
+              <a href="contact" class="btn-brand">Get a Free Quote&nbsp; </a>
+              <a href="tel:+919971060822" class="btn-brand  "><i class="fa fa-phone" aria-hidden="true"></i>&nbsp; Call Now</a>
             </div>
           </div>
         </div>

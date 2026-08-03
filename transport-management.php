@@ -235,13 +235,13 @@
         box-shadow: 0 18px 36px rgba(0, 27, 104, .34);
       }
 
-      /* .btn-ghost {
+      /* .  {
         background: rgba(255, 255, 255, .12);
         border-color: rgba(255, 255, 255, .32);
         box-shadow: none;
       } */
 
-      /* .btn-ghost:hover { background: rgba(255, 255, 255, .2); } */
+      /* . :hover { background: rgba(255, 255, 255, .2); } */
 
       .section-padding { padding: 76px 0; }
       .bg-soft { background: var(--tm-soft); }
