@@ -193,6 +193,34 @@ $twitterDescription = $twitterDescription ?? $pageDescription;
               ],
           ]);
 
+          // Per-post BlogPosting schema. Populated by blog-details.php via $schemaBlogPosting
+          // (headline/description/image/authorName/datePublished/dateModified); absent elsewhere.
+          $schemaBlogPosting = $schemaBlogPosting ?? null;
+          $schemaBlogPostingLd = null;
+          if (!empty($schemaBlogPosting)) {
+              $schemaBlogPostingLd = sr_schema_filter([
+                  '@context' => 'https://schema.org',
+                  '@type' => 'BlogPosting',
+                  '@id' => $schemaPageUrl . '#blogpost',
+                  'headline' => $schemaBlogPosting['headline'] ?? null,
+                  'description' => $schemaBlogPosting['description'] ?? null,
+                  'image' => $schemaBlogPosting['image'] ?? null,
+                  'author' => [
+                      '@type' => 'Organization',
+                      'name' => $schemaBlogPosting['authorName'] ?? 'Singhania Refrigeration',
+                  ],
+                  'publisher' => [
+                      '@id' => $siteUrl . '#organization',
+                  ],
+                  'datePublished' => $schemaBlogPosting['datePublished'] ?? null,
+                  'dateModified' => $schemaBlogPosting['dateModified'] ?? null,
+                  'mainEntityOfPage' => [
+                      '@type' => 'WebPage',
+                      '@id' => $schemaPageUrl . '#webpage',
+                  ],
+              ]);
+          }
+
           $schemaProductItems = [
               ['name' => 'Truck AC', 'path' => 'truck-ac-installation-india'],
               ['name' => 'Truck Refrigerator Container', 'path' => 'truck-refrigerator-container-manufacturer-in-india'],
@@ -456,6 +484,9 @@ $twitterDescription = $twitterDescription ?? $pageDescription;
               $schemaProductList,
               $schemaFAQPage,
           ];
+          if (!empty($schemaBlogPostingLd)) {
+              $schemaGraphItems[] = $schemaBlogPostingLd;
+          }
           foreach ($schemaGraphItems as &$schemaGraphItem) {
               unset($schemaGraphItem['@context']);
           }

@@ -31,6 +31,19 @@ $pageKeywords = !empty($blog['keywords']) ? $blog['keywords'] : 'cold storage so
  $canonicalUrl = 'https://singhaniarefrigeration.com/blog-details?id=' . $id;
 $shareImage = !empty($blog['thumb_image']) ? 'https://singhaniarefrigeration.com/admin/uploads/' . $blog['thumb_image'] : 'https://singhaniarefrigeration.com/admin/uploads/image.jpg';
 $ogType = 'article';
+
+$schemaBlogPosting = null;
+if (!empty($blog['id'])) {
+    $blogDate = !empty($blog['created_at']) ? date('c', strtotime($blog['created_at'])) : null;
+    $schemaBlogPosting = [
+        'headline' => $blog['title'],
+        'description' => $pageDescription,
+        'image' => $shareImage,
+        'authorName' => !empty($blog['author']) ? $blog['author'] : 'Singhania Refrigeration',
+        'datePublished' => $blogDate,
+        'dateModified' => $blogDate,
+    ];
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
