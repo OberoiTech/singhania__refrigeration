@@ -606,7 +606,7 @@ body.menu-open{ overflow:hidden; }
             <ul>
                 <li><a href="https://www.facebook.com/profile.php?id=61579480251463" aria-label="Visit Singhania Refrigeration on Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                 <li><a href="https://x.com/SinghaniaR59102" aria-label="Visit Singhania Refrigeration on X"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a></li>
-                <li><a href="https://www.instagram.com/singhaniarefrigeration/" aria-label="Visit Singhania Refrigeration on Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                <li><a href="https://www.instagram.com/singhania_refrigeration/" aria-label="Visit Singhania Refrigeration on Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
                 <li><a href="https://www.linkedin.com/company/singhania-refrigeration-and-supply-chain-consultancy/" aria-label="Visit Singhania Refrigeration on LinkedIn"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
                 <li><a href="https://in.pinterest.com/singhaniarefrigeration24/" aria-label="Visit Singhania Refrigeration on Pinterest"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
                 <li><a href="https://www.youtube.com/channel/UC-g2bewulBb2oGjPGIDAaJA" aria-label="Visit Singhania Refrigeration on YouTube"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
@@ -826,7 +826,7 @@ body.menu-open{ overflow:hidden; }
         <div class="mobile-drawer-socials">
           <a href="https://www.facebook.com/profile.php?id=61579480251463" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
           <a href="https://x.com/SinghaniaR59102" target="_blank" rel="noopener" aria-label="X"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
-          <a href="https://www.instagram.com/singhaniarefrigeration1/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
+          <a href="https://www.instagram.com/singhania_refrigeration/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
           <a href="https://www.linkedin.com/company/singhania-refrigeration-and-supply-chain-consultancy/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa fa-linkedin-square"></i></a>
           <a href="https://www.youtube.com/channel/UC-g2bewulBb2oGjPGIDAaJA" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa fa-youtube-play"></i></a>
         </div>

@@ -112,7 +112,7 @@ $twitterDescription = $twitterDescription ?? $pageDescription;
               !empty($facebook) ? $facebook : null,
               !empty($linkedin) ? $linkedin : null,
               'https://x.com/SinghaniaR59102',
-              'https://www.instagram.com/singhaniarefrigeration1/',
+              'https://www.instagram.com/singhania_refrigeration/',
               'https://www.youtube.com/channel/UC-g2bewulBb2oGjPGIDAaJA',
           ]));
 
