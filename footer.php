@@ -82,21 +82,24 @@
         <h4 class="f-title">Latest Posts</h4>
         <div class="post-stack">
           <?php
+            require_once __DIR__ . '/blog-slug-helper.php';
+            $footerBlogSlugMap = sr_blog_slug_map($conn);
             $footerBlogs = mysqli_query($conn, "SELECT id, image, title, created_at FROM blogs ORDER BY created_at DESC LIMIT 3");
             if ($footerBlogs && mysqli_num_rows($footerBlogs) > 0):
               while ($fb = mysqli_fetch_assoc($footerBlogs)):
                 $fbImg  = !empty($fb['image']) ? 'admin/uploads/' . $fb['image'] : 'assets/images/blog/small/1.jpg';
                 $fbDate = !empty($fb['created_at']) ? date('M d, Y', strtotime($fb['created_at'])) : '';
+                $fbUrl  = 'blog/' . ($footerBlogSlugMap[(int)$fb['id']] ?? sr_slugify($fb['title']));
           ?>
           <article class="post-mini">
-            <a class="thumb" href="blog-details?id=<?php echo (int)$fb['id']; ?>">
+            <a class="thumb" href="<?php echo htmlspecialchars($fbUrl, ENT_QUOTES); ?>">
               <?php $fbWebp = function_exists('sr_webp_path') ? sr_webp_path($fbImg) : ''; ?>
               <?php if ($fbWebp !== ''): ?><picture><source srcset="<?php echo htmlspecialchars($fbWebp, ENT_QUOTES); ?>" type="image/webp"><?php endif; ?>
               <img src="<?php echo htmlspecialchars($fbImg, ENT_QUOTES); ?>"<?php echo function_exists('sr_image_size_attrs') ? sr_image_size_attrs(function_exists('sr_preferred_image_path') ? sr_preferred_image_path($fbImg) : $fbImg) : ''; ?> alt="<?php echo htmlspecialchars($fb['title']); ?>">
               <?php if ($fbWebp !== ''): ?></picture><?php endif; ?>
             </a>
             <div class="meta">
-              <a class="title" href="blog-details?id=<?php echo (int)$fb['id']; ?>">
+              <a class="title" href="<?php echo htmlspecialchars($fbUrl, ENT_QUOTES); ?>">
                 <?php echo htmlspecialchars($fb['title']); ?>
               </a>
               <div class="date"><i class="fa fa-calendar"></i> <?php echo $fbDate; ?></div>

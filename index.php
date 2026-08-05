@@ -1813,10 +1813,14 @@ if ('requestIdleCallback' in window) {
                data-autoplay-timeout="5000" data-smart-speed="800" data-dots="true" data-nav="false"
                data-center-mode="false" data-mobile-device="1" data-ipad-device="2" data-ipad-device2="1"
                data-md-device="3" data-lg-device="3">
-            <?php 
-              $record = mysqli_query($conn,"SELECT c.id AS cate_id, c.category_name, b.id AS id , b.image AS image , b.created_at AS created_at,b.title 
+            <?php
+              require_once __DIR__ . '/blog-slug-helper.php';
+              $blogSlugMap = sr_blog_slug_map($conn);
+              $record = mysqli_query($conn,"SELECT c.id AS cate_id, c.category_name, b.id AS id , b.image AS image , b.created_at AS created_at,b.title
                                             FROM category c JOIN blogs b ON b.cate_id = c.id ");
-              while($row = mysqli_fetch_assoc($record)){ ?>
+              while($row = mysqli_fetch_assoc($record)){
+                $blogUrl = 'blog/' . ($blogSlugMap[(int)$row['id']] ?? sr_slugify($row['title']));
+              ?>
               <div class="blog-wrap">
                 <div class="img-part">
                   <?php $blogImage = (!empty($row['image']) && is_file(__DIR__ . "/admin/uploads/" . $row['image'])) ? "admin/uploads/" . $row['image'] : "admin/uploads/docking-facility.webp"; ?>
@@ -1824,11 +1828,11 @@ if ('requestIdleCallback' in window) {
                   <?php if ($blogWebp !== ''): ?><picture><source srcset="<?php echo htmlspecialchars($blogWebp, ENT_QUOTES); ?>" type="image/webp"><?php endif; ?>
                   <img loading="lazy" decoding="async" class="img-soft blog-cover-img" src="<?php echo htmlspecialchars($blogImage, ENT_QUOTES); ?>"<?php echo sr_image_size_attrs(sr_preferred_image_path($blogImage)); ?> alt="Cold Storage Blog">
                   <?php if ($blogWebp !== ''): ?></picture><?php endif; ?>
-                  <div class="fly-btn"><a href="blog-details?id=<?php echo $row['id'];?>"><i class="flaticon-right-arrow"></i></a></div>
+                  <div class="fly-btn"><a href="<?php echo htmlspecialchars($blogUrl, ENT_QUOTES, 'UTF-8'); ?>"><i class="flaticon-right-arrow"></i></a></div>
                 </div>
                 <div class="content-part">
                   <span class="categories"><?php echo $row['category_name'];?></span>
-                  <h3 class="title"><a href="blog-details?id=<?php echo $row['id'];?>"><?php echo $row['title'];?></a></h3>
+                  <h3 class="title"><a href="<?php echo htmlspecialchars($blogUrl, ENT_QUOTES, 'UTF-8'); ?>"><?php echo $row['title'];?></a></h3>
                   <div class="blog-meta">
                     <div class="user-data"><img loading="lazy" decoding="async" src="assets/images/blog/avatar/1.png" width="40" height="40" alt="Customer Review"><span>Singhania</span></div>
                     <div class="date"><i class="fa fa-clock-o"></i> <?php echo $row['created_at'];?></div>

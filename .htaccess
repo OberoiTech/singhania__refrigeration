@@ -79,6 +79,9 @@ RewriteRule ^warehouse-management-solutions-in-india/?$ ware-house-management.ph
 RewriteRule ^transport-management-solutions-in-india/?$ transport-management.php [L,NC]
 RewriteRule ^transport-refrigeration-solutions-in-india/?$ transport-refrigeration.php [L,NC]
 
+# Blog posts: serve the canonical /blog/<slug> URL internally via blog-details.php.
+RewriteRule ^blog/([a-z0-9-]+)/?$ blog-details.php?slug=$1 [L,NC,QSA]
+
 # Consolidate the homepage at the canonical root URL.
 RewriteCond %{REQUEST_METHOD} ^(?:GET|HEAD)$
 RewriteCond %{THE_REQUEST} \s/+index\.php(?:[?\s]) [NC]

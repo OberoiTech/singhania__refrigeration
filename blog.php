@@ -245,6 +245,8 @@
                     </div>
 
                     <?php
+                    require_once __DIR__ . '/blog-slug-helper.php';
+                    $blogSlugMap = sr_blog_slug_map($conn);
                     $record = mysqli_query($conn, "SELECT c.id AS cate_id, c.category_name, b.id AS id, b.image AS image, b.created_at AS created_at, b.title, b.author
                                                    FROM category c
                                                    JOIN blogs b ON b.cate_id = c.id
@@ -254,7 +256,7 @@
                     <?php if ($record && mysqli_num_rows($record) > 0) { ?>
                     <div class="blog-grid">
                         <?php while ($row = mysqli_fetch_assoc($record)) {
-                            $blogUrl = 'blog-details.php?id=' . (int)$row['id'];
+                            $blogUrl = 'blog/' . ($blogSlugMap[(int)$row['id']] ?? sr_slugify($row['title']));
                             $image = !empty($row['image']) ? 'admin/uploads/' . $row['image'] : 'assets/images/blog/1.jpg';
                             $author = !empty($row['author']) ? $row['author'] : 'Singhania';
                         ?>

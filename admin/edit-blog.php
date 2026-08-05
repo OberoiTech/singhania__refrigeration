@@ -53,10 +53,10 @@ if (isset($_POST['submit'])) {
     }
 
     // Update query
-    $rs = "UPDATE blogs 
+    $rs = "UPDATE blogs
            SET title='" . mysqli_real_escape_string($conn, $name) . "', cate_id='" . mysqli_real_escape_string($conn, $cate_id) . "', author='" . mysqli_real_escape_string($conn, $author) . "', description='" . mysqli_real_escape_string($conn, $description) . "',
                meta_title='" . mysqli_real_escape_string($conn, $seoData['meta_title']) . "', meta_description='" . mysqli_real_escape_string($conn, $seoData['meta_description']) . "', keywords='" . mysqli_real_escape_string($conn, $seoData['keywords']) . "',
-               image='" . mysqli_real_escape_string($conn, $image) . "', thumb_image='" . mysqli_real_escape_string($conn, $thumb_image) . "' 
+               image='" . mysqli_real_escape_string($conn, $image) . "', thumb_image='" . mysqli_real_escape_string($conn, $thumb_image) . "'
            WHERE id='" . $id . "'";
            
     $result = mysqli_query($conn, $rs);

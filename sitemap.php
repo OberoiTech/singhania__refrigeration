@@ -56,13 +56,16 @@ foreach ($staticUrls as $path) {
 
 // Blog posts are read from the same table used by blog.php.
 require_once __DIR__ . '/admin/config.php';
-$blogs = mysqli_query($conn, 'SELECT id, created_at FROM blogs ORDER BY created_at DESC, id DESC');
+require_once __DIR__ . '/blog-slug-helper.php';
+$blogSlugMap = sr_blog_slug_map($conn);
+$blogs = mysqli_query($conn, 'SELECT id, title, created_at FROM blogs ORDER BY created_at DESC, id DESC');
 if ($blogs) {
     while ($blog = mysqli_fetch_assoc($blogs)) {
         $id = (int)($blog['id'] ?? 0);
         if ($id < 1) continue;
+        $blogPath = '/blog/' . ($blogSlugMap[$id] ?? sr_slugify($blog['title']));
         echo "  <url>\n";
-        echo '    <loc>' . $xmlEscape($baseUrl . '/blog-details?id=' . $id) . "</loc>\n";
+        echo '    <loc>' . $xmlEscape($baseUrl . $blogPath) . "</loc>\n";
         echo '    <lastmod>' . $dateOnly($blog['created_at'] ?? null) . "</lastmod>\n";
         echo "    <priority>0.5</priority>\n";
         echo "  </url>\n";

@@ -1,9 +1,34 @@
 <?php
 include('admin/config.php');
+include('blog-slug-helper.php');
 
+$slug = isset($_GET['slug']) ? sr_slugify($_GET['slug']) : '';
 $id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
-$blogs = mysqli_query($conn, "SELECT c.id AS cate_id, c.category_name, b.id AS id, b.image AS image, b.created_at AS created_at, b.title, b.author, b.description, b.meta_title, b.meta_description, b.keywords, b.thumb_image FROM category c JOIN blogs b ON b.cate_id = c.id WHERE b.id = $id");
-$blog = $blogs ? mysqli_fetch_assoc($blogs) : null;
+$selectFields = "c.id AS cate_id, c.category_name, b.id AS id, b.image AS image, b.created_at AS created_at, b.title, b.author, b.description, b.meta_title, b.meta_description, b.keywords, b.thumb_image";
+$blogSlugMap = sr_blog_slug_map($conn);
+
+if ($slug !== '') {
+    $matchedId = array_search($slug, $blogSlugMap, true);
+    $blog = null;
+    if ($matchedId !== false) {
+        $blogs = mysqli_query($conn, "SELECT $selectFields FROM category c JOIN blogs b ON b.cate_id = c.id WHERE b.id = $matchedId");
+        $blog = $blogs ? mysqli_fetch_assoc($blogs) : null;
+        if ($blog) {
+            $blog['slug'] = $slug;
+        }
+    }
+} elseif ($id > 0) {
+    // Legacy ?id= links: look up the post and 301 to its canonical /blog/<slug> URL.
+    $blogs = mysqli_query($conn, "SELECT $selectFields FROM category c JOIN blogs b ON b.cate_id = c.id WHERE b.id = $id");
+    $blog = $blogs ? mysqli_fetch_assoc($blogs) : null;
+
+    if ($blog && isset($blogSlugMap[$blog['id']])) {
+        header('Location: https://singhaniarefrigeration.com/blog/' . $blogSlugMap[$blog['id']], true, 301);
+        exit;
+    }
+} else {
+    $blog = null;
+}
 
 if (!$blog) {
     http_response_code(404);
@@ -11,6 +36,7 @@ if (!$blog) {
         'id' => 0,
         'cate_id' => 0,
         'category_name' => '',
+        'slug' => '',
         'image' => '',
         'created_at' => '',
         'title' => 'Blog not found',
@@ -28,8 +54,18 @@ $fallbackDescription = $plainDescription !== '' ? substr($plainDescription, 0, 1
 $pageTitle = !empty($blog['meta_title']) ? $blog['meta_title'] : (!empty($blog['title']) ? $blog['title'] . ' | Singhania Refrigeration' : 'Blog Details | Singhania Refrigeration');
 $pageDescription = !empty($blog['meta_description']) ? $blog['meta_description'] : $fallbackDescription;
 $pageKeywords = !empty($blog['keywords']) ? $blog['keywords'] : 'cold storage solutions, refrigeration blog, Singhania Refrigeration';
- $canonicalUrl = 'https://singhaniarefrigeration.com/blog-details?id=' . $id;
+ $canonicalUrl = !empty($blog['slug'])
+     ? 'https://singhaniarefrigeration.com/blog/' . $blog['slug']
+     : 'https://singhaniarefrigeration.com/blog-details?id=' . $id;
 $shareImage = !empty($blog['thumb_image']) ? 'https://singhaniarefrigeration.com/admin/uploads/' . $blog['thumb_image'] : 'https://singhaniarefrigeration.com/admin/uploads/image.jpg';
+
+if (!empty($blog['id'])) {
+    $schemaBreadcrumbItems = [
+        ['name' => 'Home', 'url' => 'https://singhaniarefrigeration.com/'],
+        ['name' => 'Blog', 'url' => 'https://singhaniarefrigeration.com/blog'],
+        ['name' => $blog['title'], 'url' => $canonicalUrl],
+    ];
+}
 $ogType = 'article';
 
 $schemaBlogPosting = null;
@@ -91,15 +127,17 @@ if (!empty($blog['id'])) {
                                     <div class="sidebar-title">
                                        <h3 class="title mb-20">Recent Post</h3>
                                     </div>
-                                    <?php $blogs = mysqli_query($conn,"SELECT c.id AS cate_id, c.category_name, b.id AS id , b.image AS image , b.created_at AS created_at,b.title,b.author,b.description,b.thumb_image FROM category c JOIN blogs b ON b.cate_id = c.id");
-                                        while($blog = mysqli_fetch_assoc($blogs)){ ?>
+                                    <?php $blogs = mysqli_query($conn,"SELECT c.id AS cate_id, c.category_name, b.id AS id, b.image AS image , b.created_at AS created_at,b.title,b.author,b.description,b.thumb_image FROM category c JOIN blogs b ON b.cate_id = c.id");
+                                        while($blog = mysqli_fetch_assoc($blogs)){
+                                            $recentBlogUrl = 'blog/' . ($blogSlugMap[(int)$blog['id']] ?? sr_slugify($blog['title']));
+                                        ?>
                                     <div class="single-post mb-20">
                                         <div class="post-image">
-                                            <a href="blog-details?id=<?php echo $blog['id']; ?>"><img src="<?php echo "admin/uploads/" . $blog['image']; ?>" alt="<?php echo htmlspecialchars(!empty($blog['title']) ? $blog['title'] : 'Recent blog post', ENT_QUOTES); ?>"></a>
+                                            <a href="<?php echo htmlspecialchars($recentBlogUrl, ENT_QUOTES, 'UTF-8'); ?>"><img src="<?php echo "admin/uploads/" . $blog['image']; ?>" alt="<?php echo htmlspecialchars(!empty($blog['title']) ? $blog['title'] : 'Recent blog post', ENT_QUOTES); ?>"></a>
                                         </div>
                                         <div class="post-desc">
                                             <div class="post-title">
-                                                <h5 class="margin-0"><a href="blog-details?id=<?php echo $blog['id']; ?>"><?php echo $blog['title']; ?> </a></h5>
+                                                <h5 class="margin-0"><a href="<?php echo htmlspecialchars($recentBlogUrl, ENT_QUOTES, 'UTF-8'); ?>"><?php echo $blog['title']; ?> </a></h5>
                                             </div>
                                             <ul>
                                                 <li><i class="fa fa-calendar"></i> <?php echo $blog['created_at']; ?></li>

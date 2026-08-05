@@ -13,6 +13,17 @@ $pageTitle = $pageTitle ?? $defaultTitle;
 $pageDescription = $pageDescription ?? $defaultDescription;
 $pageKeywords = $pageKeywords ?? $defaultKeywords;
 $siteUrl = 'https://singhaniarefrigeration.com/';
+
+// Every asset/link in this template is a directory-relative path (e.g. "assets/css/...",
+// "style.css", "truck-ac") with no leading slash, which only resolves correctly when the
+// browser's current URL is exactly one path segment deep (matching where the PHP scripts
+// physically live). Nested routes like /blog/<slug> break that assumption, so <base> is
+// pinned to the real script directory (derived from SCRIPT_NAME, not the visible URL) —
+// this self-corrects on production (root) and the nested local XAMPP folder alike.
+$requestScheme = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
+$requestHost = $_SERVER['HTTP_HOST'] ?? parse_url($siteUrl, PHP_URL_HOST);
+$baseDir = str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'] ?? '/'));
+$pageBaseHref = $requestScheme . '://' . $requestHost . rtrim($baseDir, '/') . '/';
 $shareImage = $shareImage ?? $siteUrl . 'admin/uploads/image.jpg';
 $shareImageAlt = $shareImageAlt ?? 'Singhania Refrigeration cold storage and industrial refrigeration solutions';
 $ogType = $ogType ?? 'website';
@@ -86,6 +97,7 @@ $twitterDescription = $twitterDescription ?? $pageDescription;
 
 <!-- meta tag -->
         <meta charset="utf-8">
+        <base href="<?php echo htmlspecialchars($pageBaseHref, ENT_QUOTES, 'UTF-8'); ?>">
         <title><?php echo htmlspecialchars($pageTitle, ENT_QUOTES, 'UTF-8'); ?></title>
         <meta name="description" content="<?php echo htmlspecialchars($pageDescription, ENT_QUOTES, 'UTF-8'); ?>">
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
@@ -193,6 +205,76 @@ $twitterDescription = $twitterDescription ?? $pageDescription;
               ],
           ]);
 
+          // Site-wide BreadcrumbList. A page can pre-set $schemaBreadcrumbItems (array of
+          // ['name'=>..,'url'=>..], Home first) before including head.php for a custom trail
+          // (e.g. blog-details.php: Home > Blog > Post). Pages already emitting their own
+          // BreadcrumbList script (transport-management.php, transport-refrigeration.php)
+          // are left out of the label map below so this doesn't duplicate theirs.
+          $schemaBreadcrumbLabels = [
+              'about-us.php' => 'About Us',
+              'ammonia-refrigeration-units.php' => 'Ammonia Refrigeration Units',
+              'awards-certification.php' => 'Awards & Certification',
+              'blog.php' => 'Blog',
+              'cold-chain-refrigeration-ca-store-freon-ammonia.php' => 'Cold Chain Refrigeration Solutions',
+              'cold-storage-refrigeration-units.php' => 'Cold Storage Refrigeration Units',
+              'compressor-rack-system.php' => 'Compressor Rack System',
+              'consultancy-cfa-training-services.php' => 'Consultancy & CFA Training Services',
+              'consulting.php' => 'Consulting',
+              'contact.php' => 'Contact Us',
+              'dock-shelter-dock-leveler.php' => 'Dock Shelter & Dock Leveler',
+              'doors-ca-doors.php' => 'Doors & CA Doors',
+              'freon-refrigeration-units.php' => 'Freon Refrigeration Units',
+              'heavy-duty-racks.php' => 'Heavy Duty Racks',
+              'ice-cream-milk-products.php' => 'Ice Cream & Milk Products',
+              'iqf.php' => 'IQF Systems',
+              'multideck-cabinet.php' => 'Multideck Cabinet',
+              'panels.php' => 'PUF Panels',
+              'privacy-policy.php' => 'Privacy Policy',
+              'products.php' => 'Products and Services',
+              'quality-monitoring-solution.php' => 'Cold Chain Quality Monitoring Solutions',
+              'ripening-systems.php' => 'Ripening Systems',
+              'segments-wise.php' => 'Segment-Wise Solutions',
+              'service-commitment.php' => 'Service Commitment',
+              'solutions.php' => 'Cold Storage Solutions',
+              'terms.php' => 'Terms & Conditions',
+              'truck-ac.php' => 'Truck AC',
+              'truck-refrigerator-container.php' => 'Truck Refrigerator Container',
+              'turnkey-solution.php' => 'Turnkey Solution',
+              'ware-house-management.php' => 'Warehouse Management',
+              'warehousing-equipment.php' => 'Warehousing Equipment',
+              'vision-mission.php' => 'Vision & Mission',
+          ];
+
+          if (!isset($schemaBreadcrumbItems)) {
+              $schemaBreadcrumbItems = array_key_exists($scriptFile, $schemaBreadcrumbLabels)
+                  ? [
+                      ['name' => 'Home', 'url' => $siteUrl],
+                      ['name' => $schemaBreadcrumbLabels[$scriptFile], 'url' => $canonicalUrl],
+                  ]
+                  : [];
+          }
+
+          $schemaBreadcrumbList = null;
+          if (!empty($schemaBreadcrumbItems)) {
+              $schemaBreadcrumbList = sr_schema_filter([
+                  '@context' => 'https://schema.org',
+                  '@type' => 'BreadcrumbList',
+                  '@id' => $schemaPageUrl . '#breadcrumb',
+                  'itemListElement' => array_map(
+                      static function (array $item, int $index): array {
+                          return [
+                              '@type' => 'ListItem',
+                              'position' => $index + 1,
+                              'name' => $item['name'],
+                              'item' => $item['url'],
+                          ];
+                      },
+                      $schemaBreadcrumbItems,
+                      array_keys($schemaBreadcrumbItems)
+                  ),
+              ]);
+          }
+
           // Per-post BlogPosting schema. Populated by blog-details.php via $schemaBlogPosting
           // (headline/description/image/authorName/datePublished/dateModified); absent elsewhere.
           $schemaBlogPosting = $schemaBlogPosting ?? null;
@@ -244,7 +326,7 @@ $twitterDescription = $twitterDescription ?? $pageDescription;
               'numberOfItems' => count($schemaProductItems),
               'itemListElement' => array_map(
                   static function (array $product, int $index) use ($siteUrl): array {
-                      return [
+                      return [                     
                           '@type' => 'ListItem',
                           'position' => $index + 1,
                           'name' => $product['name'],
@@ -486,6 +568,9 @@ $twitterDescription = $twitterDescription ?? $pageDescription;
           ];
           if (!empty($schemaBlogPostingLd)) {
               $schemaGraphItems[] = $schemaBlogPostingLd;
+          }
+          if (!empty($schemaBreadcrumbList)) {
+              $schemaGraphItems[] = $schemaBreadcrumbList;
           }
           foreach ($schemaGraphItems as &$schemaGraphItem) {
               unset($schemaGraphItem['@context']);
