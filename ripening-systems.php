@@ -510,7 +510,7 @@
       </h2>
       <div class="features-grid">
         <div class="features-card">
-          <img src="assets/images/products/Precision_Temperature.PNG" alt="Precision Temperature & Humidity Control" />
+          <img src="assets/images/products/Precision_Temperature.png" alt="Precision Temperature & Humidity Control" />
           <h5>Precision Temperature & Humidity Control</h5>
           <p>Keeps the narrow range of temperature and humidity necessary to ensure even and uniform ripening of each fruit in the load.</p>
         </div>

@@ -10600,13 +10600,13 @@ body .modal-backdrop {
 }
 .rs-testimonial.style1 .testi-item .content-part .desc {
   color: #363636;
-  font-size: 18px;
+  font-size: 14px;
   font-style: italic;
   line-height: 1.9em;
 }
-.rs-testimonial.style1 .testi-item .posted-by {
+/* .rs-testimonial.style1 .testi-item .posted-by {
   margin-top: 34px;
-}
+} */
 .rs-testimonial.style1 .testi-item .posted-by .avatar img {
   width: 65px;
   height: auto;

@@ -808,7 +808,25 @@ body{ color:var(--ink); }
 #hero-caption{ display:none !important; }
 
 /* About section: keep the detailed copy collapsed until requested. */
-.about-more-content[hidden]{ display:none; }
+.about-more-content{
+  display:grid;
+  grid-template-rows:0fr;
+  transition:grid-template-rows .45s ease;
+}
+.about-more-content.is-open{
+  grid-template-rows:1fr;
+}
+.about-more-content .about-more-inner{
+  overflow:hidden;
+  opacity:0;
+  transform:translateY(-6px);
+  transition:opacity .35s ease, transform .35s ease;
+}
+.about-more-content.is-open .about-more-inner{
+  opacity:1;
+  transform:translateY(0);
+  transition-delay:.1s;
+}
 .about-read-more{
   display:inline-flex;
   align-items:center;
@@ -835,6 +853,7 @@ body{ color:var(--ink); }
   outline-offset:4px;
 }
 #rs-about .about-section-image{
+  margin-top: 30px;
   width:100%;
   height:540px;
   object-fit:cover;
@@ -1060,22 +1079,14 @@ if ('requestIdleCallback' in window) {
               <a href="dock-shelter-dock-leveler-manufacturer-in-india">dock shelters and transport refrigeration solutions</a>
               for clients across Delhi NCR and India, backed by 25 years of cold chain and logistics experience through the Singhania Group.
           </p>
-              <div id="about-more-content" class="about-more-content" hidden>
+              <div id="about-more-content" class="about-more-content">
+              <div class="about-more-inner">
               <p class="mb-20">
                 <strong>What does Singhania Refrigeration do?</strong> We offer the complete cold chain infrastructure - from site assessment and engineering design to equipment supply, civil work, installation, commissioning and continued maintenance - for food processing, pharmaceutical, dairy, agri-export and logistics enterprises, with systems in keeping with FSSAI and WHO-GMP standards.
               </p>
               <p class="mb-20">
                 Our in-house team of certified refrigeration engineers handles every project end to end, so there are no third-party coordination or accountability gaps from the first site visit to final handover and beyond.
               </p>
-              <!-- Bullet list — Why choose us -->
-              <p><strong>Why Delhi NCR businesses choose us:</strong></p>
-              <ul class="tt-list">
-                <li>25 years of cold chain engineering experience through the Singhania Group</li>
-                <li>10+ years operating as Singhania Refrigeration, with a growing pan-India project base</li>
-                <li>Energy-efficient refrigeration systems engineered to reduce electricity consumption vs conventional installations</li>
-                <li>99.9% system uptime backed by structured preventive maintenance and AMC services</li>
-                <li>Systems designed in line with FSSAI compliant cold storage and WHO-GMP pharma cold room requirements</li>
-              </ul>
               <!-- <p class="mb-20">
                 We aim to provide services that have perfect temperature control, superb energy efficiency, and flawless operation throughout the entire process, starting from the moment of conception to the end. From fields of Gujarat to plates of families in Delhi NCR.
               </p> -->
@@ -1086,6 +1097,7 @@ if ('requestIdleCallback' in window) {
 </a>
               </div>
               </div>
+              </div>
               <button class="about-read-more" type="button" aria-expanded="false" aria-controls="about-more-content">
                 <span>Read More</span>
               </button>
@@ -1094,147 +1106,280 @@ if ('requestIdleCallback' in window) {
         </div>
       </div>
 
+      <!-- ===== Why Choose Us ===== -->
+      <style>
+      .rs-why-choose{ padding:64px 0; }
+      .rs-why-choose .why-list{
+        list-style:none; margin:0; padding:0;
+        display:flex; flex-wrap:wrap; justify-content:center; gap:20px;
+      }
+      .rs-why-choose .why-list li{
+        position:relative; padding:20px 20px 20px 54px;
+        background:#fff; border:1px solid rgba(0,11,79,.1); border-radius:12px;
+        box-shadow:0 5px 16px rgba(0,11,79,.07);
+        color:#2d3c63; line-height:1.55;
+        /* margin-top: 30px; */
+        flex:0 1 calc(33.333% - 14px);
+        box-sizing:border-box;
+        transition:transform .25s ease, box-shadow .25s ease;
+      }
+      .rs-why-choose .why-list li:hover{
+        transform:translateY(-3px);
+        box-shadow:0 12px 26px rgba(0,11,79,.12);
+      }
+      .rs-why-choose .why-list li::before{
+        content:""; position:absolute; left:20px; top:22px; width:20px; height:20px; border-radius:50%;
+        background:conic-gradient(from 180deg,#3b5bb7,#2a427f); box-shadow:inset 0 0 0 3px #fff;
+      }
+      @media (max-width:991.98px){
+        .rs-why-choose .why-list li{ flex-basis:calc(50% - 10px); }
+      }
+      @media (max-width:575.98px){
+        .rs-why-choose .why-list li{ flex-basis:100%; }
+      }
+      </style>
+      <section class="rs-why-choose bg1" data-animate>
+        <div class="container">
+          <div class="sec-title text-center mb-40">
+            <h2 class="title mb-0"><span class="section-title-accent">Why Delhi NCR Businesses Choose Us</span></h2>
+          </div>
+          <ul class="why-list">
+            <li>25 years of cold chain engineering experience through the Singhania Group</li>
+            <li>10+ years operating as Singhania Refrigeration, with a growing pan-India project base</li>
+            <li>Energy-efficient refrigeration systems engineered to reduce electricity consumption vs conventional installations</li>
+            <li>99.9% system uptime backed by structured preventive maintenance and AMC services</li>
+            <li>Systems designed in line with FSSAI compliant cold storage and WHO-GMP pharma cold room requirements</li>
+          </ul>
+        </div>
+      </section>
+
       <!-- ===== Services Grid ===== -->
+      <style>
+      .svc-grid{ position:relative; }
+      .svc-marquee{ overflow:hidden; }
+      .svc-marquee-track{ display:flex; gap:20px; width:max-content; will-change:transform; }
+      .svc-marquee-track .svc-slide{ flex:0 0 auto; width:360px; }
+      @media (max-width:767.98px){
+        .svc-marquee-track .svc-slide{ width:280px; }
+      }
+      .svc-grid .svc-card{
+        position:relative; display:block; width:100%; height:360px; border-radius:16px; overflow:hidden;
+        text-decoration:none; box-shadow:0 10px 24px rgba(0,0,0,.10);
+      }
+      .svc-grid .svc-card .svc-card__photo{
+        position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+        transition:transform .5s ease;
+      }
+      .svc-grid .svc-card:hover .svc-card__photo{ transform:scale(1.08); }
+      .svc-grid .svc-card__overlay{
+        position:absolute; inset:0; z-index:2; background:rgba(4,10,26,0);
+        display:flex; flex-direction:column; align-items:center; justify-content:center;
+        gap:14px; text-align:center; padding:24px; opacity:0;
+        transition:opacity .35s ease, background .35s ease;
+      }
+      .svc-grid .svc-card:hover .svc-card__overlay,
+      .svc-grid .svc-card:focus-visible .svc-card__overlay{
+        opacity:1; background:rgba(4,10,26,.55);
+      }
+      .svc-grid .svc-card__icon{
+        width:64px; height:64px; border-radius:14px; flex:0 0 auto;
+        background:rgba(255,255,255,.18); border:1px solid rgba(255,255,255,.4);
+        backdrop-filter:blur(3px); -webkit-backdrop-filter:blur(3px);
+        display:flex; align-items:center; justify-content:center;
+      }
+      .svc-grid .svc-card__icon img{
+        width:32px; height:32px; object-fit:contain; filter:brightness(0) invert(1);
+      }
+      .svc-grid .svc-card__icon i{ color:#fff; font-size:26px; }
+      .svc-grid .svc-card__title{
+        font-size:16px; font-weight:700; line-height:1.35; margin:0; color:#fff;
+      }
+      .svc-grid .svc-card__desc{
+        font-size:13px; line-height:1.5; margin:0; color:rgba(255,255,255,.88);
+        max-width:300px; display:-webkit-box; -webkit-line-clamp:4; line-clamp:4; -webkit-box-orient:vertical;
+        overflow:hidden;
+      }
+      .svc-view-all{
+        display:inline-flex; align-items:center; gap:12px; background:#082243; color:#fff;
+        padding:15px 28px; border-radius:50px; font-weight:600; font-size:15px;
+        text-decoration:none; transition:all .3s ease;
+      }
+      .svc-view-all:hover{ background:#228bfd; color:#fff; transform:translateY(-2px); }
+      .svc-view-all i{
+        background:#fff; color:#0a0a0a; width:26px; height:26px; border-radius:50%;
+        display:inline-flex; align-items:center; justify-content:center; font-size:12px;
+      }
+      @media (max-width: 767.98px){
+        .svc-grid .svc-card__overlay{ opacity:1; background:rgba(4,10,26,.45); }
+      }
+      @media (min-width: 576px) and (max-width: 767.98px){
+        .svc-grid .svc-card{ height:300px; }
+        .svc-grid .svc-card__overlay{ gap:8px; padding:14px; }
+        .svc-grid .svc-card__icon{ width:44px; height:44px; border-radius:10px; }
+        .svc-grid .svc-card__icon img{ width:22px; height:22px; }
+        .svc-grid .svc-card__icon i{ font-size:18px; }
+        .svc-grid .svc-card__title{ font-size:13px; }
+        .svc-grid .svc-card__desc{ font-size:11px; -webkit-line-clamp:3; line-clamp:3; }
+      }
+      @media (max-width: 575.98px){
+        .svc-grid .svc-card{ height:320px; }
+      }
+      </style>
       <div id="rs-services" class="rs-services style1 modify pt-64 pb-84 md-pt-72 md-pb-64">
         <div class="container" data-animate>
           <div class="sec-title text-center mb-47 md-mb-42">
             <div class="sub-title primary">Services</div>
             <h2 class="title mb-0 pt-20">Cold Chain &amp; Refrigeration Services in Delhi NCR &amp; India</h2>
-            <p class="about-copy--lead">Singhania Refrigeration, located in Okhla, New Delhi, offers  the entire spectrum of cold chain and industrial refrigeration solutions for your  product, industry and regulatory requirements, whether you are operating a food  processing plant, pharmacy, dairy or 3PL warehouse.
-            </p>
+            <!-- <p class="about-copy--lead">Singhania Refrigeration, located in Okhla, New Delhi, offers  the entire spectrum of cold chain and industrial refrigeration solutions for your  product, industry and regulatory requirements, whether you are operating a food  processing plant, pharmacy, dairy or 3PL warehouse.
+            </p> -->
           </div>
 
-          <div class="row gutter-16">
+          <div class="svc-marquee svc-grid">
+          <div class="svc-marquee-track marquee-track">
             <!-- Service 1 -->
-            <div class="col-lg-3 col-sm-6 mb-16">
-              <div class="service-wrap">
-                <div class="icon-part"><img loading="lazy" decoding="async" class="truck-service-icon" src="assets/images/IMAGES HOMEPAGE/refrigerated-truck-acs-containers.avif" width="200" height="200" alt="Refrigerated truck AC and container unit"></div>
-                <div class="content-part">
-                  <h3 class="title"><a href="truck-ac-installation-india">Refrigerated Truck ACs</a> &amp; <a href="truck-refrigerator-container-manufacturer-in-india">Containers</a></h3>
-                  <div class="desc">Transport Refrigeration Units for trucks and reefer containers, keeping Perishables – Food, Dairy and Pharma Products, temperature controlled on routes across Delhi NCR and Pan India.</div>
+            <div class="svc-slide">
+              <a class="svc-card" href="truck-ac-installation-india">
+                <img class="svc-card__photo" loading="lazy" decoding="async" src="assets/images/products/truck-ac.webp" alt="Refrigerated truck AC and container unit">
+                <div class="svc-card__overlay">
+                  <span class="svc-card__icon"><img loading="lazy" src="assets/images/services/icons/modify/refrigerated-truck-acs-containers.webp" alt=""></span>
+                  <h3 class="svc-card__title">Refrigerated Truck ACs &amp; Containers</h3>
+                  <p class="svc-card__desc">Transport Refrigeration Units for trucks and reefer containers, keeping Perishables – Food, Dairy and Pharma Products, temperature controlled on routes across Delhi NCR and Pan India.</p>
                 </div>
-              </div>
+              </a>
             </div>
 
             <!-- Service 2 -->
-            <div class="col-lg-3 col-sm-6 mb-16">
-              <div class="service-wrap">
-                <div class="icon-part"><img loading="lazy" decoding="async" class="service-card-icon" src="assets/images/IMAGES HOMEPAGE/cold-storage-warehouse.avif" width="200" height="200" alt="Cold room and cold storage solution"></div>
-                <div class="content-part">
-                  <h3 class="title"><a href="cold-storage-refrigeration-units-manufacturer-in-india">Cold Rooms &amp; Storage Solutions</a></h3>
-                  <div class="desc">Ammonia and freon cold rooms, Controlled Atmosphere (CA) stores, ripening chambers and blast freezer systems, designed to meet the shelf-life and temperature controlled storage requirements of your product.</div>
+            <div class="svc-slide">
+              <a class="svc-card" href="cold-storage-refrigeration-units-manufacturer-in-india">
+                <img class="svc-card__photo" loading="lazy" decoding="async" src="assets/images/products/cold-storage.jpg" alt="Cold room and cold storage solution">
+                <div class="svc-card__overlay">
+                  <span class="svc-card__icon"><img loading="lazy" src="assets/images/services/icons/modify/cold-storage-warehouse.webp" alt=""></span>
+                  <h3 class="svc-card__title">Cold Rooms &amp; Storage Solutions</h3>
+                  <p class="svc-card__desc">Ammonia and freon cold rooms, Controlled Atmosphere (CA) stores, ripening chambers and blast freezer systems, designed to meet the shelf-life and temperature controlled storage requirements of your product.</p>
                 </div>
-              </div>
+              </a>
             </div>
 
             <!-- Service 3 -->
-            <div class="col-lg-3 col-sm-6 mb-16">
-              <div class="service-wrap">
-                <div class="icon-part"><img loading="lazy" decoding="async" class="service-card-icon" src="assets/images/IMAGES HOMEPAGE/compressor-rack-systems.avif" width="200" height="200" alt="Industrial compressor rack system"></div>
-                <div class="content-part">
-                  <h3 class="title"><a href="compressor-rack-system-manufacturer-in-india">Compressor Rack Systems</a></h3>
-                  <div class="desc">Centralised, energy efficient compressor rack systems for supermarkets, food retail chains and large refrigerated warehouses, reducing refrigerant charge and maintenance.</div>
+            <div class="svc-slide">
+              <a class="svc-card" href="compressor-rack-system-manufacturer-in-india">
+                <img class="svc-card__photo" loading="lazy" decoding="async" src="assets/images/products/compressor-rack-system-e1600420693281.webp" alt="Industrial compressor rack system">
+                <div class="svc-card__overlay">
+                  <span class="svc-card__icon"><img loading="lazy" src="assets/images/services/icons/modify/compressor-rack-systems.webp" alt=""></span>
+                  <h3 class="svc-card__title">Compressor Rack Systems</h3>
+                  <p class="svc-card__desc">Centralised, energy efficient compressor rack systems for supermarkets, food retail chains and large refrigerated warehouses, reducing refrigerant charge and maintenance.</p>
                 </div>
-              </div>
+              </a>
             </div>
 
             <!-- Service 4 -->
-            <div class="col-lg-3 col-sm-6 mb-16">
-              <div class="service-wrap">
-                <div class="icon-part"><img loading="lazy" decoding="async" class="service-card-icon" src="assets/images/IMAGES HOMEPAGE/ammonia-refrigeration-units.avif" width="200" height="200" alt="Ammonia refrigeration unit"></div>
-                <div class="content-part">
-                  <h3 class="title"><a href="ammonia-refrigeration-units-manufacturer-in-india">Ammonia Refrigeration Units</a></h3>
-                  <div class="desc">Industrial grade ammonia (NH3) and Freon refrigeration plants for food processing units, temperature controlled warehouses, fisheries and dairy operations requiring high capacity, energy efficient industrial cooling.</div>
+            <div class="svc-slide">
+              <a class="svc-card" href="ammonia-refrigeration-units-manufacturer-in-india">
+                <img class="svc-card__photo" loading="lazy" decoding="async" src="assets/images/products/ammonia-refrigeration.webp" alt="Ammonia refrigeration unit">
+                <div class="svc-card__overlay">
+                  <span class="svc-card__icon"><img loading="lazy" src="assets/images/services/icons/modify/ammonia-refrigeration-units.webp" alt=""></span>
+                  <h3 class="svc-card__title">Ammonia Refrigeration Units</h3>
+                  <p class="svc-card__desc">Industrial grade ammonia (NH3) and Freon refrigeration plants for food processing units, temperature controlled warehouses, fisheries and dairy operations requiring high capacity, energy efficient industrial cooling.</p>
                 </div>
-              </div>
+              </a>
             </div>
 
             <!-- Service 5 -->
-            <div class="col-lg-3 col-sm-6 mb-16">
-              <div class="service-wrap">
-                <div class="icon-part"><img loading="lazy" decoding="async" class="service-card-icon" src="assets/images/IMAGES HOMEPAGE/ripening-chambers.avif" width="200" height="200" alt="Ripening chamber for fruits and produce"></div>
-                <div class="content-part">
-                  <h3 class="title"><a href="ripening-systems-manufacturer-in-india">Ripening Chambers</a></h3>
-                  <div class="desc">Ethylene-controlled ripening chambers for bananas, mangoes, papayas and other climacteric fruits, delivering consistent, ready-to-sell ripening for every pallet.</div>
+            <div class="svc-slide">
+              <a class="svc-card" href="ripening-systems-manufacturer-in-india">
+                <img class="svc-card__photo" loading="lazy" decoding="async" src="assets/images/products/banana-ripening-cold-room.webp" alt="Ripening chamber for fruits and produce">
+                <div class="svc-card__overlay">
+                  <span class="svc-card__icon"><img loading="lazy" src="assets/images/services/icons/modify/ripening-chambers.webp" alt=""></span>
+                  <h3 class="svc-card__title">Ripening Chambers</h3>
+                  <p class="svc-card__desc">Ethylene-controlled ripening chambers for bananas, mangoes, papayas and other climacteric fruits, delivering consistent, ready-to-sell ripening for every pallet.</p>
                 </div>
-              </div>
+              </a>
             </div>
 
             <!-- Service 6 -->
-            <div class="col-lg-3 col-sm-6 mb-16">
-              <div class="service-wrap">
-                <div class="icon-part"><img loading="lazy" decoding="async" class="service-card-icon" src="assets/images/IMAGES HOMEPAGE/iqf-technology.avif" width="200" height="200" alt="IQF individual quick freezing technology"></div>
-                <div class="content-part">
-                  <h3 class="title"><a href="iqf-system-manufacturer-in-india">IQF Technology</a></h3>
-                  <div class="desc">Individual Quick Freeze (IQF) machine systems flash-freeze seafood, fruits, vegetables and ready-to-eat products for export-quality output and to preserve texture, nutrition and appearance.</div>
+            <div class="svc-slide">
+              <a class="svc-card" href="iqf-system-manufacturer-in-india">
+                <img class="svc-card__photo" loading="lazy" decoding="async" src="assets/images/products/seafood-storage-facility.webp" alt="IQF individual quick freezing technology">
+                <div class="svc-card__overlay">
+                  <span class="svc-card__icon"><img loading="lazy" src="assets/images/services/icons/modify/iqf-technology.webp" alt=""></span>
+                  <h3 class="svc-card__title">IQF Technology</h3>
+                  <p class="svc-card__desc">Individual Quick Freeze (IQF) machine systems flash-freeze seafood, fruits, vegetables and ready-to-eat products for export-quality output and to preserve texture, nutrition and appearance.</p>
                 </div>
-              </div>
+              </a>
             </div>
 
             <!-- Service 7 -->
-            <div class="col-lg-3 col-sm-6 mb-16">
-              <div class="service-wrap">
-                <div class="icon-part"><img loading="lazy" decoding="async" class="service-card-icon" src="assets/images/IMAGES HOMEPAGE/puf-panels-insulated-doors.avif" width="200" height="200" alt="PUF panel and insulated cold storage door"></div>
-                <div class="content-part">
-                  <h3 class="title"><a href="puf-panels-manufacturer-in-india">PUF Panels</a> &amp; <a href="cold-storage-doors-manufacturer-in-india">Insulated Doors</a></h3>
-                  <div class="desc">High density PUF panel insulation and cold room doors that make up the thermal envelope of your cold storage facility – designed for airtight insulation and minimal energy loss.</div>
+            <div class="svc-slide">
+              <a class="svc-card" href="puf-panels-manufacturer-in-india">
+                <img class="svc-card__photo" loading="lazy" decoding="async" src="assets/images/products/panel.webp" alt="PUF panel and insulated cold storage door">
+                <div class="svc-card__overlay">
+                  <span class="svc-card__icon"><img loading="lazy" src="assets/images/services/icons/modify/puf-panels-insulated-doors.webp" alt=""></span>
+                  <h3 class="svc-card__title">PUF Panels &amp; Insulated Doors</h3>
+                  <p class="svc-card__desc">High density PUF panel insulation and cold room doors that make up the thermal envelope of your cold storage facility – designed for airtight insulation and minimal energy loss.</p>
                 </div>
-              </div>
+              </a>
             </div>
 
             <!-- Service 8 -->
-            <div class="col-lg-3 col-sm-6 mb-16">
-              <div class="service-wrap">
-                <div class="icon-part"><img loading="lazy" decoding="async" class="service-card-icon" src="assets/images/IMAGES HOMEPAGE/dock-shelters-dock-levelers.avif" width="200" height="200" alt="Dock shelter and dock leveler equipment"></div>
-                <div class="content-part">
-                  <h3 class="title"><a href="dock-shelter-dock-leveler-manufacturer-in-india">Dock Shelters &amp; Dock Levelers</a></h3>
-                  <div class="desc">Dock Shelter and Leveler Systems seal the gap between your cold facility and delivery vehicles. Protect product temperature while loading and unloading.</div>
+            <div class="svc-slide">
+              <a class="svc-card" href="dock-shelter-dock-leveler-manufacturer-in-india">
+                <img class="svc-card__photo" loading="lazy" decoding="async" src="assets/images/products/docking-system-facility.webp" alt="Dock shelter and dock leveler equipment">
+                <div class="svc-card__overlay">
+                  <span class="svc-card__icon"><img loading="lazy" src="assets/images/services/icons/modify/dock-shelters-dock-levelers.webp" alt=""></span>
+                  <h3 class="svc-card__title">Dock Shelters &amp; Dock Levelers</h3>
+                  <p class="svc-card__desc">Dock Shelter and Leveler Systems seal the gap between your cold facility and delivery vehicles. Protect product temperature while loading and unloading.</p>
                 </div>
-              </div>
+              </a>
             </div>
             <!-- services 9 -->
-            <div class="col-lg-3 col-sm-6 mb-16">
-              <div class="service-wrap">
-                <div class="icon-part"><img loading="lazy" decoding="async" class="service-card-icon" src="assets/images/IMAGES HOMEPAGE/HEAVY DUTY RACKS.avif" width="200" height="200" alt="Heavy Duty Rack"></div>
-                <div class="content-part">
-                  <h3 class="title"><a href="heavy-duty-racks-manufacturer-in-india">Heavy Duty Racks</a></h3>
-                  <div class="desc">Singhania Refrigeration makes Heavy Duty Racks based on your actual pallet loads, aisle lengths and forklift types, instead of making catalog racks that fit your warehouse. Ideal for temperature controlled warehouses, distribution centres and general warehousing in India.</div>
+            <div class="svc-slide">
+              <a class="svc-card" href="heavy-duty-racks-manufacturer-in-india">
+                <img class="svc-card__photo" loading="lazy" decoding="async" src="assets/images/products/packing-and-grading-line.webp" alt="Heavy Duty Rack">
+                <div class="svc-card__overlay">
+                  <span class="svc-card__icon"><i class="fa fa-cubes" aria-hidden="true"></i></span>
+                  <h3 class="svc-card__title">Heavy Duty Racks</h3>
+                  <p class="svc-card__desc">Singhania Refrigeration makes Heavy Duty Racks based on your actual pallet loads, aisle lengths and forklift types, instead of making catalog racks that fit your warehouse. Ideal for temperature controlled warehouses, distribution centres and general warehousing in India.</p>
                 </div>
-              </div>
+              </a>
             </div>
             <!-- Services 10 -->
-            <div class="col-lg-3 col-sm-6 mb-16">
-              <div class="service-wrap">
-                <div class="icon-part"><img loading="lazy" decoding="async" class="service-card-icon" src="assets/images/IMAGES HOMEPAGE/MULTIDECK CABINET.avif" width="200" height="200" alt="Multideck Cabinet"></div>
-                <div class="content-part">
-                  <h3 class="title"><a href="multideck-cabinet-manufacturer-in-india">Multideck Cabinet</a></h3>
-                  <div class="desc">Singhania Refrigeration manufactures Multideck Cabinets that offer the right balance of product visibility and uniform, energy-efficient cooling for supermarket chains, convenience stores and food retail outlets that need their dairy, beverage, deli and frozen displays to look good and stay cold all day long.</div>
+            <div class="svc-slide">
+              <a class="svc-card" href="multideck-cabinet-manufacturer-in-india">
+                <img class="svc-card__photo" loading="lazy" decoding="async" src="assets/images/products/multideck-cabinet.webp" alt="Multideck Cabinet">
+                <div class="svc-card__overlay">
+                  <span class="svc-card__icon"><i class="fa fa-shopping-basket" aria-hidden="true"></i></span>
+                  <h3 class="svc-card__title">Multideck Cabinet</h3>
+                  <p class="svc-card__desc">Singhania Refrigeration manufactures Multideck Cabinets that offer the right balance of product visibility and uniform, energy-efficient cooling for supermarket chains, convenience stores and food retail outlets that need their dairy, beverage, deli and frozen displays to look good and stay cold all day long.</p>
                 </div>
-              </div>
+              </a>
             </div>
             <!-- services 11 -->
-             <div class="col-lg-3 col-sm-6 mb-16">
-              <div class="service-wrap">
-                <div class="icon-part"><img loading="lazy" decoding="async" class="service-card-icon" src="assets/images/IMAGES HOMEPAGE/DOORS AND CA DOORS.avif" width="200" height="200" alt="Doors and CA Doors"></div>
-                <div class="content-part">
-                  <h3 class="title"><a href="cold-storage-doors-manufacturer-in-india">Doors & CA Doors</a></h3>
-                  <div class="desc">At Singhania Refrigeration, we design and build insulated Doors & CA Doors for chiller rooms, freezers, and controlled-atmosphere (CA) stores — access points that must keep their seal through hundreds of openings a day, not just look insulated on a spec sheet.</div>
+            <div class="svc-slide">
+              <a class="svc-card" href="cold-storage-doors-manufacturer-in-india">
+                <img class="svc-card__photo" loading="lazy" decoding="async" src="assets/images/products/coldroom-door.webp" alt="Doors and CA Doors">
+                <div class="svc-card__overlay">
+                  <span class="svc-card__icon"><img loading="lazy" src="assets/images/services/icons/modify/puf-panels-insulated-doors.webp" alt=""></span>
+                  <h3 class="svc-card__title">Doors &amp; CA Doors</h3>
+                  <p class="svc-card__desc">At Singhania Refrigeration, we design and build insulated Doors & CA Doors for chiller rooms, freezers, and controlled-atmosphere (CA) stores — access points that must keep their seal through hundreds of openings a day, not just look insulated on a spec sheet.</p>
                 </div>
-              </div>
+              </a>
             </div>
             <!-- services 12 -->
-             <div class="col-lg-3 col-sm-6 mb-16">
-              <div class="service-wrap">
-                <div class="icon-part"><img loading="lazy" decoding="async" class="service-card-icon" src="assets/images/services/icons/modify/refrigerated-truck-acs-containers.webp" width="200" height="200" alt="Refrigerated Truck Bodies & Reefer Containers"></div>
-                <div class="content-part">
-                  <h3 class="title"><a href="truck-refrigerator-container-manufacturer-in-india">Refrigerated Truck Bodies & Reefer Containers</a></h3>
-                  <div class="desc">Singhania Refrigeration is one of the reputed Refrigerated Truck Body Manufacturer in India manufacturing insulated cargo bodies and reefer containers for companies that ship temperature sensitive products.</div>
+            <div class="svc-slide">
+              <a class="svc-card" href="truck-refrigerator-container-manufacturer-in-india">
+                <img class="svc-card__photo" loading="lazy" decoding="async" src="assets/images/products/truck-ac-re.jpg" alt="Refrigerated Truck Bodies & Reefer Containers">
+                <div class="svc-card__overlay">
+                  <span class="svc-card__icon"><img loading="lazy" src="assets/images/services/icons/modify/refrigerated-truck-acs-containers.webp" alt=""></span>
+                  <h3 class="svc-card__title">Refrigerated Truck Bodies &amp; Reefer Containers</h3>
+                  <p class="svc-card__desc">Singhania Refrigeration is one of the reputed Refrigerated Truck Body Manufacturer in India manufacturing insulated cargo bodies and reefer containers for companies that ship temperature sensitive products.</p>
                 </div>
-              </div>
+              </a>
             </div>
-            <!-- <div class="col-12 tt-cta services-products-cta">
-              <a href="products" class="btn btn-primary">Explore Our Products</a>
-            </div> -->
+          </div>
+          </div>
+
+          <div class="tt-cta services-products-cta text-center mt-30">
+            <a href="products" class="svc-view-all">View All Products <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
           </div>
         </div>
       </div>
@@ -1271,72 +1416,241 @@ if ('requestIdleCallback' in window) {
         </div>
       </div>
 
+      <!-- ===== Our Brands ===== -->
+      <?php
+      $brandLogoFiles = array_merge(
+        glob(__DIR__ . '/assets/images/clients/*.avif') ?: [],
+        glob(__DIR__ . '/assets/images/clients/*.webp') ?: [],
+        glob(__DIR__ . '/assets/images/clients/*.png') ?: [],
+        glob(__DIR__ . '/assets/images/clients/*.jpg') ?: [],
+        glob(__DIR__ . '/assets/images/clients/*.jpeg') ?: []
+      );
+      natsort($brandLogoFiles);
+      $brandLogos = array_values(array_map(function($p){ return 'assets/images/clients/' . basename($p); }, $brandLogoFiles));
+
+      $brandLaneCount = 3;
+      $brandLanes = array_fill(0, $brandLaneCount, []);
+      foreach ($brandLogos as $bi => $bsrc) {
+        $brandLanes[$bi % $brandLaneCount][] = $bsrc;
+      }
+      ?>
+      <style>
+      .rs-brands{ padding:80px 0;  background:linear-gradient(180deg,#fafbff 0%,#f3f6ff 100%); }
+      .rs-brands .brands-heading-col .sub-title{ margin-bottom:6px; }
+      .rs-brands .brands-heading-col .title{ font-size:clamp(24px,3vw,44px); margin-top: 21px; }
+      .rs-brands .brands-subtext{ color:#6b7686; margin-top:15px; }
+
+      .brand-marquee{
+        display:flex; gap:20px; height:370px; overflow:hidden;
+      }
+      .brand-marquee__lane{
+        flex:1 1 0; min-width:0; overflow:hidden; cursor:ns-resize;
+        -webkit-mask-image:linear-gradient(to bottom, transparent, #000 10%, #000 90%, transparent);
+        mask-image:linear-gradient(to bottom, transparent, #000 10%, #000 90%, transparent);
+      }
+      .brand-marquee__track{
+        display:flex; flex-direction:column; gap:20px; will-change:transform;
+      }
+      .brand-card{
+        flex:0 0 auto; height:110px; width:100%;
+        background:#fff; border-radius:16px; box-shadow:0 8px 22px rgba(0,0,0,.07);
+        display:flex; align-items:center; justify-content:center; padding:16px;
+      }
+      .brand-card img{ max-height:64px; max-width:82%; object-fit:contain; }
+      @media (max-width:991.98px){
+        .rs-brands .brands-heading-col{ margin-bottom:28px; text-align:center; }
+      }
+      @media (max-width:575.98px){
+        .brand-marquee{ height:340px; }
+        .brand-card{ height:100px; }
+        .brand-card img{ max-height:56px; }
+      }
+      </style>
+      <section class="rs-brands" data-animate>
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-4 brands-heading-col">
+              <div class="sec-title mb-0">
+                <div class="sub-title primary">OUR PARTNERS</div>
+                <h2 class="title mb-0">Popular Partners We Work With</h2>
+                <p class="brands-subtext">Prefab, Modular Solutions For Your Special Needs</p>
+              </div>
+            </div>
+            <div class="col-lg-8">
+              <div class="brand-marquee">
+                <?php foreach ($brandLanes as $lane): if (empty($lane)) continue; ?>
+                <div class="brand-marquee__lane">
+                  <div class="brand-marquee__track">
+                    <?php foreach ([1, 2] as $rep): // duplicated once for a seamless loop ?>
+                      <?php foreach ($lane as $lsrc): ?>
+                      <div class="brand-card"><img src="<?php echo htmlspecialchars($lsrc); ?>" alt="Client logo" loading="lazy"></div>
+                      <?php endforeach; ?>
+                    <?php endforeach; ?>
+                  </div>
+                </div>
+                <?php endforeach; ?>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <script>
+      document.addEventListener("DOMContentLoaded", function(){
+        var speed = 26; // px per second, auto-scroll
+        document.querySelectorAll(".brand-marquee__lane").forEach(function(lane){
+          var track = lane.querySelector(".brand-marquee__track");
+          if(!track) return;
+          var offset = 0, half = 0, paused = false, last = null;
+          function measure(){ half = track.scrollHeight / 2; }
+          measure();
+          window.addEventListener("resize", measure);
+          function wrap(){ if(half > 0){ offset = ((offset % half) + half) % half; } }
+          function frame(now){
+            if(last === null) last = now;
+            var dt = (now - last) / 1000;
+            last = now;
+            if(!paused){ offset += speed * dt; wrap(); }
+            track.style.transform = "translateY(" + (-offset) + "px)";
+            requestAnimationFrame(frame);
+          }
+          requestAnimationFrame(frame);
+          lane.addEventListener("mouseenter", function(){ paused = true; });
+          lane.addEventListener("mouseleave", function(){ paused = false; });
+          // Scrolling the mouse wheel over the logos scrolls the images, not the page.
+          lane.addEventListener("wheel", function(e){
+            e.preventDefault();
+            offset += e.deltaY;
+            wrap();
+            track.style.transform = "translateY(" + (-offset) + "px)";
+          }, { passive: false });
+        });
+      });
+      </script>
+
       <!-- ===== Testimonials ===== -->
-      <div class="rs-testimonial style1 gray-bg pt-92 md-pt-72">
+      <style>
+      .rs-testimonial.testimonial-blue-bg{
+        /* background:linear-gradient(180deg,#fafbff 0%,#f3f6ff 100%); */
+        padding:48px 0 56px;
+      }
+      .rs-testimonial.testimonial-blue-bg .sub-title{ color:#002243; }
+      .rs-testimonial.testimonial-blue-bg .title{ color:#002243; }
+      .rs-testimonial .testimonial-card-shell{
+        background:#fff;
+        border-radius:26px;
+        padding:32px 28px 20px;
+        box-shadow:0 30px 60px rgba(0,0,0,.22);
+      }
+      .testi-marquee{ overflow:hidden; }
+      .testi-marquee-track{ display:flex; width:max-content; will-change:transform; }
+      .rs-testimonial .testi-item{ padding:0 16px; text-align:left; flex:0 0 auto; width:360px; }
+      @media (max-width:767.98px){
+        .rs-testimonial .testi-item{ width:280px; }
+      }
+      .rs-testimonial .content-part{ position:relative; }
+      .rs-testimonial .icon-part.testimonial-quote{
+        color:#e2e7f2; font-size:30px; text-align:right; line-height:1; margin-bottom:6px;
+      }
+      .rs-testimonial .desc{
+        color:#54607a; font-size:15px; line-height:1.7;
+        display:-webkit-box; -webkit-line-clamp:5; -webkit-box-orient:vertical; overflow:hidden;
+        min-height:130px;
+      }
+      .rs-testimonial .posted-by{
+        display:flex; align-items:center; gap:12px;
+        /* margin-top:16px; padding-top:16px;  */
+        border-top:1px solid #e7ebf3;
+      }
+      .rs-testimonial .avatar-initial{
+        width:40px; height:40px; border-radius:50%; flex:0 0 auto;
+        background:#0f2442; color:#fff; font-weight:700; font-size:16px;
+        display:flex; align-items:center; justify-content:center;
+      }
+      .rs-testimonial .posted-by-info{ text-align:left; }
+      .rs-testimonial .posted-by .name{ margin:0; font-size:15px; font-weight:700; color:#0f2442; }
+      .rs-testimonial .posted-by .designation{ font-size:13px; color:#8792a8; }
+      @media (max-width:767.98px){
+        .rs-testimonial .testimonial-card-shell{ padding:26px 18px 16px; }
+        .rs-testimonial .desc{ min-height:0; -webkit-line-clamp:6; }
+      }
+      </style>
+      <div class="rs-testimonial style1 testimonial-blue-bg">
         <div class="container" data-animate>
-          <div class="sec-title text-center mb-54 md-mb-39">
+          <div class="sec-title text-center mb-28 md-mb-24">
             <div class="sub-title primary">TESTIMONIAL</div>
             <h2 class="title mb-0">What Our Clients Say</h2>
           </div>
-          <div class="white-bg testimonial-shell">
-            <div class="row">
-              <div class="col-lg-6 pr-0 md-pl-pr-15"><div class="bg-part md-pt-200 md-pb-200"><span class="testimonial-left-icon" role="img" aria-label="Customer feedback"><i class="" aria-hidden="true"></i></span></div></div>
-              <div class="col-lg-6 slider-part">
-                <div class="rs-carousel owl-carousel dot-style1" data-loop="true" data-items="1" data-margin="30" data-autoplay="true" data-hoverpause="true" data-autoplay-timeout="5000" data-smart-speed="800" data-dots="true" data-nav="false" data-center-mode="false">
-                  <div class="testi-item">
-                    <div class="content-part text-center">
-                      <div class="icon-part testimonial-quote"><i class="fa fa-quote-left"></i></div>
-                      <div class="desc">Singhania Refrigeration delivered our entire CA store on time, within budget and to   exact specification. We have not had a single unplanned downtime in over a year.</div>
-                    </div>
-                    <div class="posted-by text-center">
-                      <div class="avatar"><span class="testimonial-avatar-icon" role="img" aria-label="Customer avatar"><i class="fa fa-user" aria-hidden="true"></i></span></div>
-                      <h3 class="name">Operations Director</h3><span class="designation">Agri-Export Company, Delhi NCR</span>
-                    </div>
-                  </div>
-                  <div class="testi-item">
-                    <div class="content-part text-center">
-                      <div class="icon-part testimonial-quote"><i class="fa fa-quote-left"></i></div>
-                      <div class="desc">We needed a WHO-GMP-aligned pharma cold room on a tight deadline. Singhania's team
-                                      handled the complete turnkey delivery — design, panels, refrigeration and documentation
-                                      — without a single coordination issue.</div>
-                    </div>
-                    <div class="posted-by text-center">
-                      <div class="avatar"><span class="testimonial-avatar-icon" role="img" aria-label="Customer avatar"><i class="fa fa-user" aria-hidden="true"></i></span></div>
-                      <h3 class="name">Operations Head</h3><span class="designation">Pharmaceutical Distributor, New Delhi</span>
-                    </div>
-                  </div>
-                  <div class="testi-item">
-                    <div class="content-part text-center">
-                      <div class="icon-part testimonial-quote"><i class="fa fa-quote-left"></i></div>
-                      <div class="desc">Their AMC support has been dependable for our cold storage plant. Whenever there is a service requirement, the response is practical and fast, which helps us avoid unnecessary downtime.</div>
-                    </div>
-                    <div class="posted-by text-center">
-                      <div class="avatar"><span class="testimonial-avatar-icon" role="img" aria-label="Customer avatar"><i class="fa fa-user" aria-hidden="true"></i></span></div>
-                      <h3 class="name">Manoj Aggarwal</h3><span class="designation">Cold Storage Owner, Kundli</span>
-                    </div>
-                  </div>
-                  <div class="testi-item">
-                    <div class="content-part text-center">
-                      <div class="icon-part testimonial-quote"><i class="fa fa-quote-left"></i></div>
-                      <div class="desc">We got a controlled temperature room installed for our pharma inventory in Noida. The finishing, insulation work, and after-installation checks were handled properly by their team.</div>
-                    </div>
-                    <div class="posted-by text-center">
-                      <div class="avatar"><span class="testimonial-avatar-icon" role="img" aria-label="Customer avatar"><i class="fa fa-user" aria-hidden="true"></i></span></div>
-                      <h3 class="name">Neeraj Malhotra</h3><span class="designation">Pharma Warehouse Manager, Noida</span>
-                    </div>
-                  </div>
-                  <div class="testi-item">
-                    <div class="content-part text-center">
-                      <div class="icon-part testimonial-quote"><i class="fa fa-quote-left"></i></div>
-                      <div class="desc">For our fruit and vegetable storage, they suggested a practical cold room setup instead of overselling. The cooling is uniform and the maintenance team is easy to reach.</div>
-                    </div>
-                    <div class="posted-by text-center">
-                      <div class="avatar"><span class="testimonial-avatar-icon" role="img" aria-label="Customer avatar"><i class="fa fa-user" aria-hidden="true"></i></span></div>
-                      <h3 class="name">Sandeep Yadav</h3><span class="designation">Vegetable Supplier, Gurugram</span>
-                    </div>
+          <div class="testimonial-card-shell">
+            <div class="testi-marquee">
+            <div class="testi-marquee-track marquee-track">
+              <div class="testi-item">
+                <div class="content-part">
+                  <div class="icon-part testimonial-quote"><i class="fa fa-quote-right"></i></div>
+                  <div class="desc">Singhania Refrigeration delivered our entire CA store on time, within budget and to   exact specification. We have not had a single unplanned downtime in over a year.</div>
+                </div>
+                <div class="posted-by">
+                  <span class="avatar-initial">O</span>
+                  <div class="posted-by-info">
+                    <h3 class="name">Operations Director</h3>
+                    <span class="designation">Agri-Export Company, Delhi NCR</span>
                   </div>
                 </div>
               </div>
+              <div class="testi-item">
+                <div class="content-part">
+                  <div class="icon-part testimonial-quote"><i class="fa fa-quote-right"></i></div>
+                  <div class="desc">We needed a WHO-GMP-aligned pharma cold room on a tight deadline. Singhania's team
+                                  handled the complete turnkey delivery — design, panels, refrigeration and documentation
+                                  — without a single coordination issue.</div>
+                </div>
+                <div class="posted-by">
+                  <span class="avatar-initial">O</span>
+                  <div class="posted-by-info">
+                    <h3 class="name">Operations Head</h3>
+                    <span class="designation">Pharmaceutical Distributor, New Delhi</span>
+                  </div>
+                </div>
+              </div>
+              <div class="testi-item">
+                <div class="content-part">
+                  <div class="icon-part testimonial-quote"><i class="fa fa-quote-right"></i></div>
+                  <div class="desc">Their AMC support has been dependable for our cold storage plant. Whenever there is a service requirement, the response is practical and fast, which helps us avoid unnecessary downtime.</div>
+                </div>
+                <div class="posted-by">
+                  <span class="avatar-initial">M</span>
+                  <div class="posted-by-info">
+                    <h3 class="name">Manoj Aggarwal</h3>
+                    <span class="designation">Cold Storage Owner, Kundli</span>
+                  </div>
+                </div>
+              </div>
+              <div class="testi-item">
+                <div class="content-part">
+                  <div class="icon-part testimonial-quote"><i class="fa fa-quote-right"></i></div>
+                  <div class="desc">We got a controlled temperature room installed for our pharma inventory in Noida. The finishing, insulation work, and after-installation checks were handled properly by their team.</div>
+                </div>
+                <div class="posted-by">
+                  <span class="avatar-initial">N</span>
+                  <div class="posted-by-info">
+                    <h3 class="name">Neeraj Malhotra</h3>
+                    <span class="designation">Pharma Warehouse Manager, Noida</span>
+                  </div>
+                </div>
+              </div>
+              <div class="testi-item">
+                <div class="content-part">
+                  <div class="icon-part testimonial-quote"><i class="fa fa-quote-right"></i></div>
+                  <div class="desc">For our fruit and vegetable storage, they suggested a practical cold room setup instead of overselling. The cooling is uniform and the maintenance team is easy to reach.</div>
+                </div>
+                <div class="posted-by">
+                  <span class="avatar-initial">S</span>
+                  <div class="posted-by-info">
+                    <h3 class="name">Sandeep Yadav</h3>
+                    <span class="designation">Vegetable Supplier, Gurugram</span>
+                  </div>
+                </div>
+              </div>
+            </div>
             </div>
           </div>
         </div>
@@ -1929,10 +2243,6 @@ if ('requestIdleCallback' in window) {
     </div>
   </div>
     <style>
-/* Testimonials single-slide behavior */
-.rs-testimonial .testi-item{ float:none !important; width:auto !important; display:block !important; }
-.rs-testimonial .rs-carousel .owl-stage-outer{ overflow: hidden; }
-
 /* Equal-height service cards */
 .rs-services .row.gutter-16, .rs-services.modify .row.gutter-16 { display:flex; flex-wrap:wrap; }
 .rs-services .row.gutter-16 > [class*="col-"], .rs-services.modify .row.gutter-16 > [class*="col-"] { display:flex; }
@@ -1970,7 +2280,7 @@ document.addEventListener("DOMContentLoaded", function(){
     aboutToggle.addEventListener("click", function(){
       const isExpanded = this.getAttribute("aria-expanded") === "true";
       this.setAttribute("aria-expanded", String(!isExpanded));
-      aboutMore.hidden = isExpanded;
+      aboutMore.classList.toggle("is-open", !isExpanded);
       this.querySelector("span").textContent = isExpanded ? "Read More" : "Read Less";
     });
   }
@@ -2077,31 +2387,33 @@ $(function(){
 </script>
 
 <script>
-(function($){
-  function initTestimonialCarousel(){
-    var $car = $('.rs-testimonial .rs-carousel');
-    if(!$car.length) return;
-    try { $car.trigger('destroy.owl.carousel'); } catch(e) {}
-    $car.removeClass('owl-loaded owl-hidden');
-    $car.find('.owl-stage-outer').children().unwrap();
-    $car.find('.owl-stage').children().unwrap();
-    $car.owlCarousel({
-      items: 1,
-      loop: false,
-      margin: 30,
-      autoplay: true,
-      autoplayTimeout: 5000,
-      autoplayHoverPause: true,
-      smartSpeed: 800,
-      dots: true,
-      nav: false
-    });
+document.addEventListener("DOMContentLoaded", function(){
+  function initHorizontalMarquee(container, speed){
+    var track = container.querySelector(".marquee-track");
+    if(!track || track.dataset.marqueeInit) return;
+    track.dataset.marqueeInit = "1";
+    var originalChildren = Array.prototype.slice.call(track.children);
+    originalChildren.forEach(function(node){ track.appendChild(node.cloneNode(true)); });
+    var offset = 0, half = 0, paused = false, last = null;
+    function measure(){ half = track.scrollWidth / 2; }
+    measure();
+    window.addEventListener("resize", measure);
+    function wrap(){ if(half > 0){ offset = ((offset % half) + half) % half; } }
+    function frame(now){
+      if(last === null) last = now;
+      var dt = (now - last) / 1000;
+      last = now;
+      if(!paused){ offset += speed * dt; wrap(); }
+      track.style.transform = "translateX(" + (-offset) + "px)";
+      requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+    container.addEventListener("mouseenter", function(){ paused = true; });
+    container.addEventListener("mouseleave", function(){ paused = false; });
   }
-  $(window).on('load', function(){
-    initTestimonialCarousel();
-    setTimeout(initTestimonialCarousel, 400);
-  });
-})(jQuery);
+  document.querySelectorAll(".svc-marquee").forEach(function(el){ initHorizontalMarquee(el, 40); });
+  document.querySelectorAll(".testi-marquee").forEach(function(el){ initHorizontalMarquee(el, 30); });
+});
 </script>
 
 <script>
