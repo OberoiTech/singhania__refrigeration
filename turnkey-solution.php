@@ -734,9 +734,6 @@
   </head>
 
   <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5XNG3TQC" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
     <?php include('header.php'); ?>
 
     <!-- Main content Start -->
@@ -807,7 +804,7 @@
         <div class="overview-visual-wrap">
           <div class="overview-visual">
             <img src="assets\images\solutions\life-cycle.png"
-                 alt="Truncky solution"
+                 alt="Turnkey cold storage project life cycle"
                  loading="lazy"
                  decoding="async">
           </div>

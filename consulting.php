@@ -220,9 +220,6 @@ $pageDescription = 'Cold storage consulting, project planning, grant coordinatio
     </style>
   </head>
   <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5XNG3TQC" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
     <?php include('header.php');?>
 
     <!-- ===== HERO ===== -->
