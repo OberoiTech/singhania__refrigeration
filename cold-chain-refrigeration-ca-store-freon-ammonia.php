@@ -2,8 +2,8 @@
 <html lang="en">
   <head>
     <?php
-    $pageTitle = 'Cold Chain Solutions India | CA Store | Ammonia & Freon Refrigeration - Singhania Refrigeration';
-    $pageDescription = 'Singhania Refrigeration delivers cold chain refrigeration systems, CA stores, ammonia refrigeration plants and freon refrigeration systems across India. One partner for design, supply, installation and AMC.';
+    $pageTitle = 'CA Store & Cold Chain Refrigeration | Singhania';
+    $pageDescription = 'Controlled atmosphere (CA) stores, frozen rooms and Freon or ammonia refrigeration plants — engineered for your crop, capacity and budget. Get a quote.';
     $ogDescription = $pageDescription;
 $canonicalUrl = 'https://singhaniarefrigeration.com/cold-chain-refrigeration-ca-store-freon-ammonia-in-india';
     $shareImage = 'https://singhaniarefrigeration.com/assets/images/products/cold-storage.jpg';

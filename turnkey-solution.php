@@ -2,8 +2,8 @@
 <html lang="en">
   <head>
     <?php
-    $pageTitle = 'Turnkey Cold Storage Solutions India | Singhania Refrigeration';
-    $pageDescription = 'Singhania Refrigeration delivers turnkey cold storage projects across India &mdash; from design &amp; BOQ to commissioning and AMC. One partner. Zero coordination hassle. Request a free site visit.';
+    $pageTitle ='Turnkey Cold Storage Solutions | Singhania Refrigeration';
+    $pageDescription ='End-to-end turnkey cold storage projects — design, PUF construction, refrigeration, racking and commissioning under one contract. Plan your project now.';
     ?>
     <?php include('head.php'); ?>
     <style>

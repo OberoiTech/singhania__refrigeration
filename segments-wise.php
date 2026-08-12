@@ -2,9 +2,9 @@
 <html lang="en">
   <head>
     <?php
-    $pageTitle = 'Segment-Wise Cold Storage Solutions for Every Industry | Singhania Refrigeration';
-    $pageDescription = 'Singhania Refrigeration designs cold storage, ripening, blast-freezing and CA store solutions matched to your industry - dairy, pharma, seafood, horticulture, 3PL and more. Request a free site visit.';
-    $ogDescription = 'Cold rooms, blast freezers, ripening chambers and CA stores designed around your product - dairy, pharma, seafood, horticulture, 3PL and more. One partner across every segment you operate in.';
+    $pageTitle = 'Cold Storage Solutions by Industry | Singhania';
+    $pageDescription = 'Segment-wise cold chain solutions for dairy, pharma, seafood, fruits and vegetables, QSR and e-commerce — matched to your product and temperature needs.';
+    $ogDescription = 'Segment-wise cold chain solutions for dairy, pharma, seafood, fruits and vegetables, QSR and e-commerce — matched to your product and temperature needs.';
 $canonicalUrl = 'https://singhaniarefrigeration.com/segment-wise-cold-storage-solutions-in-india';
     $shareImage = 'https://singhaniarefrigeration.com/assets/images/products/cold-storage.jpg';
     ?>

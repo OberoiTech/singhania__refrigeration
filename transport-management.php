@@ -2,8 +2,8 @@
 <html lang="en">
   <head>
     <?php
-      $pageTitle = 'Cold Chain Transport Management Solutions India | Singhania Refrigeration';
-      $pageDescription = 'Singhania Refrigeration\'s transport management solution tracks reefer vehicles, in-transit temperature, route sequencing and delivery proof across your cold chain dispatch network. One system. Full visibility. Request a free demo.';
+      $pageTitle ='Transport Management System (TMS) | Singhania';
+      $pageDescription ='MS for cold chain fleets — trip planning, live vehicle tracking, temperature visibility and delivery proof in one dashboard. Book a walkthrough today.';
       $pageKeywords = 'cold chain transport management solution, reefer fleet tracking, in-transit temperature monitoring, TMS WMS integration cold chain, cold chain transport management India';
       $ogDescription = 'Singhania Refrigeration\'s transport management solution tracks reefer vehicles, in-transit temperature, route sequencing and delivery proof across your cold chain dispatch network. One system. Full visibility.';
 

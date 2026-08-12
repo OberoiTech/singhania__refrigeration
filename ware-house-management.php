@@ -3,8 +3,8 @@
 
 <head>
   <?php
-  $pageTitle = 'Cold Storage Warehouse Management Solutions India | Singhania Refrigeration';
-  $pageDescription = 'Singhania Refrigeration&rsquo;s warehouse management solution organizes inventory, stock rotation, space planning and dispatch across your cold storage facility — from receiving to despatch. One system. Zero guesswork. Request a free demo.';
+  $pageTitle = 'Cold Storage Warehouse Management System | Singhania';
+  $pageDescription = 'WMS built for cold storage — pallet tracking, FIFO and FEFO control, billing and inventory visibility across chambers. Request a demo for your warehouse.';
   ?>
   <?php include('head.php'); ?>
   <style>

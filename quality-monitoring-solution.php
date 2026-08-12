@@ -2,8 +2,8 @@
 <html lang="en">
   <head>
     <?php
-      $pageTitle = 'Cold Chain Quality Monitoring Solutions | Singhania Refrigeration';
-      $pageDescription = 'Cold chain quality monitoring solutions for warehouse and transport networks. Track temperature, humidity, shelf life, spoilage risk, excursions and root cause across the cold chain.';
+      $pageTitle = 'Cold Chain Quality Monitoring Systems | Singhania';
+      $pageDescription = 'Real-time temperature and humidity monitoring with alerts, data logs and compliance reports for cold storage and reefer fleets. See how monitoring works.';
     ?>
     <?php include('head.php'); ?>
     <style>

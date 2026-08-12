@@ -2,10 +2,10 @@
 <html lang="en">
   <head>
     <?php
-      $pageTitle = 'Transport Refrigeration Solutions India - Reefer Truck & Insulated Vehicle Body Fabrication | Singhania Refrigeration';
-      $pageDescription = 'Singhania Refrigeration designs, fabricates and installs insulated vehicle bodies and refrigeration units for reefer trucks, vans and trailers - sized to your product, route and temperature requirement. Request a free assessment.';
-      $pageKeywords = 'transport refrigeration solutions, reefer truck body fabrication, insulated vehicle body PUF panels, refrigeration unit installation vehicle, multi-temperature reefer truck, reefer truck conversion existing vehicle';
-      $ogDescription = 'Insulated vehicle bodies and refrigeration units for reefer trucks, vans and trailers - sized to your product, route and temperature requirement.';
+      $pageTitle ='Transport Refrigeration Solutions | Singhania Refrigeration';
+      $pageDescription ='Reefer units, insulated bodies and AMC support for trucks and last-mile vans — dependable transport refrigeration across India. Request a fleet quote.';
+      $pageKeywords ='transport refrigeration solutions, reefer truck body fabrication, insulated vehicle body PUF panels, refrigeration unit installation vehicle, multi-temperature reefer truck, reefer truck conversion existing vehicle';
+      $ogDescription ='Insulated vehicle bodies and refrigeration units for reefer trucks, vans and trailers - sized to your product, route and temperature requirement.';
 
       $refrigerationFaqs = [
         [
