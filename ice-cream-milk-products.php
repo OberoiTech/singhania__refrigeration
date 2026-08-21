@@ -2,6 +2,21 @@
 <html lang="en">
     <head>
         <?php include('head.php');?>
+        <style>
+            .icmp-hero-img{width:100%;max-width:100%;height:400px;object-fit:cover;}
+            @media (max-width: 1199px){
+                .icmp-hero-img{height:340px;}
+            }
+            @media (max-width: 991px){
+                .icmp-hero-img{height:300px;}
+            }
+            @media (max-width: 767px){
+                .icmp-hero-img{height:240px;}
+            }
+            @media (max-width: 420px){
+                .icmp-hero-img{height:180px;}
+            }
+        </style>
     </head>
     <body>
         <?php include('header.php');?>
@@ -22,13 +37,13 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-8 pr-45 md-pr-15">
-                            <img src="assets/images/products/ammonia-refrigeration.webp" class="mt-5" alt="" style="height:400px;">
+                            <img src="assets/images/products/ammonia-refrigeration.webp" class="mt-5 icmp-hero-img" alt="ammonia-refrigeration">
                             <h5 class="desc mt-5 ">We provide “End to End Integrated Cold Chain Solution”, undertake Cold Storage Facility Projects such as Turnkey Construction, Cold Chain Refrigeration Systems, Consulting and quality monitoring solution for various application and segments</h5>
                             <p> Ammonia-based refrigeration system
                                 Direct expansion or brine-based cooling systems
                                 Suitable for IQF, large cold storage, blast freezing applications</p>
 
-                             <img src="assets/images/products/ammonia-refrigeration-plant.webp" class="mt-5" alt="" style="height:400px;">
+                             <img src="assets/images/products/ammonia-refrigeration-plant.webp" class="mt-5 icmp-hero-img" alt="ammonia-refrigeration-plant">
 
                         </div>
                         <div class="col-lg-4 md-mb-50 md-order-first">

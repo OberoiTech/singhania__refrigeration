@@ -1,135 +1,1626 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<?php
-$pageTitle = 'Freon Refrigeration Units Manufacturer in India | Singhania Refrigeration';
-$pageDescription = 'Freon HFC and HFO refrigeration units for cold rooms, ripening chambers, compressor racks and walk-in freezers. Pan-India support. Call +91 99710 60822.';
-$pageKeywords = 'freon refrigeration units manufacturer in india, HFC refrigeration unit, HFO refrigeration system, condensing unit, monoblock refrigeration unit';
-$canonicalUrl = 'https://singhaniarefrigeration.com/freon-refrigeration-in-india';
-$ogDescription = 'Compact, modular Freon refrigeration systems engineered for Indian ambient conditions.';
-$shareImage = 'https://singhaniarefrigeration.com/assets/images/products/compressor-rack-system-e1600420693281.webp';
-include('head.php');
-?>
-<link rel="stylesheet" href="assets/css/product-pages.css">
-<style>
-  :root{--fr-navy:#092344;--fr-blue:#0e6fbd;--fr-pale:#f3f8fc;--fr-text:#24364b}
-  .fr-page{color:var(--fr-text);font-family:'Poppins',sans-serif}
-  .fr-hero{position:relative;min-height:clamp(590px,78vh,760px);display:flex;align-items:center;color:#fff;background:linear-gradient(90deg,rgba(5,18,38,.97) 0%,rgba(7,28,57,.91) 35%,rgba(7,25,49,.56) 61%,rgba(5,15,30,.14) 100%),url('assets/images/products/compressor-rack-system-e1600420693281.webp') 62% center/cover no-repeat;overflow:hidden;isolation:isolate}
-  .fr-hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(3,12,25,.1),rgba(3,12,25,.38)),radial-gradient(circle at 78% 46%,rgba(239,92,32,.16),transparent 25%);pointer-events:none;z-index:-1}
-  .fr-wrap{width:min(1180px,calc(100% - 40px));margin:auto}
-  .fr-hero__content{max-width:700px;padding:92px 0 80px;animation:frHeroIn .8s ease both}
-  .fr-kicker{display:inline-block;color:#42a9ed;font-weight:800;font-size:13px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px}
-  .fr-hero h1{color:#fff;font-size:clamp(38px,4.6vw,64px);line-height:1.08;letter-spacing:-.035em;margin:18px 0 20px}
-  .fr-hero h2{color:rgba(238,244,255,.9);font-size:clamp(18px,2vw,23px);line-height:1.45;margin-bottom:16px}
-  .fr-hero p{color:rgba(238,244,255,.86);font-size:clamp(15px,1.4vw,17px);line-height:1.75;max-width:630px;text-align:justify}
-  @keyframes frHeroIn{from{opacity:0;transform:translateY(18px) scale(.985)}to{opacity:1;transform:none}}
-  .fr-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
-  .fr-btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 22px;border-radius:8px;font-weight:700;text-decoration:none!important}
-  .fr-btn--primary{background:#fff;color:var(--fr-navy)!important}.fr-btn--outline{border:1px solid rgba(255,255,255,.65);color:#fff!important}
-  .fr-section{padding:80px 0}.fr-section--pale{background:#f6f9fc}.fr-section--navy{background:var(--fr-navy);color:#fff}
-  .fr-heading{max-width:820px;margin:0 auto 38px;text-align:center}.fr-heading h2{font-size:clamp(29px,3.5vw,43px);line-height:1.2;color:var(--fr-navy);margin:0 0 14px}.fr-heading p{line-height:1.8}
-  .fr-section--navy .fr-heading h2,.fr-section--navy .fr-heading p{color:#fff}
-  .fr-copy{max-width:980px;margin:auto;font-size:16px;line-height:1.9}.fr-copy p{margin-bottom:16px}
-  .fr-overview{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(360px,.9fr);align-items:center;gap:58px}
-  .fr-overview__content .fr-heading{max-width:640px;margin:0 0 24px;text-align:left}
-  .fr-overview__content .fr-heading h2{font-size:clamp(30px,3vw,42px);line-height:1.15;margin:0}
-  .fr-overview__content .fr-copy{max-width:none;font-size:16px;line-height:1.62}
-  .fr-overview__content .fr-copy p{margin:0 0 12px;text-align:justify}
-  .fr-overview__media{background:#fff;padding:23px 19px 23px;border-radius:0 0 34px 0;box-shadow:0 18px 42px rgba(9,35,68,.08)}
-  .fr-overview__media img{display:block;width:100%;height:305px;object-fit:cover}
-  .fr-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
-  .fr-grid--four{grid-template-columns:repeat(4,minmax(0,1fr))}
-  .fr-card{height:100%;background:#fff;border:1px solid #e8e8e8;border-radius:10px;padding:32px 24px;text-align:center;box-shadow:none;transition:transform .3s ease,box-shadow .3s ease}
-  .fr-card:hover{transform:translateY(-5px);box-shadow:0 12px 30px rgba(0,0,0,.10)}
-  .fr-card__icon{width:auto;height:auto;display:block;border-radius:0;background:none;color:#0f2442;font-size:2.4rem;margin-bottom:16px}
-  .fr-card h3{font-size:1.1rem;font-weight:700;color:#0f2442;line-height:1.35;margin:0 0 10px}.fr-card p{font-size:.95rem;color:#555;line-height:1.7;margin:0}
-  .fr-locations{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:25px 0}.fr-location{background:#e3f1fc;color:#075995;padding:8px 15px;border-radius:999px;font-size:13px;font-weight:700}
-  .fr-faq{max-width:900px;margin:auto}.fr-faq details{background:#fff;border:1px solid #dce8f1;border-radius:10px;margin-bottom:12px;padding:0 20px}.fr-faq summary{cursor:pointer;padding:18px 0;font-weight:700;color:var(--fr-navy)}.fr-faq details p{padding:0 0 18px;line-height:1.75;margin:0}
-  .fr-related{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}.fr-related a{background:#fff;color:var(--fr-navy);border-radius:8px;padding:10px 15px;font-weight:600;text-decoration:none}
-  .fr-cta{text-align:center}.fr-cta h2{color:#fff;font-size:clamp(30px,4vw,46px);max-width:850px;margin:0 auto 18px}.fr-cta p{color:#dce9f5;max-width:800px;margin:0 auto 24px;line-height:1.8}
-  @media(max-width:991px){.fr-grid,.fr-grid--four{grid-template-columns:repeat(2,minmax(0,1fr))}.fr-hero{min-height:600px;background-position:68% center}.fr-hero__content{padding:76px 0 68px}.fr-overview{grid-template-columns:1fr;gap:30px}.fr-overview__media{width:min(100%,620px);margin:auto}.fr-overview__media img{height:auto}}
-  @media(max-width:600px){.fr-section{padding:58px 0}.fr-grid,.fr-grid--four{grid-template-columns:1fr}.fr-wrap{width:min(100% - 28px,1180px)}.fr-hero{min-height:640px}.fr-hero__content{padding:68px 4px 60px}.fr-hero h1{font-size:clamp(34px,9vw,48px)}.fr-card{padding:26px 18px}.fr-overview{gap:20px}.fr-overview__content .fr-heading{margin-bottom:18px}.fr-overview__content .fr-copy p{text-align:left}.fr-overview__media{padding:12px;border-radius:0 0 24px 0}}
-</style>
+  <?php
+    $pageTitle = 'Freon Refrigeration Units Manufacturer in India | Singhania Refrigeration';
+    $pageDescription = 'Freon HFC and HFO refrigeration units for cold rooms, ripening chambers, compressor racks and walk-in freezers. Pan-India support. Call +91 99710 60822.';
+    $pageKeywords = 'freon refrigeration units manufacturer in india, HFC refrigeration unit, HFO refrigeration system, condensing unit, monoblock refrigeration unit';
+    $canonicalUrl = 'https://singhaniarefrigeration.com/freon-refrigeration-in-india';
+    $ogDescription = 'Compact, modular Freon refrigeration systems engineered for Indian ambient conditions.';
+    $shareImage = 'https://singhaniarefrigeration.com/assets/images/products/condensing.webp';
+    $twitterDescription = 'Compact, modular Freon refrigeration systems for cold rooms, ripening chambers and walk-in freezers. Pan-India support.';
+    $shareImageAlt = 'Freon refrigeration condensing unit by Singhania Refrigeration';
+  ?>
+  <?php include('head.php'); ?>
+  <style>
+    /* ====== FREON HERO ====== */
+    .rs-breadcrumbs.bg-7 {
+      position: relative;
+      background-image: url("assets/images/products/condensing.webp");
+      background-size: cover;
+      background-position: 62% center;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .rs-breadcrumbs.bg-7::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg,
+          rgba(5, 18, 38, .97) 0%,
+          rgba(7, 28, 57, .91) 35%,
+          rgba(7, 25, 49, .56) 61%,
+          rgba(5, 15, 30, .14) 100%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .rs-breadcrumbs.bg-7::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(3, 12, 25, .1), rgba(3, 12, 25, .38)),
+        radial-gradient(circle at 78% 46%, rgba(239, 92, 32, .16), transparent 25%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .rs-breadcrumbs .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .rs-breadcrumbs .content-part {
+      min-height: clamp(590px, 78vh, 760px);
+      padding: 92px 0 80px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .hero-card {
+      max-width: 700px;
+      margin: 0;
+      padding: 0;
+      color: #fff;
+      text-align: left;
+      transform-origin: 50% 100%;
+      animation: heroIn .8s ease both;
+    }
+
+    .hero-card h1 {
+      max-width: 660px;
+      font-size: clamp(38px, 4.6vw, 64px);
+      line-height: 1.08;
+      letter-spacing: -.035em;
+      margin: 18px 0 20px;
+      padding: 0;
+      color: #fff;
+    }
+
+    .hero-card .lead {
+      max-width: 630px;
+      margin: 0;
+      color: rgba(238, 244, 255, .86);
+      line-height: 1.75;
+      font-size: clamp(15px, 1.4vw, 17px);
+      text-align: justify;
+      text-justify: inter-word;
+      text-align-last: left;
+      -webkit-hyphens: auto;
+      hyphens: auto;
+      overflow-wrap: break-word;
+    }
+
+    @keyframes heroIn {
+      from {
+        opacity: 0;
+        transform: translateY(18px) scale(.985)
+      }
+
+      to {
+        opacity: 1;
+        transform: none
+      }
+    }
+
+    /* ====== LAYOUT ====== */
+    .prod-media {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(16, 28, 52, .18);
+      background: #0b1530;
+    }
+
+    .prod-media img {
+      width: 100%;
+      height: auto;
+      display: block;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      transform: scale(1.001);
+      transition: transform .6s ease;
+    }
+
+    .prod-media:hover img {
+      transform: scale(1.03);
+    }
+
+    /* ====== CTA BAR ====== */
+    .cta-bar {
+      margin-top: 24px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    /* ====== MICRO-ANIMATIONS ====== */
+    .intro-section {
+      background: white
+    }
+
+    .intro-copy p {
+      text-align: justify;
+      font-size: clamp(15px, 1.4vw, 17px);
+    }
+
+    .intro-section .row>[class*="col-"] {
+      margin-bottom: var(--content-gap);
+    }
+
+    .intro-section .row>[class*="col-"]:last-child {
+      margin-bottom: 0;
+    }
+
+    /* section-3 */
+    .feature-grid>[class*="col-"] {
+      margin-bottom: var(--card-gap);
+    }
+
+    .feature-grid>[class*="col-"]:nth-last-child(-n + 3) {
+      margin-bottom: 0;
+    }
+
+    .feature-card {
+      background: #ffffff;
+      border: 1px solid #e8e8e8;
+      border-radius: 10px;
+      padding: 32px 24px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.10);
+    }
+
+    .feature-icon {
+      font-size: 2.4rem;
+      color: var(--ink);
+      margin-bottom: 16px;
+    }
+
+    .feature-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      line-height: 1.35;
+      margin: 0 0 10px;
+      color: #0f2442
+    }
+
+    .feature-desc {
+      font-size: 0.95rem;
+      color: #555;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    @media (max-width: 991px) {
+      .rs-breadcrumbs.bg-7 {
+        background-position: 68% center;
+      }
+
+      .rs-breadcrumbs .content-part {
+        min-height: 600px;
+        padding: 76px 0 68px;
+      }
+
+      .feature-grid>[class*="col-"]:nth-last-child(-n + 3) {
+        margin-bottom: var(--card-gap);
+      }
+
+      .feature-grid>[class*="col-"]:nth-last-child(-n + 2) {
+        margin-bottom: 0;
+      }
+    }
+
+    @media (max-width: 767px) {
+
+      .hero-card {
+        max-width: 100%;
+        margin: 0;
+        padding: 0 4px;
+      }
+
+      .rs-breadcrumbs .content-part {
+        min-height: 640px;
+        padding: 68px 0 60px;
+      }
+
+      .hero-card h1 {
+        font-size: clamp(34px, 9vw, 48px);
+        margin: 16px 0 18px;
+      }
+
+      .hero-card .lead {
+        text-align: justify;
+        line-height: 1.7;
+        font-size: 14px;
+      }
+
+      .feature-grid>[class*="col-"],
+      .feature-grid>[class*="col-"]:nth-last-child(-n + 2),
+      .feature-grid>[class*="col-"]:nth-last-child(-n + 3) {
+        margin-bottom: 20px;
+      }
+
+      .feature-grid>[class*="col-"]:last-child {
+        margin-bottom: 0;
+      }
+
+      .feature-card {
+        padding: 26px 18px;
+      }
+
+      .feature-icon {
+        font-size: 2rem;
+        margin-bottom: 12px;
+      }
+
+      .feature-title {
+        font-size: 1rem;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="assets/css/product-pages.css">
 </head>
+
 <body>
-<?php include('header.php'); ?>
-<main class="fr-page">
-  <section class="fr-hero">
-    <div class="fr-wrap"><div class="fr-hero__content">
-      <span class="fr-kicker">Product</span>
-      <h1>Freon Refrigeration Units Manufacturer in India</h1>
-      <h2>Reliable, versatile cooling for commercial and mid-scale industrial applications</h2>
-      <p>Singhania Refrigeration develops Freon (HFC/HFO) refrigeration units for cold rooms, fruit ripening chambers, warehouses, processing businesses and logistics points where flexibility, ease of use and low initial cost matter.</p>
-      <div class="fr-actions"><a class="btn-brand" href="contact">Get a Free Quote&nbsp; </a><a class="btn-brand  " href="tel:+919971060822"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp; Call Now</a></div>
-    </div></div>
+  <?php include('header.php'); ?>
+
+  <!-- Main content Start -->
+  <div class="main-content">
+    <div class="rs-breadcrumbs bg-7 heroImage">
+      <div class="container">
+        <div class="content-part">
+          <div class="hero-card">
+            <h1>Freon Refrigeration Units Manufacturer in India</h1>
+            <h2 class="text-white">Reliable, Versatile Cooling for Commercial and Mid-Scale Industrial Applications</h2>
+            <p class="lead" lang="en">
+              Singhania Refrigeration develops Freon (HFC/HFO) refrigeration units for cold
+              rooms, fruit ripening chambers, warehouses, processing businesses and logistics
+              points where flexibility, ease of use and low initial cost matter.
+            </p>
+            <p class="lead" lang="en">Engineered for Indian operating conditions, our Freon systems provide fast
+              commissioning, dependable cooling performance and low-maintenance operation for
+              cold storage and retail refrigeration needs across India.
+            </p>
+            <div class="cta-bar">
+              <a href="contact" class="btn-brand">Get a Free Quote&nbsp; </a>
+              <a href="tel:+919971060822" class="btn-brand"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp; Call Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- MAIN CONTENT END  -->
+
+  <!-- ===== WHAT IS A FREON REFRIGERATION UNIT ===== -->
+  <section class="intro-section section-padding" id="what-is-freon-refrigeration">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-7 col-md-7">
+          <div class="intro-copy">
+            <h2 class="section-h2">What is a Freon Refrigeration Unit?</h2>
+
+            <p class="lead">
+              Freon refrigeration systems use synthetic refrigerants such as HFCs and newer
+              HFO alternatives. Their compact equipment can be installed close to working
+              spaces without the dedicated machine room and operating arrangements commonly
+              associated with large <a href="ammonia-refrigeration-units">ammonia refrigeration plants</a>.
+            </p>
+            <p class="lead">
+              Condensing units, monoblocks and compressor racks make these systems practical
+              for cold rooms, walk-in freezers, ripening chambers, supermarkets, HoReCa,
+              pharmaceutical storage and small processing or packing lines.
+            </p>
+            <p class="lead">
+              Freon refrigeration is commonly used in cold rooms and walk-in freezers, fruit
+              and vegetable ripening chambers, supermarkets and HoReCa outlets, pharmaceutical
+              storage, food processing and packing lines, and dairy and beverage outlets.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-5 col-md-5">
+          <img
+            class="TruckImg"
+            src="assets/images/products/cold-storage.webp"
+            alt="Freon refrigeration unit inside a cold storage room"
+            loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ===== END DEFINITION SECTION ===== -->
+
+  <!-- SECTION 3 -->
+  <section class="features-section section-padding" id="key-features" style="background: #f6f9fc;">
+    <div class="container">
+
+      <h2 class="section-h2 text-center mb-5">
+        Key Features of Our Freon Refrigeration Units
+      </h2>
+
+      <?php
+
+      $features = [
+        [
+          'icon'  => 'fa fa-shield',
+          'title' => 'Safe, Simple Refrigerant Handling',
+          'desc'  => 'Non-flammable refrigerant options and service-friendly equipment
+                            support practical installation near work areas.'
+        ],
+        [
+          'icon'  => 'fa fa-thermometer-half',
+          'title' => 'Wide Temperature Coverage',
+          'desc'  => 'Refrigerant and compressor selections cover medium-temperature
+                            chillers through low-temperature freezers.'
+        ],
+        [
+          'icon'  => 'fa fa-cubes',
+          'title' => 'Compact, Modular Construction',
+          'desc'  => 'Pre-assembled condensing units and monoblocks reduce site work
+                            and speed up commissioning.'
+        ],
+        [
+          'icon'  => 'fa fa-sliders',
+          'title' => 'Precise Digital Control',
+          'desc'  => 'Microprocessor controls, alarms and remote monitoring help
+                            maintain the required product temperature.'
+        ],
+        [
+          'icon'  => 'fa fa-leaf',
+          'title' => 'Future-Ready Options',
+          'desc'  => 'Low-GWP and retrofit-compatible choices help facilities plan
+                            for evolving refrigerant requirements.'
+        ],
+        [
+          'icon'  => 'fa fa-wrench',
+          'title' => 'Nationwide AMC Support',
+          'desc'  => 'Accessible components and trained service teams help reduce
+                            maintenance time and downtime.'
+        ],
+      ];
+      ?>
+
+      <div class="row feature-grid">
+        <?php foreach ($features as $feature): ?>
+          <div class="col-lg-4 col-md-6">
+            <div class="feature-card h-100">
+              <div class="feature-icon">
+                <i class="<?php echo htmlspecialchars($feature['icon']); ?>"></i>
+              </div>
+              <h3 class="feature-title">
+                <?php echo htmlspecialchars($feature['title']); ?>
+              </h3>
+              <p class="feature-desc">
+                <?php echo htmlspecialchars($feature['desc']); ?>
+              </p>
+            </div>
+          </div>
+        <?php endforeach; ?>
+      </div>
+
+    </div>
   </section>
 
-  <section class="fr-section" id="what-is-freon-refrigeration"><div class="fr-wrap fr-overview">
-    <div class="fr-overview__content">
-      <div class="fr-heading"><h2>What is a Freon Refrigeration Unit?</h2></div>
-      <div class="fr-copy"><p>Freon refrigeration systems use synthetic refrigerants such as HFCs and newer HFO alternatives. Their compact equipment can be installed close to working spaces without the dedicated machine room and operating arrangements commonly associated with large ammonia plants.</p><p>Condensing units, monoblocks and compressor racks make these systems practical for cold rooms, walk-in freezers, ripening chambers, supermarkets, HoReCa, pharmaceutical storage and small processing or packing lines.</p></div>
+  <!--SECTION 3 END  -->
+
+  <!-- SECTION 4 START -->
+  <section class="config-section section-padding bg-white" id="configurations">
+    <div class="container">
+
+      <h2 class="section-h2 text-center mb-5">
+        Freon Refrigeration Solutions We Offer
+      </h2>
+
+      <?php
+      // ── Configuration Cards Data Array ──
+      $configurations = [
+        [
+          'number' => '01',
+          'title'  => 'Air-Cooled Condensing Units',
+          'desc'   => 'Compact modules for cold and freezer rooms, built for
+                             quick installation and easy maintenance.'
+        ],
+        [
+          'number' => '02',
+          'title'  => 'Monoblock Refrigeration Units',
+          'desc'   => 'Factory-assembled wall-mounted units that provide
+                             complete cooling for small cold rooms.'
+        ],
+        [
+          'number' => '03',
+          'title'  => 'Compressor Rack Systems',
+          'desc'   => 'Multiple compressors serving several rooms or display
+                             cases with adjustable capacity.'
+        ],
+        [
+          'number' => '04',
+          'title'  => 'Low-Temperature Freezer Systems',
+          'desc'   => 'Selected compressors and refrigerants for frozen
+                             storage and blast-freezing duties.'
+        ],
+      ];
+      ?>
+
+      <div class="row config-grid">
+        <?php foreach ($configurations as $config): ?>
+          <div class="col-lg-6">
+            <div class="config-card ">
+              <span class="config-number">
+                <?php echo htmlspecialchars($config['number']); ?>
+              </span>
+              <div class="config-content">
+                <h3 class="config-title">
+                  <?php echo htmlspecialchars($config['title']); ?>
+                </h3>
+                <p class="config-desc">
+                  <?php echo htmlspecialchars($config['desc']); ?>
+                </p>
+              </div>
+            </div>
+          </div>
+        <?php endforeach; ?>
+      </div>
+
     </div>
-    <div class="fr-overview__media"><img src="assets/images/products/cold-storage.webp" alt="Freon refrigeration unit inside a cold storage room" loading="lazy" width="1200" height="844"></div>
-  </div></section>
+  </section>
 
-  <?php
-  $features = [
-    ['shield','Safe, Simple Refrigerant Handling','Non-flammable refrigerant options and service-friendly equipment support practical installation near work areas.'],
-    ['thermometer-half','Wide Temperature Coverage','Refrigerant and compressor selections cover medium-temperature chillers through low-temperature freezers.'],
-    ['cubes','Compact, Modular Construction','Pre-assembled condensing units and monoblocks reduce site work and speed up commissioning.'],
-    ['sliders','Precise Digital Control','Microprocessor controls, alarms and remote monitoring help maintain the required product temperature.'],
-    ['leaf','Future-Ready Options','Low-GWP and retrofit-compatible choices help facilities plan for evolving refrigerant requirements.'],
-    ['wrench','Nationwide AMC Support','Accessible components and trained service teams help reduce maintenance time and downtime.']
-  ];
-  ?>
-  <section class="fr-section fr-section--pale"><div class="fr-wrap">
-    <div class="fr-heading"><span class="fr-kicker">Features</span><h2>Key Features of Our Freon Refrigeration Units</h2></div>
-    <div class="fr-grid"><?php foreach($features as $f): ?><article class="fr-card"><div class="fr-card__icon"><i class="fa fa-<?php echo $f[0]; ?>"></i></div><h3><?php echo $f[1]; ?></h3><p><?php echo $f[2]; ?></p></article><?php endforeach; ?></div>
-  </div></section>
+  <style>
+    .config-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      width: 100%;
+      height: 100%;
+      background: #ffffff;
+      border-left: 5px solid #0057a8;
+      border-radius: 8px;
+      padding: 28px 24px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+      transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    }
 
-  <?php $configs=[
-    ['snowflake-o','Air-Cooled Condensing Units','Compact modules for cold and freezer rooms, built for quick installation and easy maintenance.'],
-    ['cube','Monoblock Refrigeration Units','Factory-assembled wall-mounted units that provide complete cooling for small cold rooms.'],
-    ['cogs','Compressor Rack Systems','Multiple compressors serving several rooms or display cases with adjustable capacity.'],
-    ['tint','Low-Temperature Freezer Systems','Selected compressors and refrigerants for frozen storage and blast-freezing duties.']
-  ]; ?>
-  <section class="fr-section"><div class="fr-wrap"><div class="fr-heading"><span class="fr-kicker">Configurations</span><h2>Freon Refrigeration Solutions We Offer</h2></div><div class="fr-grid fr-grid--four"><?php foreach($configs as $f): ?><article class="fr-card"><div class="fr-card__icon"><i class="fa fa-<?php echo $f[0]; ?>"></i></div><h3><?php echo $f[1]; ?></h3><p><?php echo $f[2]; ?></p></article><?php endforeach; ?></div></div></section>
+    .config-card:hover {
+      background: var(--ink);
+      border-left-color: var(--ink);
+      box-shadow: 0 14px 30px rgba(15, 36, 66, .18);
+      transform: translateY(-4px);
+    }
 
-  <?php $industries=[
-    ['Cold Rooms & Walk-In Freezers','Dependable chilled and frozen storage for warehouses, kitchens and back-of-house operations.'],
-    ['Fruit & Vegetable Ripening','Accurate temperature and humidity control for banana, mango and other ripening applications.'],
-    ['Supermarkets & HoReCa','Distributed cooling for display cases, preparation areas and storage rooms.'],
-    ['Pharmaceutical Storage','Controlled 2–8°C and ambient rooms for medicines, vaccines and healthcare products.'],
-    ['Food Processing & Packing','Process and storage cooling where loads do not justify a central ammonia plant.'],
-    ['Dairy & Beverage Outlets','Reliable everyday cooling for milk, beverages and other perishables.']
-  ]; ?>
-  <section class="fr-section fr-section--pale"><div class="fr-wrap"><div class="fr-heading"><span class="fr-kicker">Industries</span><h2>Industries Using Freon Refrigeration Units</h2></div><div class="fr-grid"><?php foreach($industries as $i): ?><article class="fr-card"><div class="fr-card__icon"><i class="fa fa-industry"></i></div><h3><?php echo $i[0]; ?></h3><p><?php echo $i[1]; ?></p></article><?php endforeach; ?></div></div></section>
+    .config-number {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--ink);
+      min-width: 54px;
+      line-height: 1;
+      transition: color 0.3s ease;
+    }
 
-  <section class="fr-section" id="freon-refrigeration-delhi-ncr"><div class="fr-wrap"><div class="fr-heading"><span class="fr-kicker">Service Area</span><h2>Freon Refrigeration Units Manufacturer in Delhi NCR</h2><p>We manufacture condensing units, monoblocks and compressor racks for cold-room operators, retailers, pharma storage facilities and food businesses across Delhi NCR and India.</p></div><div class="fr-locations"><?php foreach(['Delhi','Noida','Greater Noida','Gurgaon','Ghaziabad','Faridabad','Pan-India'] as $city): ?><span class="fr-location"><?php echo $city; ?></span><?php endforeach; ?></div><div class="fr-copy"><p>Our refrigeration engineers help select the right refrigerant, capacity and configuration for the room load, target temperature and Indian ambient conditions.</p></div></div></section>
+    .config-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--ink);
+      transition: color 0.3s ease;
+    }
 
-  <?php $why=[
-    ['Right-Sized Selection','Equipment is selected for room size, product load, door opening and actual site conditions.'],
-    ['Built for Indian Summers','High-ambient condenser selection supports reliable operation during demanding summer conditions.'],
-    ['Refrigerant Guidance','We consider performance, availability and phase-down requirements while recommending refrigerants.'],
-    ['Fast Commissioning','Factory-made modular systems reduce installation time and operational disruption.'],
-    ['Pan-India Support','AMC and breakdown support helps multi-site customers reduce avoidable downtime.']
-  ]; ?>
-  <section class="fr-section fr-section--navy"><div class="fr-wrap"><div class="fr-heading"><span class="fr-kicker">Why Choose Us</span><h2>Why Businesses Choose Singhania Refrigeration</h2><p>Every Freon system is engineered around the application instead of selected from a generic capacity table.</p></div><div class="fr-grid"><?php foreach($why as $w): ?><article class="fr-card"><h3><?php echo $w[0]; ?></h3><p><?php echo $w[1]; ?></p></article><?php endforeach; ?></div></div></section>
+    .config-desc {
+      font-size: 0.95rem;
+      color: #555;
+      margin: 0;
+      line-height: 1.7;
+      transition: color 0.3s ease;
+    }
 
-  <?php $faqs=[
-    ['What refrigerants do your Freon units use?','Depending on the duty and temperature band, systems may use R134a, R404A, R407C or newer low-GWP HFC/HFO alternatives. We recommend the option suited to the application and operating conditions.'],
-    ['When should I choose Freon instead of ammonia?','Freon systems suit low-to-medium capacity cold rooms, retail storage, ripening chambers and smaller processing units where a dedicated ammonia machine room and trained operators are not justified.'],
-    ['Are Freon refrigerants being banned in India?','Refrigerant regulations are evolving through phased reductions. We help customers select currently suitable, lower-GWP options with long-term serviceability in mind.'],
-    ['What temperatures can a Freon system reach?','Freon systems cover medium-temperature chilled applications and low-temperature frozen storage. Final performance depends on refrigerant, compressor, insulation, load and ambient conditions.'],
-    ['How much maintenance does a Freon unit need?','Regular maintenance includes condenser cleaning, leak and refrigerant checks, and electrical and control inspection. Standard refrigeration technicians can handle this under an AMC.'],
-    ['Do you provide AMC support for Freon systems?','Yes. We provide AMC and breakdown support with trained technicians and access to compressors, controls and refrigeration components.']
-  ]; ?>
-  <section class="fr-section fr-section--pale" id="freon-refrigeration-faqs"><div class="fr-wrap"><div class="fr-heading"><span class="fr-kicker">FAQs</span><h2>Frequently Asked Questions</h2></div><div class="fr-faq"><?php foreach($faqs as $faq): ?><details><summary><?php echo $faq[0]; ?></summary><p><?php echo $faq[1]; ?></p></details><?php endforeach; ?></div></div></section>
+    .config-card:hover .config-number,
+    .config-card:hover .config-title,
+    .config-card:hover .config-desc {
+      color: #ffffff;
+    }
 
-  <section class="fr-section"><div class="fr-wrap"><div class="fr-heading"><span class="fr-kicker">Explore More</span><h2>Related Refrigeration Solutions</h2></div><div class="fr-related"><a href="ammonia-refrigeration-units-manufacturer-in-india">Ammonia Units</a><a href="compressor-rack-system-manufacturer-in-india">Compressor Racks</a><a href="cold-storage-refrigeration-units-manufacturer-in-india">Cold Storage Units</a><a href="puf-panels-manufacturer-in-india">PUF Panels</a><a href="truck-ac-installation-india">Truck AC</a></div></div></section>
+    .config-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-auto-rows: 1fr;
+      row-gap: var(--content-gap);
+    }
 
-  <section class="fr-section fr-section--navy"><div class="fr-wrap fr-cta"><span class="fr-kicker">Get Started</span><h2>Plan a Freon Refrigeration System With Us</h2><p>For a new cold room, retail refrigeration upgrade or replacement system, our experts will size a solution around your temperature, performance and budget.</p><div class="fr-actions" style="justify-content:center"><a class="btn-brand" href="contact">Get a Free Quote&nbsp; </a><a class="btn-brand  " href="tel:+919718097170"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp; Call Now</a></div></div></section>
-</main>
-<?php include('footer.php'); ?>
+    .config-grid>[class*="col-"] {
+      display: flex;
+      width: auto;
+      max-width: none;
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 991px) {
+      .config-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 767px) {
+      .config-section .section-h2 {
+        margin-bottom: 24px !important;
+      }
+
+      .config-grid {
+        row-gap: 20px;
+      }
+
+      .config-card {
+        gap: 14px;
+        padding: 24px 18px;
+      }
+
+      .config-number {
+        min-width: 44px;
+        font-size: 1.55rem;
+      }
+
+      .config-title {
+        font-size: 1rem;
+        line-height: 1.35;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .config-card {
+        display: block;
+      }
+
+      .config-number {
+        display: inline-block;
+        margin-bottom: 12px;
+      }
+    }
+  </style>
+  <!-- SECTION-4 end -->
+
+  <!-- SECTION 5 START -->
+  <section class="industries-section section-padding" id="industries">
+    <div class="container">
+
+      <h2 class="section-h2 text-center  mb-5">
+        Industries Using Freon Refrigeration Units
+      </h2>
+
+      <?php
+      // ── Industries Data Array ──
+      $industries = [
+        [
+          'icon'  => 'fa fa-snowflake-o',
+          'title' => 'Cold Rooms & Walk-In Freezers',
+          'desc'  => 'Dependable chilled and frozen storage for warehouses,
+                            kitchens and back-of-house operations.'
+        ],
+        [
+          'icon'  => 'fa fa-leaf',
+          'title' => 'Fruit & Vegetable Ripening',
+          'desc'  => 'Accurate temperature and humidity control for banana,
+                            mango and other ripening applications.'
+        ],
+        [
+          'icon'  => 'fa fa-shopping-basket',
+          'title' => 'Supermarkets & HoReCa',
+          'desc'  => 'Distributed cooling for display cases, preparation
+                            areas and storage rooms.'
+        ],
+        [
+          'icon'  => 'fa fa-medkit',
+          'title' => 'Pharmaceutical Storage',
+          'desc'  => 'Controlled 2–8°C and ambient rooms for medicines,
+                            vaccines and healthcare products.'
+        ],
+        [
+          'icon'  => 'fa fa-industry',
+          'title' => 'Food Processing & Packing',
+          'desc'  => 'Process and storage cooling where loads do not justify
+                            a central ammonia plant.'
+        ],
+        [
+          'icon'  => 'fa fa-tint',
+          'title' => 'Dairy & Beverage Outlets',
+          'desc'  => 'Reliable everyday cooling for milk, beverages and
+                            other perishables.'
+        ],
+      ];
+      ?>
+
+      <div class="row industry-grid">
+        <?php foreach ($industries as $industry): ?>
+          <div class="col-lg-4 col-md-6">
+            <div class="industry-card h-100">
+              <i class="<?php echo htmlspecialchars($industry['icon']); ?>
+                               industry-icon"></i>
+              <h3 class="industry-title">
+                <?php echo htmlspecialchars($industry['title']); ?>
+              </h3>
+              <p class="industry-desc">
+                <?php echo htmlspecialchars($industry['desc']); ?>
+              </p>
+            </div>
+          </div>
+        <?php endforeach; ?>
+      </div>
+
+    </div>
+  </section>
+
+  <style>
+    /* ── INDUSTRIES SECTION ── */
+    .industries-section {
+      background: #f6f9fc;
+    }
+
+    .industry-grid>[class*="col-"] {
+      margin-bottom: var(--card-gap);
+    }
+
+    .industry-grid>[class*="col-"]:nth-last-child(-n + 3) {
+      margin-bottom: 0;
+    }
+
+    .industry-card {
+      background: #ffffff;
+      border: 1px solid #e8e8e8;
+      border-radius: 10px;
+      padding: 32px 24px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .industry-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .industry-icon {
+      font-size: 2.5rem;
+      color: var(--ink);
+      display: block;
+      margin-bottom: 16px;
+    }
+
+    .industry-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 10px;
+    }
+
+    .industry-desc {
+      font-size: 0.92rem;
+      color: black;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    @media (max-width: 991px) {
+      .industry-grid>[class*="col-"]:nth-last-child(-n + 3) {
+        margin-bottom: var(--card-gap);
+      }
+
+      .industry-grid>[class*="col-"]:nth-last-child(-n + 2) {
+        margin-bottom: 0;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .industries-section .section-h2 {
+        margin-bottom: 24px !important;
+      }
+
+      .industry-grid>[class*="col-"],
+      .industry-grid>[class*="col-"]:nth-last-child(-n + 2),
+      .industry-grid>[class*="col-"]:nth-last-child(-n + 3) {
+        margin-bottom: 20px;
+      }
+
+      .industry-grid>[class*="col-"]:last-child {
+        margin-bottom: 0;
+      }
+
+      .industry-card {
+        padding: 26px 18px;
+      }
+
+      .industry-icon {
+        font-size: 2rem;
+        margin-bottom: 12px;
+      }
+
+      .industry-title {
+        font-size: 1rem;
+        line-height: 1.35;
+      }
+    }
+  </style>
+  <!-- SECTION-5 end -->
+
+  <!-- section-6 start -->
+
+  <section class="local-seo-section section-padding bg-white " id="freon-refrigeration-delhi-ncr">
+    <div class="container">
+      <div class="row align-items-center local-seo-grid">
+
+        <div class="col-lg-6 local-seo-content">
+          <h2 class="section-h2">
+            Freon Refrigeration Units Manufacturer in Delhi NCR
+          </h2>
+          <p>
+            We manufacture condensing units, monoblocks and compressor racks for
+            cold-room operators, retailers, pharma storage facilities and food
+            businesses across Delhi NCR and India.
+          </p>
+          <p>
+            Our refrigeration engineers help select the right refrigerant, capacity
+            and configuration for the room load, target temperature and Indian
+            ambient conditions.
+          </p>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="city-list-wrapper">
+            <div class="service-map-wrap">
+              <div class="service-list">
+                <h3>SERVICE AREAS</h3>
+
+                <div class="area-item active" data-area="delhi">📍 Delhi</div>
+                <div class="area-item" data-area="noida">📍 Noida</div>
+                <div class="area-item" data-area="greater-noida">📍 Greater Noida</div>
+                <div class="area-item" data-area="gurgaon">📍 Gurgaon</div>
+                <div class="area-item" data-area="ghaziabad">📍 Ghaziabad</div>
+                <div class="area-item" data-area="faridabad">📍 Faridabad</div>
+              </div>
+
+              <div id="serviceMap"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .service-map-wrap {
+      display: grid;
+      grid-template-columns: minmax(190px, .8fr) minmax(0, 1.2fr);
+      gap: 16px;
+      padding: 16px;
+      background: #eef3f8;
+      border: 1px solid rgba(6, 38, 74, .06);
+      border-radius: 18px;
+    }
+
+    .service-list {
+      padding: 22px 18px;
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 8px 24px rgba(6, 38, 74, .08);
+    }
+
+    .service-list h3 {
+      margin: 0 0 18px;
+      color: #06264a;
+      font-size: clamp(1.25rem, 2vw, 1.65rem);
+      line-height: 1.2;
+      font-weight: 700;
+    }
+
+    .area-item {
+      padding: 13px 10px;
+      border-bottom: 1px solid #e8edf3;
+      border-radius: 8px;
+      color: #06264a;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color .2s ease, color .2s ease, transform .2s ease;
+    }
+
+    .area-item:hover {
+      background: #f1f6fc;
+      transform: translateX(2px);
+    }
+
+    .area-item.active {
+      background: #e3efff;
+      color: #1268d7;
+    }
+
+    .area-item:last-child {
+      border-bottom: 0;
+    }
+
+    #serviceMap {
+      width: 100%;
+      min-width: 0;
+      height: 440px;
+      border-radius: 14px;
+      box-shadow: 0 8px 24px rgba(6, 38, 74, .08);
+      overflow: hidden;
+    }
+
+    /* ── LOCAL SEO / CITY LIST ── */
+    .local-seo-section {
+      background: #f6f9fc;
+    }
+
+    .city-list-wrapper {
+      width: 100%;
+    }
+
+    .local-seo-content {
+      padding-right: clamp(20px, 3vw, 42px);
+    }
+
+    .local-seo-section p {
+      color: #2c3e68;
+      font-size: clamp(15px, 1.6vw, 17px);
+      line-height: 1.75;
+      margin: 0 0 16px;
+      text-align: justify;
+    }
+
+    .local-seo-grid>[class*="col-"] {
+      margin-bottom: var(--content-gap);
+    }
+
+    .local-seo-grid>[class*="col-"]:last-child {
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 991px) {
+      .local-seo-content {
+        padding-right: 15px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .service-map-wrap {
+        grid-template-columns: 1fr;
+        padding: 12px;
+      }
+
+      #serviceMap {
+        height: 330px;
+      }
+
+      .local-seo-section .section-h2 {
+        margin-bottom: 20px !important;
+      }
+
+      .city-list-wrapper {
+        padding: 0;
+      }
+
+    }
+  </style>
+  <!-- section-6 end -->
+
+  <!-- Section-7 Start -->
+  <section class="why-choose-section section-padding" id="why-choose-us">
+    <div class="container">
+
+      <h2 class="section-h2 text-center mb-5">
+        Why Businesses Choose Singhania Refrigeration
+      </h2>
+
+      <?php
+      // ── Why Choose Us Cards Data ──
+      $reasons = [
+        [
+          'icon'  => 'fa fa-sliders',
+          'title' => 'Right-Sized Selection',
+          'desc'  => 'Equipment is selected for room size, product load, door
+                            opening and actual site conditions.'
+        ],
+        [
+          'icon'  => 'fa fa-sun-o',
+          'title' => 'Built for Indian Summers',
+          'desc'  => 'High-ambient condenser selection supports reliable
+                            operation during demanding summer conditions.'
+        ],
+        [
+          'icon'  => 'fa fa-flask',
+          'title' => 'Refrigerant Guidance',
+          'desc'  => 'We consider performance, availability and phase-down
+                            requirements while recommending refrigerants.'
+        ],
+        [
+          'icon'  => 'fa fa-clock-o',
+          'title' => 'Fast Commissioning',
+          'desc'  => 'Factory-made modular systems reduce installation time
+                            and operational disruption.'
+        ],
+        [
+          'icon'  => 'fa fa-map-marker',
+          'title' => 'Pan-India Support',
+          'desc'  => 'AMC and breakdown support helps multi-site customers
+                            reduce avoidable downtime.'
+        ],
+      ];
+      ?>
+
+      <div class="row why-grid justify-content-center">
+        <?php foreach ($reasons as $reason): ?>
+          <div class="col-lg-4 col-md-6">
+            <div class="why-card h-100">
+              <i class="<?php echo htmlspecialchars($reason['icon']); ?>
+                               why-icon"></i>
+              <h3 class="why-title">
+                <?php echo htmlspecialchars($reason['title']); ?>
+              </h3>
+              <p class="why-desc">
+                <?php echo htmlspecialchars($reason['desc']); ?>
+              </p>
+            </div>
+          </div>
+        <?php endforeach; ?>
+      </div>
+
+    </div>
+  </section>
+
+  <style>
+    .why-choose-section {
+      background: #f6f9fc;
+    }
+
+    .why-grid {
+      justify-content: center;
+    }
+
+    .why-grid>[class*="col-"] {
+      margin-bottom: var(--card-gap);
+    }
+
+    .why-grid>[class*="col-"]:nth-last-child(-n + 2) {
+      margin-bottom: 0;
+    }
+
+    .why-card {
+      background: #ffffff;
+      border: 1px solid #dce8f8;
+      border-radius: 10px;
+      padding: 34px 26px;
+      text-align: center;
+      box-shadow: 0 10px 26px rgba(16, 28, 52, 0.07);
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+
+    .why-card:hover {
+      box-shadow: 0 10px 28px rgba(0, 87, 168, 0.12);
+      transform: translateY(-4px);
+    }
+
+    .why-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: #eef6ff;
+      font-size: 2rem;
+      color: var(--ink);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+    }
+
+    .why-title {
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.35;
+      margin: 0 0 10px;
+    }
+
+    .why-desc {
+      font-size: 0.93rem;
+      color: #555;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    @media (max-width: 991px) {
+      .why-grid>[class*="col-"]:nth-last-child(-n + 2) {
+        margin-bottom: var(--card-gap);
+      }
+
+      .why-grid>[class*="col-"]:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .why-choose-section .section-h2 {
+        margin-bottom: 24px !important;
+      }
+
+      .why-grid>[class*="col-"],
+      .why-grid>[class*="col-"]:nth-last-child(-n + 2) {
+        margin-bottom: 20px;
+      }
+
+      .why-grid>[class*="col-"]:last-child {
+        margin-bottom: 0;
+      }
+
+      .why-card {
+        padding: 28px 18px;
+      }
+
+      .why-icon {
+        width: 58px;
+        height: 58px;
+        font-size: 1.8rem;
+        margin-bottom: 14px;
+      }
+
+      .why-title {
+        font-size: 1rem;
+        line-height: 1.35;
+      }
+    }
+  </style>
+  <!-- Section-7 END -->
+
+  <!--Section-8  -->
+  <section class="faq-section section-padding bg-white" id="freon-refrigeration-faqs">
+    <div class="container">
+
+      <h2 class="section-h2 text-center mb-5">
+        Frequently Asked Questions
+      </h2>
+
+      <?php
+
+      $faqs = [
+        [
+          'q' => 'What refrigerants do your Freon units use?',
+          'a' => 'Depending on the duty and temperature band, systems may use
+                        R134a, R404A, R407C or newer low-GWP HFC/HFO alternatives. We
+                        recommend the option suited to the application and operating
+                        conditions.'
+        ],
+        [
+          'q' => 'When should I choose Freon instead of ammonia?',
+          'a' => 'Freon systems suit low-to-medium capacity cold rooms, retail
+                        storage, ripening chambers and smaller processing units where a
+                        dedicated ammonia machine room and trained operators are not
+                        justified.'
+        ],
+        [
+          'q' => 'Are Freon refrigerants being banned in India?',
+          'a' => 'Refrigerant regulations are evolving through phased reductions.
+                        We help customers select currently suitable, lower-GWP options
+                        with long-term serviceability in mind.'
+        ],
+        [
+          'q' => 'What temperatures can a Freon system reach?',
+          'a' => 'Freon systems cover medium-temperature chilled applications and
+                        low-temperature frozen storage. Final performance depends on
+                        refrigerant, compressor, insulation, load and ambient conditions.'
+        ],
+        [
+          'q' => 'How much maintenance does a Freon unit need?',
+          'a' => 'Regular maintenance includes condenser cleaning, leak and
+                        refrigerant checks, and electrical and control inspection.
+                        Standard refrigeration technicians can handle this under an AMC.'
+        ],
+        [
+          'q' => 'Do you provide AMC support for Freon systems?',
+          'a' => 'Yes. We provide AMC and breakdown support with trained
+                        technicians and access to compressors, controls and refrigeration
+                        components.'
+        ],
+      ];
+      ?>
+
+      <div class="accordion faq-accordion" id="faqAccordion">
+        <?php foreach ($faqs as $index => $faq):
+          $itemId    = 'faq-item-' . $index;
+          $collapseId = 'faq-collapse-' . $index;
+          $isFirst   = ($index === 0);
+        ?>
+          <div class="accordion-item faq-accordion-item" id="<?php echo $itemId; ?>">
+            <h3 class="accordion-header">
+              <button class="accordion-button <?php echo $isFirst ? '' : 'collapsed'; ?>"
+                type="button"
+                data-toggle="collapse"
+                data-target="#<?php echo $collapseId; ?>"
+                aria-expanded="<?php echo $isFirst ? 'true' : 'false'; ?>"
+                aria-controls="<?php echo $collapseId; ?>">
+                <?php echo htmlspecialchars($faq['q']); ?>
+              </button>
+            </h3>
+            <div id="<?php echo $collapseId; ?>"
+              class="accordion-collapse collapse <?php echo $isFirst ? 'show' : ''; ?>"
+              data-parent="#faqAccordion">
+              <div class="accordion-body faq-answer">
+                <?php echo htmlspecialchars($faq['a']); ?>
+              </div>
+            </div>
+          </div>
+        <?php endforeach; ?>
+      </div>
+
+    </div>
+  </section>
+  <style>
+    /* ── FAQ ACCORDION ── */
+    .faq-accordion {
+      max-width: 920px;
+      margin: 0 auto;
+    }
+
+    .faq-accordion-item {
+      border: 1px solid #dde6f0;
+      border-radius: 10px !important;
+      margin-bottom: 14px;
+      overflow: hidden;
+      background: #ffffff;
+      box-shadow: 0 10px 26px rgba(16, 28, 52, 0.06);
+    }
+
+    .faq-accordion-item .accordion-button {
+      position: relative;
+      width: 100%;
+      border: 0;
+      padding: 20px 56px 20px 22px;
+      text-align: left;
+      font-weight: 600;
+      font-size: 1rem;
+      line-height: 1.45;
+      color: var(--ink);
+      background: #ffffff;
+      cursor: pointer;
+      transition: color .2s ease, background .2s ease;
+    }
+
+    .faq-accordion-item .accordion-button:focus {
+      outline: none;
+      box-shadow: inset 0 0 0 2px rgba(0, 87, 168, .16);
+    }
+
+    .faq-accordion-item .accordion-button::after {
+      content: "+";
+      position: absolute;
+      right: 22px;
+      top: 50%;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #eef6ff;
+      color: var(--ink);
+      font-size: 20px;
+      line-height: 28px;
+      text-align: center;
+      transform: translateY(-50%);
+      transition: background .2s ease, color .2s ease;
+    }
+
+    .faq-accordion-item .accordion-button:not(.collapsed) {
+      color: var(--ink);
+      background: #eef4fb;
+      box-shadow: none;
+    }
+
+    .faq-accordion-item .accordion-button:not(.collapsed)::after {
+      content: "-";
+      background: #0057a8;
+      color: #ffffff;
+    }
+
+    .faq-answer {
+      font-size: 0.95rem;
+      color: #444;
+      line-height: 1.75;
+      background: #ffffff;
+      padding: 0 22px 22px;
+    }
+
+    @media (max-width: 767px) {
+      .faq-section .section-h2 {
+        margin-bottom: 24px !important;
+      }
+
+      .faq-accordion-item {
+        margin-bottom: 12px;
+        border-radius: 8px !important;
+      }
+
+      .faq-accordion-item .accordion-button {
+        padding: 17px 48px 17px 16px;
+        font-size: .98rem;
+      }
+
+      .faq-accordion-item .accordion-button::after {
+        right: 16px;
+        width: 26px;
+        height: 26px;
+        line-height: 26px;
+        font-size: 18px;
+      }
+
+      .faq-answer {
+        padding: 0 16px 18px;
+        font-size: .94rem;
+        line-height: 1.7;
+      }
+    }
+  </style>
+  <!-- section 8 End -->
+
+  <!-- Section-9 -->
+
+  <div class="rs-cta bg21 pt-90 pb-100 md-pt-68 md-pb-80">
+    <div class="container">
+      <div class="sec-title text-center truck-body-cta">
+        <span class="sub-title modify white">Get Started</span>
+        <h2 class="title3 white-color">Plan a Freon Refrigeration System With Us</h2>
+
+        <p class="cta-description">
+          For a new cold room, retail refrigeration upgrade or replacement system,
+          our experts will size a solution around your temperature, performance
+          and budget.
+        </p>
+
+        <div class="btn-part">
+          <a class="readon banner-style" href="contact">Request a Quote &rarr;</a>
+        </div>
+
+        <p class="cta-phone-numbers">
+          Call: <a href="tel:+919971060822"><strong>+91 99710 60822</strong></a>
+          <span aria-hidden="true">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+          Call: <a href="tel:+919718097170"><strong>+91 97180 97170</strong></a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .truck-body-cta .cta-description {
+      max-width: 760px;
+      margin: 16px auto 24px;
+      color: #fff;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .truck-body-cta .cta-phone-numbers {
+      margin: 20px 0 0;
+      color: #fff;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .truck-body-cta .cta-phone-numbers a {
+      color: #fff;
+    }
+
+    .truck-body-cta .cta-phone-numbers a:hover {
+      text-decoration: underline;
+    }
+  </style>
+
+  <!-- Section-9 end -->
+
+  <!-- section 10 -->
+  <section class="related-section section-padding" id="related-products" style=" background: #f6f9fc;">
+    <div class="container">
+
+      <h3 class="section-h3 text-center mb-5">
+        Related Solutions
+      </h3>
+
+      <?php
+      // ── Related Products Data ──
+
+      $related_products = [
+        ['title' => 'Truck AC', 'icon' => 'fa fa-truck', 'url' => 'truck-ac.php'],
+        ['title' => 'Truck Refrigerator Container', 'icon' => 'fa fa-cube', 'url' => 'truck-refrigerator-container.php'],
+        ['title' => 'Cold Storage Refrigeration Units', 'icon' => 'fa fa-snowflake-o', 'url' => 'cold-storage-refrigeration-units.php'],
+        ['title' => 'Compressor Rack System', 'icon' => 'fa fa-cogs', 'url' => 'compressor-rack-system.php'],
+        ['title' => 'Ammonia Refrigeration Units', 'icon' => 'fa fa-industry', 'url' => 'ammonia-refrigeration-units.php'],
+        ['title' => 'Ripening Systems', 'icon' => 'fa fa-leaf', 'url' => 'ripening-systems.php'],
+        ['title' => 'Multideck Cabinet', 'icon' => 'fa fa-th-large', 'url' => 'multideck-cabinet.php'],
+        ['title' => 'IQF (Individual Quick Freeze)', 'icon' => 'fa fa-asterisk', 'url' => 'iqf.php'],
+        ['title' => 'Doors & CA Doors', 'icon' => 'fa fa-sign-in', 'url' => 'doors-ca-doors.php'],
+        ['title' => 'PUF Panels', 'icon' => 'fa fa-columns', 'url' => 'panels.php'],
+        ['title' => 'Dock Shelter & Dock Leveler', 'icon' => 'fa fa-building', 'url' => 'dock-shelter-dock-leveler.php'],
+        ['title' => 'Heavy Duty Racks', 'icon' => 'fa fa-archive', 'url' => 'heavy-duty-racks.php'],
+      ];
+      ?>
+
+      <div class="row related-grid justify-content-center">
+        <?php foreach ($related_products as $index => $product):
+          $isActiveProduct = basename($product['url']) === basename($_SERVER['SCRIPT_NAME'] ?? 'freon-refrigeration-units.php');
+        ?>
+          <div class="col-lg-3 col-md-4 col-sm-6" data-animate>
+            <a href="<?php echo htmlspecialchars(publicPageUrl($product['url'])); ?>"
+              class="related-card text-decoration-none <?php echo $isActiveProduct ? 'active' : ''; ?>">
+              <span class="related-number"><?php echo str_pad((string)($index + 1), 2, '0', STR_PAD_LEFT); ?></span>
+              <i class="<?php echo htmlspecialchars($product['icon']); ?>
+                               related-icon"></i>
+              <span class="related-title">
+                <?php echo htmlspecialchars($product['title']); ?>
+              </span>
+              <i class="fa fa-arrow-right related-arrow"></i>
+            </a>
+          </div>
+        <?php endforeach; ?>
+      </div>
+
+    </div>
+  </section>
+
+
+  <style>
+    /* ── RELATED PRODUCTS ── */
+    .related-grid>[class*="col-"] {
+      margin-bottom: 20px;
+    }
+
+    .related-grid>[class*="col-"]:nth-last-child(-n + 4) {
+      margin-bottom: 0;
+    }
+
+    .related-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      text-align: left;
+      background: #ffffff;
+      border: 1px solid #dde6f0;
+      border-radius: 12px;
+      padding: 32px 24px;
+      transition: all 0.3s ease;
+      height: 100%;
+      min-height: 190px;
+      overflow: hidden;
+    }
+
+    .related-card:hover,
+    .related-card.active {
+      background: var(--ink);
+      border-color: var(--ink);
+      transform: translateY(-4px);
+      box-shadow: 0 14px 30px rgba(15, 36, 66, .18);
+    }
+
+    .related-number {
+      position: absolute;
+      top: 18px;
+      right: 22px;
+      color: rgba(15, 36, 66, .08);
+      font-size: 46px;
+      font-weight: 800;
+      line-height: 1;
+      transition: color .3s ease;
+    }
+
+    .related-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 12px;
+      background: #eef6ff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      color: var(--ink);
+      margin-bottom: 20px;
+      transition: color 0.3s, background 0.3s;
+    }
+
+    .related-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.35;
+      margin-bottom: 16px;
+      transition: color 0.3s;
+    }
+
+    .related-arrow {
+      font-size: 0.8rem;
+      color: var(--ink);
+      transition: color 0.3s;
+    }
+
+    .related-card:hover .related-number,
+    .related-card.active .related-number {
+      color: rgba(255, 255, 255, .16);
+    }
+
+    .related-card:hover .related-icon,
+    .related-card.active .related-icon {
+      color: #ffffff;
+      background: rgba(255, 255, 255, .16);
+    }
+
+    .related-card:hover .related-title,
+    .related-card:hover .related-arrow,
+    .related-card.active .related-title,
+    .related-card.active .related-arrow {
+      color: #ffffff;
+    }
+
+    @media (max-width: 991px) {
+      .related-grid>[class*="col-"]:nth-last-child(-n + 4) {
+        margin-bottom: 20px;
+      }
+
+      .related-grid>[class*="col-"]:nth-last-child(-n + 3) {
+        margin-bottom: 0;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .related-section .section-h3 {
+        margin-bottom: 24px !important;
+      }
+
+      .related-grid>[class*="col-"],
+      .related-grid>[class*="col-"]:nth-last-child(-n + 3) {
+        margin-bottom: 16px;
+      }
+
+      .related-grid>[class*="col-"]:last-child {
+        margin-bottom: 0;
+      }
+
+      .related-card {
+        min-height: 170px;
+        padding: 28px 20px;
+      }
+
+      .related-number {
+        font-size: 40px;
+        top: 16px;
+        right: 18px;
+      }
+
+      .related-icon {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 16px;
+      }
+
+      .related-title {
+        font-size: .96rem;
+      }
+    }
+  </style>
+  <!-- section 10 end -->
+
+  <?php include('footer.php'); ?>
+
+  <!-- Reveal-on-scroll -->
+  <script>
+    (function() {
+      const els = document.querySelectorAll('[data-animate]');
+      if (!('IntersectionObserver' in window)) {
+        els.forEach(el => el.classList.add('active'));
+        return;
+      }
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('active');
+            io.unobserve(e.target);
+          }
+        });
+      }, {
+        threshold: .18
+      });
+      els.forEach(el => io.observe(el));
+    })();
+  </script>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+  <script>
+    const map = L.map('serviceMap').setView([28.6139, 77.2090], 10);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: ''
+    }).addTo(map);
+
+    const areas = {
+      delhi: {
+        name: "Delhi",
+        coords: [28.6139, 77.2090],
+        color: "#1f78ff"
+      },
+      noida: {
+        name: "Noida",
+        coords: [28.5355, 77.3910],
+        color: "#22aa55"
+      },
+      "greater-noida": {
+        name: "Greater Noida",
+        coords: [28.4744, 77.5040],
+        color: "#9b51e0"
+      },
+      gurgaon: {
+        name: "Gurgaon",
+        coords: [28.4595, 77.0266],
+        color: "#ff7a1a"
+      },
+      ghaziabad: {
+        name: "Ghaziabad",
+        coords: [28.6692, 77.4538],
+        color: "#e63946"
+      },
+      faridabad: {
+        name: "Faridabad",
+        coords: [28.4089, 77.3178],
+        color: "#27c2c7"
+      }
+    };
+
+    let markers = {};
+    let circles = {};
+
+    Object.keys(areas).forEach(key => {
+      const area = areas[key];
+
+      circles[key] = L.circle(area.coords, {
+        radius: 9000,
+        color: area.color,
+        fillColor: area.color,
+        fillOpacity: 0.15,
+        weight: 2
+      }).addTo(map);
+
+      markers[key] = L.marker(area.coords)
+        .addTo(map)
+        .bindPopup(`<b>${area.name}</b><br>Our services are available across ${area.name}.`);
+    });
+
+    function highlightArea(key) {
+      Object.keys(circles).forEach(k => {
+        circles[k].setStyle({
+          fillOpacity: 0.08,
+          weight: 1
+        });
+      });
+
+      circles[key].setStyle({
+        fillOpacity: 0.35,
+        weight: 4
+      });
+
+      map.setView(areas[key].coords, 11);
+      markers[key].openPopup();
+
+      document.querySelectorAll('.area-item').forEach(item => {
+        item.classList.remove('active');
+      });
+
+      document.querySelector(`[data-area="${key}"]`).classList.add('active');
+    }
+
+    document.querySelectorAll('.area-item').forEach(item => {
+      item.addEventListener('click', function() {
+        highlightArea(this.dataset.area);
+      });
+    });
+
+    highlightArea('delhi');
+  </script>
 </body>
+
 </html>

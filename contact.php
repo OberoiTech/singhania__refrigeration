@@ -1,6 +1,7 @@
 <?php
 session_start();
 include('admin/config.php');  // DB connection
+require_once __DIR__ . '/enquiry-helper.php';
 
 // ------------------------------------------------------
 // 1) Fetch configuration (mobile, email, address, map)
@@ -23,6 +24,21 @@ $mailSubject = rawurlencode('Website enquiry from Singhania Refrigeration');
 $mailHref = 'mailto:' . rawurlencode($email) . '?subject=' . $mailSubject;
 
 // ------------------------------------------------------
+// 1b) Which page sent the visitor here (for the admin enquiry list).
+//     Falls back to "/contact" when there's no on-site referrer, e.g. a
+//     direct visit or a search-engine click.
+// ------------------------------------------------------
+$sourcePagePath = '/contact';
+if (!empty($_SERVER['HTTP_REFERER'])) {
+    $refParts = parse_url($_SERVER['HTTP_REFERER']);
+    $refHost  = $refParts['host'] ?? '';
+    $curHost  = $_SERVER['HTTP_HOST'] ?? '';
+    if ($refHost !== '' && $curHost !== '' && strcasecmp($refHost, $curHost) === 0 && !empty($refParts['path'])) {
+        $sourcePagePath = $refParts['path'];
+    }
+}
+
+// ------------------------------------------------------
 // 2) Handle contact form (insert into enquiry table)
 // ------------------------------------------------------
 error_reporting(E_ALL);
@@ -37,6 +53,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $emailId = trim($_POST['email'] ?? '');
     $mobileNo= trim($_POST['phone'] ?? '');
     $message = trim($_POST['message'] ?? '');
+    $sourcePage = trim((string)($_POST['source_page'] ?? '')) ?: $sourcePagePath;
+    $sourcePage = mb_substr(preg_replace('/[\r\n]+/', ' ', $sourcePage), 0, 190);
 
     // fields removed from form – keep empty
     $company  = '';
@@ -44,33 +62,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($name && $emailId && $mobileNo && $message) {
 
-        $sql = "INSERT INTO enquiry (name, email, phone, company, location, message, created_at)
-                VALUES (?, ?, ?, ?, ?, ?, NOW())";
+        $saved = sr_insert_enquiry($conn, [
+            'name' => $name,
+            'email' => $emailId,
+            'phone' => $mobileNo,
+            'company' => $company,
+            'location' => $location,
+            'source_page' => $sourcePage,
+            'message' => $message,
+        ]);
 
-        if ($stmt = mysqli_prepare($conn, $sql)) {
-            mysqli_stmt_bind_param(
-                $stmt,
-                "ssssss",
-                $name,
-                $emailId,
-                $mobileNo,
-                $company,
-                $location,
-                $message
-            );
-
-            if (mysqli_stmt_execute($stmt)) {
-                $alertClass = 'alert-success';
-                $alertMsg   = 'Thank you! Your enquiry has been submitted.';
-            } else {
-                $alertClass = 'alert-danger';
-                $alertMsg   = 'Database error: ' . mysqli_stmt_error($stmt);
-            }
-
-            mysqli_stmt_close($stmt);
+        if ($saved) {
+            $alertClass = 'alert-success';
+            $alertMsg   = 'Thank you! Your enquiry has been submitted.';
         } else {
             $alertClass = 'alert-danger';
-            $alertMsg   = 'Query prepare failed: ' . mysqli_error($conn);
+            $alertMsg   = 'Database error: ' . mysqli_error($conn);
         }
     } else {
         $alertClass = 'alert-danger';
@@ -324,6 +331,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
 
                 <form method="post" action="#">
+                  <input type="hidden" name="source_page" value="<?php echo htmlspecialchars($sourcePagePath, ENT_QUOTES, 'UTF-8'); ?>">
                   <div class="mb-2">
                     <input type="text" name="name" placeholder="Full Name" required>
                   </div>

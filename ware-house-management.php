@@ -923,6 +923,30 @@
       .insight-grid {
         grid-template-columns: 1fr;
       }
+
+      .industries-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .why-singhania-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .industries-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .industry-card {
+        min-height: auto;
+      }
+
+      .singhania-card {
+        grid-template-columns: 48px minmax(0, 1fr);
+        gap: 14px;
+      }
     }
 
     @media (max-width: 575px) {

@@ -39,20 +39,22 @@ $configPath = __DIR__ . '/admin/config.php';
 if (is_file($configPath)) {
     include $configPath;
     if (isset($conn) && $conn instanceof mysqli) {
+        require_once __DIR__ . '/enquiry-helper.php';
+
         $cfg = mysqli_query($conn, 'SELECT email FROM configuration LIMIT 1');
         if ($cfg && ($row = mysqli_fetch_assoc($cfg)) && !empty($row['email']) && filter_var($row['email'], FILTER_VALIDATE_EMAIL)) {
             $to = $row['email'];
         }
 
-        $sql = 'INSERT INTO enquiry (name, email, phone, company, location, message, created_at)
-                VALUES (?, ?, ?, ?, ?, ?, NOW())';
-        if ($stmt = mysqli_prepare($conn, $sql)) {
-            $company = '';
-            $location = 'Truck AC page';
-            mysqli_stmt_bind_param($stmt, 'ssssss', $safeName, $safeEmail, $safePhone, $company, $location, $safeMessage);
-            mysqli_stmt_execute($stmt);
-            mysqli_stmt_close($stmt);
-        }
+        sr_insert_enquiry($conn, [
+            'name' => $safeName,
+            'email' => $safeEmail,
+            'phone' => $safePhone,
+            'company' => '',
+            'location' => '',
+            'source_page' => $sourcePage,
+            'message' => $safeMessage,
+        ]);
     }
 }
 

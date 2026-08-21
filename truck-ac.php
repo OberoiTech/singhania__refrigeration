@@ -3,26 +3,15 @@
 
 <head>
   <?php
-$pageTitle = 'Truck AC Installation in India | Commercial Vehicle AC Systems | Singhania Refrigeration';
+    $pageTitle = 'Truck AC Manufacturer in India | Singhania Refrigeration';
+    $pageDescription = 'Manufacturer of truck AC & transport refrigeration units for dairy, pharma, frozen food, meat & seafood transport. Delhi NCR. Call +91 99710 60822.';
+    $pageKeywords = 'truck ac manufacturer, transport refrigeration unit, reefer truck unit, refrigerated truck ac india, insulated truck body manufacturer, cold chain transport solutions';
+    $canonicalUrl = 'https://singhaniarefrigeration.com/truck-ac.php';
+    $ogDescription = $pageDescription;
+    $twitterDescription = 'Manufacturer of truck AC & transport refrigeration units for dairy, pharma, frozen food, meat & seafood transport. Delhi NCR.';
+    $shareImageAlt = 'Truck AC and transport refrigeration units by Singhania Refrigeration';
 
-$pageDescription = 'Get professional truck AC installation in India with reliable commercial vehicle air conditioning systems for logistics, transport, and fleet operators. Singhania Refrigeration provides expert design, supply, installation, and support for truck cabin AC and transport cooling solutions.';
-
-$pageKeywords = 'truck ac manufacturer, transport refrigeration units, refrigerated truck ac systems, reefer truck refrigeration, cold chain transport solutions, truck ac manufacturer in india';
-
-$canonicalUrl = 'https://singhaniarefrigeration.com/truck-ac-installation-india';
-
-$ogTitle = $pageTitle;
-
-$ogDescription = $pageDescription;
-
-$shareImage = 'https://singhaniarefrigeration.com/assets/images/products/truck-ac.webp';
-
-$shareImageAlt = 'Truck AC installation in India by Singhania Refrigeration';
-
-$twitterTitle = $pageTitle;
-
-$twitterDescription = $pageDescription;
-?>
+  ?>
   <?php include('head.php'); ?>
   <style>
     /* ====== TRUCK AC HERO ====== */
@@ -97,7 +86,7 @@ $twitterDescription = $pageDescription;
       margin: 0;
       color: rgba(238, 244, 255, .86);
       line-height: 1.75;
-      font-size: clamp(15px, 1.4vw, 17px);
+      font-size: clamp(14px, 1.5vw, 17px);
       text-align: justify;
       text-justify: inter-word;
       text-align-last: left;
@@ -191,127 +180,8 @@ $twitterDescription = $pageDescription;
     } */
 
     .intro-copy p {
+      text-align: justify;
       font-size: clamp(15px, 1.4vw, 17px);
-    }
-
-    /* ====== PREMIUM TRANSPORT REFRIGERATION INTRO ====== */
-    .truck-intro {
-      position: relative;
-      overflow: hidden;
-      background:
-        radial-gradient(circle at 8% 12%, rgba(39, 91, 151, .08), transparent 25%),
-        linear-gradient(180deg, #f8fbff 0%, #ffffff 100%) !important;
-    }
-
-    .truck-intro::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 34%;
-      height: 4px;
-      background: linear-gradient(90deg, #0f2442, #e95b25);
-    }
-
-    .truck-intro .intro-shell {
-      position: relative;
-      z-index: 1;
-    }
-
-    .truck-intro .intro-frame {
-      position: relative;
-      padding: clamp(28px, 4vw, 58px);
-      border: 1px solid rgba(15, 36, 66, .09);
-      border-radius: 28px;
-      background: rgba(255, 255, 255, .94);
-      box-shadow: 0 28px 80px rgba(15, 36, 66, .10);
-    }
-
-    .truck-intro .intro-frame::before {
-      content: "";
-      position: absolute;
-      top: -1px;
-      left: 54px;
-      width: 92px;
-      height: 4px;
-      border-radius: 0 0 6px 6px;
-      background: #e95b25;
-    }
-
-    .truck-intro .intro-row {
-      row-gap: 42px;
-    }
-
-    .truck-intro .intro-copy {
-      position: relative;
-      max-width: 760px;
-      padding-left: 26px;
-    }
-
-    .truck-intro .intro-copy::before {
-      content: "";
-      position: absolute;
-      top: 8px;
-      bottom: 8px;
-      left: 0;
-      width: 3px;
-      border-radius: 6px;
-      background: linear-gradient(180deg, #e95b25 0%, rgba(233, 91, 37, .08) 100%);
-    }
-
-    .truck-intro .intro-copy .lead {
-      margin: 0 0 17px;
-      color: #34465c;
-      font-size: clamp(15px, 1.15vw, 17px);
-      font-weight: 500;
-      line-height: 1.78;
-      text-align: left;
-    }
-
-    .truck-intro .intro-copy .lead:last-child {
-      margin-bottom: 0;
-    }
-
-    .truck-intro .intro-visual {
-      position: relative;
-      max-width: 500px;
-      margin-left: auto;
-      padding: 20px 0 22px 20px;
-    }
-
-    .truck-intro .intro-visual::before {
-      content: "";
-      position: absolute;
-      inset: 0 22px 22px 0;
-      border-radius: 24px 8px 42px 8px;
-      background: linear-gradient(145deg, #0f2442, #183e68);
-      box-shadow: 0 24px 48px rgba(15, 36, 66, .2);
-    }
-
-    .truck-intro .intro-visual::after {
-      content: "";
-      position: absolute;
-      z-index: 2;
-      right: 7px;
-      bottom: 7px;
-      width: 54px;
-      height: 54px;
-      border-right: 4px solid #e95b25;
-      border-bottom: 4px solid #e95b25;
-      border-radius: 0 0 18px 0;
-    }
-
-    .truck-intro .TruckImg {
-      position: relative;
-      z-index: 1;
-      width: calc(100% - 20px);
-      max-width: none;
-      margin: 0 0 0 auto;
-      padding: 14px;
-      border: 1px solid #edf1f6;
-      border-radius: 20px 6px 34px 6px;
-      background: #fff;
-      box-shadow: 0 18px 42px rgba(5, 20, 42, .18);
     }
 
     .intro-section .row>[class*="col-"] {
@@ -347,13 +217,13 @@ $twitterDescription = $pageDescription;
     }
 
     .feature-icon {
-      font-size: 2.4rem;
+      font-size: clamp(2rem, 2.8vw, 2.4rem);
       color: var(--ink);
       margin-bottom: 16px;
     }
 
     .feature-title {
-      font-size: 1.1rem;
+      font-size: clamp(1rem, 1.3vw, 1.1rem);
       font-weight: 700;
       line-height: 1.35;
       margin: 0 0 10px;
@@ -361,7 +231,7 @@ $twitterDescription = $pageDescription;
     }
 
     .feature-desc {
-      font-size: 0.95rem;
+      font-size: clamp(0.88rem, 1.1vw, 0.95rem);
       color: #555;
       line-height: 1.7;
       margin: 0;
@@ -407,7 +277,6 @@ $twitterDescription = $pageDescription;
       .hero-card .lead {
         text-align: justify;
         line-height: 1.7;
-        font-size: 14px;
       }
 
       .feature-grid>[class*="col-"],
@@ -425,36 +294,7 @@ $twitterDescription = $pageDescription;
       }
 
       .feature-icon {
-        font-size: 2rem;
         margin-bottom: 12px;
-      }
-
-      .feature-title {
-        font-size: 1rem;
-      }
-
-      .truck-intro .intro-copy .lead {
-        font-size: 15px;
-        line-height: 1.7;
-      }
-
-      .truck-intro .intro-frame {
-        padding: 28px 20px 32px;
-        border-radius: 20px;
-      }
-
-      .truck-intro .intro-frame::before {
-        left: 30px;
-        width: 72px;
-      }
-
-      .truck-intro .intro-copy {
-        padding-left: 18px;
-      }
-
-      .truck-intro .intro-visual {
-        margin: 0 auto;
-        padding: 14px 0 16px 14px;
       }
     }
 
@@ -483,17 +323,20 @@ $twitterDescription = $pageDescription;
         <div class="content-part">
           <div class="hero-card">
             <!-- <span class="hero-eyebrow">Made for Indian roads</span> -->
-            <h1>Truck AC Installation in India</h1>
+            <h1>Truck AC Manufacturer in India</h1>
             <p class="lead" lang="en">
-                    We specialize in the design, supply, and installation of truck air conditioning
-                  and transport refrigeration systems. These Truck AC systems are tailored to the
-                  particular needs of your vehicle, cargo, and route. We operate out of Delhi NCR
-                  and provide services throughout India.
+                Singhania Refrigeration is a trusted Truck AC Manufacturer in India, offering
+                high-performance Transport Refrigeration Units for temperature-controlled transportation.
+                Our truck refrigeration systems are designed to keep dairy products, pharmaceuticals,
+                frozen foods, fruits, vegetables, seafood and other perishable products safe to eat
+                while maintaining consistent temperatures along the way.
             </p>
-           
+             <p class="lead" lang="en">Engineered for Indian operating conditions, our refrigeration units provide dependable
+                cooling performance, energy efficiency, and long-term durability for logistics operators
+                and cold chain businesses.</p>
             <div class="cta-bar">
-              <a href="contact" class="btn-brand">Get a Free Quote&nbsp; </a>
-              <a href="tel:+919971060822" class="btn-brand  "><i class="fa fa-phone" aria-hidden="true"></i>&nbsp; Call Now</a>
+              <a href="contact.php" class="btn-brand">Get a Free Quote&nbsp; <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+              <a href="tel:+919971060822" class="btn-brand btn-ghost"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp; Call Now</a>
             </div>
           </div>
         </div>
@@ -503,42 +346,36 @@ $twitterDescription = $pageDescription;
   <!-- MAIN CONTENT END  -->
 
   <!-- ===== WHAT IS A REFRIGERATED TRUCK BODY ===== -->
-  <section class="intro-section truck-intro section-padding bg-white" id="what-is-truck-ac">
-    <div class="container intro-shell">
-      <div class="intro-frame">
-        <div class="row intro-row align-items-center">
-          <div class="col-lg-7 col-md-7">
-            <div class="intro-copy">
-              <p class="lead">
-                Temperature-sensitive goods such as dairy products, pharmaceuticals, frozen goods,
-                meat and seafood depend on just one thing during the entire delivery process: the cold
-                chain. The air conditioning in a truck or the Transport Refrigeration Unit (TRU) is
-                responsible for maintaining the temperature of the freight container and is unaffected
-                by outside temperatures, length of transport or frequency of door opening. The process
-                takes place separately from the air conditioning meant for the cabin and is referred to
-                as TRU because it works to cool and keep the load space at the right temperature instead
-                of making the driver comfortable.
-              </p>
-              <p class="lead">
-                In the transportation industry, cold chain logistics companies as well as dairy truck
-                operators and distributors must pay special attention to the installation of a cold
-                chain. Singhania Refrigeration helps to develop, provide and install transport
-                refrigeration units that are suitable for the type of vehicle, route and the type of
-                cargo carried.
-              </p>
-            </div>
-          </div>
+  <section class="intro-section section-padding bg-white" id="what-is-truck-ac">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-7 col-md-7">
+          <div class="intro-copy">
+            <!--  <span class="section-eyebrow">Overview</span> -->
+            <h2 class="section-h2">What is a Truck AC or Transport Refrigeration Unit?</h2>
 
-          <div class="col-lg-5 col-md-5">
-            <div class="intro-visual">
-              <img
-                class="TruckImg"
-                src="assets/images/products/truck-ac.webp"
-                alt="Truck's ac boddy"
-                loading="lazy"
-              />
-            </div>
+            <p class="lead">
+               A Truck AC, also named a Transport Refrigeration Unit (TRU), is an industrial
+                cooling system fitted on commercial vehicles for maintaining controlled cargo
+                temperatures during transit.
+            </p>
+            <p class="lead">
+             Refrigerated truck units are designed for temperature sensitive cargo, unlike
+             standard vehicle air conditioning. They are vital to <a href="index.php">cold chain solutions in India</a>,
+             helping companies maintain product quality, reduce spoilage and meet
+             transportation standards.
+            </p>
+           
           </div>
+        </div>
+
+        <div class="col-lg-5 col-md-5">
+          <img
+            class="TruckImg"
+            src="assets/images/products/truck-ac.webp"
+            alt="Truck's ac boddy"
+            loading="lazy"
+          />
         </div>
       </div>
     </div>
@@ -704,7 +541,7 @@ $twitterDescription = $pageDescription;
     }
 
     .config-number {
-      font-size: 2rem;
+      font-size: clamp(1.55rem, 2.3vw, 2rem);
       font-weight: 800;
       color: var(--ink);
       min-width: 54px;
@@ -713,7 +550,7 @@ $twitterDescription = $pageDescription;
     }
 
     .config-title {
-      font-size: 1.1rem;
+      font-size: clamp(1rem, 1.3vw, 1.1rem);
       font-weight: 700;
       margin-bottom: 8px;
       color: var(--ink);
@@ -721,7 +558,7 @@ $twitterDescription = $pageDescription;
     }
 
     .config-desc {
-      font-size: 0.95rem;
+      font-size: clamp(0.88rem, 1.1vw, 0.95rem);
       color: #555;
       margin: 0;
       line-height: 1.7;
@@ -770,11 +607,9 @@ $twitterDescription = $pageDescription;
 
       .config-number {
         min-width: 44px;
-        font-size: 1.55rem;
       }
 
       .config-title {
-        font-size: 1rem;
         line-height: 1.35;
       }
     }
@@ -888,21 +723,21 @@ $twitterDescription = $pageDescription;
       transform: translateY(-4px);
     }
     .industry-icon {
-      font-size: 2.5rem;
+      font-size: clamp(2rem, 2.9vw, 2.5rem);
       color: var(--ink);
       display: block;
       margin-bottom: 16px;
     }
 
     .industry-title {
-      font-size: 1.05rem;
+      font-size: clamp(1rem, 1.4vw, 1.05rem);
       font-weight: 700;
       color: var(--ink);
       margin-bottom: 10px;
     }
 
     .industry-desc {
-      font-size: 0.92rem;
+      font-size: clamp(0.86rem, 1.1vw, 0.92rem);
       color: black;
       line-height: 1.7;
       margin: 0;
@@ -938,12 +773,10 @@ $twitterDescription = $pageDescription;
       }
 
       .industry-icon {
-        font-size: 2rem;
         margin-bottom: 12px;
       }
 
       .industry-title {
-        font-size: 1rem;
         line-height: 1.35;
       }
     }
@@ -1207,7 +1040,7 @@ $twitterDescription = $pageDescription;
       height: 64px;
       border-radius: 50%;
       background: #eef6ff;
-      font-size: 2rem;
+      font-size: clamp(1.8rem, 2.3vw, 2rem);
       color: var(--ink);
       display: inline-flex;
       align-items: center;
@@ -1216,7 +1049,7 @@ $twitterDescription = $pageDescription;
     }
 
     .why-title {
-      font-size: 1.08rem;
+      font-size: clamp(1rem, 1.4vw, 1.08rem);
       font-weight: 700;
       color: var(--ink);
       line-height: 1.35;
@@ -1224,7 +1057,7 @@ $twitterDescription = $pageDescription;
     }
 
     .why-desc {
-      font-size: 0.93rem;
+      font-size: clamp(0.87rem, 1.1vw, 0.93rem);
       color: #555;
       line-height: 1.7;
       margin: 0;
@@ -1261,12 +1094,10 @@ $twitterDescription = $pageDescription;
       .why-icon {
         width: 58px;
         height: 58px;
-        font-size: 1.8rem;
         margin-bottom: 14px;
       }
 
       .why-title {
-        font-size: 1rem;
         line-height: 1.35;
       }
     }
@@ -1371,7 +1202,7 @@ $twitterDescription = $pageDescription;
       padding: 20px 56px 20px 22px;
       text-align: left;
       font-weight: 600;
-      font-size: 1rem;
+      font-size: clamp(0.95rem, 1.1vw, 1rem);
       line-height: 1.45;
       color: var(--ink);
       background: #ffffff;
@@ -1394,7 +1225,7 @@ $twitterDescription = $pageDescription;
       border-radius: 50%;
       background: #eef6ff;
       color: var(--ink);
-      font-size: 20px;
+      font-size: clamp(18px, 1.4vw, 20px);
       line-height: 28px;
       text-align: center;
       transform: translateY(-50%);
@@ -1414,7 +1245,7 @@ $twitterDescription = $pageDescription;
     }
 
     .faq-answer {
-      font-size: 0.95rem;
+      font-size: clamp(0.94rem, 1.1vw, 0.95rem);
       color: #444;
       line-height: 1.75;
       background: #ffffff;
@@ -1433,7 +1264,6 @@ $twitterDescription = $pageDescription;
 
       .faq-accordion-item .accordion-button {
         padding: 17px 48px 17px 16px;
-        font-size: .98rem;
       }
 
       .faq-accordion-item .accordion-button::after {
@@ -1441,12 +1271,10 @@ $twitterDescription = $pageDescription;
         width: 26px;
         height: 26px;
         line-height: 26px;
-        font-size: 18px;
       }
 
       .faq-answer {
         padding: 0 16px 18px;
-        font-size: .94rem;
         line-height: 1.7;
       }
     }
@@ -1469,7 +1297,7 @@ $twitterDescription = $pageDescription;
         </p>
 
         <div class="btn-part">
-          <a class="readon banner-style" href="contact">Request a Quote &rarr;</a>
+          <a class="readon banner-style" href="contact.php">Request a Quote &rarr;</a>
         </div>
 
         <p class="cta-phone-numbers">
@@ -1486,14 +1314,14 @@ $twitterDescription = $pageDescription;
       max-width: 760px;
       margin: 16px auto 24px;
       color: #fff;
-      font-size: 16px;
+      font-size: clamp(15px, 1.1vw, 16px);
       line-height: 1.6;
     }
 
     .truck-body-cta .cta-phone-numbers {
       margin: 20px 0 0;
       color: #fff;
-      font-size: 15px;
+      font-size: clamp(14px, 1vw, 15px);
       line-height: 1.6;
     }
 
@@ -1540,7 +1368,7 @@ $twitterDescription = $pageDescription;
           $isActiveProduct = basename($product['url']) === basename($_SERVER['SCRIPT_NAME'] ?? 'truck-ac.php');
         ?>
           <div class="col-lg-3 col-md-4 col-sm-6" data-animate>
-            <a href="<?php echo htmlspecialchars(publicPageUrl($product['url'])); ?>"
+            <a href="<?php echo htmlspecialchars($product['url']); ?>"
               class="related-card text-decoration-none <?php echo $isActiveProduct ? 'active' : ''; ?>">
               <span class="related-number"><?php echo str_pad((string)($index + 1), 2, '0', STR_PAD_LEFT); ?></span>
               <i class="<?php echo htmlspecialchars($product['icon']); ?>
@@ -1598,7 +1426,7 @@ $twitterDescription = $pageDescription;
       top: 18px;
       right: 22px;
       color: rgba(15, 36, 66, .08);
-      font-size: 46px;
+      font-size: clamp(40px, 3.3vw, 46px);
       font-weight: 800;
       line-height: 1;
       transition: color .3s ease;
@@ -1612,14 +1440,14 @@ $twitterDescription = $pageDescription;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.6rem;
+      font-size: clamp(1.4rem, 1.8vw, 1.6rem);
       color: var(--ink);
       margin-bottom: 20px;
       transition: color 0.3s, background 0.3s;
     }
 
     .related-title {
-      font-size: 1rem;
+      font-size: clamp(0.95rem, 1.3vw, 1rem);
       font-weight: 700;
       color: var(--ink);
       line-height: 1.35;
@@ -1628,7 +1456,7 @@ $twitterDescription = $pageDescription;
     }
 
     .related-arrow {
-      font-size: 0.8rem;
+      font-size: clamp(0.75rem, 1vw, 0.8rem);
       color: var(--ink);
       transition: color 0.3s;
     }
@@ -1681,7 +1509,6 @@ $twitterDescription = $pageDescription;
       }
 
       .related-number {
-        font-size: 40px;
         top: 16px;
         right: 18px;
       }
@@ -1690,10 +1517,6 @@ $twitterDescription = $pageDescription;
         width: 50px;
         height: 50px;
         margin-bottom: 16px;
-      }
-
-      .related-title {
-        font-size: .96rem;
       }
     }
   </style>

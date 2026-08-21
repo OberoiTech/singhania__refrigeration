@@ -1,39 +1,53 @@
-# singhaniarefrigeration.com llms.txt
+# Singhania Refrigeration
 
-> A collection of links from this website
+> Cold storage and industrial refrigeration company based in Okhla, New Delhi, offering turnkey cold room, CA/MA store, ammonia and Freon refrigeration plant design, manufacturing, installation and AMC support across Delhi NCR and pan-India.
 
-- [Singhania Refrigation –](https://singhaniarefrigeration.com/)
-- [Singhania Refrigation – index](https://singhaniarefrigeration.com/index.php)
-- [Singhania Refrigation – about-us](https://singhaniarefrigeration.com/about-us.php)
-- [Singhania Refrigation – products](https://singhaniarefrigeration.com/products.php)
-- [Singhania Refrigation – truck-ac](https://singhaniarefrigeration.com/truck-ac.php)
-- [Singhania Refrigation – truck-refrigerator-container](https://singhaniarefrigeration.com/truck-refrigerator-container.php)
-- [Singhania Refrigation – cold-storage-refrigeration-units](https://singhaniarefrigeration.com/cold-storage-refrigeration-units.php)
-- [Singhania Refrigation – compressor-rack-system](https://singhaniarefrigeration.com/compressor-rack-system.php)
-- [Singhania Refrigation – ammonia-refrigeration-units](https://singhaniarefrigeration.com/ammonia-refrigeration-units.php)
-- [Singhania Refrigation – ripening-systems](https://singhaniarefrigeration.com/ripening-systems.php)
-- [Singhania Refrigation – multideck-cabinet](https://singhaniarefrigeration.com/multideck-cabinet.php)
-- [Singhania Refrigation – iqf](https://singhaniarefrigeration.com/iqf.php)
-- [Singhania Refrigation – doors-ca-doors](https://singhaniarefrigeration.com/doors-ca-doors.php)
-- [Singhania Refrigation – panels](https://singhaniarefrigeration.com/panels.php)
-- [Singhania Refrigation – dock-shelter-dock-leveler](https://singhaniarefrigeration.com/dock-shelter-dock-leveler.php)
-- [Singhania Refrigation – heavy-duty-racks](https://singhaniarefrigeration.com/heavy-duty-racks.php)
-- [Singhania Refrigation – consulting](https://singhaniarefrigeration.com/consulting.php)
-- [Best ai agent for test generation](https://keploy.io): Generate unit, api, integration tests for backend using AI coding agent, keploy
-- [Singhania Refrigation – turnkey-solution](https://singhaniarefrigeration.com/turnkey-solution.php)
-- [Singhania Refrigation – segments-wise](https://singhaniarefrigeration.com/segments-wise.php)
-- [Singhania Refrigation – cold-chain-refrigeration-ca-store-freon-ammonia](https://singhaniarefrigeration.com/cold-chain-refrigeration-ca-store-freon-ammonia.php)
-- [Singhania Refrigation – quality-monitoring-solution](https://singhaniarefrigeration.com/quality-monitoring-solution.php)
-- [Singhania Refrigation – ware-house-management](https://singhaniarefrigeration.com/ware-house-management.php)
-- [Singhania Refrigation – transport-management](https://singhaniarefrigeration.com/transport-management.php)
-- [Singhania Refrigation – transport-refrigeration](https://singhaniarefrigeration.com/transport-refrigeration.php)
-- [Singhania Refrigation – contact](https://singhaniarefrigeration.com/contact.php)
-- [https://singhaniarefrigeration.com/consuitancy-cfa-training-services.php](https://singhaniarefrigeration.com/consuitancy-cfa-training-services.php): Unable to fetch page content
-- [Singhania Refrigation – blog-details](https://singhaniarefrigeration.com/blog-details.php?id=7)
-- [Singhania Refrigation – blog-details](https://singhaniarefrigeration.com/blog-details.php?id=8)
-- [Singhania Refrigation – blog-details](https://singhaniarefrigeration.com/blog-details.php?id=9)
-- [Singhania Refrigation – blog-details](https://singhaniarefrigeration.com/blog-details.php?id=10)
-- [Singhania Refrigation – blog-details](https://singhaniarefrigeration.com/blog-details.php?id=11)
-- [Singhania Refrigation – privacy-policy](https://singhaniarefrigeration.com/privacy-policy.php)
-- [Singhania Refrigation – terms](https://singhaniarefrigeration.com/terms.php)
-- [Singhania Refrigation – blog-details](https://singhaniarefrigeration.com/blog-details.php)
+Singhania Refrigeration designs, manufactures, installs and maintains cold rooms, controlled-atmosphere (CA/MA) stores, ammonia and Freon refrigeration plants, IQF systems, compressor racks, PUF panels, dock shelters and transport refrigeration for food processing, pharmaceutical, dairy, agri-export and logistics businesses. The company draws on 25 years of cold chain and logistics experience through the Singhania Group.
+
+## Company
+
+- [Home](https://singhaniarefrigeration.com/): Cold storage company and industrial refrigeration experts in Delhi NCR — turnkey cold rooms, CA stores, ammonia plants and cold chain infrastructure.
+- [About Us](https://singhaniarefrigeration.com/about-us): Company background, in-house engineering team and 25 years of cold chain experience through the Singhania Group.
+- [Products & Services](https://singhaniarefrigeration.com/products): Overview of all cold storage and refrigeration products and services offered.
+- [Consulting](https://singhaniarefrigeration.com/consulting): Cold storage consulting, project planning, grant coordination and PMC services.
+- [Cold Storage Solutions](https://singhaniarefrigeration.com/solutions): Turnkey construction, segment-wise cold rooms, CA/ammonia/freon systems, quality monitoring, warehouse and transport management.
+- [Consultancy & CFA Training Services](https://singhaniarefrigeration.com/consultancy-cfa-training-services): Consultancy and CFA (Carrying & Forwarding Agent) training services.
+- [Blog](https://singhaniarefrigeration.com/blog): Articles on cold storage, refrigeration and cold chain best practices.
+- [Contact](https://singhaniarefrigeration.com/contact): Request a free quote or reach the Okhla, New Delhi office.
+- [Privacy Policy](https://singhaniarefrigeration.com/privacy-policy): Privacy policy for singhaniarefrigeration.com.
+- [Terms & Conditions](https://singhaniarefrigeration.com/terms): Terms and conditions for singhaniarefrigeration.com.
+
+## Products
+
+- [Truck AC](https://singhaniarefrigeration.com/truck-ac-installation-india): Truck AC and transport refrigeration units for dairy, pharma, frozen food, meat and seafood transport.
+- [Refrigerated Truck Body & Container](https://singhaniarefrigeration.com/truck-refrigerator-container-manufacturer-in-india): PUF-insulated, temperature-controlled truck bodies and reefer containers for cold chain transport.
+- [Cold Storage Refrigeration Units](https://singhaniarefrigeration.com/cold-storage-refrigeration-units-manufacturer-in-india): Energy-efficient refrigeration systems for warehouses and cold rooms storing dairy, produce, frozen food and pharma.
+- [Compressor Rack System](https://singhaniarefrigeration.com/compressor-rack-system-manufacturer-in-india): Compressor rack systems for supermarkets, food processing plants, cold storage warehouses and industrial facilities.
+- [Ammonia Refrigeration Units](https://singhaniarefrigeration.com/ammonia-refrigeration-units-manufacturer-in-india): Ammonia (NH3) refrigeration units for large-tonnage industrial cooling — cold storage, food processing, blast freezing and ice plants.
+- [Freon Refrigeration Units](https://singhaniarefrigeration.com/freon-refrigeration-in-india): Freon (HFC/HFO) refrigeration units for cold rooms, ripening chambers, compressor racks and walk-in freezers.
+- [Ripening Systems](https://singhaniarefrigeration.com/ripening-systems-manufacturer-in-india): Ripening chambers for bananas, mangoes and other climacteric fruits with precision temperature, humidity and ethylene control.
+- [Multideck Cabinet](https://singhaniarefrigeration.com/multideck-cabinet-manufacturer-in-india): Multideck display cabinets for supermarkets, convenience stores and food retail.
+- [IQF Systems](https://singhaniarefrigeration.com/iqf-system-manufacturer-in-india): Individual Quick Freezing systems for vegetables, fruits, seafood, poultry and ready-to-cook foods.
+- [Doors & CA Doors](https://singhaniarefrigeration.com/cold-storage-doors-manufacturer-in-india): Insulated cold room and CA doors with precision sealing and heated frames.
+- [PUF Panels](https://singhaniarefrigeration.com/puf-panels-manufacturer-in-india): PUF insulated sandwich panels for cold rooms, warehouses and industrial cold storage.
+- [Dock Shelter & Dock Leveler](https://singhaniarefrigeration.com/dock-shelter-dock-leveler-manufacturer-in-india): Dock shelters and dock levelers for cold chain warehouses.
+- [Heavy Duty Racks](https://singhaniarefrigeration.com/heavy-duty-racks-manufacturer-in-india): Heavy-duty pallet racking systems for warehouses and cold storage.
+
+## Cold Storage Solutions
+
+- [Turnkey Solution](https://singhaniarefrigeration.com/turnkey-cold-storage-solutions-in-india): End-to-end turnkey cold storage projects — design, PUF construction, refrigeration, racking and commissioning under one contract.
+- [Segment-Wise Solutions](https://singhaniarefrigeration.com/segment-wise-cold-storage-solutions-in-india): Cold chain solutions matched by industry — dairy, pharma, seafood, fruits and vegetables, QSR and e-commerce.
+- [CA Store & Cold Chain Refrigeration](https://singhaniarefrigeration.com/cold-chain-refrigeration-ca-store-freon-ammonia-in-india): Controlled atmosphere (CA) stores, frozen rooms and Freon or ammonia refrigeration plants.
+- [Quality Monitoring Solution](https://singhaniarefrigeration.com/cold-chain-quality-monitoring-solution-in-india): Real-time temperature and humidity monitoring with alerts, data logs and compliance reports.
+- [Warehouse Management System](https://singhaniarefrigeration.com/warehouse-management-solutions-in-india): WMS for cold storage — pallet tracking, FIFO/FEFO control, billing and inventory visibility across chambers.
+- [Transport Management System](https://singhaniarefrigeration.com/transport-management-solutions-in-india): TMS for cold chain fleets — trip planning, live vehicle tracking, temperature visibility and delivery proof.
+- [Transport Refrigeration](https://singhaniarefrigeration.com/transport-refrigeration-solutions-in-india): Reefer units, insulated bodies and AMC support for trucks and last-mile vans.
+
+## Blog
+
+Most recent posts — see the [blog index](https://singhaniarefrigeration.com/blog) for the complete, up-to-date list.
+
+- [Cold Storage Maintenance Guide](https://singhaniarefrigeration.com/blog/cold-storage-maintenance-guide)
+- [How Cold Storage Solutions Improve Supply Chain Efficiency](https://singhaniarefrigeration.com/blog/how-cold-storage-solutions-improve-supply-chain-efficiency)
+- [Singhania Refrigeration: Revolutionizing Cold Chain Solutions in India](https://singhaniarefrigeration.com/blog/singhania-refrigeration-revolutionizing-cold-chain-solutions-in-india)
+- [Singhania Refrigeration – Efficient Cold Chain Solutions for Modern Needs](https://singhaniarefrigeration.com/blog/singhania-refrigeration-efficient-cold-chain-solutions-for-modern-needs)

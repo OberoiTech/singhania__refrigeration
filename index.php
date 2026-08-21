@@ -1,6 +1,7 @@
 <?php
 error_reporting(0);
 include("admin/config.php");
+require_once __DIR__ . '/enquiry-helper.php';
 
 $color = "";
 $messageBanner = "";
@@ -40,19 +41,26 @@ function sr_preferred_image_path($relativePath) {
 }
 
 if (isset($_POST['submit'])) {
-    $name     = $_POST['name'];
-    $email    = $_POST['email'];
-    $phone    = $_POST['phone'];
-    $company  = $_POST['company'];
-    $location = $_POST['location'];
-    $msg      = $_POST['message'];
+    $name     = trim((string)$_POST['name']);
+    $email    = trim((string)$_POST['email']);
+    $phone    = trim((string)$_POST['phone']);
+    $company  = trim((string)$_POST['company']);
+    $location = trim((string)$_POST['location']);
+    $msg      = trim((string)$_POST['message']);
+    $sourcePage = 'Homepage';
 
     if ($name == "" || $email == "" || $phone == "") {
         $color = "<div class='alert alert-danger'>Please fill Name, Email and Phone.</div>";
     } else {
-        $sql = "INSERT INTO enquiry (name, email, phone, company, location, message)
-                VALUES ('$name', '$email', '$phone', '$company', '$location', '$msg')";
-        $result = mysqli_query($conn, $sql);
+        $result = sr_insert_enquiry($conn, [
+            'name' => $name,
+            'email' => $email,
+            'phone' => $phone,
+            'company' => $company,
+            'location' => $location,
+            'source_page' => $sourcePage,
+            'message' => $msg,
+        ]);
 
         if ($result) {
             echo "<script>alert('Record Added Successfully ✅');</script>";
@@ -158,7 +166,7 @@ body{ color:var(--ink); }
 .notice-banner__group{
   display:flex;
   align-items:center;
-  gap:18px;
+  gap:30px;
   padding:10px 18px;
   flex:0 0 auto;
 }
@@ -965,33 +973,33 @@ body{ color:var(--ink); }
         <div class="notice-banner" aria-label="Singhania Refrigeration trust highlights">
           <div class="notice-banner__track">
             <div class="notice-banner__group">
-              <span>&#9989;&nbsp; 25 Years Cold Chain Expertise (Singhania Group)</span>
-              <span>|</span>
-              <span>&#127981;&nbsp; 10+ Years as Singhania Refrigeration</span>
-              <span>|</span>
-              <span>&#9881;&nbsp; 99.9% System Uptime</span>
-              <span>|</span>
-              <span>&#127757;&nbsp; Pan-India Project Delivery</span>
-              <span>|</span>
-              <span>&#128203;&nbsp; FSSAI &amp; WHO-GMP Aligned Systems</span>
+              <span>25 Years Cold Chain Expertise (Singhania Group)</span>
+              <!-- <span>.</span> -->
+              <span>10+ Years as Singhania Refrigeration</span>
+              <!-- <span>.</span> -->
+              <span>99.9% System Uptime</span>
+              <!-- <span>.</span> -->
+              <span>Pan-India Project Delivery</span>
+              <!-- <span>.</span> -->
+              <span>FSSAI &amp; WHO-GMP Aligned Systems</span>
             </div>
             <div class="notice-banner__group" aria-hidden="true">
-              <span>&#9989;&nbsp; 25 Years Cold Chain Expertise (Singhania Group)</span>
-              <span>|</span>
-              <span>&#127981;&nbsp; 10+ Years as Singhania Refrigeration</span>
-              <span>|</span>
-              <span>&#9881;&nbsp; 99.9% System Uptime</span>
-              <span>|</span>
-              <span>&#127757;&nbsp; Pan-India Project Delivery</span>
-              <span>|</span>
-              <span>&#128203;&nbsp; FSSAI &amp; WHO-GMP Aligned Systems</span>
+              <span>25 Years Cold Chain Expertise (Singhania Group)</span>
+              <!-- <span>.</span> -->
+              <span>10+ Years as Singhania Refrigeration</span>
+              <!-- <span>.</span> -->
+              <span>99.9% System Uptime</span>
+              <!-- <span>.</span> -->
+              <span>Pan-India Project Delivery</span>
+              <!-- <span>.</span> -->
+              <span>FSSAI &amp; WHO-GMP Aligned Systems</span>
             </div>
           </div>
         </div>
         <!-- ===== TRUST BAR END ===== -->
       <!-- ===== Mini Services ===== -->
       <div class="rs-services style1 pt-100 pb-84 md-pt-80 md-pb-64">
-        <div class="container" data-animate>
+        <div class="container">
           <h2 class="sr-only">Cold Chain Service Highlights</h2>
           <div class="row gutter-16">
             <div class="col-lg-3 col-sm-6 mb-16">
@@ -1220,7 +1228,7 @@ body{ color:var(--ink); }
               <a class="svc-card" href="truck-ac-installation-india">
                 <img class="svc-card__photo" loading="lazy" decoding="async" src="assets/images/products/truck-ac.webp" alt="Refrigerated truck AC and container unit">
                 <div class="svc-card__overlay">
-                  <span class="svc-card__icon"><img loading="lazy" src="assets/images/services/icons/modify/refrigerated-truck-acs-containers.webp" alt=""></span>
+                  <span class="svc-card__icon"><img loading="lazy" src="assets/images/services/icons/modify/refrigerated-truck-acs-containers.webp" alt="Refrigerated truck AC and container unit"></span>
                   <h3 class="svc-card__title">Refrigerated Truck ACs &amp; Containers</h3>
                   <p class="svc-card__desc">Transport Refrigeration Units for trucks and reefer containers, keeping Perishables – Food, Dairy and Pharma Products, temperature controlled on routes across Delhi NCR and Pan India.</p>
                 </div>
@@ -1232,7 +1240,7 @@ body{ color:var(--ink); }
               <a class="svc-card" href="cold-storage-refrigeration-units-manufacturer-in-india">
                 <img class="svc-card__photo" loading="lazy" decoding="async" src="assets/images/products/cold-storage.jpg" alt="Cold room and cold storage solution">
                 <div class="svc-card__overlay">
-                  <span class="svc-card__icon"><img loading="lazy" src="assets/images/services/icons/modify/cold-storage-warehouse.webp" alt=""></span>
+                  <span class="svc-card__icon"><img loading="lazy" src="assets/images/services/icons/modify/cold-storage-warehouse.webp" alt="Cold room and cold storage solution"></span>
                   <h3 class="svc-card__title">Cold Rooms &amp; Storage Solutions</h3>
                   <p class="svc-card__desc">Ammonia and freon cold rooms, Controlled Atmosphere (CA) stores, ripening chambers and blast freezer systems, designed to meet the shelf-life and temperature controlled storage requirements of your product.</p>
                 </div>
@@ -1244,7 +1252,7 @@ body{ color:var(--ink); }
               <a class="svc-card" href="compressor-rack-system-manufacturer-in-india">
                 <img class="svc-card__photo" loading="lazy" decoding="async" src="assets/images/products/compressor-rack-system-e1600420693281.webp" alt="Industrial compressor rack system">
                 <div class="svc-card__overlay">
-                  <span class="svc-card__icon"><img loading="lazy" src="assets/images/services/icons/modify/compressor-rack-systems.webp" alt=""></span>
+                  <span class="svc-card__icon"><img loading="lazy" src="assets/images/services/icons/modify/compressor-rack-systems.webp" alt="Industrial compressor rack system"></span>
                   <h3 class="svc-card__title">Compressor Rack Systems</h3>
                   <p class="svc-card__desc">Centralised, energy efficient compressor rack systems for supermarkets, food retail chains and large refrigerated warehouses, reducing refrigerant charge and maintenance.</p>
                 </div>
@@ -1256,7 +1264,7 @@ body{ color:var(--ink); }
               <a class="svc-card" href="ammonia-refrigeration-units-manufacturer-in-india">
                 <img class="svc-card__photo" loading="lazy" decoding="async" src="assets/images/products/ammonia-refrigeration.webp" alt="Ammonia refrigeration unit">
                 <div class="svc-card__overlay">
-                  <span class="svc-card__icon"><img loading="lazy" src="assets/images/services/icons/modify/ammonia-refrigeration-units.webp" alt=""></span>
+                  <span class="svc-card__icon"><img loading="lazy" src="assets/images/services/icons/modify/ammonia-refrigeration-units.webp" alt="Ammonia refrigeration unit"></span>
                   <h3 class="svc-card__title">Ammonia Refrigeration Units</h3>
                   <p class="svc-card__desc">Industrial grade ammonia (NH3) and Freon refrigeration plants for food processing units, temperature controlled warehouses, fisheries and dairy operations requiring high capacity, energy efficient industrial cooling.</p>
                 </div>
@@ -1268,7 +1276,7 @@ body{ color:var(--ink); }
               <a class="svc-card" href="ripening-systems-manufacturer-in-india">
                 <img class="svc-card__photo" loading="lazy" decoding="async" src="assets/images/products/banana-ripening-cold-room.webp" alt="Ripening chamber for fruits and produce">
                 <div class="svc-card__overlay">
-                  <span class="svc-card__icon"><img loading="lazy" src="assets/images/services/icons/modify/ripening-chambers.webp" alt=""></span>
+                  <span class="svc-card__icon"><img loading="lazy" src="assets/images/services/icons/modify/ripening-chambers.webp" alt="Ripening chamber for fruits and produce"></span>
                   <h3 class="svc-card__title">Ripening Chambers</h3>
                   <p class="svc-card__desc">Ethylene-controlled ripening chambers for bananas, mangoes, papayas and other climacteric fruits, delivering consistent, ready-to-sell ripening for every pallet.</p>
                 </div>
@@ -1280,7 +1288,7 @@ body{ color:var(--ink); }
               <a class="svc-card" href="iqf-system-manufacturer-in-india">
                 <img class="svc-card__photo" loading="lazy" decoding="async" src="assets/images/products/seafood-storage-facility.webp" alt="IQF individual quick freezing technology">
                 <div class="svc-card__overlay">
-                  <span class="svc-card__icon"><img loading="lazy" src="assets/images/services/icons/modify/iqf-technology.webp" alt=""></span>
+                  <span class="svc-card__icon"><img loading="lazy" src="assets/images/services/icons/modify/iqf-technology.webp" alt="IQF individual quick freezing technology"></span>
                   <h3 class="svc-card__title">IQF Technology</h3>
                   <p class="svc-card__desc">Individual Quick Freeze (IQF) machine systems flash-freeze seafood, fruits, vegetables and ready-to-eat products for export-quality output and to preserve texture, nutrition and appearance.</p>
                 </div>
@@ -1292,7 +1300,7 @@ body{ color:var(--ink); }
               <a class="svc-card" href="puf-panels-manufacturer-in-india">
                 <img class="svc-card__photo" loading="lazy" decoding="async" src="assets/images/products/panel.webp" alt="PUF panel and insulated cold storage door">
                 <div class="svc-card__overlay">
-                  <span class="svc-card__icon"><img loading="lazy" src="assets/images/services/icons/modify/puf-panels-insulated-doors.webp" alt=""></span>
+                  <span class="svc-card__icon"><img loading="lazy" src="assets/images/services/icons/modify/puf-panels-insulated-doors.webp" alt="PUF panel and insulated cold storage door"></span>
                   <h3 class="svc-card__title">PUF Panels &amp; Insulated Doors</h3>
                   <p class="svc-card__desc">High density PUF panel insulation and cold room doors that make up the thermal envelope of your cold storage facility – designed for airtight insulation and minimal energy loss.</p>
                 </div>
@@ -1304,7 +1312,7 @@ body{ color:var(--ink); }
               <a class="svc-card" href="dock-shelter-dock-leveler-manufacturer-in-india">
                 <img class="svc-card__photo" loading="lazy" decoding="async" src="assets/images/products/docking-system-facility.webp" alt="Dock shelter and dock leveler equipment">
                 <div class="svc-card__overlay">
-                  <span class="svc-card__icon"><img loading="lazy" src="assets/images/services/icons/modify/dock-shelters-dock-levelers.webp" alt=""></span>
+                  <span class="svc-card__icon"><img loading="lazy" src="assets/images/services/icons/modify/dock-shelters-dock-levelers.webp" alt="Dock shelter and dock leveler equipment"></span>
                   <h3 class="svc-card__title">Dock Shelters &amp; Dock Levelers</h3>
                   <p class="svc-card__desc">Dock Shelter and Leveler Systems seal the gap between your cold facility and delivery vehicles. Protect product temperature while loading and unloading.</p>
                 </div>
@@ -1337,7 +1345,7 @@ body{ color:var(--ink); }
               <a class="svc-card" href="cold-storage-doors-manufacturer-in-india">
                 <img class="svc-card__photo" loading="lazy" decoding="async" src="assets/images/products/coldroom-door.webp" alt="Doors and CA Doors">
                 <div class="svc-card__overlay">
-                  <span class="svc-card__icon"><img loading="lazy" src="assets/images/services/icons/modify/puf-panels-insulated-doors.webp" alt=""></span>
+                  <span class="svc-card__icon"><img loading="lazy" src="assets/images/services/icons/modify/puf-panels-insulated-doors.webp" alt="puf-panels-insulated-doors"></span>
                   <h3 class="svc-card__title">Doors &amp; CA Doors</h3>
                   <p class="svc-card__desc">At Singhania Refrigeration, we design and build insulated Doors & CA Doors for chiller rooms, freezers, and controlled-atmosphere (CA) stores — access points that must keep their seal through hundreds of openings a day, not just look insulated on a spec sheet.</p>
                 </div>
@@ -1348,7 +1356,7 @@ body{ color:var(--ink); }
               <a class="svc-card" href="truck-refrigerator-container-manufacturer-in-india">
                 <img class="svc-card__photo" loading="lazy" decoding="async" src="assets/images/products/truck-ac-re.jpg" alt="Refrigerated Truck Bodies & Reefer Containers">
                 <div class="svc-card__overlay">
-                  <span class="svc-card__icon"><img loading="lazy" src="assets/images/services/icons/modify/refrigerated-truck-acs-containers.webp" alt=""></span>
+                  <span class="svc-card__icon"><img loading="lazy" src="assets/images/services/icons/modify/refrigerated-truck-acs-containers.webp" alt="Refrigerated Truck Bodies & Reefer Containers"></span>
                   <h3 class="svc-card__title">Refrigerated Truck Bodies &amp; Reefer Containers</h3>
                   <p class="svc-card__desc">Singhania Refrigeration is one of the reputed Refrigerated Truck Body Manufacturer in India manufacturing insulated cargo bodies and reefer containers for companies that ship temperature sensitive products.</p>
                 </div>

@@ -2,6 +2,21 @@
 <html lang="en">
     <head>
         <?php include('head.php');?>
+        <style>
+            .we-hero-img{width:100%;max-width:100%;height:400px;object-fit:cover;}
+            @media (max-width: 1199px){
+                .we-hero-img{height:340px;}
+            }
+            @media (max-width: 991px){
+                .we-hero-img{height:300px;}
+            }
+            @media (max-width: 767px){
+                .we-hero-img{height:240px;}
+            }
+            @media (max-width: 420px){
+                .we-hero-img{height:180px;}
+            }
+        </style>
     </head>
     <body>
         <?php include('header.php');?>
@@ -22,7 +37,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-8 pr-45 md-pr-15">
-                            <img src="assets/images/products/apple-cold-room.webp" class="mt-5" alt="" style="height:400px;">
+                            <img src="assets/images/products/apple-cold-room.webp" class="mt-5 we-hero-img" alt="apple-cold-room">
                             <h5 class="desc mt-5 ">Key Product Features</h5>
                             <p> Singhania Refrigeration provides advanced Warehousing Equipments including pallet jacks, trolleys, conveyors, and handling tools. Designed for efficiency and safety, our equipment supports smooth warehouse operations, reduces manual labor, and improves productivity. These solutions are ideal for cold storage, logistics hubs, and large-scale distribution facilities.</p>
                         </div>
