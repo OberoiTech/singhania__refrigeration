@@ -8,7 +8,7 @@ if (session_status() === PHP_SESSION_NONE) {
 $adminName  = isset($_SESSION['admin_name']) ? $_SESSION['admin_name'] : 'Singhania Admin';
 $adminEmail = isset($_SESSION['admin_email']) ? $_SESSION['admin_email'] : '';
 ?>
-<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/jquery-3.2.1.min.js"></script>
 
 <header class="app-header sr-header">
     <!-- Brand / Logo -->

@@ -103,6 +103,47 @@ include('config.php');
         text-overflow: ellipsis;
       }
 
+      .sr-message-wrap {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .sr-message-wrap .sr-message-cell {
+        flex: 1 1 auto;
+        min-width: 0;
+      }
+
+      .sr-view-btn {
+        flex: 0 0 auto;
+        padding: 3px 9px;
+        font-size: 11px;
+        border-radius: 999px;
+        white-space: nowrap;
+      }
+
+      #msgModal .modal-body dt {
+        color: #64748b;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+      }
+
+      #msgModal .modal-body dd {
+        margin-bottom: 14px;
+        color: #111827;
+      }
+
+      #msgModal .modal-body .sr-full-message {
+        white-space: pre-wrap;
+        word-break: break-word;
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-radius: 10px;
+        padding: 12px 14px;
+        line-height: 1.6;
+      }
+
       .btn-xs {
         padding: 4px 8px;
         font-size: 11px;
@@ -169,7 +210,9 @@ include('config.php');
                       <th>Mobile</th>
                       <th>Company</th>
                       <th>Location</th>
+                      <th>Source Page</th>
                       <th>Message</th>
+                      <th>Received On</th>
                       <th>Action</th>
                     </tr>
                   </thead>
@@ -179,6 +222,9 @@ include('config.php');
                       $query = "SELECT * FROM enquiry ORDER BY id DESC";
                       $row   = mysqli_query($conn, $query);
                       while ($result = mysqli_fetch_assoc($row)) {
+                        $receivedOn = !empty($result['created_at'])
+                          ? date('d M Y, h:i A', strtotime($result['created_at']))
+                          : '—';
                     ?>
                       <tr>
                         <td><?php echo $i++; ?></td>
@@ -187,9 +233,29 @@ include('config.php');
                         <td><?php echo htmlspecialchars($result['phone']); ?></td>
                         <td><?php echo htmlspecialchars($result['company']); ?></td>
                         <td><?php echo htmlspecialchars($result['location']); ?></td>
-                        <td class="sr-message-cell" title="<?php echo htmlspecialchars($result['message']); ?>">
-                          <?php echo htmlspecialchars(substr($result['message'], 0, 100)); ?>
+                        <td><?php echo htmlspecialchars($result['source_page'] ?? '') ?: '—'; ?></td>
+                        <td>
+                          <div class="sr-message-wrap">
+                            <span class="sr-message-cell" title="<?php echo htmlspecialchars($result['message']); ?>">
+                              <?php echo htmlspecialchars(substr($result['message'], 0, 100)); ?>
+                            </span>
+                            <button type="button"
+                               class="btn btn-info sr-view-btn"
+                               data-toggle="modal"
+                               data-target="#msgModal"
+                               data-name="<?php echo htmlspecialchars($result['name']); ?>"
+                               data-email="<?php echo htmlspecialchars($result['email']); ?>"
+                               data-phone="<?php echo htmlspecialchars($result['phone']); ?>"
+                               data-company="<?php echo htmlspecialchars($result['company']); ?>"
+                               data-location="<?php echo htmlspecialchars($result['location']); ?>"
+                               data-source="<?php echo htmlspecialchars($result['source_page'] ?? '') ?: '—'; ?>"
+                               data-received="<?php echo htmlspecialchars($receivedOn); ?>"
+                               data-message="<?php echo htmlspecialchars($result['message']); ?>">
+                              <i class="fa fa-eye"></i> View
+                            </button>
+                          </div>
                         </td>
+                        <td><?php echo htmlspecialchars($receivedOn); ?></td>
                         <td>
                           <a href="delete.php?id=<?php echo (int)$result['id']; ?>&type=enquiry"
                              class="btn btn-danger btn-xs"
@@ -208,8 +274,56 @@ include('config.php');
       </div>
     </main>
 
+    <!-- Full enquiry / message modal -->
+    <div class="modal fade" id="msgModal" tabindex="-1" role="dialog" aria-labelledby="msgModalTitle" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="msgModalTitle">Enquiry Details</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <dl class="row mb-0">
+              <div class="col-md-6">
+                <dt>Name</dt>
+                <dd id="msgModalName"></dd>
+              </div>
+              <div class="col-md-6">
+                <dt>Email</dt>
+                <dd id="msgModalEmail"></dd>
+              </div>
+              <div class="col-md-6">
+                <dt>Mobile</dt>
+                <dd id="msgModalPhone"></dd>
+              </div>
+              <div class="col-md-6">
+                <dt>Company</dt>
+                <dd id="msgModalCompany"></dd>
+              </div>
+              <div class="col-md-6">
+                <dt>Location</dt>
+                <dd id="msgModalLocation"></dd>
+              </div>
+              <div class="col-md-6">
+                <dt>Source Page</dt>
+                <dd id="msgModalSource"></dd>
+              </div>
+              <div class="col-md-6">
+                <dt>Received On</dt>
+                <dd id="msgModalReceived"></dd>
+              </div>
+            </dl>
+            <dt>Message</dt>
+            <div class="sr-full-message" id="msgModalMessage"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Essential javascripts -->
-    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
@@ -219,6 +333,18 @@ include('config.php');
     <script type="text/javascript">
       $('#sampleTable').DataTable({
         "order": [[0, "asc"]]
+      });
+
+      $('#msgModal').on('show.bs.modal', function (event) {
+        var btn = $(event.relatedTarget);
+        $('#msgModalName').text(btn.data('name') || '—');
+        $('#msgModalEmail').text(btn.data('email') || '—');
+        $('#msgModalPhone').text(btn.data('phone') || '—');
+        $('#msgModalCompany').text(btn.data('company') || '—');
+        $('#msgModalLocation').text(btn.data('location') || '—');
+        $('#msgModalSource').text(btn.data('source') || '—');
+        $('#msgModalReceived').text(btn.data('received') || '—');
+        $('#msgModalMessage').text(btn.data('message') || '—');
       });
     </script>
   </body>
