@@ -37,46 +37,44 @@
   .about-hero__card{
     position:relative;
     z-index:1;
-    max-width:900px;
+    max-width:720px;
     padding:110px 0 130px;
     color:#eaf0ff;
   }
   .about-hero__card h1{
-    font-size:clamp(32px,4.8vw,56px);
-    line-height:1.05;
+    font-size:clamp(32px,4.8vw,52px);
+    line-height:1.14;
     margin:0 0 16px;
     color:#fff;
-    font-weight:900;
-    max-width:820px;
+    font-weight:800;
+    letter-spacing:-.01em;
+    max-width:640px;
   }
   .about-hero__card p{
-    color:#e6ecff;
+    color:#dbe4fb;
     margin:0;
-    font-size:17px;
-    line-height:1.78;
-    max-width:820px;
+    font-size:16px;
+    line-height:1.75;
+    max-width:600px;
   }
   .eyebrow{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    font-size:12px;
-    letter-spacing:.18em;
-    text-transform:uppercase;
-    color:#dbe6ff;
-    background:rgba(255,255,255,.10);
-    border:1px solid rgba(255,255,255,.16);
-    border-radius:999px;
-    padding:7px 11px;
-    margin-bottom:12px;
+    display:block;
+    color:#cdd9f5;
+    font-size:15px;
+    letter-spacing:.01em;
+    text-transform:none;
+    font-weight:500;
+    margin-bottom:14px;
+    max-width:600px;
   }
 
   /* ===== Section header ===== */
-  .section-head{ display:grid; gap:10px; margin-bottom:36px; }
-  .section-head .title{ color:var(--ink); font-weight:800; margin:0; line-height:1.12; }
-  .section-head .lead{ color:#2c3e68; margin:0 auto; max-width:860px; }
+  .products-section{ background:linear-gradient(180deg, #fafbff 0%, var(--soft) 100%); }
+  .section-head{ display:grid; gap:10px; margin-bottom:44px; }
+  .section-head .title{ color:var(--ink); font-weight:800; margin:0; line-height:1.12; font-size:clamp(26px,3.4vw,36px); letter-spacing:-.01em; }
+  .section-head .lead{ color:#2c3e68; margin:0 auto; max-width:860px; font-size:clamp(15px,1.7vw,17px); }
   .section-head .dash{
-    width:72px; height:4px; border-radius:8px; margin:10px auto 0;
+    width:72px; height:4px; border-radius:5px; margin:10px auto 0;
     background: linear-gradient(90deg, #8aa4ff, #3a55b6);
   }
 
@@ -85,8 +83,8 @@
   .products-grid .col{ margin-bottom:var(--gap); }
 
   .card-prod{
-    position:relative; height:100%;
-    border:1px solid var(--line); border-radius:18px; overflow:hidden;
+    position:relative; height:100%; display:flex; flex-direction:column;
+    border:1px solid var(--line); border-radius:5px; overflow:hidden;
     background: var(--card);
     box-shadow: 0 10px 28px rgba(16,28,52,.06);
     transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
@@ -96,7 +94,7 @@
     height:100%;
     color:inherit;
     text-decoration:none;
-    border-radius:18px;
+    border-radius:5px;
   }
   .card-prod-link:hover,
   .card-prod-link:focus{
@@ -131,16 +129,19 @@
     box-shadow:0 6px 16px rgba(40,60,110,.25);
   }
 
-  .card-prod__body{ padding:18px 16px 16px; text-align:center; }
-  .card-prod__title{ font-size:18px; line-height:1.22; margin:0 0 6px; color:#0f2442; font-weight:700; }
-  .card-prod__desc{ color:var(--muted); font-size:16px; min-height:44px; margin-top: 15px;text-align: justify; }
-  .card-prod__cta{ padding:14px 16px 18px; text-align:center; }
-  . {
-    display:inline-block; padding:10px 14px; border-radius:10px;
-    border:1px solid #cfd8ee; color:#22345f; font-weight:600; font-size:14px;
-    transition: background .2s ease, border-color .2s ease, color .2s ease;
+  .card-prod__body{ flex:1; display:flex; flex-direction:column; padding:18px 16px 16px; text-align:center; }
+  .card-prod__title{ font-size:18px; line-height:1.22; margin:0 0 6px; color:#0f2442; font-weight:700; transition:color .2s ease; }
+  .card-prod:hover .card-prod__title{ color:#1c2f57; }
+  .card-prod__desc{
+    color:var(--muted); font-size:15px; line-height:1.55; margin-top:15px; text-align:justify;
+    display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden;
   }
-  . :hover{ background:#1c2f57; color:#fff; border-color:#1c2f57; text-decoration:none; }
+  .card-prod__link{
+    margin-top:auto; padding-top:16px; display:inline-flex; align-items:center; justify-content:center; gap:6px;
+    color:#1c2f57; font-weight:700; font-size:14px; transition:gap .2s ease,color .2s ease;
+  }
+  .card-prod__link span{ font-size:17px; line-height:1; transition:transform .2s ease; }
+  .card-prod:hover .card-prod__link{ color:#0e2344; gap:10px; }
 
   /* spacing helpers */
   .pt-100{ padding-top:100px; } .pb-70{ padding-bottom:70px; }
@@ -267,10 +268,10 @@
   ?>
 
   <!-- Products Grid -->
-  <section class="pt-100 pb-70">
+  <section class="products-section pt-100 pb-70">
     <div class="container">
 
-      <div class="section-head text-center">
+      <div class="section-head text-center" data-aos="fade-up">
         <h2 class="title">Featured Products</h2>
         <div class="dash"></div>
         <p class="lead">From truck refrigeration to cold rooms, compressor racks, and insulated doors—choose the solution that fits your operations.</p>
@@ -282,9 +283,9 @@
             <a class="card-prod-link" href="<?php echo htmlspecialchars(publicPageUrl($p['slug'])); ?>" aria-label="View <?php echo htmlspecialchars($p['title'], ENT_QUOTES); ?>">
             <article class="card-prod">
               <div class="card-prod__img shine">
-                <?php if (!empty($p['badge'])): ?>
+                <!-- <?php if (!empty($p['badge'])): ?>
                   <span class="badge-float"><?php echo htmlspecialchars($p['badge']); ?></span>
-                <?php endif; ?>
+                <?php endif; ?> -->
                 <img
                   src="<?php echo htmlspecialchars(imgOrFallback($p['img']), ENT_QUOTES); ?>"
                   alt="<?php echo htmlspecialchars($p['title'], ENT_QUOTES); ?>"
@@ -295,10 +296,8 @@
                   <?php echo htmlspecialchars($p['title']); ?>
                 </h3>
                 <p class="card-prod__desc"><?php echo nl2br(htmlspecialchars($p['desc'])); ?></p>
+                <span class="card-prod__link">View details <span>&rarr;</span></span>
               </div>
-              <!-- <div class="">
-                <a class=" " href="<?php echo htmlspecialchars(publicPageUrl($p['slug'])); ?>">View details</a>
-              </div> -->
             </article>
             </a>
           </div>

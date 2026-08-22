@@ -1331,6 +1331,7 @@
         ['title' => 'Cold Storage Refrigeration Units', 'icon' => 'fa fa-snowflake-o', 'url' => 'cold-storage-refrigeration-units.php'],
         ['title' => 'Compressor Rack System', 'icon' => 'fa fa-cogs', 'url' => 'compressor-rack-system.php'],
         ['title' => 'Ammonia Refrigeration Units', 'icon' => 'fa fa-industry', 'url' => 'ammonia-refrigeration-units.php'],
+        ['title' => 'Freon Refrigeration Units', 'icon' => 'fa fa-flask', 'url' => 'freon-refrigeration-units.php'],
         ['title' => 'Ripening Systems', 'icon' => 'fa fa-leaf', 'url' => 'ripening-systems.php'],
         ['title' => 'Multideck Cabinet', 'icon' => 'fa fa-th-large', 'url' => 'multideck-cabinet.php'],
         ['title' => 'IQF (Individual Quick Freeze)', 'icon' => 'fa fa-asterisk', 'url' => 'iqf.php'],
@@ -1341,7 +1342,7 @@
       ];
       ?>
 
-      <div class="row related-grid justify-content-center">
+      <div class="row related-grid">
         <?php foreach ($related_products as $index => $product):
           $isActiveProduct = basename($product['url']) === basename($_SERVER['SCRIPT_NAME'] ?? 'freon-refrigeration-units.php');
         ?>

@@ -578,10 +578,7 @@ body{ color:var(--ink); }
 @media (max-width: 767px){
   #myModal .modal-dialog{ width:94%; margin:1rem auto; }
   #myModal .quote-modal{ grid-template-columns:1fr; min-height:auto; }
-  #myModal .quote-panel{ padding:26px 24px; }
-  #myModal .quote-title{ margin-top:22px; font-size:26px; }
-  #myModal .quote-copy{ margin-bottom:20px; }
-  #myModal .quote-actions{ margin-top:24px; }
+  #myModal .quote-panel{ display:none; }
   #myModal .quote-form{ padding:30px 24px 28px; }
   #myModal .form-row-split{ grid-template-columns:1fr; gap:0; }
 }
