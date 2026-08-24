@@ -279,7 +279,7 @@
 
       <div class="row products-grid">
         <?php foreach ($products as $p): ?>
-          <div class="col-lg-4 col-md-6 col-sm-12 col mb-4" data-aos="fade-up">
+          <div class="col-12 col-sm-12 col-md-6 col-lg-4 mb-4" data-aos="fade-up">
             <a class="card-prod-link" href="<?php echo htmlspecialchars(publicPageUrl($p['slug'])); ?>" aria-label="View <?php echo htmlspecialchars($p['title'], ENT_QUOTES); ?>">
             <article class="card-prod">
               <div class="card-prod__img shine">

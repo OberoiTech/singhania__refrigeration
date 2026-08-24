@@ -99,27 +99,34 @@ $coldStoragePages = [
 
 <style>
 /* Header layout */
-.full-width-header .rs-header .menu-area { padding:14px 0; background:#fff; }
+.full-width-header .rs-header .menu-area { padding:5px 0; background:#fff; }
+.full-width-header .container{
+  max-width:100%;
+  padding-left:40px;
+  padding-right:40px;
+}
 .full-width-header .rs-header .menu-area .container .row{
+  display:flex;
   align-items:center;
   flex-wrap:nowrap;
+  margin-left:0;
+  margin-right:0;
+  gap:24px;
 }
 .full-width-header .rs-header .menu-area .logo-area{
   display:flex;
   align-items:center;
+  flex:0 0 auto;
+}
+.full-width-header .rs-header .menu-area .rs-menu-area{
+  flex:1 1 auto;
+  min-width:0;
 }
 .full-width-header .rs-header .menu-area .logo-area img {
   display:block;
-  width:240px;
-  max-width:100%;
-  max-height:132px;
   object-fit:contain;
   transition:.4s;
   -webkit-transition:.4s;
-}
-.full-width-header .rs-header .menu-area.sticky .logo-area img {
-  width:195px;
-  max-height:92px;
 }
 .full-width-header .rs-header .menu-area .main-menu .rs-menu ul.nav-menu li { display:inline-block; margin-right:0 !important; padding:0; }
 .full-width-header .rs-header .menu-area .main-menu .rs-menu ul.nav-menu li a { transition:all .3s ease; font-size:13px !important; }
@@ -176,10 +183,58 @@ $coldStoragePages = [
   .full-width-header .rs-header .menu-area .main-menu .rs-menu ul.nav-menu > li > a{ padding:0 9px; font-size:12px !important; }
   .menu-cta .btn-cfa{ min-width:118px; padding:0 14px; }
 }
+/* Center the menu on the row itself (matching the home banner's centered container), independent of the logo/CTA widths. */
+@media (min-width:992px){
+  .full-width-header .rs-header .menu-area .container .row{
+    position:relative;
+    justify-content:space-between;
+  }
+  .full-width-header .rs-header .menu-area .rs-menu-area{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%, -50%);
+    width:auto;
+  }
+}
 @media (max-width:991px){
-  .full-width-header .rs-header .menu-area .container .row{ flex-wrap:wrap; }
-  .full-width-header .rs-header .menu-area .logo-area img{ width:195px; max-height:96px; }
+  .full-width-header .rs-header .menu-area .container .row{ flex-wrap:nowrap; align-items:center; }
+  .full-width-header .rs-header .menu-area .logo-area img{
+    max-height:75px !important;
+    transition:none !important;
+    -webkit-transition:none !important;
+  }
   .menu-cta{ display:none; }
+
+  /* Keep the navbar pinned to the top at a fixed size on mobile, matching the scrolled/sticky look at all times.
+     !important needed: assets/css/responsive.css has legacy rules (at both 991px and 480px breakpoints) that
+     force position:unset / transparent background / a smaller logo once the JS-driven .sticky class toggles. */
+  .full-width-header .rs-header .menu-area{
+    position:fixed !important;
+    top:0 !important;
+    left:0 !important;
+    width:100% !important;
+    background:#fff !important;
+    box-shadow:0 2px 12px rgba(0,0,0,.12) !important;
+    height:100px !important;
+    padding:0 !important;
+    display:flex;
+    align-items:center;
+  }
+  .full-width-header .rs-header .menu-area.sticky .logo-area img{
+    max-height:74px !important;
+  }
+  .full-width-header .rs-header .menu-area .container{ height:100%; }
+  .full-width-header .rs-header .menu-area .container .row{ height:100%; }
+  .full-width-header .rs-header .menu-area .logo-area,
+  .full-width-header .rs-header .menu-area.sticky .logo-area{
+    position:static !important;
+    height:auto !important;
+    line-height:normal !important;
+    display:flex !important;
+    align-items:center !important;
+  }
+  body{ padding-top:100px; }
 }
 
 .full-width-header .rs-header .menu-area .main-menu .rs-menu ul.nav-menu > li .sub-menu{
@@ -215,8 +270,11 @@ $coldStoragePages = [
 
 /* Mobile/off-canvas visibility */
 @media (max-width:991px){ .rs-menu{ display:none; } .mobile-menu{ display:block; } .rs-menu-area{ justify-content:flex-end; } .menu-cta{ margin-left:15px; } }
+@media (max-width:991px){
+  .rs-menu-toggle{ font-size:28px; line-height:1; padding:8px; }
+  .rs-menu-toggle i.fa-bars{ font-size:28px; }
+}
 @media (min-width:992px){ .mobile-menu{ display:none; } nav.right_menu_togle{ right:-340px !important; visibility:hidden; } }
-.logo-area.logo-area--tall{ max-height:none; }
 
 /* Mobile drawer */
 nav.right_menu_togle{
@@ -642,14 +700,11 @@ body.menu-open{ overflow:hidden; }
     <div class="menu-area menu-sticky">
       <div class="container">
         <div class="row">
-          <div class="col-lg-2">
-            <div class="logo-area logo-area--tall">
-              <a href="https://singhaniarefrigeration.com/"><img src="assets/images/logoS.avif" width="1536" height="864" alt="Singhania Refrigeration"></a>
-            </div>
+          <div class="logo-area logo-area--tall">
+            <a href="https://singhaniarefrigeration.com/"><img src="assets/images/Header_logo.png" alt="Singhania Refrigeration"></a>
           </div>
-          <div class="col-lg-10 text-right">
-            <div class="rs-menu-area d-flex align-items-center justify-content-between">
-              <div class="main-menu flex-grow-1">
+          <div class="rs-menu-area d-flex align-items-center">
+            <div class="main-menu flex-grow-1">
                 <a class="rs-menu-toggle" role="button" aria-label="Open menu" aria-controls="mobileDrawer" aria-expanded="false"><i class="fa fa-bars"></i></a>
 
                 <!-- ===== DESKTOP MENU (updated to use helpers) ===== -->
@@ -749,19 +804,19 @@ body.menu-open{ overflow:hidden; }
                 </nav>
                 <!-- ===== /DESKTOP MENU ===== -->
               </div>
+            </div>
 
-              <!-- right-aligned CTA -->
-              <div class="menu-cta">
-                <a class="btn-cfa" href="https://www.singhanialogistics.in/consultancy-cfa-training-services">CFA Training</a>
-              </div>
+            <!-- right-aligned CTA -->
+            <div class="menu-cta">
+              <a class="btn-cfa" href="https://www.singhanialogistics.in/consultancy-cfa-training-services">CFA Training</a>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
     <!-- Off-canvas menu (already using helpers) -->
     <nav id="mobileDrawer" class="right_menu_togle hidden-md" aria-label="Mobile navigation" aria-hidden="true" inert>
+
       <div class="close-btn">
         <span id="nav-close" class="humburger">
           <button type="button" class="close" aria-label="Close" data-dismiss="modal">&times;</button>
